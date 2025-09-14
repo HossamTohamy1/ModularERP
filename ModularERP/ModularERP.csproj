@@ -1,0 +1,129 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.9" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Modules\Finance\Features\Attachments\Commands\" />
+    <Folder Include="Modules\Finance\Features\Attachments\Controllers\" />
+    <Folder Include="Modules\Finance\Features\Attachments\Handlers\" />
+    <Folder Include="Modules\Finance\Features\Attachments\Mapping\" />
+    <Folder Include="Modules\Finance\Features\Attachments\Queries\" />
+    <Folder Include="Modules\Finance\Features\Attachments\Validators\" />
+    <Folder Include="Modules\Finance\Features\AuditLogs\Commands\" />
+    <Folder Include="Modules\Finance\Features\AuditLogs\Controllers\" />
+    <Folder Include="Modules\Finance\Features\AuditLogs\Handlers\" />
+    <Folder Include="Modules\Finance\Features\AuditLogs\Mapping\" />
+    <Folder Include="Modules\Finance\Features\AuditLogs\Queries\" />
+    <Folder Include="Modules\Finance\Features\AuditLogs\Validators\" />
+    <Folder Include="Modules\Finance\Features\BankAccounts\Commands\" />
+    <Folder Include="Modules\Finance\Features\BankAccounts\Controllers\" />
+    <Folder Include="Modules\Finance\Features\BankAccounts\Handlers\" />
+    <Folder Include="Modules\Finance\Features\BankAccounts\Mapping\" />
+    <Folder Include="Modules\Finance\Features\BankAccounts\Queries\" />
+    <Folder Include="Modules\Finance\Features\BankAccounts\Validators\" />
+    <Folder Include="Modules\Finance\Features\Companys\Commands\" />
+    <Folder Include="Modules\Finance\Features\Companys\Controllers\" />
+    <Folder Include="Modules\Finance\Features\Companys\Handlers\" />
+    <Folder Include="Modules\Finance\Features\Companys\Mapping\" />
+    <Folder Include="Modules\Finance\Features\Companys\Queries\" />
+    <Folder Include="Modules\Finance\Features\Companys\Validators\" />
+    <Folder Include="Modules\Finance\Features\Currencies\Commands\" />
+    <Folder Include="Modules\Finance\Features\Currencies\Controllers\" />
+    <Folder Include="Modules\Finance\Features\Currencies\Handlers\" />
+    <Folder Include="Modules\Finance\Features\Currencies\Mapping\" />
+    <Folder Include="Modules\Finance\Features\Currencies\Queries\" />
+    <Folder Include="Modules\Finance\Features\Currencies\Validators\" />
+    <Folder Include="Modules\Finance\Features\Customer\Commands\" />
+    <Folder Include="Modules\Finance\Features\Customer\Controllers\" />
+    <Folder Include="Modules\Finance\Features\Customer\Handlers\" />
+    <Folder Include="Modules\Finance\Features\Customer\Mapping\" />
+    <Folder Include="Modules\Finance\Features\Customer\Queries\" />
+    <Folder Include="Modules\Finance\Features\Customer\Validators\" />
+    <Folder Include="Modules\Finance\Features\GlAccounts\Commands\" />
+    <Folder Include="Modules\Finance\Features\GlAccounts\Controllers\" />
+    <Folder Include="Modules\Finance\Features\GlAccounts\Handlers\" />
+    <Folder Include="Modules\Finance\Features\GlAccounts\Mapping\" />
+    <Folder Include="Modules\Finance\Features\GlAccounts\Queries\" />
+    <Folder Include="Modules\Finance\Features\GlAccounts\Validators\" />
+    <Folder Include="Modules\Finance\Features\LedgerEntries\Commands\" />
+    <Folder Include="Modules\Finance\Features\LedgerEntries\Controllers\" />
+    <Folder Include="Modules\Finance\Features\LedgerEntries\Handlers\" />
+    <Folder Include="Modules\Finance\Features\LedgerEntries\Mapping\" />
+    <Folder Include="Modules\Finance\Features\LedgerEntries\Queries\" />
+    <Folder Include="Modules\Finance\Features\LedgerEntries\Validators\" />
+    <Folder Include="Modules\Finance\Features\RecurringSchedules\Commands\" />
+    <Folder Include="Modules\Finance\Features\RecurringSchedules\Controllers\" />
+    <Folder Include="Modules\Finance\Features\RecurringSchedules\Handlers\" />
+    <Folder Include="Modules\Finance\Features\RecurringSchedules\Mapping\" />
+    <Folder Include="Modules\Finance\Features\RecurringSchedules\Queries\" />
+    <Folder Include="Modules\Finance\Features\RecurringSchedules\Validators\" />
+    <Folder Include="Modules\Finance\Features\Taxs\Commands\" />
+    <Folder Include="Modules\Finance\Features\Taxs\Controllers\" />
+    <Folder Include="Modules\Finance\Features\Taxs\Handlers\" />
+    <Folder Include="Modules\Finance\Features\Taxs\Mapping\" />
+    <Folder Include="Modules\Finance\Features\Taxs\Queries\" />
+    <Folder Include="Modules\Finance\Features\Taxs\Validators\" />
+    <Folder Include="Modules\Finance\Features\Treasuries\Commands\" />
+    <Folder Include="Modules\Finance\Features\Treasuries\Controllers\" />
+    <Folder Include="Modules\Finance\Features\Treasuries\Handlers\" />
+    <Folder Include="Modules\Finance\Features\Treasuries\Mapping\" />
+    <Folder Include="Modules\Finance\Features\Treasuries\Queries\" />
+    <Folder Include="Modules\Finance\Features\Treasuries\Validators\" />
+    <Folder Include="Modules\Finance\Features\Vendor\Commands\" />
+    <Folder Include="Modules\Finance\Features\Vendor\Controllers\" />
+    <Folder Include="Modules\Finance\Features\Vendor\Handlers\" />
+    <Folder Include="Modules\Finance\Features\Vendor\Mapping\" />
+    <Folder Include="Modules\Finance\Features\Vendor\Queries\" />
+    <Folder Include="Modules\Finance\Features\Vendor\Validators\" />
+    <Folder Include="Modules\Finance\Features\VoucherTaxs\Commands\" />
+    <Folder Include="Modules\Finance\Features\VoucherTaxs\Controllers\" />
+    <Folder Include="Modules\Finance\Features\VoucherTaxs\Handlers\" />
+    <Folder Include="Modules\Finance\Features\VoucherTaxs\Mapping\" />
+    <Folder Include="Modules\Finance\Features\VoucherTaxs\Queries\" />
+    <Folder Include="Modules\Finance\Features\VoucherTaxs\Validators\" />
+    <Folder Include="Modules\Finance\Features\Vouchers\Commands\" />
+    <Folder Include="Modules\Finance\Features\Vouchers\Controllers\" />
+    <Folder Include="Modules\Finance\Features\Vouchers\Handlers\" />
+    <Folder Include="Modules\Finance\Features\Vouchers\Mapping\" />
+    <Folder Include="Modules\Finance\Features\Vouchers\Queries\" />
+    <Folder Include="Modules\Finance\Features\Vouchers\Validators\" />
+    <Folder Include="Modules\Inventory\Features\Commands\" />
+    <Folder Include="Modules\Inventory\Features\Controllers\" />
+    <Folder Include="Modules\Inventory\Features\Handlers\" />
+    <Folder Include="Modules\Inventory\Features\Mapping\" />
+    <Folder Include="Modules\Inventory\Features\Models\" />
+    <Folder Include="Modules\Inventory\Features\Queries\" />
+    <Folder Include="Modules\Inventory\Features\Validators\" />
+    <Folder Include="Modules\Inventory\Inventory.Infrastructure\" />
+    <Folder Include="Modules\Purchase\Features\Commands\" />
+    <Folder Include="Modules\Purchase\Features\Controllers\" />
+    <Folder Include="Modules\Purchase\Features\Handlers\" />
+    <Folder Include="Modules\Purchase\Features\Mapping\" />
+    <Folder Include="Modules\Purchase\Features\Models\" />
+    <Folder Include="Modules\Purchase\Features\Queries\" />
+    <Folder Include="Modules\Purchase\Features\Validators\" />
+    <Folder Include="Modules\Purchase\Purchase.Infrastructure\" />
+    <Folder Include="BuildingBlocks\" />
+    <Folder Include="SharedKernel\" />
+  </ItemGroup>
+
+</Project>
