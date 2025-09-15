@@ -1,0 +1,497 @@
+2025-09-16 00:01:17.422 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5004/api/Treasury - application/json 200
+2025-09-16 00:01:17.431 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5004/api/Treasury - 307 0 null 8.439ms
+2025-09-16 00:01:17.439 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/Treasury - null null
+2025-09-16 00:01:17.446 +03:00 [INF] CORS policy execution successful.
+2025-09-16 00:01:17.447 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/Treasury - 204 null null 8.4745ms
+2025-09-16 00:01:17.449 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/Treasury - application/json 200
+2025-09-16 00:01:17.454 +03:00 [INF] CORS policy execution successful.
+2025-09-16 00:01:17.455 +03:00 [INF] Request started
+2025-09-16 00:01:17.456 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.CreateTreasury (ModularERP)'
+2025-09-16 00:01:17.457 +03:00 [INF] Route matched with {action = "CreateTreasury", controller = "Treasury"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryCreatedDto]]] CreateTreasury(ModularERP.Modules.Finance.Features.Treasuries.DTO.CreateTreasuryDto) on controller ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController (ModularERP).
+2025-09-16 00:01:18.154 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-09-16 00:01:18.366 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-16 00:01:18.969 +03:00 [INF] Executed DbCommand (50ms) [Parameters=[@__request_Treasury_CompanyId_0='d36b22ee-69fd-491c-99a6-36faa8dbfd1a', @__request_Treasury_Name_1='string' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[CompanyId], [t].[CreatedAt], [t].[CreatedById], [t].[CurrencyCode], [t].[DepositAcl], [t].[Description], [t].[IsActive], [t].[IsDeleted], [t].[Name], [t].[Status], [t].[UpdatedAt], [t].[UpdatedById], [t].[WithdrawAcl]
+FROM [Treasuries] AS [t]
+WHERE [t].[IsDeleted] = CAST(0 AS bit) AND [t].[CompanyId] = @__request_Treasury_CompanyId_0 AND [t].[Name] = @__request_Treasury_Name_1
+2025-09-16 00:01:19.162 +03:00 [ERR] Failed executing DbCommand (23ms) [Parameters=[@p0='f43dc75e-af0e-46b6-a8ef-e6c89b29851c', @p1='d36b22ee-69fd-491c-99a6-36faa8dbfd1a', @p2='2025-09-15T21:01:18.9963422Z', @p3=NULL (Size = 4000), @p4='string' (Nullable = false) (Size = 4000), @p5='string' (Nullable = false) (Size = 4000), @p6='string' (Size = 4000), @p7='True', @p8='False', @p9='string' (Nullable = false) (Size = 100), @p10='Active' (Nullable = false) (Size = 4000), @p11=NULL (DbType = DateTime2), @p12=NULL (Size = 4000), @p13='string' (Nullable = false) (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Treasuries] ([Id], [CompanyId], [CreatedAt], [CreatedById], [CurrencyCode], [DepositAcl], [Description], [IsActive], [IsDeleted], [Name], [Status], [UpdatedAt], [UpdatedById], [WithdrawAcl])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13);
+2025-09-16 00:01:19.188 +03:00 [ERR] An exception occurred in the database while saving changes for context type 'ModularERP.Modules.Finance.Finance.Infrastructure.Data.FinanceDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): String or binary data would be truncated in table 'ModularERP.dbo.Treasuries', column 'CurrencyCode'. Truncated value: 'str'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:3b33f583-efd9-4786-bf48-74a68f2c8894
+Error Number:2628,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): String or binary data would be truncated in table 'ModularERP.dbo.Treasuries', column 'CurrencyCode'. Truncated value: 'str'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:3b33f583-efd9-4786-bf48-74a68f2c8894
+Error Number:2628,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-09-16 00:01:19.212 +03:00 [INF] Executing ObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryCreatedDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-16 00:01:19.223 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.CreateTreasury (ModularERP) in 1763.4256ms
+2025-09-16 00:01:19.226 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.CreateTreasury (ModularERP)'
+2025-09-16 00:01:19.228 +03:00 [INF] Request completed successfully with status code 500
+2025-09-16 00:01:19.234 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/Treasury - 500 null application/json; charset=utf-8 1785.2012ms
+2025-09-16 00:02:29.041 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5004/api/Treasury - application/json 196
+2025-09-16 00:02:29.047 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5004/api/Treasury - 307 0 null 6.4838ms
+2025-09-16 00:02:29.050 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/Treasury - null null
+2025-09-16 00:02:29.056 +03:00 [INF] CORS policy execution successful.
+2025-09-16 00:02:29.057 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/Treasury - 204 null null 6.3503ms
+2025-09-16 00:02:29.058 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/Treasury - application/json 196
+2025-09-16 00:02:29.062 +03:00 [INF] CORS policy execution successful.
+2025-09-16 00:02:29.064 +03:00 [INF] Request started
+2025-09-16 00:02:29.065 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.CreateTreasury (ModularERP)'
+2025-09-16 00:02:29.067 +03:00 [INF] Route matched with {action = "CreateTreasury", controller = "Treasury"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryCreatedDto]]] CreateTreasury(ModularERP.Modules.Finance.Features.Treasuries.DTO.CreateTreasuryDto) on controller ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController (ModularERP).
+2025-09-16 00:02:29.118 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__request_Treasury_CompanyId_0='d36b22ee-69fd-491c-99a6-36faa8dbfd1a', @__request_Treasury_Name_1='sdfs' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[CompanyId], [t].[CreatedAt], [t].[CreatedById], [t].[CurrencyCode], [t].[DepositAcl], [t].[Description], [t].[IsActive], [t].[IsDeleted], [t].[Name], [t].[Status], [t].[UpdatedAt], [t].[UpdatedById], [t].[WithdrawAcl]
+FROM [Treasuries] AS [t]
+WHERE [t].[IsDeleted] = CAST(0 AS bit) AND [t].[CompanyId] = @__request_Treasury_CompanyId_0 AND [t].[Name] = @__request_Treasury_Name_1
+2025-09-16 00:02:29.128 +03:00 [ERR] Failed executing DbCommand (3ms) [Parameters=[@p0='949ece9b-821a-4ea4-aa5f-87ecca507a2a', @p1='d36b22ee-69fd-491c-99a6-36faa8dbfd1a', @p2='2025-09-15T21:02:29.1233633Z', @p3=NULL (Size = 4000), @p4='sdfsd' (Nullable = false) (Size = 4000), @p5='sdf' (Nullable = false) (Size = 4000), @p6='strinsdfg' (Size = 4000), @p7='True', @p8='False', @p9='sdfs' (Nullable = false) (Size = 100), @p10='Active' (Nullable = false) (Size = 4000), @p11=NULL (DbType = DateTime2), @p12=NULL (Size = 4000), @p13='sdfsd' (Nullable = false) (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Treasuries] ([Id], [CompanyId], [CreatedAt], [CreatedById], [CurrencyCode], [DepositAcl], [Description], [IsActive], [IsDeleted], [Name], [Status], [UpdatedAt], [UpdatedById], [WithdrawAcl])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13);
+2025-09-16 00:02:29.134 +03:00 [ERR] An exception occurred in the database while saving changes for context type 'ModularERP.Modules.Finance.Finance.Infrastructure.Data.FinanceDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): String or binary data would be truncated in table 'ModularERP.dbo.Treasuries', column 'CurrencyCode'. Truncated value: 'sdf'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:3b33f583-efd9-4786-bf48-74a68f2c8894
+Error Number:2628,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): String or binary data would be truncated in table 'ModularERP.dbo.Treasuries', column 'CurrencyCode'. Truncated value: 'sdf'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:3b33f583-efd9-4786-bf48-74a68f2c8894
+Error Number:2628,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-09-16 00:02:29.152 +03:00 [INF] Executing ObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryCreatedDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-16 00:02:29.154 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.CreateTreasury (ModularERP) in 85.0529ms
+2025-09-16 00:02:29.156 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.CreateTreasury (ModularERP)'
+2025-09-16 00:02:29.157 +03:00 [INF] Request completed successfully with status code 500
+2025-09-16 00:02:29.158 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/Treasury - 500 null application/json; charset=utf-8 100.7258ms
+2025-09-16 00:03:24.796 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5004/api/Treasury - application/json 194
+2025-09-16 00:03:24.806 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5004/api/Treasury - 307 0 null 10.6883ms
+2025-09-16 00:03:24.811 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/Treasury - null null
+2025-09-16 00:03:24.816 +03:00 [INF] CORS policy execution successful.
+2025-09-16 00:03:24.817 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/Treasury - 204 null null 5.7336ms
+2025-09-16 00:03:24.818 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/Treasury - application/json 194
+2025-09-16 00:03:24.825 +03:00 [INF] CORS policy execution successful.
+2025-09-16 00:03:24.826 +03:00 [INF] Request started
+2025-09-16 00:03:24.827 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.CreateTreasury (ModularERP)'
+2025-09-16 00:03:24.830 +03:00 [INF] Route matched with {action = "CreateTreasury", controller = "Treasury"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryCreatedDto]]] CreateTreasury(ModularERP.Modules.Finance.Features.Treasuries.DTO.CreateTreasuryDto) on controller ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController (ModularERP).
+2025-09-16 00:03:24.849 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__request_Treasury_CompanyId_0='d36b22ee-69fd-491c-99a6-36faa8dbfd1a', @__request_Treasury_Name_1='sdfs' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[CompanyId], [t].[CreatedAt], [t].[CreatedById], [t].[CurrencyCode], [t].[DepositAcl], [t].[Description], [t].[IsActive], [t].[IsDeleted], [t].[Name], [t].[Status], [t].[UpdatedAt], [t].[UpdatedById], [t].[WithdrawAcl]
+FROM [Treasuries] AS [t]
+WHERE [t].[IsDeleted] = CAST(0 AS bit) AND [t].[CompanyId] = @__request_Treasury_CompanyId_0 AND [t].[Name] = @__request_Treasury_Name_1
+2025-09-16 00:03:24.863 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@p0='a2ae1dc5-6fcb-40cd-85db-2d9bc9346b45', @p1='d36b22ee-69fd-491c-99a6-36faa8dbfd1a', @p2='2025-09-15T21:03:24.8543222Z', @p3=NULL (Size = 4000), @p4='EGP' (Nullable = false) (Size = 3), @p5='sdf' (Nullable = false) (Size = 4000), @p6='strinsdfg' (Size = 4000), @p7='True', @p8='False', @p9='sdfs' (Nullable = false) (Size = 100), @p10='Active' (Nullable = false) (Size = 4000), @p11=NULL (DbType = DateTime2), @p12=NULL (Size = 4000), @p13='sdfsd' (Nullable = false) (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Treasuries] ([Id], [CompanyId], [CreatedAt], [CreatedById], [CurrencyCode], [DepositAcl], [Description], [IsActive], [IsDeleted], [Name], [Status], [UpdatedAt], [UpdatedById], [WithdrawAcl])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13);
+2025-09-16 00:03:24.878 +03:00 [INF] Executing CreatedAtActionResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryCreatedDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-16 00:03:24.896 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.CreateTreasury (ModularERP) in 61.543ms
+2025-09-16 00:03:24.898 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.CreateTreasury (ModularERP)'
+2025-09-16 00:03:24.900 +03:00 [INF] Request completed successfully with status code 201
+2025-09-16 00:03:24.901 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/Treasury - 201 null application/json; charset=utf-8 82.7977ms
+2025-09-16 00:03:40.997 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5004/api/Treasury - application/json 195
+2025-09-16 00:03:41.001 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5004/api/Treasury - 307 0 null 4.0796ms
+2025-09-16 00:03:41.003 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/Treasury - null null
+2025-09-16 00:03:41.011 +03:00 [INF] CORS policy execution successful.
+2025-09-16 00:03:41.012 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/Treasury - 204 null null 9.0686ms
+2025-09-16 00:03:41.014 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/Treasury - application/json 195
+2025-09-16 00:03:41.019 +03:00 [INF] CORS policy execution successful.
+2025-09-16 00:03:41.020 +03:00 [INF] Request started
+2025-09-16 00:03:41.022 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.CreateTreasury (ModularERP)'
+2025-09-16 00:03:41.024 +03:00 [INF] Route matched with {action = "CreateTreasury", controller = "Treasury"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryCreatedDto]]] CreateTreasury(ModularERP.Modules.Finance.Features.Treasuries.DTO.CreateTreasuryDto) on controller ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController (ModularERP).
+2025-09-16 00:03:41.032 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__request_Treasury_CompanyId_0='d36b22ee-69fd-491c-99a6-36faa8dbfd1a', @__request_Treasury_Name_1='sdfs' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[CompanyId], [t].[CreatedAt], [t].[CreatedById], [t].[CurrencyCode], [t].[DepositAcl], [t].[Description], [t].[IsActive], [t].[IsDeleted], [t].[Name], [t].[Status], [t].[UpdatedAt], [t].[UpdatedById], [t].[WithdrawAcl]
+FROM [Treasuries] AS [t]
+WHERE [t].[IsDeleted] = CAST(0 AS bit) AND [t].[CompanyId] = @__request_Treasury_CompanyId_0 AND [t].[Name] = @__request_Treasury_Name_1
+2025-09-16 00:03:41.050 +03:00 [INF] Executing ConflictObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryCreatedDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-16 00:03:41.052 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.CreateTreasury (ModularERP) in 22.7343ms
+2025-09-16 00:03:41.056 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.CreateTreasury (ModularERP)'
+2025-09-16 00:03:41.058 +03:00 [INF] Request completed successfully with status code 409
+2025-09-16 00:03:41.059 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/Treasury - 409 null application/json; charset=utf-8 45.8132ms
+2025-09-16 00:03:52.310 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5004/api/Treasury - application/json 194
+2025-09-16 00:03:52.314 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5004/api/Treasury - 307 0 null 4.8781ms
+2025-09-16 00:03:52.316 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/Treasury - null null
+2025-09-16 00:03:52.323 +03:00 [INF] CORS policy execution successful.
+2025-09-16 00:03:52.324 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/Treasury - 204 null null 8.2059ms
+2025-09-16 00:03:52.326 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/Treasury - application/json 194
+2025-09-16 00:03:52.332 +03:00 [INF] CORS policy execution successful.
+2025-09-16 00:03:52.333 +03:00 [INF] Request started
+2025-09-16 00:03:52.335 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.CreateTreasury (ModularERP)'
+2025-09-16 00:03:52.338 +03:00 [INF] Route matched with {action = "CreateTreasury", controller = "Treasury"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryCreatedDto]]] CreateTreasury(ModularERP.Modules.Finance.Features.Treasuries.DTO.CreateTreasuryDto) on controller ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController (ModularERP).
+2025-09-16 00:03:52.344 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__request_Treasury_CompanyId_0='d36b22ee-69fd-491c-99a6-36faa8dbfd1a', @__request_Treasury_Name_1='555' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[CompanyId], [t].[CreatedAt], [t].[CreatedById], [t].[CurrencyCode], [t].[DepositAcl], [t].[Description], [t].[IsActive], [t].[IsDeleted], [t].[Name], [t].[Status], [t].[UpdatedAt], [t].[UpdatedById], [t].[WithdrawAcl]
+FROM [Treasuries] AS [t]
+WHERE [t].[IsDeleted] = CAST(0 AS bit) AND [t].[CompanyId] = @__request_Treasury_CompanyId_0 AND [t].[Name] = @__request_Treasury_Name_1
+2025-09-16 00:03:52.353 +03:00 [ERR] Failed executing DbCommand (3ms) [Parameters=[@p0='68be53ec-8fd5-4858-ab8d-9056d81455fe', @p1='d36b22ee-69fd-491c-99a6-36faa8dbfd1a', @p2='2025-09-15T21:03:52.3498843Z', @p3=NULL (Size = 4000), @p4='EG5P' (Nullable = false) (Size = 4000), @p5='sdf' (Nullable = false) (Size = 4000), @p6='strinsdfg' (Size = 4000), @p7='True', @p8='False', @p9='555' (Nullable = false) (Size = 100), @p10='Active' (Nullable = false) (Size = 4000), @p11=NULL (DbType = DateTime2), @p12=NULL (Size = 4000), @p13='sdfsd' (Nullable = false) (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Treasuries] ([Id], [CompanyId], [CreatedAt], [CreatedById], [CurrencyCode], [DepositAcl], [Description], [IsActive], [IsDeleted], [Name], [Status], [UpdatedAt], [UpdatedById], [WithdrawAcl])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13);
+2025-09-16 00:03:52.358 +03:00 [ERR] An exception occurred in the database while saving changes for context type 'ModularERP.Modules.Finance.Finance.Infrastructure.Data.FinanceDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): String or binary data would be truncated in table 'ModularERP.dbo.Treasuries', column 'CurrencyCode'. Truncated value: 'EG5'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:3b33f583-efd9-4786-bf48-74a68f2c8894
+Error Number:2628,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): String or binary data would be truncated in table 'ModularERP.dbo.Treasuries', column 'CurrencyCode'. Truncated value: 'EG5'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:3b33f583-efd9-4786-bf48-74a68f2c8894
+Error Number:2628,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-09-16 00:03:52.395 +03:00 [INF] Executing ObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryCreatedDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-16 00:03:52.396 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.CreateTreasury (ModularERP) in 53.7744ms
+2025-09-16 00:03:52.398 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.CreateTreasury (ModularERP)'
+2025-09-16 00:03:52.402 +03:00 [INF] Request completed successfully with status code 500
+2025-09-16 00:03:52.404 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/Treasury - 500 null application/json; charset=utf-8 77.4469ms
+2025-09-16 00:08:06.441 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5004/api/Treasury - application/json 192
+2025-09-16 00:08:06.446 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5004/api/Treasury - 307 0 null 5.347ms
+2025-09-16 00:08:06.450 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/Treasury - null null
+2025-09-16 00:08:06.457 +03:00 [INF] CORS policy execution successful.
+2025-09-16 00:08:06.459 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/Treasury - 204 null null 8.6489ms
+2025-09-16 00:08:06.460 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/Treasury - application/json 192
+2025-09-16 00:08:06.466 +03:00 [INF] CORS policy execution successful.
+2025-09-16 00:08:06.468 +03:00 [INF] Request started
+2025-09-16 00:08:06.469 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.CreateTreasury (ModularERP)'
+2025-09-16 00:08:06.473 +03:00 [INF] Route matched with {action = "CreateTreasury", controller = "Treasury"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryCreatedDto]]] CreateTreasury(ModularERP.Modules.Finance.Features.Treasuries.DTO.CreateTreasuryDto) on controller ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController (ModularERP).
+2025-09-16 00:08:06.477 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-09-16 00:08:06.479 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.CreateTreasury (ModularERP) in 2.2696ms
+2025-09-16 00:08:06.483 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.CreateTreasury (ModularERP)'
+2025-09-16 00:08:06.486 +03:00 [INF] Request completed successfully with status code 400
+2025-09-16 00:08:06.488 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/Treasury - 400 null application/problem+json; charset=utf-8 27.9751ms
+2025-09-16 00:19:58.424 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5004/api/Treasury - application/json 193
+2025-09-16 00:19:58.429 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5004/api/Treasury - 307 0 null 4.6558ms
+2025-09-16 00:19:58.433 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/Treasury - null null
+2025-09-16 00:19:58.440 +03:00 [INF] CORS policy execution successful.
+2025-09-16 00:19:58.441 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/Treasury - 204 null null 8.6327ms
+2025-09-16 00:19:58.443 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/Treasury - application/json 193
+2025-09-16 00:19:58.451 +03:00 [INF] CORS policy execution successful.
+2025-09-16 00:19:58.452 +03:00 [INF] Request started
+2025-09-16 00:19:58.454 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.CreateTreasury (ModularERP)'
+2025-09-16 00:19:58.456 +03:00 [INF] Route matched with {action = "CreateTreasury", controller = "Treasury"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryCreatedDto]]] CreateTreasury(ModularERP.Modules.Finance.Features.Treasuries.DTO.CreateTreasuryDto) on controller ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController (ModularERP).
+2025-09-16 00:19:58.467 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__request_Treasury_CompanyId_0='d36b22ee-69fd-491c-99a6-36faa8dbfd1a', @__request_Treasury_Name_1='55' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[CompanyId], [t].[CreatedAt], [t].[CreatedById], [t].[CurrencyCode], [t].[DepositAcl], [t].[Description], [t].[IsActive], [t].[IsDeleted], [t].[Name], [t].[Status], [t].[UpdatedAt], [t].[UpdatedById], [t].[WithdrawAcl]
+FROM [Treasuries] AS [t]
+WHERE [t].[IsDeleted] = CAST(0 AS bit) AND [t].[CompanyId] = @__request_Treasury_CompanyId_0 AND [t].[Name] = @__request_Treasury_Name_1
+2025-09-16 00:19:58.474 +03:00 [ERR] Failed executing DbCommand (3ms) [Parameters=[@p0='5fb9bd29-9932-4d2a-9971-2954bdea1c6f', @p1='d36b22ee-69fd-491c-99a6-36faa8dbfd1a', @p2='2025-09-15T21:19:58.4714302Z', @p3=NULL (Size = 4000), @p4='EG5P' (Nullable = false) (Size = 4000), @p5='sdf' (Nullable = false) (Size = 4000), @p6='strinsdfg' (Size = 4000), @p7='True', @p8='False', @p9='55' (Nullable = false) (Size = 100), @p10='Active' (Nullable = false) (Size = 4000), @p11=NULL (DbType = DateTime2), @p12=NULL (Size = 4000), @p13='sdfsd' (Nullable = false) (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Treasuries] ([Id], [CompanyId], [CreatedAt], [CreatedById], [CurrencyCode], [DepositAcl], [Description], [IsActive], [IsDeleted], [Name], [Status], [UpdatedAt], [UpdatedById], [WithdrawAcl])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13);
+2025-09-16 00:19:58.479 +03:00 [ERR] An exception occurred in the database while saving changes for context type 'ModularERP.Modules.Finance.Finance.Infrastructure.Data.FinanceDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): String or binary data would be truncated in table 'ModularERP.dbo.Treasuries', column 'CurrencyCode'. Truncated value: 'EG5'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:c36d6d3f-8d2d-4c40-8914-820d8c7d4bf8
+Error Number:2628,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): String or binary data would be truncated in table 'ModularERP.dbo.Treasuries', column 'CurrencyCode'. Truncated value: 'EG5'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:c36d6d3f-8d2d-4c40-8914-820d8c7d4bf8
+Error Number:2628,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-09-16 00:19:58.518 +03:00 [INF] Executing ObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryCreatedDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-16 00:19:58.520 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.CreateTreasury (ModularERP) in 61.5972ms
+2025-09-16 00:19:58.522 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.CreateTreasury (ModularERP)'
+2025-09-16 00:19:58.523 +03:00 [INF] Request completed successfully with status code 500
+2025-09-16 00:19:58.526 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/Treasury - 500 null application/json; charset=utf-8 83.2376ms
+2025-09-16 00:49:14.644 +03:00 [INF] Starting web host...
+2025-09-16 00:49:15.006 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-16 00:49:15.009 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-16 00:49:15.082 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-16 00:49:15.084 +03:00 [INF] Hosting environment: Development
+2025-09-16 00:49:15.085 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-16 00:49:24.308 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2025-09-16 00:49:24.465 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 155.5592ms
+2025-09-16 00:49:24.512 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-16 00:49:24.519 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 6.1544ms
+2025-09-16 00:49:25.815 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2025-09-16 00:49:25.853 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 37.2043ms
+2025-09-16 00:49:26.101 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2025-09-16 00:49:26.186 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 83.667ms
+2025-09-16 00:50:18.722 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/BankAccount/d36b22ee-69fd-491c-99a6-36faa8dbfd1a/permissions - null null
+2025-09-16 00:50:18.740 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/BankAccount/d36b22ee-69fd-491c-99a6-36faa8dbfd1a/permissions - 307 0 null 17.9035ms
+2025-09-16 00:50:18.779 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/BankAccount/d36b22ee-69fd-491c-99a6-36faa8dbfd1a/permissions - null null
+2025-09-16 00:50:18.786 +03:00 [INF] CORS policy execution successful.
+2025-09-16 00:50:18.799 +03:00 [INF] Request started
+2025-09-16 00:50:18.802 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountPermissions (ModularERP)'
+2025-09-16 00:50:18.823 +03:00 [INF] Route matched with {action = "GetBankAccountPermissions", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto]]] GetBankAccountPermissions(System.Guid) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-16 00:50:18.828 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-16 00:50:19.487 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-09-16 00:50:20.130 +03:00 [INF] Executed DbCommand (36ms) [Parameters=[@__id_0='d36b22ee-69fd-491c-99a6-36faa8dbfd1a'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-16 00:50:20.158 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-16 00:50:20.177 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountPermissions (ModularERP) in 1347.9705ms
+2025-09-16 00:50:20.179 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountPermissions (ModularERP)'
+2025-09-16 00:50:20.181 +03:00 [INF] Request completed successfully with status code 200
+2025-09-16 00:50:20.190 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/BankAccount/d36b22ee-69fd-491c-99a6-36faa8dbfd1a/permissions - 200 null application/json; charset=utf-8 1411.4483ms
+2025-09-16 00:50:56.319 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/Treasury/e4e33ea7-1475-48cc-be82-c1c3b42bcb18/permissions - null null
+2025-09-16 00:50:56.323 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/Treasury/e4e33ea7-1475-48cc-be82-c1c3b42bcb18/permissions - 307 0 null 4.1232ms
+2025-09-16 00:50:56.326 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/Treasury/e4e33ea7-1475-48cc-be82-c1c3b42bcb18/permissions - null null
+2025-09-16 00:50:56.330 +03:00 [INF] CORS policy execution successful.
+2025-09-16 00:50:56.331 +03:00 [INF] Request started
+2025-09-16 00:50:56.332 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.GetTreasuryPermissions (ModularERP)'
+2025-09-16 00:50:56.337 +03:00 [INF] Route matched with {action = "GetTreasuryPermissions", controller = "Treasury"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto]]] GetTreasuryPermissions(System.Guid) on controller ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController (ModularERP).
+2025-09-16 00:50:56.399 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[@__id_0='e4e33ea7-1475-48cc-be82-c1c3b42bcb18'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[CompanyId], [t].[CreatedAt], [t].[CreatedById], [t].[CurrencyCode], [t].[DepositAcl], [t].[Description], [t].[IsActive], [t].[IsDeleted], [t].[Name], [t].[Status], [t].[UpdatedAt], [t].[UpdatedById], [t].[WithdrawAcl]
+FROM [Treasuries] AS [t]
+WHERE [t].[Id] = @__id_0
+2025-09-16 00:50:56.413 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-16 00:50:56.419 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.GetTreasuryPermissions (ModularERP) in 78.7558ms
+2025-09-16 00:50:56.421 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.GetTreasuryPermissions (ModularERP)'
+2025-09-16 00:50:56.422 +03:00 [INF] Request completed successfully with status code 200
+2025-09-16 00:50:56.424 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/Treasury/e4e33ea7-1475-48cc-be82-c1c3b42bcb18/permissions - 200 null application/json; charset=utf-8 97.881ms
+2025-09-16 01:01:55.813 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/Treasury/a2ae1dc5-6fcb-40cd-85db-2d9bc9346b45/permissions - null null
+2025-09-16 01:01:55.818 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/Treasury/a2ae1dc5-6fcb-40cd-85db-2d9bc9346b45/permissions - 307 0 null 5.2311ms
+2025-09-16 01:01:55.824 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/Treasury/a2ae1dc5-6fcb-40cd-85db-2d9bc9346b45/permissions - null null
+2025-09-16 01:01:55.828 +03:00 [INF] CORS policy execution successful.
+2025-09-16 01:01:55.829 +03:00 [INF] Request started
+2025-09-16 01:01:55.830 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.GetTreasuryPermissions (ModularERP)'
+2025-09-16 01:01:55.832 +03:00 [INF] Route matched with {action = "GetTreasuryPermissions", controller = "Treasury"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto]]] GetTreasuryPermissions(System.Guid) on controller ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController (ModularERP).
+2025-09-16 01:01:55.854 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='a2ae1dc5-6fcb-40cd-85db-2d9bc9346b45'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[CompanyId], [t].[CreatedAt], [t].[CreatedById], [t].[CurrencyCode], [t].[DepositAcl], [t].[Description], [t].[IsActive], [t].[IsDeleted], [t].[Name], [t].[Status], [t].[UpdatedAt], [t].[UpdatedById], [t].[WithdrawAcl]
+FROM [Treasuries] AS [t]
+WHERE [t].[Id] = @__id_0
+2025-09-16 01:01:55.859 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-16 01:01:55.860 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.GetTreasuryPermissions (ModularERP) in 26.0848ms
+2025-09-16 01:01:55.862 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.GetTreasuryPermissions (ModularERP)'
+2025-09-16 01:01:55.863 +03:00 [INF] Request completed successfully with status code 200
+2025-09-16 01:01:55.864 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/Treasury/a2ae1dc5-6fcb-40cd-85db-2d9bc9346b45/permissions - 200 null application/json; charset=utf-8 39.9727ms
+2025-09-16 01:12:31.614 +03:00 [INF] Starting web host...
+2025-09-16 01:12:31.934 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-16 01:12:31.938 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-16 01:12:32.008 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-16 01:12:32.010 +03:00 [INF] Hosting environment: Development
+2025-09-16 01:12:32.011 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-16 01:12:34.440 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2025-09-16 01:12:34.549 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 109.9975ms
+2025-09-16 01:12:34.574 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-16 01:12:34.581 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 6.8305ms
+2025-09-16 01:12:35.658 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2025-09-16 01:12:35.689 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 31.2264ms
+2025-09-16 01:12:35.856 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2025-09-16 01:12:35.893 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 37.2205ms
+2025-09-16 01:12:45.087 +03:00 [INF] Starting web host...
+2025-09-16 01:12:45.391 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-16 01:12:45.395 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-16 01:12:45.465 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-16 01:12:45.466 +03:00 [INF] Hosting environment: Development
+2025-09-16 01:12:45.467 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-16 01:12:49.303 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2025-09-16 01:12:49.414 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 111.1365ms
+2025-09-16 01:12:49.434 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-16 01:12:49.435 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2025-09-16 01:12:49.441 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 6.7313ms
+2025-09-16 01:12:49.466 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 31.2578ms
+2025-09-16 01:12:50.046 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2025-09-16 01:12:50.103 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 57.1397ms
+2025-09-16 01:20:12.213 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2025-09-16 01:20:12.225 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 12.6763ms
+2025-09-16 01:20:12.267 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-16 01:20:12.272 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 4.3716ms
+2025-09-16 01:20:13.469 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2025-09-16 01:20:13.484 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 14.1604ms
+2025-09-16 01:20:13.671 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2025-09-16 01:20:13.699 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 27.7281ms
+2025-09-16 01:21:15.676 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - application/json 185
+2025-09-16 01:21:15.706 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - 307 0 null 29.8079ms
+2025-09-16 01:21:15.753 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - null null
+2025-09-16 01:21:15.758 +03:00 [INF] CORS policy execution successful.
+2025-09-16 01:21:15.762 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - 204 null null 8.7254ms
+2025-09-16 01:21:15.766 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - application/json 185
+2025-09-16 01:21:15.771 +03:00 [INF] CORS policy execution successful.
+2025-09-16 01:21:15.780 +03:00 [INF] Request started
+2025-09-16 01:21:15.784 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.AddPermission (ModularERP)'
+2025-09-16 01:21:15.800 +03:00 [INF] Route matched with {action = "AddPermission", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Boolean]]] AddPermission(System.Guid, ModularERP.Modules.Finance.Features.Treasuries.Commands.AddWalletPermissionCommand) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-16 01:21:15.806 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-16 01:21:16.409 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-09-16 01:21:16.947 +03:00 [INF] Executed DbCommand (26ms) [Parameters=[@__id_0='23b728a8-081c-44fb-850b-0adf1ffc51d3'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[CompanyId], [t].[CreatedAt], [t].[CreatedById], [t].[CurrencyCode], [t].[DepositAcl], [t].[Description], [t].[IsActive], [t].[IsDeleted], [t].[Name], [t].[Status], [t].[UpdatedAt], [t].[UpdatedById], [t].[WithdrawAcl]
+FROM [Treasuries] AS [t]
+WHERE [t].[Id] = @__id_0
+2025-09-16 01:21:16.973 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-16 01:21:16.986 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.AddPermission (ModularERP) in 1180.7202ms
+2025-09-16 01:21:16.989 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.AddPermission (ModularERP)'
+2025-09-16 01:21:16.991 +03:00 [INF] Request completed successfully with status code 200
+2025-09-16 01:21:16.997 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - 200 null application/json; charset=utf-8 1231.6147ms
+2025-09-16 01:34:04.728 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2025-09-16 01:34:04.735 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 7.2325ms
+2025-09-16 01:34:07.020 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-16 01:34:07.025 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 4.8696ms
+2025-09-16 01:34:07.035 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2025-09-16 01:34:07.045 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 10.4886ms
+2025-09-16 01:34:07.563 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2025-09-16 01:34:07.584 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 20.6426ms

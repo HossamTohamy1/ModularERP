@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace ModularERP.SharedKernel.Interfaces
+namespace ModularERP.Shared.Interfaces
 {
     public interface IGeneralRepository<T> where T : class
     {

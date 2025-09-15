@@ -1,4 +1,4 @@
-﻿using ModularERP.SharedKernel.Interfaces;
+﻿using ModularERP.Shared.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System.Linq.Expressions;

@@ -7,7 +7,7 @@ using ModularERP.Modules.Finance.Features.Currencies.Models;
 using ModularERP.Modules.Finance.Features.Treasuries.DTO;
 using ModularERP.Modules.Finance.Features.Treasuries.Models;
 using ModularERP.Modules.Finance.Features.Treasuries.Queries;
-using ModularERP.SharedKernel.Interfaces;
+using ModularERP.Shared.Interfaces;
 
 namespace ModularERP.Modules.Finance.Features.Treasuries.Handlers
 {

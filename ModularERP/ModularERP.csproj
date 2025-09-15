@@ -44,7 +44,6 @@
     <Folder Include="Modules\Finance\Features\AuditLogs\Queries\" />
     <Folder Include="Modules\Finance\Features\AuditLogs\Validators\" />
     <Folder Include="Modules\Finance\Features\BankAccounts\Commands\" />
-    <Folder Include="Modules\Finance\Features\BankAccounts\Controllers\" />
     <Folder Include="Modules\Finance\Features\BankAccounts\Handlers\" />
     <Folder Include="Modules\Finance\Features\BankAccounts\Mapping\" />
     <Folder Include="Modules\Finance\Features\BankAccounts\Queries\" />
@@ -109,6 +108,13 @@
     <Folder Include="Modules\Finance\Features\Vouchers\Mapping\" />
     <Folder Include="Modules\Finance\Features\Vouchers\Queries\" />
     <Folder Include="Modules\Finance\Features\Vouchers\Validators\" />
+    <Folder Include="Modules\Finance\Features\WalletPermissions\Commands\" />
+    <Folder Include="Modules\Finance\Features\WalletPermissions\Controllers\" />
+    <Folder Include="Modules\Finance\Features\WalletPermissions\Handlers\" />
+    <Folder Include="Modules\Finance\Features\WalletPermissions\Mapping\" />
+    <Folder Include="Modules\Finance\Features\WalletPermissions\Models\" />
+    <Folder Include="Modules\Finance\Features\WalletPermissions\Queries\" />
+    <Folder Include="Modules\Finance\Features\WalletPermissions\Validators\" />
     <Folder Include="Modules\Inventory\Features\Commands\" />
     <Folder Include="Modules\Inventory\Features\Controllers\" />
     <Folder Include="Modules\Inventory\Features\Handlers\" />

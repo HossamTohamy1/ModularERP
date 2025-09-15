@@ -13,7 +13,7 @@ using ModularERP.Modules.Finance.Features.Treasuries.Validators;
 using ModularERP.Modules.Finance.Features.Treasuries.Models;
 using ModularERP.Modules.Finance.Features.Companys.Models;
 using ModularERP.Modules.Finance.Features.Currencies.Models;
-using ModularERP.SharedKernel.Interfaces;
+using ModularERP.Shared.Interfaces;
 using ModularERP.SharedKernel.Repository;
 using FluentValidation;
 using MediatR;
@@ -44,11 +44,9 @@ namespace ModularERP
                 // Add services to the container.
                 builder.Services.AddControllers();
 
-                // Swagger / OpenAPI
                 builder.Services.AddEndpointsApiExplorer();
                 builder.Services.AddSwaggerGen();
 
-                // 🔥 Add CORS
                 builder.Services.AddCors(options =>
                 {
                     options.AddPolicy("AllowAll", policy =>
@@ -59,7 +57,6 @@ namespace ModularERP
                     });
                 });
 
-                // DbContext
                 builder.Services.AddDbContext<FinanceDbContext>(options =>
                 {
                     options
@@ -71,26 +68,22 @@ namespace ModularERP
 
                 builder.Services.AddCommonServices();
 
-                // ✅ MediatR
                 builder.Services.AddMediatR(cfg =>
                 {
                     cfg.RegisterServicesFromAssembly(typeof(CreateTreasuryHandler).Assembly);
                 });
 
-                // ✅ AutoMapper
                 builder.Services.AddAutoMapper(cfg =>
                 {
                     cfg.AddProfile<TreasuryMappingProfile>();
                 });
 
-                // ✅ FluentValidation - تسجيل يدوي مبسط
                 builder.Services.AddScoped<IValidator<CreateTreasuryCommand>, CreateTreasuryCommandValidator>();
                 builder.Services.AddScoped<IValidator<UpdateTreasuryCommand>, UpdateTreasuryCommandValidator>();
                 builder.Services.AddScoped<IValidator<DeleteTreasuryCommand>, DeleteTreasuryCommandValidator>();
                 builder.Services.AddScoped<IValidator<CreateTreasuryDto>, CreateTreasuryDtoValidator>();
                 builder.Services.AddScoped<IValidator<UpdateTreasuryDto>, UpdateTreasuryDtoValidator>();
 
-                // ✅ Repositories
                 builder.Services.AddScoped<IGeneralRepository<Treasury>, GeneralRepository<Treasury>>();
 
 

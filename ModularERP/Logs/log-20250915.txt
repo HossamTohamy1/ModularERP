@@ -1417,3 +1417,33 @@ WHERE [t].[IsDeleted] = CAST(0 AS bit) AND [t].[CompanyId] = @__request_CompanyI
 2025-09-15 14:55:07.355 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.GetTreasuryStatistics (ModularERP)'
 2025-09-15 14:55:07.357 +03:00 [INF] Request completed successfully with status code 200
 2025-09-15 14:55:07.358 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/Treasury/statistics?companyId=d36b22ee-69fd-491c-99a6-36faa8dbfd1a - 200 null application/json; charset=utf-8 95.4198ms
+2025-09-15 23:59:02.402 +03:00 [INF] Starting web host...
+2025-09-15 23:59:03.222 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-15 23:59:03.224 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-15 23:59:03.306 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-15 23:59:03.307 +03:00 [INF] Hosting environment: Development
+2025-09-15 23:59:03.308 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-15 23:59:05.688 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2025-09-15 23:59:05.890 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 203.2597ms
+2025-09-15 23:59:05.919 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-15 23:59:05.926 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 7.8295ms
+2025-09-15 23:59:07.084 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2025-09-15 23:59:07.150 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 65.7862ms
+2025-09-15 23:59:07.339 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2025-09-15 23:59:07.367 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 28.0012ms
+2025-09-15 23:59:15.162 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5004/api/Treasury - application/json 194
+2025-09-15 23:59:15.174 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5004/api/Treasury - 307 0 null 12.2826ms
+2025-09-15 23:59:15.227 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/Treasury - null null
+2025-09-15 23:59:15.233 +03:00 [INF] CORS policy execution successful.
+2025-09-15 23:59:15.236 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/Treasury - 204 null null 8.7252ms
+2025-09-15 23:59:15.239 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/Treasury - application/json 194
+2025-09-15 23:59:15.242 +03:00 [INF] CORS policy execution successful.
+2025-09-15 23:59:15.252 +03:00 [INF] Request started
+2025-09-15 23:59:15.255 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.CreateTreasury (ModularERP)'
+2025-09-15 23:59:15.282 +03:00 [INF] Route matched with {action = "CreateTreasury", controller = "Treasury"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryCreatedDto]]] CreateTreasury(ModularERP.Modules.Finance.Features.Treasuries.DTO.CreateTreasuryDto) on controller ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController (ModularERP).
+2025-09-15 23:59:15.289 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-15 23:59:15.322 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-09-15 23:59:15.346 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.CreateTreasury (ModularERP) in 56.1033ms
+2025-09-15 23:59:15.348 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.CreateTreasury (ModularERP)'
+2025-09-15 23:59:15.350 +03:00 [INF] Request completed successfully with status code 400
+2025-09-15 23:59:15.351 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/Treasury - 400 null application/problem+json; charset=utf-8 112.1172ms

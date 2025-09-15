@@ -9,14 +9,10 @@ namespace ModularERP.Modules.Finance.Features.Treasuries.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class TreasuryController : ControllerBase
+    public class TreasuryController : WalletPermissionsControllerBase
     {
-        private readonly IMediator _mediator;
-
-        public TreasuryController(IMediator mediator)
-        {
-            _mediator = mediator;
-        }
+        protected override string WalletType => "Treasury";
+        public TreasuryController(IMediator mediator) : base(mediator) { }
 
 
         [HttpGet]
@@ -162,5 +158,7 @@ namespace ModularERP.Modules.Finance.Features.Treasuries.Controllers
             var result = await _mediator.Send(query);
             return result.IsSuccess ? Ok(result) : StatusCode(500, result);
         }
+
+   
     }
 }

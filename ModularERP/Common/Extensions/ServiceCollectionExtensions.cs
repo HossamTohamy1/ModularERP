@@ -1,6 +1,6 @@
 ﻿using ModularERP.Common.Middleware;
 using Microsoft.Extensions.DependencyInjection;
-using ModularERP.SharedKernel.Interfaces;
+using ModularERP.Shared.Interfaces;
 using ModularERP.SharedKernel.Repository;
 
 namespace ModularERP.Common.Extensions
