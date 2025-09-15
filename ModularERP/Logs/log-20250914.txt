@@ -1,0 +1,7 @@
+2025-09-14 20:53:18.652 +03:00 [INF] Starting web host...
+2025-09-14 20:53:18.931 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-09-14 20:53:19.047 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-14 20:53:19.050 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-14 20:53:19.101 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-14 20:53:19.103 +03:00 [INF] Hosting environment: Development
+2025-09-14 20:53:19.104 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP

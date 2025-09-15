@@ -81,10 +81,10 @@ namespace ModularERP.Migrations
                     Symbol = table.Column<string>(type: "nvarchar(5)", maxLength: 5, nullable: false),
                     Decimals = table.Column<int>(type: "int", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
-                    Id = table.Column<int>(type: "int", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     CreatedById = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UpdatedById = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
@@ -394,18 +394,18 @@ namespace ModularERP.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Type = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Type = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Code = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Status = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Status = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CurrencyCode = table.Column<string>(type: "nvarchar(3)", maxLength: 3, nullable: false),
                     FxRate = table.Column<decimal>(type: "decimal(18,6)", nullable: false),
                     Amount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CategoryAccountId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    WalletType = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    WalletType = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     WalletId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CounterpartyType = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CounterpartyType = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     CounterpartyId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     JournalAccountId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     RecurrenceId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
@@ -731,14 +731,19 @@ namespace ModularERP.Migrations
                 column: "CurrencyCode");
 
             migrationBuilder.CreateIndex(
-                name: "IX_LedgerEntries_GlAccountId",
+                name: "IX_LedgerEntries_VoucherId",
+                table: "LedgerEntries",
+                column: "VoucherId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_LedgerEntry_Account",
                 table: "LedgerEntries",
                 column: "GlAccountId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_LedgerEntries_VoucherId",
+                name: "IX_LedgerEntry_Date",
                 table: "LedgerEntries",
-                column: "VoucherId");
+                column: "EntryDate");
 
             migrationBuilder.CreateIndex(
                 name: "IX_RecurringSchedules_CreatedBy",
@@ -767,6 +772,31 @@ namespace ModularERP.Migrations
                 table: "Vendors",
                 column: "Code",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Voucher_Counterparty",
+                table: "Vouchers",
+                columns: new[] { "CounterpartyType", "CounterpartyId" });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Voucher_Date",
+                table: "Vouchers",
+                column: "Date");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Voucher_Status",
+                table: "Vouchers",
+                column: "Status");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Voucher_Type",
+                table: "Vouchers",
+                column: "Type");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Voucher_Wallet",
+                table: "Vouchers",
+                columns: new[] { "WalletType", "WalletId" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Vouchers_BankAccountId",

@@ -6,7 +6,6 @@ namespace ModularERP.Modules.Finance.Features.Attachments.Models
 {
     public class VoucherAttachment : BaseEntity
     {
-        public Guid Id { get; set; }
 
         public Guid VoucherId { get; set; }
 

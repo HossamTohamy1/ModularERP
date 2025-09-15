@@ -8,7 +8,6 @@ namespace ModularERP.Modules.Finance.Features.Taxs.Models
 {
     public class Tax : BaseEntity
     {
-        public Guid Id { get; set; }
 
         [Required, MaxLength(20)]
         public string Code { get; set; } = string.Empty;

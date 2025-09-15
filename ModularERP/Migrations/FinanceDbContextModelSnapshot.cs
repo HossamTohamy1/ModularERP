@@ -153,7 +153,7 @@ namespace ModularERP.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("ModularERP.Modules.Common.Models.ApplicationUser", b =>
+            modelBuilder.Entity("ModularERP.Common.Models.ApplicationUser", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -473,8 +473,8 @@ namespace ModularERP.Migrations
                     b.Property<int>("Decimals")
                         .HasColumnType("int");
 
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
@@ -653,7 +653,11 @@ namespace ModularERP.Migrations
 
                     b.HasIndex("CurrencyCode");
 
-                    b.HasIndex("GlAccountId");
+                    b.HasIndex("EntryDate")
+                        .HasDatabaseName("IX_LedgerEntry_Date");
+
+                    b.HasIndex("GlAccountId")
+                        .HasDatabaseName("IX_LedgerEntry_Account");
 
                     b.HasIndex("VoucherId");
 
@@ -940,7 +944,7 @@ namespace ModularERP.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("CounterpartyType")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -997,14 +1001,14 @@ namespace ModularERP.Migrations
 
                     b.Property<string>("Status")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<Guid?>("TreasuryId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Type")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -1017,7 +1021,7 @@ namespace ModularERP.Migrations
 
                     b.Property<string>("WalletType")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
@@ -1029,6 +1033,9 @@ namespace ModularERP.Migrations
 
                     b.HasIndex("CurrencyCode");
 
+                    b.HasIndex("Date")
+                        .HasDatabaseName("IX_Voucher_Date");
+
                     b.HasIndex("JournalAccountId");
 
                     b.HasIndex("PostedBy");
@@ -1037,10 +1044,22 @@ namespace ModularERP.Migrations
 
                     b.HasIndex("ReversedBy");
 
+                    b.HasIndex("Status")
+                        .HasDatabaseName("IX_Voucher_Status");
+
                     b.HasIndex("TreasuryId");
+
+                    b.HasIndex("Type")
+                        .HasDatabaseName("IX_Voucher_Type");
 
                     b.HasIndex("CompanyId", "Code")
                         .IsUnique();
+
+                    b.HasIndex("CounterpartyType", "CounterpartyId")
+                        .HasDatabaseName("IX_Voucher_Counterparty");
+
+                    b.HasIndex("WalletType", "WalletId")
+                        .HasDatabaseName("IX_Voucher_Wallet");
 
                     b.ToTable("Vouchers");
                 });
@@ -1056,7 +1075,7 @@ namespace ModularERP.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<System.Guid>", b =>
                 {
-                    b.HasOne("ModularERP.Modules.Common.Models.ApplicationUser", null)
+                    b.HasOne("ModularERP.Common.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1065,7 +1084,7 @@ namespace ModularERP.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<System.Guid>", b =>
                 {
-                    b.HasOne("ModularERP.Modules.Common.Models.ApplicationUser", null)
+                    b.HasOne("ModularERP.Common.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1080,7 +1099,7 @@ namespace ModularERP.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ModularERP.Modules.Common.Models.ApplicationUser", null)
+                    b.HasOne("ModularERP.Common.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1089,7 +1108,7 @@ namespace ModularERP.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
                 {
-                    b.HasOne("ModularERP.Modules.Common.Models.ApplicationUser", null)
+                    b.HasOne("ModularERP.Common.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1098,7 +1117,7 @@ namespace ModularERP.Migrations
 
             modelBuilder.Entity("ModularERP.Modules.Finance.Features.Attachments.Models.VoucherAttachment", b =>
                 {
-                    b.HasOne("ModularERP.Modules.Common.Models.ApplicationUser", "UploadedByUser")
+                    b.HasOne("ModularERP.Common.Models.ApplicationUser", "UploadedByUser")
                         .WithMany("UploadedAttachments")
                         .HasForeignKey("UploadedBy")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1117,7 +1136,7 @@ namespace ModularERP.Migrations
 
             modelBuilder.Entity("ModularERP.Modules.Finance.Features.AuditLogs.Models.AuditLog", b =>
                 {
-                    b.HasOne("ModularERP.Modules.Common.Models.ApplicationUser", "User")
+                    b.HasOne("ModularERP.Common.Models.ApplicationUser", "User")
                         .WithMany("AuditLogs")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1193,7 +1212,7 @@ namespace ModularERP.Migrations
 
             modelBuilder.Entity("ModularERP.Modules.Finance.Features.RecurringSchedules.Models.RecurringSchedule", b =>
                 {
-                    b.HasOne("ModularERP.Modules.Common.Models.ApplicationUser", "Creator")
+                    b.HasOne("ModularERP.Common.Models.ApplicationUser", "Creator")
                         .WithMany("CreatedSchedules")
                         .HasForeignKey("CreatedBy")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1258,7 +1277,7 @@ namespace ModularERP.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ModularERP.Modules.Common.Models.ApplicationUser", "Creator")
+                    b.HasOne("ModularERP.Common.Models.ApplicationUser", "Creator")
                         .WithMany("CreatedVouchers")
                         .HasForeignKey("CreatedBy")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -1276,7 +1295,7 @@ namespace ModularERP.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("ModularERP.Modules.Common.Models.ApplicationUser", "Poster")
+                    b.HasOne("ModularERP.Common.Models.ApplicationUser", "Poster")
                         .WithMany("PostedVouchers")
                         .HasForeignKey("PostedBy")
                         .OnDelete(DeleteBehavior.Restrict);
@@ -1285,7 +1304,7 @@ namespace ModularERP.Migrations
                         .WithMany("Vouchers")
                         .HasForeignKey("RecurringScheduleId");
 
-                    b.HasOne("ModularERP.Modules.Common.Models.ApplicationUser", "Reverser")
+                    b.HasOne("ModularERP.Common.Models.ApplicationUser", "Reverser")
                         .WithMany("ReversedVouchers")
                         .HasForeignKey("ReversedBy")
                         .OnDelete(DeleteBehavior.Restrict);
@@ -1311,7 +1330,7 @@ namespace ModularERP.Migrations
                     b.Navigation("Reverser");
                 });
 
-            modelBuilder.Entity("ModularERP.Modules.Common.Models.ApplicationUser", b =>
+            modelBuilder.Entity("ModularERP.Common.Models.ApplicationUser", b =>
                 {
                     b.Navigation("AuditLogs");
 

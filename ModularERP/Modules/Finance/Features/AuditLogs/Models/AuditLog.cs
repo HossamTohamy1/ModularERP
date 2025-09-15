@@ -7,7 +7,6 @@ namespace ModularERP.Modules.Finance.Features.AuditLogs.Models
 {
     public class AuditLog : BaseEntity
     {
-        public Guid Id { get; set; }
 
         public Guid VoucherId { get; set; }
 

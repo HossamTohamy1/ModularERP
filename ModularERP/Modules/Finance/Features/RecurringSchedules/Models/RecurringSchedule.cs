@@ -7,7 +7,6 @@ namespace ModularERP.Modules.Finance.Features.RecurringSchedules.Models
 {
     public class RecurringSchedule : BaseEntity
     {
-        public Guid Id { get; set; }
 
         [Required]
         public ScheduleFrequency Frequency { get; set; }

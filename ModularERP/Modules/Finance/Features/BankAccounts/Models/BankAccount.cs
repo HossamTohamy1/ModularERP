@@ -10,7 +10,6 @@ namespace ModularERP.Modules.Finance.Features.BankAccounts.Models
 {
     public class BankAccount : BaseEntity
     {
-        public Guid Id { get; set; }
 
         public Guid CompanyId { get; set; }
 

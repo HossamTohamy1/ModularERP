@@ -134,6 +134,12 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .OnDelete(DeleteBehavior.Restrict);
 
                 entity.HasOne(e => e.Currency).WithMany(e => e.Vouchers).HasForeignKey(e => e.CurrencyCode);
+
+                entity.HasIndex(e => e.Date).HasDatabaseName("IX_Voucher_Date");
+                entity.HasIndex(e => e.Status).HasDatabaseName("IX_Voucher_Status");
+                entity.HasIndex(e => e.Type).HasDatabaseName("IX_Voucher_Type");
+                entity.HasIndex(e => new { e.WalletType, e.WalletId }).HasDatabaseName("IX_Voucher_Wallet");
+                entity.HasIndex(e => new { e.CounterpartyType, e.CounterpartyId }).HasDatabaseName("IX_Voucher_Counterparty");
             });
 
             // VoucherTax Configuration
@@ -150,6 +156,8 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.HasOne(e => e.Voucher).WithMany(e => e.LedgerEntries).HasForeignKey(e => e.VoucherId).OnDelete(DeleteBehavior.Restrict);
                 entity.HasOne(e => e.GlAccount).WithMany(e => e.LedgerEntries).HasForeignKey(e => e.GlAccountId);
                 entity.HasOne(e => e.Currency).WithMany(e => e.LedgerEntries).HasForeignKey(e => e.CurrencyCode);
+                entity.HasIndex(e => e.EntryDate).HasDatabaseName("IX_LedgerEntry_Date");
+                entity.HasIndex(e => e.GlAccountId).HasDatabaseName("IX_LedgerEntry_Account");
             });
 
             // Tax Configuration
@@ -174,9 +182,8 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
             // Currency Configuration
             builder.Entity<Currency>(entity =>
             {
-                entity.HasKey(e => e.Code);
+                entity.HasKey(e => e.Code); // مهم للـ foreign keys
             });
-
             // Attachment Configuration
             builder.Entity<VoucherAttachment>(entity =>
             {

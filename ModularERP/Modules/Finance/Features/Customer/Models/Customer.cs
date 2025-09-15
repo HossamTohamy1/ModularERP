@@ -5,7 +5,6 @@ namespace ModularERP.Modules.Finance.Features.Customer.Models
 {
     public class Customer : BaseEntity
     {
-        public Guid Id { get; set; }
 
         [Required, MaxLength(20)]
         public string Code { get; set; } = string.Empty;

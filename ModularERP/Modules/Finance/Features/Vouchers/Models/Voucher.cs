@@ -16,7 +16,6 @@ namespace ModularERP.Modules.Finance.Features.Vouchers.Models
 {
     public class Voucher : BaseEntity
     {
-        public Guid Id { get; set; }
 
         public VoucherType Type { get; set; }
 

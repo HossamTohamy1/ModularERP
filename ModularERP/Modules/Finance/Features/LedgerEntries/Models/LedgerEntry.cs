@@ -10,7 +10,6 @@ namespace ModularERP.Modules.Finance.Features.LedgerEntries.Models
 {
     public class LedgerEntry : BaseEntity
     {
-        public Guid Id { get; set; }
 
         public Guid VoucherId { get; set; }
 

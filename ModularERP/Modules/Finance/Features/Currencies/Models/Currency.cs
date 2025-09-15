@@ -18,6 +18,7 @@ namespace ModularERP.Modules.Finance.Features.Currencies.Models
         public int Decimals { get; set; } = 2;
 
         public bool IsActive { get; set; } = true;
+        public bool IsDeleted { get; set; }
 
         // Navigation properties
         public virtual ICollection<Voucher> Vouchers { get; set; } = new List<Voucher>();

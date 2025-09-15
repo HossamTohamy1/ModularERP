@@ -9,7 +9,6 @@ namespace ModularERP.Modules.Finance.Features.GlAccounts.Models
 {
     public class GlAccount : BaseEntity
     {
-        public Guid Id { get; set; }
 
         [Required, MaxLength(20)]
         public string Code { get; set; } = string.Empty;

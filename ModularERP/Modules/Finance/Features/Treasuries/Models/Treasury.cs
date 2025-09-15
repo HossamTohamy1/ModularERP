@@ -10,7 +10,6 @@ namespace ModularERP.Modules.Finance.Features.Treasuries.Models
 {
     public class Treasury : BaseEntity
     {
-        public Guid Id { get; set; }
 
         public Guid CompanyId { get; set; }
 
