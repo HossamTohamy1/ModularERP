@@ -4,6 +4,7 @@ using ModularERP.Common.ViewModel;
 using ModularERP.Modules.Finance.Features.Treasuries.Commands;
 using ModularERP.Modules.Finance.Features.Treasuries.Queries;
 using ModularERP.Modules.Finance.Features.Treasuries.DTO;
+using ModularERP.Modules.Finance.Features.WalletPermissions.Controllers;
 
 namespace ModularERP.Modules.Finance.Features.Treasuries.Controllers
 {

@@ -1582,13 +1582,15 @@
       "UpdateWalletPermissionDto": {
         "type": "object",
         "properties": {
-          "depositAcl": {
+          "userId": {
             "type": "string",
-            "nullable": true
+            "format": "uuid"
           },
-          "withdrawAcl": {
-            "type": "string",
-            "nullable": true
+          "canDeposit": {
+            "type": "boolean"
+          },
+          "canWithdraw": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false

@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using ModularERP.Modules.Finance.Features.Treasuries.Controllers;
+using ModularERP.Modules.Finance.Features.WalletPermissions.Controllers;
 
 
 namespace ModularERP.Modules.Finance.Features.BankAccounts.Controllers

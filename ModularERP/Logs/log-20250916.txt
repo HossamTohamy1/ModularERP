@@ -495,3 +495,897 @@ WHERE [t].[Id] = @__id_0
 2025-09-16 01:34:07.045 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 10.4886ms
 2025-09-16 01:34:07.563 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
 2025-09-16 01:34:07.584 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 20.6426ms
+2025-09-16 01:40:37.912 +03:00 [INF] Starting web host...
+2025-09-16 01:40:38.237 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-16 01:40:38.240 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-16 01:40:38.314 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-16 01:40:38.315 +03:00 [INF] Hosting environment: Development
+2025-09-16 01:40:38.316 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-16 01:41:40.964 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - application/json 185
+2025-09-16 01:41:40.996 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - 307 0 null 32.111ms
+2025-09-16 01:41:41.033 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - null null
+2025-09-16 01:41:41.040 +03:00 [INF] CORS policy execution successful.
+2025-09-16 01:41:41.043 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - 204 null null 9.8216ms
+2025-09-16 01:41:41.046 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - application/json 185
+2025-09-16 01:41:41.050 +03:00 [INF] CORS policy execution successful.
+2025-09-16 01:41:41.059 +03:00 [INF] Request started
+2025-09-16 01:41:41.062 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.AddPermission (ModularERP)'
+2025-09-16 01:41:41.079 +03:00 [INF] Route matched with {action = "AddPermission", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Boolean]]] AddPermission(System.Guid, ModularERP.Modules.Finance.Features.Treasuries.Commands.AddWalletPermissionCommand) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-16 01:41:41.085 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-16 01:41:41.714 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-09-16 01:41:42.270 +03:00 [INF] Executed DbCommand (34ms) [Parameters=[@__id_0='23b728a8-081c-44fb-850b-0adf1ffc51d3'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-16 01:41:42.353 +03:00 [ERR] Error adding wallet permission
+System.Text.Json.JsonException: 'U' is an invalid start of a value. Path: $ | LineNumber: 0 | BytePositionInLine: 0.
+ ---> System.Text.Json.JsonReaderException: 'U' is an invalid start of a value. LineNumber: 0 | BytePositionInLine: 0.
+   at System.Text.Json.ThrowHelper.ThrowJsonReaderException(Utf8JsonReader& json, ExceptionResource resource, Byte nextByte, ReadOnlySpan`1 bytes)
+   at System.Text.Json.Utf8JsonReader.ConsumeValue(Byte marker)
+   at System.Text.Json.Utf8JsonReader.ReadFirstToken(Byte first)
+   at System.Text.Json.Utf8JsonReader.ReadSingleSegment()
+   at System.Text.Json.Utf8JsonReader.Read()
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   --- End of inner exception stack trace ---
+   at System.Text.Json.ThrowHelper.ReThrowWithPath(ReadStack& state, JsonReaderException ex)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at ModularERP.Modules.Finance.Features.Treasuries.Handlers.AddWalletPermissionHandler.Handle(AddWalletPermissionCommand request, CancellationToken cancellationToken) in C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP\Modules\Finance\Features\Treasuries\Handlers\AddWalletPermissionHandler.cs:line 78
+2025-09-16 01:41:42.396 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-16 01:41:42.410 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.AddPermission (ModularERP) in 1325.8146ms
+2025-09-16 01:41:42.413 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.AddPermission (ModularERP)'
+2025-09-16 01:41:42.415 +03:00 [INF] Request completed successfully with status code 200
+2025-09-16 01:41:42.424 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - 200 null application/json; charset=utf-8 1378.1195ms
+2025-09-16 01:42:02.062 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - application/json 184
+2025-09-16 01:42:02.083 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - 307 0 null 20.6067ms
+2025-09-16 01:42:02.104 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - null null
+2025-09-16 01:42:02.109 +03:00 [INF] CORS policy execution successful.
+2025-09-16 01:42:02.110 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - 204 null null 5.9982ms
+2025-09-16 01:42:02.112 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - application/json 184
+2025-09-16 01:42:02.117 +03:00 [INF] CORS policy execution successful.
+2025-09-16 01:42:02.119 +03:00 [INF] Request started
+2025-09-16 01:42:02.119 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.AddPermission (ModularERP)'
+2025-09-16 01:42:02.121 +03:00 [INF] Route matched with {action = "AddPermission", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Boolean]]] AddPermission(System.Guid, ModularERP.Modules.Finance.Features.Treasuries.Commands.AddWalletPermissionCommand) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-16 01:42:02.173 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__id_0='23b728a8-081c-44fb-850b-0adf1ffc51d3'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-16 01:42:02.177 +03:00 [ERR] Error adding wallet permission
+System.Text.Json.JsonException: 'U' is an invalid start of a value. Path: $ | LineNumber: 0 | BytePositionInLine: 0.
+ ---> System.Text.Json.JsonReaderException: 'U' is an invalid start of a value. LineNumber: 0 | BytePositionInLine: 0.
+   at System.Text.Json.ThrowHelper.ThrowJsonReaderException(Utf8JsonReader& json, ExceptionResource resource, Byte nextByte, ReadOnlySpan`1 bytes)
+   at System.Text.Json.Utf8JsonReader.ConsumeValue(Byte marker)
+   at System.Text.Json.Utf8JsonReader.ReadFirstToken(Byte first)
+   at System.Text.Json.Utf8JsonReader.ReadSingleSegment()
+   at System.Text.Json.Utf8JsonReader.Read()
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   --- End of inner exception stack trace ---
+   at System.Text.Json.ThrowHelper.ReThrowWithPath(ReadStack& state, JsonReaderException ex)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at ModularERP.Modules.Finance.Features.Treasuries.Handlers.AddWalletPermissionHandler.Handle(AddWalletPermissionCommand request, CancellationToken cancellationToken) in C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP\Modules\Finance\Features\Treasuries\Handlers\AddWalletPermissionHandler.cs:line 78
+2025-09-16 01:42:02.186 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-16 01:42:02.188 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.AddPermission (ModularERP) in 64.7386ms
+2025-09-16 01:42:02.190 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.AddPermission (ModularERP)'
+2025-09-16 01:42:02.191 +03:00 [INF] Request completed successfully with status code 200
+2025-09-16 01:42:02.192 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - 200 null application/json; charset=utf-8 80.3901ms
+2025-09-16 01:46:08.314 +03:00 [INF] Starting web host...
+2025-09-16 01:46:08.713 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-16 01:46:08.718 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-16 01:46:08.815 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-16 01:46:08.817 +03:00 [INF] Hosting environment: Development
+2025-09-16 01:46:08.818 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-16 01:46:18.802 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2025-09-16 01:46:18.960 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 158.8344ms
+2025-09-16 01:46:18.987 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-16 01:46:18.994 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 7.3017ms
+2025-09-16 01:46:20.007 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2025-09-16 01:46:20.064 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 56.4355ms
+2025-09-16 01:46:20.225 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2025-09-16 01:46:20.260 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 35.5384ms
+2025-09-16 01:46:36.948 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - application/json 184
+2025-09-16 01:46:36.955 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - 307 0 null 7.1892ms
+2025-09-16 01:46:36.993 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - null null
+2025-09-16 01:46:36.999 +03:00 [INF] CORS policy execution successful.
+2025-09-16 01:46:37.001 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - 204 null null 7.4636ms
+2025-09-16 01:46:37.004 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - application/json 184
+2025-09-16 01:46:37.008 +03:00 [INF] CORS policy execution successful.
+2025-09-16 01:46:37.018 +03:00 [INF] Request started
+2025-09-16 01:46:37.021 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.AddPermission (ModularERP)'
+2025-09-16 01:46:37.039 +03:00 [INF] Route matched with {action = "AddPermission", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Boolean]]] AddPermission(System.Guid, ModularERP.Modules.Finance.Features.Treasuries.Commands.AddWalletPermissionCommand) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-16 01:46:37.046 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-16 01:46:37.664 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-09-16 01:46:38.255 +03:00 [INF] Executed DbCommand (27ms) [Parameters=[@__id_0='23b728a8-081c-44fb-850b-0adf1ffc51d3'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-16 01:46:38.429 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@p15='23b728a8-081c-44fb-850b-0adf1ffc51d3', @p0='9876543210' (Nullable = false) (Size = 50), @p1='HSBC Egypt' (Nullable = false) (Size = 100), @p2='d36b22ee-69fd-491c-99a6-36faa8dbfd1a', @p3='2025-09-16T01:19:48.5666667', @p4='EB7F2E49-F11E-4EC0-AF82-E1C1DD86D305' (Size = 4000), @p5='USD' (Nullable = false) (Size = 3), @p6='User2,User3,5dbceb39-9677-46d7-bf8a-2eb914c55437' (Nullable = false) (Size = 4000), @p7='Used for employee salary payments' (Size = 4000), @p8='True', @p9='False', @p10='Payroll Account' (Nullable = false) (Size = 100), @p11='Active' (Nullable = false) (Size = 4000), @p12='2025-09-16T01:19:48.5666667' (Nullable = true), @p13='AE29EF99-8BD9-4E31-B6AD-599517EC9B96' (Size = 4000), @p14='User2,5dbceb39-9677-46d7-bf8a-2eb914c55437' (Nullable = false) (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [BankAccounts] SET [AccountNumber] = @p0, [BankName] = @p1, [CompanyId] = @p2, [CreatedAt] = @p3, [CreatedById] = @p4, [CurrencyCode] = @p5, [DepositAcl] = @p6, [Description] = @p7, [IsActive] = @p8, [IsDeleted] = @p9, [Name] = @p10, [Status] = @p11, [UpdatedAt] = @p12, [UpdatedById] = @p13, [WithdrawAcl] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2025-09-16 01:46:38.448 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-16 01:46:38.461 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.AddPermission (ModularERP) in 1415.9033ms
+2025-09-16 01:46:38.464 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.AddPermission (ModularERP)'
+2025-09-16 01:46:38.468 +03:00 [INF] Request completed successfully with status code 200
+2025-09-16 01:46:38.475 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - 200 null application/json; charset=utf-8 1470.6468ms
+2025-09-16 01:47:05.508 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - null null
+2025-09-16 01:47:05.513 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 307 0 null 5.0606ms
+2025-09-16 01:47:05.538 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - null null
+2025-09-16 01:47:05.543 +03:00 [INF] CORS policy execution successful.
+2025-09-16 01:47:05.547 +03:00 [INF] Request started
+2025-09-16 01:47:05.550 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetPermissions (ModularERP)'
+2025-09-16 01:47:05.556 +03:00 [INF] Route matched with {action = "GetPermissions", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto]]] GetPermissions(System.Guid) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-16 01:47:05.633 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='23b728a8-081c-44fb-850b-0adf1ffc51d3'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-16 01:47:05.640 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-16 01:47:05.645 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetPermissions (ModularERP) in 84.6964ms
+2025-09-16 01:47:05.650 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetPermissions (ModularERP)'
+2025-09-16 01:47:05.652 +03:00 [INF] Request completed successfully with status code 200
+2025-09-16 01:47:05.654 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 200 null application/json; charset=utf-8 116.7262ms
+2025-09-16 13:23:36.038 +03:00 [INF] Starting web host...
+2025-09-16 13:23:36.384 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-16 13:23:36.388 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-16 13:23:36.467 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-16 13:23:36.469 +03:00 [INF] Hosting environment: Development
+2025-09-16 13:23:36.470 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-16 13:23:37.985 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2025-09-16 13:23:38.133 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 149.3762ms
+2025-09-16 13:23:38.167 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-16 13:23:38.176 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 8.6142ms
+2025-09-16 13:23:39.179 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2025-09-16 13:23:39.236 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 56.811ms
+2025-09-16 13:23:39.403 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2025-09-16 13:23:39.474 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 70.9023ms
+2025-09-16 13:24:22.514 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - application/json 185
+2025-09-16 13:24:22.545 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - 307 0 null 31.5552ms
+2025-09-16 13:24:22.584 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - null null
+2025-09-16 13:24:22.591 +03:00 [INF] CORS policy execution successful.
+2025-09-16 13:24:22.593 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - 204 null null 8.8984ms
+2025-09-16 13:24:22.596 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - application/json 185
+2025-09-16 13:24:22.599 +03:00 [INF] CORS policy execution successful.
+2025-09-16 13:24:22.609 +03:00 [INF] Request started
+2025-09-16 13:24:22.612 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.AddPermission (ModularERP)'
+2025-09-16 13:24:22.628 +03:00 [INF] Route matched with {action = "AddPermission", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Boolean]]] AddPermission(System.Guid, ModularERP.Modules.Finance.Features.Treasuries.Commands.AddWalletPermissionCommand) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-16 13:24:22.635 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-16 13:24:23.278 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-09-16 13:24:23.835 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[@__id_0='23b728a8-081c-44fb-850b-0adf1ffc51d3'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-16 13:24:24.000 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[@p15='23b728a8-081c-44fb-850b-0adf1ffc51d3', @p0='9876543210' (Nullable = false) (Size = 50), @p1='HSBC Egypt' (Nullable = false) (Size = 100), @p2='d36b22ee-69fd-491c-99a6-36faa8dbfd1a', @p3='2025-09-16T01:19:48.5666667', @p4='EB7F2E49-F11E-4EC0-AF82-E1C1DD86D305' (Size = 4000), @p5='USD' (Nullable = false) (Size = 3), @p6='User2,User3,5dbceb39-9677-46d7-bf8a-2eb914c55437' (Nullable = false) (Size = 4000), @p7='Used for employee salary payments' (Size = 4000), @p8='True', @p9='False', @p10='Payroll Account' (Nullable = false) (Size = 100), @p11='Active' (Nullable = false) (Size = 4000), @p12='2025-09-16T01:19:48.5666667' (Nullable = true), @p13='AE29EF99-8BD9-4E31-B6AD-599517EC9B96' (Size = 4000), @p14='User2,5dbceb39-9677-46d7-bf8a-2eb914c55437,0f23b6e9-a4d0-4415-b02f-aff94439baa6' (Nullable = false) (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [BankAccounts] SET [AccountNumber] = @p0, [BankName] = @p1, [CompanyId] = @p2, [CreatedAt] = @p3, [CreatedById] = @p4, [CurrencyCode] = @p5, [DepositAcl] = @p6, [Description] = @p7, [IsActive] = @p8, [IsDeleted] = @p9, [Name] = @p10, [Status] = @p11, [UpdatedAt] = @p12, [UpdatedById] = @p13, [WithdrawAcl] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2025-09-16 13:24:24.017 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-16 13:24:24.030 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.AddPermission (ModularERP) in 1395.8895ms
+2025-09-16 13:24:24.033 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.AddPermission (ModularERP)'
+2025-09-16 13:24:24.035 +03:00 [INF] Request completed successfully with status code 200
+2025-09-16 13:24:24.043 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - 200 null application/json; charset=utf-8 1447.2839ms
+2025-09-16 13:24:35.987 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - null null
+2025-09-16 13:24:36.005 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 307 0 null 18.1741ms
+2025-09-16 13:24:36.010 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - null null
+2025-09-16 13:24:36.018 +03:00 [INF] CORS policy execution successful.
+2025-09-16 13:24:36.019 +03:00 [INF] Request started
+2025-09-16 13:24:36.020 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetPermissions (ModularERP)'
+2025-09-16 13:24:36.024 +03:00 [INF] Route matched with {action = "GetPermissions", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto]]] GetPermissions(System.Guid) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-16 13:24:36.088 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='23b728a8-081c-44fb-850b-0adf1ffc51d3'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-16 13:24:36.104 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-16 13:24:36.109 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetPermissions (ModularERP) in 82.6373ms
+2025-09-16 13:24:36.112 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetPermissions (ModularERP)'
+2025-09-16 13:24:36.114 +03:00 [INF] Request completed successfully with status code 200
+2025-09-16 13:24:36.115 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 200 null application/json; charset=utf-8 105.6916ms
+2025-09-16 13:53:03.632 +03:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - application/json 201
+2025-09-16 13:53:03.637 +03:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 307 0 null 5.0057ms
+2025-09-16 13:53:03.648 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - null null
+2025-09-16 13:53:03.653 +03:00 [INF] CORS policy execution successful.
+2025-09-16 13:53:03.654 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 204 null null 6.4233ms
+2025-09-16 13:53:03.656 +03:00 [INF] Request starting HTTP/2 PUT https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - application/json 201
+2025-09-16 13:53:03.661 +03:00 [INF] CORS policy execution successful.
+2025-09-16 13:53:03.663 +03:00 [INF] Request started
+2025-09-16 13:53:03.664 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP)'
+2025-09-16 13:53:03.669 +03:00 [INF] Route matched with {action = "UpdatePermissions", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Boolean]]] UpdatePermissions(System.Guid, ModularERP.Modules.Finance.Features.Treasuries.DTO.UpdateWalletPermissionDto) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-16 13:53:03.697 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='23b728a8-081c-44fb-850b-0adf1ffc51d3'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-16 13:53:03.743 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__entity_Id_0='23b728a8-081c-44fb-850b-0adf1ffc51d3'], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [BankAccounts] AS [b]
+        WHERE [b].[Id] = @__entity_Id_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-09-16 13:53:03.766 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@p2='23b728a8-081c-44fb-850b-0adf1ffc51d3', @p0='{ "userId": "5dbceb39-9677-46d7-bf8a-2eb914c55437", "canDeposit": false}' (Nullable = false) (Size = 4000), @p1='{ "userId": "0f23b6e9-a4d0-4415-b02f-aff94439baa6", "canWithdraw": true }' (Nullable = false) (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [BankAccounts] SET [DepositAcl] = @p0, [WithdrawAcl] = @p1
+OUTPUT 1
+WHERE [Id] = @p2;
+2025-09-16 13:53:03.771 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-16 13:53:03.773 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP) in 100.5563ms
+2025-09-16 13:53:03.774 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP)'
+2025-09-16 13:53:03.776 +03:00 [INF] Request completed successfully with status code 200
+2025-09-16 13:53:03.777 +03:00 [INF] Request finished HTTP/2 PUT https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 200 null application/json; charset=utf-8 121.0828ms
+2025-09-16 13:53:58.092 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - null null
+2025-09-16 13:53:58.097 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 307 0 null 4.9872ms
+2025-09-16 13:53:58.101 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - null null
+2025-09-16 13:53:58.106 +03:00 [INF] CORS policy execution successful.
+2025-09-16 13:53:58.108 +03:00 [INF] Request started
+2025-09-16 13:53:58.109 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetPermissions (ModularERP)'
+2025-09-16 13:53:58.110 +03:00 [INF] Route matched with {action = "GetPermissions", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto]]] GetPermissions(System.Guid) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-16 13:53:58.117 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='23b728a8-081c-44fb-850b-0adf1ffc51d3'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-16 13:53:58.121 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-16 13:53:58.129 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetPermissions (ModularERP) in 16.6529ms
+2025-09-16 13:53:58.132 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetPermissions (ModularERP)'
+2025-09-16 13:53:58.134 +03:00 [INF] Request completed successfully with status code 200
+2025-09-16 13:53:58.135 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 200 null application/json; charset=utf-8 33.8587ms
+2025-09-16 14:05:41.650 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2025-09-16 14:05:41.659 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 9.061ms
+2025-09-16 14:05:41.693 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-16 14:05:41.700 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 6.3855ms
+2025-09-16 14:05:42.796 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2025-09-16 14:05:42.804 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 7.7546ms
+2025-09-16 14:05:42.988 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2025-09-16 14:05:43.012 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 24.3795ms
+2025-09-16 14:09:06.440 +03:00 [INF] Starting web host...
+2025-09-16 14:09:06.797 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-16 14:09:06.801 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-16 14:09:06.879 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-16 14:09:06.881 +03:00 [INF] Hosting environment: Development
+2025-09-16 14:09:06.883 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-16 14:09:23.011 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2025-09-16 14:09:23.134 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 123.4678ms
+2025-09-16 14:09:23.161 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-16 14:09:23.161 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2025-09-16 14:09:23.166 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 4.859ms
+2025-09-16 14:09:23.186 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 24.8647ms
+2025-09-16 14:09:24.637 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2025-09-16 14:09:24.675 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 37.8144ms
+2025-09-16 14:10:15.694 +03:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - application/json 109
+2025-09-16 14:10:15.714 +03:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 307 0 null 19.9175ms
+2025-09-16 14:10:15.770 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - null null
+2025-09-16 14:10:15.777 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:10:15.779 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 204 null null 8.8667ms
+2025-09-16 14:10:15.783 +03:00 [INF] Request starting HTTP/2 PUT https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - application/json 109
+2025-09-16 14:10:15.786 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:10:15.796 +03:00 [INF] Request started
+2025-09-16 14:10:15.799 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP)'
+2025-09-16 14:10:15.817 +03:00 [INF] Route matched with {action = "UpdatePermissions", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Boolean]]] UpdatePermissions(System.Guid, ModularERP.Modules.Finance.Features.Treasuries.DTO.UpdateWalletPermissionDto) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-16 14:10:15.823 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-16 14:10:15.854 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-09-16 14:10:15.875 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP) in 53.1331ms
+2025-09-16 14:10:15.878 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP)'
+2025-09-16 14:10:15.879 +03:00 [INF] Request completed successfully with status code 400
+2025-09-16 14:10:15.881 +03:00 [INF] Request finished HTTP/2 PUT https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 400 null application/problem+json; charset=utf-8 98.5614ms
+2025-09-16 14:11:58.899 +03:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - application/json 106
+2025-09-16 14:11:58.904 +03:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 307 0 null 5.4284ms
+2025-09-16 14:11:58.931 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - null null
+2025-09-16 14:11:58.944 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:11:58.946 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 204 null null 15.4937ms
+2025-09-16 14:11:58.948 +03:00 [INF] Request starting HTTP/2 PUT https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - application/json 106
+2025-09-16 14:11:58.952 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:11:58.954 +03:00 [INF] Request started
+2025-09-16 14:11:58.955 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP)'
+2025-09-16 14:11:58.957 +03:00 [INF] Route matched with {action = "UpdatePermissions", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Boolean]]] UpdatePermissions(System.Guid, ModularERP.Modules.Finance.Features.Treasuries.DTO.UpdateWalletPermissionDto) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-16 14:11:59.645 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-09-16 14:12:00.290 +03:00 [INF] Executed DbCommand (32ms) [Parameters=[@__id_0='23b728a8-081c-44fb-850b-0adf1ffc51d3'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-16 14:12:00.453 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[@p15='23b728a8-081c-44fb-850b-0adf1ffc51d3', @p0='9876543210' (Nullable = false) (Size = 50), @p1='HSBC Egypt' (Nullable = false) (Size = 100), @p2='d36b22ee-69fd-491c-99a6-36faa8dbfd1a', @p3='2025-09-16T01:19:48.5666667', @p4='EB7F2E49-F11E-4EC0-AF82-E1C1DD86D305' (Size = 4000), @p5='USD' (Nullable = false) (Size = 3), @p6='{ "userId": "5dbceb39-9677-46d7-bf8a-2eb914c55437", "canDeposit": false},0f23b6e9-a4d0-4415-b02f-aff94439baa6' (Nullable = false) (Size = 4000), @p7='Used for employee salary payments' (Size = 4000), @p8='True', @p9='False', @p10='Payroll Account' (Nullable = false) (Size = 100), @p11='Active' (Nullable = false) (Size = 4000), @p12='2025-09-16T01:19:48.5666667' (Nullable = true), @p13='AE29EF99-8BD9-4E31-B6AD-599517EC9B96' (Size = 4000), @p14='{ "userId": "0f23b6e9-a4d0-4415-b02f-aff94439baa6", "canWithdraw": true }' (Nullable = false) (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [BankAccounts] SET [AccountNumber] = @p0, [BankName] = @p1, [CompanyId] = @p2, [CreatedAt] = @p3, [CreatedById] = @p4, [CurrencyCode] = @p5, [DepositAcl] = @p6, [Description] = @p7, [IsActive] = @p8, [IsDeleted] = @p9, [Name] = @p10, [Status] = @p11, [UpdatedAt] = @p12, [UpdatedById] = @p13, [WithdrawAcl] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2025-09-16 14:12:00.466 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-16 14:12:00.477 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP) in 1518.1796ms
+2025-09-16 14:12:00.480 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP)'
+2025-09-16 14:12:00.481 +03:00 [INF] Request completed successfully with status code 200
+2025-09-16 14:12:00.488 +03:00 [INF] Request finished HTTP/2 PUT https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 200 null application/json; charset=utf-8 1540.2844ms
+2025-09-16 14:13:23.711 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - null null
+2025-09-16 14:13:23.716 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 307 0 null 4.991ms
+2025-09-16 14:13:23.719 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - null null
+2025-09-16 14:13:23.722 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:13:23.724 +03:00 [INF] Request started
+2025-09-16 14:13:23.725 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetPermissions (ModularERP)'
+2025-09-16 14:13:23.730 +03:00 [INF] Route matched with {action = "GetPermissions", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto]]] GetPermissions(System.Guid) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-16 14:13:23.799 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='23b728a8-081c-44fb-850b-0adf1ffc51d3'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-16 14:13:23.804 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-16 14:13:23.808 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetPermissions (ModularERP) in 75.2929ms
+2025-09-16 14:13:23.811 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetPermissions (ModularERP)'
+2025-09-16 14:13:23.813 +03:00 [INF] Request completed successfully with status code 200
+2025-09-16 14:13:23.814 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 200 null application/json; charset=utf-8 95.171ms
+2025-09-16 14:14:33.195 +03:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - application/json 107
+2025-09-16 14:14:33.200 +03:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 307 0 null 4.8141ms
+2025-09-16 14:14:33.204 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - null null
+2025-09-16 14:14:33.209 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:14:33.210 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 204 null null 6.2532ms
+2025-09-16 14:14:33.212 +03:00 [INF] Request starting HTTP/2 PUT https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - application/json 107
+2025-09-16 14:14:33.217 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:14:33.218 +03:00 [INF] Request started
+2025-09-16 14:14:33.219 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP)'
+2025-09-16 14:14:33.220 +03:00 [INF] Route matched with {action = "UpdatePermissions", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Boolean]]] UpdatePermissions(System.Guid, ModularERP.Modules.Finance.Features.Treasuries.DTO.UpdateWalletPermissionDto) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-16 14:14:33.237 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='23b728a8-081c-44fb-850b-0adf1ffc51d3'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-16 14:14:33.255 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[@p15='23b728a8-081c-44fb-850b-0adf1ffc51d3', @p0='9876543210' (Nullable = false) (Size = 50), @p1='HSBC Egypt' (Nullable = false) (Size = 100), @p2='d36b22ee-69fd-491c-99a6-36faa8dbfd1a', @p3='2025-09-16T01:19:48.5666667', @p4='EB7F2E49-F11E-4EC0-AF82-E1C1DD86D305' (Size = 4000), @p5='USD' (Nullable = false) (Size = 3), @p6='{ "userId": "5dbceb39-9677-46d7-bf8a-2eb914c55437", "canDeposit": false}' (Nullable = false) (Size = 4000), @p7='Used for employee salary payments' (Size = 4000), @p8='True', @p9='False', @p10='Payroll Account' (Nullable = false) (Size = 100), @p11='Active' (Nullable = false) (Size = 4000), @p12='2025-09-16T01:19:48.5666667' (Nullable = true), @p13='AE29EF99-8BD9-4E31-B6AD-599517EC9B96' (Size = 4000), @p14='{ "userId": "0f23b6e9-a4d0-4415-b02f-aff94439baa6", "canWithdraw": true }' (Nullable = false) (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [BankAccounts] SET [AccountNumber] = @p0, [BankName] = @p1, [CompanyId] = @p2, [CreatedAt] = @p3, [CreatedById] = @p4, [CurrencyCode] = @p5, [DepositAcl] = @p6, [Description] = @p7, [IsActive] = @p8, [IsDeleted] = @p9, [Name] = @p10, [Status] = @p11, [UpdatedAt] = @p12, [UpdatedById] = @p13, [WithdrawAcl] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2025-09-16 14:14:33.262 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-16 14:14:33.263 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP) in 40.3214ms
+2025-09-16 14:14:33.265 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP)'
+2025-09-16 14:14:33.266 +03:00 [INF] Request completed successfully with status code 200
+2025-09-16 14:14:33.267 +03:00 [INF] Request finished HTTP/2 PUT https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 200 null application/json; charset=utf-8 55.3863ms
+2025-09-16 14:15:57.194 +03:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - application/json 107
+2025-09-16 14:15:57.198 +03:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 307 0 null 3.5212ms
+2025-09-16 14:15:57.218 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - null null
+2025-09-16 14:15:57.231 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:15:57.232 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 204 null null 14.1157ms
+2025-09-16 14:15:57.238 +03:00 [INF] Request starting HTTP/2 PUT https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - application/json 107
+2025-09-16 14:15:57.240 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:15:57.241 +03:00 [INF] Request started
+2025-09-16 14:15:57.242 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP)'
+2025-09-16 14:15:57.244 +03:00 [INF] Route matched with {action = "UpdatePermissions", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Boolean]]] UpdatePermissions(System.Guid, ModularERP.Modules.Finance.Features.Treasuries.DTO.UpdateWalletPermissionDto) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-16 14:15:57.250 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='23b728a8-081c-44fb-850b-0adf1ffc51d3'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-16 14:15:57.257 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p15='23b728a8-081c-44fb-850b-0adf1ffc51d3', @p0='9876543210' (Nullable = false) (Size = 50), @p1='HSBC Egypt' (Nullable = false) (Size = 100), @p2='d36b22ee-69fd-491c-99a6-36faa8dbfd1a', @p3='2025-09-16T01:19:48.5666667', @p4='EB7F2E49-F11E-4EC0-AF82-E1C1DD86D305' (Size = 4000), @p5='USD' (Nullable = false) (Size = 3), @p6='' (Nullable = false) (Size = 4000), @p7='Used for employee salary payments' (Size = 4000), @p8='True', @p9='False', @p10='Payroll Account' (Nullable = false) (Size = 100), @p11='Active' (Nullable = false) (Size = 4000), @p12='2025-09-16T01:19:48.5666667' (Nullable = true), @p13='AE29EF99-8BD9-4E31-B6AD-599517EC9B96' (Size = 4000), @p14='' (Nullable = false) (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [BankAccounts] SET [AccountNumber] = @p0, [BankName] = @p1, [CompanyId] = @p2, [CreatedAt] = @p3, [CreatedById] = @p4, [CurrencyCode] = @p5, [DepositAcl] = @p6, [Description] = @p7, [IsActive] = @p8, [IsDeleted] = @p9, [Name] = @p10, [Status] = @p11, [UpdatedAt] = @p12, [UpdatedById] = @p13, [WithdrawAcl] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2025-09-16 14:15:57.261 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-16 14:15:57.263 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP) in 17.0521ms
+2025-09-16 14:15:57.264 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP)'
+2025-09-16 14:15:57.265 +03:00 [INF] Request completed successfully with status code 200
+2025-09-16 14:15:57.266 +03:00 [INF] Request finished HTTP/2 PUT https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 200 null application/json; charset=utf-8 28.718ms
+2025-09-16 14:16:51.566 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - application/json 184
+2025-09-16 14:16:51.570 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - 307 0 null 3.9723ms
+2025-09-16 14:16:51.573 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - null null
+2025-09-16 14:16:51.579 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:16:51.580 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - 204 null null 7.4529ms
+2025-09-16 14:16:51.582 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - application/json 184
+2025-09-16 14:16:51.586 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:16:51.587 +03:00 [INF] Request started
+2025-09-16 14:16:51.588 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.AddPermission (ModularERP)'
+2025-09-16 14:16:51.592 +03:00 [INF] Route matched with {action = "AddPermission", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Boolean]]] AddPermission(System.Guid, ModularERP.Modules.Finance.Features.Treasuries.Commands.AddWalletPermissionCommand) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-16 14:16:51.602 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='23b728a8-081c-44fb-850b-0adf1ffc51d3'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-16 14:16:51.611 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p15='23b728a8-081c-44fb-850b-0adf1ffc51d3', @p0='9876543210' (Nullable = false) (Size = 50), @p1='HSBC Egypt' (Nullable = false) (Size = 100), @p2='d36b22ee-69fd-491c-99a6-36faa8dbfd1a', @p3='2025-09-16T01:19:48.5666667', @p4='EB7F2E49-F11E-4EC0-AF82-E1C1DD86D305' (Size = 4000), @p5='USD' (Nullable = false) (Size = 3), @p6='5dbceb39-9677-46d7-bf8a-2eb914c55437' (Nullable = false) (Size = 4000), @p7='Used for employee salary payments' (Size = 4000), @p8='True', @p9='False', @p10='Payroll Account' (Nullable = false) (Size = 100), @p11='Active' (Nullable = false) (Size = 4000), @p12='2025-09-16T01:19:48.5666667' (Nullable = true), @p13='AE29EF99-8BD9-4E31-B6AD-599517EC9B96' (Size = 4000), @p14='5dbceb39-9677-46d7-bf8a-2eb914c55437' (Nullable = false) (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [BankAccounts] SET [AccountNumber] = @p0, [BankName] = @p1, [CompanyId] = @p2, [CreatedAt] = @p3, [CreatedById] = @p4, [CurrencyCode] = @p5, [DepositAcl] = @p6, [Description] = @p7, [IsActive] = @p8, [IsDeleted] = @p9, [Name] = @p10, [Status] = @p11, [UpdatedAt] = @p12, [UpdatedById] = @p13, [WithdrawAcl] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2025-09-16 14:16:51.615 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-16 14:16:51.617 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.AddPermission (ModularERP) in 21.5519ms
+2025-09-16 14:16:51.619 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.AddPermission (ModularERP)'
+2025-09-16 14:16:51.620 +03:00 [INF] Request completed successfully with status code 200
+2025-09-16 14:16:51.621 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - 200 null application/json; charset=utf-8 39.0156ms
+2025-09-16 14:17:23.827 +03:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - application/json 107
+2025-09-16 14:17:23.832 +03:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 307 0 null 5.5407ms
+2025-09-16 14:17:23.837 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - null null
+2025-09-16 14:17:23.842 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:17:23.843 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 204 null null 6.0624ms
+2025-09-16 14:17:23.845 +03:00 [INF] Request starting HTTP/2 PUT https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - application/json 107
+2025-09-16 14:17:23.850 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:17:23.851 +03:00 [INF] Request started
+2025-09-16 14:17:23.852 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP)'
+2025-09-16 14:17:23.853 +03:00 [INF] Route matched with {action = "UpdatePermissions", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Boolean]]] UpdatePermissions(System.Guid, ModularERP.Modules.Finance.Features.Treasuries.DTO.UpdateWalletPermissionDto) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-16 14:17:23.859 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='23b728a8-081c-44fb-850b-0adf1ffc51d3'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-16 14:17:23.868 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p15='23b728a8-081c-44fb-850b-0adf1ffc51d3', @p0='9876543210' (Nullable = false) (Size = 50), @p1='HSBC Egypt' (Nullable = false) (Size = 100), @p2='d36b22ee-69fd-491c-99a6-36faa8dbfd1a', @p3='2025-09-16T01:19:48.5666667', @p4='EB7F2E49-F11E-4EC0-AF82-E1C1DD86D305' (Size = 4000), @p5='USD' (Nullable = false) (Size = 3), @p6='' (Nullable = false) (Size = 4000), @p7='Used for employee salary payments' (Size = 4000), @p8='True', @p9='False', @p10='Payroll Account' (Nullable = false) (Size = 100), @p11='Active' (Nullable = false) (Size = 4000), @p12='2025-09-16T01:19:48.5666667' (Nullable = true), @p13='AE29EF99-8BD9-4E31-B6AD-599517EC9B96' (Size = 4000), @p14='' (Nullable = false) (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [BankAccounts] SET [AccountNumber] = @p0, [BankName] = @p1, [CompanyId] = @p2, [CreatedAt] = @p3, [CreatedById] = @p4, [CurrencyCode] = @p5, [DepositAcl] = @p6, [Description] = @p7, [IsActive] = @p8, [IsDeleted] = @p9, [Name] = @p10, [Status] = @p11, [UpdatedAt] = @p12, [UpdatedById] = @p13, [WithdrawAcl] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2025-09-16 14:17:23.872 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-16 14:17:23.874 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP) in 18.1374ms
+2025-09-16 14:17:23.876 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP)'
+2025-09-16 14:17:23.877 +03:00 [INF] Request completed successfully with status code 200
+2025-09-16 14:17:23.878 +03:00 [INF] Request finished HTTP/2 PUT https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 200 null application/json; charset=utf-8 33.3245ms
+2025-09-16 14:17:37.720 +03:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - application/json 106
+2025-09-16 14:17:37.724 +03:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 307 0 null 4.0915ms
+2025-09-16 14:17:37.727 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - null null
+2025-09-16 14:17:37.759 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:17:37.761 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 204 null null 34.0355ms
+2025-09-16 14:17:37.767 +03:00 [INF] Request starting HTTP/2 PUT https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - application/json 106
+2025-09-16 14:17:37.773 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:17:37.773 +03:00 [INF] Request started
+2025-09-16 14:17:37.774 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP)'
+2025-09-16 14:17:37.776 +03:00 [INF] Route matched with {action = "UpdatePermissions", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Boolean]]] UpdatePermissions(System.Guid, ModularERP.Modules.Finance.Features.Treasuries.DTO.UpdateWalletPermissionDto) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-16 14:17:37.780 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='23b728a8-081c-44fb-850b-0adf1ffc51d3'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-16 14:17:37.784 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p15='23b728a8-081c-44fb-850b-0adf1ffc51d3', @p0='9876543210' (Nullable = false) (Size = 50), @p1='HSBC Egypt' (Nullable = false) (Size = 100), @p2='d36b22ee-69fd-491c-99a6-36faa8dbfd1a', @p3='2025-09-16T01:19:48.5666667', @p4='EB7F2E49-F11E-4EC0-AF82-E1C1DD86D305' (Size = 4000), @p5='USD' (Nullable = false) (Size = 3), @p6='5dbceb39-9677-46d7-bf8a-2eb914c55437' (Nullable = false) (Size = 4000), @p7='Used for employee salary payments' (Size = 4000), @p8='True', @p9='False', @p10='Payroll Account' (Nullable = false) (Size = 100), @p11='Active' (Nullable = false) (Size = 4000), @p12='2025-09-16T01:19:48.5666667' (Nullable = true), @p13='AE29EF99-8BD9-4E31-B6AD-599517EC9B96' (Size = 4000), @p14='' (Nullable = false) (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [BankAccounts] SET [AccountNumber] = @p0, [BankName] = @p1, [CompanyId] = @p2, [CreatedAt] = @p3, [CreatedById] = @p4, [CurrencyCode] = @p5, [DepositAcl] = @p6, [Description] = @p7, [IsActive] = @p8, [IsDeleted] = @p9, [Name] = @p10, [Status] = @p11, [UpdatedAt] = @p12, [UpdatedById] = @p13, [WithdrawAcl] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2025-09-16 14:17:37.787 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-16 14:17:37.789 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP) in 10.5498ms
+2025-09-16 14:17:37.790 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP)'
+2025-09-16 14:17:37.792 +03:00 [INF] Request completed successfully with status code 200
+2025-09-16 14:17:37.793 +03:00 [INF] Request finished HTTP/2 PUT https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 200 null application/json; charset=utf-8 25.8639ms
+2025-09-16 14:17:48.233 +03:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - application/json 102
+2025-09-16 14:17:48.237 +03:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 307 0 null 4.3163ms
+2025-09-16 14:17:48.240 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - null null
+2025-09-16 14:17:48.271 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:17:48.273 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 204 null null 32.4005ms
+2025-09-16 14:17:48.279 +03:00 [INF] Request starting HTTP/2 PUT https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - application/json 102
+2025-09-16 14:17:48.285 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:17:48.286 +03:00 [INF] Request started
+2025-09-16 14:17:48.287 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP)'
+2025-09-16 14:17:48.288 +03:00 [INF] Route matched with {action = "UpdatePermissions", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Boolean]]] UpdatePermissions(System.Guid, ModularERP.Modules.Finance.Features.Treasuries.DTO.UpdateWalletPermissionDto) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-16 14:17:48.295 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-09-16 14:17:48.296 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP) in 5.4321ms
+2025-09-16 14:17:48.298 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP)'
+2025-09-16 14:17:48.299 +03:00 [INF] Request completed successfully with status code 400
+2025-09-16 14:17:48.300 +03:00 [INF] Request finished HTTP/2 PUT https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 400 null application/problem+json; charset=utf-8 21.2411ms
+2025-09-16 14:17:56.016 +03:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - application/json 105
+2025-09-16 14:17:56.020 +03:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 307 0 null 3.5436ms
+2025-09-16 14:17:56.023 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - null null
+2025-09-16 14:17:56.027 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:17:56.028 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 204 null null 4.9276ms
+2025-09-16 14:17:56.030 +03:00 [INF] Request starting HTTP/2 PUT https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - application/json 105
+2025-09-16 14:17:56.035 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:17:56.036 +03:00 [INF] Request started
+2025-09-16 14:17:56.037 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP)'
+2025-09-16 14:17:56.038 +03:00 [INF] Route matched with {action = "UpdatePermissions", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Boolean]]] UpdatePermissions(System.Guid, ModularERP.Modules.Finance.Features.Treasuries.DTO.UpdateWalletPermissionDto) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-16 14:17:56.042 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='23b728a8-081c-44fb-850b-0adf1ffc51d3'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-16 14:17:56.045 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p15='23b728a8-081c-44fb-850b-0adf1ffc51d3', @p0='9876543210' (Nullable = false) (Size = 50), @p1='HSBC Egypt' (Nullable = false) (Size = 100), @p2='d36b22ee-69fd-491c-99a6-36faa8dbfd1a', @p3='2025-09-16T01:19:48.5666667', @p4='EB7F2E49-F11E-4EC0-AF82-E1C1DD86D305' (Size = 4000), @p5='USD' (Nullable = false) (Size = 3), @p6='5dbceb39-9677-46d7-bf8a-2eb914c55437' (Nullable = false) (Size = 4000), @p7='Used for employee salary payments' (Size = 4000), @p8='True', @p9='False', @p10='Payroll Account' (Nullable = false) (Size = 100), @p11='Active' (Nullable = false) (Size = 4000), @p12='2025-09-16T01:19:48.5666667' (Nullable = true), @p13='AE29EF99-8BD9-4E31-B6AD-599517EC9B96' (Size = 4000), @p14='5dbceb39-9677-46d7-bf8a-2eb914c55437' (Nullable = false) (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [BankAccounts] SET [AccountNumber] = @p0, [BankName] = @p1, [CompanyId] = @p2, [CreatedAt] = @p3, [CreatedById] = @p4, [CurrencyCode] = @p5, [DepositAcl] = @p6, [Description] = @p7, [IsActive] = @p8, [IsDeleted] = @p9, [Name] = @p10, [Status] = @p11, [UpdatedAt] = @p12, [UpdatedById] = @p13, [WithdrawAcl] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2025-09-16 14:17:56.049 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-16 14:17:56.050 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP) in 9.9365ms
+2025-09-16 14:17:56.052 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP)'
+2025-09-16 14:17:56.053 +03:00 [INF] Request completed successfully with status code 200
+2025-09-16 14:17:56.055 +03:00 [INF] Request finished HTTP/2 PUT https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 200 null application/json; charset=utf-8 25.0404ms
+2025-09-16 14:21:28.302 +03:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - application/json 104
+2025-09-16 14:21:28.307 +03:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 307 0 null 4.4322ms
+2025-09-16 14:21:28.313 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - null null
+2025-09-16 14:21:28.338 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:21:28.339 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 204 null null 26.0688ms
+2025-09-16 14:21:28.341 +03:00 [INF] Request starting HTTP/2 PUT https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - application/json 104
+2025-09-16 14:21:28.346 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:21:28.347 +03:00 [INF] Request started
+2025-09-16 14:21:28.349 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP)'
+2025-09-16 14:21:28.351 +03:00 [INF] Route matched with {action = "UpdatePermissions", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Boolean]]] UpdatePermissions(System.Guid, ModularERP.Modules.Finance.Features.Treasuries.DTO.UpdateWalletPermissionDto) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-16 14:21:28.354 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-09-16 14:21:28.355 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP) in 2.158ms
+2025-09-16 14:21:28.357 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP)'
+2025-09-16 14:21:28.359 +03:00 [INF] Request completed successfully with status code 400
+2025-09-16 14:21:28.360 +03:00 [INF] Request finished HTTP/2 PUT https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 400 null application/problem+json; charset=utf-8 19.0049ms
+2025-09-16 14:22:32.337 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/finance/wallets/341a7419-3d26-4908-a5dc-28f03bed5ebd/permissions?type=BankAccount - null null
+2025-09-16 14:22:32.342 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/finance/wallets/341a7419-3d26-4908-a5dc-28f03bed5ebd/permissions?type=BankAccount - 307 0 null 5.0883ms
+2025-09-16 14:22:32.368 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/finance/wallets/341a7419-3d26-4908-a5dc-28f03bed5ebd/permissions?type=BankAccount - null null
+2025-09-16 14:22:32.376 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:22:32.376 +03:00 [INF] Request started
+2025-09-16 14:22:32.379 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.WalletPermissionsController.GetWalletPermissions (ModularERP)'
+2025-09-16 14:22:32.383 +03:00 [INF] Route matched with {action = "GetWalletPermissions", controller = "WalletPermissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto]]] GetWalletPermissions(System.Guid, System.String) on controller ModularERP.Modules.Finance.Features.Treasuries.Controllers.WalletPermissionsController (ModularERP).
+2025-09-16 14:22:32.398 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='341a7419-3d26-4908-a5dc-28f03bed5ebd'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-16 14:22:32.401 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-16 14:22:32.402 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.Treasuries.Controllers.WalletPermissionsController.GetWalletPermissions (ModularERP) in 16.2974ms
+2025-09-16 14:22:32.404 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.WalletPermissionsController.GetWalletPermissions (ModularERP)'
+2025-09-16 14:22:32.405 +03:00 [INF] Request completed successfully with status code 200
+2025-09-16 14:22:32.407 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/finance/wallets/341a7419-3d26-4908-a5dc-28f03bed5ebd/permissions?type=BankAccount - 200 null application/json; charset=utf-8 39.161ms
+2025-09-16 14:22:56.157 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/finance/wallets/a2ae1dc5-6fcb-40cd-85db-2d9bc9346b45/permissions?type=BankAccount - null null
+2025-09-16 14:22:56.163 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/finance/wallets/a2ae1dc5-6fcb-40cd-85db-2d9bc9346b45/permissions?type=BankAccount - 307 0 null 5.5394ms
+2025-09-16 14:22:56.165 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/finance/wallets/a2ae1dc5-6fcb-40cd-85db-2d9bc9346b45/permissions?type=BankAccount - null null
+2025-09-16 14:22:56.170 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:22:56.171 +03:00 [INF] Request started
+2025-09-16 14:22:56.171 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.WalletPermissionsController.GetWalletPermissions (ModularERP)'
+2025-09-16 14:22:56.173 +03:00 [INF] Route matched with {action = "GetWalletPermissions", controller = "WalletPermissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto]]] GetWalletPermissions(System.Guid, System.String) on controller ModularERP.Modules.Finance.Features.Treasuries.Controllers.WalletPermissionsController (ModularERP).
+2025-09-16 14:22:56.178 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='a2ae1dc5-6fcb-40cd-85db-2d9bc9346b45'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-16 14:22:56.181 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-16 14:22:56.183 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.Treasuries.Controllers.WalletPermissionsController.GetWalletPermissions (ModularERP) in 7.9956ms
+2025-09-16 14:22:56.185 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.WalletPermissionsController.GetWalletPermissions (ModularERP)'
+2025-09-16 14:22:56.187 +03:00 [INF] Request completed successfully with status code 200
+2025-09-16 14:22:56.188 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/finance/wallets/a2ae1dc5-6fcb-40cd-85db-2d9bc9346b45/permissions?type=BankAccount - 200 null application/json; charset=utf-8 22.7129ms
+2025-09-16 14:23:04.744 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/finance/wallets/a2ae1dc5-6fcb-40cd-85db-2d9bc9346b45/permissions?type=Treasury - null null
+2025-09-16 14:23:04.750 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/finance/wallets/a2ae1dc5-6fcb-40cd-85db-2d9bc9346b45/permissions?type=Treasury - 307 0 null 6.1682ms
+2025-09-16 14:23:04.755 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/finance/wallets/a2ae1dc5-6fcb-40cd-85db-2d9bc9346b45/permissions?type=Treasury - null null
+2025-09-16 14:23:04.786 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:23:04.788 +03:00 [INF] Request started
+2025-09-16 14:23:04.790 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.WalletPermissionsController.GetWalletPermissions (ModularERP)'
+2025-09-16 14:23:04.799 +03:00 [INF] Route matched with {action = "GetWalletPermissions", controller = "WalletPermissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto]]] GetWalletPermissions(System.Guid, System.String) on controller ModularERP.Modules.Finance.Features.Treasuries.Controllers.WalletPermissionsController (ModularERP).
+2025-09-16 14:23:04.812 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='a2ae1dc5-6fcb-40cd-85db-2d9bc9346b45'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[CompanyId], [t].[CreatedAt], [t].[CreatedById], [t].[CurrencyCode], [t].[DepositAcl], [t].[Description], [t].[IsActive], [t].[IsDeleted], [t].[Name], [t].[Status], [t].[UpdatedAt], [t].[UpdatedById], [t].[WithdrawAcl]
+FROM [Treasuries] AS [t]
+WHERE [t].[Id] = @__id_0
+2025-09-16 14:23:04.818 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-16 14:23:04.820 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.Treasuries.Controllers.WalletPermissionsController.GetWalletPermissions (ModularERP) in 15.6028ms
+2025-09-16 14:23:04.822 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.WalletPermissionsController.GetWalletPermissions (ModularERP)'
+2025-09-16 14:23:04.823 +03:00 [INF] Request completed successfully with status code 200
+2025-09-16 14:23:04.824 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/finance/wallets/a2ae1dc5-6fcb-40cd-85db-2d9bc9346b45/permissions?type=Treasury - 200 null application/json; charset=utf-8 69.2356ms
+2025-09-16 14:27:39.288 +03:00 [INF] Starting web host...
+2025-09-16 14:27:39.593 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-16 14:27:39.597 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-16 14:27:39.674 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-16 14:27:39.676 +03:00 [INF] Hosting environment: Development
+2025-09-16 14:27:39.678 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-16 14:27:39.686 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2025-09-16 14:27:39.809 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 124.5005ms
+2025-09-16 14:27:39.841 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-16 14:27:39.848 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 6.7941ms
+2025-09-16 14:27:41.215 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2025-09-16 14:27:41.240 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 25.0912ms
+2025-09-16 14:27:41.514 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2025-09-16 14:27:41.551 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 37.4527ms
+2025-09-16 14:38:40.547 +03:00 [INF] Starting web host...
+2025-09-16 14:38:40.956 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-16 14:38:40.960 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-16 14:38:41.034 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-16 14:38:41.036 +03:00 [INF] Hosting environment: Development
+2025-09-16 14:38:41.037 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-16 14:38:45.770 +03:00 [INF] Starting web host...
+2025-09-16 14:38:46.098 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-16 14:38:46.101 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-16 14:38:46.178 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-16 14:38:46.180 +03:00 [INF] Hosting environment: Development
+2025-09-16 14:38:46.182 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-16 14:38:49.210 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2025-09-16 14:38:49.328 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 118.3156ms
+2025-09-16 14:38:49.356 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-16 14:38:49.362 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 6.0894ms
+2025-09-16 14:38:50.414 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2025-09-16 14:38:50.447 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 32.2649ms
+2025-09-16 14:38:50.619 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2025-09-16 14:38:50.670 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 50.875ms
+2025-09-16 14:39:31.965 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/BankAccount/d36b22ee-69fd-491c-99a6-36faa8dbfd1a/permissions - null null
+2025-09-16 14:39:31.997 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/BankAccount/d36b22ee-69fd-491c-99a6-36faa8dbfd1a/permissions - 307 0 null 31.8474ms
+2025-09-16 14:39:32.038 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/BankAccount/d36b22ee-69fd-491c-99a6-36faa8dbfd1a/permissions - null null
+2025-09-16 14:39:32.045 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:39:32.053 +03:00 [INF] Request started
+2025-09-16 14:39:32.056 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetPermissions (ModularERP)'
+2025-09-16 14:39:32.073 +03:00 [INF] Route matched with {action = "GetPermissions", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto]]] GetPermissions(System.Guid) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-16 14:39:32.079 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-16 14:39:32.719 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-09-16 14:39:33.277 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[@__id_0='d36b22ee-69fd-491c-99a6-36faa8dbfd1a'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-16 14:39:33.306 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-16 14:39:33.325 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetPermissions (ModularERP) in 1244.9552ms
+2025-09-16 14:39:33.328 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetPermissions (ModularERP)'
+2025-09-16 14:39:33.330 +03:00 [INF] Request completed successfully with status code 200
+2025-09-16 14:39:33.338 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/BankAccount/d36b22ee-69fd-491c-99a6-36faa8dbfd1a/permissions - 200 null application/json; charset=utf-8 1300.1291ms
+2025-09-16 14:40:27.973 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/BankAccount/d36b22ee-69fd-491c-99a6-36faa8dbfd1a/permissions - null null
+2025-09-16 14:40:27.994 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/BankAccount/d36b22ee-69fd-491c-99a6-36faa8dbfd1a/permissions - 307 0 null 20.9769ms
+2025-09-16 14:40:28.012 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/BankAccount/d36b22ee-69fd-491c-99a6-36faa8dbfd1a/permissions - null null
+2025-09-16 14:40:28.016 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:40:28.017 +03:00 [INF] Request started
+2025-09-16 14:40:28.017 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetPermissions (ModularERP)'
+2025-09-16 14:40:28.019 +03:00 [INF] Route matched with {action = "GetPermissions", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto]]] GetPermissions(System.Guid) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-16 14:40:28.070 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='d36b22ee-69fd-491c-99a6-36faa8dbfd1a'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-16 14:40:28.076 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-16 14:40:28.078 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetPermissions (ModularERP) in 56.7602ms
+2025-09-16 14:40:28.080 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetPermissions (ModularERP)'
+2025-09-16 14:40:28.081 +03:00 [INF] Request completed successfully with status code 200
+2025-09-16 14:40:28.082 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/BankAccount/d36b22ee-69fd-491c-99a6-36faa8dbfd1a/permissions - 200 null application/json; charset=utf-8 70.3388ms
+2025-09-16 14:40:45.334 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/Treasury/d36b22ee-69fd-491c-99a6-36faa8dbfd1a/permissions - null null
+2025-09-16 14:40:45.361 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/Treasury/d36b22ee-69fd-491c-99a6-36faa8dbfd1a/permissions - 307 0 null 26.7052ms
+2025-09-16 14:40:45.373 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/Treasury/d36b22ee-69fd-491c-99a6-36faa8dbfd1a/permissions - null null
+2025-09-16 14:40:45.377 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:40:45.379 +03:00 [INF] Request started
+2025-09-16 14:40:45.379 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.GetPermissions (ModularERP)'
+2025-09-16 14:40:45.384 +03:00 [INF] Route matched with {action = "GetPermissions", controller = "Treasury"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto]]] GetPermissions(System.Guid) on controller ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController (ModularERP).
+2025-09-16 14:40:45.406 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='d36b22ee-69fd-491c-99a6-36faa8dbfd1a'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[CompanyId], [t].[CreatedAt], [t].[CreatedById], [t].[CurrencyCode], [t].[DepositAcl], [t].[Description], [t].[IsActive], [t].[IsDeleted], [t].[Name], [t].[Status], [t].[UpdatedAt], [t].[UpdatedById], [t].[WithdrawAcl]
+FROM [Treasuries] AS [t]
+WHERE [t].[Id] = @__id_0
+2025-09-16 14:40:45.409 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-16 14:40:45.411 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.GetPermissions (ModularERP) in 25.1623ms
+2025-09-16 14:40:45.412 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.GetPermissions (ModularERP)'
+2025-09-16 14:40:45.414 +03:00 [INF] Request completed successfully with status code 200
+2025-09-16 14:40:45.415 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/Treasury/d36b22ee-69fd-491c-99a6-36faa8dbfd1a/permissions - 200 null application/json; charset=utf-8 41.6487ms
+2025-09-16 14:42:34.606 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2025-09-16 14:42:34.645 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 38.9592ms
+2025-09-16 14:42:34.683 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-16 14:42:34.689 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 6.3209ms
+2025-09-16 14:42:36.134 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2025-09-16 14:42:36.222 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 88.0331ms
+2025-09-16 14:42:36.390 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2025-09-16 14:42:36.418 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 28.0083ms
+2025-09-16 14:42:43.004 +03:00 [INF] Starting web host...
+2025-09-16 14:42:43.323 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-16 14:42:43.328 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-16 14:42:43.404 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-16 14:42:43.406 +03:00 [INF] Hosting environment: Development
+2025-09-16 14:42:43.407 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-16 14:43:00.315 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - null null
+2025-09-16 14:43:00.348 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 307 0 null 34.5373ms
+2025-09-16 14:43:00.381 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - null null
+2025-09-16 14:43:00.388 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:43:00.399 +03:00 [INF] Request started
+2025-09-16 14:43:00.402 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetPermissions (ModularERP)'
+2025-09-16 14:43:00.418 +03:00 [INF] Route matched with {action = "GetPermissions", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto]]] GetPermissions(System.Guid) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-16 14:43:00.424 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-16 14:43:01.044 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-09-16 14:43:01.583 +03:00 [INF] Executed DbCommand (27ms) [Parameters=[@__id_0='23b728a8-081c-44fb-850b-0adf1ffc51d3'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-16 14:43:01.620 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-16 14:43:01.651 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetPermissions (ModularERP) in 1227.2002ms
+2025-09-16 14:43:01.654 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetPermissions (ModularERP)'
+2025-09-16 14:43:01.656 +03:00 [INF] Request completed successfully with status code 200
+2025-09-16 14:43:01.663 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 200 null application/json; charset=utf-8 1281.8498ms
+2025-09-16 14:43:19.424 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/Treasury/341a7419-3d26-4908-a5dc-28f03bed5ebd/permissions - null null
+2025-09-16 14:43:19.432 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/Treasury/341a7419-3d26-4908-a5dc-28f03bed5ebd/permissions - 307 0 null 7.7356ms
+2025-09-16 14:43:19.453 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/Treasury/341a7419-3d26-4908-a5dc-28f03bed5ebd/permissions - null null
+2025-09-16 14:43:19.467 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:43:19.470 +03:00 [INF] Request started
+2025-09-16 14:43:19.472 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.GetPermissions (ModularERP)'
+2025-09-16 14:43:19.477 +03:00 [INF] Route matched with {action = "GetPermissions", controller = "Treasury"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto]]] GetPermissions(System.Guid) on controller ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController (ModularERP).
+2025-09-16 14:43:19.536 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='341a7419-3d26-4908-a5dc-28f03bed5ebd'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[CompanyId], [t].[CreatedAt], [t].[CreatedById], [t].[CurrencyCode], [t].[DepositAcl], [t].[Description], [t].[IsActive], [t].[IsDeleted], [t].[Name], [t].[Status], [t].[UpdatedAt], [t].[UpdatedById], [t].[WithdrawAcl]
+FROM [Treasuries] AS [t]
+WHERE [t].[Id] = @__id_0
+2025-09-16 14:43:19.542 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-16 14:43:19.544 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.GetPermissions (ModularERP) in 64.1975ms
+2025-09-16 14:43:19.546 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.GetPermissions (ModularERP)'
+2025-09-16 14:43:19.548 +03:00 [INF] Request completed successfully with status code 200
+2025-09-16 14:43:19.550 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/Treasury/341a7419-3d26-4908-a5dc-28f03bed5ebd/permissions - 200 null application/json; charset=utf-8 96.7503ms
+2025-09-16 14:43:32.752 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/Treasury/e4e33ea7-1475-48cc-be82-c1c3b42bcb18/permissions - null null
+2025-09-16 14:43:32.756 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/Treasury/e4e33ea7-1475-48cc-be82-c1c3b42bcb18/permissions - 307 0 null 4.5679ms
+2025-09-16 14:43:32.781 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/Treasury/e4e33ea7-1475-48cc-be82-c1c3b42bcb18/permissions - null null
+2025-09-16 14:43:32.796 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:43:32.797 +03:00 [INF] Request started
+2025-09-16 14:43:32.798 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.GetPermissions (ModularERP)'
+2025-09-16 14:43:32.799 +03:00 [INF] Route matched with {action = "GetPermissions", controller = "Treasury"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto]]] GetPermissions(System.Guid) on controller ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController (ModularERP).
+2025-09-16 14:43:32.817 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='e4e33ea7-1475-48cc-be82-c1c3b42bcb18'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[CompanyId], [t].[CreatedAt], [t].[CreatedById], [t].[CurrencyCode], [t].[DepositAcl], [t].[Description], [t].[IsActive], [t].[IsDeleted], [t].[Name], [t].[Status], [t].[UpdatedAt], [t].[UpdatedById], [t].[WithdrawAcl]
+FROM [Treasuries] AS [t]
+WHERE [t].[Id] = @__id_0
+2025-09-16 14:43:32.823 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-16 14:43:32.824 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.GetPermissions (ModularERP) in 22.1764ms
+2025-09-16 14:43:32.827 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.GetPermissions (ModularERP)'
+2025-09-16 14:43:32.830 +03:00 [INF] Request completed successfully with status code 200
+2025-09-16 14:43:32.831 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/Treasury/e4e33ea7-1475-48cc-be82-c1c3b42bcb18/permissions - 200 null application/json; charset=utf-8 50.0386ms
+2025-09-16 14:44:41.388 +03:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5004/api/BankAccount/341a7419-3d26-4908-a5dc-28f03bed5ebd/permissions - application/json 100
+2025-09-16 14:44:41.392 +03:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5004/api/BankAccount/341a7419-3d26-4908-a5dc-28f03bed5ebd/permissions - 307 0 null 3.8997ms
+2025-09-16 14:44:41.397 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/341a7419-3d26-4908-a5dc-28f03bed5ebd/permissions - null null
+2025-09-16 14:44:41.400 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:44:41.403 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/341a7419-3d26-4908-a5dc-28f03bed5ebd/permissions - 204 null null 5.7292ms
+2025-09-16 14:44:41.404 +03:00 [INF] Request starting HTTP/2 PUT https://localhost:7168/api/BankAccount/341a7419-3d26-4908-a5dc-28f03bed5ebd/permissions - application/json 100
+2025-09-16 14:44:41.410 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:44:41.411 +03:00 [INF] Request started
+2025-09-16 14:44:41.412 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP)'
+2025-09-16 14:44:41.416 +03:00 [INF] Route matched with {action = "UpdatePermissions", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Boolean]]] UpdatePermissions(System.Guid, ModularERP.Modules.Finance.Features.Treasuries.DTO.UpdateWalletPermissionDto) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-16 14:44:41.450 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='341a7419-3d26-4908-a5dc-28f03bed5ebd'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-16 14:44:41.601 +03:00 [INF] Executed DbCommand (15ms) [Parameters=[@p15='341a7419-3d26-4908-a5dc-28f03bed5ebd', @p0='1234567890' (Nullable = false) (Size = 50), @p1='National Bank of Egypt' (Nullable = false) (Size = 100), @p2='d36b22ee-69fd-491c-99a6-36faa8dbfd1a', @p3='2025-09-16T01:19:48.5666667', @p4='731B0EFE-4531-453F-93DD-BB7A6143A2C3' (Size = 4000), @p5='EGP' (Nullable = false) (Size = 3), @p6='User1,User2' (Nullable = false) (Size = 4000), @p7='Main operating account for company expenses' (Size = 4000), @p8='True', @p9='False', @p10='Main Account' (Nullable = false) (Size = 100), @p11='Active' (Nullable = false) (Size = 4000), @p12='2025-09-16T01:19:48.5666667' (Nullable = true), @p13='E44F01FF-8AD8-4F39-83E0-89505CAC2819' (Size = 4000), @p14='User1,5dbceb39-9677-46d7-bf8a-2eb914c55437' (Nullable = false) (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [BankAccounts] SET [AccountNumber] = @p0, [BankName] = @p1, [CompanyId] = @p2, [CreatedAt] = @p3, [CreatedById] = @p4, [CurrencyCode] = @p5, [DepositAcl] = @p6, [Description] = @p7, [IsActive] = @p8, [IsDeleted] = @p9, [Name] = @p10, [Status] = @p11, [UpdatedAt] = @p12, [UpdatedById] = @p13, [WithdrawAcl] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2025-09-16 14:44:41.613 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-16 14:44:41.617 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP) in 197.2835ms
+2025-09-16 14:44:41.619 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP)'
+2025-09-16 14:44:41.620 +03:00 [INF] Request completed successfully with status code 200
+2025-09-16 14:44:41.622 +03:00 [INF] Request finished HTTP/2 PUT https://localhost:7168/api/BankAccount/341a7419-3d26-4908-a5dc-28f03bed5ebd/permissions - 200 null application/json; charset=utf-8 217.2237ms
+2025-09-16 14:45:08.169 +03:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - application/json 100
+2025-09-16 14:45:08.174 +03:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 307 0 null 5.5236ms
+2025-09-16 14:45:08.183 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - null null
+2025-09-16 14:45:08.188 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:45:08.189 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 204 null null 5.7449ms
+2025-09-16 14:45:08.191 +03:00 [INF] Request starting HTTP/2 PUT https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - application/json 100
+2025-09-16 14:45:08.196 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:45:08.197 +03:00 [INF] Request started
+2025-09-16 14:45:08.198 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP)'
+2025-09-16 14:45:08.200 +03:00 [INF] Route matched with {action = "UpdatePermissions", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Boolean]]] UpdatePermissions(System.Guid, ModularERP.Modules.Finance.Features.Treasuries.DTO.UpdateWalletPermissionDto) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-16 14:45:08.205 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='23b728a8-081c-44fb-850b-0adf1ffc51d3'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-16 14:45:08.216 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@p15='23b728a8-081c-44fb-850b-0adf1ffc51d3', @p0='9876543210' (Nullable = false) (Size = 50), @p1='HSBC Egypt' (Nullable = false) (Size = 100), @p2='d36b22ee-69fd-491c-99a6-36faa8dbfd1a', @p3='2025-09-16T01:19:48.5666667', @p4='EB7F2E49-F11E-4EC0-AF82-E1C1DD86D305' (Size = 4000), @p5='USD' (Nullable = false) (Size = 3), @p6='' (Nullable = false) (Size = 4000), @p7='Used for employee salary payments' (Size = 4000), @p8='True', @p9='False', @p10='Payroll Account' (Nullable = false) (Size = 100), @p11='Active' (Nullable = false) (Size = 4000), @p12='2025-09-16T01:19:48.5666667' (Nullable = true), @p13='AE29EF99-8BD9-4E31-B6AD-599517EC9B96' (Size = 4000), @p14='5dbceb39-9677-46d7-bf8a-2eb914c55437' (Nullable = false) (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [BankAccounts] SET [AccountNumber] = @p0, [BankName] = @p1, [CompanyId] = @p2, [CreatedAt] = @p3, [CreatedById] = @p4, [CurrencyCode] = @p5, [DepositAcl] = @p6, [Description] = @p7, [IsActive] = @p8, [IsDeleted] = @p9, [Name] = @p10, [Status] = @p11, [UpdatedAt] = @p12, [UpdatedById] = @p13, [WithdrawAcl] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2025-09-16 14:45:08.221 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-16 14:45:08.223 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP) in 20.0441ms
+2025-09-16 14:45:08.225 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP)'
+2025-09-16 14:45:08.226 +03:00 [INF] Request completed successfully with status code 200
+2025-09-16 14:45:08.228 +03:00 [INF] Request finished HTTP/2 PUT https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 200 null application/json; charset=utf-8 36.8884ms
+2025-09-16 14:45:18.773 +03:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - application/json 99
+2025-09-16 14:45:18.778 +03:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 307 0 null 4.7819ms
+2025-09-16 14:45:18.814 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - null null
+2025-09-16 14:45:18.818 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:45:18.820 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 204 null null 5.5449ms
+2025-09-16 14:45:18.821 +03:00 [INF] Request starting HTTP/2 PUT https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - application/json 99
+2025-09-16 14:45:18.833 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:45:18.834 +03:00 [INF] Request started
+2025-09-16 14:45:18.835 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP)'
+2025-09-16 14:45:18.836 +03:00 [INF] Route matched with {action = "UpdatePermissions", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Boolean]]] UpdatePermissions(System.Guid, ModularERP.Modules.Finance.Features.Treasuries.DTO.UpdateWalletPermissionDto) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-16 14:45:18.840 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='23b728a8-081c-44fb-850b-0adf1ffc51d3'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-16 14:45:18.851 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@p15='23b728a8-081c-44fb-850b-0adf1ffc51d3', @p0='9876543210' (Nullable = false) (Size = 50), @p1='HSBC Egypt' (Nullable = false) (Size = 100), @p2='d36b22ee-69fd-491c-99a6-36faa8dbfd1a', @p3='2025-09-16T01:19:48.5666667', @p4='EB7F2E49-F11E-4EC0-AF82-E1C1DD86D305' (Size = 4000), @p5='USD' (Nullable = false) (Size = 3), @p6='5dbceb39-9677-46d7-bf8a-2eb914c55437' (Nullable = false) (Size = 4000), @p7='Used for employee salary payments' (Size = 4000), @p8='True', @p9='False', @p10='Payroll Account' (Nullable = false) (Size = 100), @p11='Active' (Nullable = false) (Size = 4000), @p12='2025-09-16T01:19:48.5666667' (Nullable = true), @p13='AE29EF99-8BD9-4E31-B6AD-599517EC9B96' (Size = 4000), @p14='5dbceb39-9677-46d7-bf8a-2eb914c55437' (Nullable = false) (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [BankAccounts] SET [AccountNumber] = @p0, [BankName] = @p1, [CompanyId] = @p2, [CreatedAt] = @p3, [CreatedById] = @p4, [CurrencyCode] = @p5, [DepositAcl] = @p6, [Description] = @p7, [IsActive] = @p8, [IsDeleted] = @p9, [Name] = @p10, [Status] = @p11, [UpdatedAt] = @p12, [UpdatedById] = @p13, [WithdrawAcl] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2025-09-16 14:45:18.856 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-16 14:45:18.858 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP) in 20.0161ms
+2025-09-16 14:45:18.860 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdatePermissions (ModularERP)'
+2025-09-16 14:45:18.862 +03:00 [INF] Request completed successfully with status code 200
+2025-09-16 14:45:18.863 +03:00 [INF] Request finished HTTP/2 PUT https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions - 200 null application/json; charset=utf-8 41.589ms
+2025-09-16 14:46:15.301 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - application/json 178
+2025-09-16 14:46:15.305 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - 307 0 null 4.4198ms
+2025-09-16 14:46:15.330 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - null null
+2025-09-16 14:46:15.332 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:46:15.336 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - 204 null null 5.9349ms
+2025-09-16 14:46:15.339 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - application/json 178
+2025-09-16 14:46:15.347 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:46:15.349 +03:00 [INF] Request started
+2025-09-16 14:46:15.350 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.AddPermission (ModularERP)'
+2025-09-16 14:46:15.354 +03:00 [INF] Route matched with {action = "AddPermission", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Boolean]]] AddPermission(System.Guid, ModularERP.Modules.Finance.Features.Treasuries.Commands.AddWalletPermissionCommand) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-16 14:46:15.365 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='23b728a8-081c-44fb-850b-0adf1ffc51d3'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-16 14:46:15.378 +03:00 [ERR] Error adding wallet permission
+System.Text.Json.JsonException: 'd' is an invalid end of a number. Expected a delimiter. Path: $ | LineNumber: 0 | BytePositionInLine: 1.
+ ---> System.Text.Json.JsonReaderException: 'd' is an invalid end of a number. Expected a delimiter. LineNumber: 0 | BytePositionInLine: 1.
+   at System.Text.Json.ThrowHelper.ThrowJsonReaderException(Utf8JsonReader& json, ExceptionResource resource, Byte nextByte, ReadOnlySpan`1 bytes)
+   at System.Text.Json.Utf8JsonReader.TryGetNumber(ReadOnlySpan`1 data, Int32& consumed)
+   at System.Text.Json.Utf8JsonReader.ReadFirstToken(Byte first)
+   at System.Text.Json.Utf8JsonReader.ReadSingleSegment()
+   at System.Text.Json.Utf8JsonReader.Read()
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   --- End of inner exception stack trace ---
+   at System.Text.Json.ThrowHelper.ReThrowWithPath(ReadStack& state, JsonReaderException ex)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at ModularERP.Modules.Finance.Features.WalletPermissions.Handlers.AddWalletPermissionHandler.UpdateAcl(String aclJson, Guid userId, Boolean canDoAction) in C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP\Modules\Finance\Features\WalletPermissions\Handlers\AddWalletPermissionHandler.cs:line 70
+   at ModularERP.Modules.Finance.Features.WalletPermissions.Handlers.AddWalletPermissionHandler.Handle(AddWalletPermissionCommand request, CancellationToken cancellationToken) in C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP\Modules\Finance\Features\WalletPermissions\Handlers\AddWalletPermissionHandler.cs:line 49
+2025-09-16 14:46:15.416 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-16 14:46:15.418 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.AddPermission (ModularERP) in 60.6321ms
+2025-09-16 14:46:15.419 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.AddPermission (ModularERP)'
+2025-09-16 14:46:15.420 +03:00 [INF] Request completed successfully with status code 200
+2025-09-16 14:46:15.421 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - 200 null application/json; charset=utf-8 82.2183ms
+2025-09-16 14:55:58.139 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - application/json 101
+2025-09-16 14:55:58.143 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - 307 0 null 4.2973ms
+2025-09-16 14:55:58.148 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - null null
+2025-09-16 14:55:58.153 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:55:58.155 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - 204 null null 6.3597ms
+2025-09-16 14:55:58.156 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - application/json 101
+2025-09-16 14:55:58.161 +03:00 [INF] CORS policy execution successful.
+2025-09-16 14:55:58.161 +03:00 [INF] Request started
+2025-09-16 14:55:58.162 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.AddPermission (ModularERP)'
+2025-09-16 14:55:58.164 +03:00 [INF] Route matched with {action = "AddPermission", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Boolean]]] AddPermission(System.Guid, ModularERP.Modules.Finance.Features.Treasuries.Commands.AddWalletPermissionCommand) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-16 14:55:58.174 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='23b728a8-081c-44fb-850b-0adf1ffc51d3'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-16 14:55:58.177 +03:00 [ERR] Error adding wallet permission
+System.Text.Json.JsonException: 'd' is an invalid end of a number. Expected a delimiter. Path: $ | LineNumber: 0 | BytePositionInLine: 1.
+ ---> System.Text.Json.JsonReaderException: 'd' is an invalid end of a number. Expected a delimiter. LineNumber: 0 | BytePositionInLine: 1.
+   at System.Text.Json.ThrowHelper.ThrowJsonReaderException(Utf8JsonReader& json, ExceptionResource resource, Byte nextByte, ReadOnlySpan`1 bytes)
+   at System.Text.Json.Utf8JsonReader.TryGetNumber(ReadOnlySpan`1 data, Int32& consumed)
+   at System.Text.Json.Utf8JsonReader.ReadFirstToken(Byte first)
+   at System.Text.Json.Utf8JsonReader.ReadSingleSegment()
+   at System.Text.Json.Utf8JsonReader.Read()
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   --- End of inner exception stack trace ---
+   at System.Text.Json.ThrowHelper.ReThrowWithPath(ReadStack& state, JsonReaderException ex)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at ModularERP.Modules.Finance.Features.WalletPermissions.Handlers.AddWalletPermissionHandler.UpdateAcl(String aclJson, Guid userId, Boolean canDoAction) in C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP\Modules\Finance\Features\WalletPermissions\Handlers\AddWalletPermissionHandler.cs:line 70
+   at ModularERP.Modules.Finance.Features.WalletPermissions.Handlers.AddWalletPermissionHandler.Handle(AddWalletPermissionCommand request, CancellationToken cancellationToken) in C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP\Modules\Finance\Features\WalletPermissions\Handlers\AddWalletPermissionHandler.cs:line 49
+2025-09-16 14:55:58.186 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-16 14:55:58.188 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.AddPermission (ModularERP) in 21.1642ms
+2025-09-16 14:55:58.189 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.AddPermission (ModularERP)'
+2025-09-16 14:55:58.190 +03:00 [INF] Request completed successfully with status code 200
+2025-09-16 14:55:58.191 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3/permissions/users - 200 null application/json; charset=utf-8 35.5425ms
+2025-09-16 15:05:49.112 +03:00 [INF] Starting web host...
+2025-09-16 15:05:49.468 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-16 15:05:49.471 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-16 15:05:49.543 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-16 15:05:49.544 +03:00 [INF] Hosting environment: Development
+2025-09-16 15:05:49.546 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-16 15:05:49.660 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2025-09-16 15:05:49.793 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 133.36ms
+2025-09-16 15:05:49.823 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-16 15:05:49.823 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2025-09-16 15:05:49.829 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 6.008ms
+2025-09-16 15:05:49.858 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 35.6497ms
+2025-09-16 15:05:51.550 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2025-09-16 15:05:51.597 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 47.0318ms
+2025-09-16 15:19:25.687 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/finance/wallets?type=BankAccount&companyId=d36b22ee-69fd-491c-99a6-36faa8dbfd1a - null null
+2025-09-16 15:19:25.696 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/finance/wallets?type=BankAccount&companyId=d36b22ee-69fd-491c-99a6-36faa8dbfd1a - 307 0 null 8.5768ms
+2025-09-16 15:19:25.749 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/finance/wallets?type=BankAccount&companyId=d36b22ee-69fd-491c-99a6-36faa8dbfd1a - null null
+2025-09-16 15:19:25.756 +03:00 [INF] CORS policy execution successful.
+2025-09-16 15:19:25.767 +03:00 [INF] Request started
+2025-09-16 15:19:25.771 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.WalletPermissions.Controllers.WalletPermissionsController.GetWallets (ModularERP)'
+2025-09-16 15:19:25.798 +03:00 [INF] Route matched with {action = "GetWallets", controller = "WalletPermissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Collections.Generic.List`1[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto]]]] GetWallets(System.String, System.Nullable`1[System.Guid]) on controller ModularERP.Modules.Finance.Features.WalletPermissions.Controllers.WalletPermissionsController (ModularERP).
+2025-09-16 15:19:25.804 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-16 15:19:26.533 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-09-16 15:19:27.270 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__request_CompanyId_Value_0='d36b22ee-69fd-491c-99a6-36faa8dbfd1a'], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[IsDeleted] = CAST(0 AS bit) AND [b].[CompanyId] = @__request_CompanyId_Value_0
+2025-09-16 15:19:27.303 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-16 15:19:27.324 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.WalletPermissions.Controllers.WalletPermissionsController.GetWallets (ModularERP) in 1520.7698ms
+2025-09-16 15:19:27.326 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.WalletPermissions.Controllers.WalletPermissionsController.GetWallets (ModularERP)'
+2025-09-16 15:19:27.328 +03:00 [INF] Request completed successfully with status code 200
+2025-09-16 15:19:27.335 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/finance/wallets?type=BankAccount&companyId=d36b22ee-69fd-491c-99a6-36faa8dbfd1a - 200 null application/json; charset=utf-8 1586.6412ms
+2025-09-16 15:21:40.593 +03:00 [INF] Starting web host...
+2025-09-16 15:21:40.988 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-16 15:21:40.992 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-16 15:21:41.019 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2025-09-16 15:21:41.082 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-16 15:21:41.084 +03:00 [INF] Hosting environment: Development
+2025-09-16 15:21:41.086 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-16 15:21:41.159 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 140.3797ms
+2025-09-16 15:21:41.192 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-16 15:21:41.197 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 5.8183ms
+2025-09-16 15:21:42.616 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2025-09-16 15:21:42.648 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 31.9469ms
+2025-09-16 15:21:42.986 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2025-09-16 15:21:43.018 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 31.3719ms

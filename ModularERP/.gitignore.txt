@@ -18,8 +18,10 @@ obj/
 *.nupkg
 packages/
 
-# Logs
-*.log
+# Logs folder
+Logs/
+log/
+logs/
 
 # OS generated
 Thumbs.db

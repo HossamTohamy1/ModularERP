@@ -1,11 +1,11 @@
 ﻿using FluentValidation;
 using MediatR;
 using ModularERP.Common.ViewModel;
-using ModularERP.Modules.Finance.Features.Treasuries.Commands;
-using ModularERP.Modules.Finance.Features.Treasuries.DTO;
-using ModularERP.Modules.Finance.Features.Treasuries.Handlers;
-using ModularERP.Modules.Finance.Features.Treasuries.Queries;
-using ModularERP.Modules.Finance.Features.Treasuries.Validators;
+using ModularERP.Modules.Finance.Features.WalletPermissions.Commands;
+using ModularERP.Modules.Finance.Features.WalletPermissions.DTO;
+using ModularERP.Modules.Finance.Features.WalletPermissions.Handlers;
+using ModularERP.Modules.Finance.Features.WalletPermissions.Queries;
+using ModularERP.Modules.Finance.Features.WalletPermissions.Validators;
 
 namespace ModularERP.Modules.Finance.Features.Treasuries.Service
 {

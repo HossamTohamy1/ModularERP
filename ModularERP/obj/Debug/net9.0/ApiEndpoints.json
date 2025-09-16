@@ -1,6 +1,6 @@
 [
   {
-    "ContainingType": "ModularERP.Modules.Finance.Features.Treasuries.Controllers.WalletPermissionsControllerBase",
+    "ContainingType": "ModularERP.Modules.Finance.Features.WalletPermissions.Controllers.WalletPermissionsControllerBase",
     "Method": "GetPermissions",
     "RelativePath": "api/BankAccount/{id}/permissions",
     "HttpMethod": "GET",
@@ -15,7 +15,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[ModularERP.Modules.Finance.Features.WalletPermissions.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -26,7 +26,7 @@
     ]
   },
   {
-    "ContainingType": "ModularERP.Modules.Finance.Features.Treasuries.Controllers.WalletPermissionsControllerBase",
+    "ContainingType": "ModularERP.Modules.Finance.Features.WalletPermissions.Controllers.WalletPermissionsControllerBase",
     "Method": "UpdatePermissions",
     "RelativePath": "api/BankAccount/{id}/permissions",
     "HttpMethod": "PUT",
@@ -40,7 +40,7 @@
       },
       {
         "Name": "permissions",
-        "Type": "ModularERP.Modules.Finance.Features.Treasuries.DTO.UpdateWalletPermissionDto",
+        "Type": "ModularERP.Modules.Finance.Features.WalletPermissions.DTO.UpdateWalletPermissionDto",
         "IsRequired": true
       }
     ],
@@ -57,7 +57,7 @@
     ]
   },
   {
-    "ContainingType": "ModularERP.Modules.Finance.Features.Treasuries.Controllers.WalletPermissionsControllerBase",
+    "ContainingType": "ModularERP.Modules.Finance.Features.WalletPermissions.Controllers.WalletPermissionsControllerBase",
     "Method": "DeletePermission",
     "RelativePath": "api/BankAccount/{id}/permissions/{userId}",
     "HttpMethod": "DELETE",
@@ -88,7 +88,7 @@
     ]
   },
   {
-    "ContainingType": "ModularERP.Modules.Finance.Features.Treasuries.Controllers.WalletPermissionsControllerBase",
+    "ContainingType": "ModularERP.Modules.Finance.Features.WalletPermissions.Controllers.WalletPermissionsControllerBase",
     "Method": "AddPermission",
     "RelativePath": "api/BankAccount/{id}/permissions/users",
     "HttpMethod": "POST",
@@ -102,7 +102,7 @@
       },
       {
         "Name": "command",
-        "Type": "ModularERP.Modules.Finance.Features.Treasuries.Commands.AddWalletPermissionCommand",
+        "Type": "ModularERP.Modules.Finance.Features.WalletPermissions.Commands.AddWalletPermissionCommand",
         "IsRequired": true
       }
     ],
@@ -119,7 +119,7 @@
     ]
   },
   {
-    "ContainingType": "ModularERP.Modules.Finance.Features.Treasuries.Controllers.WalletPermissionsController",
+    "ContainingType": "ModularERP.Modules.Finance.Features.WalletPermissions.Controllers.WalletPermissionsController",
     "Method": "GetWallets",
     "RelativePath": "api/finance/wallets",
     "HttpMethod": "GET",
@@ -139,7 +139,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[System.Collections.Generic.List\u00601[[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[System.Collections.Generic.List\u00601[[ModularERP.Modules.Finance.Features.WalletPermissions.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -150,7 +150,7 @@
     ]
   },
   {
-    "ContainingType": "ModularERP.Modules.Finance.Features.Treasuries.Controllers.WalletPermissionsController",
+    "ContainingType": "ModularERP.Modules.Finance.Features.WalletPermissions.Controllers.WalletPermissionsController",
     "Method": "GetWalletPermissions",
     "RelativePath": "api/finance/wallets/{id}/permissions",
     "HttpMethod": "GET",
@@ -170,7 +170,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[ModularERP.Modules.Finance.Features.WalletPermissions.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -181,7 +181,7 @@
     ]
   },
   {
-    "ContainingType": "ModularERP.Modules.Finance.Features.Treasuries.Controllers.WalletPermissionsController",
+    "ContainingType": "ModularERP.Modules.Finance.Features.WalletPermissions.Controllers.WalletPermissionsController",
     "Method": "UpdateWalletPermissions",
     "RelativePath": "api/finance/wallets/{id}/permissions",
     "HttpMethod": "PUT",
@@ -200,7 +200,7 @@
       },
       {
         "Name": "permissions",
-        "Type": "ModularERP.Modules.Finance.Features.Treasuries.DTO.UpdateWalletPermissionDto",
+        "Type": "ModularERP.Modules.Finance.Features.WalletPermissions.DTO.UpdateWalletPermissionDto",
         "IsRequired": true
       }
     ],
@@ -217,7 +217,7 @@
     ]
   },
   {
-    "ContainingType": "ModularERP.Modules.Finance.Features.Treasuries.Controllers.WalletPermissionsController",
+    "ContainingType": "ModularERP.Modules.Finance.Features.WalletPermissions.Controllers.WalletPermissionsController",
     "Method": "DeleteWalletPermission",
     "RelativePath": "api/finance/wallets/{id}/permissions/{userId}",
     "HttpMethod": "DELETE",
@@ -253,7 +253,7 @@
     ]
   },
   {
-    "ContainingType": "ModularERP.Modules.Finance.Features.Treasuries.Controllers.WalletPermissionsController",
+    "ContainingType": "ModularERP.Modules.Finance.Features.WalletPermissions.Controllers.WalletPermissionsController",
     "Method": "AddWalletPermission",
     "RelativePath": "api/finance/wallets/{id}/permissions/users",
     "HttpMethod": "POST",
@@ -272,7 +272,7 @@
       },
       {
         "Name": "command",
-        "Type": "ModularERP.Modules.Finance.Features.Treasuries.Commands.AddWalletPermissionCommand",
+        "Type": "ModularERP.Modules.Finance.Features.WalletPermissions.Commands.AddWalletPermissionCommand",
         "IsRequired": true
       }
     ],
@@ -289,7 +289,7 @@
     ]
   },
   {
-    "ContainingType": "ModularERP.Modules.Finance.Features.Treasuries.Controllers.WalletPermissionsController",
+    "ContainingType": "ModularERP.Modules.Finance.Features.WalletPermissions.Controllers.WalletPermissionsController",
     "Method": "GetUserWallets",
     "RelativePath": "api/finance/wallets/users/{userId}",
     "HttpMethod": "GET",
@@ -309,7 +309,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[System.Collections.Generic.List\u00601[[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[System.Collections.Generic.List\u00601[[ModularERP.Modules.Finance.Features.WalletPermissions.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -470,7 +470,7 @@
     ]
   },
   {
-    "ContainingType": "ModularERP.Modules.Finance.Features.Treasuries.Controllers.WalletPermissionsControllerBase",
+    "ContainingType": "ModularERP.Modules.Finance.Features.WalletPermissions.Controllers.WalletPermissionsControllerBase",
     "Method": "GetPermissions",
     "RelativePath": "api/Treasury/{id}/permissions",
     "HttpMethod": "GET",
@@ -485,7 +485,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[ModularERP.Modules.Finance.Features.Treasuries.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[ModularERP.Modules.Finance.Features.WalletPermissions.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -496,7 +496,7 @@
     ]
   },
   {
-    "ContainingType": "ModularERP.Modules.Finance.Features.Treasuries.Controllers.WalletPermissionsControllerBase",
+    "ContainingType": "ModularERP.Modules.Finance.Features.WalletPermissions.Controllers.WalletPermissionsControllerBase",
     "Method": "UpdatePermissions",
     "RelativePath": "api/Treasury/{id}/permissions",
     "HttpMethod": "PUT",
@@ -510,7 +510,7 @@
       },
       {
         "Name": "permissions",
-        "Type": "ModularERP.Modules.Finance.Features.Treasuries.DTO.UpdateWalletPermissionDto",
+        "Type": "ModularERP.Modules.Finance.Features.WalletPermissions.DTO.UpdateWalletPermissionDto",
         "IsRequired": true
       }
     ],
@@ -527,7 +527,7 @@
     ]
   },
   {
-    "ContainingType": "ModularERP.Modules.Finance.Features.Treasuries.Controllers.WalletPermissionsControllerBase",
+    "ContainingType": "ModularERP.Modules.Finance.Features.WalletPermissions.Controllers.WalletPermissionsControllerBase",
     "Method": "DeletePermission",
     "RelativePath": "api/Treasury/{id}/permissions/{userId}",
     "HttpMethod": "DELETE",
@@ -558,7 +558,7 @@
     ]
   },
   {
-    "ContainingType": "ModularERP.Modules.Finance.Features.Treasuries.Controllers.WalletPermissionsControllerBase",
+    "ContainingType": "ModularERP.Modules.Finance.Features.WalletPermissions.Controllers.WalletPermissionsControllerBase",
     "Method": "AddPermission",
     "RelativePath": "api/Treasury/{id}/permissions/users",
     "HttpMethod": "POST",
@@ -572,7 +572,7 @@
       },
       {
         "Name": "command",
-        "Type": "ModularERP.Modules.Finance.Features.Treasuries.Commands.AddWalletPermissionCommand",
+        "Type": "ModularERP.Modules.Finance.Features.WalletPermissions.Commands.AddWalletPermissionCommand",
         "IsRequired": true
       }
     ],
