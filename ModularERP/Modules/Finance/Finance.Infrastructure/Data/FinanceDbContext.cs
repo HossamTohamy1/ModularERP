@@ -182,7 +182,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
             // Currency Configuration
             builder.Entity<Currency>(entity =>
             {
-                entity.HasKey(e => e.Code); // مهم للـ foreign keys
+                entity.HasKey(e => e.Code); 
             });
             // Attachment Configuration
             builder.Entity<VoucherAttachment>(entity =>

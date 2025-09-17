@@ -613,6 +613,94 @@
         }
       }
     },
+    "/api/ExpenseVouchers": {
+      "post": {
+        "tags": [
+          "ExpenseVouchers"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateExpenseVoucherDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateExpenseVoucherDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateExpenseVoucherDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExpenseVoucherResponseDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExpenseVoucherResponseDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExpenseVoucherResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ExpenseVouchers/{id}": {
+      "get": {
+        "tags": [
+          "ExpenseVouchers"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExpenseVoucherResponseDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExpenseVoucherResponseDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExpenseVoucherResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Treasury": {
       "get": {
         "tags": [
@@ -1513,6 +1601,24 @@
         },
         "additionalProperties": false
       },
+      "AttachmentResponseDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "fileName": {
+            "type": "string",
+            "nullable": true
+          },
+          "fileUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "BankAccountCreatedDto": {
         "type": "object",
         "properties": {
@@ -1915,6 +2021,24 @@
         },
         "additionalProperties": false
       },
+      "CounterpartyDto": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "CreateBankAccountDto": {
         "type": "object",
         "properties": {
@@ -1951,6 +2075,73 @@
           },
           "withdrawAcl": {
             "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateExpenseVoucherDto": {
+        "required": [
+          "amount",
+          "categoryId",
+          "date",
+          "description",
+          "source"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "nullable": true
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "currencyCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "fxRate": {
+            "type": "number",
+            "format": "double"
+          },
+          "amount": {
+            "minimum": 0.01,
+            "type": "number",
+            "format": "double"
+          },
+          "description": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "counterparty": {
+            "$ref": "#/components/schemas/CounterpartyDto"
+          },
+          "categoryId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "source": {
+            "$ref": "#/components/schemas/WalletDto"
+          },
+          "taxLines": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TaxLineDto"
+            },
+            "nullable": true
+          },
+          "attachments": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "recurrenceId": {
+            "type": "string",
+            "format": "uuid",
             "nullable": true
           }
         },
@@ -2003,6 +2194,62 @@
         },
         "additionalProperties": false
       },
+      "ExpenseVoucherResponseDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "currencyCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "fxRate": {
+            "type": "number",
+            "format": "double"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "taxLines": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TaxLineResponseDto"
+            },
+            "nullable": true
+          },
+          "attachments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AttachmentResponseDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "FinanceErrorCode": {
         "enum": [
           1001,
@@ -2047,6 +2294,55 @@
         ],
         "type": "integer",
         "format": "int32"
+      },
+      "TaxLineDto": {
+        "required": [
+          "baseAmount",
+          "taxAmount",
+          "taxId"
+        ],
+        "type": "object",
+        "properties": {
+          "taxId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "baseAmount": {
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "taxAmount": {
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "isWithholding": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TaxLineResponseDto": {
+        "type": "object",
+        "properties": {
+          "taxId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "baseAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "taxAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "isWithholding": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
       },
       "TreasuryCreatedDto": {
         "type": "object",
@@ -2448,6 +2744,24 @@
           },
           "canWithdraw": {
             "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "WalletDto": {
+        "required": [
+          "id",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
           }
         },
         "additionalProperties": false

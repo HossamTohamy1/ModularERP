@@ -20,27 +20,9 @@ namespace ModularERP.Modules.Finance.Features.BankAccounts.Controllers
         {
         }
 
-        [HttpGet("test/{id}")]
-        public async Task<IActionResult> Test(Guid id, [FromServices] FinanceDbContext context)
-        {
-            try
-            {
-                var acc = await context.BankAccounts.FirstOrDefaultAsync(x => x.Id == id);
-                if (acc == null)
-                {
-                    return NotFound($"Bank account with ID {id} not found");
-                }
-                return Ok(acc);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Error retrieving bank account: {ex.Message}");
-            }
-        }
+        
 
-        /// <summary>
-        /// Get all bank accounts with pagination and filtering
-        /// </summary>
+  
         [HttpGet]
         public async Task<ActionResult<ResponseViewModel<IEnumerable<BankAccountListDto>>>> GetAllBankAccounts(
             [FromQuery] int page = 1,
@@ -83,9 +65,7 @@ namespace ModularERP.Modules.Finance.Features.BankAccounts.Controllers
             }
         }
 
-        /// <summary>
-        /// Get bank account by ID
-        /// </summary>
+
         [HttpGet("{id:guid}")]
         public async Task<ActionResult<ResponseViewModel<BankAccountDto>>> GetBankAccountById(Guid id)
         {
@@ -118,9 +98,7 @@ namespace ModularERP.Modules.Finance.Features.BankAccounts.Controllers
             }
         }
 
-        /// <summary>
-        /// Get bank accounts by company
-        /// </summary>
+   
         [HttpGet("company/{companyId:guid}")]
         public async Task<ActionResult<ResponseViewModel<IEnumerable<BankAccountListDto>>>> GetBankAccountsByCompany(
             Guid companyId,
@@ -160,9 +138,7 @@ namespace ModularERP.Modules.Finance.Features.BankAccounts.Controllers
             }
         }
 
-        /// <summary>
-        /// Get bank account statistics
-        /// </summary>
+ 
         [HttpGet("statistics")]
         public async Task<ActionResult<ResponseViewModel<BankAccountStatisticsDto>>> GetBankAccountStatistics(
             [FromQuery] Guid? companyId = null,
@@ -197,9 +173,7 @@ namespace ModularERP.Modules.Finance.Features.BankAccounts.Controllers
             }
         }
 
-        /// <summary>
-        /// Create a new bank account
-        /// </summary>
+
         [HttpPost]
         public async Task<ActionResult<ResponseViewModel<BankAccountCreatedDto>>> CreateBankAccount([FromBody] CreateBankAccountDto createBankAccountDto)
         {
@@ -233,9 +207,7 @@ namespace ModularERP.Modules.Finance.Features.BankAccounts.Controllers
             }
         }
 
-        /// <summary>
-        /// Update an existing bank account
-        /// </summary>
+
         [HttpPut("{id:guid}")]
         public async Task<ActionResult<ResponseViewModel<bool>>> UpdateBankAccount(Guid id, [FromBody] UpdateBankAccountDto updateBankAccountDto)
         {
@@ -287,9 +259,6 @@ namespace ModularERP.Modules.Finance.Features.BankAccounts.Controllers
             }
         }
 
-        /// <summary>
-        /// Delete a bank account
-        /// </summary>
         [HttpDelete("{id:guid}")]
         public async Task<ActionResult<ResponseViewModel<bool>>> DeleteBankAccount(Guid id)
         {

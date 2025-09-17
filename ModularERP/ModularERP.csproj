@@ -72,6 +72,14 @@
     <Folder Include="Modules\Finance\Features\GlAccounts\Mapping\" />
     <Folder Include="Modules\Finance\Features\GlAccounts\Queries\" />
     <Folder Include="Modules\Finance\Features\GlAccounts\Validators\" />
+    <Folder Include="Modules\Finance\Features\IncomesVoucher\Commands\" />
+    <Folder Include="Modules\Finance\Features\IncomesVoucher\Controllers\" />
+    <Folder Include="Modules\Finance\Features\IncomesVoucher\Handlers\" />
+    <Folder Include="Modules\Finance\Features\IncomesVoucher\Mapping\" />
+    <Folder Include="Modules\Finance\Features\IncomesVoucher\DTO\" />
+    <Folder Include="Modules\Finance\Features\IncomesVoucher\Queries\" />
+    <Folder Include="Modules\Finance\Features\IncomesVoucher\Service\" />
+    <Folder Include="Modules\Finance\Features\IncomesVoucher\Validators\" />
     <Folder Include="Modules\Finance\Features\LedgerEntries\Commands\" />
     <Folder Include="Modules\Finance\Features\LedgerEntries\Controllers\" />
     <Folder Include="Modules\Finance\Features\LedgerEntries\Handlers\" />

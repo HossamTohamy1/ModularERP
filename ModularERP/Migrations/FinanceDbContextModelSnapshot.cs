@@ -388,6 +388,9 @@ namespace ModularERP.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
+                    b.Property<Guid?>("JournalAccountId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -412,6 +415,8 @@ namespace ModularERP.Migrations
                     b.HasIndex("CompanyId");
 
                     b.HasIndex("CurrencyCode");
+
+                    b.HasIndex("JournalAccountId");
 
                     b.ToTable("BankAccounts");
                 });
@@ -790,6 +795,9 @@ namespace ModularERP.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
+                    b.Property<Guid?>("JournalAccountId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -812,6 +820,8 @@ namespace ModularERP.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CurrencyCode");
+
+                    b.HasIndex("JournalAccountId");
 
                     b.HasIndex("CompanyId", "Name")
                         .IsUnique();
@@ -1167,9 +1177,15 @@ namespace ModularERP.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("ModularERP.Modules.Finance.Features.GlAccounts.Models.GlAccount", "JournalAccount")
+                        .WithMany()
+                        .HasForeignKey("JournalAccountId");
+
                     b.Navigation("Company");
 
                     b.Navigation("Currency");
+
+                    b.Navigation("JournalAccount");
                 });
 
             modelBuilder.Entity("ModularERP.Modules.Finance.Features.GlAccounts.Models.GlAccount", b =>
@@ -1235,9 +1251,15 @@ namespace ModularERP.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("ModularERP.Modules.Finance.Features.GlAccounts.Models.GlAccount", "JournalAccount")
+                        .WithMany()
+                        .HasForeignKey("JournalAccountId");
+
                     b.Navigation("Company");
 
                     b.Navigation("Currency");
+
+                    b.Navigation("JournalAccount");
                 });
 
             modelBuilder.Entity("ModularERP.Modules.Finance.Features.VoucherTaxs.Models.VoucherTax", b =>

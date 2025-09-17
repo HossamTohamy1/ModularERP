@@ -22,6 +22,10 @@ using ModularERP.Modules.Finance.Features.Treasuries.Commands;
 using ModularERP.Modules.Finance.Features.Treasuries.DTO;
 using ModularERP.Modules.Finance.Features.BankAccounts.Models;
 using ModularERP.Modules.Finance.Features.BankAccounts.Mapping;
+using ModularERP.Modules.Finance.Features.ExpensesVoucher.Service;
+using ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO;
+using ModularERP.Modules.Finance.Features.ExpensesVoucher.Validators;
+using ModularERP.Modules.Finance.Features.ExpensesVoucher.Mapping;
 
 namespace ModularERP
 {
@@ -96,6 +100,11 @@ namespace ModularERP
                 {
                     cfg.AddProfile<BankAccountMappingProfile>();
                 });
+                                builder.Services.AddAutoMapper(cfg =>
+                {
+                    cfg.AddProfile<ExpenseVoucherMappingProfile>();
+                });
+
 
 
 
@@ -107,7 +116,9 @@ namespace ModularERP
 
                 builder.Services.AddScoped<IGeneralRepository<Treasury>, GeneralRepository<Treasury>>();
                 builder.Services.AddScoped<IGeneralRepository<BankAccount>, GeneralRepository<BankAccount>>();
+                builder.Services.AddScoped<IExpenseVoucherService, ExpenseVoucherService>();
 
+                builder.Services.AddTransient<IValidator<CreateExpenseVoucherDto>, CreateExpenseVoucherValidator>();
 
                 var app = builder.Build();
 
