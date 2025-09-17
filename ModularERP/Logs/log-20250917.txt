@@ -993,3 +993,36 @@ WHERE [b].[IsDeleted] = CAST(0 AS bit) AND [b].[Id] = @__bankAccount_Id_0
 2025-09-17 15:04:03.436 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetAllBankAccounts (ModularERP)'
 2025-09-17 15:04:03.437 +03:00 [INF] Request completed successfully with status code 200
 2025-09-17 15:04:03.438 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/BankAccount?page=1&pageSize=10&search=E&sortDescending=false&companyId=d00cf078-c1ff-4feb-ae37-d66a827ae438 - 200 null application/json; charset=utf-8 49.8193ms
+2025-09-17 15:09:32.170 +03:00 [INF] Starting web host...
+2025-09-17 15:09:32.592 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-17 15:09:32.595 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-17 15:09:32.672 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-17 15:09:32.674 +03:00 [INF] Hosting environment: Development
+2025-09-17 15:09:32.675 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-17 15:10:08.192 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/BankAccount/76d22594-df50-4f4e-95b7-fb68f806031b - null null
+2025-09-17 15:10:08.221 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/BankAccount/76d22594-df50-4f4e-95b7-fb68f806031b - 307 0 null 29.3553ms
+2025-09-17 15:10:08.257 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/BankAccount/76d22594-df50-4f4e-95b7-fb68f806031b - null null
+2025-09-17 15:10:08.264 +03:00 [INF] CORS policy execution successful.
+2025-09-17 15:10:08.274 +03:00 [INF] Request started
+2025-09-17 15:10:08.277 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP)'
+2025-09-17 15:10:08.295 +03:00 [INF] Route matched with {action = "GetBankAccountById", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto]]] GetBankAccountById(System.Guid) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 15:10:08.300 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 15:10:08.879 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-09-17 15:10:09.064 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 15:10:09.497 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[@__request_Id_0='76d22594-df50-4f4e-95b7-fb68f806031b'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[IsDeleted] = CAST(0 AS bit) AND [b].[Id] = @__request_Id_0 AND [b].[IsDeleted] = CAST(0 AS bit)
+2025-09-17 15:10:09.594 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__bankAccount_CompanyId_0='d36b22ee-69fd-491c-99a6-36faa8dbfd1a'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[CreatedById], [c].[CurrencyCode], [c].[IsActive], [c].[IsDeleted], [c].[Name], [c].[UpdatedAt], [c].[UpdatedById]
+FROM [Companies] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit) AND [c].[Id] = @__bankAccount_CompanyId_0
+2025-09-17 15:10:09.633 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__bankAccount_CurrencyCode_0='EGP' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Code], [c].[CreatedAt], [c].[CreatedById], [c].[Decimals], [c].[Id], [c].[IsActive], [c].[IsDeleted], [c].[Symbol], [c].[UpdatedAt], [c].[UpdatedById]
+FROM [Currencies] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit) AND [c].[Code] = @__bankAccount_CurrencyCode_0
+2025-09-17 15:10:09.663 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-17 15:10:09.687 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP) in 1386.4916ms
+2025-09-17 15:10:09.690 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP)'
+2025-09-17 15:10:09.692 +03:00 [INF] Request completed successfully with status code 200
+2025-09-17 15:10:09.699 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/BankAccount/76d22594-df50-4f4e-95b7-fb68f806031b - 200 null application/json; charset=utf-8 1441.7318ms

@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\modules\\finance\\features\\bankaccounts\\handlers\\updatebankaccounthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\features\\bankaccounts\\handlers\\updatebankaccounthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\modules\\finance\\features\\bankaccounts\\models\\bankaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\features\\bankaccounts\\models\\bankaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\modules\\finance\\features\\bankaccounts\\handlers\\getallbankaccountshandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\features\\bankaccounts\\handlers\\getallbankaccountshandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -51,10 +59,6 @@
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\features\\bankaccounts\\controllers\\bankaccountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\modules\\finance\\features\\bankaccounts\\handlers\\updatebankaccounthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\features\\bankaccounts\\handlers\\updatebankaccounthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\modules\\finance\\features\\bankaccounts\\commands\\deletebankaccountcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\features\\bankaccounts\\commands\\deletebankaccountcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -77,10 +81,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\modules\\finance\\features\\bankaccounts\\service\\servicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\features\\bankaccounts\\service\\servicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\modules\\finance\\features\\bankaccounts\\models\\bankaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\features\\bankaccounts\\models\\bankaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\modules\\finance\\features\\bankaccounts\\validators\\getbankaccountsbycompanyqueryvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -518,294 +518,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 9,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GetBankAccountStatisticsHandler.cs",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetBankAccountStatisticsHandler.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetBankAccountStatisticsHandler.cs",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetBankAccountStatisticsHandler.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetBankAccountStatisticsHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T11:59:32.131Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "GetBankAccountByIdQuery.cs",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetBankAccountByIdQuery.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetBankAccountByIdQuery.cs",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetBankAccountByIdQuery.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetBankAccountByIdQuery.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T11:48:50.256Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "GetBankAccountByIdHandler.cs",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetBankAccountByIdHandler.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetBankAccountByIdHandler.cs",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetBankAccountByIdHandler.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetBankAccountByIdHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T11:12:29.731Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DeleteBankAccountHandler.cs",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\DeleteBankAccountHandler.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\DeleteBankAccountHandler.cs",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\DeleteBankAccountHandler.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\DeleteBankAccountHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T10:07:36.338Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CreateBankAccountHandler.cs",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\CreateBankAccountHandler.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\CreateBankAccountHandler.cs",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\CreateBankAccountHandler.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\CreateBankAccountHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T10:07:28.603Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GetAllBankAccountsHandler.cs",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetAllBankAccountsHandler.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetAllBankAccountsHandler.cs",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetAllBankAccountsHandler.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetAllBankAccountsHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T11:14:19.239Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "GetBankAccountsByCompanyQuery.cs",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetBankAccountsByCompanyQuery.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetBankAccountsByCompanyQuery.cs",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetBankAccountsByCompanyQuery.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetBankAccountsByCompanyQuery.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAgwBkAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T11:13:57.898Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "GetAllBankAccountsQuery.cs",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetAllBankAccountsQuery.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetAllBankAccountsQuery.cs",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetAllBankAccountsQuery.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetAllBankAccountsQuery.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T10:36:41.656Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "CreateBankAccountCommand.cs",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Commands\\CreateBankAccountCommand.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Commands\\CreateBankAccountCommand.cs",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Commands\\CreateBankAccountCommand.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Commands\\CreateBankAccountCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T10:37:42.507Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GetBankAccountsByCompanyHandler.cs",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetBankAccountsByCompanyHandler.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetBankAccountsByCompanyHandler.cs",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetBankAccountsByCompanyHandler.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetBankAccountsByCompanyHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T11:14:41.478Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "GetBankAccountStatisticsQuery.cs",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetBankAccountStatisticsQuery.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetBankAccountStatisticsQuery.cs",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetBankAccountStatisticsQuery.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetBankAccountStatisticsQuery.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T11:49:24.302Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "BankAccountController.cs",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Controllers\\BankAccountController.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Controllers\\BankAccountController.cs",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Controllers\\BankAccountController.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Controllers\\BankAccountController.cs",
-              "ViewState": "AgIAAFwAAAAAAAAAAAAmwGoAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-15T21:44:52.135Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "UpdateBankAccountHandler.cs",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\UpdateBankAccountHandler.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\UpdateBankAccountHandler.cs",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\UpdateBankAccountHandler.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\UpdateBankAccountHandler.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAUwFMAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T10:07:42.132Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "DeleteBankAccountCommand.cs",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Commands\\DeleteBankAccountCommand.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Commands\\DeleteBankAccountCommand.cs",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Commands\\DeleteBankAccountCommand.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Commands\\DeleteBankAccountCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T10:39:05.846Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "UpdateBankAccountCommand.cs",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Commands\\UpdateBankAccountCommand.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Commands\\UpdateBankAccountCommand.cs",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Commands\\UpdateBankAccountCommand.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Commands\\UpdateBankAccountCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T10:38:49.447Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "BankAccountMappingProfile.cs",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Mapping\\BankAccountMappingProfile.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Mapping\\BankAccountMappingProfile.cs",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Mapping\\BankAccountMappingProfile.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Mapping\\BankAccountMappingProfile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T11:31:26.194Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Program.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Program.cs",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Program.cs",
-              "RelativeToolTip": "ModularERP\\Program.cs",
-              "ViewState": "AgIAAHYAAAAAAAAAAAAUwJAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T10:02:33.318Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "FinanceErrorCode.cs",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Common\\Enum\\Finance_Enum\\FinanceErrorCode.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Common\\Enum\\Finance_Enum\\FinanceErrorCode.cs",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Common\\Enum\\Finance_Enum\\FinanceErrorCode.cs",
-              "RelativeToolTip": "ModularERP\\Common\\Enum\\Finance_Enum\\FinanceErrorCode.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAUwC4AAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T15:48:26.941Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "ServiceCollectionExtensions.cs",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Service\\ServiceCollectionExtensions.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Service\\ServiceCollectionExtensions.cs",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Service\\ServiceCollectionExtensions.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Service\\ServiceCollectionExtensions.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAUwC0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T11:15:02.633Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "BankAccount.cs",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Models\\BankAccount.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Models\\BankAccount.cs",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Models\\BankAccount.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Models\\BankAccount.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAQwCsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T09:28:49.074Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "GetBankAccountsByCompanyQueryValidator.cs",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Validators\\GetBankAccountsByCompanyQueryValidator.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Validators\\GetBankAccountsByCompanyQueryValidator.cs",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Validators\\GetBankAccountsByCompanyQueryValidator.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Validators\\GetBankAccountsByCompanyQueryValidator.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAwBQAAABEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T11:16:19.99Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "GetAllBankAccountsQueryValidator.cs",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Validators\\GetAllBankAccountsQueryValidator.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Validators\\GetAllBankAccountsQueryValidator.cs",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Validators\\GetAllBankAccountsQueryValidator.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Validators\\GetAllBankAccountsQueryValidator.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T11:15:37.965Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -820,6 +534,273 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GetBankAccountByIdQuery.cs",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetBankAccountByIdQuery.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetBankAccountByIdQuery.cs",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetBankAccountByIdQuery.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetBankAccountByIdQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T11:48:50.256Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "GetBankAccountByIdHandler.cs",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetBankAccountByIdHandler.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetBankAccountByIdHandler.cs",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetBankAccountByIdHandler.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetBankAccountByIdHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T11:12:29.731Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DeleteBankAccountHandler.cs",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\DeleteBankAccountHandler.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\DeleteBankAccountHandler.cs",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\DeleteBankAccountHandler.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\DeleteBankAccountHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T10:07:36.338Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CreateBankAccountHandler.cs",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\CreateBankAccountHandler.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\CreateBankAccountHandler.cs",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\CreateBankAccountHandler.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\CreateBankAccountHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T10:07:28.603Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GetAllBankAccountsHandler.cs",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetAllBankAccountsHandler.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetAllBankAccountsHandler.cs",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetAllBankAccountsHandler.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetAllBankAccountsHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T11:14:19.239Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BankAccount.cs",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Models\\BankAccount.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Models\\BankAccount.cs",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Models\\BankAccount.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Models\\BankAccount.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAzwCgAAABZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T09:28:49.074Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UpdateBankAccountHandler.cs",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\UpdateBankAccountHandler.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\UpdateBankAccountHandler.cs",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\UpdateBankAccountHandler.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\UpdateBankAccountHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T10:07:42.132Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GetBankAccountStatisticsHandler.cs",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetBankAccountStatisticsHandler.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetBankAccountStatisticsHandler.cs",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetBankAccountStatisticsHandler.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetBankAccountStatisticsHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T11:59:32.131Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GetBankAccountsByCompanyQuery.cs",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetBankAccountsByCompanyQuery.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetBankAccountsByCompanyQuery.cs",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetBankAccountsByCompanyQuery.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetBankAccountsByCompanyQuery.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAgwBkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T11:13:57.898Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "GetAllBankAccountsQuery.cs",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetAllBankAccountsQuery.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetAllBankAccountsQuery.cs",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetAllBankAccountsQuery.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetAllBankAccountsQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T10:36:41.656Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CreateBankAccountCommand.cs",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Commands\\CreateBankAccountCommand.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Commands\\CreateBankAccountCommand.cs",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Commands\\CreateBankAccountCommand.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Commands\\CreateBankAccountCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T10:37:42.507Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GetBankAccountsByCompanyHandler.cs",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetBankAccountsByCompanyHandler.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetBankAccountsByCompanyHandler.cs",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetBankAccountsByCompanyHandler.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetBankAccountsByCompanyHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T11:14:41.478Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "GetBankAccountStatisticsQuery.cs",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetBankAccountStatisticsQuery.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetBankAccountStatisticsQuery.cs",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetBankAccountStatisticsQuery.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetBankAccountStatisticsQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T11:49:24.302Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "BankAccountController.cs",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Controllers\\BankAccountController.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Controllers\\BankAccountController.cs",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Controllers\\BankAccountController.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Controllers\\BankAccountController.cs",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAmwGoAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T21:44:52.135Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "DeleteBankAccountCommand.cs",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Commands\\DeleteBankAccountCommand.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Commands\\DeleteBankAccountCommand.cs",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Commands\\DeleteBankAccountCommand.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Commands\\DeleteBankAccountCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T10:39:05.846Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "UpdateBankAccountCommand.cs",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Commands\\UpdateBankAccountCommand.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Commands\\UpdateBankAccountCommand.cs",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Commands\\UpdateBankAccountCommand.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Commands\\UpdateBankAccountCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T10:38:49.447Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "BankAccountMappingProfile.cs",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Mapping\\BankAccountMappingProfile.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Mapping\\BankAccountMappingProfile.cs",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Mapping\\BankAccountMappingProfile.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Mapping\\BankAccountMappingProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T11:31:26.194Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Program.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Program.cs",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Program.cs",
+              "RelativeToolTip": "ModularERP\\Program.cs",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAUwJAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T10:02:33.318Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "FinanceErrorCode.cs",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Common\\Enum\\Finance_Enum\\FinanceErrorCode.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Common\\Enum\\Finance_Enum\\FinanceErrorCode.cs",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Common\\Enum\\Finance_Enum\\FinanceErrorCode.cs",
+              "RelativeToolTip": "ModularERP\\Common\\Enum\\Finance_Enum\\FinanceErrorCode.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAUwC4AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T15:48:26.941Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ServiceCollectionExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Service\\ServiceCollectionExtensions.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Service\\ServiceCollectionExtensions.cs",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Service\\ServiceCollectionExtensions.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Service\\ServiceCollectionExtensions.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAUwC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T11:15:02.633Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "GetBankAccountsByCompanyQueryValidator.cs",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Validators\\GetBankAccountsByCompanyQueryValidator.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Validators\\GetBankAccountsByCompanyQueryValidator.cs",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Validators\\GetBankAccountsByCompanyQueryValidator.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Validators\\GetBankAccountsByCompanyQueryValidator.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAwBQAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T11:16:19.99Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "GetAllBankAccountsQueryValidator.cs",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Validators\\GetAllBankAccountsQueryValidator.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Validators\\GetAllBankAccountsQueryValidator.cs",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Validators\\GetAllBankAccountsQueryValidator.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Validators\\GetAllBankAccountsQueryValidator.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T11:15:37.965Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 24,
               "Title": "WalletPermissionsControllerBase.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Controllers\\WalletPermissionsControllerBase.cs",
@@ -828,8 +809,7 @@
               "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Controllers\\WalletPermissionsControllerBase.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAADgvxAAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-15T22:39:06.843Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-15T22:39:06.843Z"
             },
             {
               "$type": "Document",
@@ -841,8 +821,7 @@
               "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\Treasuries\\Controllers\\TreasuryController.cs",
               "ViewState": "AgIAADkAAAAAAAAAAAAwwEMAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T22:54:19.813Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-14T22:54:19.813Z"
             },
             {
               "$type": "Document",
@@ -854,8 +833,7 @@
               "RelativeToolTip": "ModularERP\\Modules\\Finance\\Finance.Infrastructure\\Data\\FinanceDbContext.cs",
               "ViewState": "AgIAABsAAAAAAAAAAAAwwCAAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T09:45:55.897Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-14T09:45:55.897Z"
             },
             {
               "$type": "Document",
@@ -867,8 +845,7 @@
               "RelativeToolTip": "ModularERP\\Common\\Enum\\Finance_Enum\\BankAccountStatus.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T09:14:19.804Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-14T09:14:19.804Z"
             },
             {
               "$type": "Document",
@@ -880,8 +857,7 @@
               "RelativeToolTip": "ModularERP\\Common\\Enum\\Finance_Enum\\PermissionType.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-15T21:35:15.574Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-15T21:35:15.574Z"
             },
             {
               "$type": "Document",
@@ -917,8 +893,7 @@
               "RelativeToolTip": "ModularERP\\Common\\Middleware\\GlobalErrorHandlerMiddleware.cs",
               "ViewState": "AgIAAGMAAAAAAAAAAAASwCUAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T15:50:03.423Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-14T15:50:03.423Z"
             },
             {
               "$type": "Document",
@@ -966,8 +941,7 @@
               "RelativeToolTip": "ModularERP\\.gitignore.txt",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-09-14T11:21:53.641Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-14T11:21:53.641Z"
             },
             {
               "$type": "Document",

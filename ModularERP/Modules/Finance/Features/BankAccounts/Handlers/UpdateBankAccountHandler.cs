@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using ModularERP.Common.Enum.Finance_Enum;
 using ModularERP.Common.ViewModel;
 using ModularERP.Modules.Finance.Features.BankAccounts.Commands;
-using ModularERP.Modules.Finance.Features.Models;
+using ModularERP.Modules.Finance.Features.BankAccounts.Models;
 using ModularERP.Shared.Interfaces;
 
 namespace ModularERP.Modules.Finance.Features.BankAccounts.Handlers
