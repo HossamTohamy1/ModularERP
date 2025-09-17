@@ -87,11 +87,16 @@ namespace ModularERP.SharedKernel.Repository
             }
         }
 
+
         public async Task SaveChanges()
         {
             await _context.SaveChangesAsync();
         }
 
+        public async Task<bool> AnyAsync(Expression<Func<T, bool>> predicate)
+        {
+            return await _dbSet.AnyAsync(predicate);
+        }
 
     }
 }

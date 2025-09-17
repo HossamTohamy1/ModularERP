@@ -12,6 +12,8 @@ namespace ModularERP.Shared.Interfaces
         Task Update(T entity);
         void UpdateInclude(T entity, params string[] modifiedParams);
         Task Delete(Guid id);
+        Task<bool> AnyAsync(Expression<Func<T, bool>> predicate);
+
         Task SaveChanges();
 
     }

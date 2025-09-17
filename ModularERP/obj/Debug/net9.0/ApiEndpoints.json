@@ -356,22 +356,6 @@
     ]
   },
   {
-    "ContainingType": "ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController",
-    "Method": "Test",
-    "RelativePath": "api/BankAccount/test/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController",
     "Method": "CreateExpenseVoucher",
     "RelativePath": "api/ExpenseVouchers",
@@ -387,7 +371,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ExpenseVoucherResponseDto",
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ExpenseVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -411,17 +395,7 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ExpenseVoucherResponseDto",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "ModularERP.Modules.Finance.Features.WalletPermissions.Controllers.WalletPermissionsController",
@@ -615,6 +589,58 @@
     "ReturnTypes": [
       {
         "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[System.Collections.Generic.List\u00601[[ModularERP.Modules.Finance.Features.WalletPermissions.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController",
+    "Method": "CreateIncomeVoucher",
+    "RelativePath": "api/IncomeVouchers",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.CreateIncomeVoucherDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController",
+    "Method": "GetIncomeVoucher",
+    "RelativePath": "api/IncomeVouchers/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

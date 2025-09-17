@@ -26,6 +26,10 @@ using ModularERP.Modules.Finance.Features.ExpensesVoucher.Service;
 using ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO;
 using ModularERP.Modules.Finance.Features.ExpensesVoucher.Validators;
 using ModularERP.Modules.Finance.Features.ExpensesVoucher.Mapping;
+using ModularERP.Modules.Finance.Features.IncomesVoucher.Mapping;
+using ModularERP.Modules.Finance.Features.IncomesVoucher.Service.Interface;
+using ModularERP.Modules.Finance.Features.IncomesVoucher.DTO;
+using ModularERP.Modules.Finance.Features.IncomesVoucher.Validators;
 
 namespace ModularERP
 {
@@ -104,6 +108,10 @@ namespace ModularERP
                 {
                     cfg.AddProfile<ExpenseVoucherMappingProfile>();
                 });
+                                        builder.Services.AddAutoMapper(cfg =>
+                {
+                    cfg.AddProfile<IncomeVoucherMappingProfile>();
+                });
 
 
 
@@ -114,11 +122,21 @@ namespace ModularERP
                 builder.Services.AddScoped<IValidator<CreateTreasuryDto>, CreateTreasuryDtoValidator>();
                 builder.Services.AddScoped<IValidator<UpdateTreasuryDto>, UpdateTreasuryDtoValidator>();
 
+                builder.Services.AddScoped<IValidator<CreateIncomeVoucherDto>, CreateIncomeVoucherValidator>();
+
                 builder.Services.AddScoped<IGeneralRepository<Treasury>, GeneralRepository<Treasury>>();
                 builder.Services.AddScoped<IGeneralRepository<BankAccount>, GeneralRepository<BankAccount>>();
                 builder.Services.AddScoped<IExpenseVoucherService, ExpenseVoucherService>();
+                builder.Services.AddScoped<IIncomeVoucherService, IncomeVoucherService>();
 
                 builder.Services.AddTransient<IValidator<CreateExpenseVoucherDto>, CreateExpenseVoucherValidator>();
+
+                builder.Services.AddEndpointsApiExplorer();
+                builder.Services.AddSwaggerGen(c =>
+                {
+                    // Avoid schema ID conflicts by using full type name
+                    c.CustomSchemaIds(type => type.FullName!.Replace("+", "."));
+                });
 
                 var app = builder.Build();
 

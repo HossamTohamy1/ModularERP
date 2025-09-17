@@ -5,29 +5,6 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/BankAccount/test/{id}": {
-      "get": {
-        "tags": [
-          "BankAccount"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/api/BankAccount": {
       "get": {
         "tags": [
@@ -89,17 +66,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/BankAccountListDtoIEnumerableResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BankAccountListDtoIEnumerableResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BankAccountListDtoIEnumerableResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               }
             }
@@ -114,17 +91,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateBankAccountDto"
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.BankAccounts.DTO.CreateBankAccountDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateBankAccountDto"
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.BankAccounts.DTO.CreateBankAccountDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateBankAccountDto"
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.BankAccounts.DTO.CreateBankAccountDto"
               }
             }
           }
@@ -135,17 +112,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/BankAccountCreatedDtoResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountCreatedDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BankAccountCreatedDtoResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountCreatedDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BankAccountCreatedDtoResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountCreatedDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               }
             }
@@ -175,17 +152,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/BankAccountDtoResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BankAccountDtoResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BankAccountDtoResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               }
             }
@@ -211,17 +188,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateBankAccountDto"
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.BankAccounts.DTO.UpdateBankAccountDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateBankAccountDto"
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.BankAccounts.DTO.UpdateBankAccountDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateBankAccountDto"
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.BankAccounts.DTO.UpdateBankAccountDto"
               }
             }
           }
@@ -232,17 +209,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               }
             }
@@ -270,17 +247,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               }
             }
@@ -335,17 +312,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/BankAccountListDtoIEnumerableResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BankAccountListDtoIEnumerableResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BankAccountListDtoIEnumerableResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               }
             }
@@ -390,17 +367,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/BankAccountStatisticsDtoResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountStatisticsDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BankAccountStatisticsDtoResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountStatisticsDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BankAccountStatisticsDtoResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountStatisticsDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               }
             }
@@ -430,17 +407,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/WalletPermissionDtoResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.WalletPermissions.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/WalletPermissionDtoResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.WalletPermissions.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/WalletPermissionDtoResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.WalletPermissions.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               }
             }
@@ -466,17 +443,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateWalletPermissionDto"
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.WalletPermissions.DTO.UpdateWalletPermissionDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateWalletPermissionDto"
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.WalletPermissions.DTO.UpdateWalletPermissionDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateWalletPermissionDto"
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.WalletPermissions.DTO.UpdateWalletPermissionDto"
               }
             }
           }
@@ -487,17 +464,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               }
             }
@@ -525,17 +502,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AddWalletPermissionCommand"
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.WalletPermissions.Commands.AddWalletPermissionCommand"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/AddWalletPermissionCommand"
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.WalletPermissions.Commands.AddWalletPermissionCommand"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/AddWalletPermissionCommand"
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.WalletPermissions.Commands.AddWalletPermissionCommand"
               }
             }
           }
@@ -546,17 +523,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               }
             }
@@ -595,17 +572,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               }
             }
@@ -622,17 +599,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateExpenseVoucherDto"
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.CreateExpenseVoucherDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateExpenseVoucherDto"
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.CreateExpenseVoucherDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateExpenseVoucherDto"
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.CreateExpenseVoucherDto"
               }
             }
           }
@@ -643,17 +620,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ExpenseVoucherResponseDto"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ExpenseVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ExpenseVoucherResponseDto"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ExpenseVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ExpenseVoucherResponseDto"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ExpenseVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               }
             }
@@ -679,21 +656,92 @@
         ],
         "responses": {
           "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/IncomeVouchers": {
+      "post": {
+        "tags": [
+          "IncomeVouchers"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.CreateIncomeVoucherDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.CreateIncomeVoucherDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.CreateIncomeVoucherDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
             "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ExpenseVoucherResponseDto"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ExpenseVoucherResponseDto"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ExpenseVoucherResponseDto"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/IncomeVouchers/{id}": {
+      "get": {
+        "tags": [
+          "IncomeVouchers"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               }
             }
@@ -747,17 +795,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/TreasuryListDtoIEnumerableResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TreasuryListDtoIEnumerableResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TreasuryListDtoIEnumerableResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               }
             }
@@ -772,17 +820,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateTreasuryDto"
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.Treasuries.DTO.CreateTreasuryDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateTreasuryDto"
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.Treasuries.DTO.CreateTreasuryDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateTreasuryDto"
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.Treasuries.DTO.CreateTreasuryDto"
               }
             }
           }
@@ -793,17 +841,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/TreasuryCreatedDtoResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryCreatedDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TreasuryCreatedDtoResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryCreatedDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TreasuryCreatedDtoResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryCreatedDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               }
             }
@@ -833,17 +881,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/TreasuryDtoResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TreasuryDtoResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TreasuryDtoResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               }
             }
@@ -869,17 +917,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateTreasuryDto"
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.Treasuries.DTO.UpdateTreasuryDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateTreasuryDto"
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.Treasuries.DTO.UpdateTreasuryDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateTreasuryDto"
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.Treasuries.DTO.UpdateTreasuryDto"
               }
             }
           }
@@ -890,17 +938,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               }
             }
@@ -928,17 +976,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               }
             }
@@ -986,17 +1034,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/TreasuryListDtoIEnumerableResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TreasuryListDtoIEnumerableResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TreasuryListDtoIEnumerableResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               }
             }
@@ -1025,17 +1073,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/TreasuryStatisticsDtoResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryStatisticsDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TreasuryStatisticsDtoResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryStatisticsDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TreasuryStatisticsDtoResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryStatisticsDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               }
             }
@@ -1065,17 +1113,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/WalletPermissionDtoResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.WalletPermissions.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/WalletPermissionDtoResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.WalletPermissions.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/WalletPermissionDtoResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.WalletPermissions.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               }
             }
@@ -1101,17 +1149,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateWalletPermissionDto"
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.WalletPermissions.DTO.UpdateWalletPermissionDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateWalletPermissionDto"
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.WalletPermissions.DTO.UpdateWalletPermissionDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateWalletPermissionDto"
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.WalletPermissions.DTO.UpdateWalletPermissionDto"
               }
             }
           }
@@ -1122,17 +1170,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               }
             }
@@ -1160,17 +1208,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AddWalletPermissionCommand"
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.WalletPermissions.Commands.AddWalletPermissionCommand"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/AddWalletPermissionCommand"
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.WalletPermissions.Commands.AddWalletPermissionCommand"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/AddWalletPermissionCommand"
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.WalletPermissions.Commands.AddWalletPermissionCommand"
               }
             }
           }
@@ -1181,17 +1229,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               }
             }
@@ -1230,17 +1278,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               }
             }
@@ -1277,17 +1325,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/WalletPermissionDtoResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.WalletPermissions.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/WalletPermissionDtoResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.WalletPermissions.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/WalletPermissionDtoResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.WalletPermissions.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               }
             }
@@ -1320,17 +1368,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateWalletPermissionDto"
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.WalletPermissions.DTO.UpdateWalletPermissionDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateWalletPermissionDto"
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.WalletPermissions.DTO.UpdateWalletPermissionDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateWalletPermissionDto"
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.WalletPermissions.DTO.UpdateWalletPermissionDto"
               }
             }
           }
@@ -1341,17 +1389,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               }
             }
@@ -1386,17 +1434,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AddWalletPermissionCommand"
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.WalletPermissions.Commands.AddWalletPermissionCommand"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/AddWalletPermissionCommand"
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.WalletPermissions.Commands.AddWalletPermissionCommand"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/AddWalletPermissionCommand"
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.WalletPermissions.Commands.AddWalletPermissionCommand"
               }
             }
           }
@@ -1407,17 +1455,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               }
             }
@@ -1463,17 +1511,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BooleanResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               }
             }
@@ -1509,17 +1557,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/WalletPermissionDtoListResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Finance.Features.WalletPermissions.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/WalletPermissionDtoListResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Finance.Features.WalletPermissions.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/WalletPermissionDtoListResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Finance.Features.WalletPermissions.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               }
             }
@@ -1556,17 +1604,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/WalletPermissionDtoListResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Finance.Features.WalletPermissions.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/WalletPermissionDtoListResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Finance.Features.WalletPermissions.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/WalletPermissionDtoListResponseViewModel"
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Finance.Features.WalletPermissions.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
                 }
               }
             }
@@ -1577,378 +1625,7 @@
   },
   "components": {
     "schemas": {
-      "AddWalletPermissionCommand": {
-        "type": "object",
-        "properties": {
-          "walletId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "walletType": {
-            "type": "string",
-            "nullable": true
-          },
-          "userId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "canDeposit": {
-            "type": "boolean"
-          },
-          "canWithdraw": {
-            "type": "boolean"
-          }
-        },
-        "additionalProperties": false
-      },
-      "AttachmentResponseDto": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "fileName": {
-            "type": "string",
-            "nullable": true
-          },
-          "fileUrl": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "BankAccountCreatedDto": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "bankName": {
-            "type": "string",
-            "nullable": true
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "accountNumber": {
-            "type": "string",
-            "nullable": true
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "additionalProperties": false
-      },
-      "BankAccountCreatedDtoResponseViewModel": {
-        "type": "object",
-        "properties": {
-          "isSuccess": {
-            "type": "boolean"
-          },
-          "message": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "$ref": "#/components/schemas/BankAccountCreatedDto"
-          },
-          "financeErrorCode": {
-            "$ref": "#/components/schemas/FinanceErrorCode"
-          },
-          "traceId": {
-            "type": "string",
-            "nullable": true
-          },
-          "validationErrors": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "nullable": true
-          },
-          "timestamp": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "additionalProperties": false
-      },
-      "BankAccountDto": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "companyId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "bankName": {
-            "type": "string",
-            "nullable": true
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "accountNumber": {
-            "type": "string",
-            "nullable": true
-          },
-          "status": {
-            "$ref": "#/components/schemas/BankAccountStatus"
-          },
-          "currencyCode": {
-            "type": "string",
-            "nullable": true
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
-          "depositAcl": {
-            "type": "string",
-            "nullable": true
-          },
-          "withdrawAcl": {
-            "type": "string",
-            "nullable": true
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "modifiedAt": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "companyName": {
-            "type": "string",
-            "nullable": true
-          },
-          "currencyName": {
-            "type": "string",
-            "nullable": true
-          },
-          "vouchersCount": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
-      "BankAccountDtoResponseViewModel": {
-        "type": "object",
-        "properties": {
-          "isSuccess": {
-            "type": "boolean"
-          },
-          "message": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "$ref": "#/components/schemas/BankAccountDto"
-          },
-          "financeErrorCode": {
-            "$ref": "#/components/schemas/FinanceErrorCode"
-          },
-          "traceId": {
-            "type": "string",
-            "nullable": true
-          },
-          "validationErrors": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "nullable": true
-          },
-          "timestamp": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "additionalProperties": false
-      },
-      "BankAccountListDto": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "bankName": {
-            "type": "string",
-            "nullable": true
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "accountNumber": {
-            "type": "string",
-            "nullable": true
-          },
-          "status": {
-            "$ref": "#/components/schemas/BankAccountStatus"
-          },
-          "currencyCode": {
-            "type": "string",
-            "nullable": true
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "companyName": {
-            "type": "string",
-            "nullable": true
-          },
-          "currencyName": {
-            "type": "string",
-            "nullable": true
-          },
-          "vouchersCount": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
-      "BankAccountListDtoIEnumerableResponseViewModel": {
-        "type": "object",
-        "properties": {
-          "isSuccess": {
-            "type": "boolean"
-          },
-          "message": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BankAccountListDto"
-            },
-            "nullable": true
-          },
-          "financeErrorCode": {
-            "$ref": "#/components/schemas/FinanceErrorCode"
-          },
-          "traceId": {
-            "type": "string",
-            "nullable": true
-          },
-          "validationErrors": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "nullable": true
-          },
-          "timestamp": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "additionalProperties": false
-      },
-      "BankAccountStatisticsDto": {
-        "type": "object",
-        "properties": {
-          "totalCount": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "activeCount": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "inactiveCount": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "totalVouchers": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "currencyDistribution": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BankCurrencyDistributionDto"
-            },
-            "nullable": true
-          },
-          "bankDistribution": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BankDistributionDto"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "BankAccountStatisticsDtoResponseViewModel": {
-        "type": "object",
-        "properties": {
-          "isSuccess": {
-            "type": "boolean"
-          },
-          "message": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "$ref": "#/components/schemas/BankAccountStatisticsDto"
-          },
-          "financeErrorCode": {
-            "$ref": "#/components/schemas/FinanceErrorCode"
-          },
-          "traceId": {
-            "type": "string",
-            "nullable": true
-          },
-          "validationErrors": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "nullable": true
-          },
-          "timestamp": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "additionalProperties": false
-      },
-      "BankAccountStatus": {
+      "ModularERP.Common.Enum.Finance_Enum.BankAccountStatus": {
         "enum": [
           0,
           1
@@ -1956,301 +1633,7 @@
         "type": "integer",
         "format": "int32"
       },
-      "BankCurrencyDistributionDto": {
-        "type": "object",
-        "properties": {
-          "currency": {
-            "type": "string",
-            "nullable": true
-          },
-          "count": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
-      "BankDistributionDto": {
-        "type": "object",
-        "properties": {
-          "bankName": {
-            "type": "string",
-            "nullable": true
-          },
-          "count": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
-      "BooleanResponseViewModel": {
-        "type": "object",
-        "properties": {
-          "isSuccess": {
-            "type": "boolean"
-          },
-          "message": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "type": "boolean"
-          },
-          "financeErrorCode": {
-            "$ref": "#/components/schemas/FinanceErrorCode"
-          },
-          "traceId": {
-            "type": "string",
-            "nullable": true
-          },
-          "validationErrors": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "nullable": true
-          },
-          "timestamp": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "additionalProperties": false
-      },
-      "CounterpartyDto": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "minLength": 1,
-            "type": "string"
-          },
-          "id": {
-            "type": "string",
-            "format": "uuid",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "CreateBankAccountDto": {
-        "type": "object",
-        "properties": {
-          "companyId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "bankName": {
-            "type": "string",
-            "nullable": true
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "accountNumber": {
-            "type": "string",
-            "nullable": true
-          },
-          "status": {
-            "$ref": "#/components/schemas/BankAccountStatus"
-          },
-          "currencyCode": {
-            "type": "string",
-            "nullable": true
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
-          "depositAcl": {
-            "type": "string",
-            "nullable": true
-          },
-          "withdrawAcl": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "CreateExpenseVoucherDto": {
-        "required": [
-          "amount",
-          "categoryId",
-          "date",
-          "description",
-          "source"
-        ],
-        "type": "object",
-        "properties": {
-          "code": {
-            "type": "string",
-            "nullable": true
-          },
-          "date": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "currencyCode": {
-            "type": "string",
-            "nullable": true
-          },
-          "fxRate": {
-            "type": "number",
-            "format": "double"
-          },
-          "amount": {
-            "minimum": 0.01,
-            "type": "number",
-            "format": "double"
-          },
-          "description": {
-            "minLength": 1,
-            "type": "string"
-          },
-          "counterparty": {
-            "$ref": "#/components/schemas/CounterpartyDto"
-          },
-          "categoryId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "source": {
-            "$ref": "#/components/schemas/WalletDto"
-          },
-          "taxLines": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/TaxLineDto"
-            },
-            "nullable": true
-          },
-          "attachments": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "nullable": true
-          },
-          "recurrenceId": {
-            "type": "string",
-            "format": "uuid",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "CreateTreasuryDto": {
-        "type": "object",
-        "properties": {
-          "companyId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "status": {
-            "$ref": "#/components/schemas/TreasuryStatus"
-          },
-          "currencyCode": {
-            "type": "string",
-            "nullable": true
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
-          "depositAcl": {
-            "type": "string",
-            "nullable": true
-          },
-          "withdrawAcl": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "CurrencyDistributionDto": {
-        "type": "object",
-        "properties": {
-          "currency": {
-            "type": "string",
-            "nullable": true
-          },
-          "count": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
-      "ExpenseVoucherResponseDto": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "code": {
-            "type": "string",
-            "nullable": true
-          },
-          "status": {
-            "type": "string",
-            "nullable": true
-          },
-          "date": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "amount": {
-            "type": "number",
-            "format": "double"
-          },
-          "currencyCode": {
-            "type": "string",
-            "nullable": true
-          },
-          "fxRate": {
-            "type": "number",
-            "format": "double"
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "taxLines": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/TaxLineResponseDto"
-            },
-            "nullable": true
-          },
-          "attachments": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AttachmentResponseDto"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "FinanceErrorCode": {
+      "ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode": {
         "enum": [
           1001,
           1002,
@@ -2295,74 +1678,15 @@
         "type": "integer",
         "format": "int32"
       },
-      "TaxLineDto": {
-        "required": [
-          "baseAmount",
-          "taxAmount",
-          "taxId"
+      "ModularERP.Common.Enum.Finance_Enum.TreasuryStatus": {
+        "enum": [
+          0,
+          1
         ],
-        "type": "object",
-        "properties": {
-          "taxId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "baseAmount": {
-            "minimum": 0,
-            "type": "number",
-            "format": "double"
-          },
-          "taxAmount": {
-            "minimum": 0,
-            "type": "number",
-            "format": "double"
-          },
-          "isWithholding": {
-            "type": "boolean"
-          }
-        },
-        "additionalProperties": false
+        "type": "integer",
+        "format": "int32"
       },
-      "TaxLineResponseDto": {
-        "type": "object",
-        "properties": {
-          "taxId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "baseAmount": {
-            "type": "number",
-            "format": "double"
-          },
-          "taxAmount": {
-            "type": "number",
-            "format": "double"
-          },
-          "isWithholding": {
-            "type": "boolean"
-          }
-        },
-        "additionalProperties": false
-      },
-      "TreasuryCreatedDto": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "additionalProperties": false
-      },
-      "TreasuryCreatedDtoResponseViewModel": {
+      "ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountCreatedDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
         "type": "object",
         "properties": {
           "isSuccess": {
@@ -2373,10 +1697,10 @@
             "nullable": true
           },
           "data": {
-            "$ref": "#/components/schemas/TreasuryCreatedDto"
+            "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountCreatedDto"
           },
           "financeErrorCode": {
-            "$ref": "#/components/schemas/FinanceErrorCode"
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
           },
           "traceId": {
             "type": "string",
@@ -2399,7 +1723,489 @@
         },
         "additionalProperties": false
       },
-      "TreasuryDto": {
+      "ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto"
+          },
+          "financeErrorCode": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
+          },
+          "traceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "validationErrors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountStatisticsDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountStatisticsDto"
+          },
+          "financeErrorCode": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
+          },
+          "traceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "validationErrors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ExpenseVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ExpenseVoucherResponseDto"
+          },
+          "financeErrorCode": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
+          },
+          "traceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "validationErrors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto"
+          },
+          "financeErrorCode": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
+          },
+          "traceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "validationErrors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryCreatedDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryCreatedDto"
+          },
+          "financeErrorCode": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
+          },
+          "traceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "validationErrors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryDto"
+          },
+          "financeErrorCode": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
+          },
+          "traceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "validationErrors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryStatisticsDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryStatisticsDto"
+          },
+          "financeErrorCode": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
+          },
+          "traceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "validationErrors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.WalletPermissions.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.WalletPermissions.DTO.WalletPermissionDto"
+          },
+          "financeErrorCode": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
+          },
+          "traceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "validationErrors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "boolean"
+          },
+          "financeErrorCode": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
+          },
+          "traceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "validationErrors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountListDto"
+            },
+            "nullable": true
+          },
+          "financeErrorCode": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
+          },
+          "traceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "validationErrors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryListDto"
+            },
+            "nullable": true
+          },
+          "financeErrorCode": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
+          },
+          "traceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "validationErrors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Finance.Features.WalletPermissions.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.WalletPermissions.DTO.WalletPermissionDto"
+            },
+            "nullable": true
+          },
+          "financeErrorCode": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
+          },
+          "traceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "validationErrors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountCreatedDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "bankName": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "accountNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto": {
         "type": "object",
         "properties": {
           "id": {
@@ -2410,12 +2216,20 @@
             "type": "string",
             "format": "uuid"
           },
+          "bankName": {
+            "type": "string",
+            "nullable": true
+          },
           "name": {
             "type": "string",
             "nullable": true
           },
+          "accountNumber": {
+            "type": "string",
+            "nullable": true
+          },
           "status": {
-            "$ref": "#/components/schemas/TreasuryStatus"
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.BankAccountStatus"
           },
           "currencyCode": {
             "type": "string",
@@ -2457,56 +2271,27 @@
         },
         "additionalProperties": false
       },
-      "TreasuryDtoResponseViewModel": {
-        "type": "object",
-        "properties": {
-          "isSuccess": {
-            "type": "boolean"
-          },
-          "message": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "$ref": "#/components/schemas/TreasuryDto"
-          },
-          "financeErrorCode": {
-            "$ref": "#/components/schemas/FinanceErrorCode"
-          },
-          "traceId": {
-            "type": "string",
-            "nullable": true
-          },
-          "validationErrors": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "nullable": true
-          },
-          "timestamp": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "additionalProperties": false
-      },
-      "TreasuryListDto": {
+      "ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountListDto": {
         "type": "object",
         "properties": {
           "id": {
             "type": "string",
             "format": "uuid"
           },
+          "bankName": {
+            "type": "string",
+            "nullable": true
+          },
           "name": {
             "type": "string",
             "nullable": true
           },
+          "accountNumber": {
+            "type": "string",
+            "nullable": true
+          },
           "status": {
-            "$ref": "#/components/schemas/TreasuryStatus"
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.BankAccountStatus"
           },
           "currencyCode": {
             "type": "string",
@@ -2535,48 +2320,7 @@
         },
         "additionalProperties": false
       },
-      "TreasuryListDtoIEnumerableResponseViewModel": {
-        "type": "object",
-        "properties": {
-          "isSuccess": {
-            "type": "boolean"
-          },
-          "message": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/TreasuryListDto"
-            },
-            "nullable": true
-          },
-          "financeErrorCode": {
-            "$ref": "#/components/schemas/FinanceErrorCode"
-          },
-          "traceId": {
-            "type": "string",
-            "nullable": true
-          },
-          "validationErrors": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "nullable": true
-          },
-          "timestamp": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "additionalProperties": false
-      },
-      "TreasuryStatisticsDto": {
+      "ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountStatisticsDto": {
         "type": "object",
         "properties": {
           "totalCount": {
@@ -2598,59 +2342,90 @@
           "currencyDistribution": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/CurrencyDistributionDto"
+              "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankCurrencyDistributionDto"
+            },
+            "nullable": true
+          },
+          "bankDistribution": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankDistributionDto"
             },
             "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "TreasuryStatisticsDtoResponseViewModel": {
+      "ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankCurrencyDistributionDto": {
         "type": "object",
         "properties": {
-          "isSuccess": {
-            "type": "boolean"
-          },
-          "message": {
+          "currency": {
             "type": "string",
             "nullable": true
           },
-          "data": {
-            "$ref": "#/components/schemas/TreasuryStatisticsDto"
-          },
-          "financeErrorCode": {
-            "$ref": "#/components/schemas/FinanceErrorCode"
-          },
-          "traceId": {
-            "type": "string",
-            "nullable": true
-          },
-          "validationErrors": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "nullable": true
-          },
-          "timestamp": {
-            "type": "string",
-            "format": "date-time"
+          "count": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
       },
-      "TreasuryStatus": {
-        "enum": [
-          0,
-          1
-        ],
-        "type": "integer",
-        "format": "int32"
+      "ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankDistributionDto": {
+        "type": "object",
+        "properties": {
+          "bankName": {
+            "type": "string",
+            "nullable": true
+          },
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
       },
-      "UpdateBankAccountDto": {
+      "ModularERP.Modules.Finance.Features.BankAccounts.DTO.CreateBankAccountDto": {
+        "type": "object",
+        "properties": {
+          "companyId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "bankName": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "accountNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.BankAccountStatus"
+          },
+          "currencyCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "depositAcl": {
+            "type": "string",
+            "nullable": true
+          },
+          "withdrawAcl": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Finance.Features.BankAccounts.DTO.UpdateBankAccountDto": {
         "type": "object",
         "properties": {
           "id": {
@@ -2674,7 +2449,7 @@
             "nullable": true
           },
           "status": {
-            "$ref": "#/components/schemas/BankAccountStatus"
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.BankAccountStatus"
           },
           "currencyCode": {
             "type": "string",
@@ -2695,60 +2470,215 @@
         },
         "additionalProperties": false
       },
-      "UpdateTreasuryDto": {
+      "ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.AttachmentResponseDto": {
         "type": "object",
         "properties": {
           "id": {
             "type": "string",
             "format": "uuid"
           },
-          "companyId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "name": {
+          "fileName": {
             "type": "string",
             "nullable": true
           },
-          "status": {
-            "$ref": "#/components/schemas/TreasuryStatus"
+          "fileUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.CounterpartyDto": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.CreateExpenseVoucherDto": {
+        "required": [
+          "amount",
+          "categoryId",
+          "date",
+          "description",
+          "source"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "nullable": true
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
           },
           "currencyCode": {
             "type": "string",
             "nullable": true
           },
+          "fxRate": {
+            "type": "number",
+            "format": "double"
+          },
+          "amount": {
+            "minimum": 0.01,
+            "type": "number",
+            "format": "double"
+          },
+          "description": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "counterparty": {
+            "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.CounterpartyDto"
+          },
+          "categoryId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "source": {
+            "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.WalletDto"
+          },
+          "taxLines": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.TaxLineDto"
+            },
+            "nullable": true
+          },
+          "attachments": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "recurrenceId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ExpenseVoucherResponseDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "currencyCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "fxRate": {
+            "type": "number",
+            "format": "double"
+          },
           "description": {
             "type": "string",
             "nullable": true
           },
-          "depositAcl": {
+          "createdAt": {
             "type": "string",
+            "format": "date-time"
+          },
+          "taxLines": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.TaxLineResponseDto"
+            },
             "nullable": true
           },
-          "withdrawAcl": {
-            "type": "string",
+          "attachments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.AttachmentResponseDto"
+            },
             "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "UpdateWalletPermissionDto": {
+      "ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.TaxLineDto": {
+        "required": [
+          "baseAmount",
+          "taxAmount",
+          "taxId"
+        ],
         "type": "object",
         "properties": {
-          "userId": {
+          "taxId": {
             "type": "string",
             "format": "uuid"
           },
-          "canDeposit": {
-            "type": "boolean"
+          "baseAmount": {
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
           },
-          "canWithdraw": {
+          "taxAmount": {
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "isWithholding": {
             "type": "boolean"
           }
         },
         "additionalProperties": false
       },
-      "WalletDto": {
+      "ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.TaxLineResponseDto": {
+        "type": "object",
+        "properties": {
+          "taxId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "baseAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "taxAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "isWithholding": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.WalletDto": {
         "required": [
           "id",
           "type"
@@ -2766,7 +2696,503 @@
         },
         "additionalProperties": false
       },
-      "WalletPermissionDto": {
+      "ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.AttachmentResponseDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "fileName": {
+            "type": "string",
+            "nullable": true
+          },
+          "fileUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.CounterpartyDto": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.CreateIncomeVoucherDto": {
+        "required": [
+          "amount",
+          "categoryId",
+          "date",
+          "description",
+          "source"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "nullable": true
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "currencyCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "fxRate": {
+            "type": "number",
+            "format": "double"
+          },
+          "amount": {
+            "minimum": 0.01,
+            "type": "number",
+            "format": "double"
+          },
+          "description": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "counterparty": {
+            "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.CounterpartyDto"
+          },
+          "categoryId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "source": {
+            "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.WalletDto"
+          },
+          "taxLines": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.TaxLineDto"
+            },
+            "nullable": true
+          },
+          "attachments": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "recurrenceId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "currencyCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "fxRate": {
+            "type": "number",
+            "format": "double"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "taxLines": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.TaxLineResponseDto"
+            },
+            "nullable": true
+          },
+          "attachments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.AttachmentResponseDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.TaxLineDto": {
+        "required": [
+          "baseAmount",
+          "taxAmount",
+          "taxId"
+        ],
+        "type": "object",
+        "properties": {
+          "taxId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "baseAmount": {
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "taxAmount": {
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "isWithholding": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.TaxLineResponseDto": {
+        "type": "object",
+        "properties": {
+          "taxId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "baseAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "taxAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "isWithholding": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.WalletDto": {
+        "required": [
+          "id",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Finance.Features.Treasuries.DTO.CreateTreasuryDto": {
+        "type": "object",
+        "properties": {
+          "companyId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.TreasuryStatus"
+          },
+          "currencyCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "depositAcl": {
+            "type": "string",
+            "nullable": true
+          },
+          "withdrawAcl": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Finance.Features.Treasuries.DTO.CurrencyDistributionDto": {
+        "type": "object",
+        "properties": {
+          "currency": {
+            "type": "string",
+            "nullable": true
+          },
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryCreatedDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "companyId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.TreasuryStatus"
+          },
+          "currencyCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "depositAcl": {
+            "type": "string",
+            "nullable": true
+          },
+          "withdrawAcl": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "companyName": {
+            "type": "string",
+            "nullable": true
+          },
+          "currencyName": {
+            "type": "string",
+            "nullable": true
+          },
+          "vouchersCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryListDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.TreasuryStatus"
+          },
+          "currencyCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "companyName": {
+            "type": "string",
+            "nullable": true
+          },
+          "currencyName": {
+            "type": "string",
+            "nullable": true
+          },
+          "vouchersCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryStatisticsDto": {
+        "type": "object",
+        "properties": {
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "activeCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "inactiveCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalVouchers": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "currencyDistribution": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.Treasuries.DTO.CurrencyDistributionDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Finance.Features.Treasuries.DTO.UpdateTreasuryDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "companyId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.TreasuryStatus"
+          },
+          "currencyCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "depositAcl": {
+            "type": "string",
+            "nullable": true
+          },
+          "withdrawAcl": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Finance.Features.WalletPermissions.Commands.AddWalletPermissionCommand": {
+        "type": "object",
+        "properties": {
+          "walletId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "walletType": {
+            "type": "string",
+            "nullable": true
+          },
+          "userId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "canDeposit": {
+            "type": "boolean"
+          },
+          "canWithdraw": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Finance.Features.WalletPermissions.DTO.UpdateWalletPermissionDto": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "canDeposit": {
+            "type": "boolean"
+          },
+          "canWithdraw": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Finance.Features.WalletPermissions.DTO.WalletPermissionDto": {
         "type": "object",
         "properties": {
           "walletId": {
@@ -2796,84 +3222,6 @@
           "status": {
             "type": "string",
             "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "WalletPermissionDtoListResponseViewModel": {
-        "type": "object",
-        "properties": {
-          "isSuccess": {
-            "type": "boolean"
-          },
-          "message": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/WalletPermissionDto"
-            },
-            "nullable": true
-          },
-          "financeErrorCode": {
-            "$ref": "#/components/schemas/FinanceErrorCode"
-          },
-          "traceId": {
-            "type": "string",
-            "nullable": true
-          },
-          "validationErrors": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "nullable": true
-          },
-          "timestamp": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "additionalProperties": false
-      },
-      "WalletPermissionDtoResponseViewModel": {
-        "type": "object",
-        "properties": {
-          "isSuccess": {
-            "type": "boolean"
-          },
-          "message": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "$ref": "#/components/schemas/WalletPermissionDto"
-          },
-          "financeErrorCode": {
-            "$ref": "#/components/schemas/FinanceErrorCode"
-          },
-          "traceId": {
-            "type": "string",
-            "nullable": true
-          },
-          "validationErrors": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "nullable": true
-          },
-          "timestamp": {
-            "type": "string",
-            "format": "date-time"
           }
         },
         "additionalProperties": false
