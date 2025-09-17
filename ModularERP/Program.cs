@@ -20,6 +20,8 @@ using MediatR;
 using System.Reflection;
 using ModularERP.Modules.Finance.Features.Treasuries.Commands;
 using ModularERP.Modules.Finance.Features.Treasuries.DTO;
+using ModularERP.Modules.Finance.Features.BankAccounts.Models;
+using ModularERP.Modules.Finance.Features.BankAccounts.Mapping;
 
 namespace ModularERP
 {
@@ -56,15 +58,28 @@ namespace ModularERP
                               .AllowAnyHeader();
                     });
                 });
-
                 builder.Services.AddDbContext<FinanceDbContext>(options =>
                 {
                     options
                         .UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
-                        .LogTo(message => Debug.WriteLine(message), LogLevel.Information)
-                        .EnableSensitiveDataLogging(true)
-                        .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+                        .EnableSensitiveDataLogging() 
+                        .LogTo(Console.WriteLine,
+                               new[] { DbLoggerCategory.Database.Command.Name },
+                               LogLevel.Information);
                 });
+
+
+                //builder.Services.AddDbContext<FinanceDbContext>(options =>
+                //{
+                //    options
+                //        .UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+                //        //.LogTo(message => Debug.WriteLine(message), LogLevel.Information)
+                //        .EnableSensitiveDataLogging(true)
+                //        .LogTo(Console.WriteLine,
+                //        new[] { DbLoggerCategory.Database.Command.Name },
+                //        LogLevel.Information);
+                //    //.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+                //});
 
                 builder.Services.AddCommonServices();
 
@@ -77,6 +92,12 @@ namespace ModularERP
                 {
                     cfg.AddProfile<TreasuryMappingProfile>();
                 });
+                builder.Services.AddAutoMapper(cfg =>
+                {
+                    cfg.AddProfile<BankAccountMappingProfile>();
+                });
+
+
 
                 builder.Services.AddScoped<IValidator<CreateTreasuryCommand>, CreateTreasuryCommandValidator>();
                 builder.Services.AddScoped<IValidator<UpdateTreasuryCommand>, UpdateTreasuryCommandValidator>();
@@ -85,6 +106,7 @@ namespace ModularERP
                 builder.Services.AddScoped<IValidator<UpdateTreasuryDto>, UpdateTreasuryDtoValidator>();
 
                 builder.Services.AddScoped<IGeneralRepository<Treasury>, GeneralRepository<Treasury>>();
+                builder.Services.AddScoped<IGeneralRepository<BankAccount>, GeneralRepository<BankAccount>>();
 
 
                 var app = builder.Build();

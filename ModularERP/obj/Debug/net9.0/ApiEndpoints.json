@@ -1,5 +1,165 @@
 [
   {
+    "ContainingType": "ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController",
+    "Method": "GetAllBankAccounts",
+    "RelativePath": "api/BankAccount",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "search",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortDescending",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "companyId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[System.Collections.Generic.IEnumerable\u00601[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController",
+    "Method": "CreateBankAccount",
+    "RelativePath": "api/BankAccount",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createBankAccountDto",
+        "Type": "ModularERP.Modules.Finance.Features.BankAccounts.DTO.CreateBankAccountDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountCreatedDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController",
+    "Method": "GetBankAccountById",
+    "RelativePath": "api/BankAccount/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController",
+    "Method": "UpdateBankAccount",
+    "RelativePath": "api/BankAccount/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateBankAccountDto",
+        "Type": "ModularERP.Modules.Finance.Features.BankAccounts.DTO.UpdateBankAccountDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController",
+    "Method": "DeleteBankAccount",
+    "RelativePath": "api/BankAccount/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "ModularERP.Modules.Finance.Features.WalletPermissions.Controllers.WalletPermissionsControllerBase",
     "Method": "GetPermissions",
     "RelativePath": "api/BankAccount/{id}/permissions",
@@ -117,6 +277,99 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController",
+    "Method": "GetBankAccountsByCompany",
+    "RelativePath": "api/BankAccount/company/{companyId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "companyId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "search",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[System.Collections.Generic.IEnumerable\u00601[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController",
+    "Method": "GetBankAccountStatistics",
+    "RelativePath": "api/BankAccount/statistics",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "companyId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "fromDate",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "toDate",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountStatisticsDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController",
+    "Method": "Test",
+    "RelativePath": "api/BankAccount/test/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "ModularERP.Modules.Finance.Features.WalletPermissions.Controllers.WalletPermissionsController",

@@ -30,12 +30,13 @@
         TreasuryNotFound = 2101,
         TreasuryInactive = 2102,
         TreasuryCodeDuplicate = 2103,
-
+        InvalidData = 2104,
         // Bank Account Errors
         BankAccountNotFound = 2201,
         BankAccountInactive = 2202,
         BankAccountNumberDuplicate = 2203,
-
+        BankAccountAlreadyExists = 2204,
+        BankAccountHasVouchers = 2205,
         // GL Account Errors
         GlAccountNotFound = 2301,
         GlAccountNotLeaf = 2302,

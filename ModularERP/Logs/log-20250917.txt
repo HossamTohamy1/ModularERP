@@ -1,0 +1,995 @@
+2025-09-17 12:53:11.767 +03:00 [INF] Starting web host...
+2025-09-17 12:53:12.546 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-17 12:53:12.549 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-17 12:53:12.630 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-17 12:53:12.632 +03:00 [INF] Hosting environment: Development
+2025-09-17 12:53:12.633 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-17 12:53:26.953 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2025-09-17 12:53:27.278 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 330.0571ms
+2025-09-17 12:53:27.343 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-17 12:53:27.348 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 4.5708ms
+2025-09-17 12:53:28.908 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2025-09-17 12:53:28.962 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 53.8886ms
+2025-09-17 12:53:29.151 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2025-09-17 12:53:29.239 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 87.9946ms
+2025-09-17 13:08:38.852 +03:00 [INF] Starting web host...
+2025-09-17 13:08:39.285 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-17 13:08:39.290 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-17 13:08:39.390 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-17 13:08:39.391 +03:00 [INF] Hosting environment: Development
+2025-09-17 13:08:39.393 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-17 13:08:44.271 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2025-09-17 13:08:44.469 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 200.611ms
+2025-09-17 13:08:44.499 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-17 13:08:44.508 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 8.949ms
+2025-09-17 13:08:45.895 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2025-09-17 13:08:45.950 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 53.9866ms
+2025-09-17 13:08:46.121 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2025-09-17 13:08:46.174 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 53.434ms
+2025-09-17 13:39:26.033 +03:00 [INF] Starting web host...
+2025-09-17 13:39:26.400 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-17 13:39:26.403 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-17 13:39:26.475 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-17 13:39:26.478 +03:00 [INF] Hosting environment: Development
+2025-09-17 13:39:26.478 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-17 13:39:26.517 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2025-09-17 13:39:26.639 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 122.2716ms
+2025-09-17 13:39:26.684 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-17 13:39:26.690 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 6.185ms
+2025-09-17 13:39:27.909 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2025-09-17 13:39:27.945 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 35.53ms
+2025-09-17 13:39:28.174 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2025-09-17 13:39:28.213 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 38.826ms
+2025-09-17 13:39:32.769 +03:00 [INF] Starting web host...
+2025-09-17 13:39:33.119 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-17 13:39:33.122 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-17 13:39:33.209 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-17 13:39:33.212 +03:00 [INF] Hosting environment: Development
+2025-09-17 13:39:33.213 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-17 13:39:43.703 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2025-09-17 13:39:43.812 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 109.4207ms
+2025-09-17 13:39:43.831 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-17 13:39:43.831 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2025-09-17 13:39:43.836 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 5.7316ms
+2025-09-17 13:39:43.859 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 27.4662ms
+2025-09-17 13:39:44.829 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2025-09-17 13:39:44.881 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 51.9916ms
+2025-09-17 13:40:34.832 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3 - null null
+2025-09-17 13:40:34.877 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3 - 307 0 null 44.8817ms
+2025-09-17 13:40:34.926 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3 - null null
+2025-09-17 13:40:34.934 +03:00 [INF] CORS policy execution successful.
+2025-09-17 13:40:34.946 +03:00 [INF] Request started
+2025-09-17 13:40:34.951 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP)'
+2025-09-17 13:40:34.978 +03:00 [INF] Route matched with {action = "GetBankAccountById", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto]]] GetBankAccountById(System.Guid) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 13:40:34.986 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 13:40:35.720 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-09-17 13:40:35.977 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 13:40:35.991 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-17 13:40:36.017 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP) in 1031.0691ms
+2025-09-17 13:40:36.019 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP)'
+2025-09-17 13:40:36.021 +03:00 [INF] Request completed successfully with status code 404
+2025-09-17 13:40:36.026 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/BankAccount/23b728a8-081c-44fb-850b-0adf1ffc51d3 - 404 null application/json; charset=utf-8 1099.6529ms
+2025-09-17 13:42:28.122 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5004/api/BankAccount - application/json 244
+2025-09-17 13:42:28.126 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5004/api/BankAccount - 307 0 null 3.8732ms
+2025-09-17 13:42:28.157 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/BankAccount - null null
+2025-09-17 13:42:28.161 +03:00 [INF] CORS policy execution successful.
+2025-09-17 13:42:28.167 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/BankAccount - 204 null null 9.6771ms
+2025-09-17 13:42:28.169 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/BankAccount - application/json 244
+2025-09-17 13:42:28.174 +03:00 [INF] CORS policy execution successful.
+2025-09-17 13:42:28.175 +03:00 [INF] Request started
+2025-09-17 13:42:28.177 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.CreateBankAccount (ModularERP)'
+2025-09-17 13:42:28.183 +03:00 [INF] Route matched with {action = "CreateBankAccount", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountCreatedDto]]] CreateBankAccount(ModularERP.Modules.Finance.Features.BankAccounts.DTO.CreateBankAccountDto) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 13:42:28.252 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountCreatedDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-17 13:42:28.256 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.CreateBankAccount (ModularERP) in 69.3289ms
+2025-09-17 13:42:28.258 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.CreateBankAccount (ModularERP)'
+2025-09-17 13:42:28.260 +03:00 [INF] Request completed successfully with status code 400
+2025-09-17 13:42:28.261 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/BankAccount - 400 null application/json; charset=utf-8 92.4727ms
+2025-09-17 13:43:49.835 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5004/api/BankAccount - application/json 244
+2025-09-17 13:43:49.839 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5004/api/BankAccount - 307 0 null 3.9543ms
+2025-09-17 13:43:49.868 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/BankAccount - null null
+2025-09-17 13:43:49.875 +03:00 [INF] CORS policy execution successful.
+2025-09-17 13:43:49.879 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/BankAccount - 204 null null 11.2664ms
+2025-09-17 13:43:49.882 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/BankAccount - application/json 244
+2025-09-17 13:43:49.887 +03:00 [INF] CORS policy execution successful.
+2025-09-17 13:43:49.890 +03:00 [INF] Request started
+2025-09-17 13:43:49.891 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.CreateBankAccount (ModularERP)'
+2025-09-17 13:43:49.893 +03:00 [INF] Route matched with {action = "CreateBankAccount", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountCreatedDto]]] CreateBankAccount(ModularERP.Modules.Finance.Features.BankAccounts.DTO.CreateBankAccountDto) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 13:43:49.906 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountCreatedDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-17 13:43:49.909 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.CreateBankAccount (ModularERP) in 13.1984ms
+2025-09-17 13:43:49.911 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.CreateBankAccount (ModularERP)'
+2025-09-17 13:43:49.913 +03:00 [INF] Request completed successfully with status code 400
+2025-09-17 13:43:49.914 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/BankAccount - 400 null application/json; charset=utf-8 31.832ms
+2025-09-17 13:53:28.759 +03:00 [INF] Starting web host...
+2025-09-17 13:53:29.109 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-17 13:53:29.113 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-17 13:53:29.186 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-17 13:53:29.188 +03:00 [INF] Hosting environment: Development
+2025-09-17 13:53:29.189 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-17 13:53:35.372 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2025-09-17 13:53:35.551 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 179.7439ms
+2025-09-17 13:53:35.584 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-17 13:53:35.593 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 9.2237ms
+2025-09-17 13:53:36.860 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2025-09-17 13:53:36.898 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 37.9207ms
+2025-09-17 13:53:37.078 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2025-09-17 13:53:37.129 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 50.3296ms
+2025-09-17 13:53:49.778 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/BankAccount/51d06860-8217-4352-97a0-7704d02cbecd - null null
+2025-09-17 13:53:49.799 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/BankAccount/51d06860-8217-4352-97a0-7704d02cbecd - 307 0 null 20.7946ms
+2025-09-17 13:53:49.851 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/BankAccount/51d06860-8217-4352-97a0-7704d02cbecd - null null
+2025-09-17 13:53:49.858 +03:00 [INF] CORS policy execution successful.
+2025-09-17 13:53:49.867 +03:00 [INF] Request started
+2025-09-17 13:53:49.870 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP)'
+2025-09-17 13:53:49.886 +03:00 [INF] Route matched with {action = "GetBankAccountById", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto]]] GetBankAccountById(System.Guid) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 13:53:49.893 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 13:53:50.494 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-09-17 13:53:50.699 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 13:53:50.717 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-17 13:53:50.740 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP) in 846.4785ms
+2025-09-17 13:53:50.742 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP)'
+2025-09-17 13:53:50.744 +03:00 [INF] Request completed successfully with status code 404
+2025-09-17 13:53:50.749 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/BankAccount/51d06860-8217-4352-97a0-7704d02cbecd - 404 null application/json; charset=utf-8 897.3449ms
+2025-09-17 13:57:47.712 +03:00 [INF] Starting web host...
+2025-09-17 13:57:49.108 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-17 13:57:49.113 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-17 13:57:49.217 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-17 13:57:49.221 +03:00 [INF] Hosting environment: Development
+2025-09-17 13:57:49.223 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-17 13:57:57.583 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/BankAccount/51d06860-8217-4352-97a0-7704d02cbecd - null null
+2025-09-17 13:57:57.639 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/BankAccount/51d06860-8217-4352-97a0-7704d02cbecd - 307 0 null 58.9677ms
+2025-09-17 13:57:57.692 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/BankAccount/51d06860-8217-4352-97a0-7704d02cbecd - null null
+2025-09-17 13:57:57.699 +03:00 [INF] CORS policy execution successful.
+2025-09-17 13:57:57.707 +03:00 [INF] Request started
+2025-09-17 13:57:57.710 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP)'
+2025-09-17 13:57:57.741 +03:00 [INF] Route matched with {action = "GetBankAccountById", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto]]] GetBankAccountById(System.Guid) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 13:57:57.746 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 13:57:58.569 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-09-17 13:57:58.810 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 13:57:58.945 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-17 13:57:58.972 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP) in 1226.2982ms
+2025-09-17 13:57:58.976 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP)'
+2025-09-17 13:57:58.978 +03:00 [INF] Request completed successfully with status code 404
+2025-09-17 13:57:58.983 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/BankAccount/51d06860-8217-4352-97a0-7704d02cbecd - 404 null application/json; charset=utf-8 1291.0779ms
+2025-09-17 13:59:14.657 +03:00 [INF] Starting web host...
+2025-09-17 13:59:15.049 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-17 13:59:15.053 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-17 13:59:15.140 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-17 13:59:15.141 +03:00 [INF] Hosting environment: Development
+2025-09-17 13:59:15.142 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-17 13:59:20.777 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2025-09-17 13:59:20.897 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 119.7445ms
+2025-09-17 13:59:20.922 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-17 13:59:20.929 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 6.7889ms
+2025-09-17 13:59:21.910 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2025-09-17 13:59:21.957 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 46.5615ms
+2025-09-17 13:59:22.157 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2025-09-17 13:59:22.218 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 60.5948ms
+2025-09-17 13:59:27.420 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/BankAccount/51d06860-8217-4352-97a0-7704d02cbecd - null null
+2025-09-17 13:59:27.429 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/BankAccount/51d06860-8217-4352-97a0-7704d02cbecd - 307 0 null 8.0035ms
+2025-09-17 13:59:27.476 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/BankAccount/51d06860-8217-4352-97a0-7704d02cbecd - null null
+2025-09-17 13:59:27.482 +03:00 [INF] CORS policy execution successful.
+2025-09-17 13:59:27.493 +03:00 [INF] Request started
+2025-09-17 13:59:27.496 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP)'
+2025-09-17 13:59:27.514 +03:00 [INF] Route matched with {action = "GetBankAccountById", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto]]] GetBankAccountById(System.Guid) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 13:59:27.520 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 13:59:28.181 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-09-17 13:59:28.414 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 13:59:28.432 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-17 13:59:28.455 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP) in 934.0633ms
+2025-09-17 13:59:28.457 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP)'
+2025-09-17 13:59:28.460 +03:00 [INF] Request completed successfully with status code 404
+2025-09-17 13:59:28.467 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/BankAccount/51d06860-8217-4352-97a0-7704d02cbecd - 404 null application/json; charset=utf-8 990.8591ms
+2025-09-17 14:02:06.436 +03:00 [INF] Starting web host...
+2025-09-17 14:02:07.059 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-17 14:02:07.063 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-17 14:02:07.185 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-17 14:02:07.187 +03:00 [INF] Hosting environment: Development
+2025-09-17 14:02:07.189 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-17 14:02:09.894 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2025-09-17 14:02:10.042 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 148.361ms
+2025-09-17 14:02:10.067 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-17 14:02:10.067 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2025-09-17 14:02:10.073 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 6.7631ms
+2025-09-17 14:02:10.096 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 28.4976ms
+2025-09-17 14:02:11.330 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2025-09-17 14:02:11.402 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 71.7913ms
+2025-09-17 14:02:19.687 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/BankAccount/51d06860-8217-4352-97a0-7704d02cbecd - null null
+2025-09-17 14:02:19.703 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/BankAccount/51d06860-8217-4352-97a0-7704d02cbecd - 307 0 null 16.1945ms
+2025-09-17 14:02:19.779 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/BankAccount/51d06860-8217-4352-97a0-7704d02cbecd - null null
+2025-09-17 14:02:19.786 +03:00 [INF] CORS policy execution successful.
+2025-09-17 14:02:19.797 +03:00 [INF] Request started
+2025-09-17 14:02:19.800 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP)'
+2025-09-17 14:02:19.817 +03:00 [INF] Route matched with {action = "GetBankAccountById", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto]]] GetBankAccountById(System.Guid) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 14:02:19.822 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 14:02:20.479 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-09-17 14:02:20.715 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 14:02:20.726 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-17 14:02:20.749 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP) in 926.6359ms
+2025-09-17 14:02:20.751 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP)'
+2025-09-17 14:02:20.754 +03:00 [INF] Request completed successfully with status code 404
+2025-09-17 14:02:20.759 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/BankAccount/51d06860-8217-4352-97a0-7704d02cbecd - 404 null application/json; charset=utf-8 980.0205ms
+2025-09-17 14:04:29.547 +03:00 [INF] Starting web host...
+2025-09-17 14:04:30.361 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-17 14:04:30.367 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-17 14:04:30.515 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-17 14:04:30.529 +03:00 [INF] Hosting environment: Development
+2025-09-17 14:04:30.530 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-17 14:04:32.287 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2025-09-17 14:04:32.467 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 182.5886ms
+2025-09-17 14:04:32.505 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-17 14:04:32.512 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 6.52ms
+2025-09-17 14:04:33.845 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2025-09-17 14:04:33.887 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 41.74ms
+2025-09-17 14:04:34.065 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2025-09-17 14:04:34.129 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 64.7161ms
+2025-09-17 14:04:40.807 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/BankAccount/51d06860-8217-4352-97a0-7704d02cbecd - null null
+2025-09-17 14:04:40.816 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/BankAccount/51d06860-8217-4352-97a0-7704d02cbecd - 307 0 null 8.9876ms
+2025-09-17 14:04:40.878 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/BankAccount/51d06860-8217-4352-97a0-7704d02cbecd - null null
+2025-09-17 14:04:40.884 +03:00 [INF] CORS policy execution successful.
+2025-09-17 14:04:40.894 +03:00 [INF] Request started
+2025-09-17 14:04:40.897 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP)'
+2025-09-17 14:04:40.914 +03:00 [INF] Route matched with {action = "GetBankAccountById", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto]]] GetBankAccountById(System.Guid) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 14:04:40.920 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 14:04:41.567 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-09-17 14:04:41.776 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 14:04:41.795 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-17 14:04:41.816 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP) in 896.1832ms
+2025-09-17 14:04:41.819 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP)'
+2025-09-17 14:04:41.820 +03:00 [INF] Request completed successfully with status code 404
+2025-09-17 14:04:41.827 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/BankAccount/51d06860-8217-4352-97a0-7704d02cbecd - 404 null application/json; charset=utf-8 948.7304ms
+2025-09-17 14:05:52.327 +03:00 [INF] Starting web host...
+2025-09-17 14:05:52.721 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-17 14:05:52.724 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-17 14:05:52.820 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-17 14:05:52.822 +03:00 [INF] Hosting environment: Development
+2025-09-17 14:05:52.824 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-17 14:05:58.851 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2025-09-17 14:05:59.015 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 164.9141ms
+2025-09-17 14:05:59.041 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2025-09-17 14:05:59.045 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-17 14:05:59.050 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 5.4735ms
+2025-09-17 14:05:59.074 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 32.8253ms
+2025-09-17 14:05:59.868 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2025-09-17 14:05:59.963 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 95.7187ms
+2025-09-17 14:06:05.392 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/BankAccount/51d06860-8217-4352-97a0-7704d02cbecd - null null
+2025-09-17 14:06:05.426 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/BankAccount/51d06860-8217-4352-97a0-7704d02cbecd - 307 0 null 34.0403ms
+2025-09-17 14:06:05.478 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/BankAccount/51d06860-8217-4352-97a0-7704d02cbecd - null null
+2025-09-17 14:06:05.484 +03:00 [INF] CORS policy execution successful.
+2025-09-17 14:06:05.494 +03:00 [INF] Request started
+2025-09-17 14:06:05.498 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP)'
+2025-09-17 14:06:05.513 +03:00 [INF] Route matched with {action = "GetBankAccountById", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto]]] GetBankAccountById(System.Guid) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 14:06:05.519 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 14:06:06.157 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-09-17 14:06:06.340 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 14:06:06.351 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-17 14:06:06.373 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP) in 853.5398ms
+2025-09-17 14:06:06.375 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP)'
+2025-09-17 14:06:06.378 +03:00 [INF] Request completed successfully with status code 404
+2025-09-17 14:06:06.383 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/BankAccount/51d06860-8217-4352-97a0-7704d02cbecd - 404 null application/json; charset=utf-8 905.2469ms
+2025-09-17 14:06:57.598 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/Treasury/a2ae1dc5-6fcb-40cd-85db-2d9bc9346b45 - null null
+2025-09-17 14:06:57.603 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/Treasury/a2ae1dc5-6fcb-40cd-85db-2d9bc9346b45 - 307 0 null 5.1704ms
+2025-09-17 14:06:57.630 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/Treasury/a2ae1dc5-6fcb-40cd-85db-2d9bc9346b45 - null null
+2025-09-17 14:06:57.640 +03:00 [INF] CORS policy execution successful.
+2025-09-17 14:06:57.643 +03:00 [INF] Request started
+2025-09-17 14:06:57.644 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.GetTreasuryById (ModularERP)'
+2025-09-17 14:06:57.649 +03:00 [INF] Route matched with {action = "GetTreasuryById", controller = "Treasury"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryDto]]] GetTreasuryById(System.Guid) on controller ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController (ModularERP).
+2025-09-17 14:06:58.251 +03:00 [INF] Executed DbCommand (37ms) [Parameters=[@__request_Id_0='a2ae1dc5-6fcb-40cd-85db-2d9bc9346b45'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[CompanyId], [t].[CreatedAt], [t].[CreatedById], [t].[CurrencyCode], [t].[DepositAcl], [t].[Description], [t].[IsActive], [t].[IsDeleted], [t].[Name], [t].[Status], [t].[UpdatedAt], [t].[UpdatedById], [t].[WithdrawAcl]
+FROM [Treasuries] AS [t]
+WHERE [t].[IsDeleted] = CAST(0 AS bit) AND [t].[Id] = @__request_Id_0
+2025-09-17 14:06:58.357 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@__treasury_CompanyId_0='d36b22ee-69fd-491c-99a6-36faa8dbfd1a'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[CreatedById], [c].[CurrencyCode], [c].[IsActive], [c].[IsDeleted], [c].[Name], [c].[UpdatedAt], [c].[UpdatedById]
+FROM [Companies] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit) AND [c].[Id] = @__treasury_CompanyId_0
+2025-09-17 14:06:58.401 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__treasury_CurrencyCode_0='EGP' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Code], [c].[CreatedAt], [c].[CreatedById], [c].[Decimals], [c].[Id], [c].[IsActive], [c].[IsDeleted], [c].[Symbol], [c].[UpdatedAt], [c].[UpdatedById]
+FROM [Currencies] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit) AND [c].[Code] = @__treasury_CurrencyCode_0
+2025-09-17 14:06:58.491 +03:00 [INF] Executed DbCommand (14ms) [Parameters=[@__treasury_Id_0='a2ae1dc5-6fcb-40cd-85db-2d9bc9346b45'], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Treasuries] AS [t]
+INNER JOIN [Vouchers] AS [v] ON [t].[Id] = [v].[TreasuryId]
+WHERE [t].[IsDeleted] = CAST(0 AS bit) AND [t].[Id] = @__treasury_Id_0
+2025-09-17 14:06:58.503 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-17 14:06:58.514 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.GetTreasuryById (ModularERP) in 861.6969ms
+2025-09-17 14:06:58.517 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.GetTreasuryById (ModularERP)'
+2025-09-17 14:06:58.519 +03:00 [INF] Request completed successfully with status code 200
+2025-09-17 14:06:58.526 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/Treasury/a2ae1dc5-6fcb-40cd-85db-2d9bc9346b45 - 200 null application/json; charset=utf-8 895.8163ms
+2025-09-17 14:10:30.405 +03:00 [INF] Starting web host...
+2025-09-17 14:10:30.759 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-17 14:10:30.763 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-17 14:10:30.846 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-17 14:10:30.847 +03:00 [INF] Hosting environment: Development
+2025-09-17 14:10:30.848 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-17 14:10:33.540 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2025-09-17 14:10:33.658 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 119.2017ms
+2025-09-17 14:10:33.682 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-17 14:10:33.682 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2025-09-17 14:10:33.688 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 6.0194ms
+2025-09-17 14:10:33.712 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 30.2462ms
+2025-09-17 14:10:35.048 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2025-09-17 14:10:35.108 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 60.7288ms
+2025-09-17 14:10:45.849 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/BankAccount/test/51d06860-8217-4352-97a0-7704d02cbecd - null null
+2025-09-17 14:10:45.856 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/BankAccount/test/51d06860-8217-4352-97a0-7704d02cbecd - 307 0 null 7.5718ms
+2025-09-17 14:10:45.899 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/BankAccount/test/51d06860-8217-4352-97a0-7704d02cbecd - null null
+2025-09-17 14:10:45.906 +03:00 [INF] CORS policy execution successful.
+2025-09-17 14:10:45.915 +03:00 [INF] Request started
+2025-09-17 14:10:45.920 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.Test (ModularERP)'
+2025-09-17 14:10:45.939 +03:00 [INF] Route matched with {action = "Test", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Test(System.Guid, ModularERP.Modules.Finance.Finance.Infrastructure.Data.FinanceDbContext) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 14:10:45.945 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 14:10:46.618 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-09-17 14:10:47.192 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__id_0='51d06860-8217-4352-97a0-7704d02cbecd'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-17 14:10:47.286 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Modules.Finance.Features.BankAccounts.Models.BankAccount'.
+2025-09-17 14:10:47.351 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.Test (ModularERP) in 1405.1772ms
+2025-09-17 14:10:47.354 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.Test (ModularERP)'
+2025-09-17 14:10:47.356 +03:00 [INF] Request completed successfully with status code 200
+2025-09-17 14:10:47.363 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/BankAccount/test/51d06860-8217-4352-97a0-7704d02cbecd - 200 null application/json; charset=utf-8 1464.4168ms
+2025-09-17 14:11:00.829 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/BankAccount/51d06860-8217-4352-97a0-7704d02cbecd - null null
+2025-09-17 14:11:00.834 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/BankAccount/51d06860-8217-4352-97a0-7704d02cbecd - 307 0 null 5.0394ms
+2025-09-17 14:11:00.840 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/BankAccount/51d06860-8217-4352-97a0-7704d02cbecd - null null
+2025-09-17 14:11:00.846 +03:00 [INF] CORS policy execution successful.
+2025-09-17 14:11:00.848 +03:00 [INF] Request started
+2025-09-17 14:11:00.851 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP)'
+2025-09-17 14:11:00.857 +03:00 [INF] Route matched with {action = "GetBankAccountById", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto]]] GetBankAccountById(System.Guid) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 14:11:00.954 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 14:11:00.960 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-17 14:11:00.970 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP) in 109.2864ms
+2025-09-17 14:11:00.973 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP)'
+2025-09-17 14:11:00.975 +03:00 [INF] Request completed successfully with status code 404
+2025-09-17 14:11:00.977 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/BankAccount/51d06860-8217-4352-97a0-7704d02cbecd - 404 null application/json; charset=utf-8 136.7673ms
+2025-09-17 14:16:53.054 +03:00 [INF] Starting web host...
+2025-09-17 14:16:53.526 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-17 14:16:53.529 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-17 14:16:53.618 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-17 14:16:53.619 +03:00 [INF] Hosting environment: Development
+2025-09-17 14:16:53.621 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-17 14:16:59.613 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2025-09-17 14:16:59.735 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 122.0727ms
+2025-09-17 14:16:59.758 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-17 14:16:59.766 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 7.7501ms
+2025-09-17 14:17:00.877 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2025-09-17 14:17:00.916 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 38.691ms
+2025-09-17 14:17:01.125 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2025-09-17 14:17:01.167 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 42.0378ms
+2025-09-17 14:17:04.947 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/BankAccount/51d06860-8217-4352-97a0-7704d02cbecd - null null
+2025-09-17 14:17:04.955 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/BankAccount/51d06860-8217-4352-97a0-7704d02cbecd - 307 0 null 7.9015ms
+2025-09-17 14:17:04.997 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/BankAccount/51d06860-8217-4352-97a0-7704d02cbecd - null null
+2025-09-17 14:17:05.003 +03:00 [INF] CORS policy execution successful.
+2025-09-17 14:17:05.014 +03:00 [INF] Request started
+2025-09-17 14:17:05.016 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP)'
+2025-09-17 14:17:05.036 +03:00 [INF] Route matched with {action = "GetBankAccountById", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto]]] GetBankAccountById(System.Guid) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 14:17:05.041 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 14:17:05.639 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-09-17 14:17:05.870 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 14:17:05.881 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-17 14:17:05.905 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP) in 864.227ms
+2025-09-17 14:17:05.908 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP)'
+2025-09-17 14:17:05.910 +03:00 [INF] Request completed successfully with status code 404
+2025-09-17 14:17:05.915 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/BankAccount/51d06860-8217-4352-97a0-7704d02cbecd - 404 null application/json; charset=utf-8 918.5635ms
+2025-09-17 14:24:21.511 +03:00 [INF] Starting web host...
+2025-09-17 14:24:22.147 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-17 14:24:22.152 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-17 14:24:22.284 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-17 14:24:22.287 +03:00 [INF] Hosting environment: Development
+2025-09-17 14:24:22.287 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-17 14:24:39.015 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2025-09-17 14:24:39.142 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 127.7865ms
+2025-09-17 14:24:39.172 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-17 14:24:39.178 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 5.9414ms
+2025-09-17 14:24:40.324 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2025-09-17 14:24:40.363 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 39.7198ms
+2025-09-17 14:24:40.550 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2025-09-17 14:24:40.614 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 63.9679ms
+2025-09-17 14:25:08.322 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/BankAccount/341a7419-3d26-4908-a5dc-28f03bed5ebd - null null
+2025-09-17 14:25:08.330 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/BankAccount/341a7419-3d26-4908-a5dc-28f03bed5ebd - 307 0 null 7.4ms
+2025-09-17 14:25:08.368 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/BankAccount/341a7419-3d26-4908-a5dc-28f03bed5ebd - null null
+2025-09-17 14:25:08.374 +03:00 [INF] CORS policy execution successful.
+2025-09-17 14:25:08.384 +03:00 [INF] Request started
+2025-09-17 14:25:08.388 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP)'
+2025-09-17 14:25:08.405 +03:00 [INF] Route matched with {action = "GetBankAccountById", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto]]] GetBankAccountById(System.Guid) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 14:25:08.412 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 14:25:09.107 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-09-17 14:25:09.298 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 14:25:09.309 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-17 14:25:09.329 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP) in 916.7219ms
+2025-09-17 14:25:09.333 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP)'
+2025-09-17 14:25:09.335 +03:00 [INF] Request completed successfully with status code 404
+2025-09-17 14:25:09.340 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/BankAccount/341a7419-3d26-4908-a5dc-28f03bed5ebd - 404 null application/json; charset=utf-8 972.3481ms
+2025-09-17 14:25:48.955 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5004/api/BankAccount - application/json 243
+2025-09-17 14:25:48.960 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5004/api/BankAccount - 307 0 null 4.7518ms
+2025-09-17 14:25:48.969 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/BankAccount - null null
+2025-09-17 14:25:48.972 +03:00 [INF] CORS policy execution successful.
+2025-09-17 14:25:48.974 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/BankAccount - 204 null null 5.4439ms
+2025-09-17 14:25:48.976 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/BankAccount - application/json 243
+2025-09-17 14:25:48.981 +03:00 [INF] CORS policy execution successful.
+2025-09-17 14:25:48.982 +03:00 [INF] Request started
+2025-09-17 14:25:48.983 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.CreateBankAccount (ModularERP)'
+2025-09-17 14:25:48.990 +03:00 [INF] Route matched with {action = "CreateBankAccount", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountCreatedDto]]] CreateBankAccount(ModularERP.Modules.Finance.Features.BankAccounts.DTO.CreateBankAccountDto) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 14:25:49.066 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountCreatedDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-17 14:25:49.071 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.CreateBankAccount (ModularERP) in 75.185ms
+2025-09-17 14:25:49.074 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.CreateBankAccount (ModularERP)'
+2025-09-17 14:25:49.077 +03:00 [INF] Request completed successfully with status code 400
+2025-09-17 14:25:49.078 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/BankAccount - 400 null application/json; charset=utf-8 102.2075ms
+2025-09-17 14:27:54.975 +03:00 [INF] Starting web host...
+2025-09-17 14:27:55.413 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-17 14:27:55.416 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-17 14:27:55.508 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-17 14:27:55.510 +03:00 [INF] Hosting environment: Development
+2025-09-17 14:27:55.512 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-17 14:28:00.339 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2025-09-17 14:28:00.457 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 117.9788ms
+2025-09-17 14:28:00.485 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-17 14:28:00.494 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 8.4233ms
+2025-09-17 14:28:01.494 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2025-09-17 14:28:01.542 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 48.3396ms
+2025-09-17 14:28:01.722 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2025-09-17 14:28:01.829 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 107.6019ms
+2025-09-17 14:28:08.333 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5004/api/BankAccount - application/json 243
+2025-09-17 14:28:08.340 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5004/api/BankAccount - 307 0 null 7.8271ms
+2025-09-17 14:28:08.380 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/BankAccount - null null
+2025-09-17 14:28:08.386 +03:00 [INF] CORS policy execution successful.
+2025-09-17 14:28:08.388 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/BankAccount - 204 null null 7.4663ms
+2025-09-17 14:28:08.392 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/BankAccount - application/json 243
+2025-09-17 14:28:08.396 +03:00 [INF] CORS policy execution successful.
+2025-09-17 14:28:08.404 +03:00 [INF] Request started
+2025-09-17 14:28:08.408 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.CreateBankAccount (ModularERP)'
+2025-09-17 14:28:08.425 +03:00 [INF] Route matched with {action = "CreateBankAccount", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountCreatedDto]]] CreateBankAccount(ModularERP.Modules.Finance.Features.BankAccounts.DTO.CreateBankAccountDto) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 14:28:08.431 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 14:28:09.080 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-09-17 14:28:09.294 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 14:28:09.773 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__request_BankAccount_CompanyId_0='d36b22ee-69fd-491c-99a6-36faa8dbfd1a', @__request_BankAccount_AccountNumber_1='124' (Size = 50), @__request_BankAccount_BankName_2='dfgd' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[IsDeleted] = CAST(0 AS bit) AND [b].[CompanyId] = @__request_BankAccount_CompanyId_0 AND [b].[AccountNumber] = @__request_BankAccount_AccountNumber_1 AND [b].[BankName] = @__request_BankAccount_BankName_2
+2025-09-17 14:28:09.814 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountCreatedDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-17 14:28:09.829 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.CreateBankAccount (ModularERP) in 1398.392ms
+2025-09-17 14:28:09.831 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.CreateBankAccount (ModularERP)'
+2025-09-17 14:28:09.834 +03:00 [INF] Request completed successfully with status code 400
+2025-09-17 14:28:09.841 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/BankAccount - 400 null application/json; charset=utf-8 1448.9954ms
+2025-09-17 14:28:40.361 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/BankAccount/341a7419-3d26-4908-a5dc-28f03bed5ebd - null null
+2025-09-17 14:28:40.366 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/BankAccount/341a7419-3d26-4908-a5dc-28f03bed5ebd - 307 0 null 5.1817ms
+2025-09-17 14:28:40.386 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/BankAccount/341a7419-3d26-4908-a5dc-28f03bed5ebd - null null
+2025-09-17 14:28:40.398 +03:00 [INF] CORS policy execution successful.
+2025-09-17 14:28:40.400 +03:00 [INF] Request started
+2025-09-17 14:28:40.403 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP)'
+2025-09-17 14:28:40.415 +03:00 [INF] Route matched with {action = "GetBankAccountById", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto]]] GetBankAccountById(System.Guid) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 14:28:40.466 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-17 14:28:40.473 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP) in 53.7787ms
+2025-09-17 14:28:40.477 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP)'
+2025-09-17 14:28:40.478 +03:00 [INF] Request completed successfully with status code 404
+2025-09-17 14:28:40.481 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/BankAccount/341a7419-3d26-4908-a5dc-28f03bed5ebd - 404 null application/json; charset=utf-8 94.3919ms
+2025-09-17 14:28:49.878 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5004/api/BankAccount - application/json 243
+2025-09-17 14:28:49.883 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5004/api/BankAccount - 307 0 null 4.394ms
+2025-09-17 14:28:49.895 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/BankAccount - null null
+2025-09-17 14:28:49.916 +03:00 [INF] CORS policy execution successful.
+2025-09-17 14:28:49.917 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/BankAccount - 204 null null 22.1877ms
+2025-09-17 14:28:49.920 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/BankAccount - application/json 243
+2025-09-17 14:28:49.929 +03:00 [INF] CORS policy execution successful.
+2025-09-17 14:28:49.931 +03:00 [INF] Request started
+2025-09-17 14:28:49.932 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.CreateBankAccount (ModularERP)'
+2025-09-17 14:28:49.933 +03:00 [INF] Route matched with {action = "CreateBankAccount", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountCreatedDto]]] CreateBankAccount(ModularERP.Modules.Finance.Features.BankAccounts.DTO.CreateBankAccountDto) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 14:28:49.953 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__request_BankAccount_CompanyId_0='d36b22ee-69fd-491c-99a6-36faa8dbfd1a', @__request_BankAccount_AccountNumber_1='124' (Size = 50), @__request_BankAccount_BankName_2='dfgd' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[IsDeleted] = CAST(0 AS bit) AND [b].[CompanyId] = @__request_BankAccount_CompanyId_0 AND [b].[AccountNumber] = @__request_BankAccount_AccountNumber_1 AND [b].[BankName] = @__request_BankAccount_BankName_2
+2025-09-17 14:28:49.960 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountCreatedDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-17 14:28:49.962 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.CreateBankAccount (ModularERP) in 25.7868ms
+2025-09-17 14:28:49.966 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.CreateBankAccount (ModularERP)'
+2025-09-17 14:28:49.968 +03:00 [INF] Request completed successfully with status code 400
+2025-09-17 14:28:49.969 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/BankAccount - 400 null application/json; charset=utf-8 48.9444ms
+2025-09-17 14:30:39.546 +03:00 [INF] Starting web host...
+2025-09-17 14:30:40.050 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-17 14:30:40.055 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-17 14:30:40.195 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-17 14:30:40.197 +03:00 [INF] Hosting environment: Development
+2025-09-17 14:30:40.198 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-17 14:30:47.195 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2025-09-17 14:30:47.383 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 188.6543ms
+2025-09-17 14:30:47.411 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-17 14:30:47.412 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2025-09-17 14:30:47.415 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 4.1151ms
+2025-09-17 14:30:47.440 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 28.3227ms
+2025-09-17 14:30:49.061 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2025-09-17 14:30:49.134 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 73.3214ms
+2025-09-17 14:30:59.527 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5004/api/BankAccount - application/json 243
+2025-09-17 14:30:59.535 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5004/api/BankAccount - 307 0 null 7.8139ms
+2025-09-17 14:30:59.600 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/BankAccount - null null
+2025-09-17 14:30:59.605 +03:00 [INF] CORS policy execution successful.
+2025-09-17 14:30:59.607 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/BankAccount - 204 null null 7.4524ms
+2025-09-17 14:30:59.610 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/BankAccount - application/json 243
+2025-09-17 14:30:59.613 +03:00 [INF] CORS policy execution successful.
+2025-09-17 14:30:59.622 +03:00 [INF] Request started
+2025-09-17 14:30:59.625 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.CreateBankAccount (ModularERP)'
+2025-09-17 14:30:59.642 +03:00 [INF] Route matched with {action = "CreateBankAccount", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountCreatedDto]]] CreateBankAccount(ModularERP.Modules.Finance.Features.BankAccounts.DTO.CreateBankAccountDto) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 14:30:59.648 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 14:31:00.379 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-09-17 14:31:00.589 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 14:31:01.039 +03:00 [INF] Executed DbCommand (27ms) [Parameters=[@__request_BankAccount_CompanyId_0='d36b22ee-69fd-491c-99a6-36faa8dbfd1a', @__request_BankAccount_AccountNumber_1='124' (Size = 50), @__request_BankAccount_BankName_2='dfgd' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[IsDeleted] = CAST(0 AS bit) AND [b].[CompanyId] = @__request_BankAccount_CompanyId_0 AND [b].[AccountNumber] = @__request_BankAccount_AccountNumber_1 AND [b].[BankName] = @__request_BankAccount_BankName_2
+2025-09-17 14:31:01.079 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountCreatedDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-17 14:31:01.095 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.CreateBankAccount (ModularERP) in 1447.3759ms
+2025-09-17 14:31:01.099 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.CreateBankAccount (ModularERP)'
+2025-09-17 14:31:01.102 +03:00 [INF] Request completed successfully with status code 400
+2025-09-17 14:31:01.108 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/BankAccount - 400 null application/json; charset=utf-8 1498.0817ms
+2025-09-17 14:32:11.669 +03:00 [INF] Starting web host...
+2025-09-17 14:32:12.206 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-17 14:32:12.211 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-17 14:32:12.347 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-17 14:32:12.374 +03:00 [INF] Hosting environment: Development
+2025-09-17 14:32:12.377 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-17 14:32:18.317 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2025-09-17 14:32:18.453 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 135.1078ms
+2025-09-17 14:32:18.477 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-17 14:32:18.478 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2025-09-17 14:32:18.482 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 4.368ms
+2025-09-17 14:32:18.513 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 34.9954ms
+2025-09-17 14:32:19.262 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2025-09-17 14:32:19.335 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 72.8148ms
+2025-09-17 14:32:24.815 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5004/api/BankAccount - application/json 243
+2025-09-17 14:32:24.823 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5004/api/BankAccount - 307 0 null 8.1638ms
+2025-09-17 14:32:24.864 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/BankAccount - null null
+2025-09-17 14:32:24.869 +03:00 [INF] CORS policy execution successful.
+2025-09-17 14:32:24.873 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/BankAccount - 204 null null 8.748ms
+2025-09-17 14:32:24.876 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/BankAccount - application/json 243
+2025-09-17 14:32:24.880 +03:00 [INF] CORS policy execution successful.
+2025-09-17 14:32:24.889 +03:00 [INF] Request started
+2025-09-17 14:32:24.892 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.CreateBankAccount (ModularERP)'
+2025-09-17 14:32:24.907 +03:00 [INF] Route matched with {action = "CreateBankAccount", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountCreatedDto]]] CreateBankAccount(ModularERP.Modules.Finance.Features.BankAccounts.DTO.CreateBankAccountDto) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 14:32:24.913 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 14:32:25.534 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-09-17 14:32:25.741 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 14:32:26.160 +03:00 [INF] Executed DbCommand (27ms) [Parameters=[@__request_BankAccount_CompanyId_0='d36b22ee-69fd-491c-99a6-36faa8dbfd1a', @__request_BankAccount_AccountNumber_1='124' (Size = 50), @__request_BankAccount_BankName_2='dfgd' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[IsDeleted] = CAST(0 AS bit) AND [b].[CompanyId] = @__request_BankAccount_CompanyId_0 AND [b].[AccountNumber] = @__request_BankAccount_AccountNumber_1 AND [b].[BankName] = @__request_BankAccount_BankName_2
+2025-09-17 14:32:26.363 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@p0='76d22594-df50-4f4e-95b7-fb68f806031b', @p1='124' (Nullable = false) (Size = 50), @p2='dfgd' (Nullable = false) (Size = 100), @p3='d36b22ee-69fd-491c-99a6-36faa8dbfd1a', @p4='2025-09-17T11:32:26.2004862Z', @p5=NULL (Size = 4000), @p6='EGP' (Nullable = false) (Size = 3), @p7='string' (Nullable = false) (Size = 4000), @p8='string' (Size = 4000), @p9='True', @p10='False', @p11='nvnv' (Nullable = false) (Size = 100), @p12='Active' (Nullable = false) (Size = 4000), @p13=NULL (DbType = DateTime2), @p14=NULL (Size = 4000), @p15='string' (Nullable = false) (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [BankAccounts] ([Id], [AccountNumber], [BankName], [CompanyId], [CreatedAt], [CreatedById], [CurrencyCode], [DepositAcl], [Description], [IsActive], [IsDeleted], [Name], [Status], [UpdatedAt], [UpdatedById], [WithdrawAcl])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);
+2025-09-17 14:32:26.386 +03:00 [INF] Executing CreatedAtActionResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountCreatedDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-17 14:32:26.425 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.CreateBankAccount (ModularERP) in 1511.6594ms
+2025-09-17 14:32:26.428 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.CreateBankAccount (ModularERP)'
+2025-09-17 14:32:26.430 +03:00 [INF] Request completed successfully with status code 201
+2025-09-17 14:32:26.438 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/BankAccount - 201 null application/json; charset=utf-8 1562.5262ms
+2025-09-17 14:32:58.561 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/BankAccount/76d22594-df50-4f4e-95b7-fb68f806031b - null null
+2025-09-17 14:32:58.566 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/BankAccount/76d22594-df50-4f4e-95b7-fb68f806031b - 307 0 null 5.1894ms
+2025-09-17 14:32:58.569 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/BankAccount/76d22594-df50-4f4e-95b7-fb68f806031b - null null
+2025-09-17 14:32:58.576 +03:00 [INF] CORS policy execution successful.
+2025-09-17 14:32:58.578 +03:00 [INF] Request started
+2025-09-17 14:32:58.579 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP)'
+2025-09-17 14:32:58.586 +03:00 [INF] Route matched with {action = "GetBankAccountById", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto]]] GetBankAccountById(System.Guid) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 14:32:58.636 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-17 14:32:58.644 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP) in 54.1782ms
+2025-09-17 14:32:58.648 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP)'
+2025-09-17 14:32:58.650 +03:00 [INF] Request completed successfully with status code 404
+2025-09-17 14:32:58.651 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/BankAccount/76d22594-df50-4f4e-95b7-fb68f806031b - 404 null application/json; charset=utf-8 81.8693ms
+2025-09-17 14:33:58.072 +03:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5004/api/BankAccount/76d22594-df50-4f4e-95b7-fb68f806031b - application/json 295
+2025-09-17 14:33:58.076 +03:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5004/api/BankAccount/76d22594-df50-4f4e-95b7-fb68f806031b - 307 0 null 4.3438ms
+2025-09-17 14:33:58.080 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/76d22594-df50-4f4e-95b7-fb68f806031b - null null
+2025-09-17 14:33:58.085 +03:00 [INF] CORS policy execution successful.
+2025-09-17 14:33:58.086 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/76d22594-df50-4f4e-95b7-fb68f806031b - 204 null null 5.902ms
+2025-09-17 14:33:58.087 +03:00 [INF] Request starting HTTP/2 PUT https://localhost:7168/api/BankAccount/76d22594-df50-4f4e-95b7-fb68f806031b - application/json 295
+2025-09-17 14:33:58.092 +03:00 [INF] CORS policy execution successful.
+2025-09-17 14:33:58.094 +03:00 [INF] Request started
+2025-09-17 14:33:58.095 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdateBankAccount (ModularERP)'
+2025-09-17 14:33:58.100 +03:00 [INF] Route matched with {action = "UpdateBankAccount", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Boolean]]] UpdateBankAccount(System.Guid, ModularERP.Modules.Finance.Features.BankAccounts.DTO.UpdateBankAccountDto) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 14:33:58.119 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-17 14:33:58.123 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdateBankAccount (ModularERP) in 20.546ms
+2025-09-17 14:33:58.126 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdateBankAccount (ModularERP)'
+2025-09-17 14:33:58.127 +03:00 [INF] Request completed successfully with status code 400
+2025-09-17 14:33:58.128 +03:00 [INF] Request finished HTTP/2 PUT https://localhost:7168/api/BankAccount/76d22594-df50-4f4e-95b7-fb68f806031b - 400 null application/json; charset=utf-8 40.5216ms
+2025-09-17 14:55:25.743 +03:00 [INF] Starting web host...
+2025-09-17 14:55:26.253 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-17 14:55:26.257 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-17 14:55:26.339 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-17 14:55:26.341 +03:00 [INF] Hosting environment: Development
+2025-09-17 14:55:26.342 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-17 14:55:36.974 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2025-09-17 14:55:37.101 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 127.4383ms
+2025-09-17 14:55:37.129 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-17 14:55:37.137 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 7.0684ms
+2025-09-17 14:55:38.133 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2025-09-17 14:55:38.163 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 29.6561ms
+2025-09-17 14:55:38.341 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2025-09-17 14:55:38.396 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 54.9253ms
+2025-09-17 14:55:42.578 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/BankAccount/76d22594-df50-4f4e-95b7-fb68f806031b - null null
+2025-09-17 14:55:42.586 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/BankAccount/76d22594-df50-4f4e-95b7-fb68f806031b - 307 0 null 8.1658ms
+2025-09-17 14:55:42.630 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/BankAccount/76d22594-df50-4f4e-95b7-fb68f806031b - null null
+2025-09-17 14:55:42.636 +03:00 [INF] CORS policy execution successful.
+2025-09-17 14:55:42.646 +03:00 [INF] Request started
+2025-09-17 14:55:42.649 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP)'
+2025-09-17 14:55:42.669 +03:00 [INF] Route matched with {action = "GetBankAccountById", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto]]] GetBankAccountById(System.Guid) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 14:55:42.674 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 14:55:43.305 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-09-17 14:55:43.515 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 14:55:43.538 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-17 14:55:43.561 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP) in 887.0008ms
+2025-09-17 14:55:43.563 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP)'
+2025-09-17 14:55:43.566 +03:00 [INF] Request completed successfully with status code 400
+2025-09-17 14:55:43.572 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/BankAccount/76d22594-df50-4f4e-95b7-fb68f806031b - 400 null application/json; charset=utf-8 941.5915ms
+2025-09-17 14:57:48.099 +03:00 [INF] Starting web host...
+2025-09-17 14:57:48.666 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-17 14:57:48.670 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-17 14:57:48.812 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-17 14:57:48.814 +03:00 [INF] Hosting environment: Development
+2025-09-17 14:57:48.814 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-17 14:57:51.241 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2025-09-17 14:57:51.430 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 190.6134ms
+2025-09-17 14:57:51.462 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-17 14:57:51.473 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 10.33ms
+2025-09-17 14:57:52.044 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2025-09-17 14:57:52.075 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 30.4427ms
+2025-09-17 14:57:52.172 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2025-09-17 14:57:52.221 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 49.3544ms
+2025-09-17 14:58:01.154 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/BankAccount/76d22594-df50-4f4e-95b7-fb68f806031b - null null
+2025-09-17 14:58:01.160 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/BankAccount/76d22594-df50-4f4e-95b7-fb68f806031b - 307 0 null 6.453ms
+2025-09-17 14:58:01.200 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/BankAccount/76d22594-df50-4f4e-95b7-fb68f806031b - null null
+2025-09-17 14:58:01.207 +03:00 [INF] CORS policy execution successful.
+2025-09-17 14:58:01.217 +03:00 [INF] Request started
+2025-09-17 14:58:01.220 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP)'
+2025-09-17 14:58:01.237 +03:00 [INF] Route matched with {action = "GetBankAccountById", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto]]] GetBankAccountById(System.Guid) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 14:58:01.243 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 14:58:01.836 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-09-17 14:58:02.025 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 14:58:02.506 +03:00 [INF] Executed DbCommand (43ms) [Parameters=[@__request_Id_0='76d22594-df50-4f4e-95b7-fb68f806031b'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[IsDeleted] = CAST(0 AS bit) AND [b].[Id] = @__request_Id_0 AND [b].[IsDeleted] = CAST(0 AS bit)
+2025-09-17 14:58:02.612 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__bankAccount_CompanyId_0='d36b22ee-69fd-491c-99a6-36faa8dbfd1a'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[CreatedById], [c].[CurrencyCode], [c].[IsActive], [c].[IsDeleted], [c].[Name], [c].[UpdatedAt], [c].[UpdatedById]
+FROM [Companies] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit) AND [c].[Id] = @__bankAccount_CompanyId_0
+2025-09-17 14:58:02.658 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__bankAccount_CurrencyCode_0='EGP' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Code], [c].[CreatedAt], [c].[CreatedById], [c].[Decimals], [c].[Id], [c].[IsActive], [c].[IsDeleted], [c].[Symbol], [c].[UpdatedAt], [c].[UpdatedById]
+FROM [Currencies] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit) AND [c].[Code] = @__bankAccount_CurrencyCode_0
+2025-09-17 14:58:02.691 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-17 14:58:02.715 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP) in 1472.2546ms
+2025-09-17 14:58:02.718 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountById (ModularERP)'
+2025-09-17 14:58:02.719 +03:00 [INF] Request completed successfully with status code 200
+2025-09-17 14:58:02.728 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/BankAccount/76d22594-df50-4f4e-95b7-fb68f806031b - 200 null application/json; charset=utf-8 1527.78ms
+2025-09-17 14:58:35.454 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/BankAccount/company/d00cf078-c1ff-4feb-ae37-d66a827ae438?page=1&pageSize=10&search=E - null null
+2025-09-17 14:58:35.459 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/BankAccount/company/d00cf078-c1ff-4feb-ae37-d66a827ae438?page=1&pageSize=10&search=E - 307 0 null 5.0915ms
+2025-09-17 14:58:35.462 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/BankAccount/company/d00cf078-c1ff-4feb-ae37-d66a827ae438?page=1&pageSize=10&search=E - null null
+2025-09-17 14:58:35.469 +03:00 [INF] CORS policy execution successful.
+2025-09-17 14:58:35.471 +03:00 [INF] Request started
+2025-09-17 14:58:35.472 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountsByCompany (ModularERP)'
+2025-09-17 14:58:35.478 +03:00 [INF] Route matched with {action = "GetBankAccountsByCompany", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Collections.Generic.IEnumerable`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountListDto]]]] GetBankAccountsByCompany(System.Guid, Int32, Int32, System.String) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 14:58:35.539 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-17 14:58:35.544 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountsByCompany (ModularERP) in 62.5964ms
+2025-09-17 14:58:35.546 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountsByCompany (ModularERP)'
+2025-09-17 14:58:35.548 +03:00 [INF] Request completed successfully with status code 400
+2025-09-17 14:58:35.552 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/BankAccount/company/d00cf078-c1ff-4feb-ae37-d66a827ae438?page=1&pageSize=10&search=E - 400 null application/json; charset=utf-8 90.0095ms
+2025-09-17 14:59:06.132 +03:00 [INF] Starting web host...
+2025-09-17 14:59:06.707 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-17 14:59:06.711 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-17 14:59:06.840 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-17 14:59:06.842 +03:00 [INF] Hosting environment: Development
+2025-09-17 14:59:06.843 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-17 14:59:10.840 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2025-09-17 14:59:10.975 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 135.8671ms
+2025-09-17 14:59:11.006 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2025-09-17 14:59:11.006 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-17 14:59:11.016 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 9.3338ms
+2025-09-17 14:59:11.032 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 25.7134ms
+2025-09-17 14:59:12.185 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2025-09-17 14:59:12.234 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 49.3414ms
+2025-09-17 14:59:22.283 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/BankAccount/company/d00cf078-c1ff-4feb-ae37-d66a827ae438?page=1&pageSize=10&search=E - null null
+2025-09-17 14:59:22.291 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/BankAccount/company/d00cf078-c1ff-4feb-ae37-d66a827ae438?page=1&pageSize=10&search=E - 307 0 null 8.7281ms
+2025-09-17 14:59:22.331 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/BankAccount/company/d00cf078-c1ff-4feb-ae37-d66a827ae438?page=1&pageSize=10&search=E - null null
+2025-09-17 14:59:22.339 +03:00 [INF] CORS policy execution successful.
+2025-09-17 14:59:22.349 +03:00 [INF] Request started
+2025-09-17 14:59:22.352 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountsByCompany (ModularERP)'
+2025-09-17 14:59:22.371 +03:00 [INF] Route matched with {action = "GetBankAccountsByCompany", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Collections.Generic.IEnumerable`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountListDto]]]] GetBankAccountsByCompany(System.Guid, Int32, Int32, System.String) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 14:59:22.376 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 14:59:22.994 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-09-17 14:59:23.187 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 14:59:23.615 +03:00 [INF] Executed DbCommand (36ms) [Parameters=[@__request_CompanyId_0='d00cf078-c1ff-4feb-ae37-d66a827ae438', @__request_Search_1_contains='%E%' (Size = 100), @__request_Search_1_contains_1='%E%' (Size = 50), @__request_Search_1_contains_2='%E%' (Size = 4000), @__p_2='0', @__p_3='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[IsDeleted] = CAST(0 AS bit) AND [b].[CompanyId] = @__request_CompanyId_0 AND [b].[IsDeleted] = CAST(0 AS bit) AND ([b].[Name] LIKE @__request_Search_1_contains ESCAPE N'\' OR [b].[BankName] LIKE @__request_Search_1_contains ESCAPE N'\' OR [b].[AccountNumber] LIKE @__request_Search_1_contains_1 ESCAPE N'\' OR ([b].[Description] IS NOT NULL AND [b].[Description] LIKE @__request_Search_1_contains_2 ESCAPE N'\'))
+ORDER BY [b].[BankName], [b].[Name]
+OFFSET @__p_2 ROWS FETCH NEXT @__p_3 ROWS ONLY
+2025-09-17 14:59:23.722 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[@__bankAccount_CompanyId_0='d00cf078-c1ff-4feb-ae37-d66a827ae438'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[CreatedById], [c].[CurrencyCode], [c].[IsActive], [c].[IsDeleted], [c].[Name], [c].[UpdatedAt], [c].[UpdatedById]
+FROM [Companies] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit) AND [c].[Id] = @__bankAccount_CompanyId_0
+2025-09-17 14:59:23.763 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__bankAccount_CurrencyCode_0='EGP' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Code], [c].[CreatedAt], [c].[CreatedById], [c].[Decimals], [c].[Id], [c].[IsActive], [c].[IsDeleted], [c].[Symbol], [c].[UpdatedAt], [c].[UpdatedById]
+FROM [Currencies] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit) AND [c].[Code] = @__bankAccount_CurrencyCode_0
+2025-09-17 14:59:23.796 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-17 14:59:23.816 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountsByCompany (ModularERP) in 1439.4228ms
+2025-09-17 14:59:23.819 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountsByCompany (ModularERP)'
+2025-09-17 14:59:23.821 +03:00 [INF] Request completed successfully with status code 200
+2025-09-17 14:59:23.829 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/BankAccount/company/d00cf078-c1ff-4feb-ae37-d66a827ae438?page=1&pageSize=10&search=E - 200 null application/json; charset=utf-8 1498.0772ms
+2025-09-17 14:59:52.686 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/BankAccount/statistics?companyId=d00cf078-c1ff-4feb-ae37-d66a827ae438 - null null
+2025-09-17 14:59:52.716 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/BankAccount/statistics?companyId=d00cf078-c1ff-4feb-ae37-d66a827ae438 - 307 0 null 30.2251ms
+2025-09-17 14:59:52.731 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/BankAccount/statistics?companyId=d00cf078-c1ff-4feb-ae37-d66a827ae438 - null null
+2025-09-17 14:59:52.736 +03:00 [INF] CORS policy execution successful.
+2025-09-17 14:59:52.737 +03:00 [INF] Request started
+2025-09-17 14:59:52.738 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountStatistics (ModularERP)'
+2025-09-17 14:59:52.745 +03:00 [INF] Route matched with {action = "GetBankAccountStatistics", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountStatisticsDto]]] GetBankAccountStatistics(System.Nullable`1[System.Guid], System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 14:59:52.806 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountStatisticsDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-17 14:59:52.812 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountStatistics (ModularERP) in 62.7355ms
+2025-09-17 14:59:52.814 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountStatistics (ModularERP)'
+2025-09-17 14:59:52.815 +03:00 [INF] Request completed successfully with status code 400
+2025-09-17 14:59:52.816 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/BankAccount/statistics?companyId=d00cf078-c1ff-4feb-ae37-d66a827ae438 - 400 null application/json; charset=utf-8 84.8666ms
+2025-09-17 15:00:16.373 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/BankAccount/statistics?companyId=d00cf078-c1ff-4feb-ae37-d66a827ae438 - null null
+2025-09-17 15:00:16.378 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/BankAccount/statistics?companyId=d00cf078-c1ff-4feb-ae37-d66a827ae438 - 307 0 null 4.4766ms
+2025-09-17 15:00:16.385 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/BankAccount/statistics?companyId=d00cf078-c1ff-4feb-ae37-d66a827ae438 - null null
+2025-09-17 15:00:16.389 +03:00 [INF] CORS policy execution successful.
+2025-09-17 15:00:16.391 +03:00 [INF] Request started
+2025-09-17 15:00:16.392 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountStatistics (ModularERP)'
+2025-09-17 15:00:16.393 +03:00 [INF] Route matched with {action = "GetBankAccountStatistics", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountStatisticsDto]]] GetBankAccountStatistics(System.Nullable`1[System.Guid], System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 15:00:16.405 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountStatisticsDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-17 15:00:16.408 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountStatistics (ModularERP) in 12.7975ms
+2025-09-17 15:00:16.410 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountStatistics (ModularERP)'
+2025-09-17 15:00:16.412 +03:00 [INF] Request completed successfully with status code 400
+2025-09-17 15:00:16.413 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/BankAccount/statistics?companyId=d00cf078-c1ff-4feb-ae37-d66a827ae438 - 400 null application/json; charset=utf-8 28.1002ms
+2025-09-17 15:00:21.297 +03:00 [INF] Starting web host...
+2025-09-17 15:00:21.850 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-17 15:00:21.854 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-17 15:00:21.986 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-17 15:00:21.987 +03:00 [INF] Hosting environment: Development
+2025-09-17 15:00:21.988 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-17 15:00:26.388 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2025-09-17 15:00:26.516 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 126.8314ms
+2025-09-17 15:00:26.542 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-17 15:00:26.548 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 6.772ms
+2025-09-17 15:00:27.527 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2025-09-17 15:00:27.566 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 39.5075ms
+2025-09-17 15:00:27.775 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2025-09-17 15:00:27.874 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 98.2617ms
+2025-09-17 15:00:38.501 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/BankAccount/statistics?companyId=d00cf078-c1ff-4feb-ae37-d66a827ae438 - null null
+2025-09-17 15:00:38.508 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/BankAccount/statistics?companyId=d00cf078-c1ff-4feb-ae37-d66a827ae438 - 307 0 null 7.2462ms
+2025-09-17 15:00:38.548 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/BankAccount/statistics?companyId=d00cf078-c1ff-4feb-ae37-d66a827ae438 - null null
+2025-09-17 15:00:38.554 +03:00 [INF] CORS policy execution successful.
+2025-09-17 15:00:38.564 +03:00 [INF] Request started
+2025-09-17 15:00:38.567 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountStatistics (ModularERP)'
+2025-09-17 15:00:38.585 +03:00 [INF] Route matched with {action = "GetBankAccountStatistics", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountStatisticsDto]]] GetBankAccountStatistics(System.Nullable`1[System.Guid], System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 15:00:38.590 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 15:00:39.297 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-09-17 15:00:39.851 +03:00 [INF] Executed DbCommand (37ms) [Parameters=[@__request_CompanyId_Value_0='d00cf078-c1ff-4feb-ae37-d66a827ae438'], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[IsDeleted] = CAST(0 AS bit) AND [b].[CompanyId] = @__request_CompanyId_Value_0
+2025-09-17 15:00:39.942 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountStatisticsDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-17 15:00:39.960 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountStatistics (ModularERP) in 1368.7376ms
+2025-09-17 15:00:39.963 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountStatistics (ModularERP)'
+2025-09-17 15:00:39.965 +03:00 [INF] Request completed successfully with status code 200
+2025-09-17 15:00:39.971 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/BankAccount/statistics?companyId=d00cf078-c1ff-4feb-ae37-d66a827ae438 - 200 null application/json; charset=utf-8 1423.1048ms
+2025-09-17 15:01:11.197 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/BankAccount/statistics?companyId=d36b22ee-69fd-491c-99a6-36faa8dbfd1a - null null
+2025-09-17 15:01:11.203 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/BankAccount/statistics?companyId=d36b22ee-69fd-491c-99a6-36faa8dbfd1a - 307 0 null 5.9602ms
+2025-09-17 15:01:11.213 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/BankAccount/statistics?companyId=d36b22ee-69fd-491c-99a6-36faa8dbfd1a - null null
+2025-09-17 15:01:11.220 +03:00 [INF] CORS policy execution successful.
+2025-09-17 15:01:11.221 +03:00 [INF] Request started
+2025-09-17 15:01:11.222 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountStatistics (ModularERP)'
+2025-09-17 15:01:11.223 +03:00 [INF] Route matched with {action = "GetBankAccountStatistics", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountStatisticsDto]]] GetBankAccountStatistics(System.Nullable`1[System.Guid], System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 15:01:11.280 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__request_CompanyId_Value_0='d36b22ee-69fd-491c-99a6-36faa8dbfd1a'], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[IsDeleted] = CAST(0 AS bit) AND [b].[CompanyId] = @__request_CompanyId_Value_0
+2025-09-17 15:01:11.287 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountStatisticsDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-17 15:01:11.289 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountStatistics (ModularERP) in 63.6207ms
+2025-09-17 15:01:11.291 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetBankAccountStatistics (ModularERP)'
+2025-09-17 15:01:11.293 +03:00 [INF] Request completed successfully with status code 200
+2025-09-17 15:01:11.294 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/BankAccount/statistics?companyId=d36b22ee-69fd-491c-99a6-36faa8dbfd1a - 200 null application/json; charset=utf-8 81.1621ms
+2025-09-17 15:01:31.926 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/BankAccount/341a7419-3d26-4908-a5dc-28f03bed5ebd/permissions - null null
+2025-09-17 15:01:31.931 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/BankAccount/341a7419-3d26-4908-a5dc-28f03bed5ebd/permissions - 307 0 null 4.7866ms
+2025-09-17 15:01:31.937 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/BankAccount/341a7419-3d26-4908-a5dc-28f03bed5ebd/permissions - null null
+2025-09-17 15:01:31.941 +03:00 [INF] CORS policy execution successful.
+2025-09-17 15:01:31.944 +03:00 [INF] Request started
+2025-09-17 15:01:31.946 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetPermissions (ModularERP)'
+2025-09-17 15:01:31.950 +03:00 [INF] Route matched with {action = "GetPermissions", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.WalletPermissions.DTO.WalletPermissionDto]]] GetPermissions(System.Guid) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 15:01:31.976 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='341a7419-3d26-4908-a5dc-28f03bed5ebd'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-17 15:01:31.982 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.WalletPermissions.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-17 15:01:31.988 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetPermissions (ModularERP) in 35.3523ms
+2025-09-17 15:01:31.991 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetPermissions (ModularERP)'
+2025-09-17 15:01:31.992 +03:00 [INF] Request completed successfully with status code 200
+2025-09-17 15:01:31.994 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/BankAccount/341a7419-3d26-4908-a5dc-28f03bed5ebd/permissions - 200 null application/json; charset=utf-8 56.8719ms
+2025-09-17 15:01:41.818 +03:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5004/api/BankAccount/341a7419-3d26-4908-a5dc-28f03bed5ebd - null null
+2025-09-17 15:01:41.823 +03:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5004/api/BankAccount/341a7419-3d26-4908-a5dc-28f03bed5ebd - 307 0 null 4.9538ms
+2025-09-17 15:01:41.825 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/341a7419-3d26-4908-a5dc-28f03bed5ebd - null null
+2025-09-17 15:01:41.830 +03:00 [INF] CORS policy execution successful.
+2025-09-17 15:01:41.831 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/341a7419-3d26-4908-a5dc-28f03bed5ebd - 204 null null 5.8671ms
+2025-09-17 15:01:41.834 +03:00 [INF] Request starting HTTP/2 DELETE https://localhost:7168/api/BankAccount/341a7419-3d26-4908-a5dc-28f03bed5ebd - null null
+2025-09-17 15:01:41.837 +03:00 [INF] CORS policy execution successful.
+2025-09-17 15:01:41.838 +03:00 [INF] Request started
+2025-09-17 15:01:41.839 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.DeleteBankAccount (ModularERP)'
+2025-09-17 15:01:41.844 +03:00 [INF] Route matched with {action = "DeleteBankAccount", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Boolean]]] DeleteBankAccount(System.Guid) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 15:01:41.850 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-17 15:01:41.854 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.DeleteBankAccount (ModularERP) in 8.0639ms
+2025-09-17 15:01:41.856 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.DeleteBankAccount (ModularERP)'
+2025-09-17 15:01:41.859 +03:00 [INF] Request completed successfully with status code 400
+2025-09-17 15:01:41.860 +03:00 [INF] Request finished HTTP/2 DELETE https://localhost:7168/api/BankAccount/341a7419-3d26-4908-a5dc-28f03bed5ebd - 400 null application/json; charset=utf-8 26.4626ms
+2025-09-17 15:02:05.290 +03:00 [INF] Starting web host...
+2025-09-17 15:02:05.766 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-17 15:02:05.769 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-17 15:02:05.883 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-17 15:02:05.884 +03:00 [INF] Hosting environment: Development
+2025-09-17 15:02:05.886 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-17 15:02:07.706 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2025-09-17 15:02:07.826 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 119.9435ms
+2025-09-17 15:02:07.848 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2025-09-17 15:02:07.848 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-17 15:02:07.856 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 7.8561ms
+2025-09-17 15:02:07.872 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 24.5813ms
+2025-09-17 15:02:09.057 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2025-09-17 15:02:09.107 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 50.4154ms
+2025-09-17 15:02:12.701 +03:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5004/api/BankAccount/341a7419-3d26-4908-a5dc-28f03bed5ebd - null null
+2025-09-17 15:02:12.709 +03:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5004/api/BankAccount/341a7419-3d26-4908-a5dc-28f03bed5ebd - 307 0 null 7.987ms
+2025-09-17 15:02:12.750 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/341a7419-3d26-4908-a5dc-28f03bed5ebd - null null
+2025-09-17 15:02:12.756 +03:00 [INF] CORS policy execution successful.
+2025-09-17 15:02:12.759 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7168/api/BankAccount/341a7419-3d26-4908-a5dc-28f03bed5ebd - 204 null null 9.2127ms
+2025-09-17 15:02:12.764 +03:00 [INF] Request starting HTTP/2 DELETE https://localhost:7168/api/BankAccount/341a7419-3d26-4908-a5dc-28f03bed5ebd - null null
+2025-09-17 15:02:12.767 +03:00 [INF] CORS policy execution successful.
+2025-09-17 15:02:12.776 +03:00 [INF] Request started
+2025-09-17 15:02:12.780 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.DeleteBankAccount (ModularERP)'
+2025-09-17 15:02:12.797 +03:00 [INF] Route matched with {action = "DeleteBankAccount", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Boolean]]] DeleteBankAccount(System.Guid) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 15:02:12.803 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 15:02:13.531 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-09-17 15:02:14.193 +03:00 [INF] Executed DbCommand (41ms) [Parameters=[@__request_Id_0='341a7419-3d26-4908-a5dc-28f03bed5ebd'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[IsDeleted] = CAST(0 AS bit) AND [b].[Id] = @__request_Id_0 AND [b].[IsDeleted] = CAST(0 AS bit)
+2025-09-17 15:02:14.373 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__request_Id_0='341a7419-3d26-4908-a5dc-28f03bed5ebd'], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [BankAccounts] AS [b]
+INNER JOIN [Vouchers] AS [v] ON [b].[Id] = [v].[BankAccountId]
+WHERE [b].[IsDeleted] = CAST(0 AS bit) AND [b].[Id] = @__request_Id_0
+2025-09-17 15:02:14.483 +03:00 [INF] Executed DbCommand (15ms) [Parameters=[@p15='341a7419-3d26-4908-a5dc-28f03bed5ebd', @p0='1234567890' (Nullable = false) (Size = 50), @p1='National Bank of Egypt' (Nullable = false) (Size = 100), @p2='d36b22ee-69fd-491c-99a6-36faa8dbfd1a', @p3='2025-09-16T01:19:48.5666667', @p4='731B0EFE-4531-453F-93DD-BB7A6143A2C3' (Size = 4000), @p5='EGP' (Nullable = false) (Size = 3), @p6='User1,User2' (Nullable = false) (Size = 4000), @p7='Main operating account for company expenses' (Size = 4000), @p8='True', @p9='True', @p10='Main Account' (Nullable = false) (Size = 100), @p11='Active' (Nullable = false) (Size = 4000), @p12='2025-09-17T12:02:14.3784211Z' (Nullable = true), @p13='E44F01FF-8AD8-4F39-83E0-89505CAC2819' (Size = 4000), @p14='User1,5dbceb39-9677-46d7-bf8a-2eb914c55437' (Nullable = false) (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [BankAccounts] SET [AccountNumber] = @p0, [BankName] = @p1, [CompanyId] = @p2, [CreatedAt] = @p3, [CreatedById] = @p4, [CurrencyCode] = @p5, [DepositAcl] = @p6, [Description] = @p7, [IsActive] = @p8, [IsDeleted] = @p9, [Name] = @p10, [Status] = @p11, [UpdatedAt] = @p12, [UpdatedById] = @p13, [WithdrawAcl] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2025-09-17 15:02:14.503 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-17 15:02:14.521 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.DeleteBankAccount (ModularERP) in 1717.0656ms
+2025-09-17 15:02:14.524 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.DeleteBankAccount (ModularERP)'
+2025-09-17 15:02:14.526 +03:00 [INF] Request completed successfully with status code 200
+2025-09-17 15:02:14.535 +03:00 [INF] Request finished HTTP/2 DELETE https://localhost:7168/api/BankAccount/341a7419-3d26-4908-a5dc-28f03bed5ebd - 200 null application/json; charset=utf-8 1771.6088ms
+2025-09-17 15:02:50.653 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/BankAccount?page=1&pageSize=10&search=E&sortDescending=false&companyId=d00cf078-c1ff-4feb-ae37-d66a827ae438 - null null
+2025-09-17 15:02:50.657 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/BankAccount?page=1&pageSize=10&search=E&sortDescending=false&companyId=d00cf078-c1ff-4feb-ae37-d66a827ae438 - 307 0 null 3.6815ms
+2025-09-17 15:02:50.682 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/BankAccount?page=1&pageSize=10&search=E&sortDescending=false&companyId=d00cf078-c1ff-4feb-ae37-d66a827ae438 - null null
+2025-09-17 15:02:50.689 +03:00 [INF] CORS policy execution successful.
+2025-09-17 15:02:50.692 +03:00 [INF] Request started
+2025-09-17 15:02:50.694 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetAllBankAccounts (ModularERP)'
+2025-09-17 15:02:50.702 +03:00 [INF] Route matched with {action = "GetAllBankAccounts", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Collections.Generic.IEnumerable`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountListDto]]]] GetAllBankAccounts(Int32, Int32, System.String, System.String, Boolean, System.Nullable`1[System.Guid]) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 15:02:50.821 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 15:02:50.826 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-17 15:02:50.835 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetAllBankAccounts (ModularERP) in 129.9984ms
+2025-09-17 15:02:50.837 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetAllBankAccounts (ModularERP)'
+2025-09-17 15:02:50.838 +03:00 [INF] Request completed successfully with status code 400
+2025-09-17 15:02:50.840 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/BankAccount?page=1&pageSize=10&search=E&sortDescending=false&companyId=d00cf078-c1ff-4feb-ae37-d66a827ae438 - 400 null application/json; charset=utf-8 158.1549ms
+2025-09-17 15:03:27.268 +03:00 [INF] Starting web host...
+2025-09-17 15:03:27.880 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-17 15:03:27.885 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-17 15:03:28.017 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-17 15:03:28.019 +03:00 [INF] Hosting environment: Development
+2025-09-17 15:03:28.020 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-17 15:03:28.476 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/index.html - null null
+2025-09-17 15:03:28.664 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/index.html - 200 null text/html;charset=utf-8 190.1304ms
+2025-09-17 15:03:28.700 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-17 15:03:28.707 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 6.6315ms
+2025-09-17 15:03:30.051 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/_vs/browserLink - null null
+2025-09-17 15:03:30.086 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/_vs/browserLink - 200 null text/javascript; charset=UTF-8 34.6093ms
+2025-09-17 15:03:30.259 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - null null
+2025-09-17 15:03:30.346 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 87.6796ms
+2025-09-17 15:03:36.264 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/BankAccount?page=1&pageSize=10&search=E&sortDescending=false - null null
+2025-09-17 15:03:36.273 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/BankAccount?page=1&pageSize=10&search=E&sortDescending=false - 307 0 null 9.0209ms
+2025-09-17 15:03:36.315 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/BankAccount?page=1&pageSize=10&search=E&sortDescending=false - null null
+2025-09-17 15:03:36.321 +03:00 [INF] CORS policy execution successful.
+2025-09-17 15:03:36.333 +03:00 [INF] Request started
+2025-09-17 15:03:36.337 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetAllBankAccounts (ModularERP)'
+2025-09-17 15:03:36.356 +03:00 [INF] Route matched with {action = "GetAllBankAccounts", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Collections.Generic.IEnumerable`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountListDto]]]] GetAllBankAccounts(Int32, Int32, System.String, System.String, Boolean, System.Nullable`1[System.Guid]) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 15:03:36.362 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 15:03:37.103 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-09-17 15:03:37.360 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-17 15:03:37.880 +03:00 [INF] Executed DbCommand (39ms) [Parameters=[@__request_SearchTerm_0_contains='%E%' (Size = 100), @__request_SearchTerm_0_contains_1='%E%' (Size = 50), @__request_SearchTerm_0_contains_2='%E%' (Size = 4000), @__p_1='0', @__p_2='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[IsDeleted] = CAST(0 AS bit) AND ([b].[Name] LIKE @__request_SearchTerm_0_contains ESCAPE N'\' OR [b].[BankName] LIKE @__request_SearchTerm_0_contains ESCAPE N'\' OR [b].[AccountNumber] LIKE @__request_SearchTerm_0_contains_1 ESCAPE N'\' OR ([b].[Description] IS NOT NULL AND [b].[Description] LIKE @__request_SearchTerm_0_contains_2 ESCAPE N'\'))
+ORDER BY [b].[BankName], [b].[Name]
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2025-09-17 15:03:38.010 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__bankAccount_CompanyId_0='d00cf078-c1ff-4feb-ae37-d66a827ae438'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[CreatedById], [c].[CurrencyCode], [c].[IsActive], [c].[IsDeleted], [c].[Name], [c].[UpdatedAt], [c].[UpdatedById]
+FROM [Companies] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit) AND [c].[Id] = @__bankAccount_CompanyId_0
+2025-09-17 15:03:38.059 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__bankAccount_CurrencyCode_0='EGP' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Code], [c].[CreatedAt], [c].[CreatedById], [c].[Decimals], [c].[Id], [c].[IsActive], [c].[IsDeleted], [c].[Symbol], [c].[UpdatedAt], [c].[UpdatedById]
+FROM [Currencies] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit) AND [c].[Code] = @__bankAccount_CurrencyCode_0
+2025-09-17 15:03:38.141 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[@__bankAccount_Id_0='51d06860-8217-4352-97a0-7704d02cbecd'], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [BankAccounts] AS [b]
+INNER JOIN [Vouchers] AS [v] ON [b].[Id] = [v].[BankAccountId]
+WHERE [b].[IsDeleted] = CAST(0 AS bit) AND [b].[Id] = @__bankAccount_Id_0
+2025-09-17 15:03:38.149 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__bankAccount_CompanyId_0='d36b22ee-69fd-491c-99a6-36faa8dbfd1a'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[CreatedById], [c].[CurrencyCode], [c].[IsActive], [c].[IsDeleted], [c].[Name], [c].[UpdatedAt], [c].[UpdatedById]
+FROM [Companies] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit) AND [c].[Id] = @__bankAccount_CompanyId_0
+2025-09-17 15:03:38.155 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__bankAccount_CurrencyCode_0='USD' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Code], [c].[CreatedAt], [c].[CreatedById], [c].[Decimals], [c].[Id], [c].[IsActive], [c].[IsDeleted], [c].[Symbol], [c].[UpdatedAt], [c].[UpdatedById]
+FROM [Currencies] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit) AND [c].[Code] = @__bankAccount_CurrencyCode_0
+2025-09-17 15:03:38.158 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__bankAccount_Id_0='23b728a8-081c-44fb-850b-0adf1ffc51d3'], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [BankAccounts] AS [b]
+INNER JOIN [Vouchers] AS [v] ON [b].[Id] = [v].[BankAccountId]
+WHERE [b].[IsDeleted] = CAST(0 AS bit) AND [b].[Id] = @__bankAccount_Id_0
+2025-09-17 15:03:38.162 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__bankAccount_CompanyId_0='d36b22ee-69fd-491c-99a6-36faa8dbfd1a'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[CreatedById], [c].[CurrencyCode], [c].[IsActive], [c].[IsDeleted], [c].[Name], [c].[UpdatedAt], [c].[UpdatedById]
+FROM [Companies] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit) AND [c].[Id] = @__bankAccount_CompanyId_0
+2025-09-17 15:03:38.166 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__bankAccount_CurrencyCode_0='EGP' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Code], [c].[CreatedAt], [c].[CreatedById], [c].[Decimals], [c].[Id], [c].[IsActive], [c].[IsDeleted], [c].[Symbol], [c].[UpdatedAt], [c].[UpdatedById]
+FROM [Currencies] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit) AND [c].[Code] = @__bankAccount_CurrencyCode_0
+2025-09-17 15:03:38.170 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__bankAccount_Id_0='341a7419-3d26-4908-a5dc-28f03bed5ebd'], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [BankAccounts] AS [b]
+INNER JOIN [Vouchers] AS [v] ON [b].[Id] = [v].[BankAccountId]
+WHERE [b].[IsDeleted] = CAST(0 AS bit) AND [b].[Id] = @__bankAccount_Id_0
+2025-09-17 15:03:38.179 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-17 15:03:38.199 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetAllBankAccounts (ModularERP) in 1837.1153ms
+2025-09-17 15:03:38.203 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetAllBankAccounts (ModularERP)'
+2025-09-17 15:03:38.205 +03:00 [INF] Request completed successfully with status code 200
+2025-09-17 15:03:38.212 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/BankAccount?page=1&pageSize=10&search=E&sortDescending=false - 200 null application/json; charset=utf-8 1896.4417ms
+2025-09-17 15:03:57.740 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/BankAccount?page=1&pageSize=10&search=E&sortDescending=false&companyId=341a7419-3d26-4908-a5dc-28f03bed5ebd - null null
+2025-09-17 15:03:57.745 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/BankAccount?page=1&pageSize=10&search=E&sortDescending=false&companyId=341a7419-3d26-4908-a5dc-28f03bed5ebd - 307 0 null 4.4035ms
+2025-09-17 15:03:57.750 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/BankAccount?page=1&pageSize=10&search=E&sortDescending=false&companyId=341a7419-3d26-4908-a5dc-28f03bed5ebd - null null
+2025-09-17 15:03:57.755 +03:00 [INF] CORS policy execution successful.
+2025-09-17 15:03:57.756 +03:00 [INF] Request started
+2025-09-17 15:03:57.757 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetAllBankAccounts (ModularERP)'
+2025-09-17 15:03:57.759 +03:00 [INF] Route matched with {action = "GetAllBankAccounts", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Collections.Generic.IEnumerable`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountListDto]]]] GetAllBankAccounts(Int32, Int32, System.String, System.String, Boolean, System.Nullable`1[System.Guid]) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 15:03:57.817 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__request_CompanyId_Value_0='341a7419-3d26-4908-a5dc-28f03bed5ebd', @__request_SearchTerm_1_contains='%E%' (Size = 100), @__request_SearchTerm_1_contains_1='%E%' (Size = 50), @__request_SearchTerm_1_contains_2='%E%' (Size = 4000), @__p_2='0', @__p_3='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[IsDeleted] = CAST(0 AS bit) AND [b].[CompanyId] = @__request_CompanyId_Value_0 AND ([b].[Name] LIKE @__request_SearchTerm_1_contains ESCAPE N'\' OR [b].[BankName] LIKE @__request_SearchTerm_1_contains ESCAPE N'\' OR [b].[AccountNumber] LIKE @__request_SearchTerm_1_contains_1 ESCAPE N'\' OR ([b].[Description] IS NOT NULL AND [b].[Description] LIKE @__request_SearchTerm_1_contains_2 ESCAPE N'\'))
+ORDER BY [b].[BankName], [b].[Name]
+OFFSET @__p_2 ROWS FETCH NEXT @__p_3 ROWS ONLY
+2025-09-17 15:03:57.822 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-17 15:03:57.824 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetAllBankAccounts (ModularERP) in 62.1123ms
+2025-09-17 15:03:57.826 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetAllBankAccounts (ModularERP)'
+2025-09-17 15:03:57.828 +03:00 [INF] Request completed successfully with status code 200
+2025-09-17 15:03:57.829 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/BankAccount?page=1&pageSize=10&search=E&sortDescending=false&companyId=341a7419-3d26-4908-a5dc-28f03bed5ebd - 200 null application/json; charset=utf-8 78.5734ms
+2025-09-17 15:04:03.379 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5004/api/BankAccount?page=1&pageSize=10&search=E&sortDescending=false&companyId=d00cf078-c1ff-4feb-ae37-d66a827ae438 - null null
+2025-09-17 15:04:03.383 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5004/api/BankAccount?page=1&pageSize=10&search=E&sortDescending=false&companyId=d00cf078-c1ff-4feb-ae37-d66a827ae438 - 307 0 null 4.2204ms
+2025-09-17 15:04:03.388 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/BankAccount?page=1&pageSize=10&search=E&sortDescending=false&companyId=d00cf078-c1ff-4feb-ae37-d66a827ae438 - null null
+2025-09-17 15:04:03.395 +03:00 [INF] CORS policy execution successful.
+2025-09-17 15:04:03.396 +03:00 [INF] Request started
+2025-09-17 15:04:03.397 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetAllBankAccounts (ModularERP)'
+2025-09-17 15:04:03.398 +03:00 [INF] Route matched with {action = "GetAllBankAccounts", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Collections.Generic.IEnumerable`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountListDto]]]] GetAllBankAccounts(Int32, Int32, System.String, System.String, Boolean, System.Nullable`1[System.Guid]) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-17 15:04:03.414 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__request_CompanyId_Value_0='d00cf078-c1ff-4feb-ae37-d66a827ae438', @__request_SearchTerm_1_contains='%E%' (Size = 100), @__request_SearchTerm_1_contains_1='%E%' (Size = 50), @__request_SearchTerm_1_contains_2='%E%' (Size = 4000), @__p_2='0', @__p_3='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[IsDeleted] = CAST(0 AS bit) AND [b].[CompanyId] = @__request_CompanyId_Value_0 AND ([b].[Name] LIKE @__request_SearchTerm_1_contains ESCAPE N'\' OR [b].[BankName] LIKE @__request_SearchTerm_1_contains ESCAPE N'\' OR [b].[AccountNumber] LIKE @__request_SearchTerm_1_contains_1 ESCAPE N'\' OR ([b].[Description] IS NOT NULL AND [b].[Description] LIKE @__request_SearchTerm_1_contains_2 ESCAPE N'\'))
+ORDER BY [b].[BankName], [b].[Name]
+OFFSET @__p_2 ROWS FETCH NEXT @__p_3 ROWS ONLY
+2025-09-17 15:04:03.420 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__bankAccount_CompanyId_0='d00cf078-c1ff-4feb-ae37-d66a827ae438'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[CreatedById], [c].[CurrencyCode], [c].[IsActive], [c].[IsDeleted], [c].[Name], [c].[UpdatedAt], [c].[UpdatedById]
+FROM [Companies] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit) AND [c].[Id] = @__bankAccount_CompanyId_0
+2025-09-17 15:04:03.424 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__bankAccount_CurrencyCode_0='EGP' (Size = 3)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Code], [c].[CreatedAt], [c].[CreatedById], [c].[Decimals], [c].[Id], [c].[IsActive], [c].[IsDeleted], [c].[Symbol], [c].[UpdatedAt], [c].[UpdatedById]
+FROM [Currencies] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit) AND [c].[Code] = @__bankAccount_CurrencyCode_0
+2025-09-17 15:04:03.429 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__bankAccount_Id_0='51d06860-8217-4352-97a0-7704d02cbecd'], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [BankAccounts] AS [b]
+INNER JOIN [Vouchers] AS [v] ON [b].[Id] = [v].[BankAccountId]
+WHERE [b].[IsDeleted] = CAST(0 AS bit) AND [b].[Id] = @__bankAccount_Id_0
+2025-09-17 15:04:03.432 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-17 15:04:03.434 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetAllBankAccounts (ModularERP) in 33.2149ms
+2025-09-17 15:04:03.436 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetAllBankAccounts (ModularERP)'
+2025-09-17 15:04:03.437 +03:00 [INF] Request completed successfully with status code 200
+2025-09-17 15:04:03.438 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/BankAccount?page=1&pageSize=10&search=E&sortDescending=false&companyId=d00cf078-c1ff-4feb-ae37-d66a827ae438 - 200 null application/json; charset=utf-8 49.8193ms
