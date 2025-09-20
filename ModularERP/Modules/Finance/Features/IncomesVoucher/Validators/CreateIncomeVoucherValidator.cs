@@ -42,8 +42,6 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Validators
                 .GreaterThan(0)
                 .WithMessage("FX Rate must be greater than 0");
 
-            RuleForEach(x => x.TaxLines)
-                .SetValidator(new TaxLineValidator());
         }
     }
     public class TaxLineValidator : AbstractValidator<TaxLineDto>

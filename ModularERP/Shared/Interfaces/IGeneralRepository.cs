@@ -15,6 +15,8 @@ namespace ModularERP.Shared.Interfaces
         Task<bool> AnyAsync(Expression<Func<T, bool>> predicate);
 
         Task SaveChanges();
+        Task AddRangeAsync(IEnumerable<T> entities); 
+
 
     }
 }

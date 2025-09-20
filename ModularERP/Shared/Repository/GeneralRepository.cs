@@ -97,6 +97,11 @@ namespace ModularERP.SharedKernel.Repository
         {
             return await _dbSet.AnyAsync(predicate);
         }
+        public async Task AddRangeAsync(IEnumerable<T> entities)
+        {
+            await _dbSet.AddRangeAsync(entities);
+        }
+
 
     }
 }

@@ -25,41 +25,68 @@ namespace ModularERP.Modules.Finance.Features.ExpensesVoucher.Validators
                 .NotEmpty()
                 .WithMessage("Category is required");
 
+            RuleFor(x => x.CurrencyCode)
+                .NotEmpty()
+                .WithMessage("Currency code is required")
+                .Length(3)
+                .WithMessage("Currency code must be 3 characters");
+
+            RuleFor(x => x.FxRate)
+                .GreaterThan(0)
+                .WithMessage("FX Rate must be greater than 0");
+
+            // ✅ Source validation
             RuleFor(x => x.Source)
                 .NotNull()
-                .WithMessage("Source wallet is required");
+                .WithMessage("Source is required");
 
             RuleFor(x => x.Source.Type)
-                .Must(type => type == "Treasury" || type == "BankAccount")
+                .NotEmpty()
+                .WithMessage("Source type is required")
+                .Must(type => type.Equals("Treasury", StringComparison.OrdinalIgnoreCase) ||
+                             type.Equals("BankAccount", StringComparison.OrdinalIgnoreCase))
                 .WithMessage("Source type must be Treasury or BankAccount");
 
             RuleFor(x => x.Source.Id)
                 .NotEmpty()
                 .WithMessage("Source wallet ID is required");
 
-            RuleFor(x => x.FxRate)
-                .GreaterThan(0)
-                .WithMessage("FX Rate must be greater than 0");
+            // ✅ Counterparty validation (optional)
+            When(x => x.Counterparty != null, () => {
+                RuleFor(x => x.Counterparty.Type)
+                    .NotEmpty()
+                    .WithMessage("Counterparty type is required when counterparty is specified")
+                    .Must(type => type.Equals("Vendor", StringComparison.OrdinalIgnoreCase) ||
+                                 type.Equals("Customer", StringComparison.OrdinalIgnoreCase) ||
+                                 type.Equals("Other", StringComparison.OrdinalIgnoreCase))
+                    .WithMessage("Counterparty type must be Vendor, Customer, or Other");
 
+                RuleFor(x => x.Counterparty.Id)
+                    .NotEmpty()
+                    .WithMessage("Counterparty ID is required when counterparty is specified");
+            });
+
+            // ✅ Tax lines validation (optional)
             RuleForEach(x => x.TaxLines)
-                .SetValidator(new TaxLineValidator());
+                .SetValidator(new TaxLineDtoValidator());
         }
     }
-    public class TaxLineValidator : AbstractValidator<TaxLineDto>
+
+    public class TaxLineDtoValidator : AbstractValidator<TaxLineDto>
     {
-        public TaxLineValidator()
+        public TaxLineDtoValidator()
         {
             RuleFor(x => x.TaxId)
                 .NotEmpty()
                 .WithMessage("Tax ID is required");
 
             RuleFor(x => x.BaseAmount)
-                .GreaterThanOrEqualTo(0)
-                .WithMessage("Base amount must be greater than or equal to 0");
+                .GreaterThan(0)
+                .WithMessage("Base amount must be greater than 0");
 
             RuleFor(x => x.TaxAmount)
                 .GreaterThanOrEqualTo(0)
-                .WithMessage("Tax amount must be greater than or equal to 0");
+                .WithMessage("Tax amount must be non-negative");
         }
     }
 }

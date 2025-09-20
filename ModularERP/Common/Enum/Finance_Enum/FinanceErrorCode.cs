@@ -37,6 +37,7 @@
         BankAccountNumberDuplicate = 2203,
         BankAccountAlreadyExists = 2204,
         BankAccountHasVouchers = 2205,
+        RequestCancelled=2206,
         // GL Account Errors
         GlAccountNotFound = 2301,
         GlAccountNotLeaf = 2302,

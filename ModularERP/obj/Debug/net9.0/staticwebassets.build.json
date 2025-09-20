@@ -1,12 +1,1567 @@
 {
   "Version": 1,
-  "Hash": "+zPLTaVgjOKTlt3Z9J15hEWugo3VEm56RHRPxFef4KY=",
+  "Hash": "XMy5kaFKw+pT9xTNBqxaO/2efyaAr+cGhHN0/eibqgM=",
   "Source": "ModularERP",
   "BasePath": "_content/ModularERP",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "ModularERP\\wwwroot",
+      "Source": "ModularERP",
+      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "BasePath": "_content/ModularERP",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\0f2102f8-7dff-47cc-86d8-373a401f3ed2_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "SourceId": "ModularERP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "BasePath": "_content/ModularERP",
+      "RelativePath": "uploads/0f2102f8-7dff-47cc-86d8-373a401f3ed2_Hossam-Reda-Tohamy-Full Stack NET Angular#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "41798qlwtw",
+      "Integrity": "2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\0f2102f8-7dff-47cc-86d8-373a401f3ed2_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\2437c47e-4522-4420-a6af-a2e4907cd8b6_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "SourceId": "ModularERP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "BasePath": "_content/ModularERP",
+      "RelativePath": "uploads/2437c47e-4522-4420-a6af-a2e4907cd8b6_Hossam-Reda-Tohamy-Full Stack NET Angular#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "41798qlwtw",
+      "Integrity": "2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\2437c47e-4522-4420-a6af-a2e4907cd8b6_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\35cf3e0d-82f8-42b4-b918-632473ed371d_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "SourceId": "ModularERP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "BasePath": "_content/ModularERP",
+      "RelativePath": "uploads/35cf3e0d-82f8-42b4-b918-632473ed371d_Hossam-Reda-Tohamy-Full Stack NET Angular#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "41798qlwtw",
+      "Integrity": "2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\35cf3e0d-82f8-42b4-b918-632473ed371d_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\39bd3005-2977-41e4-82e1-78656ff09133_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "SourceId": "ModularERP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "BasePath": "_content/ModularERP",
+      "RelativePath": "uploads/39bd3005-2977-41e4-82e1-78656ff09133_Hossam-Reda-Tohamy-Full Stack NET Angular#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "41798qlwtw",
+      "Integrity": "2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\39bd3005-2977-41e4-82e1-78656ff09133_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\416caedf-61e2-4a12-8173-fec1b01dcdb3_Hossam-Reda-Tohamy-Node Js .pdf",
+      "SourceId": "ModularERP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "BasePath": "_content/ModularERP",
+      "RelativePath": "uploads/416caedf-61e2-4a12-8173-fec1b01dcdb3_Hossam-Reda-Tohamy-Node Js #[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "nl1r0jgke5",
+      "Integrity": "JZMyuoHxGEvHmXJCtp7A+BEDr7zkS8SLDkytGyRxW3s=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\416caedf-61e2-4a12-8173-fec1b01dcdb3_Hossam-Reda-Tohamy-Node Js .pdf"
+    },
+    {
+      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\5d869d90-1022-4ad1-bddb-3a1fbb122d52_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "SourceId": "ModularERP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "BasePath": "_content/ModularERP",
+      "RelativePath": "uploads/5d869d90-1022-4ad1-bddb-3a1fbb122d52_Hossam-Reda-Tohamy-Full Stack NET Angular#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "41798qlwtw",
+      "Integrity": "2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\5d869d90-1022-4ad1-bddb-3a1fbb122d52_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\6c01c6ff-c1ea-42ad-af1d-9660ac51b7ce_Hossam-Reda-Tohamy-Back End .NET.pdf",
+      "SourceId": "ModularERP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "BasePath": "_content/ModularERP",
+      "RelativePath": "uploads/6c01c6ff-c1ea-42ad-af1d-9660ac51b7ce_Hossam-Reda-Tohamy-Back End .NET#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "8s7310upt6",
+      "Integrity": "2PTWt8mOAoK8N/YqiHChMypD0H3+FUrl+930BM5f8Y0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\6c01c6ff-c1ea-42ad-af1d-9660ac51b7ce_Hossam-Reda-Tohamy-Back End .NET.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\77b76736-1184-4254-8d46-02d5494f8e36_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "SourceId": "ModularERP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "BasePath": "_content/ModularERP",
+      "RelativePath": "uploads/77b76736-1184-4254-8d46-02d5494f8e36_Hossam-Reda-Tohamy-Full Stack NET Angular#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "41798qlwtw",
+      "Integrity": "2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\77b76736-1184-4254-8d46-02d5494f8e36_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\8fb2490b-9243-41d9-88b7-874eb8fbab1c_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "SourceId": "ModularERP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "BasePath": "_content/ModularERP",
+      "RelativePath": "uploads/8fb2490b-9243-41d9-88b7-874eb8fbab1c_Hossam-Reda-Tohamy-Full Stack NET Angular#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "41798qlwtw",
+      "Integrity": "2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\8fb2490b-9243-41d9-88b7-874eb8fbab1c_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\aa792792-b448-4c51-ac3d-913c1d9e7d8d_Hossam-Reda-Tohamy-Node Js .pdf",
+      "SourceId": "ModularERP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "BasePath": "_content/ModularERP",
+      "RelativePath": "uploads/aa792792-b448-4c51-ac3d-913c1d9e7d8d_Hossam-Reda-Tohamy-Node Js #[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "nl1r0jgke5",
+      "Integrity": "JZMyuoHxGEvHmXJCtp7A+BEDr7zkS8SLDkytGyRxW3s=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\aa792792-b448-4c51-ac3d-913c1d9e7d8d_Hossam-Reda-Tohamy-Node Js .pdf"
+    },
+    {
+      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\ba6c5cb0-81d9-4c9c-a565-e372313b176b_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "SourceId": "ModularERP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "BasePath": "_content/ModularERP",
+      "RelativePath": "uploads/ba6c5cb0-81d9-4c9c-a565-e372313b176b_Hossam-Reda-Tohamy-Full Stack NET Angular#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "41798qlwtw",
+      "Integrity": "2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\ba6c5cb0-81d9-4c9c-a565-e372313b176b_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\db7e1b2d-815d-4c17-96fb-3651a9159c75_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "SourceId": "ModularERP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "BasePath": "_content/ModularERP",
+      "RelativePath": "uploads/db7e1b2d-815d-4c17-96fb-3651a9159c75_Hossam-Reda-Tohamy-Full Stack NET Angular#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "41798qlwtw",
+      "Integrity": "2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\db7e1b2d-815d-4c17-96fb-3651a9159c75_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\ed2708de-d910-4cd1-b7e2-8799fc7c4df1_Hossam-Reda-Tohamy-Node Js .pdf",
+      "SourceId": "ModularERP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "BasePath": "_content/ModularERP",
+      "RelativePath": "uploads/ed2708de-d910-4cd1-b7e2-8799fc7c4df1_Hossam-Reda-Tohamy-Node Js #[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "nl1r0jgke5",
+      "Integrity": "JZMyuoHxGEvHmXJCtp7A+BEDr7zkS8SLDkytGyRxW3s=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\ed2708de-d910-4cd1-b7e2-8799fc7c4df1_Hossam-Reda-Tohamy-Node Js .pdf"
+    },
+    {
+      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\feaa656d-63f7-4eed-b333-81fd67303bc5_Hossam-Reda-Tohamy-Node Js .pdf",
+      "SourceId": "ModularERP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "BasePath": "_content/ModularERP",
+      "RelativePath": "uploads/feaa656d-63f7-4eed-b333-81fd67303bc5_Hossam-Reda-Tohamy-Node Js #[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "nl1r0jgke5",
+      "Integrity": "JZMyuoHxGEvHmXJCtp7A+BEDr7zkS8SLDkytGyRxW3s=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\feaa656d-63f7-4eed-b333-81fd67303bc5_Hossam-Reda-Tohamy-Node Js .pdf"
+    },
+    {
+      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\ff93be28-516c-46fa-ba45-238dea1c1b14_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "SourceId": "ModularERP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "BasePath": "_content/ModularERP",
+      "RelativePath": "uploads/ff93be28-516c-46fa-ba45-238dea1c1b14_Hossam-Reda-Tohamy-Full Stack NET Angular#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "41798qlwtw",
+      "Integrity": "2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\ff93be28-516c-46fa-ba45-238dea1c1b14_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "uploads/0f2102f8-7dff-47cc-86d8-373a401f3ed2_Hossam-Reda-Tohamy-Full Stack NET Angular.41798qlwtw.pdf",
+      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\0f2102f8-7dff-47cc-86d8-373a401f3ed2_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "98003"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 18 Sep 2025 19:38:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "41798qlwtw"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/0f2102f8-7dff-47cc-86d8-373a401f3ed2_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/0f2102f8-7dff-47cc-86d8-373a401f3ed2_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\0f2102f8-7dff-47cc-86d8-373a401f3ed2_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "98003"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 18 Sep 2025 19:38:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/2437c47e-4522-4420-a6af-a2e4907cd8b6_Hossam-Reda-Tohamy-Full Stack NET Angular.41798qlwtw.pdf",
+      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\2437c47e-4522-4420-a6af-a2e4907cd8b6_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "98003"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 20 Sep 2025 08:49:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "41798qlwtw"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/2437c47e-4522-4420-a6af-a2e4907cd8b6_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/2437c47e-4522-4420-a6af-a2e4907cd8b6_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\2437c47e-4522-4420-a6af-a2e4907cd8b6_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "98003"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 20 Sep 2025 08:49:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/35cf3e0d-82f8-42b4-b918-632473ed371d_Hossam-Reda-Tohamy-Full Stack NET Angular.41798qlwtw.pdf",
+      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\35cf3e0d-82f8-42b4-b918-632473ed371d_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "98003"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 20 Sep 2025 09:13:35 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "41798qlwtw"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/35cf3e0d-82f8-42b4-b918-632473ed371d_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/35cf3e0d-82f8-42b4-b918-632473ed371d_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\35cf3e0d-82f8-42b4-b918-632473ed371d_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "98003"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 20 Sep 2025 09:13:35 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/39bd3005-2977-41e4-82e1-78656ff09133_Hossam-Reda-Tohamy-Full Stack NET Angular.41798qlwtw.pdf",
+      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\39bd3005-2977-41e4-82e1-78656ff09133_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "98003"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 19 Sep 2025 15:47:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "41798qlwtw"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/39bd3005-2977-41e4-82e1-78656ff09133_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/39bd3005-2977-41e4-82e1-78656ff09133_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\39bd3005-2977-41e4-82e1-78656ff09133_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "98003"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 19 Sep 2025 15:47:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/416caedf-61e2-4a12-8173-fec1b01dcdb3_Hossam-Reda-Tohamy-Node Js .nl1r0jgke5.pdf",
+      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\416caedf-61e2-4a12-8173-fec1b01dcdb3_Hossam-Reda-Tohamy-Node Js .pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "56007"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JZMyuoHxGEvHmXJCtp7A+BEDr7zkS8SLDkytGyRxW3s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 18 Sep 2025 19:31:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "nl1r0jgke5"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/416caedf-61e2-4a12-8173-fec1b01dcdb3_Hossam-Reda-Tohamy-Node Js .pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-JZMyuoHxGEvHmXJCtp7A+BEDr7zkS8SLDkytGyRxW3s="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/416caedf-61e2-4a12-8173-fec1b01dcdb3_Hossam-Reda-Tohamy-Node Js .pdf",
+      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\416caedf-61e2-4a12-8173-fec1b01dcdb3_Hossam-Reda-Tohamy-Node Js .pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "56007"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JZMyuoHxGEvHmXJCtp7A+BEDr7zkS8SLDkytGyRxW3s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 18 Sep 2025 19:31:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-JZMyuoHxGEvHmXJCtp7A+BEDr7zkS8SLDkytGyRxW3s="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/5d869d90-1022-4ad1-bddb-3a1fbb122d52_Hossam-Reda-Tohamy-Full Stack NET Angular.41798qlwtw.pdf",
+      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\5d869d90-1022-4ad1-bddb-3a1fbb122d52_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "98003"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 20 Sep 2025 09:36:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "41798qlwtw"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/5d869d90-1022-4ad1-bddb-3a1fbb122d52_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/5d869d90-1022-4ad1-bddb-3a1fbb122d52_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\5d869d90-1022-4ad1-bddb-3a1fbb122d52_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "98003"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 20 Sep 2025 09:36:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/6c01c6ff-c1ea-42ad-af1d-9660ac51b7ce_Hossam-Reda-Tohamy-Back End .NET.8s7310upt6.pdf",
+      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\6c01c6ff-c1ea-42ad-af1d-9660ac51b7ce_Hossam-Reda-Tohamy-Back End .NET.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "84572"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2PTWt8mOAoK8N/YqiHChMypD0H3+FUrl+930BM5f8Y0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 19 Sep 2025 10:39:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8s7310upt6"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/6c01c6ff-c1ea-42ad-af1d-9660ac51b7ce_Hossam-Reda-Tohamy-Back End .NET.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2PTWt8mOAoK8N/YqiHChMypD0H3+FUrl+930BM5f8Y0="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/6c01c6ff-c1ea-42ad-af1d-9660ac51b7ce_Hossam-Reda-Tohamy-Back End .NET.pdf",
+      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\6c01c6ff-c1ea-42ad-af1d-9660ac51b7ce_Hossam-Reda-Tohamy-Back End .NET.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "84572"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2PTWt8mOAoK8N/YqiHChMypD0H3+FUrl+930BM5f8Y0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 19 Sep 2025 10:39:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2PTWt8mOAoK8N/YqiHChMypD0H3+FUrl+930BM5f8Y0="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/77b76736-1184-4254-8d46-02d5494f8e36_Hossam-Reda-Tohamy-Full Stack NET Angular.41798qlwtw.pdf",
+      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\77b76736-1184-4254-8d46-02d5494f8e36_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "98003"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 20 Sep 2025 09:21:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "41798qlwtw"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/77b76736-1184-4254-8d46-02d5494f8e36_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/77b76736-1184-4254-8d46-02d5494f8e36_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\77b76736-1184-4254-8d46-02d5494f8e36_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "98003"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 20 Sep 2025 09:21:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/8fb2490b-9243-41d9-88b7-874eb8fbab1c_Hossam-Reda-Tohamy-Full Stack NET Angular.41798qlwtw.pdf",
+      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\8fb2490b-9243-41d9-88b7-874eb8fbab1c_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "98003"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 20 Sep 2025 09:01:09 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "41798qlwtw"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/8fb2490b-9243-41d9-88b7-874eb8fbab1c_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/8fb2490b-9243-41d9-88b7-874eb8fbab1c_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\8fb2490b-9243-41d9-88b7-874eb8fbab1c_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "98003"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 20 Sep 2025 09:01:09 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/aa792792-b448-4c51-ac3d-913c1d9e7d8d_Hossam-Reda-Tohamy-Node Js .nl1r0jgke5.pdf",
+      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\aa792792-b448-4c51-ac3d-913c1d9e7d8d_Hossam-Reda-Tohamy-Node Js .pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "56007"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JZMyuoHxGEvHmXJCtp7A+BEDr7zkS8SLDkytGyRxW3s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 18 Sep 2025 19:14:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "nl1r0jgke5"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/aa792792-b448-4c51-ac3d-913c1d9e7d8d_Hossam-Reda-Tohamy-Node Js .pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-JZMyuoHxGEvHmXJCtp7A+BEDr7zkS8SLDkytGyRxW3s="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/aa792792-b448-4c51-ac3d-913c1d9e7d8d_Hossam-Reda-Tohamy-Node Js .pdf",
+      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\aa792792-b448-4c51-ac3d-913c1d9e7d8d_Hossam-Reda-Tohamy-Node Js .pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "56007"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JZMyuoHxGEvHmXJCtp7A+BEDr7zkS8SLDkytGyRxW3s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 18 Sep 2025 19:14:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-JZMyuoHxGEvHmXJCtp7A+BEDr7zkS8SLDkytGyRxW3s="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/ba6c5cb0-81d9-4c9c-a565-e372313b176b_Hossam-Reda-Tohamy-Full Stack NET Angular.41798qlwtw.pdf",
+      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\ba6c5cb0-81d9-4c9c-a565-e372313b176b_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "98003"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 19 Sep 2025 11:08:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "41798qlwtw"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/ba6c5cb0-81d9-4c9c-a565-e372313b176b_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/ba6c5cb0-81d9-4c9c-a565-e372313b176b_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\ba6c5cb0-81d9-4c9c-a565-e372313b176b_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "98003"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 19 Sep 2025 11:08:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/db7e1b2d-815d-4c17-96fb-3651a9159c75_Hossam-Reda-Tohamy-Full Stack NET Angular.41798qlwtw.pdf",
+      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\db7e1b2d-815d-4c17-96fb-3651a9159c75_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "98003"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 20 Sep 2025 09:30:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "41798qlwtw"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/db7e1b2d-815d-4c17-96fb-3651a9159c75_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/db7e1b2d-815d-4c17-96fb-3651a9159c75_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\db7e1b2d-815d-4c17-96fb-3651a9159c75_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "98003"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 20 Sep 2025 09:30:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/ed2708de-d910-4cd1-b7e2-8799fc7c4df1_Hossam-Reda-Tohamy-Node Js .nl1r0jgke5.pdf",
+      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\ed2708de-d910-4cd1-b7e2-8799fc7c4df1_Hossam-Reda-Tohamy-Node Js .pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "56007"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JZMyuoHxGEvHmXJCtp7A+BEDr7zkS8SLDkytGyRxW3s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 18 Sep 2025 19:11:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "nl1r0jgke5"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/ed2708de-d910-4cd1-b7e2-8799fc7c4df1_Hossam-Reda-Tohamy-Node Js .pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-JZMyuoHxGEvHmXJCtp7A+BEDr7zkS8SLDkytGyRxW3s="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/ed2708de-d910-4cd1-b7e2-8799fc7c4df1_Hossam-Reda-Tohamy-Node Js .pdf",
+      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\ed2708de-d910-4cd1-b7e2-8799fc7c4df1_Hossam-Reda-Tohamy-Node Js .pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "56007"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JZMyuoHxGEvHmXJCtp7A+BEDr7zkS8SLDkytGyRxW3s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 18 Sep 2025 19:11:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-JZMyuoHxGEvHmXJCtp7A+BEDr7zkS8SLDkytGyRxW3s="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/feaa656d-63f7-4eed-b333-81fd67303bc5_Hossam-Reda-Tohamy-Node Js .nl1r0jgke5.pdf",
+      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\feaa656d-63f7-4eed-b333-81fd67303bc5_Hossam-Reda-Tohamy-Node Js .pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "56007"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JZMyuoHxGEvHmXJCtp7A+BEDr7zkS8SLDkytGyRxW3s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 18 Sep 2025 19:23:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "nl1r0jgke5"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/feaa656d-63f7-4eed-b333-81fd67303bc5_Hossam-Reda-Tohamy-Node Js .pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-JZMyuoHxGEvHmXJCtp7A+BEDr7zkS8SLDkytGyRxW3s="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/feaa656d-63f7-4eed-b333-81fd67303bc5_Hossam-Reda-Tohamy-Node Js .pdf",
+      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\feaa656d-63f7-4eed-b333-81fd67303bc5_Hossam-Reda-Tohamy-Node Js .pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "56007"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JZMyuoHxGEvHmXJCtp7A+BEDr7zkS8SLDkytGyRxW3s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 18 Sep 2025 19:23:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-JZMyuoHxGEvHmXJCtp7A+BEDr7zkS8SLDkytGyRxW3s="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/ff93be28-516c-46fa-ba45-238dea1c1b14_Hossam-Reda-Tohamy-Full Stack NET Angular.41798qlwtw.pdf",
+      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\ff93be28-516c-46fa-ba45-238dea1c1b14_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "98003"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 19 Sep 2025 15:49:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "41798qlwtw"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/ff93be28-516c-46fa-ba45-238dea1c1b14_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/ff93be28-516c-46fa-ba45-238dea1c1b14_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\ff93be28-516c-46fa-ba45-238dea1c1b14_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "98003"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 19 Sep 2025 15:49:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM="
+        }
+      ]
+    }
+  ]
 }

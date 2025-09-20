@@ -13,7 +13,13 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.DTO
         public decimal FxRate { get; set; }
         public string Description { get; set; } = string.Empty;
         public DateTime CreatedAt { get; set; }
+
+        // Parsed objects
+        public WalletDto Source { get; set; } = new WalletDto();
+        public CounterpartyDto? Counterparty { get; set; } 
         public List<TaxLineResponseDto> TaxLines { get; set; } = new();
         public List<AttachmentResponseDto> Attachments { get; set; } = new();
     }
 }
+
+

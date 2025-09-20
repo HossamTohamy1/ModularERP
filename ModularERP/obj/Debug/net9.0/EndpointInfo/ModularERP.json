@@ -597,19 +597,101 @@
         ],
         "requestBody": {
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.CreateExpenseVoucherDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.CreateExpenseVoucherDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.CreateExpenseVoucherDto"
+                "type": "object",
+                "properties": {
+                  "code": {
+                    "type": "string"
+                  },
+                  "date": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "currencyCode": {
+                    "type": "string"
+                  },
+                  "fxRate": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "amount": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "categoryId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "recurrenceId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "sourceType": {
+                    "type": "string"
+                  },
+                  "sourceId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "counterpartyJson": {
+                    "type": "string"
+                  },
+                  "taxLinesJson": {
+                    "type": "string"
+                  },
+                  "attachments": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    }
+                  }
+                }
+              },
+              "encoding": {
+                "code": {
+                  "style": "form"
+                },
+                "date": {
+                  "style": "form"
+                },
+                "currencyCode": {
+                  "style": "form"
+                },
+                "fxRate": {
+                  "style": "form"
+                },
+                "amount": {
+                  "style": "form"
+                },
+                "description": {
+                  "style": "form"
+                },
+                "categoryId": {
+                  "style": "form"
+                },
+                "recurrenceId": {
+                  "style": "form"
+                },
+                "sourceType": {
+                  "style": "form"
+                },
+                "sourceId": {
+                  "style": "form"
+                },
+                "counterpartyJson": {
+                  "style": "form"
+                },
+                "taxLinesJson": {
+                  "style": "form"
+                },
+                "attachments": {
+                  "style": "form"
+                }
               }
             }
           }
@@ -668,19 +750,101 @@
         ],
         "requestBody": {
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.CreateIncomeVoucherDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.CreateIncomeVoucherDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.CreateIncomeVoucherDto"
+                "type": "object",
+                "properties": {
+                  "code": {
+                    "type": "string"
+                  },
+                  "date": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "currencyCode": {
+                    "type": "string"
+                  },
+                  "fxRate": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "amount": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "categoryId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "recurrenceId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "sourceType": {
+                    "type": "string"
+                  },
+                  "sourceId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "counterpartyJson": {
+                    "type": "string"
+                  },
+                  "taxLinesJson": {
+                    "type": "string"
+                  },
+                  "attachments": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    }
+                  }
+                }
+              },
+              "encoding": {
+                "code": {
+                  "style": "form"
+                },
+                "date": {
+                  "style": "form"
+                },
+                "currencyCode": {
+                  "style": "form"
+                },
+                "fxRate": {
+                  "style": "form"
+                },
+                "amount": {
+                  "style": "form"
+                },
+                "description": {
+                  "style": "form"
+                },
+                "categoryId": {
+                  "style": "form"
+                },
+                "recurrenceId": {
+                  "style": "form"
+                },
+                "sourceType": {
+                  "style": "form"
+                },
+                "sourceId": {
+                  "style": "form"
+                },
+                "counterpartyJson": {
+                  "style": "form"
+                },
+                "taxLinesJson": {
+                  "style": "form"
+                },
+                "attachments": {
+                  "style": "form"
+                }
               }
             }
           }
@@ -1665,6 +1829,7 @@
           2203,
           2204,
           2205,
+          2206,
           2301,
           2302,
           2303,
@@ -2506,73 +2671,6 @@
         },
         "additionalProperties": false
       },
-      "ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.CreateExpenseVoucherDto": {
-        "required": [
-          "amount",
-          "categoryId",
-          "date",
-          "description",
-          "source"
-        ],
-        "type": "object",
-        "properties": {
-          "code": {
-            "type": "string",
-            "nullable": true
-          },
-          "date": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "currencyCode": {
-            "type": "string",
-            "nullable": true
-          },
-          "fxRate": {
-            "type": "number",
-            "format": "double"
-          },
-          "amount": {
-            "minimum": 0.01,
-            "type": "number",
-            "format": "double"
-          },
-          "description": {
-            "minLength": 1,
-            "type": "string"
-          },
-          "counterparty": {
-            "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.CounterpartyDto"
-          },
-          "categoryId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "source": {
-            "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.WalletDto"
-          },
-          "taxLines": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.TaxLineDto"
-            },
-            "nullable": true
-          },
-          "attachments": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "nullable": true
-          },
-          "recurrenceId": {
-            "type": "string",
-            "format": "uuid",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ExpenseVoucherResponseDto": {
         "type": "object",
         "properties": {
@@ -2612,6 +2710,12 @@
             "type": "string",
             "format": "date-time"
           },
+          "source": {
+            "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.WalletDto"
+          },
+          "counterparty": {
+            "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.CounterpartyDto"
+          },
           "taxLines": {
             "type": "array",
             "items": {
@@ -2625,34 +2729,6 @@
               "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.AttachmentResponseDto"
             },
             "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.TaxLineDto": {
-        "required": [
-          "baseAmount",
-          "taxAmount",
-          "taxId"
-        ],
-        "type": "object",
-        "properties": {
-          "taxId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "baseAmount": {
-            "minimum": 0,
-            "type": "number",
-            "format": "double"
-          },
-          "taxAmount": {
-            "minimum": 0,
-            "type": "number",
-            "format": "double"
-          },
-          "isWithholding": {
-            "type": "boolean"
           }
         },
         "additionalProperties": false
@@ -2732,73 +2808,6 @@
         },
         "additionalProperties": false
       },
-      "ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.CreateIncomeVoucherDto": {
-        "required": [
-          "amount",
-          "categoryId",
-          "date",
-          "description",
-          "source"
-        ],
-        "type": "object",
-        "properties": {
-          "code": {
-            "type": "string",
-            "nullable": true
-          },
-          "date": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "currencyCode": {
-            "type": "string",
-            "nullable": true
-          },
-          "fxRate": {
-            "type": "number",
-            "format": "double"
-          },
-          "amount": {
-            "minimum": 0.01,
-            "type": "number",
-            "format": "double"
-          },
-          "description": {
-            "minLength": 1,
-            "type": "string"
-          },
-          "counterparty": {
-            "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.CounterpartyDto"
-          },
-          "categoryId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "source": {
-            "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.WalletDto"
-          },
-          "taxLines": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.TaxLineDto"
-            },
-            "nullable": true
-          },
-          "attachments": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "nullable": true
-          },
-          "recurrenceId": {
-            "type": "string",
-            "format": "uuid",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto": {
         "type": "object",
         "properties": {
@@ -2838,6 +2847,12 @@
             "type": "string",
             "format": "date-time"
           },
+          "source": {
+            "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.WalletDto"
+          },
+          "counterparty": {
+            "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.CounterpartyDto"
+          },
           "taxLines": {
             "type": "array",
             "items": {
@@ -2851,34 +2866,6 @@
               "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.AttachmentResponseDto"
             },
             "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.TaxLineDto": {
-        "required": [
-          "baseAmount",
-          "taxAmount",
-          "taxId"
-        ],
-        "type": "object",
-        "properties": {
-          "taxId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "baseAmount": {
-            "minimum": 0,
-            "type": "number",
-            "format": "double"
-          },
-          "taxAmount": {
-            "minimum": 0,
-            "type": "number",
-            "format": "double"
-          },
-          "isWithholding": {
-            "type": "boolean"
           }
         },
         "additionalProperties": false

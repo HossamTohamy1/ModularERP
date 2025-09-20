@@ -186,3 +186,4 @@ C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP\bin\Debug\net9.0\Se
 C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP\bin\Debug\net9.0\ModularERP.staticwebassets.runtime.json

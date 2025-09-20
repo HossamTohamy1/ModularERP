@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json;
 
 namespace ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO
 {
@@ -10,6 +11,7 @@ namespace ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO
         public DateTime Date { get; set; }
 
         public string CurrencyCode { get; set; } = "EGP";
+
         public decimal FxRate { get; set; } = 1.0m;
 
         [Required]
@@ -19,16 +21,65 @@ namespace ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO
         [Required]
         public string Description { get; set; } = string.Empty;
 
-        public CounterpartyDto? Counterparty { get; set; }
-
         [Required]
         public Guid CategoryId { get; set; }
 
-        [Required]
-        public WalletDto Source { get; set; } = new();
-
-        public List<TaxLineDto> TaxLines { get; set; } = new();
-        public List<string> Attachments { get; set; } = new();
         public Guid? RecurrenceId { get; set; }
+
+        // JSON strings - stored as strings only
+        [Required]
+        public string SourceJson { get; set; } = string.Empty;
+
+        public string? CounterpartyJson { get; set; }
+
+        public string? TaxLinesJson { get; set; }
+
+        public List<IFormFile> Attachments { get; set; } = new();
+
+        // For business logic validation - separate fields
+        public Guid? SourceId { get; set; }
+
+        public string? SourceType { get; set; }
+
+        // Parsed objects for validation and response
+        public WalletDto Source { get; set; } = new WalletDto();
+
+        // ✅ Add Counterparty property
+        [System.Text.Json.Serialization.JsonIgnore]
+        public CounterpartyDto? Counterparty
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(CounterpartyJson))
+                    return null;
+                try
+                {
+                    return JsonSerializer.Deserialize<CounterpartyDto>(CounterpartyJson);
+                }
+                catch
+                {
+                    return null;
+                }
+            }
+        }
+
+        // ✅ Add TaxLines property for parsed tax lines
+        [System.Text.Json.Serialization.JsonIgnore]
+        public List<TaxLineDto>? TaxLines
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(TaxLinesJson))
+                    return null;
+                try
+                {
+                    return JsonSerializer.Deserialize<List<TaxLineDto>>(TaxLinesJson);
+                }
+                catch
+                {
+                    return null;
+                }
+            }
+        }
     }
 }

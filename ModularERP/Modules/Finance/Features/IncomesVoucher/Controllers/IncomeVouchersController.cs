@@ -5,8 +5,10 @@ using ModularERP.Common.Enum.Finance_Enum;
 using ModularERP.Common.ViewModel;
 using ModularERP.Modules.Finance.Features.IncomesVoucher.Commands;
 using ModularERP.Modules.Finance.Features.IncomesVoucher.DTO;
+using ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers;
 using ModularERP.Modules.Finance.Features.IncomesVoucher.Queries;
 using System.Security.Claims;
+using System.Text.Json;
 
 namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers
 {
@@ -15,43 +17,88 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers
     public class IncomeVouchersController : ControllerBase
     {
         private readonly IMediator _mediator;
+        private readonly ILogger<IncomeVouchersController> _logger;
 
-        public IncomeVouchersController(IMediator mediator)
+
+        public IncomeVouchersController(IMediator mediator, ILogger<IncomeVouchersController> logger)
         {
             _mediator = mediator;
+            _logger = logger;
         }
-
         [HttpPost]
+        [Consumes("multipart/form-data")]
         public async Task<ActionResult<ResponseViewModel<IncomeVoucherResponseDto>>> CreateIncomeVoucher(
-           [FromBody] CreateIncomeVoucherDto request)
+            [FromForm] string? code,
+            [FromForm] DateTime date,
+            [FromForm] string currencyCode,
+            [FromForm] decimal fxRate,
+            [FromForm] decimal amount,
+            [FromForm] string description,
+            [FromForm] Guid categoryId,
+            [FromForm] Guid? recurrenceId,
+            [FromForm] string sourceType,
+            [FromForm] Guid sourceId,
+            [FromForm] string? counterpartyJson,
+            [FromForm] string? taxLinesJson,
+            [FromForm] List<IFormFile>? attachments
+        )
         {
-            var userId = GetCurrentUserId();
-            var command = new CreateIncomeVoucherCommand(request, userId);
-
-            var result = await _mediator.Send(command);
-
-            if (!result.IsSuccess)
+            try
             {
-                // Validation errors
-                if (result.ValidationErrors != null && result.ValidationErrors.Any())
+                var userId = GetCurrentUserId();
+
+                var dto = new CreateIncomeVoucherDto
+                {
+                    Code = code ?? string.Empty,
+                    Date = date,
+                    CurrencyCode = currencyCode ?? string.Empty,
+                    FxRate = fxRate,
+                    Amount = amount,
+                    Description = description ?? string.Empty,
+                    CategoryId = categoryId,
+                    RecurrenceId = recurrenceId,
+
+                    // Store JSON as strings
+                    SourceJson = $"{{\"Type\":\"{sourceType}\",\"Id\":\"{sourceId}\"}}",
+                    CounterpartyJson = counterpartyJson,
+                    TaxLinesJson = taxLinesJson,
+
+                    // ✅ Initialize Source object for validation
+                    Source = new WalletDto
+                    {
+                        Type = sourceType ?? string.Empty,
+                        Id = sourceId
+                    },
+
+                    // For business logic validation
+                    SourceId = sourceId,
+                    SourceType = sourceType,
+
+                    Attachments = attachments ?? new List<IFormFile>()
+                };
+
+                var command = new CreateIncomeVoucherCommand(dto, userId);
+                var result = await _mediator.Send(command);
+
+                if (!result.IsSuccess)
+                {
                     return BadRequest(result);
+                }
 
-                // Forbidden
-                //if (result.ErrorCode == FinanceErrorCode.Unauthorized)
-                //    return Forbid();
-
-                // Business logic errors
-                return BadRequest(result);
+                return CreatedAtAction(
+                    nameof(GetIncomeVoucher),
+                    new { id = result.Data.Id },
+                    result
+                );
             }
-
-            // Success → return CreatedAtAction
-            return CreatedAtAction(
-                nameof(GetIncomeVoucher),
-                new { id = result.Data.Id },
-                result
-            );
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in CreateIncomeVoucher controller");
+                return StatusCode(500, ResponseViewModel<IncomeVoucherResponseDto>.Error(
+                    "An error occurred while processing the request",
+                    FinanceErrorCode.InternalServerError));
+            }
         }
-
         [HttpGet("{id}")]
         public async Task<ActionResult<ResponseViewModel<IncomeVoucherResponseDto>>> GetIncomeVoucher(Guid id)
         {

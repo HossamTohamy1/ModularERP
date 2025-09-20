@@ -1,16 +1,17 @@
 ﻿using AutoMapper;
 using FluentValidation;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using ModularERP.Common.Enum.Finance_Enum;
 using ModularERP.Common.ViewModel;
+using ModularERP.Modules.Finance.Features.Attachments.Models;
 using ModularERP.Modules.Finance.Features.ExpensesVoucher.Commands;
 using ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO;
 using ModularERP.Modules.Finance.Features.ExpensesVoucher.Service;
 using ModularERP.Modules.Finance.Features.Vouchers.Models;
 using ModularERP.Modules.Finance.Features.VoucherTaxs.Models;
-using ModularERP.Modules.Finance.Features.Attachments.Models;
 using ModularERP.Shared.Interfaces;
+using System.Text.Json;
 
 namespace ModularERP.Modules.Finance.Features.ExpensesVoucher.Handlers
 {
@@ -22,6 +23,7 @@ namespace ModularERP.Modules.Finance.Features.ExpensesVoucher.Handlers
         private readonly IExpenseVoucherService _expenseService;
         private readonly IMapper _mapper;
         private readonly IValidator<CreateExpenseVoucherDto> _validator;
+        private readonly ILogger<CreateExpenseVoucherHandler> _logger;
 
         public CreateExpenseVoucherHandler(
             IGeneralRepository<Voucher> voucherRepo,
@@ -29,7 +31,8 @@ namespace ModularERP.Modules.Finance.Features.ExpensesVoucher.Handlers
             IGeneralRepository<VoucherAttachment> attachmentRepo,
             IExpenseVoucherService expenseService,
             IMapper mapper,
-            IValidator<CreateExpenseVoucherDto> validator)
+            IValidator<CreateExpenseVoucherDto> validator,
+            ILogger<CreateExpenseVoucherHandler> logger)
         {
             _voucherRepo = voucherRepo;
             _voucherTaxRepo = voucherTaxRepo;
@@ -37,6 +40,7 @@ namespace ModularERP.Modules.Finance.Features.ExpensesVoucher.Handlers
             _expenseService = expenseService;
             _mapper = mapper;
             _validator = validator;
+            _logger = logger;
         }
 
         public async Task<ResponseViewModel<ExpenseVoucherResponseDto>> Handle(CreateExpenseVoucherCommand request, CancellationToken cancellationToken)
@@ -45,7 +49,20 @@ namespace ModularERP.Modules.Finance.Features.ExpensesVoucher.Handlers
             {
                 var dto = request.Request;
 
-                // Validate
+                _logger.LogInformation("Start creating expense voucher with data: {@Dto}", new
+                {
+                    dto.Code,
+                    dto.Date,
+                    dto.Amount,
+                    dto.Description,
+                    dto.CategoryId,
+                    Source = dto.Source,
+                    Counterparty = dto.Counterparty,
+                    TaxLinesCount = dto.TaxLines?.Count ?? 0,
+                    AttachmentsCount = dto.Attachments?.Count ?? 0
+                });
+
+                // Validate DTO
                 var validationResult = await _validator.ValidateAsync(dto, cancellationToken);
                 if (!validationResult.IsValid)
                 {
@@ -53,80 +70,167 @@ namespace ModularERP.Modules.Finance.Features.ExpensesVoucher.Handlers
                         .GroupBy(e => e.PropertyName)
                         .ToDictionary(g => g.Key, g => g.Select(e => e.ErrorMessage).ToArray());
 
-                    return ResponseViewModel<ExpenseVoucherResponseDto>.ValidationError(
-                        "Validation failed", errors);
+                    _logger.LogWarning("Validation failed: {@Errors}", errors);
+                    return ResponseViewModel<ExpenseVoucherResponseDto>.ValidationError("Validation failed", errors);
                 }
 
-                // Business validations
+                _logger.LogInformation("Validation passed successfully.");
+
+                // Business validations using Source
                 if (!await _expenseService.IsWalletActiveAsync(dto.Source.Id, dto.Source.Type))
+                {
                     return ResponseViewModel<ExpenseVoucherResponseDto>.Error(
-                        "Selected wallet is not active",
-                        FinanceErrorCode.BusinessLogicError);
+                        "Selected wallet is not active", FinanceErrorCode.BusinessLogicError);
+                }
 
                 if (!await _expenseService.IsCategoryValidAsync(dto.CategoryId))
+                {
                     return ResponseViewModel<ExpenseVoucherResponseDto>.Error(
-                        "Invalid expense category",
-                        FinanceErrorCode.BusinessLogicError);
+                        "Invalid expense category", FinanceErrorCode.BusinessLogicError);
+                }
 
                 if (!await _expenseService.IsDateInOpenPeriodAsync(dto.Date))
+                {
                     return ResponseViewModel<ExpenseVoucherResponseDto>.Error(
-                        "Date is not within open fiscal period",
-                        FinanceErrorCode.BusinessLogicError);
+                        "Date is not within open fiscal period", FinanceErrorCode.BusinessLogicError);
+                }
 
-                // Generate code
+                _logger.LogInformation("Business validations passed successfully.");
+
+                // Generate or use provided code
                 var code = string.IsNullOrEmpty(dto.Code)
                     ? await _expenseService.GenerateVoucherCodeAsync(VoucherType.Expense, dto.Date)
                     : dto.Code;
 
+                // Check duplicate before insert
+                var exists = await _voucherRepo.AnyAsync(v =>
+                    v.CompanyId == Guid.Parse("d00cf078-c1ff-4feb-ae37-d66a827ae438") &&
+                    v.Code == code);
+
+                if (exists)
+                {
+                    return ResponseViewModel<ExpenseVoucherResponseDto>.Error(
+                        $"Voucher code '{code}' already exists for this company.",
+                        FinanceErrorCode.BusinessLogicError);
+                }
+
+                // Create voucher
                 var voucher = _mapper.Map<Voucher>(dto);
                 voucher.Code = code;
                 voucher.CompanyId = Guid.Parse("d00cf078-c1ff-4feb-ae37-d66a827ae438");
-                voucher.CreatedBy = Guid.Parse("5dbceb39-9677-46d7-bf8a-2eb914c55437"); // temporary because request.UserId not working (Auth);
+                voucher.CreatedBy = Guid.Parse("5dbceb39-9677-46d7-bf8a-2eb914c55437");
+
+                // Use Source for JournalAccountId
                 voucher.JournalAccountId = await _expenseService.GetWalletControlAccountIdAsync(dto.Source.Id, dto.Source.Type);
 
-                // Save voucher
+                _logger.LogInformation("Adding voucher to repository: {@Voucher}", new { voucher.Code, voucher.Amount, voucher.Date });
+
                 await _voucherRepo.AddAsync(voucher);
                 await _voucherRepo.SaveChanges();
 
-                // Tax lines
-                foreach (var taxLine in dto.TaxLines)
-                {
-                    var voucherTax = _mapper.Map<VoucherTax>(taxLine);
-                    voucherTax.VoucherId = voucher.Id;
-                    await _voucherTaxRepo.AddAsync(voucherTax);
-                }
+                _logger.LogInformation("Voucher saved successfully with ID: {VoucherId}", voucher.Id);
 
-                // Attachments
-                foreach (var attachmentUrl in dto.Attachments)
+                // ✅ Process Tax Lines (same as Income)
+                var taxes = new List<VoucherTax>();
+                if (dto.TaxLines?.Any() == true)
                 {
-                    var attachment = new VoucherAttachment
+                    _logger.LogInformation("Processing {Count} tax lines", dto.TaxLines.Count);
+
+                    foreach (var taxLineDto in dto.TaxLines)
                     {
-                        VoucherId = voucher.Id,
-                        FilePath = attachmentUrl,
-                        Filename = Path.GetFileName(attachmentUrl),
-                        UploadedBy = Guid.Parse("5dbceb39-9677-46d7-bf8a-2eb914c55437"), // temporary because request.UserId not working (Auth),
-                        UploadedAt = DateTime.UtcNow
-                    };
-                    await _attachmentRepo.AddAsync(attachment);
+                        _logger.LogInformation("Processing tax line: TaxId={TaxId}, BaseAmount={BaseAmount}, TaxAmount={TaxAmount}",
+                            taxLineDto.TaxId, taxLineDto.BaseAmount, taxLineDto.TaxAmount);
+
+                        taxes.Add(new VoucherTax
+                        {
+                            VoucherId = voucher.Id,
+                            TaxId = taxLineDto.TaxId,
+                            BaseAmount = taxLineDto.BaseAmount,
+                            TaxAmount = taxLineDto.TaxAmount,
+                            IsWithholding = taxLineDto.IsWithholding,
+                            Direction = TaxDirection.Expense // Use TaxDirection enum
+                        });
+                    }
+
+                    await _voucherTaxRepo.AddRangeAsync(taxes);
+                    await _voucherTaxRepo.SaveChanges();
+
+                    _logger.LogInformation("Successfully added {Count} tax lines", taxes.Count);
+                }
+                else
+                {
+                    _logger.LogInformation("No tax lines provided");
                 }
 
-                await _voucherRepo.SaveChanges();
+                // Handle attachments (same as Income)
+                var attachments = new List<VoucherAttachment>();
+                if (dto.Attachments?.Any() == true)
+                {
+                    _logger.LogInformation("Processing {Count} attachments", dto.Attachments.Count);
 
-                // Map response
-                var taxLines = await _voucherTaxRepo.Get(t => t.VoucherId == voucher.Id).ToListAsync();
-                var attachments = await _attachmentRepo.Get(a => a.VoucherId == voucher.Id).ToListAsync();
+                    var uploadDir = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
+                    if (!Directory.Exists(uploadDir))
+                        Directory.CreateDirectory(uploadDir);
+
+                    foreach (var file in dto.Attachments)
+                    {
+                        var fileName = $"{Guid.NewGuid()}_{file.FileName}";
+                        var filePath = Path.Combine(uploadDir, fileName);
+
+                        using (var stream = new FileStream(filePath, FileMode.Create))
+                        {
+                            await file.CopyToAsync(stream, cancellationToken);
+                        }
+
+                        attachments.Add(new VoucherAttachment
+                        {
+                            VoucherId = voucher.Id,
+                            FilePath = $"/uploads/{fileName}",
+                            Filename = file.FileName,
+                            UploadedBy = Guid.Parse("5dbceb39-9677-46d7-bf8a-2eb914c55437"),
+                            UploadedAt = DateTime.UtcNow
+                        });
+                    }
+
+                    await _attachmentRepo.AddRangeAsync(attachments);
+                    await _attachmentRepo.SaveChanges();
+
+                    _logger.LogInformation("Successfully added {Count} attachments", attachments.Count);
+                }
+
+                // Response mapping (same as Income)
+                _logger.LogInformation("Voucher {VoucherId} created successfully with {TaxCount} taxes and {AttachmentCount} attachments.",
+                    voucher.Id, taxes.Count, attachments.Count);
 
                 var response = _mapper.Map<ExpenseVoucherResponseDto>(voucher);
-                response.TaxLines = _mapper.Map<List<TaxLineResponseDto>>(taxLines);
-                response.Attachments = _mapper.Map<List<AttachmentResponseDto>>(attachments);
+
+                // Set Source and Counterparty from DTO
+                response.Source = dto.Source;
+                response.Counterparty = dto.Counterparty;
+
+                // Map tax lines and attachments
+                response.TaxLines = taxes.Select(t => new TaxLineResponseDto
+                {
+                    TaxId = t.TaxId,
+                    BaseAmount = t.BaseAmount,
+                    TaxAmount = t.TaxAmount,
+                    IsWithholding = t.IsWithholding
+                }).ToList();
+
+                response.Attachments = attachments.Select(a => new AttachmentResponseDto
+                {
+                    Id = a.Id,
+                    FileName = a.Filename,
+                    FileUrl = a.FilePath
+                }).ToList();
 
                 return ResponseViewModel<ExpenseVoucherResponseDto>.Success(response, "Expense voucher created successfully");
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, "Unhandled error occurred while creating expense voucher.");
                 return ResponseViewModel<ExpenseVoucherResponseDto>.Error(
-                    "An error occurred while creating the expense voucher",
-                    FinanceErrorCode.InternalServerError);
+                    "An error occurred while creating the expense voucher", FinanceErrorCode.InternalServerError);
             }
         }
     }

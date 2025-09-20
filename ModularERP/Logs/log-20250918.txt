@@ -1454,3 +1454,764 @@ WHERE [a].[IsDeleted] = CAST(0 AS bit) AND [a].[VoucherId] = @__voucher_Id_0
 2025-09-18 02:24:38.970 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.GetIncomeVoucher (ModularERP)'
 2025-09-18 02:24:38.973 +03:00 [INF] Request completed successfully with status code 200
 2025-09-18 02:24:38.981 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/IncomeVouchers/c660e0ad-2288-4ed0-e87b-08ddf640b8c1 - 200 null application/json; charset=utf-8 1792.0084ms
+2025-09-18 21:02:50.129 +03:00 [INF] Starting web host...
+2025-09-18 21:02:50.539 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-18 21:02:50.543 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-18 21:02:50.624 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-18 21:02:50.626 +03:00 [INF] Hosting environment: Development
+2025-09-18 21:02:50.628 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-18 21:03:19.600 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-09-18 21:03:19.788 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 188.602ms
+2025-09-18 21:03:19.820 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/swagger-ui-bundle.js - null null
+2025-09-18 21:03:19.820 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/swagger-ui-standalone-preset.js - null null
+2025-09-18 21:03:19.820 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/swagger-ui.css - null null
+2025-09-18 21:03:19.820 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-18 21:03:19.840 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 19.7668ms
+2025-09-18 21:03:19.848 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-09-18 21:03:19.849 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-09-18 21:03:19.853 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 33.3897ms
+2025-09-18 21:03:19.853 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-09-18 21:03:19.853 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/swagger-ui.css - 200 152034 text/css 33.8407ms
+2025-09-18 21:03:19.860 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/swagger-ui-bundle.js - 200 1456926 text/javascript 40.7681ms
+2025-09-18 21:03:20.957 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-09-18 21:03:21.007 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 49.8591ms
+2025-09-18 21:03:21.053 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/favicon-32x32.png - null null
+2025-09-18 21:03:21.058 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-09-18 21:03:21.060 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/favicon-32x32.png - 200 628 image/png 7.7983ms
+2025-09-18 21:03:21.547 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-09-18 21:03:21.596 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 48.9681ms
+2025-09-18 21:43:12.268 +03:00 [INF] Starting web host...
+2025-09-18 21:43:12.753 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-18 21:43:12.756 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-18 21:43:12.846 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-18 21:43:12.848 +03:00 [INF] Hosting environment: Development
+2025-09-18 21:43:12.850 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-18 21:43:17.284 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-09-18 21:43:17.412 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 128.5981ms
+2025-09-18 21:43:17.431 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-18 21:43:17.443 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 12.3006ms
+2025-09-18 21:43:18.552 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-09-18 21:43:18.584 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 31.4952ms
+2025-09-18 21:43:18.797 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-09-18 21:43:18.925 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 127.4742ms
+2025-09-18 21:51:51.279 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/IncomeVouchers - multipart/form-data; boundary=----WebKitFormBoundary3BiRCqWEd8lZS44l 58035
+2025-09-18 21:51:51.314 +03:00 [INF] CORS policy execution successful.
+2025-09-18 21:51:51.325 +03:00 [INF] Request started
+2025-09-18 21:51:51.329 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-18 21:51:51.362 +03:00 [INF] Route matched with {action = "CreateIncomeVoucher", controller = "IncomeVouchers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto]]] CreateIncomeVoucher(ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.CreateIncomeVoucherDto) on controller ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController (ModularERP).
+2025-09-18 21:51:51.369 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-18 21:51:52.217 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-09-18 21:51:52.457 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-18 21:51:53.078 +03:00 [INF] Executed DbCommand (35ms) [Parameters=[@__id_0='4fe6e0a3-b441-45f6-96a4-0a1c499bbe56'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[JournalAccountId], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-18 21:51:53.183 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__id_0='f8cd0c63-50d7-4a69-a344-bc53be110f77'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [g].[Id], [g].[Code], [g].[CompanyId], [g].[CreatedAt], [g].[CreatedById], [g].[IsActive], [g].[IsDeleted], [g].[IsLeaf], [g].[Name], [g].[Type], [g].[UpdatedAt], [g].[UpdatedById]
+FROM [GlAccounts] AS [g]
+WHERE [g].[Id] = @__id_0
+2025-09-18 21:51:53.225 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-18 21:51:53.247 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP) in 1879.1779ms
+2025-09-18 21:51:53.251 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-18 21:51:53.254 +03:00 [INF] Request completed successfully with status code 400
+2025-09-18 21:51:53.264 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/IncomeVouchers - 400 null application/json; charset=utf-8 1985.5751ms
+2025-09-18 21:52:56.084 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/IncomeVouchers - multipart/form-data; boundary=----WebKitFormBoundarygmlNbajR8IBtjjdS 58035
+2025-09-18 21:52:56.090 +03:00 [INF] CORS policy execution successful.
+2025-09-18 21:52:56.092 +03:00 [INF] Request started
+2025-09-18 21:52:56.093 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-18 21:52:56.096 +03:00 [INF] Route matched with {action = "CreateIncomeVoucher", controller = "IncomeVouchers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto]]] CreateIncomeVoucher(ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.CreateIncomeVoucherDto) on controller ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController (ModularERP).
+2025-09-18 21:52:56.157 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='4fe6e0a3-b441-45f6-96a4-0a1c499bbe56'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[JournalAccountId], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-18 21:52:56.164 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='d880c62f-a545-41fe-876d-f76a4a6c1077'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [g].[Id], [g].[Code], [g].[CompanyId], [g].[CreatedAt], [g].[CreatedById], [g].[IsActive], [g].[IsDeleted], [g].[IsLeaf], [g].[Name], [g].[Type], [g].[UpdatedAt], [g].[UpdatedById]
+FROM [GlAccounts] AS [g]
+WHERE [g].[Id] = @__id_0
+2025-09-18 21:52:56.198 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__code_0='INC-789' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Vouchers] AS [v]
+        WHERE [v].[CompanyId] = 'd00cf078-c1ff-4feb-ae37-d66a827ae438' AND [v].[Code] = @__code_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-09-18 21:52:56.212 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='4fe6e0a3-b441-45f6-96a4-0a1c499bbe56'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[JournalAccountId], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-18 21:52:56.454 +03:00 [INF] Executed DbCommand (24ms) [Parameters=[@p0='73debe46-9a80-44ac-9db1-08ddf6e49497', @p1='500' (Precision = 18) (Scale = 2), @p2=NULL (DbType = Guid), @p3='d880c62f-a545-41fe-876d-f76a4a6c1077', @p4='INC-789' (Nullable = false) (Size = 20), @p5='d00cf078-c1ff-4feb-ae37-d66a827ae438', @p6='3fa85f64-5717-4562-b3fc-2c963f66afa6' (Nullable = true), @p7='Vendor' (Size = 450), @p8='2025-09-18T18:52:56.2107689Z', @p9='5dbceb39-9677-46d7-bf8a-2eb914c55437', @p10=NULL (Size = 4000), @p11='EGP' (Nullable = false) (Size = 3), @p12='2025-09-17T13:07:31.9820000Z', @p13='Dummy expense voucher' (Size = 4000), @p14='1' (Precision = 18) (Scale = 6), @p15='True', @p16='False', @p17='f8cd0c63-50d7-4a69-a344-bc53be110f77', @p18=NULL (DbType = DateTime2), @p19=NULL (DbType = Guid), @p20='3fa85f64-5717-4562-b3fc-2c963f66afa6' (Nullable = true), @p21=NULL (DbType = Guid), @p22=NULL (DbType = DateTime2), @p23=NULL (DbType = Guid), @p24='0', @p25='Draft' (Nullable = false) (Size = 450), @p26=NULL (DbType = Guid), @p27='Income' (Nullable = false) (Size = 450), @p28=NULL (DbType = DateTime2), @p29=NULL (Size = 4000), @p30='4fe6e0a3-b441-45f6-96a4-0a1c499bbe56', @p31='BankAccount' (Nullable = false) (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Vouchers] ([Id], [Amount], [BankAccountId], [CategoryAccountId], [Code], [CompanyId], [CounterpartyId], [CounterpartyType], [CreatedAt], [CreatedBy], [CreatedById], [CurrencyCode], [Date], [Description], [FxRate], [IsActive], [IsDeleted], [JournalAccountId], [PostedAt], [PostedBy], [RecurrenceId], [RecurringScheduleId], [ReversedAt], [ReversedBy], [Revision], [Status], [TreasuryId], [Type], [UpdatedAt], [UpdatedById], [WalletId], [WalletType])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31);
+2025-09-18 21:52:56.475 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-18 21:52:56.478 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP) in 377.7715ms
+2025-09-18 21:52:56.481 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-18 21:52:56.483 +03:00 [INF] Request completed successfully with status code 400
+2025-09-18 21:52:56.487 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/IncomeVouchers - 400 null application/json; charset=utf-8 402.0944ms
+2025-09-18 21:53:13.432 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/IncomeVouchers - multipart/form-data; boundary=----WebKitFormBoundaryrjgGD8TwnUPIZsvY 58035
+2025-09-18 21:53:13.437 +03:00 [INF] CORS policy execution successful.
+2025-09-18 21:53:13.440 +03:00 [INF] Request started
+2025-09-18 21:53:13.441 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-18 21:53:13.445 +03:00 [INF] Route matched with {action = "CreateIncomeVoucher", controller = "IncomeVouchers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto]]] CreateIncomeVoucher(ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.CreateIncomeVoucherDto) on controller ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController (ModularERP).
+2025-09-18 21:53:13.468 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='4fe6e0a3-b441-45f6-96a4-0a1c499bbe56'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[JournalAccountId], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-18 21:53:13.474 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='d880c62f-a545-41fe-876d-f76a4a6c1077'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [g].[Id], [g].[Code], [g].[CompanyId], [g].[CreatedAt], [g].[CreatedById], [g].[IsActive], [g].[IsDeleted], [g].[IsLeaf], [g].[Name], [g].[Type], [g].[UpdatedAt], [g].[UpdatedById]
+FROM [GlAccounts] AS [g]
+WHERE [g].[Id] = @__id_0
+2025-09-18 21:53:13.482 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__code_0='INC-789' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Vouchers] AS [v]
+        WHERE [v].[CompanyId] = 'd00cf078-c1ff-4feb-ae37-d66a827ae438' AND [v].[Code] = @__code_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-09-18 21:53:13.486 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-18 21:53:13.490 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP) in 41.097ms
+2025-09-18 21:53:13.493 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-18 21:53:13.495 +03:00 [INF] Request completed successfully with status code 400
+2025-09-18 21:53:13.497 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/IncomeVouchers - 400 null application/json; charset=utf-8 64.4786ms
+2025-09-18 21:55:01.089 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/IncomeVouchers - multipart/form-data; boundary=----WebKitFormBoundary8CgfPFtEFhN6rqNn 58035
+2025-09-18 21:55:01.122 +03:00 [INF] CORS policy execution successful.
+2025-09-18 21:55:01.123 +03:00 [INF] Request started
+2025-09-18 21:55:01.129 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-18 21:55:01.133 +03:00 [INF] Route matched with {action = "CreateIncomeVoucher", controller = "IncomeVouchers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto]]] CreateIncomeVoucher(ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.CreateIncomeVoucherDto) on controller ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController (ModularERP).
+2025-09-18 21:55:01.140 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='4fe6e0a3-b441-45f6-96a4-0a1c499bbe56'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[JournalAccountId], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-18 21:55:01.149 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='d880c62f-a545-41fe-876d-f76a4a6c1077'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [g].[Id], [g].[Code], [g].[CompanyId], [g].[CreatedAt], [g].[CreatedById], [g].[IsActive], [g].[IsDeleted], [g].[IsLeaf], [g].[Name], [g].[Type], [g].[UpdatedAt], [g].[UpdatedById]
+FROM [GlAccounts] AS [g]
+WHERE [g].[Id] = @__id_0
+2025-09-18 21:55:01.157 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__code_0='INC-788' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Vouchers] AS [v]
+        WHERE [v].[CompanyId] = 'd00cf078-c1ff-4feb-ae37-d66a827ae438' AND [v].[Code] = @__code_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-09-18 21:55:01.165 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='4fe6e0a3-b441-45f6-96a4-0a1c499bbe56'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[JournalAccountId], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-18 21:55:01.183 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[@p0='e0818a5c-ad3d-4c9b-9db2-08ddf6e49497', @p1='500' (Precision = 18) (Scale = 2), @p2=NULL (DbType = Guid), @p3='d880c62f-a545-41fe-876d-f76a4a6c1077', @p4='INC-788' (Nullable = false) (Size = 20), @p5='d00cf078-c1ff-4feb-ae37-d66a827ae438', @p6='3fa85f64-5717-4562-b3fc-2c963f66afa6' (Nullable = true), @p7='Vendor' (Size = 450), @p8='2025-09-18T18:55:01.1643289Z', @p9='5dbceb39-9677-46d7-bf8a-2eb914c55437', @p10=NULL (Size = 4000), @p11='EGP' (Nullable = false) (Size = 3), @p12='2025-09-17T13:07:31.9820000Z', @p13='Dummy expense voucher' (Size = 4000), @p14='1' (Precision = 18) (Scale = 6), @p15='True', @p16='False', @p17='f8cd0c63-50d7-4a69-a344-bc53be110f77', @p18=NULL (DbType = DateTime2), @p19=NULL (DbType = Guid), @p20='3fa85f64-5717-4562-b3fc-2c963f66afa6' (Nullable = true), @p21=NULL (DbType = Guid), @p22=NULL (DbType = DateTime2), @p23=NULL (DbType = Guid), @p24='0', @p25='Draft' (Nullable = false) (Size = 450), @p26=NULL (DbType = Guid), @p27='Income' (Nullable = false) (Size = 450), @p28=NULL (DbType = DateTime2), @p29=NULL (Size = 4000), @p30='4fe6e0a3-b441-45f6-96a4-0a1c499bbe56', @p31='BankAccount' (Nullable = false) (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Vouchers] ([Id], [Amount], [BankAccountId], [CategoryAccountId], [Code], [CompanyId], [CounterpartyId], [CounterpartyType], [CreatedAt], [CreatedBy], [CreatedById], [CurrencyCode], [Date], [Description], [FxRate], [IsActive], [IsDeleted], [JournalAccountId], [PostedAt], [PostedBy], [RecurrenceId], [RecurringScheduleId], [ReversedAt], [ReversedBy], [Revision], [Status], [TreasuryId], [Type], [UpdatedAt], [UpdatedById], [WalletId], [WalletType])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31);
+2025-09-18 21:55:01.197 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-18 21:55:01.200 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP) in 63.9488ms
+2025-09-18 21:55:01.201 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-18 21:55:01.204 +03:00 [INF] Request completed successfully with status code 400
+2025-09-18 21:55:01.205 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/IncomeVouchers - 400 null application/json; charset=utf-8 116.92ms
+2025-09-18 21:58:23.972 +03:00 [INF] Starting web host...
+2025-09-18 21:58:24.279 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-18 21:58:24.282 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-18 21:58:24.356 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-18 21:58:24.358 +03:00 [INF] Hosting environment: Development
+2025-09-18 21:58:24.359 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-18 21:59:32.245 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/IncomeVouchers - multipart/form-data; boundary=----WebKitFormBoundaryB6u7XaPAN7JM5inH 58035
+2025-09-18 21:59:32.274 +03:00 [INF] CORS policy execution successful.
+2025-09-18 21:59:32.285 +03:00 [INF] Request started
+2025-09-18 21:59:32.287 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-18 21:59:32.310 +03:00 [INF] Route matched with {action = "CreateIncomeVoucher", controller = "IncomeVouchers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto]]] CreateIncomeVoucher(ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.CreateIncomeVoucherDto) on controller ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController (ModularERP).
+2025-09-18 21:59:32.316 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-18 21:59:32.971 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-09-18 21:59:33.190 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-18 21:59:33.227 +03:00 [INF] Start creating income voucher with data: {"Code":"INC-788","Date":"2025-09-17T13:07:31.9820000Z","CurrencyCode":"EGP","FxRate":1,"Amount":500,"Description":"Dummy expense voucher","Counterparty":{"Type":"Vendor","Id":"3fa85f64-5717-4562-b3fc-2c963f66afa6","$type":"CounterpartyDto"},"CategoryId":"d880c62f-a545-41fe-876d-f76a4a6c1077","Source":{"Type":"BankAccount","Id":"4fe6e0a3-b441-45f6-96a4-0a1c499bbe56","$type":"WalletDto"},"TaxLines":[],"Attachments":[{"ContentDisposition":"form-data; name=\"Attachments\"; filename=\"Hossam-Reda-Tohamy-Node Js .pdf\"","ContentType":"application/pdf","Headers":[{"Key":"Content-Disposition","Value":["form-data; name=\"Attachments\"; filename=\"Hossam-Reda-Tohamy-Node Js .pdf\""],"$type":"KeyValuePair`2"},{"Key":"Content-Type","Value":["application/pdf"],"$type":"KeyValuePair`2"}],"Length":56007,"Name":"Attachments","FileName":"Hossam-Reda-Tohamy-Node Js .pdf","$type":"FormFile"}],"RecurrenceId":"7b6fd5d0-11ec-43b6-b9d6-eba78273f3fe","$type":"CreateIncomeVoucherDto"}
+2025-09-18 21:59:33.277 +03:00 [INF] Validation passed successfully.
+2025-09-18 21:59:33.683 +03:00 [INF] Executed DbCommand (26ms) [Parameters=[@__id_0='4fe6e0a3-b441-45f6-96a4-0a1c499bbe56'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[JournalAccountId], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-18 21:59:33.790 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='d880c62f-a545-41fe-876d-f76a4a6c1077'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [g].[Id], [g].[Code], [g].[CompanyId], [g].[CreatedAt], [g].[CreatedById], [g].[IsActive], [g].[IsDeleted], [g].[IsLeaf], [g].[Name], [g].[Type], [g].[UpdatedAt], [g].[UpdatedById]
+FROM [GlAccounts] AS [g]
+WHERE [g].[Id] = @__id_0
+2025-09-18 21:59:33.819 +03:00 [INF] Business validations passed successfully.
+2025-09-18 21:59:33.821 +03:00 [INF] Voucher code generated/validated: INC-788
+2025-09-18 21:59:33.842 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__code_0='INC-788' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Vouchers] AS [v]
+        WHERE [v].[CompanyId] = 'd00cf078-c1ff-4feb-ae37-d66a827ae438' AND [v].[Code] = @__code_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-09-18 21:59:33.848 +03:00 [WRN] Voucher code INC-788 already exists for this company.
+2025-09-18 21:59:33.855 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-18 21:59:33.877 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP) in 1561.5611ms
+2025-09-18 21:59:33.880 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-18 21:59:33.882 +03:00 [INF] Request completed successfully with status code 400
+2025-09-18 21:59:33.891 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/IncomeVouchers - 400 null application/json; charset=utf-8 1647.5069ms
+2025-09-18 21:59:41.471 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/IncomeVouchers - multipart/form-data; boundary=----WebKitFormBoundarylkAbdGO30CXEFTiy 58035
+2025-09-18 21:59:41.478 +03:00 [INF] CORS policy execution successful.
+2025-09-18 21:59:41.481 +03:00 [INF] Request started
+2025-09-18 21:59:41.483 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-18 21:59:41.487 +03:00 [INF] Route matched with {action = "CreateIncomeVoucher", controller = "IncomeVouchers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto]]] CreateIncomeVoucher(ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.CreateIncomeVoucherDto) on controller ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController (ModularERP).
+2025-09-18 21:59:41.541 +03:00 [INF] Start creating income voucher with data: {"Code":"INC-787","Date":"2025-09-17T13:07:31.9820000Z","CurrencyCode":"EGP","FxRate":1,"Amount":500,"Description":"Dummy expense voucher","Counterparty":{"Type":"Vendor","Id":"3fa85f64-5717-4562-b3fc-2c963f66afa6","$type":"CounterpartyDto"},"CategoryId":"d880c62f-a545-41fe-876d-f76a4a6c1077","Source":{"Type":"BankAccount","Id":"4fe6e0a3-b441-45f6-96a4-0a1c499bbe56","$type":"WalletDto"},"TaxLines":[],"Attachments":[{"ContentDisposition":"form-data; name=\"Attachments\"; filename=\"Hossam-Reda-Tohamy-Node Js .pdf\"","ContentType":"application/pdf","Headers":[{"Key":"Content-Disposition","Value":["form-data; name=\"Attachments\"; filename=\"Hossam-Reda-Tohamy-Node Js .pdf\""],"$type":"KeyValuePair`2"},{"Key":"Content-Type","Value":["application/pdf"],"$type":"KeyValuePair`2"}],"Length":56007,"Name":"Attachments","FileName":"Hossam-Reda-Tohamy-Node Js .pdf","$type":"FormFile"}],"RecurrenceId":"7b6fd5d0-11ec-43b6-b9d6-eba78273f3fe","$type":"CreateIncomeVoucherDto"}
+2025-09-18 21:59:41.573 +03:00 [INF] Validation passed successfully.
+2025-09-18 21:59:41.577 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='4fe6e0a3-b441-45f6-96a4-0a1c499bbe56'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[JournalAccountId], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-18 21:59:41.586 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='d880c62f-a545-41fe-876d-f76a4a6c1077'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [g].[Id], [g].[Code], [g].[CompanyId], [g].[CreatedAt], [g].[CreatedById], [g].[IsActive], [g].[IsDeleted], [g].[IsLeaf], [g].[Name], [g].[Type], [g].[UpdatedAt], [g].[UpdatedById]
+FROM [GlAccounts] AS [g]
+WHERE [g].[Id] = @__id_0
+2025-09-18 21:59:41.592 +03:00 [INF] Business validations passed successfully.
+2025-09-18 21:59:41.593 +03:00 [INF] Voucher code generated/validated: INC-787
+2025-09-18 21:59:41.595 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__code_0='INC-787' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Vouchers] AS [v]
+        WHERE [v].[CompanyId] = 'd00cf078-c1ff-4feb-ae37-d66a827ae438' AND [v].[Code] = @__code_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-09-18 21:59:41.613 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='4fe6e0a3-b441-45f6-96a4-0a1c499bbe56'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[JournalAccountId], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-18 21:59:41.842 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='e48f32cf-165f-45da-86b6-08ddf6e5863b', @p1='500' (Precision = 18) (Scale = 2), @p2=NULL (DbType = Guid), @p3='d880c62f-a545-41fe-876d-f76a4a6c1077', @p4='INC-787' (Nullable = false) (Size = 20), @p5='d00cf078-c1ff-4feb-ae37-d66a827ae438', @p6='3fa85f64-5717-4562-b3fc-2c963f66afa6' (Nullable = true), @p7='Vendor' (Size = 450), @p8='2025-09-18T18:59:41.6117644Z', @p9='5dbceb39-9677-46d7-bf8a-2eb914c55437', @p10=NULL (Size = 4000), @p11='EGP' (Nullable = false) (Size = 3), @p12='2025-09-17T13:07:31.9820000Z', @p13='Dummy expense voucher' (Size = 4000), @p14='1' (Precision = 18) (Scale = 6), @p15='True', @p16='False', @p17='f8cd0c63-50d7-4a69-a344-bc53be110f77', @p18=NULL (DbType = DateTime2), @p19=NULL (DbType = Guid), @p20='7b6fd5d0-11ec-43b6-b9d6-eba78273f3fe' (Nullable = true), @p21=NULL (DbType = Guid), @p22=NULL (DbType = DateTime2), @p23=NULL (DbType = Guid), @p24='0', @p25='Draft' (Nullable = false) (Size = 450), @p26=NULL (DbType = Guid), @p27='Income' (Nullable = false) (Size = 450), @p28=NULL (DbType = DateTime2), @p29=NULL (Size = 4000), @p30='4fe6e0a3-b441-45f6-96a4-0a1c499bbe56', @p31='BankAccount' (Nullable = false) (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Vouchers] ([Id], [Amount], [BankAccountId], [CategoryAccountId], [Code], [CompanyId], [CounterpartyId], [CounterpartyType], [CreatedAt], [CreatedBy], [CreatedById], [CurrencyCode], [Date], [Description], [FxRate], [IsActive], [IsDeleted], [JournalAccountId], [PostedAt], [PostedBy], [RecurrenceId], [RecurringScheduleId], [ReversedAt], [ReversedBy], [Revision], [Status], [TreasuryId], [Type], [UpdatedAt], [UpdatedById], [WalletId], [WalletType])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31);
+2025-09-18 21:59:41.863 +03:00 [INF] Voucher "e48f32cf-165f-45da-86b6-08ddf6e5863b" saved successfully.
+2025-09-18 21:59:41.869 +03:00 [INF] 0 tax lines added for voucher "e48f32cf-165f-45da-86b6-08ddf6e5863b".
+2025-09-18 21:59:41.874 +03:00 [ERR] Failed to save attachment Hossam-Reda-Tohamy-Node Js .pdf
+System.IO.DirectoryNotFoundException: Could not find a part of the path 'C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP\wwwroot\uploads\a7872612-7427-4c5c-9ac7-656ada3a9b02_Hossam-Reda-Tohamy-Node Js .pdf'.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers.CreateIncomeVoucherHandler.Handle(CreateIncomeVoucherCommand request, CancellationToken cancellationToken) in C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP\Modules\Finance\Features\IncomesVoucher\Handlers\CreateIncomeVoucherHandler.cs:line 134
+2025-09-18 21:59:41.908 +03:00 [ERR] Unhandled error occurred while creating income voucher.
+System.IO.DirectoryNotFoundException: Could not find a part of the path 'C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP\wwwroot\uploads\a7872612-7427-4c5c-9ac7-656ada3a9b02_Hossam-Reda-Tohamy-Node Js .pdf'.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers.CreateIncomeVoucherHandler.Handle(CreateIncomeVoucherCommand request, CancellationToken cancellationToken) in C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP\Modules\Finance\Features\IncomesVoucher\Handlers\CreateIncomeVoucherHandler.cs:line 134
+2025-09-18 21:59:41.916 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-18 21:59:41.918 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP) in 426.6206ms
+2025-09-18 21:59:41.923 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-18 21:59:41.924 +03:00 [INF] Request completed successfully with status code 400
+2025-09-18 21:59:41.926 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/IncomeVouchers - 400 null application/json; charset=utf-8 454.3505ms
+2025-09-18 21:59:51.366 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-09-18 21:59:51.455 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 88.3336ms
+2025-09-18 21:59:51.479 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-18 21:59:51.492 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 12.7545ms
+2025-09-18 21:59:52.543 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-09-18 21:59:52.582 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 38.4533ms
+2025-09-18 21:59:52.758 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-09-18 21:59:52.814 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 55.847ms
+2025-09-18 22:01:57.971 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/IncomeVouchers - multipart/form-data; boundary=----WebKitFormBoundaryKca5tz7qotOdWzQY 58017
+2025-09-18 22:01:57.976 +03:00 [INF] CORS policy execution successful.
+2025-09-18 22:01:57.979 +03:00 [INF] Request started
+2025-09-18 22:01:57.982 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-18 22:01:57.985 +03:00 [INF] Route matched with {action = "CreateIncomeVoucher", controller = "IncomeVouchers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto]]] CreateIncomeVoucher(ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.CreateIncomeVoucherDto) on controller ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController (ModularERP).
+2025-09-18 22:01:58.009 +03:00 [INF] Start creating income voucher with data: {"Code":"INC-777","Date":"2025-09-18T18:59:56.7360000Z","CurrencyCode":"EGP","FxRate":1,"Amount":500,"Description":"any","Counterparty":{"Type":"Vendor","Id":"3fa85f64-5717-4562-b3fc-2c963f66afa6","$type":"CounterpartyDto"},"CategoryId":"d880c62f-a545-41fe-876d-f76a4a6c1077","Source":{"Type":"BankAccount","Id":"4fe6e0a3-b441-45f6-96a4-0a1c499bbe56","$type":"WalletDto"},"TaxLines":[],"Attachments":[{"ContentDisposition":"form-data; name=\"Attachments\"; filename=\"Hossam-Reda-Tohamy-Node Js .pdf\"","ContentType":"application/pdf","Headers":[{"Key":"Content-Disposition","Value":["form-data; name=\"Attachments\"; filename=\"Hossam-Reda-Tohamy-Node Js .pdf\""],"$type":"KeyValuePair`2"},{"Key":"Content-Type","Value":["application/pdf"],"$type":"KeyValuePair`2"}],"Length":56007,"Name":"Attachments","FileName":"Hossam-Reda-Tohamy-Node Js .pdf","$type":"FormFile"}],"RecurrenceId":"7b6fd5d0-11ec-43b6-b9d6-eba78273f3fe","$type":"CreateIncomeVoucherDto"}
+2025-09-18 22:01:58.036 +03:00 [INF] Validation passed successfully.
+2025-09-18 22:01:58.052 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[@__id_0='4fe6e0a3-b441-45f6-96a4-0a1c499bbe56'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[JournalAccountId], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-18 22:01:58.061 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='d880c62f-a545-41fe-876d-f76a4a6c1077'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [g].[Id], [g].[Code], [g].[CompanyId], [g].[CreatedAt], [g].[CreatedById], [g].[IsActive], [g].[IsDeleted], [g].[IsLeaf], [g].[Name], [g].[Type], [g].[UpdatedAt], [g].[UpdatedById]
+FROM [GlAccounts] AS [g]
+WHERE [g].[Id] = @__id_0
+2025-09-18 22:01:58.068 +03:00 [INF] Business validations passed successfully.
+2025-09-18 22:01:58.069 +03:00 [INF] Voucher code generated/validated: INC-777
+2025-09-18 22:01:58.073 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__code_0='INC-777' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Vouchers] AS [v]
+        WHERE [v].[CompanyId] = 'd00cf078-c1ff-4feb-ae37-d66a827ae438' AND [v].[Code] = @__code_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-09-18 22:01:58.080 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='4fe6e0a3-b441-45f6-96a4-0a1c499bbe56'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[JournalAccountId], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-18 22:01:58.095 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='6b45a371-e2ae-4937-86b7-08ddf6e5863b', @p1='500' (Precision = 18) (Scale = 2), @p2=NULL (DbType = Guid), @p3='d880c62f-a545-41fe-876d-f76a4a6c1077', @p4='INC-777' (Nullable = false) (Size = 20), @p5='d00cf078-c1ff-4feb-ae37-d66a827ae438', @p6='3fa85f64-5717-4562-b3fc-2c963f66afa6' (Nullable = true), @p7='Vendor' (Size = 450), @p8='2025-09-18T19:01:58.0798509Z', @p9='5dbceb39-9677-46d7-bf8a-2eb914c55437', @p10=NULL (Size = 4000), @p11='EGP' (Nullable = false) (Size = 3), @p12='2025-09-18T18:59:56.7360000Z', @p13='any' (Size = 4000), @p14='1' (Precision = 18) (Scale = 6), @p15='True', @p16='False', @p17='f8cd0c63-50d7-4a69-a344-bc53be110f77', @p18=NULL (DbType = DateTime2), @p19=NULL (DbType = Guid), @p20='7b6fd5d0-11ec-43b6-b9d6-eba78273f3fe' (Nullable = true), @p21=NULL (DbType = Guid), @p22=NULL (DbType = DateTime2), @p23=NULL (DbType = Guid), @p24='0', @p25='Draft' (Nullable = false) (Size = 450), @p26=NULL (DbType = Guid), @p27='Income' (Nullable = false) (Size = 450), @p28=NULL (DbType = DateTime2), @p29=NULL (Size = 4000), @p30='4fe6e0a3-b441-45f6-96a4-0a1c499bbe56', @p31='BankAccount' (Nullable = false) (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Vouchers] ([Id], [Amount], [BankAccountId], [CategoryAccountId], [Code], [CompanyId], [CounterpartyId], [CounterpartyType], [CreatedAt], [CreatedBy], [CreatedById], [CurrencyCode], [Date], [Description], [FxRate], [IsActive], [IsDeleted], [JournalAccountId], [PostedAt], [PostedBy], [RecurrenceId], [RecurringScheduleId], [ReversedAt], [ReversedBy], [Revision], [Status], [TreasuryId], [Type], [UpdatedAt], [UpdatedById], [WalletId], [WalletType])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31);
+2025-09-18 22:01:58.109 +03:00 [INF] Voucher "6b45a371-e2ae-4937-86b7-08ddf6e5863b" saved successfully.
+2025-09-18 22:01:58.112 +03:00 [INF] 0 tax lines added for voucher "6b45a371-e2ae-4937-86b7-08ddf6e5863b".
+2025-09-18 22:01:58.114 +03:00 [ERR] Failed to save attachment Hossam-Reda-Tohamy-Node Js .pdf
+System.IO.DirectoryNotFoundException: Could not find a part of the path 'C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP\wwwroot\uploads\9d22ebe6-0120-44f7-b54f-b0c7f6934d5d_Hossam-Reda-Tohamy-Node Js .pdf'.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers.CreateIncomeVoucherHandler.Handle(CreateIncomeVoucherCommand request, CancellationToken cancellationToken) in C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP\Modules\Finance\Features\IncomesVoucher\Handlers\CreateIncomeVoucherHandler.cs:line 134
+2025-09-18 22:01:58.122 +03:00 [ERR] Unhandled error occurred while creating income voucher.
+System.IO.DirectoryNotFoundException: Could not find a part of the path 'C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP\wwwroot\uploads\9d22ebe6-0120-44f7-b54f-b0c7f6934d5d_Hossam-Reda-Tohamy-Node Js .pdf'.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers.CreateIncomeVoucherHandler.Handle(CreateIncomeVoucherCommand request, CancellationToken cancellationToken) in C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP\Modules\Finance\Features\IncomesVoucher\Handlers\CreateIncomeVoucherHandler.cs:line 134
+2025-09-18 22:01:58.129 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-18 22:01:58.133 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP) in 141.5946ms
+2025-09-18 22:01:58.135 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-18 22:01:58.137 +03:00 [INF] Request completed successfully with status code 400
+2025-09-18 22:01:58.140 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/IncomeVouchers - 400 null application/json; charset=utf-8 168.4176ms
+2025-09-18 22:09:58.452 +03:00 [INF] Starting web host...
+2025-09-18 22:09:58.777 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-18 22:09:58.781 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-18 22:09:58.859 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-18 22:09:58.861 +03:00 [INF] Hosting environment: Development
+2025-09-18 22:09:58.862 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-18 22:10:01.535 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-09-18 22:10:01.655 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 121.4189ms
+2025-09-18 22:10:01.700 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-18 22:10:01.712 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 11.0079ms
+2025-09-18 22:10:02.782 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-09-18 22:10:02.812 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 29.387ms
+2025-09-18 22:10:03.285 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-09-18 22:10:03.341 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 55.7829ms
+2025-09-18 22:11:39.336 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/IncomeVouchers - multipart/form-data; boundary=----WebKitFormBoundaryaL7F44B83sqwHW1H 58017
+2025-09-18 22:11:39.371 +03:00 [INF] CORS policy execution successful.
+2025-09-18 22:11:39.385 +03:00 [INF] Request started
+2025-09-18 22:11:39.388 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-18 22:11:39.409 +03:00 [INF] Route matched with {action = "CreateIncomeVoucher", controller = "IncomeVouchers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto]]] CreateIncomeVoucher(ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.CreateIncomeVoucherDto) on controller ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController (ModularERP).
+2025-09-18 22:11:39.414 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-18 22:11:40.051 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-09-18 22:11:40.264 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-18 22:11:40.292 +03:00 [INF] Start creating income voucher with data: {"Code":"INC-771","Date":"2025-09-18T19:10:16.4050000Z","CurrencyCode":"EGP","FxRate":1,"Amount":500,"Description":"any","Counterparty":{"Type":"Vendor","Id":"3fa85f64-5717-4562-b3fc-2c963f66afa6","$type":"CounterpartyDto"},"CategoryId":"d880c62f-a545-41fe-876d-f76a4a6c1077","Source":{"Type":"BankAccount","Id":"4fe6e0a3-b441-45f6-96a4-0a1c499bbe56","$type":"WalletDto"},"TaxLines":[],"Attachments":[{"ContentDisposition":"form-data; name=\"Attachments\"; filename=\"Hossam-Reda-Tohamy-Node Js .pdf\"","ContentType":"application/pdf","Headers":[{"Key":"Content-Disposition","Value":["form-data; name=\"Attachments\"; filename=\"Hossam-Reda-Tohamy-Node Js .pdf\""],"$type":"KeyValuePair`2"},{"Key":"Content-Type","Value":["application/pdf"],"$type":"KeyValuePair`2"}],"Length":56007,"Name":"Attachments","FileName":"Hossam-Reda-Tohamy-Node Js .pdf","$type":"FormFile"}],"RecurrenceId":"7b6fd5d0-11ec-43b6-b9d6-eba78273f3fe","$type":"CreateIncomeVoucherDto"}
+2025-09-18 22:11:40.339 +03:00 [INF] Validation passed successfully.
+2025-09-18 22:11:40.749 +03:00 [INF] Executed DbCommand (26ms) [Parameters=[@__id_0='4fe6e0a3-b441-45f6-96a4-0a1c499bbe56'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[JournalAccountId], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-18 22:11:40.849 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='d880c62f-a545-41fe-876d-f76a4a6c1077'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [g].[Id], [g].[Code], [g].[CompanyId], [g].[CreatedAt], [g].[CreatedById], [g].[IsActive], [g].[IsDeleted], [g].[IsLeaf], [g].[Name], [g].[Type], [g].[UpdatedAt], [g].[UpdatedById]
+FROM [GlAccounts] AS [g]
+WHERE [g].[Id] = @__id_0
+2025-09-18 22:11:40.878 +03:00 [INF] Business validations passed successfully.
+2025-09-18 22:11:40.879 +03:00 [INF] Voucher code generated/validated: INC-771
+2025-09-18 22:11:40.900 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__code_0='INC-771' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Vouchers] AS [v]
+        WHERE [v].[CompanyId] = 'd00cf078-c1ff-4feb-ae37-d66a827ae438' AND [v].[Code] = @__code_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-09-18 22:11:40.914 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='4fe6e0a3-b441-45f6-96a4-0a1c499bbe56'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[JournalAccountId], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-18 22:11:41.131 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[@p0='26f42863-a68b-4a7e-5ddf-08ddf6e732f7', @p1='500' (Precision = 18) (Scale = 2), @p2=NULL (DbType = Guid), @p3='d880c62f-a545-41fe-876d-f76a4a6c1077', @p4='INC-771' (Nullable = false) (Size = 20), @p5='d00cf078-c1ff-4feb-ae37-d66a827ae438', @p6='3fa85f64-5717-4562-b3fc-2c963f66afa6' (Nullable = true), @p7='Vendor' (Size = 450), @p8='2025-09-18T19:11:40.9112817Z', @p9='5dbceb39-9677-46d7-bf8a-2eb914c55437', @p10=NULL (Size = 4000), @p11='EGP' (Nullable = false) (Size = 3), @p12='2025-09-18T19:10:16.4050000Z', @p13='any' (Size = 4000), @p14='1' (Precision = 18) (Scale = 6), @p15='True', @p16='False', @p17='f8cd0c63-50d7-4a69-a344-bc53be110f77', @p18=NULL (DbType = DateTime2), @p19=NULL (DbType = Guid), @p20='7b6fd5d0-11ec-43b6-b9d6-eba78273f3fe' (Nullable = true), @p21=NULL (DbType = Guid), @p22=NULL (DbType = DateTime2), @p23=NULL (DbType = Guid), @p24='0', @p25='Draft' (Nullable = false) (Size = 450), @p26=NULL (DbType = Guid), @p27='Income' (Nullable = false) (Size = 450), @p28=NULL (DbType = DateTime2), @p29=NULL (Size = 4000), @p30='4fe6e0a3-b441-45f6-96a4-0a1c499bbe56', @p31='BankAccount' (Nullable = false) (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Vouchers] ([Id], [Amount], [BankAccountId], [CategoryAccountId], [Code], [CompanyId], [CounterpartyId], [CounterpartyType], [CreatedAt], [CreatedBy], [CreatedById], [CurrencyCode], [Date], [Description], [FxRate], [IsActive], [IsDeleted], [JournalAccountId], [PostedAt], [PostedBy], [RecurrenceId], [RecurringScheduleId], [ReversedAt], [ReversedBy], [Revision], [Status], [TreasuryId], [Type], [UpdatedAt], [UpdatedById], [WalletId], [WalletType])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31);
+2025-09-18 22:11:41.144 +03:00 [INF] Voucher "26f42863-a68b-4a7e-5ddf-08ddf6e732f7" saved successfully.
+2025-09-18 22:11:41.150 +03:00 [INF] 0 tax lines added for voucher "26f42863-a68b-4a7e-5ddf-08ddf6e732f7".
+2025-09-18 22:11:41.155 +03:00 [INF] Attachment Hossam-Reda-Tohamy-Node Js .pdf saved at C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP\wwwroot\uploads\ed2708de-d910-4cd1-b7e2-8799fc7c4df1_Hossam-Reda-Tohamy-Node Js .pdf.
+2025-09-18 22:11:41.193 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='09fed8e3-3e64-474c-8bfa-08ddf6e73318', @p1=NULL (Size = 64), @p2='2025-09-18T19:11:41.1551290Z', @p3=NULL (Size = 4000), @p4='/uploads/ed2708de-d910-4cd1-b7e2-8799fc7c4df1_Hossam-Reda-Tohamy-Node Js .pdf' (Nullable = false) (Size = 500), @p5='0', @p6='Hossam-Reda-Tohamy-Node Js .pdf' (Nullable = false) (Size = 255), @p7='True', @p8='False', @p9='' (Nullable = false) (Size = 100), @p10=NULL (DbType = DateTime2), @p11=NULL (Size = 4000), @p12='2025-09-18T19:11:41.1552915Z', @p13='5dbceb39-9677-46d7-bf8a-2eb914c55437', @p14='26f42863-a68b-4a7e-5ddf-08ddf6e732f7'], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Attachments] ([Id], [Checksum], [CreatedAt], [CreatedById], [FilePath], [FileSize], [Filename], [IsActive], [IsDeleted], [MimeType], [UpdatedAt], [UpdatedById], [UploadedAt], [UploadedBy], [VoucherId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+2025-09-18 22:11:41.199 +03:00 [INF] All attachments saved successfully for voucher "26f42863-a68b-4a7e-5ddf-08ddf6e732f7".
+2025-09-18 22:11:41.205 +03:00 [INF] Income voucher "26f42863-a68b-4a7e-5ddf-08ddf6e732f7" created successfully.
+2025-09-18 22:11:41.214 +03:00 [INF] Executing CreatedAtActionResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-18 22:11:41.250 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP) in 1836.4823ms
+2025-09-18 22:11:41.253 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-18 22:11:41.255 +03:00 [INF] Request completed successfully with status code 201
+2025-09-18 22:11:41.261 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/IncomeVouchers - 201 null application/json; charset=utf-8 1925.1749ms
+2025-09-18 22:14:49.221 +03:00 [INF] Starting web host...
+2025-09-18 22:14:49.608 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-18 22:14:49.612 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-18 22:14:49.674 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-18 22:14:49.676 +03:00 [INF] Hosting environment: Development
+2025-09-18 22:14:49.677 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-18 22:14:55.486 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/IncomeVouchers - multipart/form-data; boundary=----WebKitFormBoundaryVy3eyLBopiXoue1n 58017
+2025-09-18 22:14:55.513 +03:00 [INF] CORS policy execution successful.
+2025-09-18 22:14:55.524 +03:00 [INF] Request started
+2025-09-18 22:14:55.527 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-18 22:14:55.545 +03:00 [INF] Route matched with {action = "CreateIncomeVoucher", controller = "IncomeVouchers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto]]] CreateIncomeVoucher(ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.CreateIncomeVoucherDto) on controller ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController (ModularERP).
+2025-09-18 22:14:55.551 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-18 22:14:56.201 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-09-18 22:14:56.415 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-18 22:14:56.442 +03:00 [INF] Start creating income voucher with data: {"Code":"INC-751","Date":"2025-09-18T19:10:16.4050000Z","CurrencyCode":"EGP","FxRate":1,"Amount":500,"Description":"any","Counterparty":{"Type":"Vendor","Id":"3fa85f64-5717-4562-b3fc-2c963f66afa6","$type":"CounterpartyDto"},"CategoryId":"d880c62f-a545-41fe-876d-f76a4a6c1077","Source":{"Type":"BankAccount","Id":"4fe6e0a3-b441-45f6-96a4-0a1c499bbe56","$type":"WalletDto"},"TaxLines":[],"Attachments":[{"ContentDisposition":"form-data; name=\"Attachments\"; filename=\"Hossam-Reda-Tohamy-Node Js .pdf\"","ContentType":"application/pdf","Headers":[{"Key":"Content-Disposition","Value":["form-data; name=\"Attachments\"; filename=\"Hossam-Reda-Tohamy-Node Js .pdf\""],"$type":"KeyValuePair`2"},{"Key":"Content-Type","Value":["application/pdf"],"$type":"KeyValuePair`2"}],"Length":56007,"Name":"Attachments","FileName":"Hossam-Reda-Tohamy-Node Js .pdf","$type":"FormFile"}],"RecurrenceId":"7b6fd5d0-11ec-43b6-b9d6-eba78273f3fe","$type":"CreateIncomeVoucherDto"}
+2025-09-18 22:14:56.490 +03:00 [INF] Validation passed successfully.
+2025-09-18 22:14:56.923 +03:00 [INF] Executed DbCommand (36ms) [Parameters=[@__id_0='4fe6e0a3-b441-45f6-96a4-0a1c499bbe56'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[JournalAccountId], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-18 22:14:57.046 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='d880c62f-a545-41fe-876d-f76a4a6c1077'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [g].[Id], [g].[Code], [g].[CompanyId], [g].[CreatedAt], [g].[CreatedById], [g].[IsActive], [g].[IsDeleted], [g].[IsLeaf], [g].[Name], [g].[Type], [g].[UpdatedAt], [g].[UpdatedById]
+FROM [GlAccounts] AS [g]
+WHERE [g].[Id] = @__id_0
+2025-09-18 22:14:57.089 +03:00 [INF] Business validations passed successfully.
+2025-09-18 22:14:57.091 +03:00 [INF] Voucher code generated/validated: INC-751
+2025-09-18 22:14:57.117 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__code_0='INC-751' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Vouchers] AS [v]
+        WHERE [v].[CompanyId] = 'd00cf078-c1ff-4feb-ae37-d66a827ae438' AND [v].[Code] = @__code_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-09-18 22:14:57.137 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='4fe6e0a3-b441-45f6-96a4-0a1c499bbe56'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[JournalAccountId], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-18 22:14:57.420 +03:00 [INF] Executed DbCommand (14ms) [Parameters=[@p0='2887c90a-c023-4944-dec6-08ddf6e7a7ed', @p1='500' (Precision = 18) (Scale = 2), @p2=NULL (DbType = Guid), @p3='d880c62f-a545-41fe-876d-f76a4a6c1077', @p4='INC-751' (Nullable = false) (Size = 20), @p5='d00cf078-c1ff-4feb-ae37-d66a827ae438', @p6='3fa85f64-5717-4562-b3fc-2c963f66afa6' (Nullable = true), @p7='Vendor' (Size = 450), @p8='2025-09-18T19:14:57.1346265Z', @p9='5dbceb39-9677-46d7-bf8a-2eb914c55437', @p10=NULL (Size = 4000), @p11='EGP' (Nullable = false) (Size = 3), @p12='2025-09-18T19:10:16.4050000Z', @p13='any' (Size = 4000), @p14='1' (Precision = 18) (Scale = 6), @p15='True', @p16='False', @p17='f8cd0c63-50d7-4a69-a344-bc53be110f77', @p18=NULL (DbType = DateTime2), @p19=NULL (DbType = Guid), @p20='7b6fd5d0-11ec-43b6-b9d6-eba78273f3fe' (Nullable = true), @p21=NULL (DbType = Guid), @p22=NULL (DbType = DateTime2), @p23=NULL (DbType = Guid), @p24='0', @p25='Draft' (Nullable = false) (Size = 450), @p26=NULL (DbType = Guid), @p27='Income' (Nullable = false) (Size = 450), @p28=NULL (DbType = DateTime2), @p29=NULL (Size = 4000), @p30='4fe6e0a3-b441-45f6-96a4-0a1c499bbe56', @p31='BankAccount' (Nullable = false) (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Vouchers] ([Id], [Amount], [BankAccountId], [CategoryAccountId], [Code], [CompanyId], [CounterpartyId], [CounterpartyType], [CreatedAt], [CreatedBy], [CreatedById], [CurrencyCode], [Date], [Description], [FxRate], [IsActive], [IsDeleted], [JournalAccountId], [PostedAt], [PostedBy], [RecurrenceId], [RecurringScheduleId], [ReversedAt], [ReversedBy], [Revision], [Status], [TreasuryId], [Type], [UpdatedAt], [UpdatedById], [WalletId], [WalletType])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31);
+2025-09-18 22:14:57.443 +03:00 [INF] Voucher "2887c90a-c023-4944-dec6-08ddf6e7a7ed" saved successfully.
+2025-09-18 22:14:57.450 +03:00 [INF] 0 tax lines added for voucher "2887c90a-c023-4944-dec6-08ddf6e7a7ed".
+2025-09-18 22:14:57.456 +03:00 [INF] Attachment Hossam-Reda-Tohamy-Node Js .pdf saved at C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP\wwwroot\uploads\aa792792-b448-4c51-ac3d-913c1d9e7d8d_Hossam-Reda-Tohamy-Node Js .pdf.
+2025-09-18 22:14:57.512 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@p0='fcedcb8e-f0a0-4be0-debf-08ddf6e7a819', @p1=NULL (Size = 64), @p2='2025-09-18T19:14:57.4562547Z', @p3=NULL (Size = 4000), @p4='/uploads/aa792792-b448-4c51-ac3d-913c1d9e7d8d_Hossam-Reda-Tohamy-Node Js .pdf' (Nullable = false) (Size = 500), @p5='0', @p6='Hossam-Reda-Tohamy-Node Js .pdf' (Nullable = false) (Size = 255), @p7='True', @p8='False', @p9='' (Nullable = false) (Size = 100), @p10=NULL (DbType = DateTime2), @p11=NULL (Size = 4000), @p12='2025-09-18T19:14:57.4565209Z', @p13='5dbceb39-9677-46d7-bf8a-2eb914c55437', @p14='2887c90a-c023-4944-dec6-08ddf6e7a7ed'], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Attachments] ([Id], [Checksum], [CreatedAt], [CreatedById], [FilePath], [FileSize], [Filename], [IsActive], [IsDeleted], [MimeType], [UpdatedAt], [UpdatedById], [UploadedAt], [UploadedBy], [VoucherId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+2025-09-18 22:14:57.520 +03:00 [INF] All attachments saved successfully for voucher "2887c90a-c023-4944-dec6-08ddf6e7a7ed".
+2025-09-18 22:14:57.533 +03:00 [INF] Income voucher "2887c90a-c023-4944-dec6-08ddf6e7a7ed" created successfully.
+2025-09-18 22:14:57.544 +03:00 [INF] Executing CreatedAtActionResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-18 22:14:57.592 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP) in 2040.7653ms
+2025-09-18 22:14:57.594 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-18 22:14:57.597 +03:00 [INF] Request completed successfully with status code 201
+2025-09-18 22:14:57.606 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/IncomeVouchers - 201 null application/json; charset=utf-8 2121.1844ms
+2025-09-18 22:16:55.908 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/IncomeVouchers/2887c90a-c023-4944-dec6-08ddf6e7a7ed - null null
+2025-09-18 22:16:55.944 +03:00 [INF] Request started
+2025-09-18 22:16:55.948 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.GetIncomeVoucher (ModularERP)'
+2025-09-18 22:16:55.964 +03:00 [INF] Route matched with {action = "GetIncomeVoucher", controller = "IncomeVouchers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto]]] GetIncomeVoucher(System.Guid) on controller ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController (ModularERP).
+2025-09-18 22:16:56.033 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='2887c90a-c023-4944-dec6-08ddf6e7a7ed'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[Amount], [v].[BankAccountId], [v].[CategoryAccountId], [v].[Code], [v].[CompanyId], [v].[CounterpartyId], [v].[CounterpartyType], [v].[CreatedAt], [v].[CreatedBy], [v].[CreatedById], [v].[CurrencyCode], [v].[Date], [v].[Description], [v].[FxRate], [v].[IsActive], [v].[IsDeleted], [v].[JournalAccountId], [v].[PostedAt], [v].[PostedBy], [v].[RecurrenceId], [v].[RecurringScheduleId], [v].[ReversedAt], [v].[ReversedBy], [v].[Revision], [v].[Status], [v].[TreasuryId], [v].[Type], [v].[UpdatedAt], [v].[UpdatedById], [v].[WalletId], [v].[WalletType]
+FROM [Vouchers] AS [v]
+WHERE [v].[Id] = @__id_0
+2025-09-18 22:16:56.067 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__voucher_Id_0='2887c90a-c023-4944-dec6-08ddf6e7a7ed'], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[BaseAmount], [v].[CreatedAt], [v].[CreatedById], [v].[Direction], [v].[IsActive], [v].[IsDeleted], [v].[IsWithholding], [v].[TaxAmount], [v].[TaxId], [v].[UpdatedAt], [v].[UpdatedById], [v].[VoucherId]
+FROM [VoucherTaxes] AS [v]
+WHERE [v].[IsDeleted] = CAST(0 AS bit) AND [v].[VoucherId] = @__voucher_Id_0
+2025-09-18 22:16:56.082 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__voucher_Id_0='2887c90a-c023-4944-dec6-08ddf6e7a7ed'], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Checksum], [a].[CreatedAt], [a].[CreatedById], [a].[FilePath], [a].[FileSize], [a].[Filename], [a].[IsActive], [a].[IsDeleted], [a].[MimeType], [a].[UpdatedAt], [a].[UpdatedById], [a].[UploadedAt], [a].[UploadedBy], [a].[VoucherId]
+FROM [Attachments] AS [a]
+WHERE [a].[IsDeleted] = CAST(0 AS bit) AND [a].[VoucherId] = @__voucher_Id_0
+2025-09-18 22:16:56.090 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-18 22:16:56.094 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.GetIncomeVoucher (ModularERP) in 124.3304ms
+2025-09-18 22:16:56.096 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.GetIncomeVoucher (ModularERP)'
+2025-09-18 22:16:56.099 +03:00 [INF] Request completed successfully with status code 200
+2025-09-18 22:16:56.101 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/IncomeVouchers/2887c90a-c023-4944-dec6-08ddf6e7a7ed - 200 null application/json; charset=utf-8 193.032ms
+2025-09-18 22:17:14.099 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/IncomeVouchers/0ab8d8b1-6e73-405f-9c5d-08ddf63c8c56 - null null
+2025-09-18 22:17:14.107 +03:00 [INF] Request started
+2025-09-18 22:17:14.108 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.GetIncomeVoucher (ModularERP)'
+2025-09-18 22:17:14.113 +03:00 [INF] Route matched with {action = "GetIncomeVoucher", controller = "IncomeVouchers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto]]] GetIncomeVoucher(System.Guid) on controller ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController (ModularERP).
+2025-09-18 22:17:14.127 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='0ab8d8b1-6e73-405f-9c5d-08ddf63c8c56'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[Amount], [v].[BankAccountId], [v].[CategoryAccountId], [v].[Code], [v].[CompanyId], [v].[CounterpartyId], [v].[CounterpartyType], [v].[CreatedAt], [v].[CreatedBy], [v].[CreatedById], [v].[CurrencyCode], [v].[Date], [v].[Description], [v].[FxRate], [v].[IsActive], [v].[IsDeleted], [v].[JournalAccountId], [v].[PostedAt], [v].[PostedBy], [v].[RecurrenceId], [v].[RecurringScheduleId], [v].[ReversedAt], [v].[ReversedBy], [v].[Revision], [v].[Status], [v].[TreasuryId], [v].[Type], [v].[UpdatedAt], [v].[UpdatedById], [v].[WalletId], [v].[WalletType]
+FROM [Vouchers] AS [v]
+WHERE [v].[Id] = @__id_0
+2025-09-18 22:17:14.135 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__voucher_Id_0='0ab8d8b1-6e73-405f-9c5d-08ddf63c8c56'], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[BaseAmount], [v].[CreatedAt], [v].[CreatedById], [v].[Direction], [v].[IsActive], [v].[IsDeleted], [v].[IsWithholding], [v].[TaxAmount], [v].[TaxId], [v].[UpdatedAt], [v].[UpdatedById], [v].[VoucherId]
+FROM [VoucherTaxes] AS [v]
+WHERE [v].[IsDeleted] = CAST(0 AS bit) AND [v].[VoucherId] = @__voucher_Id_0
+2025-09-18 22:17:14.160 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__voucher_Id_0='0ab8d8b1-6e73-405f-9c5d-08ddf63c8c56'], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Checksum], [a].[CreatedAt], [a].[CreatedById], [a].[FilePath], [a].[FileSize], [a].[Filename], [a].[IsActive], [a].[IsDeleted], [a].[MimeType], [a].[UpdatedAt], [a].[UpdatedById], [a].[UploadedAt], [a].[UploadedBy], [a].[VoucherId]
+FROM [Attachments] AS [a]
+WHERE [a].[IsDeleted] = CAST(0 AS bit) AND [a].[VoucherId] = @__voucher_Id_0
+2025-09-18 22:17:14.170 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-18 22:17:14.174 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.GetIncomeVoucher (ModularERP) in 58.2871ms
+2025-09-18 22:17:14.176 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.GetIncomeVoucher (ModularERP)'
+2025-09-18 22:17:14.178 +03:00 [INF] Request completed successfully with status code 200
+2025-09-18 22:17:14.179 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/IncomeVouchers/0ab8d8b1-6e73-405f-9c5d-08ddf63c8c56 - 200 null application/json; charset=utf-8 79.4365ms
+2025-09-18 22:22:26.454 +03:00 [INF] Starting web host...
+2025-09-18 22:22:26.845 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-18 22:22:26.848 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-18 22:22:26.910 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-18 22:22:26.912 +03:00 [INF] Hosting environment: Development
+2025-09-18 22:22:26.913 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-18 22:22:35.382 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-09-18 22:22:35.494 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 112.366ms
+2025-09-18 22:22:35.518 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-18 22:22:35.530 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 11.0448ms
+2025-09-18 22:22:36.622 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-09-18 22:22:36.657 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 34.8339ms
+2025-09-18 22:22:36.851 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-09-18 22:22:36.952 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 100.7372ms
+2025-09-18 22:23:48.731 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/IncomeVouchers - multipart/form-data; boundary=----WebKitFormBoundaryy1Obn8uJiOl7dYhi 58017
+2025-09-18 22:23:48.740 +03:00 [INF] CORS policy execution successful.
+2025-09-18 22:23:48.750 +03:00 [INF] Request started
+2025-09-18 22:23:48.754 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-18 22:23:48.774 +03:00 [INF] Route matched with {action = "CreateIncomeVoucher", controller = "IncomeVouchers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto]]] CreateIncomeVoucher(ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.CreateIncomeVoucherDto) on controller ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController (ModularERP).
+2025-09-18 22:23:48.779 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-18 22:23:49.412 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-09-18 22:23:49.629 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-18 22:23:49.658 +03:00 [INF] Start creating income voucher with data: {"Code":"INC-774","Date":"2025-09-18T19:22:40.3180000Z","CurrencyCode":"EGP","FxRate":1,"Amount":500,"Description":"anu","Counterparty":{"Type":"Vendor","Id":"3fa85f64-5717-4562-b3fc-2c963f66afa6","$type":"CounterpartyDto"},"CategoryId":"d880c62f-a545-41fe-876d-f76a4a6c1077","Source":{"Type":"BankAccount","Id":"4fe6e0a3-b441-45f6-96a4-0a1c499bbe56","$type":"WalletDto"},"TaxLines":[],"Attachments":[{"ContentDisposition":"form-data; name=\"Attachments\"; filename=\"Hossam-Reda-Tohamy-Node Js .pdf\"","ContentType":"application/pdf","Headers":[{"Key":"Content-Disposition","Value":["form-data; name=\"Attachments\"; filename=\"Hossam-Reda-Tohamy-Node Js .pdf\""],"$type":"KeyValuePair`2"},{"Key":"Content-Type","Value":["application/pdf"],"$type":"KeyValuePair`2"}],"Length":56007,"Name":"Attachments","FileName":"Hossam-Reda-Tohamy-Node Js .pdf","$type":"FormFile"}],"RecurrenceId":"7b6fd5d0-11ec-43b6-b9d6-eba78273f3fe","$type":"CreateIncomeVoucherDto"}
+2025-09-18 22:23:49.706 +03:00 [INF] Validation passed successfully.
+2025-09-18 22:23:50.115 +03:00 [INF] Executed DbCommand (26ms) [Parameters=[@__id_0='4fe6e0a3-b441-45f6-96a4-0a1c499bbe56'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[JournalAccountId], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-18 22:23:50.214 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='d880c62f-a545-41fe-876d-f76a4a6c1077'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [g].[Id], [g].[Code], [g].[CompanyId], [g].[CreatedAt], [g].[CreatedById], [g].[IsActive], [g].[IsDeleted], [g].[IsLeaf], [g].[Name], [g].[Type], [g].[UpdatedAt], [g].[UpdatedById]
+FROM [GlAccounts] AS [g]
+WHERE [g].[Id] = @__id_0
+2025-09-18 22:23:50.242 +03:00 [INF] Business validations passed successfully.
+2025-09-18 22:23:50.263 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__code_0='INC-774' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Vouchers] AS [v]
+        WHERE [v].[CompanyId] = 'd00cf078-c1ff-4feb-ae37-d66a827ae438' AND [v].[Code] = @__code_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-09-18 22:23:50.278 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='4fe6e0a3-b441-45f6-96a4-0a1c499bbe56'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[JournalAccountId], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-18 22:23:50.587 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@p0='b2861f0b-ca3d-49cf-74b5-08ddf6e8e5b3', @p1='500' (Precision = 18) (Scale = 2), @p2=NULL (DbType = Guid), @p3='d880c62f-a545-41fe-876d-f76a4a6c1077', @p4='INC-774' (Nullable = false) (Size = 20), @p5='d00cf078-c1ff-4feb-ae37-d66a827ae438', @p6='3fa85f64-5717-4562-b3fc-2c963f66afa6' (Nullable = true), @p7='Vendor' (Size = 450), @p8='2025-09-18T19:23:50.2752599Z', @p9='5dbceb39-9677-46d7-bf8a-2eb914c55437', @p10=NULL (Size = 4000), @p11='EGP' (Nullable = false) (Size = 3), @p12='2025-09-18T19:22:40.3180000Z', @p13='anu' (Size = 4000), @p14='1' (Precision = 18) (Scale = 6), @p15='True', @p16='False', @p17='f8cd0c63-50d7-4a69-a344-bc53be110f77', @p18=NULL (DbType = DateTime2), @p19=NULL (DbType = Guid), @p20='7b6fd5d0-11ec-43b6-b9d6-eba78273f3fe' (Nullable = true), @p21=NULL (DbType = Guid), @p22=NULL (DbType = DateTime2), @p23=NULL (DbType = Guid), @p24='0', @p25='Draft' (Nullable = false) (Size = 450), @p26=NULL (DbType = Guid), @p27='Income' (Nullable = false) (Size = 450), @p28=NULL (DbType = DateTime2), @p29=NULL (Size = 4000), @p30='4fe6e0a3-b441-45f6-96a4-0a1c499bbe56', @p31='BankAccount' (Nullable = false) (Size = 450), @p32='edbff829-a578-4af0-dc35-08ddf6e8e5c3', @p33=NULL (Size = 64), @p34='2025-09-18T19:23:50.4015894Z', @p35=NULL (Size = 4000), @p36='/uploads/feaa656d-63f7-4eed-b333-81fd67303bc5_Hossam-Reda-Tohamy-Node Js .pdf' (Nullable = false) (Size = 500), @p37='0', @p38='Hossam-Reda-Tohamy-Node Js .pdf' (Nullable = false) (Size = 255), @p39='True', @p40='False', @p41='' (Nullable = false) (Size = 100), @p42=NULL (DbType = DateTime2), @p43=NULL (Size = 4000), @p44='2025-09-18T19:23:50.4022527Z', @p45='5dbceb39-9677-46d7-bf8a-2eb914c55437', @p46='b2861f0b-ca3d-49cf-74b5-08ddf6e8e5b3'], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Vouchers] ([Id], [Amount], [BankAccountId], [CategoryAccountId], [Code], [CompanyId], [CounterpartyId], [CounterpartyType], [CreatedAt], [CreatedBy], [CreatedById], [CurrencyCode], [Date], [Description], [FxRate], [IsActive], [IsDeleted], [JournalAccountId], [PostedAt], [PostedBy], [RecurrenceId], [RecurringScheduleId], [ReversedAt], [ReversedBy], [Revision], [Status], [TreasuryId], [Type], [UpdatedAt], [UpdatedById], [WalletId], [WalletType])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31);
+INSERT INTO [Attachments] ([Id], [Checksum], [CreatedAt], [CreatedById], [FilePath], [FileSize], [Filename], [IsActive], [IsDeleted], [MimeType], [UpdatedAt], [UpdatedById], [UploadedAt], [UploadedBy], [VoucherId])
+VALUES (@p32, @p33, @p34, @p35, @p36, @p37, @p38, @p39, @p40, @p41, @p42, @p43, @p44, @p45, @p46);
+2025-09-18 22:23:50.609 +03:00 [INF] Voucher "b2861f0b-ca3d-49cf-74b5-08ddf6e8e5b3" created with 0 taxes and 1 attachments.
+2025-09-18 22:23:50.623 +03:00 [INF] Executing CreatedAtActionResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-18 22:23:50.658 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP) in 1878.6235ms
+2025-09-18 22:23:50.660 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-18 22:23:50.662 +03:00 [INF] Request completed successfully with status code 201
+2025-09-18 22:23:50.668 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/IncomeVouchers - 201 null application/json; charset=utf-8 1937.0989ms
+2025-09-18 22:24:22.340 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/api/IncomeVouchers/b2861f0b-ca3d-49cf-74b5-08ddf6e8e5b3 - null null
+2025-09-18 22:24:22.347 +03:00 [INF] Request started
+2025-09-18 22:24:22.348 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.GetIncomeVoucher (ModularERP)'
+2025-09-18 22:24:22.356 +03:00 [INF] Route matched with {action = "GetIncomeVoucher", controller = "IncomeVouchers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto]]] GetIncomeVoucher(System.Guid) on controller ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController (ModularERP).
+2025-09-18 22:24:22.419 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='b2861f0b-ca3d-49cf-74b5-08ddf6e8e5b3'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[Amount], [v].[BankAccountId], [v].[CategoryAccountId], [v].[Code], [v].[CompanyId], [v].[CounterpartyId], [v].[CounterpartyType], [v].[CreatedAt], [v].[CreatedBy], [v].[CreatedById], [v].[CurrencyCode], [v].[Date], [v].[Description], [v].[FxRate], [v].[IsActive], [v].[IsDeleted], [v].[JournalAccountId], [v].[PostedAt], [v].[PostedBy], [v].[RecurrenceId], [v].[RecurringScheduleId], [v].[ReversedAt], [v].[ReversedBy], [v].[Revision], [v].[Status], [v].[TreasuryId], [v].[Type], [v].[UpdatedAt], [v].[UpdatedById], [v].[WalletId], [v].[WalletType]
+FROM [Vouchers] AS [v]
+WHERE [v].[Id] = @__id_0
+2025-09-18 22:24:22.441 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__voucher_Id_0='b2861f0b-ca3d-49cf-74b5-08ddf6e8e5b3'], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[BaseAmount], [v].[CreatedAt], [v].[CreatedById], [v].[Direction], [v].[IsActive], [v].[IsDeleted], [v].[IsWithholding], [v].[TaxAmount], [v].[TaxId], [v].[UpdatedAt], [v].[UpdatedById], [v].[VoucherId]
+FROM [VoucherTaxes] AS [v]
+WHERE [v].[IsDeleted] = CAST(0 AS bit) AND [v].[VoucherId] = @__voucher_Id_0
+2025-09-18 22:24:22.454 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__voucher_Id_0='b2861f0b-ca3d-49cf-74b5-08ddf6e8e5b3'], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Checksum], [a].[CreatedAt], [a].[CreatedById], [a].[FilePath], [a].[FileSize], [a].[Filename], [a].[IsActive], [a].[IsDeleted], [a].[MimeType], [a].[UpdatedAt], [a].[UpdatedById], [a].[UploadedAt], [a].[UploadedBy], [a].[VoucherId]
+FROM [Attachments] AS [a]
+WHERE [a].[IsDeleted] = CAST(0 AS bit) AND [a].[VoucherId] = @__voucher_Id_0
+2025-09-18 22:24:22.461 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-18 22:24:22.462 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.GetIncomeVoucher (ModularERP) in 101.5007ms
+2025-09-18 22:24:22.464 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.GetIncomeVoucher (ModularERP)'
+2025-09-18 22:24:22.465 +03:00 [INF] Request completed successfully with status code 200
+2025-09-18 22:24:22.467 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/api/IncomeVouchers/b2861f0b-ca3d-49cf-74b5-08ddf6e8e5b3 - 200 null application/json; charset=utf-8 126.0313ms
+2025-09-18 22:30:50.183 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/IncomeVouchers - multipart/form-data; boundary=----WebKitFormBoundary2SUBoA8q06kB0BGx 58017
+2025-09-18 22:30:50.194 +03:00 [INF] CORS policy execution successful.
+2025-09-18 22:30:50.197 +03:00 [INF] Request started
+2025-09-18 22:30:50.200 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-18 22:30:50.201 +03:00 [INF] Route matched with {action = "CreateIncomeVoucher", controller = "IncomeVouchers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto]]] CreateIncomeVoucher(ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.CreateIncomeVoucherDto) on controller ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController (ModularERP).
+2025-09-18 22:30:50.219 +03:00 [INF] Start creating income voucher with data: {"Code":"INC-774","Date":"2025-09-18T19:22:40.3180000Z","CurrencyCode":"EGP","FxRate":1,"Amount":500,"Description":"anu","Counterparty":{"Type":"Vendor","Id":"3fa85f64-5717-4562-b3fc-2c963f66afa6","$type":"CounterpartyDto"},"CategoryId":"d880c62f-a545-41fe-876d-f76a4a6c1077","Source":{"Type":"BankAccount","Id":"4fe6e0a3-b441-45f6-96a4-0a1c499bbe56","$type":"WalletDto"},"TaxLines":[],"Attachments":[{"ContentDisposition":"form-data; name=\"Attachments\"; filename=\"Hossam-Reda-Tohamy-Node Js .pdf\"","ContentType":"application/pdf","Headers":[{"Key":"Content-Disposition","Value":["form-data; name=\"Attachments\"; filename=\"Hossam-Reda-Tohamy-Node Js .pdf\""],"$type":"KeyValuePair`2"},{"Key":"Content-Type","Value":["application/pdf"],"$type":"KeyValuePair`2"}],"Length":56007,"Name":"Attachments","FileName":"Hossam-Reda-Tohamy-Node Js .pdf","$type":"FormFile"}],"RecurrenceId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","$type":"CreateIncomeVoucherDto"}
+2025-09-18 22:30:50.245 +03:00 [INF] Validation passed successfully.
+2025-09-18 22:30:50.254 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='4fe6e0a3-b441-45f6-96a4-0a1c499bbe56'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[JournalAccountId], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-18 22:30:50.262 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='d880c62f-a545-41fe-876d-f76a4a6c1077'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [g].[Id], [g].[Code], [g].[CompanyId], [g].[CreatedAt], [g].[CreatedById], [g].[IsActive], [g].[IsDeleted], [g].[IsLeaf], [g].[Name], [g].[Type], [g].[UpdatedAt], [g].[UpdatedById]
+FROM [GlAccounts] AS [g]
+WHERE [g].[Id] = @__id_0
+2025-09-18 22:30:50.267 +03:00 [INF] Business validations passed successfully.
+2025-09-18 22:30:50.273 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__code_0='INC-774' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Vouchers] AS [v]
+        WHERE [v].[CompanyId] = 'd00cf078-c1ff-4feb-ae37-d66a827ae438' AND [v].[Code] = @__code_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-09-18 22:30:50.278 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-18 22:30:50.284 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP) in 79.5465ms
+2025-09-18 22:30:50.286 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-18 22:30:50.287 +03:00 [INF] Request completed successfully with status code 400
+2025-09-18 22:30:50.290 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/IncomeVouchers - 400 null application/json; charset=utf-8 106.4532ms
+2025-09-18 22:30:57.198 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/IncomeVouchers - multipart/form-data; boundary=----WebKitFormBoundaryFvfedkanE4vJXOkl 58017
+2025-09-18 22:30:57.202 +03:00 [INF] CORS policy execution successful.
+2025-09-18 22:30:57.203 +03:00 [INF] Request started
+2025-09-18 22:30:57.204 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-18 22:30:57.206 +03:00 [INF] Route matched with {action = "CreateIncomeVoucher", controller = "IncomeVouchers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto]]] CreateIncomeVoucher(ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.CreateIncomeVoucherDto) on controller ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController (ModularERP).
+2025-09-18 22:30:57.256 +03:00 [INF] Start creating income voucher with data: {"Code":"INC-771","Date":"2025-09-18T19:22:40.3180000Z","CurrencyCode":"EGP","FxRate":1,"Amount":500,"Description":"anu","Counterparty":{"Type":"Vendor","Id":"3fa85f64-5717-4562-b3fc-2c963f66afa6","$type":"CounterpartyDto"},"CategoryId":"d880c62f-a545-41fe-876d-f76a4a6c1077","Source":{"Type":"BankAccount","Id":"4fe6e0a3-b441-45f6-96a4-0a1c499bbe56","$type":"WalletDto"},"TaxLines":[],"Attachments":[{"ContentDisposition":"form-data; name=\"Attachments\"; filename=\"Hossam-Reda-Tohamy-Node Js .pdf\"","ContentType":"application/pdf","Headers":[{"Key":"Content-Disposition","Value":["form-data; name=\"Attachments\"; filename=\"Hossam-Reda-Tohamy-Node Js .pdf\""],"$type":"KeyValuePair`2"},{"Key":"Content-Type","Value":["application/pdf"],"$type":"KeyValuePair`2"}],"Length":56007,"Name":"Attachments","FileName":"Hossam-Reda-Tohamy-Node Js .pdf","$type":"FormFile"}],"RecurrenceId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","$type":"CreateIncomeVoucherDto"}
+2025-09-18 22:30:57.286 +03:00 [INF] Validation passed successfully.
+2025-09-18 22:30:57.288 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='4fe6e0a3-b441-45f6-96a4-0a1c499bbe56'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[JournalAccountId], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-18 22:30:57.293 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='d880c62f-a545-41fe-876d-f76a4a6c1077'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [g].[Id], [g].[Code], [g].[CompanyId], [g].[CreatedAt], [g].[CreatedById], [g].[IsActive], [g].[IsDeleted], [g].[IsLeaf], [g].[Name], [g].[Type], [g].[UpdatedAt], [g].[UpdatedById]
+FROM [GlAccounts] AS [g]
+WHERE [g].[Id] = @__id_0
+2025-09-18 22:30:57.300 +03:00 [INF] Business validations passed successfully.
+2025-09-18 22:30:57.301 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__code_0='INC-771' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Vouchers] AS [v]
+        WHERE [v].[CompanyId] = 'd00cf078-c1ff-4feb-ae37-d66a827ae438' AND [v].[Code] = @__code_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-09-18 22:30:57.309 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-18 22:30:57.315 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP) in 102.1936ms
+2025-09-18 22:30:57.318 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-18 22:30:57.320 +03:00 [INF] Request completed successfully with status code 400
+2025-09-18 22:30:57.321 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/IncomeVouchers - 400 null application/json; charset=utf-8 122.7242ms
+2025-09-18 22:31:04.168 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/IncomeVouchers - multipart/form-data; boundary=----WebKitFormBoundaryUytwSMxogHoujN0x 58017
+2025-09-18 22:31:04.173 +03:00 [INF] CORS policy execution successful.
+2025-09-18 22:31:04.174 +03:00 [INF] Request started
+2025-09-18 22:31:04.175 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-18 22:31:04.176 +03:00 [INF] Route matched with {action = "CreateIncomeVoucher", controller = "IncomeVouchers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto]]] CreateIncomeVoucher(ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.CreateIncomeVoucherDto) on controller ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController (ModularERP).
+2025-09-18 22:31:04.183 +03:00 [INF] Start creating income voucher with data: {"Code":"INC-788","Date":"2025-09-18T19:22:40.3180000Z","CurrencyCode":"EGP","FxRate":1,"Amount":500,"Description":"anu","Counterparty":{"Type":"Vendor","Id":"3fa85f64-5717-4562-b3fc-2c963f66afa6","$type":"CounterpartyDto"},"CategoryId":"d880c62f-a545-41fe-876d-f76a4a6c1077","Source":{"Type":"BankAccount","Id":"4fe6e0a3-b441-45f6-96a4-0a1c499bbe56","$type":"WalletDto"},"TaxLines":[],"Attachments":[{"ContentDisposition":"form-data; name=\"Attachments\"; filename=\"Hossam-Reda-Tohamy-Node Js .pdf\"","ContentType":"application/pdf","Headers":[{"Key":"Content-Disposition","Value":["form-data; name=\"Attachments\"; filename=\"Hossam-Reda-Tohamy-Node Js .pdf\""],"$type":"KeyValuePair`2"},{"Key":"Content-Type","Value":["application/pdf"],"$type":"KeyValuePair`2"}],"Length":56007,"Name":"Attachments","FileName":"Hossam-Reda-Tohamy-Node Js .pdf","$type":"FormFile"}],"RecurrenceId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","$type":"CreateIncomeVoucherDto"}
+2025-09-18 22:31:04.213 +03:00 [INF] Validation passed successfully.
+2025-09-18 22:31:04.214 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='4fe6e0a3-b441-45f6-96a4-0a1c499bbe56'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[JournalAccountId], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-18 22:31:04.220 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='d880c62f-a545-41fe-876d-f76a4a6c1077'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [g].[Id], [g].[Code], [g].[CompanyId], [g].[CreatedAt], [g].[CreatedById], [g].[IsActive], [g].[IsDeleted], [g].[IsLeaf], [g].[Name], [g].[Type], [g].[UpdatedAt], [g].[UpdatedById]
+FROM [GlAccounts] AS [g]
+WHERE [g].[Id] = @__id_0
+2025-09-18 22:31:04.224 +03:00 [INF] Business validations passed successfully.
+2025-09-18 22:31:04.229 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__code_0='INC-788' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Vouchers] AS [v]
+        WHERE [v].[CompanyId] = 'd00cf078-c1ff-4feb-ae37-d66a827ae438' AND [v].[Code] = @__code_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-09-18 22:31:04.233 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-18 22:31:04.235 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP) in 53.6417ms
+2025-09-18 22:31:04.239 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-18 22:31:04.241 +03:00 [INF] Request completed successfully with status code 400
+2025-09-18 22:31:04.242 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/IncomeVouchers - 400 null application/json; charset=utf-8 74.0906ms
+2025-09-18 22:31:16.739 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/IncomeVouchers - multipart/form-data; boundary=----WebKitFormBoundaryjxSyQOUaRgPn1tYX 58017
+2025-09-18 22:31:16.744 +03:00 [INF] CORS policy execution successful.
+2025-09-18 22:31:16.745 +03:00 [INF] Request started
+2025-09-18 22:31:16.746 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-18 22:31:16.752 +03:00 [INF] Route matched with {action = "CreateIncomeVoucher", controller = "IncomeVouchers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto]]] CreateIncomeVoucher(ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.CreateIncomeVoucherDto) on controller ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController (ModularERP).
+2025-09-18 22:31:16.760 +03:00 [INF] Start creating income voucher with data: {"Code":"INC-999","Date":"2025-09-18T19:22:40.3180000Z","CurrencyCode":"EGP","FxRate":1,"Amount":500,"Description":"anu","Counterparty":{"Type":"Vendor","Id":"3fa85f64-5717-4562-b3fc-2c963f66afa6","$type":"CounterpartyDto"},"CategoryId":"d880c62f-a545-41fe-876d-f76a4a6c1077","Source":{"Type":"BankAccount","Id":"4fe6e0a3-b441-45f6-96a4-0a1c499bbe56","$type":"WalletDto"},"TaxLines":[],"Attachments":[{"ContentDisposition":"form-data; name=\"Attachments\"; filename=\"Hossam-Reda-Tohamy-Node Js .pdf\"","ContentType":"application/pdf","Headers":[{"Key":"Content-Disposition","Value":["form-data; name=\"Attachments\"; filename=\"Hossam-Reda-Tohamy-Node Js .pdf\""],"$type":"KeyValuePair`2"},{"Key":"Content-Type","Value":["application/pdf"],"$type":"KeyValuePair`2"}],"Length":56007,"Name":"Attachments","FileName":"Hossam-Reda-Tohamy-Node Js .pdf","$type":"FormFile"}],"RecurrenceId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","$type":"CreateIncomeVoucherDto"}
+2025-09-18 22:31:16.789 +03:00 [INF] Validation passed successfully.
+2025-09-18 22:31:16.793 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='4fe6e0a3-b441-45f6-96a4-0a1c499bbe56'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[JournalAccountId], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-18 22:31:16.799 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='d880c62f-a545-41fe-876d-f76a4a6c1077'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [g].[Id], [g].[Code], [g].[CompanyId], [g].[CreatedAt], [g].[CreatedById], [g].[IsActive], [g].[IsDeleted], [g].[IsLeaf], [g].[Name], [g].[Type], [g].[UpdatedAt], [g].[UpdatedById]
+FROM [GlAccounts] AS [g]
+WHERE [g].[Id] = @__id_0
+2025-09-18 22:31:16.804 +03:00 [INF] Business validations passed successfully.
+2025-09-18 22:31:16.807 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__code_0='INC-999' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Vouchers] AS [v]
+        WHERE [v].[CompanyId] = 'd00cf078-c1ff-4feb-ae37-d66a827ae438' AND [v].[Code] = @__code_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-09-18 22:31:16.814 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='4fe6e0a3-b441-45f6-96a4-0a1c499bbe56'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[JournalAccountId], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-18 22:31:16.832 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='d17e998a-706a-4b52-74b6-08ddf6e8e5b3', @p1='500' (Precision = 18) (Scale = 2), @p2=NULL (DbType = Guid), @p3='d880c62f-a545-41fe-876d-f76a4a6c1077', @p4='INC-999' (Nullable = false) (Size = 20), @p5='d00cf078-c1ff-4feb-ae37-d66a827ae438', @p6='3fa85f64-5717-4562-b3fc-2c963f66afa6' (Nullable = true), @p7='Vendor' (Size = 450), @p8='2025-09-18T19:31:16.8136073Z', @p9='5dbceb39-9677-46d7-bf8a-2eb914c55437', @p10=NULL (Size = 4000), @p11='EGP' (Nullable = false) (Size = 3), @p12='2025-09-18T19:22:40.3180000Z', @p13='anu' (Size = 4000), @p14='1' (Precision = 18) (Scale = 6), @p15='True', @p16='False', @p17='f8cd0c63-50d7-4a69-a344-bc53be110f77', @p18=NULL (DbType = DateTime2), @p19=NULL (DbType = Guid), @p20='3fa85f64-5717-4562-b3fc-2c963f66afa6' (Nullable = true), @p21=NULL (DbType = Guid), @p22=NULL (DbType = DateTime2), @p23=NULL (DbType = Guid), @p24='0', @p25='Draft' (Nullable = false) (Size = 450), @p26=NULL (DbType = Guid), @p27='Income' (Nullable = false) (Size = 450), @p28=NULL (DbType = DateTime2), @p29=NULL (Size = 4000), @p30='4fe6e0a3-b441-45f6-96a4-0a1c499bbe56', @p31='BankAccount' (Nullable = false) (Size = 450), @p32='d76ce9d9-dd2c-4c2a-dc36-08ddf6e8e5c3', @p33=NULL (Size = 64), @p34='2025-09-18T19:31:16.8225558Z', @p35=NULL (Size = 4000), @p36='/uploads/416caedf-61e2-4a12-8173-fec1b01dcdb3_Hossam-Reda-Tohamy-Node Js .pdf' (Nullable = false) (Size = 500), @p37='0', @p38='Hossam-Reda-Tohamy-Node Js .pdf' (Nullable = false) (Size = 255), @p39='True', @p40='False', @p41='' (Nullable = false) (Size = 100), @p42=NULL (DbType = DateTime2), @p43=NULL (Size = 4000), @p44='2025-09-18T19:31:16.8225623Z', @p45='5dbceb39-9677-46d7-bf8a-2eb914c55437', @p46='d17e998a-706a-4b52-74b6-08ddf6e8e5b3'], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Vouchers] ([Id], [Amount], [BankAccountId], [CategoryAccountId], [Code], [CompanyId], [CounterpartyId], [CounterpartyType], [CreatedAt], [CreatedBy], [CreatedById], [CurrencyCode], [Date], [Description], [FxRate], [IsActive], [IsDeleted], [JournalAccountId], [PostedAt], [PostedBy], [RecurrenceId], [RecurringScheduleId], [ReversedAt], [ReversedBy], [Revision], [Status], [TreasuryId], [Type], [UpdatedAt], [UpdatedById], [WalletId], [WalletType])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31);
+INSERT INTO [Attachments] ([Id], [Checksum], [CreatedAt], [CreatedById], [FilePath], [FileSize], [Filename], [IsActive], [IsDeleted], [MimeType], [UpdatedAt], [UpdatedById], [UploadedAt], [UploadedBy], [VoucherId])
+VALUES (@p32, @p33, @p34, @p35, @p36, @p37, @p38, @p39, @p40, @p41, @p42, @p43, @p44, @p45, @p46);
+2025-09-18 22:31:16.855 +03:00 [INF] Voucher "d17e998a-706a-4b52-74b6-08ddf6e8e5b3" created with 0 taxes and 1 attachments.
+2025-09-18 22:31:16.859 +03:00 [INF] Executing CreatedAtActionResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-18 22:31:16.861 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP) in 103.6951ms
+2025-09-18 22:31:16.866 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-18 22:31:16.868 +03:00 [INF] Request completed successfully with status code 201
+2025-09-18 22:31:16.871 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/IncomeVouchers - 201 null application/json; charset=utf-8 131.9044ms
+2025-09-18 22:36:47.881 +03:00 [INF] Starting web host...
+2025-09-18 22:36:48.269 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-18 22:36:48.273 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-18 22:36:48.348 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-18 22:36:48.350 +03:00 [INF] Hosting environment: Development
+2025-09-18 22:36:48.351 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-18 22:36:53.998 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-09-18 22:36:54.110 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 112.4421ms
+2025-09-18 22:36:54.121 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/swagger-ui.css - null null
+2025-09-18 22:36:54.128 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/swagger-ui-bundle.js - null null
+2025-09-18 22:36:54.128 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/swagger-ui-standalone-preset.js - null null
+2025-09-18 22:36:54.129 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-18 22:36:54.142 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-09-18 22:36:54.143 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-09-18 22:36:54.143 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 13.8967ms
+2025-09-18 22:36:54.147 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-09-18 22:36:54.148 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 19.8647ms
+2025-09-18 22:36:54.150 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/swagger-ui.css - 200 152034 text/css 28.3129ms
+2025-09-18 22:36:54.151 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-09-18 22:36:54.155 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/swagger-ui-bundle.js - 200 1456926 text/javascript 27.098ms
+2025-09-18 22:36:54.187 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 36.2768ms
+2025-09-18 22:36:54.313 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-09-18 22:36:54.336 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/favicon-32x32.png - null null
+2025-09-18 22:36:54.340 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-09-18 22:36:54.342 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/favicon-32x32.png - 200 628 image/png 6.0594ms
+2025-09-18 22:36:54.356 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 42.8762ms
+2025-09-18 22:38:13.209 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7168/api/IncomeVouchers - multipart/form-data; boundary=----WebKitFormBoundaryEqjyvIJchnOZBk0s 100027
+2025-09-18 22:38:13.224 +03:00 [INF] CORS policy execution successful.
+2025-09-18 22:38:13.237 +03:00 [INF] Request started
+2025-09-18 22:38:13.240 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-18 22:38:13.259 +03:00 [INF] Route matched with {action = "CreateIncomeVoucher", controller = "IncomeVouchers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto]]] CreateIncomeVoucher(ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.CreateIncomeVoucherDto) on controller ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController (ModularERP).
+2025-09-18 22:38:13.264 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-18 22:38:13.936 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-09-18 22:38:14.158 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-18 22:38:14.186 +03:00 [INF] Start creating income voucher with data: {"Code":"INC-998","Date":"2025-09-18T19:37:09.4580000Z","CurrencyCode":"EGP","FxRate":1,"Amount":500,"Description":"any","Counterparty":{"Type":"Vendor","Id":"3fa85f64-5717-4562-b3fc-2c963f66afa6","$type":"CounterpartyDto"},"CategoryId":"d880c62f-a545-41fe-876d-f76a4a6c1077","Source":{"Type":"BankAccount","Id":"4fe6e0a3-b441-45f6-96a4-0a1c499bbe56","$type":"WalletDto"},"TaxLines":[],"Attachments":[{"ContentDisposition":"form-data; name=\"Attachments\"; filename=\"Hossam-Reda-Tohamy-Full Stack NET Angular.pdf\"","ContentType":"application/pdf","Headers":[{"Key":"Content-Disposition","Value":["form-data; name=\"Attachments\"; filename=\"Hossam-Reda-Tohamy-Full Stack NET Angular.pdf\""],"$type":"KeyValuePair`2"},{"Key":"Content-Type","Value":["application/pdf"],"$type":"KeyValuePair`2"}],"Length":98003,"Name":"Attachments","FileName":"Hossam-Reda-Tohamy-Full Stack NET Angular.pdf","$type":"FormFile"}],"RecurrenceId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","$type":"CreateIncomeVoucherDto"}
+2025-09-18 22:38:14.231 +03:00 [INF] Validation passed successfully.
+2025-09-18 22:38:14.644 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[@__id_0='4fe6e0a3-b441-45f6-96a4-0a1c499bbe56'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[JournalAccountId], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-18 22:38:14.751 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='d880c62f-a545-41fe-876d-f76a4a6c1077'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [g].[Id], [g].[Code], [g].[CompanyId], [g].[CreatedAt], [g].[CreatedById], [g].[IsActive], [g].[IsDeleted], [g].[IsLeaf], [g].[Name], [g].[Type], [g].[UpdatedAt], [g].[UpdatedById]
+FROM [GlAccounts] AS [g]
+WHERE [g].[Id] = @__id_0
+2025-09-18 22:38:14.779 +03:00 [INF] Business validations passed successfully.
+2025-09-18 22:38:14.800 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__code_0='INC-998' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Vouchers] AS [v]
+        WHERE [v].[CompanyId] = 'd00cf078-c1ff-4feb-ae37-d66a827ae438' AND [v].[Code] = @__code_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-09-18 22:38:14.815 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='4fe6e0a3-b441-45f6-96a4-0a1c499bbe56'], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AccountNumber], [b].[BankName], [b].[CompanyId], [b].[CreatedAt], [b].[CreatedById], [b].[CurrencyCode], [b].[DepositAcl], [b].[Description], [b].[IsActive], [b].[IsDeleted], [b].[JournalAccountId], [b].[Name], [b].[Status], [b].[UpdatedAt], [b].[UpdatedById], [b].[WithdrawAcl]
+FROM [BankAccounts] AS [b]
+WHERE [b].[Id] = @__id_0
+2025-09-18 22:38:14.928 +03:00 [INF] TaxLines from DTO: []
+2025-09-18 22:38:14.930 +03:00 [WRN] No tax lines provided in DTO
+2025-09-18 22:38:15.097 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@p0='906de530-3b52-4797-ac15-08ddf6eae901', @p1='500' (Precision = 18) (Scale = 2), @p2=NULL (DbType = Guid), @p3='d880c62f-a545-41fe-876d-f76a4a6c1077', @p4='INC-998' (Nullable = false) (Size = 20), @p5='d00cf078-c1ff-4feb-ae37-d66a827ae438', @p6='3fa85f64-5717-4562-b3fc-2c963f66afa6' (Nullable = true), @p7='Vendor' (Size = 450), @p8='2025-09-18T19:38:14.8119138Z', @p9='5dbceb39-9677-46d7-bf8a-2eb914c55437', @p10=NULL (Size = 4000), @p11='EGP' (Nullable = false) (Size = 3), @p12='2025-09-18T19:37:09.4580000Z', @p13='any' (Size = 4000), @p14='1' (Precision = 18) (Scale = 6), @p15='True', @p16='False', @p17='f8cd0c63-50d7-4a69-a344-bc53be110f77', @p18=NULL (DbType = DateTime2), @p19=NULL (DbType = Guid), @p20='3fa85f64-5717-4562-b3fc-2c963f66afa6' (Nullable = true), @p21=NULL (DbType = Guid), @p22=NULL (DbType = DateTime2), @p23=NULL (DbType = Guid), @p24='0', @p25='Draft' (Nullable = false) (Size = 450), @p26=NULL (DbType = Guid), @p27='Income' (Nullable = false) (Size = 450), @p28=NULL (DbType = DateTime2), @p29=NULL (Size = 4000), @p30='4fe6e0a3-b441-45f6-96a4-0a1c499bbe56', @p31='BankAccount' (Nullable = false) (Size = 450), @p32='13cf0c7c-25ce-4498-3559-08ddf6eae910', @p33=NULL (Size = 64), @p34='2025-09-18T19:38:14.9363467Z', @p35=NULL (Size = 4000), @p36='/uploads/0f2102f8-7dff-47cc-86d8-373a401f3ed2_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf' (Nullable = false) (Size = 500), @p37='0', @p38='Hossam-Reda-Tohamy-Full Stack NET Angular.pdf' (Nullable = false) (Size = 255), @p39='True', @p40='False', @p41='' (Nullable = false) (Size = 100), @p42=NULL (DbType = DateTime2), @p43=NULL (Size = 4000), @p44='2025-09-18T19:38:14.9365893Z', @p45='5dbceb39-9677-46d7-bf8a-2eb914c55437', @p46='906de530-3b52-4797-ac15-08ddf6eae901'], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Vouchers] ([Id], [Amount], [BankAccountId], [CategoryAccountId], [Code], [CompanyId], [CounterpartyId], [CounterpartyType], [CreatedAt], [CreatedBy], [CreatedById], [CurrencyCode], [Date], [Description], [FxRate], [IsActive], [IsDeleted], [JournalAccountId], [PostedAt], [PostedBy], [RecurrenceId], [RecurringScheduleId], [ReversedAt], [ReversedBy], [Revision], [Status], [TreasuryId], [Type], [UpdatedAt], [UpdatedById], [WalletId], [WalletType])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31);
+INSERT INTO [Attachments] ([Id], [Checksum], [CreatedAt], [CreatedById], [FilePath], [FileSize], [Filename], [IsActive], [IsDeleted], [MimeType], [UpdatedAt], [UpdatedById], [UploadedAt], [UploadedBy], [VoucherId])
+VALUES (@p32, @p33, @p34, @p35, @p36, @p37, @p38, @p39, @p40, @p41, @p42, @p43, @p44, @p45, @p46);
+2025-09-18 22:38:15.125 +03:00 [INF] Voucher "906de530-3b52-4797-ac15-08ddf6eae901" created with 0 taxes and 1 attachments.
+2025-09-18 22:38:15.140 +03:00 [INF] Executing CreatedAtActionResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-18 22:38:15.173 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP) in 1908.6549ms
+2025-09-18 22:38:15.176 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-18 22:38:15.177 +03:00 [INF] Request completed successfully with status code 201
+2025-09-18 22:38:15.189 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7168/api/IncomeVouchers - 201 null application/json; charset=utf-8 1979.3497ms
