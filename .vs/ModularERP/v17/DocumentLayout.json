@@ -3,8 +3,64 @@
   "WorkspaceRootPath": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\shared\\repository\\generalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\shared\\repository\\generalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\shared\\interfaces\\igeneralrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\shared\\interfaces\\igeneralrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\modules\\finance\\finance.infrastructure\\data\\financedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\finance.infrastructure\\data\\financedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\modules\\finance\\features\\attachments\\models\\voucherattachment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\features\\attachments\\models\\voucherattachment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\modules\\finance\\features\\expensesvoucher\\controllers\\expensevoucherscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\features\\expensesvoucher\\controllers\\expensevoucherscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\modules\\finance\\features\\expensesvoucher\\dto\\attachmentresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\features\\expensesvoucher\\dto\\attachmentresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\migrations\\20250917160500_addjournalaccountid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\migrations\\20250917160500_addjournalaccountid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\modules\\finance\\features\\expensesvoucher\\handlers\\createexpensevoucherhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\features\\expensesvoucher\\handlers\\createexpensevoucherhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\modules\\finance\\features\\incomesvoucher\\handlers\\getincomevoucherbyidhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\features\\incomesvoucher\\handlers\\getincomevoucherbyidhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\modules\\finance\\features\\incomesvoucher\\handlers\\createincomevoucherhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\features\\incomesvoucher\\handlers\\createincomevoucherhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\modules\\finance\\features\\incomesvoucher\\service\\interface\\incomevoucherservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\features\\incomesvoucher\\service\\interface\\incomevoucherservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\modules\\finance\\features\\incomesvoucher\\service\\interface\\iincomevoucherservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\features\\incomesvoucher\\service\\interface\\iincomevoucherservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\modules\\finance\\features\\incomesvoucher\\controllers\\incomevoucherscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\features\\incomesvoucher\\controllers\\incomevoucherscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\modules\\finance\\features\\incomesvoucher\\dto\\createincomevoucherdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,28 +71,12 @@
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\features\\expensesvoucher\\dto\\createexpensevoucherdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\modules\\finance\\features\\incomesvoucher\\handlers\\createincomevoucherhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\features\\incomesvoucher\\handlers\\createincomevoucherhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\modules\\finance\\features\\incomesvoucher\\controllers\\incomevoucherscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\features\\incomesvoucher\\controllers\\incomevoucherscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\modules\\finance\\features\\expensesvoucher\\handlers\\createexpensevoucherhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\features\\expensesvoucher\\handlers\\createexpensevoucherhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\modules\\finance\\features\\expensesvoucher\\validators\\createexpensevouchervalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\features\\expensesvoucher\\validators\\createexpensevouchervalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\modules\\finance\\features\\incomesvoucher\\validators\\createincomevouchervalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\features\\incomesvoucher\\validators\\createincomevouchervalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\modules\\finance\\features\\incomesvoucher\\handlers\\getincomevoucherbyidhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\features\\incomesvoucher\\handlers\\getincomevoucherbyidhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\modules\\finance\\features\\expensesvoucher\\mapping\\expensevouchermappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -77,10 +117,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\modules\\finance\\features\\expensesvoucher\\dto\\expensevoucherresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\features\\expensesvoucher\\dto\\expensevoucherresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\modules\\finance\\features\\expensesvoucher\\dto\\attachmentresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\features\\expensesvoucher\\dto\\attachmentresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\modules\\finance\\features\\expensesvoucher\\dto\\taxlineresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -131,18 +167,6 @@
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\features\\incomesvoucher\\commands\\createincomevouchercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\shared\\interfaces\\igeneralrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\shared\\interfaces\\igeneralrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\shared\\repository\\generalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\shared\\repository\\generalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\modules\\finance\\features\\attachments\\models\\voucherattachment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\features\\attachments\\models\\voucherattachment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\common\\enum\\finance_enum\\counterpartytype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\common\\enum\\finance_enum\\counterpartytype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -159,14 +183,6 @@
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\features\\incomesvoucher\\queries\\getincomevoucherbyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\modules\\finance\\features\\incomesvoucher\\service\\interface\\incomevoucherservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\features\\incomesvoucher\\service\\interface\\incomevoucherservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\modules\\finance\\features\\incomesvoucher\\service\\interface\\iincomevoucherservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\features\\incomesvoucher\\service\\interface\\iincomevoucherservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\modules\\finance\\features\\expensesvoucher\\service\\iexpensevoucherservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\features\\expensesvoucher\\service\\iexpensevoucherservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -177,10 +193,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\common\\enum\\finance_enum\\accounttype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\common\\enum\\finance_enum\\accounttype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\common\\enum\\finance_enum\\wallettype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -257,10 +269,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\modules\\finance\\features\\expensesvoucher\\dto\\counterpartydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\features\\expensesvoucher\\dto\\counterpartydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\modules\\finance\\finance.infrastructure\\data\\financedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\finance.infrastructure\\data\\financedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\modules\\finance\\features\\bankaccounts\\handlers\\updatebankaccounthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -591,10 +599,6 @@
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\features\\treasuries\\dto\\treasurydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Migrations\\20250914152103_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ModularERP\\Migrations\\20250914152103_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -637,10 +641,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\migrations\\20250914233036_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\migrations\\20250914233036_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|c:\\users\\hossny d. monkey\\source\\repos\\modularerp\\modularerp\\migrations\\20250917160500_addjournalaccountid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\migrations\\20250917160500_addjournalaccountid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -650,7 +650,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -665,73 +665,200 @@
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "ExpenseVouchersController.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\Controllers\\ExpenseVouchersController.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\Controllers\\ExpenseVouchersController.cs",
               "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\Controllers\\ExpenseVouchersController.cs",
               "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\Controllers\\ExpenseVouchersController.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAYwGIAAABDAAAAAAAAAA==",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAYwGcAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-17T12:57:56.177Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CreateExpenseVoucherHandler.cs",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\Handlers\\CreateExpenseVoucherHandler.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\Handlers\\CreateExpenseVoucherHandler.cs",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\Handlers\\CreateExpenseVoucherHandler.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\Handlers\\CreateExpenseVoucherHandler.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACIAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T12:56:06.093Z",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\appsettings.json",
+              "RelativeDocumentMoniker": "ModularERP\\appsettings.json",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\appsettings.json",
+              "RelativeToolTip": "ModularERP\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-14T10:08:52.592Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "CreateIncomeVoucherHandler.cs",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Handlers\\CreateIncomeVoucherHandler.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Handlers\\CreateIncomeVoucherHandler.cs",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Handlers\\CreateIncomeVoucherHandler.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Handlers\\CreateIncomeVoucherHandler.cs",
-              "ViewState": "AgIAAOYAAAAAAAAAAAAiwAQBAAABAAAAAAAAAA==",
+              "Title": "FinanceDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Finance.Infrastructure\\Data\\FinanceDbContext.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Finance.Infrastructure\\Data\\FinanceDbContext.cs",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Finance.Infrastructure\\Data\\FinanceDbContext.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Finance.Infrastructure\\Data\\FinanceDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMYAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T21:52:17.938Z",
+              "WhenOpened": "2025-09-14T09:45:55.897Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "IncomeVouchersController.cs",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Controllers\\IncomeVouchersController.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Controllers\\IncomeVouchersController.cs",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Controllers\\IncomeVouchersController.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Controllers\\IncomeVouchersController.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAQwEQAAAA6AAAAAAAAAA==",
+              "Title": "VoucherAttachment.cs",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Attachments\\Models\\VoucherAttachment.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Attachments\\Models\\VoucherAttachment.cs",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Attachments\\Models\\VoucherAttachment.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\Attachments\\Models\\VoucherAttachment.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAowA4AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T21:57:15.366Z",
+              "WhenOpened": "2025-09-14T09:21:35.805Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GeneralRepository.cs",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Shared\\Repository\\GeneralRepository.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Shared\\Repository\\GeneralRepository.cs",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Shared\\Repository\\GeneralRepository.cs",
+              "RelativeToolTip": "ModularERP\\Shared\\Repository\\GeneralRepository.cs",
+              "ViewState": "AgIAAF8AAAAAAAAAAAA5wGoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T17:16:09.537Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CreateIncomeVoucherDto.cs",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\DTO\\CreateIncomeVoucherDto.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\DTO\\CreateIncomeVoucherDto.cs",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\DTO\\CreateIncomeVoucherDto.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\DTO\\CreateIncomeVoucherDto.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAArwEAAAAABAAAAAAAAAA==",
+              "Title": "IGeneralRepository.cs",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Shared\\Interfaces\\IGeneralRepository.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Shared\\Interfaces\\IGeneralRepository.cs",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Shared\\Interfaces\\IGeneralRepository.cs",
+              "RelativeToolTip": "ModularERP\\Shared\\Interfaces\\IGeneralRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAADwvxEAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T21:38:05.716Z",
+              "WhenOpened": "2025-09-14T17:15:32.503Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
+              "Title": "AttachmentResponseDto.cs",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\DTO\\AttachmentResponseDto.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\DTO\\AttachmentResponseDto.cs",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\DTO\\AttachmentResponseDto.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\DTO\\AttachmentResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T12:51:43.804Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "20250917160500_addJournalAccountId.cs",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Migrations\\20250917160500_addJournalAccountId.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Migrations\\20250917160500_addJournalAccountId.cs",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Migrations\\20250917160500_addJournalAccountId.cs",
+              "RelativeToolTip": "ModularERP\\Migrations\\20250917160500_addJournalAccountId.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T16:05:00.698Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IIncomeVoucherService.cs",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Service\\Interface\\IIncomeVoucherService.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Service\\Interface\\IIncomeVoucherService.cs",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Service\\Interface\\IIncomeVoucherService.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Service\\Interface\\IIncomeVoucherService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T21:41:50.157Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CreateExpenseVoucherHandler.cs",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\Handlers\\CreateExpenseVoucherHandler.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\Handlers\\CreateExpenseVoucherHandler.cs",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\Handlers\\CreateExpenseVoucherHandler.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\Handlers\\CreateExpenseVoucherHandler.cs",
+              "ViewState": "AgIAAJAAAAAAAAAAAAAYwCIAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T12:56:06.093Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Program.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Program.cs",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Program.cs",
+              "RelativeToolTip": "ModularERP\\Program.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAIYAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T10:02:33.318Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "GetIncomeVoucherByIdHandler.cs",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Handlers\\GetIncomeVoucherByIdHandler.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Handlers\\GetIncomeVoucherByIdHandler.cs",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Handlers\\GetIncomeVoucherByIdHandler.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Handlers\\GetIncomeVoucherByIdHandler.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAowCoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T21:56:26.259Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IncomeVoucherService.cs",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Service\\Interface\\IncomeVoucherService.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Service\\Interface\\IncomeVoucherService.cs",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Service\\Interface\\IncomeVoucherService.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Service\\Interface\\IncomeVoucherService.cs",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAqwGMAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T21:42:20.928Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IncomeVouchersController.cs",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Controllers\\IncomeVouchersController.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Controllers\\IncomeVouchersController.cs",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Controllers\\IncomeVouchersController.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Controllers\\IncomeVouchersController.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAEwC8AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T21:57:15.366Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CreateIncomeVoucherHandler.cs",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Handlers\\CreateIncomeVoucherHandler.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Handlers\\CreateIncomeVoucherHandler.cs",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Handlers\\CreateIncomeVoucherHandler.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Handlers\\CreateIncomeVoucherHandler.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAcwIEAAABiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T21:52:17.938Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "CreateExpenseVoucherDto.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\DTO\\CreateExpenseVoucherDto.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\DTO\\CreateExpenseVoucherDto.cs",
@@ -739,12 +866,23 @@
               "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\DTO\\CreateExpenseVoucherDto.cs",
               "ViewState": "AgIAADwAAAAAAAAAAAAAAFQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T12:50:07.066Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-17T12:50:07.066Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 15,
+              "Title": "CreateIncomeVoucherDto.cs",
+              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\DTO\\CreateIncomeVoucherDto.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\DTO\\CreateIncomeVoucherDto.cs",
+              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\DTO\\CreateIncomeVoucherDto.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\DTO\\CreateIncomeVoucherDto.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAArwEAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T21:38:05.716Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "CreateExpenseVoucherValidator.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\Validators\\CreateExpenseVoucherValidator.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\Validators\\CreateExpenseVoucherValidator.cs",
@@ -752,12 +890,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\Validators\\CreateExpenseVoucherValidator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAFsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T12:52:53.273Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-17T12:52:53.273Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 18,
               "Title": "CreateIncomeVoucherValidator.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Validators\\CreateIncomeVoucherValidator.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Validators\\CreateIncomeVoucherValidator.cs",
@@ -765,25 +902,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Validators\\CreateIncomeVoucherValidator.cs",
               "ViewState": "AgIAACQAAAAAAAAAAAAjwC8AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T21:40:48.577Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-17T21:40:48.577Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "GetIncomeVoucherByIdHandler.cs",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Handlers\\GetIncomeVoucherByIdHandler.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Handlers\\GetIncomeVoucherByIdHandler.cs",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Handlers\\GetIncomeVoucherByIdHandler.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Handlers\\GetIncomeVoucherByIdHandler.cs",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAswGMAAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T21:56:26.259Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 19,
               "Title": "ExpenseVoucherMappingProfile.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\Mapping\\ExpenseVoucherMappingProfile.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\Mapping\\ExpenseVoucherMappingProfile.cs",
@@ -791,12 +914,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\Mapping\\ExpenseVoucherMappingProfile.cs",
               "ViewState": "AgIAACoAAAAAAAAAAAAswEQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T12:55:48.636Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-17T12:55:48.636Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 20,
               "Title": "CreateExpenseVoucherCommand.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\Commands\\CreateExpenseVoucherCommand.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\Commands\\CreateExpenseVoucherCommand.cs",
@@ -804,12 +926,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\Commands\\CreateExpenseVoucherCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T12:52:15.259Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-17T12:52:15.259Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 21,
               "Title": "TaxDirection.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Common\\Enum\\Finance_Enum\\TaxDirection.cs",
               "RelativeDocumentMoniker": "ModularERP\\Common\\Enum\\Finance_Enum\\TaxDirection.cs",
@@ -817,12 +938,11 @@
               "RelativeToolTip": "ModularERP\\Common\\Enum\\Finance_Enum\\TaxDirection.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T09:17:23.744Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-14T09:17:23.744Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 22,
               "Title": "VoucherTax.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\VoucherTaxs\\Models\\VoucherTax.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\VoucherTaxs\\Models\\VoucherTax.cs",
@@ -830,12 +950,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\VoucherTaxs\\Models\\VoucherTax.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAwwBwAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T09:26:56.902Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-14T09:26:56.902Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 23,
               "Title": "TaxType.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Common\\Enum\\Finance_Enum\\TaxType.cs",
               "RelativeDocumentMoniker": "ModularERP\\Common\\Enum\\Finance_Enum\\TaxType.cs",
@@ -843,12 +962,11 @@
               "RelativeToolTip": "ModularERP\\Common\\Enum\\Finance_Enum\\TaxType.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T09:17:47.581Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-14T09:17:47.581Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 24,
               "Title": "VoucherStatus.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Common\\Enum\\Finance_Enum\\VoucherStatus.cs",
               "RelativeDocumentMoniker": "ModularERP\\Common\\Enum\\Finance_Enum\\VoucherStatus.cs",
@@ -856,12 +974,11 @@
               "RelativeToolTip": "ModularERP\\Common\\Enum\\Finance_Enum\\VoucherStatus.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T09:14:52.739Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-14T09:14:52.739Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 25,
               "Title": "VoucherType.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Common\\Enum\\Finance_Enum\\VoucherType.cs",
               "RelativeDocumentMoniker": "ModularERP\\Common\\Enum\\Finance_Enum\\VoucherType.cs",
@@ -869,12 +986,11 @@
               "RelativeToolTip": "ModularERP\\Common\\Enum\\Finance_Enum\\VoucherType.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T09:14:35.574Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-14T09:14:35.574Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 26,
               "Title": "TaxLineDto.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\DTO\\TaxLineDto.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\DTO\\TaxLineDto.cs",
@@ -882,12 +998,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\DTO\\TaxLineDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T12:51:00.842Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-17T12:51:00.842Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 27,
               "Title": "GetExpenseVoucherByIdHandler.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\Handlers\\GetExpenseVoucherByIdHandler.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\Handlers\\GetExpenseVoucherByIdHandler.cs",
@@ -895,12 +1010,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\Handlers\\GetExpenseVoucherByIdHandler.cs",
               "ViewState": "AgIAAEsAAAAAAAAAAAAiwGkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T12:57:00.85Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-17T12:57:00.85Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 28,
               "Title": "ExpenseVoucherResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\DTO\\ExpenseVoucherResponseDto.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\DTO\\ExpenseVoucherResponseDto.cs",
@@ -908,25 +1022,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\DTO\\ExpenseVoucherResponseDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T12:51:15.81Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-17T12:51:15.81Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "AttachmentResponseDto.cs",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\DTO\\AttachmentResponseDto.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\DTO\\AttachmentResponseDto.cs",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\DTO\\AttachmentResponseDto.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\DTO\\AttachmentResponseDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T12:51:43.804Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 29,
               "Title": "TaxLineResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\DTO\\TaxLineResponseDto.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\DTO\\TaxLineResponseDto.cs",
@@ -934,12 +1034,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\DTO\\TaxLineResponseDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T12:51:31.04Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-17T12:51:31.04Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 30,
               "Title": "IncomeVoucherMappingProfile.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Mapping\\IncomeVoucherMappingProfile.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Mapping\\IncomeVoucherMappingProfile.cs",
@@ -947,12 +1046,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Mapping\\IncomeVoucherMappingProfile.cs",
               "ViewState": "AgIAACsAAAAAAAAAAAAswEIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T21:44:44.989Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-17T21:44:44.989Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 31,
               "Title": "FinanceErrorCode.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Common\\Enum\\Finance_Enum\\FinanceErrorCode.cs",
               "RelativeDocumentMoniker": "ModularERP\\Common\\Enum\\Finance_Enum\\FinanceErrorCode.cs",
@@ -960,12 +1058,11 @@
               "RelativeToolTip": "ModularERP\\Common\\Enum\\Finance_Enum\\FinanceErrorCode.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAUwCcAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T15:48:26.941Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-14T15:48:26.941Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 32,
               "Title": "CounterpartyDto.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\DTO\\CounterpartyDto.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\DTO\\CounterpartyDto.cs",
@@ -973,12 +1070,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\DTO\\CounterpartyDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T21:38:42.587Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-17T21:38:42.587Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 33,
               "Title": "WalletDto.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\DTO\\WalletDto.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\DTO\\WalletDto.cs",
@@ -986,12 +1082,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\DTO\\WalletDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T21:38:55.758Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-17T21:38:55.758Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 34,
               "Title": "TaxLineDto.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\DTO\\TaxLineDto.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\DTO\\TaxLineDto.cs",
@@ -999,12 +1094,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\DTO\\TaxLineDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T21:39:10.987Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-17T21:39:10.987Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 35,
               "Title": "TaxLineResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\DTO\\TaxLineResponseDto.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\DTO\\TaxLineResponseDto.cs",
@@ -1012,12 +1106,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\DTO\\TaxLineResponseDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T21:39:27.026Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-17T21:39:27.026Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 36,
               "Title": "Voucher.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Vouchers\\Models\\Voucher.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Vouchers\\Models\\Voucher.cs",
@@ -1025,12 +1118,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\Vouchers\\Models\\Voucher.cs",
               "ViewState": "AgIAADMAAAAAAAAAAAAYwFIAAABwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T09:27:33.409Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-14T09:27:33.409Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 37,
               "Title": "IncomeVoucherResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\DTO\\IncomeVoucherResponseDto.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\DTO\\IncomeVoucherResponseDto.cs",
@@ -1038,12 +1130,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\DTO\\IncomeVoucherResponseDto.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAA8wAoAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T21:38:26.344Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-17T21:38:26.344Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 38,
               "Title": "AttachmentResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\DTO\\AttachmentResponseDto.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\DTO\\AttachmentResponseDto.cs",
@@ -1051,12 +1142,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\DTO\\AttachmentResponseDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T21:39:50.615Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-17T21:39:50.615Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 39,
               "Title": "WalletDto.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\DTO\\WalletDto.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\DTO\\WalletDto.cs",
@@ -1068,7 +1158,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 40,
               "Title": "CreateIncomeVoucherCommand.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Commands\\CreateIncomeVoucherCommand.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Commands\\CreateIncomeVoucherCommand.cs",
@@ -1080,43 +1170,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "IGeneralRepository.cs",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Shared\\Interfaces\\IGeneralRepository.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Shared\\Interfaces\\IGeneralRepository.cs",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Shared\\Interfaces\\IGeneralRepository.cs",
-              "RelativeToolTip": "ModularERP\\Shared\\Interfaces\\IGeneralRepository.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAADwvxEAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T17:15:32.503Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "GeneralRepository.cs",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Shared\\Repository\\GeneralRepository.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Shared\\Repository\\GeneralRepository.cs",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Shared\\Repository\\GeneralRepository.cs",
-              "RelativeToolTip": "ModularERP\\Shared\\Repository\\GeneralRepository.cs",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAowGMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T17:16:09.537Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "VoucherAttachment.cs",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Attachments\\Models\\VoucherAttachment.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Attachments\\Models\\VoucherAttachment.cs",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Attachments\\Models\\VoucherAttachment.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\Attachments\\Models\\VoucherAttachment.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAowA4AAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T09:21:35.805Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 41,
               "Title": "CounterpartyType.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Common\\Enum\\Finance_Enum\\CounterpartyType.cs",
               "RelativeDocumentMoniker": "ModularERP\\Common\\Enum\\Finance_Enum\\CounterpartyType.cs",
@@ -1128,7 +1182,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 43,
               "Title": "ResponseViewModel.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Common\\ViewModel\\ResponseViewModel.cs",
               "RelativeDocumentMoniker": "ModularERP\\Common\\ViewModel\\ResponseViewModel.cs",
@@ -1140,7 +1194,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 42,
               "Title": "GlobalErrorHandlerMiddleware.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Common\\Middleware\\GlobalErrorHandlerMiddleware.cs",
               "RelativeDocumentMoniker": "ModularERP\\Common\\Middleware\\GlobalErrorHandlerMiddleware.cs",
@@ -1152,7 +1206,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 44,
               "Title": "GetIncomeVoucherByIdQuery.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Queries\\GetIncomeVoucherByIdQuery.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Queries\\GetIncomeVoucherByIdQuery.cs",
@@ -1164,31 +1218,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "IncomeVoucherService.cs",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Service\\Interface\\IncomeVoucherService.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Service\\Interface\\IncomeVoucherService.cs",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Service\\Interface\\IncomeVoucherService.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Service\\Interface\\IncomeVoucherService.cs",
-              "ViewState": "AgIAAFkAAAAAAAAAAAAqwGMAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T21:42:20.928Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "IIncomeVoucherService.cs",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Service\\Interface\\IIncomeVoucherService.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Service\\Interface\\IIncomeVoucherService.cs",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Service\\Interface\\IIncomeVoucherService.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\IncomesVoucher\\Service\\Interface\\IIncomeVoucherService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T21:41:50.157Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 45,
               "Title": "IExpenseVoucherService.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\Service\\IExpenseVoucherService.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\Service\\IExpenseVoucherService.cs",
@@ -1200,7 +1230,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 46,
               "Title": "ExpenseVoucherService.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\Service\\ExpenseVoucherService.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\Service\\ExpenseVoucherService.cs",
@@ -1212,7 +1242,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 47,
               "Title": "AccountType.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Common\\Enum\\Finance_Enum\\AccountType.cs",
               "RelativeDocumentMoniker": "ModularERP\\Common\\Enum\\Finance_Enum\\AccountType.cs",
@@ -1224,19 +1254,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Program.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Program.cs",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Program.cs",
-              "RelativeToolTip": "ModularERP\\Program.cs",
-              "ViewState": "AgIAAH0AAAAAAAAAAAAAwJMAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T10:02:33.318Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 48,
               "Title": "WalletType.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Common\\Enum\\Finance_Enum\\WalletType.cs",
               "RelativeDocumentMoniker": "ModularERP\\Common\\Enum\\Finance_Enum\\WalletType.cs",
@@ -1248,7 +1266,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 49,
               "Title": "TreasuryStatus.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Common\\Enum\\Finance_Enum\\TreasuryStatus.cs",
               "RelativeDocumentMoniker": "ModularERP\\Common\\Enum\\Finance_Enum\\TreasuryStatus.cs",
@@ -1260,7 +1278,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 50,
               "Title": "ScheduleFrequency.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Common\\Enum\\Finance_Enum\\ScheduleFrequency.cs",
               "RelativeDocumentMoniker": "ModularERP\\Common\\Enum\\Finance_Enum\\ScheduleFrequency.cs",
@@ -1272,7 +1290,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 51,
               "Title": "PermissionType.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Common\\Enum\\Finance_Enum\\PermissionType.cs",
               "RelativeDocumentMoniker": "ModularERP\\Common\\Enum\\Finance_Enum\\PermissionType.cs",
@@ -1284,7 +1302,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 52,
               "Title": "BankAccountStatus.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Common\\Enum\\Finance_Enum\\BankAccountStatus.cs",
               "RelativeDocumentMoniker": "ModularERP\\Common\\Enum\\Finance_Enum\\BankAccountStatus.cs",
@@ -1296,7 +1314,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 53,
               "Title": "GetExpenseVoucherByIdQuery.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\Queries\\GetExpenseVoucherByIdQuery.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\Queries\\GetExpenseVoucherByIdQuery.cs",
@@ -1308,7 +1326,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 54,
               "Title": "CreateTreasuryCommandValidator.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Treasuries\\Validators\\CreateTreasuryCommandValidator.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Treasuries\\Validators\\CreateTreasuryCommandValidator.cs",
@@ -1320,7 +1338,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 55,
               "Title": "CreateTreasuryHandler.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Treasuries\\Handlers\\CreateTreasuryHandler.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Treasuries\\Handlers\\CreateTreasuryHandler.cs",
@@ -1332,7 +1350,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 56,
               "Title": "CreateTreasuryCommand.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Treasuries\\Commands\\CreateTreasuryCommand.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Treasuries\\Commands\\CreateTreasuryCommand.cs",
@@ -1344,7 +1362,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 57,
               "Title": "ValidationException.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Common\\Extensions\\ValidationException.cs",
               "RelativeDocumentMoniker": "ModularERP\\Common\\Extensions\\ValidationException.cs",
@@ -1356,7 +1374,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 58,
               "Title": "ServiceCollectionExtensions.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Common\\Extensions\\ServiceCollectionExtensions.cs",
               "RelativeDocumentMoniker": "ModularERP\\Common\\Extensions\\ServiceCollectionExtensions.cs",
@@ -1368,7 +1386,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 59,
               "Title": "NotFoundException.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Common\\Extensions\\NotFoundException.cs",
               "RelativeDocumentMoniker": "ModularERP\\Common\\Extensions\\NotFoundException.cs",
@@ -1380,7 +1398,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 60,
               "Title": "BusinessLogicException.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Common\\Extensions\\BusinessLogicException.cs",
               "RelativeDocumentMoniker": "ModularERP\\Common\\Extensions\\BusinessLogicException.cs",
@@ -1392,7 +1410,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 61,
               "Title": "BaseApplicationException.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Common\\Extensions\\BaseApplicationException.cs",
               "RelativeDocumentMoniker": "ModularERP\\Common\\Extensions\\BaseApplicationException.cs",
@@ -1404,7 +1422,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 62,
               "Title": "BankAccountController.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Controllers\\BankAccountController.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Controllers\\BankAccountController.cs",
@@ -1416,7 +1434,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 63,
               "Title": "BankAccount.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Models\\BankAccount.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Models\\BankAccount.cs",
@@ -1428,19 +1446,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 159,
-              "Title": "20250917160500_addJournalAccountId.cs",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Migrations\\20250917160500_addJournalAccountId.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Migrations\\20250917160500_addJournalAccountId.cs",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Migrations\\20250917160500_addJournalAccountId.cs",
-              "RelativeToolTip": "ModularERP\\Migrations\\20250917160500_addJournalAccountId.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBQAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T16:05:00.698Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 65,
               "Title": "TreasuryMappingProfile.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Treasuries\\Mapping\\TreasuryMappingProfile.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Treasuries\\Mapping\\TreasuryMappingProfile.cs",
@@ -1452,7 +1458,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 64,
               "Title": "Treasury.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Treasuries\\Models\\Treasury.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Treasuries\\Models\\Treasury.cs",
@@ -1464,7 +1470,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 66,
               "Title": "CounterpartyDto.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\DTO\\CounterpartyDto.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\ExpensesVoucher\\DTO\\CounterpartyDto.cs",
@@ -1476,7 +1482,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 69,
               "Title": "CreateBankAccountHandler.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\CreateBankAccountHandler.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\CreateBankAccountHandler.cs",
@@ -1488,7 +1494,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 68,
               "Title": "GetAllBankAccountsHandler.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetAllBankAccountsHandler.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetAllBankAccountsHandler.cs",
@@ -1500,7 +1506,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 67,
               "Title": "UpdateBankAccountHandler.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\UpdateBankAccountHandler.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\UpdateBankAccountHandler.cs",
@@ -1512,19 +1518,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
-              "Title": "FinanceDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Finance.Infrastructure\\Data\\FinanceDbContext.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Finance.Infrastructure\\Data\\FinanceDbContext.cs",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Finance.Infrastructure\\Data\\FinanceDbContext.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Finance.Infrastructure\\Data\\FinanceDbContext.cs",
-              "ViewState": "AgIAAF4AAAAAAAAAAAAgwLgAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T09:45:55.897Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 70,
               "Title": "DeleteBankAccountHandler.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\DeleteBankAccountHandler.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\DeleteBankAccountHandler.cs",
@@ -1536,7 +1530,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 73,
               "Title": "GetBankAccountByIdHandler.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetBankAccountByIdHandler.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetBankAccountByIdHandler.cs",
@@ -1548,7 +1542,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 74,
               "Title": "GetBankAccountByIdQuery.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetBankAccountByIdQuery.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetBankAccountByIdQuery.cs",
@@ -1560,7 +1554,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 71,
               "Title": "GetBankAccountStatisticsHandler.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetBankAccountStatisticsHandler.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetBankAccountStatisticsHandler.cs",
@@ -1572,7 +1566,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 75,
               "Title": "GetBankAccountsByCompanyQuery.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetBankAccountsByCompanyQuery.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetBankAccountsByCompanyQuery.cs",
@@ -1584,7 +1578,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 74,
+              "DocumentIndex": 76,
               "Title": "GetAllBankAccountsQuery.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetAllBankAccountsQuery.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetAllBankAccountsQuery.cs",
@@ -1596,7 +1590,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 75,
+              "DocumentIndex": 77,
               "Title": "CreateBankAccountCommand.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Commands\\CreateBankAccountCommand.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Commands\\CreateBankAccountCommand.cs",
@@ -1608,7 +1602,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 72,
               "Title": "GetBankAccountsByCompanyHandler.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetBankAccountsByCompanyHandler.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\GetBankAccountsByCompanyHandler.cs",
@@ -1620,7 +1614,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 76,
+              "DocumentIndex": 78,
               "Title": "GetBankAccountStatisticsQuery.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetBankAccountStatisticsQuery.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Queries\\GetBankAccountStatisticsQuery.cs",
@@ -1632,7 +1626,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 77,
+              "DocumentIndex": 79,
               "Title": "DeleteBankAccountCommand.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Commands\\DeleteBankAccountCommand.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Commands\\DeleteBankAccountCommand.cs",
@@ -1644,7 +1638,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 78,
+              "DocumentIndex": 80,
               "Title": "UpdateBankAccountCommand.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Commands\\UpdateBankAccountCommand.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Commands\\UpdateBankAccountCommand.cs",
@@ -1656,7 +1650,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 79,
+              "DocumentIndex": 81,
               "Title": "BankAccountMappingProfile.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Mapping\\BankAccountMappingProfile.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Mapping\\BankAccountMappingProfile.cs",
@@ -1668,7 +1662,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 80,
+              "DocumentIndex": 82,
               "Title": "ServiceCollectionExtensions.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Service\\ServiceCollectionExtensions.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Service\\ServiceCollectionExtensions.cs",
@@ -1680,7 +1674,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 81,
+              "DocumentIndex": 83,
               "Title": "GetBankAccountsByCompanyQueryValidator.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Validators\\GetBankAccountsByCompanyQueryValidator.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Validators\\GetBankAccountsByCompanyQueryValidator.cs",
@@ -1692,7 +1686,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 82,
+              "DocumentIndex": 84,
               "Title": "GetAllBankAccountsQueryValidator.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Validators\\GetAllBankAccountsQueryValidator.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Validators\\GetAllBankAccountsQueryValidator.cs",
@@ -1704,7 +1698,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 84,
+              "DocumentIndex": 86,
               "Title": "WalletPermissionsControllerBase.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Controllers\\WalletPermissionsControllerBase.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Controllers\\WalletPermissionsControllerBase.cs",
@@ -1716,7 +1710,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 83,
+              "DocumentIndex": 85,
               "Title": "TreasuryController.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Treasuries\\Controllers\\TreasuryController.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Treasuries\\Controllers\\TreasuryController.cs",
@@ -1728,7 +1722,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 90,
+              "DocumentIndex": 92,
               "Title": "UpdateWalletPermissionCommand.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Commands\\UpdateWalletPermissionCommand.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Commands\\UpdateWalletPermissionCommand.cs",
@@ -1740,7 +1734,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 88,
+              "DocumentIndex": 90,
               "Title": "AddWalletPermissionCommand.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Commands\\AddWalletPermissionCommand.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Commands\\AddWalletPermissionCommand.cs",
@@ -1752,7 +1746,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 87,
+              "DocumentIndex": 89,
               "Title": "AddWalletPremissionDto.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\DTO\\AddWalletPremissionDto.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\DTO\\AddWalletPremissionDto.cs",
@@ -1764,7 +1758,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 86,
+              "DocumentIndex": 88,
               "Title": "WalletPermissionsController.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Controllers\\WalletPermissionsController.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Controllers\\WalletPermissionsController.cs",
@@ -1776,7 +1770,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 89,
+              "DocumentIndex": 91,
               "Title": "DeleteWalletPermissionCommand.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Commands\\DeleteWalletPermissionCommand.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Commands\\DeleteWalletPermissionCommand.cs",
@@ -1788,7 +1782,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 85,
+              "DocumentIndex": 87,
               "Title": ".gitignore.txt",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\.gitignore.txt",
               "RelativeDocumentMoniker": "ModularERP\\.gitignore.txt",
@@ -1800,7 +1794,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 91,
+              "DocumentIndex": 93,
               "Title": "UpdateTreasuryCommand.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Treasuries\\Commands\\UpdateTreasuryCommand.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Treasuries\\Commands\\UpdateTreasuryCommand.cs",
@@ -1812,7 +1806,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 92,
+              "DocumentIndex": 94,
               "Title": "DeleteTreasuryCommand.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Treasuries\\Commands\\DeleteTreasuryCommand.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Treasuries\\Commands\\DeleteTreasuryCommand.cs",
@@ -1824,7 +1818,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 93,
+              "DocumentIndex": 95,
               "Title": "UpdateWalletPermissionDto.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\DTO\\UpdateWalletPermissionDto.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\DTO\\UpdateWalletPermissionDto.cs",
@@ -1836,7 +1830,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 95,
+              "DocumentIndex": 97,
               "Title": "WalletPermissionDto.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\DTO\\WalletPermissionDto.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\DTO\\WalletPermissionDto.cs",
@@ -1848,7 +1842,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 96,
+              "DocumentIndex": 98,
               "Title": "UserWalletDto.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\DTO\\UserWalletDto.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\DTO\\UserWalletDto.cs",
@@ -1860,7 +1854,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 94,
+              "DocumentIndex": 96,
               "Title": "UpdateTreasuryDto.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Treasuries\\DTO\\UpdateTreasuryDto.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Treasuries\\DTO\\UpdateTreasuryDto.cs",
@@ -1872,7 +1866,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 97,
+              "DocumentIndex": 99,
               "Title": "GetAllWalletsQuery.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Queries\\GetAllWalletsQuery.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Queries\\GetAllWalletsQuery.cs",
@@ -1884,7 +1878,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 98,
+              "DocumentIndex": 100,
               "Title": "GetWalletPermissionsQuery.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Queries\\GetWalletPermissionsQuery.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Queries\\GetWalletPermissionsQuery.cs",
@@ -1896,7 +1890,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 99,
+              "DocumentIndex": 101,
               "Title": "GetUserWalletsQuery.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Queries\\GetUserWalletsQuery.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Queries\\GetUserWalletsQuery.cs",
@@ -1908,7 +1902,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 100,
+              "DocumentIndex": 102,
               "Title": "CreateTreasuryDto.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Treasuries\\DTO\\CreateTreasuryDto.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Treasuries\\DTO\\CreateTreasuryDto.cs",
@@ -1920,7 +1914,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 101,
+              "DocumentIndex": 103,
               "Title": "GetAllWalletsHandler.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Handlers\\GetAllWalletsHandler.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Handlers\\GetAllWalletsHandler.cs",
@@ -1932,7 +1926,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 102,
+              "DocumentIndex": 104,
               "Title": "DeleteWalletPermissionHandler.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Handlers\\DeleteWalletPermissionHandler.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Handlers\\DeleteWalletPermissionHandler.cs",
@@ -1944,7 +1938,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 103,
+              "DocumentIndex": 105,
               "Title": "AddWalletPermissionHandler.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Handlers\\AddWalletPermissionHandler.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Handlers\\AddWalletPermissionHandler.cs",
@@ -1956,7 +1950,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 104,
+              "DocumentIndex": 106,
               "Title": "UpdateWalletPermissionHandler.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Handlers\\UpdateWalletPermissionHandler.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Handlers\\UpdateWalletPermissionHandler.cs",
@@ -1968,7 +1962,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 105,
+              "DocumentIndex": 107,
               "Title": "GetWalletPermissionsHandler.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Handlers\\GetWalletPermissionsHandler.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Handlers\\GetWalletPermissionsHandler.cs",
@@ -1980,7 +1974,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 106,
+              "DocumentIndex": 108,
               "Title": "GetUserWalletsHandler.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Handlers\\GetUserWalletsHandler.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Handlers\\GetUserWalletsHandler.cs",
@@ -1992,7 +1986,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 107,
+              "DocumentIndex": 109,
               "Title": "UpdateWalletPermissionCommandValidator.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Validators\\UpdateWalletPermissionCommandValidator.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Validators\\UpdateWalletPermissionCommandValidator.cs",
@@ -2004,7 +1998,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 108,
+              "DocumentIndex": 110,
               "Title": "UpdateTreasuryHandler.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Treasuries\\Handlers\\UpdateTreasuryHandler.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Treasuries\\Handlers\\UpdateTreasuryHandler.cs",
@@ -2016,7 +2010,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 109,
+              "DocumentIndex": 111,
               "Title": "AddWalletPermissionCommandValidator.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Validators\\AddWalletPermissionCommandValidator.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Validators\\AddWalletPermissionCommandValidator.cs",
@@ -2028,7 +2022,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 110,
+              "DocumentIndex": 112,
               "Title": "ServiceCollectionExtensions.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Treasuries\\Service\\ServiceCollectionExtensions.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Treasuries\\Service\\ServiceCollectionExtensions.cs",
@@ -2040,7 +2034,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 111,
+              "DocumentIndex": 113,
               "Title": "GetAllWalletsQueryValidator.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Validators\\GetAllWalletsQueryValidator.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Validators\\GetAllWalletsQueryValidator.cs",
@@ -2052,7 +2046,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 112,
+              "DocumentIndex": 114,
               "Title": "GetUserWalletsQueryValidator.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Validators\\GetUserWalletsQueryValidator.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Validators\\GetUserWalletsQueryValidator.cs",
@@ -2064,7 +2058,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 113,
+              "DocumentIndex": 115,
               "Title": "GetWalletPermissionsQueryValidator.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Validators\\GetWalletPermissionsQueryValidator.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Validators\\GetWalletPermissionsQueryValidator.cs",
@@ -2076,7 +2070,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 114,
+              "DocumentIndex": 116,
               "Title": "DeleteWalletPermissionCommandValidator.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Validators\\DeleteWalletPermissionCommandValidator.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\WalletPermissions\\Validators\\DeleteWalletPermissionCommandValidator.cs",
@@ -2088,7 +2082,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 115,
+              "DocumentIndex": 117,
               "Title": "GetTreasuryStatisticsHandler.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Treasuries\\Handlers\\GetTreasuryStatisticsHandler.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Treasuries\\Handlers\\GetTreasuryStatisticsHandler.cs",
@@ -2100,7 +2094,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 116,
+              "DocumentIndex": 118,
               "Title": "GetTreasuryByIdHandler.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Treasuries\\Handlers\\GetTreasuryByIdHandler.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Treasuries\\Handlers\\GetTreasuryByIdHandler.cs",
@@ -2112,7 +2106,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 117,
+              "DocumentIndex": 119,
               "Title": "GetTreasuriesByCompanyHandler.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Treasuries\\Handlers\\GetTreasuriesByCompanyHandler.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Treasuries\\Handlers\\GetTreasuriesByCompanyHandler.cs",
@@ -2124,7 +2118,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 118,
+              "DocumentIndex": 120,
               "Title": "GetAllTreasuriesHandler.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Treasuries\\Handlers\\GetAllTreasuriesHandler.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Treasuries\\Handlers\\GetAllTreasuriesHandler.cs",
@@ -2136,7 +2130,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 119,
+              "DocumentIndex": 121,
               "Title": "DeleteTreasuryHandler.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Treasuries\\Handlers\\DeleteTreasuryHandler.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Treasuries\\Handlers\\DeleteTreasuryHandler.cs",
@@ -2148,7 +2142,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 122,
+              "DocumentIndex": 124,
               "Title": "GetAllTreasuriesQuery.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Treasuries\\Queries\\GetAllTreasuriesQuery.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Treasuries\\Queries\\GetAllTreasuriesQuery.cs",
@@ -2160,7 +2154,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 120,
+              "DocumentIndex": 122,
               "Title": "GetTreasuriesByCompanyQuery.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Treasuries\\Queries\\GetTreasuriesByCompanyQuery.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Treasuries\\Queries\\GetTreasuriesByCompanyQuery.cs",
@@ -2172,7 +2166,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 123,
+              "DocumentIndex": 125,
               "Title": "GetAllTreasuriesQueryValidator.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Treasuries\\Validators\\GetAllTreasuriesQueryValidator.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Treasuries\\Validators\\GetAllTreasuriesQueryValidator.cs",
@@ -2184,7 +2178,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 121,
+              "DocumentIndex": 123,
               "Title": "GetTreasuryStatisticsQuery.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Treasuries\\Queries\\GetTreasuryStatisticsQuery.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Treasuries\\Queries\\GetTreasuryStatisticsQuery.cs",
@@ -2196,7 +2190,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 124,
+              "DocumentIndex": 126,
               "Title": "CurrencyDistributionDto.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Treasuries\\DTO\\CurrencyDistributionDto.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Treasuries\\DTO\\CurrencyDistributionDto.cs",
@@ -2208,7 +2202,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 125,
+              "DocumentIndex": 127,
               "Title": "TreasuryStatisticsDto.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Treasuries\\DTO\\TreasuryStatisticsDto.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Treasuries\\DTO\\TreasuryStatisticsDto.cs",
@@ -2220,7 +2214,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 126,
+              "DocumentIndex": 128,
               "Title": "UpdateTreasuryDtoValidator.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Treasuries\\Validators\\UpdateTreasuryDtoValidator.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Treasuries\\Validators\\UpdateTreasuryDtoValidator.cs",
@@ -2232,7 +2226,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 127,
+              "DocumentIndex": 129,
               "Title": "UpdateTreasuryCommandValidator.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Treasuries\\Validators\\UpdateTreasuryCommandValidator.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Treasuries\\Validators\\UpdateTreasuryCommandValidator.cs",
@@ -2244,7 +2238,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 128,
+              "DocumentIndex": 130,
               "Title": "GetTreasuryByIdQueryValidator.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Treasuries\\Validators\\GetTreasuryByIdQueryValidator.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Treasuries\\Validators\\GetTreasuryByIdQueryValidator.cs",
@@ -2256,7 +2250,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 129,
+              "DocumentIndex": 131,
               "Title": "DeleteTreasuryCommandValidator.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Treasuries\\Validators\\DeleteTreasuryCommandValidator.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Treasuries\\Validators\\DeleteTreasuryCommandValidator.cs",
@@ -2268,7 +2262,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 130,
+              "DocumentIndex": 132,
               "Title": "CreateTreasuryDtoValidator.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Treasuries\\Validators\\CreateTreasuryDtoValidator.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Treasuries\\Validators\\CreateTreasuryDtoValidator.cs",
@@ -2280,7 +2274,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 131,
+              "DocumentIndex": 133,
               "Title": "Currency.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Currencies\\Models\\Currency.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Currencies\\Models\\Currency.cs",
@@ -2292,7 +2286,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 158,
+              "DocumentIndex": 159,
               "Title": "20250914233036_init.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Migrations\\20250914233036_init.cs",
               "RelativeDocumentMoniker": "ModularERP\\Migrations\\20250914233036_init.cs",
@@ -2304,7 +2298,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 132,
+              "DocumentIndex": 134,
               "Title": "BaseEntity.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Common\\Models\\BaseEntity.cs",
               "RelativeDocumentMoniker": "ModularERP\\Common\\Models\\BaseEntity.cs",
@@ -2316,7 +2310,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 133,
+              "DocumentIndex": 135,
               "Title": "GetTreasuryByIdQuery.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Treasuries\\Queries\\GetTreasuryByIdQuery.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Treasuries\\Queries\\GetTreasuryByIdQuery.cs",
@@ -2328,7 +2322,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 134,
+              "DocumentIndex": 136,
               "Title": "20250914223822_init.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Migrations\\20250914223822_init.cs",
               "RelativeDocumentMoniker": "ModularERP\\Migrations\\20250914223822_init.cs",
@@ -2340,7 +2334,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 135,
+              "DocumentIndex": 137,
               "Title": "Vendor.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Vendor\\Models\\Vendor.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Vendor\\Models\\Vendor.cs",
@@ -2352,7 +2346,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 136,
+              "DocumentIndex": 138,
               "Title": "Tax.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Taxs\\Models\\Tax.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Taxs\\Models\\Tax.cs",
@@ -2364,7 +2358,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 137,
+              "DocumentIndex": 139,
               "Title": "RecurringSchedule.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\RecurringSchedules\\Models\\RecurringSchedule.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\RecurringSchedules\\Models\\RecurringSchedule.cs",
@@ -2376,7 +2370,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 138,
+              "DocumentIndex": 140,
               "Title": "LedgerEntry.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\LedgerEntries\\Models\\LedgerEntry.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\LedgerEntries\\Models\\LedgerEntry.cs",
@@ -2388,7 +2382,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 139,
+              "DocumentIndex": 141,
               "Title": "GlAccount.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\GlAccounts\\Models\\GlAccount.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\GlAccounts\\Models\\GlAccount.cs",
@@ -2400,7 +2394,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 140,
+              "DocumentIndex": 142,
               "Title": "Customer.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Customer\\Models\\Customer.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Customer\\Models\\Customer.cs",
@@ -2412,7 +2406,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 141,
+              "DocumentIndex": 143,
               "Title": "Company.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Companys\\Models\\Company.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Companys\\Models\\Company.cs",
@@ -2424,7 +2418,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 142,
+              "DocumentIndex": 144,
               "Title": "AuditLog.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\AuditLogs\\Models\\AuditLog.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\AuditLogs\\Models\\AuditLog.cs",
@@ -2436,7 +2430,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 143,
+              "DocumentIndex": 145,
               "Title": "ApplicationUser.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Common\\Models\\ApplicationUser.cs",
               "RelativeDocumentMoniker": "ModularERP\\Common\\Models\\ApplicationUser.cs",
@@ -2448,7 +2442,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 144,
+              "DocumentIndex": 146,
               "Title": "TreasuryCreatedDto.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Treasuries\\DTO\\TreasuryCreatedDto.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Treasuries\\DTO\\TreasuryCreatedDto.cs",
@@ -2460,7 +2454,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 145,
+              "DocumentIndex": 147,
               "Title": "TreasuryListDto.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Treasuries\\DTO\\TreasuryListDto.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Treasuries\\DTO\\TreasuryListDto.cs",
@@ -2472,7 +2466,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 146,
+              "DocumentIndex": 148,
               "Title": "TreasuryDto.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\Treasuries\\DTO\\TreasuryDto.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\Treasuries\\DTO\\TreasuryDto.cs",
@@ -2484,19 +2478,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 147,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\appsettings.json",
-              "RelativeDocumentMoniker": "ModularERP\\appsettings.json",
-              "ToolTip": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\appsettings.json",
-              "RelativeToolTip": "ModularERP\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-09-14T10:08:52.592Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 148,
+              "DocumentIndex": 149,
               "Title": "20250914152103_init.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Migrations\\20250914152103_init.cs",
               "RelativeDocumentMoniker": "ModularERP\\Migrations\\20250914152103_init.cs",
@@ -2508,7 +2490,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 149,
+              "DocumentIndex": 150,
               "Title": "20250914152017_init.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Migrations\\20250914152017_init.cs",
               "RelativeDocumentMoniker": "ModularERP\\Migrations\\20250914152017_init.cs",
@@ -2520,7 +2502,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 150,
+              "DocumentIndex": 151,
               "Title": "20250914151746_init.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Migrations\\20250914151746_init.cs",
               "RelativeDocumentMoniker": "ModularERP\\Migrations\\20250914151746_init.cs",
@@ -2532,7 +2514,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 155,
+              "DocumentIndex": 156,
               "Title": "20250914101823_init.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Migrations\\20250914101823_init.cs",
               "RelativeDocumentMoniker": "ModularERP\\Migrations\\20250914101823_init.cs",
@@ -2543,7 +2525,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 154,
+              "DocumentIndex": 155,
               "Title": "20250914103015_init.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Migrations\\20250914103015_init.cs",
               "RelativeDocumentMoniker": "ModularERP\\Migrations\\20250914103015_init.cs",
@@ -2554,7 +2536,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 153,
+              "DocumentIndex": 154,
               "Title": "20250914103320_init.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Migrations\\20250914103320_init.cs",
               "RelativeDocumentMoniker": "ModularERP\\Migrations\\20250914103320_init.cs",
@@ -2565,7 +2547,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 152,
+              "DocumentIndex": 153,
               "Title": "20250914103631_init.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Migrations\\20250914103631_init.cs",
               "RelativeDocumentMoniker": "ModularERP\\Migrations\\20250914103631_init.cs",
@@ -2576,7 +2558,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 151,
+              "DocumentIndex": 152,
               "Title": "ModularERP.csproj",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\ModularERP.csproj",
               "RelativeDocumentMoniker": "ModularERP\\ModularERP.csproj",
@@ -2588,7 +2570,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 156,
+              "DocumentIndex": 157,
               "Title": "20250914101533_init.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Migrations\\20250914101533_init.cs",
               "RelativeDocumentMoniker": "ModularERP\\Migrations\\20250914101533_init.cs",
@@ -2599,7 +2581,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 157,
+              "DocumentIndex": 158,
               "Title": "20250914101450_init.cs",
               "DocumentMoniker": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\Migrations\\20250914101450_init.cs",
               "RelativeDocumentMoniker": "ModularERP\\Migrations\\20250914101450_init.cs",

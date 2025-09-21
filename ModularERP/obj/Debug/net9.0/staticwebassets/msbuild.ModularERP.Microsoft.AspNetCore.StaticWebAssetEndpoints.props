@@ -72,6 +72,18 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE\u002BhPtM="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"98003"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u00222IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE\u002BhPtM=\u0022"},{"Name":"Last-Modified","Value":"Sat, 20 Sep 2025 09:36:38 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/ModularERP/uploads/625e6c04-063a-4afe-8722-38a39c57a67a_Hossam-Reda-Tohamy-Full Stack NET Angular.41798qlwtw.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\625e6c04-063a-4afe-8722-38a39c57a67a_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"41798qlwtw"},{"Name":"integrity","Value":"sha256-2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE\u002BhPtM="},{"Name":"label","Value":"_content/ModularERP/uploads/625e6c04-063a-4afe-8722-38a39c57a67a_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"98003"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u00222IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE\u002BhPtM=\u0022"},{"Name":"Last-Modified","Value":"Sat, 20 Sep 2025 13:31:04 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/ModularERP/uploads/625e6c04-063a-4afe-8722-38a39c57a67a_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\625e6c04-063a-4afe-8722-38a39c57a67a_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE\u002BhPtM="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"98003"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u00222IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE\u002BhPtM=\u0022"},{"Name":"Last-Modified","Value":"Sat, 20 Sep 2025 13:31:04 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/ModularERP/uploads/6c01c6ff-c1ea-42ad-af1d-9660ac51b7ce_Hossam-Reda-Tohamy-Back End .NET.8s7310upt6.pdf">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\6c01c6ff-c1ea-42ad-af1d-9660ac51b7ce_Hossam-Reda-Tohamy-Back End .NET.pdf'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
