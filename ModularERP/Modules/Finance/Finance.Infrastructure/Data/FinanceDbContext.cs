@@ -16,7 +16,7 @@ using ModularERP.Modules.Finance.Features.Treasuries.Models;
 using ModularERP.Modules.Finance.Features.Vendor.Models;
 using ModularERP.Modules.Finance.Features.Vouchers.Models;
 using ModularERP.Modules.Finance.Features.VoucherTaxs.Models;
-
+using System.Reflection;
 
 namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
 {
@@ -108,6 +108,43 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.HasOne(e => e.Currency).WithMany(e => e.BankAccounts).HasForeignKey(e => e.CurrencyCode);
             });
 
+            // Tax Configuration - إضافة علاقة مع Company
+            builder.Entity<Tax>(entity =>
+            {
+                entity.HasIndex(e => new { e.CompanyId, e.Code }).IsUnique(); // تحديث: إضافة CompanyId للـ unique index
+                entity.Property(e => e.Type).HasConversion<string>();
+
+                // إضافة العلاقة مع Company
+                entity.HasOne<Company>()
+                      .WithMany()
+                      .HasForeignKey(e => e.CompanyId)
+                      .OnDelete(DeleteBehavior.Restrict);
+            });
+
+            // Vendor Configuration - إضافة علاقة مع Company
+            builder.Entity<Vendor>(entity =>
+            {
+                entity.HasIndex(e => new { e.CompanyId, e.Code }).IsUnique(); // تحديث: إضافة CompanyId للـ unique index
+
+                // إضافة العلاقة مع Company
+                entity.HasOne<Company>()
+                      .WithMany()
+                      .HasForeignKey(e => e.CompanyId)
+                      .OnDelete(DeleteBehavior.Restrict);
+            });
+
+            // Customer Configuration - إضافة علاقة مع Company
+            builder.Entity<Customer>(entity =>
+            {
+                entity.HasIndex(e => new { e.CompanyId, e.Code }).IsUnique(); // تحديث: إضافة CompanyId للـ unique index
+
+                // إضافة العلاقة مع Company
+                entity.HasOne<Company>()
+                      .WithMany()
+                      .HasForeignKey(e => e.CompanyId)
+                      .OnDelete(DeleteBehavior.Restrict);
+            });
+
             // Voucher Configuration
             builder.Entity<Voucher>(entity =>
             {
@@ -160,30 +197,12 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.HasIndex(e => e.GlAccountId).HasDatabaseName("IX_LedgerEntry_Account");
             });
 
-            // Tax Configuration
-            builder.Entity<Tax>(entity =>
-            {
-                entity.HasIndex(e => e.Code).IsUnique();
-                entity.Property(e => e.Type).HasConversion<string>();
-            });
-
-            // Vendor Configuration
-            builder.Entity<Vendor>(entity =>
-            {
-                entity.HasIndex(e => e.Code).IsUnique();
-            });
-
-            // Customer Configuration
-            builder.Entity<Customer>(entity =>
-            {
-                entity.HasIndex(e => e.Code).IsUnique();
-            });
-
             // Currency Configuration
             builder.Entity<Currency>(entity =>
             {
-                entity.HasKey(e => e.Code); 
+                entity.HasKey(e => e.Code);
             });
+
             // Attachment Configuration
             builder.Entity<VoucherAttachment>(entity =>
             {
@@ -204,6 +223,30 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.HasOne(e => e.Voucher).WithMany(e => e.AuditLogs).HasForeignKey(e => e.VoucherId).OnDelete(DeleteBehavior.Restrict);
                 entity.HasOne(e => e.User).WithMany(e => e.AuditLogs).HasForeignKey(e => e.UserId);
             });
+
+            // تطبيق Global Query Filters للـ Multi-tenancy (اختياري)
+            // ApplyGlobalFilters(builder);
+        }
+
+        // دالة لتطبيق Global Filters (يمكن استخدامها لاحقاً)
+        private void ApplyGlobalFilters(ModelBuilder builder)
+        {
+            foreach (var entityType in builder.Model.GetEntityTypes())
+            {
+                if (typeof(ITenantEntity).IsAssignableFrom(entityType.ClrType))
+                {
+                    var method = SetGlobalFilterMethod.MakeGenericMethod(entityType.ClrType);
+                    method.Invoke(this, new object[] { builder });
+                }
+            }
+        }
+
+        private static readonly MethodInfo SetGlobalFilterMethod = typeof(FinanceDbContext)
+            .GetMethod(nameof(SetGlobalFilter), BindingFlags.NonPublic | BindingFlags.Static)!;
+
+        private static void SetGlobalFilter<T>(ModelBuilder builder) where T : class, ITenantEntity
+        {
+            // builder.Entity<T>().HasQueryFilter(e => EF.Property<Guid>(e, "CompanyId") == currentTenantId);
         }
     }
 }

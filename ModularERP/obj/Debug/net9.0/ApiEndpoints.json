@@ -771,6 +771,58 @@
     ]
   },
   {
+    "ContainingType": "ModularERP.Common.Controller.TenantsController",
+    "Method": "CreateTenant",
+    "RelativePath": "api/Tenants/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ModularERP.Common.Controller.CreateTenantRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ModularERP.Common.Controller.TenantsController",
+    "Method": "GetCurrentTenant",
+    "RelativePath": "api/Tenants/current",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ModularERP.Common.Controller.TenantsController",
+    "Method": "TestConnection",
+    "RelativePath": "api/Tenants/test-connection",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ModularERP.Common.Controller.TenantsController",
+    "Method": "ValidateTenant",
+    "RelativePath": "api/Tenants/validate/{tenantId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tenantId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController",
     "Method": "GetAllTreasuries",
     "RelativePath": "api/Treasury",

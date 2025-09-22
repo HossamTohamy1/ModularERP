@@ -1,23 +1,13 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using ModularERP.Modules.Finance.Finance.Infrastructure.Data;
+﻿using Microsoft.EntityFrameworkCore;
 using Serilog;
-using System.Diagnostics;
 using ModularERP.Common.Extensions;
 using ModularERP.Common.Middleware;
+using ModularERP.Common.Services;
+using ModularERP.Modules.Finance.Finance.Infrastructure.Data;
 using ModularERP.Modules.Finance.Features.Treasuries.Handlers;
 using ModularERP.Modules.Finance.Features.Treasuries.Mapping;
 using ModularERP.Modules.Finance.Features.Treasuries.Validators;
 using ModularERP.Modules.Finance.Features.Treasuries.Models;
-using ModularERP.Modules.Finance.Features.Companys.Models;
-using ModularERP.Modules.Finance.Features.Currencies.Models;
-using ModularERP.Shared.Interfaces;
-using ModularERP.SharedKernel.Repository;
-using FluentValidation;
-using MediatR;
-using System.Reflection;
 using ModularERP.Modules.Finance.Features.Treasuries.Commands;
 using ModularERP.Modules.Finance.Features.Treasuries.DTO;
 using ModularERP.Modules.Finance.Features.BankAccounts.Models;
@@ -30,12 +20,18 @@ using ModularERP.Modules.Finance.Features.IncomesVoucher.Mapping;
 using ModularERP.Modules.Finance.Features.IncomesVoucher.Service.Interface;
 using ModularERP.Modules.Finance.Features.IncomesVoucher.DTO;
 using ModularERP.Modules.Finance.Features.IncomesVoucher.Validators;
+using ModularERP.Shared.Interfaces;
+using ModularERP.SharedKernel.Repository;
+using FluentValidation;
+using ModularERP.Common.Enum.Finance_Enum;
+using ModularERP.Common.Models;
+using ModularERP.Common.Services.Data;
 
 namespace ModularERP
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Information()
@@ -48,14 +44,20 @@ namespace ModularERP
                 Log.Information("Starting web host...");
 
                 var builder = WebApplication.CreateBuilder(args);
-
                 builder.Host.UseSerilog();
 
-                // Add services to the container.
-                builder.Services.AddControllers();
+                // ---------------------------
+                // 🟢 Services Configuration
+                // ---------------------------
+                builder.Services.AddHttpContextAccessor();
+                builder.Services.AddMemoryCache();
 
+                builder.Services.AddControllers();
                 builder.Services.AddEndpointsApiExplorer();
-                builder.Services.AddSwaggerGen();
+                builder.Services.AddSwaggerGen(c =>
+                {
+                    c.CustomSchemaIds(type => type.FullName!.Replace("+", "."));
+                });
 
                 builder.Services.AddCors(options =>
                 {
@@ -66,31 +68,51 @@ namespace ModularERP
                               .AllowAnyHeader();
                     });
                 });
-                builder.Services.AddDbContext<FinanceDbContext>(options =>
+
+                // ---------------------------
+                // 🟢 MasterDbContext
+                // ---------------------------
+                builder.Services.AddDbContext<MasterDbContext>(options =>
+                    options.UseSqlServer(builder.Configuration.GetConnectionString("MasterConnection")));
+
+                builder.Services.AddScoped<IMasterDbService, MasterDbService>();
+                builder.Services.AddScoped<ITenantService, TenantService>();
+                builder.Services.AddScoped<ITenantDbContextFactory, TenantDbContextFactory>();
+                builder.Services.AddScoped<ITenantDbContextProvider, TenantDbContextProvider>();
+
+                // ---------------------------
+                // 🟢 FinanceDbContext (Dynamic Tenant DB)
+                // ---------------------------
+                builder.Services.AddTransient<FinanceDbContext>(provider =>
                 {
-                    options
-                        .UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
-                        .EnableSensitiveDataLogging() 
-                        .LogTo(Console.WriteLine,
-                               new[] { DbLoggerCategory.Database.Command.Name },
-                               LogLevel.Information);
+                    var tenantService = provider.GetRequiredService<ITenantService>();
+                    var tenantId = tenantService.GetCurrentTenantId();
+
+                    var optionsBuilder = new DbContextOptionsBuilder<FinanceDbContext>();
+
+                    if (string.IsNullOrEmpty(tenantId))
+                    {
+                        var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")!;
+                        optionsBuilder.UseSqlServer(connectionString);
+                    }
+                    else
+                    {
+                        var tenantConnectionString = tenantService.GetConnectionString(tenantId);
+                        optionsBuilder.UseSqlServer(tenantConnectionString);
+                    }
+
+                    return new FinanceDbContext(optionsBuilder.Options);
                 });
 
-
-                //builder.Services.AddDbContext<FinanceDbContext>(options =>
-                //{
-                //    options
-                //        .UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
-                //        //.LogTo(message => Debug.WriteLine(message), LogLevel.Information)
-                //        .EnableSensitiveDataLogging(true)
-                //        .LogTo(Console.WriteLine,
-                //        new[] { DbLoggerCategory.Database.Command.Name },
-                //        LogLevel.Information);
-                //    //.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
-                //});
-
+                // ---------------------------
+                // 🟢 Repositories & Common
+                // ---------------------------
+                builder.Services.AddScoped(typeof(IGeneralRepository<>), typeof(GeneralRepository<>));
                 builder.Services.AddCommonServices();
 
+                // ---------------------------
+                // 🟢 MediatR + AutoMapper
+                // ---------------------------
                 builder.Services.AddMediatR(cfg =>
                 {
                     cfg.RegisterServicesFromAssembly(typeof(CreateTreasuryHandler).Assembly);
@@ -99,48 +121,41 @@ namespace ModularERP
                 builder.Services.AddAutoMapper(cfg =>
                 {
                     cfg.AddProfile<TreasuryMappingProfile>();
-                });
-                builder.Services.AddAutoMapper(cfg =>
-                {
                     cfg.AddProfile<BankAccountMappingProfile>();
-                });
-                                builder.Services.AddAutoMapper(cfg =>
-                {
                     cfg.AddProfile<ExpenseVoucherMappingProfile>();
-                });
-                                        builder.Services.AddAutoMapper(cfg =>
-                {
                     cfg.AddProfile<IncomeVoucherMappingProfile>();
                 });
 
-
-
-
+                // ---------------------------
+                // 🟢 Validators
+                // ---------------------------
                 builder.Services.AddScoped<IValidator<CreateTreasuryCommand>, CreateTreasuryCommandValidator>();
                 builder.Services.AddScoped<IValidator<UpdateTreasuryCommand>, UpdateTreasuryCommandValidator>();
                 builder.Services.AddScoped<IValidator<DeleteTreasuryCommand>, DeleteTreasuryCommandValidator>();
                 builder.Services.AddScoped<IValidator<CreateTreasuryDto>, CreateTreasuryDtoValidator>();
                 builder.Services.AddScoped<IValidator<UpdateTreasuryDto>, UpdateTreasuryDtoValidator>();
-
                 builder.Services.AddScoped<IValidator<CreateIncomeVoucherDto>, CreateIncomeVoucherValidator>();
+                builder.Services.AddTransient<IValidator<CreateExpenseVoucherDto>, CreateExpenseVoucherValidator>();
 
+                // ---------------------------
+                // 🟢 Domain Services
+                // ---------------------------
                 builder.Services.AddScoped<IGeneralRepository<Treasury>, GeneralRepository<Treasury>>();
                 builder.Services.AddScoped<IGeneralRepository<BankAccount>, GeneralRepository<BankAccount>>();
                 builder.Services.AddScoped<IExpenseVoucherService, ExpenseVoucherService>();
                 builder.Services.AddScoped<IIncomeVoucherService, IncomeVoucherService>();
 
-                builder.Services.AddTransient<IValidator<CreateExpenseVoucherDto>, CreateExpenseVoucherValidator>();
-
-                builder.Services.AddEndpointsApiExplorer();
-                builder.Services.AddSwaggerGen(c =>
-                {
-                    // Avoid schema ID conflicts by using full type name
-                    c.CustomSchemaIds(type => type.FullName!.Replace("+", "."));
-                });
-
+                // ---------------------------
+                // 🟢 Build App
+                // ---------------------------
                 var app = builder.Build();
 
-                // Configure the HTTP request pipeline.
+                // 🟢 Ensure Master DB created
+                await EnsureMasterDatabaseAsync(app.Services);
+
+                // ---------------------------
+                // 🟢 Middleware
+                // ---------------------------
                 if (app.Environment.IsDevelopment())
                 {
                     app.UseSwagger();
@@ -148,17 +163,62 @@ namespace ModularERP
                 }
 
                 app.UseHttpsRedirection();
-
-                // 🔥 Enable CORS middleware
                 app.UseCors("AllowAll");
-
                 app.UseAuthorization();
 
-                // Global error handler middleware
                 app.UseMiddleware<GlobalErrorHandlerMiddleware>();
+  //              app.UseMiddleware<TenantResolutionMiddleware>();
+
+                // ✅ Tenant Validation Middleware
+                app.Use(async (context, next) =>
+                {
+                    var tenantService = context.RequestServices.GetRequiredService<ITenantService>();
+                    var logger = context.RequestServices.GetRequiredService<ILogger<Program>>();
+
+                    // قائمة الـ endpoints اللي مش محتاجة Tenant ID
+                    var publicPaths = new[]
+                    {
+                        "/api/tenants/create",
+                        "/api/tenants/validate",
+                        "/swagger",
+                        "/api/health"
+                    };
+
+                    // تحقق إذا كان الـ path عام
+                    if (publicPaths.Any(path => context.Request.Path.Value?.StartsWith(path, StringComparison.OrdinalIgnoreCase) == true))
+                    {
+                        await next();
+                        return;
+                    }
+
+                    var tenantId = tenantService.GetCurrentTenantId();
+
+                    // باقي الـ endpoints تحتاج Tenant ID
+                    if (string.IsNullOrEmpty(tenantId))
+                    {
+                        context.Response.StatusCode = 400;
+                        context.Response.ContentType = "application/json";
+
+                        var response = new
+                        {
+                            error = "Tenant ID is required",
+                            timestamp = DateTime.UtcNow,
+                            path = context.Request.Path.Value
+                        };
+
+                        var json = System.Text.Json.JsonSerializer.Serialize(response);
+                        await context.Response.WriteAsync(json);
+                        return;
+                    }
+
+                    // تسجيل الـ Tenant ID
+                    logger.LogInformation("Processing request for tenant: {TenantId}", tenantId);
+                    context.Items["TenantId"] = tenantId;
+
+                    await next();
+                });
 
                 app.MapControllers();
-
                 app.Run();
             }
             catch (Exception ex)
@@ -168,6 +228,49 @@ namespace ModularERP
             finally
             {
                 Log.CloseAndFlush();
+            }
+        }
+
+        // ---------------------------
+        // 🟢 Ensure Master DB Method
+        // ---------------------------
+        static async Task EnsureMasterDatabaseAsync(IServiceProvider services)
+        {
+            using var scope = services.CreateScope();
+            var masterContext = scope.ServiceProvider.GetRequiredService<MasterDbContext>();
+            var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
+
+            try
+            {
+                await masterContext.Database.EnsureCreatedAsync();
+                await masterContext.Database.MigrateAsync();
+
+                if (!await masterContext.MasterCompanies.AnyAsync())
+                {
+                    var defaultCompany = new MasterCompany
+                    {
+                        Id = Guid.NewGuid(),
+                        Name = "Default Company",
+                        CurrencyCode = "EGP",
+                        DatabaseName = "ModularERP_Default",
+                        Status = CompanyStatus.Active
+                    };
+
+                    masterContext.MasterCompanies.Add(defaultCompany);
+                    await masterContext.SaveChangesAsync();
+
+                    logger.LogInformation("Created default company: {CompanyId}", defaultCompany.Id);
+
+                    var masterDbService = scope.ServiceProvider.GetRequiredService<IMasterDbService>();
+                    await masterDbService.CreateTenantDatabaseAsync(defaultCompany.Id);
+                }
+
+                logger.LogInformation("Master database initialized successfully");
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex, "Failed to initialize master database");
+                throw;
             }
         }
     }

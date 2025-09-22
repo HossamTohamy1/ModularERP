@@ -1,6 +1,6 @@
 ﻿namespace ModularERP.Common.Models
 {
-    public abstract class BaseEntity
+    public abstract class BaseEntity: ITenantEntity
     {
         public Guid Id { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
@@ -9,6 +9,6 @@
         public bool IsDeleted { get; set; }
         public string? CreatedById { get; set; }
         public string? UpdatedById { get; set; }
-
+        public Guid CompanyId { get; set ; }
     }
 }
