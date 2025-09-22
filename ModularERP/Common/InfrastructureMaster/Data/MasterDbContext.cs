@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ModularERP.Common.Models;
 
-namespace ModularERP.Common.Services.Data
+namespace ModularERP.Common.InfrastructureMaster.Data
 {
     public class MasterDbContext : DbContext
     {

@@ -9,11 +9,11 @@ using ModularERP.Modules.Finance.Finance.Infrastructure.Data;
 
 #nullable disable
 
-namespace ModularERP.Migrations
+namespace ModularERP.Migrations.Finance
 {
     [DbContext(typeof(FinanceDbContext))]
-    [Migration("20250921222007_MultiTenant")]
-    partial class MultiTenant
+    [Migration("20250922142417_AddMultiTenantSupport")]
+    partial class AddMultiTenantSupport
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -5,14 +5,14 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using ModularERP.Common.Services.Data;
+using ModularERP.Common.InfrastructureMaster.Data;
 
 #nullable disable
 
 namespace ModularERP.Migrations.Master
 {
     [DbContext(typeof(MasterDbContext))]
-    [Migration("20250921233040_createdb")]
+    [Migration("20250922142327_createdb")]
     partial class createdb
     {
         /// <inheritdoc />

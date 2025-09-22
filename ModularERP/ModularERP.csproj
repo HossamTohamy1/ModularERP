@@ -31,7 +31,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Migrations\Master\" />
     <Folder Include="Modules\Finance\Features\Attachments\Commands\" />
     <Folder Include="Modules\Finance\Features\Attachments\Controllers\" />
     <Folder Include="Modules\Finance\Features\Attachments\Handlers\" />

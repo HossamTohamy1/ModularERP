@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace ModularERP.Migrations
+namespace ModularERP.Migrations.Finance
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class AddMultiTenantSupport : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -66,7 +66,8 @@ namespace ModularERP.Migrations
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     CreatedById = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UpdatedById = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    UpdatedById = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CompanyId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -86,72 +87,12 @@ namespace ModularERP.Migrations
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
                     CreatedById = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UpdatedById = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    UpdatedById = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CompanyId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Currencies", x => x.Code);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Customers",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Code = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    TaxId = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    IsActive = table.Column<bool>(type: "bit", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    CreatedById = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UpdatedById = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Customers", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Taxes",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Code = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Rate = table.Column<decimal>(type: "decimal(5,2)", nullable: false),
-                    Type = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IsActive = table.Column<bool>(type: "bit", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    CreatedById = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UpdatedById = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Taxes", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Vendors",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Code = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    TaxId = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    IsActive = table.Column<bool>(type: "bit", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    CreatedById = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UpdatedById = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Vendors", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -274,7 +215,8 @@ namespace ModularERP.Migrations
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     CreatedById = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UpdatedById = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    UpdatedById = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CompanyId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -285,6 +227,33 @@ namespace ModularERP.Migrations
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Customers",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Code = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    TaxId = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    CreatedById = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UpdatedById = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CompanyId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Customers", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Customers_Companies_CompanyId",
+                        column: x => x.CompanyId,
+                        principalTable: "Companies",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -316,6 +285,61 @@ namespace ModularERP.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Taxes",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Code = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Rate = table.Column<decimal>(type: "decimal(5,2)", nullable: false),
+                    Type = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    CreatedById = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UpdatedById = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CompanyId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Taxes", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Taxes_Companies_CompanyId",
+                        column: x => x.CompanyId,
+                        principalTable: "Companies",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Vendors",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Code = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    TaxId = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    CreatedById = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UpdatedById = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CompanyId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Vendors", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Vendors_Companies_CompanyId",
+                        column: x => x.CompanyId,
+                        principalTable: "Companies",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "BankAccounts",
                 columns: table => new
                 {
@@ -329,6 +353,7 @@ namespace ModularERP.Migrations
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DepositAcl = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     WithdrawAcl = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    JournalAccountId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
@@ -351,6 +376,11 @@ namespace ModularERP.Migrations
                         principalTable: "Currencies",
                         principalColumn: "Code",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_BankAccounts_GlAccounts_JournalAccountId",
+                        column: x => x.JournalAccountId,
+                        principalTable: "GlAccounts",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -365,6 +395,7 @@ namespace ModularERP.Migrations
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DepositAcl = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     WithdrawAcl = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    JournalAccountId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
@@ -387,6 +418,11 @@ namespace ModularERP.Migrations
                         principalTable: "Currencies",
                         principalColumn: "Code",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Treasuries_GlAccounts_JournalAccountId",
+                        column: x => x.JournalAccountId,
+                        principalTable: "GlAccounts",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -506,7 +542,8 @@ namespace ModularERP.Migrations
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     CreatedById = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UpdatedById = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    UpdatedById = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CompanyId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -540,7 +577,8 @@ namespace ModularERP.Migrations
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     CreatedById = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UpdatedById = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    UpdatedById = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CompanyId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -578,7 +616,8 @@ namespace ModularERP.Migrations
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     CreatedById = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UpdatedById = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    UpdatedById = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CompanyId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -619,7 +658,8 @@ namespace ModularERP.Migrations
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     CreatedById = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UpdatedById = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    UpdatedById = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CompanyId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -708,15 +748,20 @@ namespace ModularERP.Migrations
                 column: "CurrencyCode");
 
             migrationBuilder.CreateIndex(
+                name: "IX_BankAccounts_JournalAccountId",
+                table: "BankAccounts",
+                column: "JournalAccountId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Companies_Name",
                 table: "Companies",
                 column: "Name",
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Customers_Code",
+                name: "IX_Customers_CompanyId_Code",
                 table: "Customers",
-                column: "Code",
+                columns: new[] { "CompanyId", "Code" },
                 unique: true);
 
             migrationBuilder.CreateIndex(
@@ -751,9 +796,9 @@ namespace ModularERP.Migrations
                 column: "CreatedBy");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Taxes_Code",
+                name: "IX_Taxes_CompanyId_Code",
                 table: "Taxes",
-                column: "Code",
+                columns: new[] { "CompanyId", "Code" },
                 unique: true);
 
             migrationBuilder.CreateIndex(
@@ -768,9 +813,14 @@ namespace ModularERP.Migrations
                 column: "CurrencyCode");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Vendors_Code",
+                name: "IX_Treasuries_JournalAccountId",
+                table: "Treasuries",
+                column: "JournalAccountId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Vendors_CompanyId_Code",
                 table: "Vendors",
-                column: "Code",
+                columns: new[] { "CompanyId", "Code" },
                 unique: true);
 
             migrationBuilder.CreateIndex(
@@ -909,9 +959,6 @@ namespace ModularERP.Migrations
                 name: "BankAccounts");
 
             migrationBuilder.DropTable(
-                name: "GlAccounts");
-
-            migrationBuilder.DropTable(
                 name: "RecurringSchedules");
 
             migrationBuilder.DropTable(
@@ -921,10 +968,13 @@ namespace ModularERP.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "Companies");
+                name: "Currencies");
 
             migrationBuilder.DropTable(
-                name: "Currencies");
+                name: "GlAccounts");
+
+            migrationBuilder.DropTable(
+                name: "Companies");
         }
     }
 }

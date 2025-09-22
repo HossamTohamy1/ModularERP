@@ -25,7 +25,7 @@ using ModularERP.SharedKernel.Repository;
 using FluentValidation;
 using ModularERP.Common.Enum.Finance_Enum;
 using ModularERP.Common.Models;
-using ModularERP.Common.Services.Data;
+using ModularERP.Common.InfrastructureMaster.Data;
 
 namespace ModularERP
 {

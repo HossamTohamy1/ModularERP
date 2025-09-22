@@ -1,6 +1,6 @@
 ﻿using ModularERP.Modules.Finance.Finance.Infrastructure.Data;
 
-namespace ModularERP.Common.Services.Data
+namespace ModularERP.Common.InfrastructureMaster.Data
 {
     public interface ITenantDbContextFactory
     {

@@ -8,7 +8,7 @@ using ModularERP.Modules.Finance.Finance.Infrastructure.Data;
 
 #nullable disable
 
-namespace ModularERP.Migrations
+namespace ModularERP.Migrations.Finance
 {
     [DbContext(typeof(FinanceDbContext))]
     partial class FinanceDbContextModelSnapshot : ModelSnapshot
