@@ -9,6 +9,6 @@
         public bool IsDeleted { get; set; }
         public string? CreatedById { get; set; }
         public string? UpdatedById { get; set; }
-        public Guid CompanyId { get; set ; }
+        public Guid TenantId { get; set ; }
     }
 }

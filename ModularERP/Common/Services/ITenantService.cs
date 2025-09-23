@@ -6,6 +6,7 @@ namespace ModularERP.Common.Services
     public interface ITenantService
     {
         string? GetCurrentTenantId();
+
         Task<bool> ValidateTenantAsync(string tenantId);
         Task<MasterCompany?> GetTenantAsync(string tenantId);
         string GetConnectionString(string tenantId);

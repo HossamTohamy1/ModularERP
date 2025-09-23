@@ -52,17 +52,33 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.ToTable("AspNetUsers");
             });
 
-            // Company Configuration
+            // Company Configuration - master entity in tenant DB
             builder.Entity<Company>(entity =>
             {
                 entity.HasIndex(e => e.Name).IsUnique();
-                entity.HasMany(e => e.Treasuries).WithOne(e => e.Company).HasForeignKey(e => e.CompanyId);
-                entity.HasMany(e => e.BankAccounts).WithOne(e => e.Company).HasForeignKey(e => e.CompanyId);
-                entity.HasMany(e => e.GlAccounts).WithOne(e => e.Company).HasForeignKey(e => e.CompanyId);
-                entity.HasMany(e => e.Vouchers).WithOne(e => e.Company).HasForeignKey(e => e.CompanyId);
+                // Company is the root entity - has foreign key relationships to major entities
+                entity.HasMany(e => e.Treasuries)
+                      .WithOne(e => e.Company)
+                      .HasForeignKey(e => e.CompanyId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasMany(e => e.BankAccounts)
+                      .WithOne(e => e.Company)
+                      .HasForeignKey(e => e.CompanyId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasMany(e => e.GlAccounts)
+                      .WithOne(e => e.Company)
+                      .HasForeignKey(e => e.CompanyId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasMany(e => e.Vouchers)
+                      .WithOne(e => e.Company)
+                      .HasForeignKey(e => e.CompanyId)
+                      .OnDelete(DeleteBehavior.Restrict);
             });
 
-            // GlAccount Configuration
+            // GlAccount Configuration - has CompanyId FK + TenantId for isolation
             builder.Entity<GlAccount>(entity =>
             {
                 entity.HasIndex(e => new { e.CompanyId, e.Code }).IsUnique();
@@ -77,75 +93,65 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .WithOne(e => e.JournalAccount)
                       .HasForeignKey(e => e.JournalAccountId)
                       .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasMany(e => e.LedgerEntries)
+                      .WithOne(e => e.GlAccount)
+                      .HasForeignKey(e => e.GlAccountId)
+                      .OnDelete(DeleteBehavior.Restrict);
             });
 
-            // Treasury Configuration
+            // Treasury Configuration - has CompanyId FK + TenantId for isolation
             builder.Entity<Treasury>(entity =>
             {
                 entity.HasIndex(e => new { e.CompanyId, e.Name }).IsUnique();
                 entity.Property(e => e.Status).HasConversion<string>();
-
-                entity.Property(e => e.DepositAcl)
-                      .HasColumnType("nvarchar(max)");
-
-                entity.Property(e => e.WithdrawAcl)
-                      .HasColumnType("nvarchar(max)");
+                entity.Property(e => e.DepositAcl).HasColumnType("nvarchar(max)");
+                entity.Property(e => e.WithdrawAcl).HasColumnType("nvarchar(max)");
 
                 entity.HasOne(e => e.Currency)
                       .WithMany(e => e.Treasuries)
-                      .HasForeignKey(e => e.CurrencyCode);
+                      .HasForeignKey(e => e.CurrencyCode)
+                      .OnDelete(DeleteBehavior.Restrict);
             });
 
-            // BankAccount Configuration
+            // BankAccount Configuration - has CompanyId FK + TenantId for isolation
             builder.Entity<BankAccount>(entity =>
             {
-                entity.Property(e => e.DepositAcl)
-                      .HasColumnType("nvarchar(max)");
-
-                entity.Property(e => e.WithdrawAcl)
-                      .HasColumnType("nvarchar(max)");
+                entity.Property(e => e.DepositAcl).HasColumnType("nvarchar(max)");
+                entity.Property(e => e.WithdrawAcl).HasColumnType("nvarchar(max)");
                 entity.Property(e => e.Status).HasConversion<string>();
-                entity.HasOne(e => e.Currency).WithMany(e => e.BankAccounts).HasForeignKey(e => e.CurrencyCode);
+
+                entity.HasOne(e => e.Currency)
+                      .WithMany(e => e.BankAccounts)
+                      .HasForeignKey(e => e.CurrencyCode)
+                      .OnDelete(DeleteBehavior.Restrict);
             });
 
-            // Tax Configuration - إضافة علاقة مع Company
+            // Tax Configuration - has TenantId for isolation (no CompanyId FK as per BRSD)
             builder.Entity<Tax>(entity =>
             {
-                entity.HasIndex(e => new { e.CompanyId, e.Code }).IsUnique(); // تحديث: إضافة CompanyId للـ unique index
+                entity.HasIndex(e => new { e.TenantId, e.Code }).IsUnique();
                 entity.Property(e => e.Type).HasConversion<string>();
 
-                // إضافة العلاقة مع Company
-                entity.HasOne<Company>()
-                      .WithMany()
-                      .HasForeignKey(e => e.CompanyId)
+                entity.HasMany(e => e.VoucherTaxes)
+                      .WithOne(e => e.Tax)
+                      .HasForeignKey(e => e.TaxId)
                       .OnDelete(DeleteBehavior.Restrict);
             });
 
-            // Vendor Configuration - إضافة علاقة مع Company
+            // Vendor Configuration - has TenantId for isolation (no CompanyId FK as per BRSD)
             builder.Entity<Vendor>(entity =>
             {
-                entity.HasIndex(e => new { e.CompanyId, e.Code }).IsUnique(); // تحديث: إضافة CompanyId للـ unique index
-
-                // إضافة العلاقة مع Company
-                entity.HasOne<Company>()
-                      .WithMany()
-                      .HasForeignKey(e => e.CompanyId)
-                      .OnDelete(DeleteBehavior.Restrict);
+                entity.HasIndex(e => new { e.TenantId, e.Code }).IsUnique();
             });
 
-            // Customer Configuration - إضافة علاقة مع Company
+            // Customer Configuration - has TenantId for isolation (no CompanyId FK as per BRSD)
             builder.Entity<Customer>(entity =>
             {
-                entity.HasIndex(e => new { e.CompanyId, e.Code }).IsUnique(); // تحديث: إضافة CompanyId للـ unique index
-
-                // إضافة العلاقة مع Company
-                entity.HasOne<Company>()
-                      .WithMany()
-                      .HasForeignKey(e => e.CompanyId)
-                      .OnDelete(DeleteBehavior.Restrict);
+                entity.HasIndex(e => new { e.TenantId, e.Code }).IsUnique();
             });
 
-            // Voucher Configuration
+            // Voucher Configuration - has CompanyId FK + TenantId for isolation
             builder.Entity<Voucher>(entity =>
             {
                 entity.HasIndex(e => new { e.CompanyId, e.Code }).IsUnique();
@@ -154,7 +160,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.Property(e => e.WalletType).HasConversion<string>();
                 entity.Property(e => e.CounterpartyType).HasConversion<string>();
 
-                // User relationships
+                // User relationships for audit trail
                 entity.HasOne(e => e.Creator)
                       .WithMany(e => e.CreatedVouchers)
                       .HasForeignKey(e => e.CreatedBy)
@@ -170,8 +176,32 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .HasForeignKey(e => e.ReversedBy)
                       .OnDelete(DeleteBehavior.Restrict);
 
-                entity.HasOne(e => e.Currency).WithMany(e => e.Vouchers).HasForeignKey(e => e.CurrencyCode);
+                entity.HasOne(e => e.Currency)
+                      .WithMany(e => e.Vouchers)
+                      .HasForeignKey(e => e.CurrencyCode)
+                      .OnDelete(DeleteBehavior.Restrict);
 
+                entity.HasMany(e => e.VoucherTaxes)
+                      .WithOne(e => e.Voucher)
+                      .HasForeignKey(e => e.VoucherId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                entity.HasMany(e => e.LedgerEntries)
+                      .WithOne(e => e.Voucher)
+                      .HasForeignKey(e => e.VoucherId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasMany(e => e.Attachments)
+                      .WithOne(e => e.Voucher)
+                      .HasForeignKey(e => e.VoucherId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasMany(e => e.AuditLogs)
+                      .WithOne(e => e.Voucher)
+                      .HasForeignKey(e => e.VoucherId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // Indexes for performance
                 entity.HasIndex(e => e.Date).HasDatabaseName("IX_Voucher_Date");
                 entity.HasIndex(e => e.Status).HasDatabaseName("IX_Voucher_Status");
                 entity.HasIndex(e => e.Type).HasDatabaseName("IX_Voucher_Type");
@@ -179,56 +209,69 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.HasIndex(e => new { e.CounterpartyType, e.CounterpartyId }).HasDatabaseName("IX_Voucher_Counterparty");
             });
 
-            // VoucherTax Configuration
+            // VoucherTax Configuration - has TenantId for isolation
             builder.Entity<VoucherTax>(entity =>
             {
                 entity.Property(e => e.Direction).HasConversion<string>();
-                entity.HasOne(e => e.Voucher).WithMany(e => e.VoucherTaxes).HasForeignKey(e => e.VoucherId).OnDelete(DeleteBehavior.Cascade);
-                entity.HasOne(e => e.Tax).WithMany(e => e.VoucherTaxes).HasForeignKey(e => e.TaxId);
+                entity.Property(e => e.IsWithholding).HasDefaultValue(false);
             });
 
-            // LedgerEntry Configuration
+            // LedgerEntry Configuration - has TenantId for isolation
             builder.Entity<LedgerEntry>(entity =>
             {
-                entity.HasOne(e => e.Voucher).WithMany(e => e.LedgerEntries).HasForeignKey(e => e.VoucherId).OnDelete(DeleteBehavior.Restrict);
-                entity.HasOne(e => e.GlAccount).WithMany(e => e.LedgerEntries).HasForeignKey(e => e.GlAccountId);
-                entity.HasOne(e => e.Currency).WithMany(e => e.LedgerEntries).HasForeignKey(e => e.CurrencyCode);
+                entity.HasOne(e => e.Currency)
+                      .WithMany(e => e.LedgerEntries)
+                      .HasForeignKey(e => e.CurrencyCode)
+                      .OnDelete(DeleteBehavior.Restrict);
+
                 entity.HasIndex(e => e.EntryDate).HasDatabaseName("IX_LedgerEntry_Date");
                 entity.HasIndex(e => e.GlAccountId).HasDatabaseName("IX_LedgerEntry_Account");
+                entity.HasIndex(e => e.VoucherId).HasDatabaseName("IX_LedgerEntry_Voucher");
             });
 
-            // Currency Configuration
+            // Currency Configuration - global entity (no TenantId)
             builder.Entity<Currency>(entity =>
             {
                 entity.HasKey(e => e.Code);
+                entity.HasIndex(e => e.Code).IsUnique();
             });
 
-            // Attachment Configuration
+            // VoucherAttachment Configuration - has TenantId for isolation
             builder.Entity<VoucherAttachment>(entity =>
             {
-                entity.HasOne(e => e.Voucher).WithMany(e => e.Attachments).HasForeignKey(e => e.VoucherId).OnDelete(DeleteBehavior.Restrict);
-                entity.HasOne(e => e.UploadedByUser).WithMany(e => e.UploadedAttachments).HasForeignKey(e => e.UploadedBy);
+                entity.HasOne(e => e.UploadedByUser)
+                      .WithMany(e => e.UploadedAttachments)
+                      .HasForeignKey(e => e.UploadedBy)
+                      .OnDelete(DeleteBehavior.Restrict);
             });
 
-            // RecurringSchedule Configuration
+            // RecurringSchedule Configuration - has TenantId for isolation
             builder.Entity<RecurringSchedule>(entity =>
             {
                 entity.Property(e => e.Frequency).HasConversion<string>();
-                entity.HasOne(e => e.Creator).WithMany(e => e.CreatedSchedules).HasForeignKey(e => e.CreatedBy);
+                entity.HasOne(e => e.Creator)
+                      .WithMany(e => e.CreatedSchedules)
+                      .HasForeignKey(e => e.CreatedBy)
+                      .OnDelete(DeleteBehavior.Restrict);
             });
 
-            // AuditLog Configuration
+            // AuditLog Configuration - has TenantId for isolation
             builder.Entity<AuditLog>(entity =>
             {
-                entity.HasOne(e => e.Voucher).WithMany(e => e.AuditLogs).HasForeignKey(e => e.VoucherId).OnDelete(DeleteBehavior.Restrict);
-                entity.HasOne(e => e.User).WithMany(e => e.AuditLogs).HasForeignKey(e => e.UserId);
+                entity.HasOne(e => e.User)
+                      .WithMany(e => e.AuditLogs)
+                      .HasForeignKey(e => e.UserId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasIndex(e => e.VoucherId).HasDatabaseName("IX_AuditLog_Voucher");
+                entity.HasIndex(e => e.CreatedAt).HasDatabaseName("IX_AuditLog_Timestamp");
             });
 
-            // تطبيق Global Query Filters للـ Multi-tenancy (اختياري)
-            // ApplyGlobalFilters(builder);
+            // Apply Global Query Filters for Multi-tenancy
+            ApplyGlobalFilters(builder);
         }
 
-        // دالة لتطبيق Global Filters (يمكن استخدامها لاحقاً)
+        // دالة لتطبيق Global Filters للـ Multi-tenancy
         private void ApplyGlobalFilters(ModelBuilder builder)
         {
             foreach (var entityType in builder.Model.GetEntityTypes())
@@ -246,7 +289,8 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
 
         private static void SetGlobalFilter<T>(ModelBuilder builder) where T : class, ITenantEntity
         {
-            // builder.Entity<T>().HasQueryFilter(e => EF.Property<Guid>(e, "CompanyId") == currentTenantId);
+            // Global filter to automatically filter by TenantId
+            // builder.Entity<T>().HasQueryFilter(e => EF.Property<Guid>(e, "TenantId") == currentTenantId);
         }
     }
 }

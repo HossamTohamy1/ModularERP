@@ -12,7 +12,7 @@ using ModularERP.Modules.Finance.Finance.Infrastructure.Data;
 namespace ModularERP.Migrations.Finance
 {
     [DbContext(typeof(FinanceDbContext))]
-    [Migration("20250922142417_AddMultiTenantSupport")]
+    [Migration("20250923182935_AddMultiTenantSupport")]
     partial class AddMultiTenantSupport
     {
         /// <inheritdoc />
@@ -244,9 +244,6 @@ namespace ModularERP.Migrations.Finance
                         .HasMaxLength(64)
                         .HasColumnType("nvarchar(64)");
 
-                    b.Property<Guid>("CompanyId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -276,6 +273,9 @@ namespace ModularERP.Migrations.Finance
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
+
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -312,9 +312,6 @@ namespace ModularERP.Migrations.Finance
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<Guid>("CompanyId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -333,6 +330,9 @@ namespace ModularERP.Migrations.Finance
                     b.Property<string>("OldValues")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -347,9 +347,13 @@ namespace ModularERP.Migrations.Finance
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CreatedAt")
+                        .HasDatabaseName("IX_AuditLog_Timestamp");
+
                     b.HasIndex("UserId");
 
-                    b.HasIndex("VoucherId");
+                    b.HasIndex("VoucherId")
+                        .HasDatabaseName("IX_AuditLog_Voucher");
 
                     b.ToTable("AuditLogs");
                 });
@@ -409,6 +413,9 @@ namespace ModularERP.Migrations.Finance
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -436,9 +443,6 @@ namespace ModularERP.Migrations.Finance
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("CompanyId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -461,6 +465,9 @@ namespace ModularERP.Migrations.Finance
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -480,9 +487,6 @@ namespace ModularERP.Migrations.Finance
                     b.Property<string>("Code")
                         .HasMaxLength(3)
                         .HasColumnType("nvarchar(3)");
-
-                    b.Property<Guid>("CompanyId")
-                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -507,6 +511,9 @@ namespace ModularERP.Migrations.Finance
                         .HasMaxLength(5)
                         .HasColumnType("nvarchar(5)");
 
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -514,6 +521,9 @@ namespace ModularERP.Migrations.Finance
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Code");
+
+                    b.HasIndex("Code")
+                        .IsUnique();
 
                     b.ToTable("Currencies");
                 });
@@ -528,9 +538,6 @@ namespace ModularERP.Migrations.Finance
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
-
-                    b.Property<Guid>("CompanyId")
-                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -553,6 +560,9 @@ namespace ModularERP.Migrations.Finance
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -561,7 +571,7 @@ namespace ModularERP.Migrations.Finance
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CompanyId", "Code")
+                    b.HasIndex("TenantId", "Code")
                         .IsUnique();
 
                     b.ToTable("Customers");
@@ -601,6 +611,9 @@ namespace ModularERP.Migrations.Finance
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Type")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -623,9 +636,6 @@ namespace ModularERP.Migrations.Finance
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("CompanyId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedAt")
@@ -666,6 +676,9 @@ namespace ModularERP.Migrations.Finance
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -685,7 +698,8 @@ namespace ModularERP.Migrations.Finance
                     b.HasIndex("GlAccountId")
                         .HasDatabaseName("IX_LedgerEntry_Account");
 
-                    b.HasIndex("VoucherId");
+                    b.HasIndex("VoucherId")
+                        .HasDatabaseName("IX_LedgerEntry_Voucher");
 
                     b.ToTable("LedgerEntries");
                 });
@@ -694,9 +708,6 @@ namespace ModularERP.Migrations.Finance
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("CompanyId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedAt")
@@ -724,6 +735,9 @@ namespace ModularERP.Migrations.Finance
                     b.Property<string>("RRule")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -748,9 +762,6 @@ namespace ModularERP.Migrations.Finance
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<Guid>("CompanyId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -771,6 +782,9 @@ namespace ModularERP.Migrations.Finance
                     b.Property<decimal>("Rate")
                         .HasColumnType("decimal(5,2)");
 
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Type")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -783,7 +797,7 @@ namespace ModularERP.Migrations.Finance
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CompanyId", "Code")
+                    b.HasIndex("TenantId", "Code")
                         .IsUnique();
 
                     b.ToTable("Taxes");
@@ -834,6 +848,9 @@ namespace ModularERP.Migrations.Finance
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -867,9 +884,6 @@ namespace ModularERP.Migrations.Finance
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<Guid>("CompanyId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -891,6 +905,9 @@ namespace ModularERP.Migrations.Finance
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -899,7 +916,7 @@ namespace ModularERP.Migrations.Finance
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CompanyId", "Code")
+                    b.HasIndex("TenantId", "Code")
                         .IsUnique();
 
                     b.ToTable("Vendors");
@@ -913,9 +930,6 @@ namespace ModularERP.Migrations.Finance
 
                     b.Property<decimal>("BaseAmount")
                         .HasColumnType("decimal(18,2)");
-
-                    b.Property<Guid>("CompanyId")
-                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -934,12 +948,17 @@ namespace ModularERP.Migrations.Finance
                         .HasColumnType("bit");
 
                     b.Property<bool>("IsWithholding")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<decimal>("TaxAmount")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<Guid>("TaxId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("TenantId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("UpdatedAt")
@@ -1045,6 +1064,9 @@ namespace ModularERP.Migrations.Finance
                     b.Property<string>("Status")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid?>("TreasuryId")
                         .HasColumnType("uniqueidentifier");
@@ -1163,7 +1185,7 @@ namespace ModularERP.Migrations.Finance
                     b.HasOne("ModularERP.Common.Models.ApplicationUser", "UploadedByUser")
                         .WithMany("UploadedAttachments")
                         .HasForeignKey("UploadedBy")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("ModularERP.Modules.Finance.Features.Vouchers.Models.Voucher", "Voucher")
@@ -1182,7 +1204,7 @@ namespace ModularERP.Migrations.Finance
                     b.HasOne("ModularERP.Common.Models.ApplicationUser", "User")
                         .WithMany("AuditLogs")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("ModularERP.Modules.Finance.Features.Vouchers.Models.Voucher", "Voucher")
@@ -1201,13 +1223,13 @@ namespace ModularERP.Migrations.Finance
                     b.HasOne("ModularERP.Modules.Finance.Features.Companys.Models.Company", "Company")
                         .WithMany("BankAccounts")
                         .HasForeignKey("CompanyId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("ModularERP.Modules.Finance.Features.Currencies.Models.Currency", "Currency")
                         .WithMany("BankAccounts")
                         .HasForeignKey("CurrencyCode")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("ModularERP.Modules.Finance.Features.GlAccounts.Models.GlAccount", "JournalAccount")
@@ -1221,21 +1243,12 @@ namespace ModularERP.Migrations.Finance
                     b.Navigation("JournalAccount");
                 });
 
-            modelBuilder.Entity("ModularERP.Modules.Finance.Features.Customer.Models.Customer", b =>
-                {
-                    b.HasOne("ModularERP.Modules.Finance.Features.Companys.Models.Company", null)
-                        .WithMany()
-                        .HasForeignKey("CompanyId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("ModularERP.Modules.Finance.Features.GlAccounts.Models.GlAccount", b =>
                 {
                     b.HasOne("ModularERP.Modules.Finance.Features.Companys.Models.Company", "Company")
                         .WithMany("GlAccounts")
                         .HasForeignKey("CompanyId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Company");
@@ -1246,13 +1259,13 @@ namespace ModularERP.Migrations.Finance
                     b.HasOne("ModularERP.Modules.Finance.Features.Currencies.Models.Currency", "Currency")
                         .WithMany("LedgerEntries")
                         .HasForeignKey("CurrencyCode")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("ModularERP.Modules.Finance.Features.GlAccounts.Models.GlAccount", "GlAccount")
                         .WithMany("LedgerEntries")
                         .HasForeignKey("GlAccountId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("ModularERP.Modules.Finance.Features.Vouchers.Models.Voucher", "Voucher")
@@ -1273,19 +1286,10 @@ namespace ModularERP.Migrations.Finance
                     b.HasOne("ModularERP.Common.Models.ApplicationUser", "Creator")
                         .WithMany("CreatedSchedules")
                         .HasForeignKey("CreatedBy")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Creator");
-                });
-
-            modelBuilder.Entity("ModularERP.Modules.Finance.Features.Taxs.Models.Tax", b =>
-                {
-                    b.HasOne("ModularERP.Modules.Finance.Features.Companys.Models.Company", null)
-                        .WithMany()
-                        .HasForeignKey("CompanyId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("ModularERP.Modules.Finance.Features.Treasuries.Models.Treasury", b =>
@@ -1293,13 +1297,13 @@ namespace ModularERP.Migrations.Finance
                     b.HasOne("ModularERP.Modules.Finance.Features.Companys.Models.Company", "Company")
                         .WithMany("Treasuries")
                         .HasForeignKey("CompanyId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("ModularERP.Modules.Finance.Features.Currencies.Models.Currency", "Currency")
                         .WithMany("Treasuries")
                         .HasForeignKey("CurrencyCode")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("ModularERP.Modules.Finance.Features.GlAccounts.Models.GlAccount", "JournalAccount")
@@ -1313,21 +1317,12 @@ namespace ModularERP.Migrations.Finance
                     b.Navigation("JournalAccount");
                 });
 
-            modelBuilder.Entity("ModularERP.Modules.Finance.Features.Vendor.Models.Vendor", b =>
-                {
-                    b.HasOne("ModularERP.Modules.Finance.Features.Companys.Models.Company", null)
-                        .WithMany()
-                        .HasForeignKey("CompanyId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("ModularERP.Modules.Finance.Features.VoucherTaxs.Models.VoucherTax", b =>
                 {
                     b.HasOne("ModularERP.Modules.Finance.Features.Taxs.Models.Tax", "Tax")
                         .WithMany("VoucherTaxes")
                         .HasForeignKey("TaxId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("ModularERP.Modules.Finance.Features.Vouchers.Models.Voucher", "Voucher")
@@ -1356,7 +1351,7 @@ namespace ModularERP.Migrations.Finance
                     b.HasOne("ModularERP.Modules.Finance.Features.Companys.Models.Company", "Company")
                         .WithMany("Vouchers")
                         .HasForeignKey("CompanyId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("ModularERP.Common.Models.ApplicationUser", "Creator")
@@ -1368,7 +1363,7 @@ namespace ModularERP.Migrations.Finance
                     b.HasOne("ModularERP.Modules.Finance.Features.Currencies.Models.Currency", "Currency")
                         .WithMany("Vouchers")
                         .HasForeignKey("CurrencyCode")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("ModularERP.Modules.Finance.Features.GlAccounts.Models.GlAccount", "JournalAccount")

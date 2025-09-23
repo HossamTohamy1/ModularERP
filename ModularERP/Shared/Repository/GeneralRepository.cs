@@ -63,17 +63,38 @@ namespace ModularERP.SharedKernel.Repository
                 throw new InvalidOperationException("Tenant ID is required but not found");
             }
 
-            // إذا كان النوع يحتوي على CompanyId (Tenant isolation)
-            if (typeof(T).GetProperty("CompanyId") != null)
+            // تطبيق فلتر الـ TenantId بس، مش الـ CompanyId
+            if (typeof(T).GetProperty("TenantId") != null)
             {
-                // تحويل TenantId إلى CompanyId (Guid)
-                if (Guid.TryParse(_tenantId, out var companyId))
+                if (Guid.TryParse(_tenantId, out var tenantId))
                 {
-                    return query.Where(e => EF.Property<Guid>(e, "CompanyId") == companyId);
+                    return query.Where(e => EF.Property<Guid>(e, "TenantId") == tenantId);
                 }
             }
 
             return query;
+        }
+
+        public async Task AddAsync(T entity)
+        {
+            // تعيين TenantId فقط للكيانات اللي محتاجة
+            if (typeof(T).GetProperty("TenantId") != null && !string.IsNullOrEmpty(_tenantId))
+            {
+                if (Guid.TryParse(_tenantId, out var tenantId))
+                {
+                    // تأكد إن الـ TenantId مش متعين من قبل
+                    var currentTenantId = (Guid?)entity.GetType().GetProperty("TenantId")?.GetValue(entity);
+                    if (currentTenantId == Guid.Empty || currentTenantId == null)
+                    {
+                        entity.GetType().GetProperty("TenantId")?.SetValue(entity, tenantId);
+                    }
+                }
+            }
+
+            // 👈 هنا مش هنعمل override للـ CompanyId خالص
+            // الـ CompanyId هيجي من الـ Handler أو الـ Client مباشرة
+
+            await _dbSet.AddAsync(entity);
         }
 
         public IQueryable<T> GetAll()
@@ -101,23 +122,23 @@ namespace ModularERP.SharedKernel.Repository
             return GetAll().Where(expression);
         }
 
-        public async Task AddAsync(T entity)
+        // للحصول على البيانات بـ CompanyId معينة داخل نفس الـ Tenant
+        public IQueryable<T> GetByCompanyId(Guid companyId)
         {
-            // تعيين CompanyId للكيان الجديد
-            if (typeof(T).GetProperty("CompanyId") != null && !string.IsNullOrEmpty(_tenantId))
+            var query = GetAll();
+
+            // إذا الـ Entity عندها CompanyId، فلترها
+            if (typeof(T).GetProperty("CompanyId") != null)
             {
-                if (Guid.TryParse(_tenantId, out var companyId))
-                {
-                    entity.GetType().GetProperty("CompanyId")?.SetValue(entity, companyId);
-                }
+                query = query.Where(e => EF.Property<Guid>(e, "CompanyId") == companyId);
             }
 
-            await _dbSet.AddAsync(entity);
+            return query;
         }
 
         public async Task Update(T entity)
         {
-            // التأكد من أن الكيان ينتمي لنفس الـ Tenant
+            // التأكد من أن الكيان ينتمي لنفس الـ Tenant (مش الـ Company)
             var existingEntity = await GetByIDWithTracking(entity.Id);
             if (existingEntity == null)
             {
@@ -176,14 +197,18 @@ namespace ModularERP.SharedKernel.Repository
 
         public async Task AddRangeAsync(IEnumerable<T> entities)
         {
-            // تعيين CompanyId لجميع الكيانات
+            // تعيين TenantId لجميع الكيانات (مش CompanyId)
             foreach (var entity in entities)
             {
-                if (typeof(T).GetProperty("CompanyId") != null && !string.IsNullOrEmpty(_tenantId))
+                if (typeof(T).GetProperty("TenantId") != null && !string.IsNullOrEmpty(_tenantId))
                 {
-                    if (Guid.TryParse(_tenantId, out var companyId))
+                    if (Guid.TryParse(_tenantId, out var tenantId))
                     {
-                        entity.GetType().GetProperty("CompanyId")?.SetValue(entity, companyId);
+                        var currentTenantId = (Guid?)entity.GetType().GetProperty("TenantId")?.GetValue(entity);
+                        if (currentTenantId == Guid.Empty || currentTenantId == null)
+                        {
+                            entity.GetType().GetProperty("TenantId")?.SetValue(entity, tenantId);
+                        }
                     }
                 }
             }

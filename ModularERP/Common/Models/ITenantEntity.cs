@@ -2,7 +2,7 @@
 {
     public interface ITenantEntity
     {
-        Guid CompanyId { get; set; }
+        Guid TenantId { get; set; }
         bool IsDeleted { get; set; }
 
     }

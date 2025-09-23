@@ -24,7 +24,6 @@ namespace ModularERP.Common.Controller
             _logger = logger;
         }
 
-        // إنشاء شركة جديدة
         [HttpPost("create")]
         public async Task<IActionResult> CreateTenant([FromBody] CreateTenantRequest request)
         {
@@ -48,7 +47,6 @@ namespace ModularERP.Common.Controller
             }
         }
 
-        // الحصول على معلومات الشركة الحالية
         [HttpGet("current")]
         public async Task<IActionResult> GetCurrentTenant()
         {
@@ -74,7 +72,6 @@ namespace ModularERP.Common.Controller
             });
         }
 
-        // التحقق من صحة الشركة
         [HttpGet("validate/{tenantId}")]
         public async Task<IActionResult> ValidateTenant(string tenantId)
         {
@@ -82,7 +79,6 @@ namespace ModularERP.Common.Controller
             return Ok(new { TenantId = tenantId, IsValid = isValid });
         }
 
-        // اختبار الاتصال بقاعدة البيانات
         [HttpGet("test-connection")]
         public async Task<IActionResult> TestConnection()
         {
@@ -96,7 +92,6 @@ namespace ModularERP.Common.Controller
             {
                 var connectionString = await _tenantService.GetConnectionStringAsync(tenantId);
 
-                // اختبار الاتصال
                 var optionsBuilder = new DbContextOptionsBuilder<FinanceDbContext>();
                 optionsBuilder.UseSqlServer(connectionString);
 
@@ -120,7 +115,6 @@ namespace ModularERP.Common.Controller
         }
     }
 
-    // DTO للطلبات
     public class CreateTenantRequest
     {
         public string Name { get; set; } = string.Empty;

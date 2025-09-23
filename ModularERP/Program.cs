@@ -26,6 +26,8 @@ using FluentValidation;
 using ModularERP.Common.Enum.Finance_Enum;
 using ModularERP.Common.Models;
 using ModularERP.Common.InfrastructureMaster.Data;
+using ModularERP.Modules.Finance.Features.Companys.Handlers;
+using ModularERP.Modules.Finance.Features.Companys.Services;
 
 namespace ModularERP
 {
@@ -109,6 +111,7 @@ namespace ModularERP
                 // ---------------------------
                 builder.Services.AddScoped(typeof(IGeneralRepository<>), typeof(GeneralRepository<>));
                 builder.Services.AddCommonServices();
+                builder.Services.AddCompanySerivces();
 
                 // ---------------------------
                 // 🟢 MediatR + AutoMapper
@@ -116,6 +119,8 @@ namespace ModularERP
                 builder.Services.AddMediatR(cfg =>
                 {
                     cfg.RegisterServicesFromAssembly(typeof(CreateTreasuryHandler).Assembly);
+                    cfg.RegisterServicesFromAssembly(typeof(CreateCompanyHandler).Assembly); 
+
                 });
 
                 builder.Services.AddAutoMapper(cfg =>

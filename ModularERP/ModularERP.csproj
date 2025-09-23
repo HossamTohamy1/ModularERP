@@ -9,6 +9,7 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="15.0.1" />
     <PackageReference Include="FluentValidation" Version="12.0.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.0.0" />
     <PackageReference Include="MediatR" Version="13.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.9" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.3" />
@@ -48,12 +49,6 @@
     <Folder Include="Modules\Finance\Features\BankAccounts\Mapping\" />
     <Folder Include="Modules\Finance\Features\BankAccounts\Queries\" />
     <Folder Include="Modules\Finance\Features\BankAccounts\Validators\" />
-    <Folder Include="Modules\Finance\Features\Companys\Commands\" />
-    <Folder Include="Modules\Finance\Features\Companys\Controllers\" />
-    <Folder Include="Modules\Finance\Features\Companys\Handlers\" />
-    <Folder Include="Modules\Finance\Features\Companys\Mapping\" />
-    <Folder Include="Modules\Finance\Features\Companys\Queries\" />
-    <Folder Include="Modules\Finance\Features\Companys\Validators\" />
     <Folder Include="Modules\Finance\Features\Currencies\Commands\" />
     <Folder Include="Modules\Finance\Features\Currencies\Controllers\" />
     <Folder Include="Modules\Finance\Features\Currencies\Handlers\" />

@@ -12,7 +12,7 @@ using ModularERP.Common.InfrastructureMaster.Data;
 namespace ModularERP.Migrations.Master
 {
     [DbContext(typeof(MasterDbContext))]
-    [Migration("20250922142327_createdb")]
+    [Migration("20250923182915_createdb")]
     partial class createdb
     {
         /// <inheritdoc />
