@@ -42,7 +42,6 @@ namespace ModularERP.Common.InfrastructureMaster.Data
 
                 var context = new FinanceDbContext(optionsBuilder.Options);
 
-                // تأكد من وجود Company record
                 await EnsureCompanyExistsAsync(context, tenantId);
 
                 return context;
@@ -69,7 +68,7 @@ namespace ModularERP.Common.InfrastructureMaster.Data
                             Id = masterCompany.Id,
                             Name = masterCompany.Name,
                             CurrencyCode = masterCompany.CurrencyCode,
-                            TenantId = masterCompany.Id, // نفس الـ ID
+                            TenantId = masterCompany.Id,
                             CreatedAt = masterCompany.CreatedAt
                         };
 

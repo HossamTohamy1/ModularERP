@@ -38,6 +38,8 @@
         BankAccountAlreadyExists = 2204,
         BankAccountHasVouchers = 2205,
         RequestCancelled=2206,
+        DuplicateRecord= 2207,
+        Unauthorized= 2208,
         // GL Account Errors
         GlAccountNotFound = 2301,
         GlAccountNotLeaf = 2302,

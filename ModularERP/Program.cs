@@ -28,6 +28,11 @@ using ModularERP.Common.Models;
 using ModularERP.Common.InfrastructureMaster.Data;
 using ModularERP.Modules.Finance.Features.Companys.Handlers;
 using ModularERP.Modules.Finance.Features.Companys.Services;
+using ModularERP.Modules.Finance.Features.GlAccounts.Handlers;
+using ModularERP.Modules.Finance.Features.GlAccounts.Mapping;
+using ModularERP.Modules.Finance.Features.GlAccounts.Service;
+using Microsoft.AspNetCore.Identity;
+using ModularERP.Modules.Finance.Finance.Infrastructure.Seeds;
 
 namespace ModularERP
 {
@@ -53,6 +58,10 @@ namespace ModularERP
                 // ---------------------------
                 builder.Services.AddHttpContextAccessor();
                 builder.Services.AddMemoryCache();
+
+                builder.Services.AddIdentity<ApplicationUser, IdentityRole<Guid>>()
+                       .AddEntityFrameworkStores<FinanceDbContext>()
+                       .AddDefaultTokenProviders();
 
                 builder.Services.AddControllers();
                 builder.Services.AddEndpointsApiExplorer();
@@ -112,6 +121,7 @@ namespace ModularERP
                 builder.Services.AddScoped(typeof(IGeneralRepository<>), typeof(GeneralRepository<>));
                 builder.Services.AddCommonServices();
                 builder.Services.AddCompanySerivces();
+                builder.Services.AddGlAccountServices();
 
                 // ---------------------------
                 // 🟢 MediatR + AutoMapper
@@ -119,8 +129,8 @@ namespace ModularERP
                 builder.Services.AddMediatR(cfg =>
                 {
                     cfg.RegisterServicesFromAssembly(typeof(CreateTreasuryHandler).Assembly);
-                    cfg.RegisterServicesFromAssembly(typeof(CreateCompanyHandler).Assembly); 
-
+                    cfg.RegisterServicesFromAssembly(typeof(CreateCompanyHandler).Assembly);
+                    cfg.RegisterServicesFromAssembly(typeof(CreateGlAccountHandler).Assembly);
                 });
 
                 builder.Services.AddAutoMapper(cfg =>
@@ -129,6 +139,7 @@ namespace ModularERP
                     cfg.AddProfile<BankAccountMappingProfile>();
                     cfg.AddProfile<ExpenseVoucherMappingProfile>();
                     cfg.AddProfile<IncomeVoucherMappingProfile>();
+                    cfg.AddProfile<GlAccountMappingProfile>();
                 });
 
                 // ---------------------------
@@ -159,6 +170,16 @@ namespace ModularERP
                 await EnsureMasterDatabaseAsync(app.Services);
 
                 // ---------------------------
+                // 🟢 Seed AspNetUsers for Tenant
+                // ---------------------------
+                using (var scope = app.Services.CreateScope())
+                {
+                    var dbContext = scope.ServiceProvider.GetRequiredService<FinanceDbContext>();
+                    dbContext.Database.Migrate(); // تأكد من عمل migrate للـ tenant DB
+                    dbContext.SeedUsers();        // عمل seed للمستخدمين
+                }
+
+                // ---------------------------
                 // 🟢 Middleware
                 // ---------------------------
                 if (app.Environment.IsDevelopment())
@@ -172,7 +193,7 @@ namespace ModularERP
                 app.UseAuthorization();
 
                 app.UseMiddleware<GlobalErrorHandlerMiddleware>();
-  //              app.UseMiddleware<TenantResolutionMiddleware>();
+                //              app.UseMiddleware<TenantResolutionMiddleware>();
 
                 // ✅ Tenant Validation Middleware
                 app.Use(async (context, next) =>
@@ -180,7 +201,6 @@ namespace ModularERP
                     var tenantService = context.RequestServices.GetRequiredService<ITenantService>();
                     var logger = context.RequestServices.GetRequiredService<ILogger<Program>>();
 
-                    // قائمة الـ endpoints اللي مش محتاجة Tenant ID
                     var publicPaths = new[]
                     {
                         "/api/tenants/create",
@@ -189,7 +209,6 @@ namespace ModularERP
                         "/api/health"
                     };
 
-                    // تحقق إذا كان الـ path عام
                     if (publicPaths.Any(path => context.Request.Path.Value?.StartsWith(path, StringComparison.OrdinalIgnoreCase) == true))
                     {
                         await next();
@@ -198,7 +217,6 @@ namespace ModularERP
 
                     var tenantId = tenantService.GetCurrentTenantId();
 
-                    // باقي الـ endpoints تحتاج Tenant ID
                     if (string.IsNullOrEmpty(tenantId))
                     {
                         context.Response.StatusCode = 400;
@@ -216,7 +234,6 @@ namespace ModularERP
                         return;
                     }
 
-                    // تسجيل الـ Tenant ID
                     logger.LogInformation("Processing request for tenant: {TenantId}", tenantId);
                     context.Items["TenantId"] = tenantId;
 

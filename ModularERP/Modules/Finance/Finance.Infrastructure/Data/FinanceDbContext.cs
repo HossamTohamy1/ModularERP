@@ -16,14 +16,22 @@ using ModularERP.Modules.Finance.Features.Treasuries.Models;
 using ModularERP.Modules.Finance.Features.Vendor.Models;
 using ModularERP.Modules.Finance.Features.Vouchers.Models;
 using ModularERP.Modules.Finance.Features.VoucherTaxs.Models;
+using ModularERP.Common.Services;
 using System.Reflection;
 
 namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
 {
     public class FinanceDbContext : IdentityDbContext<ApplicationUser, IdentityRole<Guid>, Guid>
     {
+        private readonly ITenantService? _tenantService;
+
         public FinanceDbContext(DbContextOptions<FinanceDbContext> options) : base(options)
         {
+        }
+
+        public FinanceDbContext(DbContextOptions<FinanceDbContext> options, ITenantService tenantService) : base(options)
+        {
+            _tenantService = tenantService;
         }
 
         // DbSets
@@ -46,10 +54,43 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
         {
             base.OnModelCreating(builder);
 
-            // Configure Identity tables to use Guid
+            // Configure Identity tables to use Guid with TenantId
             builder.Entity<ApplicationUser>(entity =>
             {
                 entity.ToTable("AspNetUsers");
+                entity.HasIndex(e => e.TenantId);
+                entity.Property(e => e.IsDeleted).HasDefaultValue(false);
+            });
+
+            // إضافة TenantId للجداول الأخرى في Identity إذا لزم الأمر
+            builder.Entity<IdentityRole<Guid>>(entity =>
+            {
+                entity.ToTable("AspNetRoles");
+            });
+
+            builder.Entity<IdentityUserRole<Guid>>(entity =>
+            {
+                entity.ToTable("AspNetUserRoles");
+            });
+
+            builder.Entity<IdentityUserClaim<Guid>>(entity =>
+            {
+                entity.ToTable("AspNetUserClaims");
+            });
+
+            builder.Entity<IdentityUserLogin<Guid>>(entity =>
+            {
+                entity.ToTable("AspNetUserLogins");
+            });
+
+            builder.Entity<IdentityRoleClaim<Guid>>(entity =>
+            {
+                entity.ToTable("AspNetRoleClaims");
+            });
+
+            builder.Entity<IdentityUserToken<Guid>>(entity =>
+            {
+                entity.ToTable("AspNetUserTokens");
             });
 
             // Company Configuration - master entity in tenant DB
@@ -289,8 +330,65 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
 
         private static void SetGlobalFilter<T>(ModelBuilder builder) where T : class, ITenantEntity
         {
-            // Global filter to automatically filter by TenantId
-            // builder.Entity<T>().HasQueryFilter(e => EF.Property<Guid>(e, "TenantId") == currentTenantId);
+            // Global filter to automatically filter by TenantId and exclude deleted items
+            builder.Entity<T>().HasQueryFilter(e =>
+                !e.IsDeleted
+                /* && EF.Property<Guid>(e, "TenantId") == currentTenantId */);
+            // ملاحظة: يمكن تفعيل الفلتر بالـ TenantId لاحقاً عند الحاجة
+        }
+
+
+        public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        {
+            SetTenantId();
+            SetAuditFields();
+            return await base.SaveChangesAsync(cancellationToken);
+        }
+
+        public override int SaveChanges()
+        {
+            SetTenantId();
+            SetAuditFields();
+            return base.SaveChanges();
+        }
+
+        private void SetTenantId()
+        {
+            var currentTenantId = _tenantService?.GetCurrentTenantId();
+            if (!string.IsNullOrEmpty(currentTenantId) && Guid.TryParse(currentTenantId, out var tenantGuid))
+            {
+                var entries = ChangeTracker.Entries<ITenantEntity>()
+                    .Where(e => e.State == EntityState.Added);
+
+                foreach (var entry in entries)
+                {
+                    if (entry.Entity.TenantId == Guid.Empty)
+                    {
+                        entry.Entity.TenantId = tenantGuid;
+                    }
+                }
+            }
+        }
+
+        private void SetAuditFields()
+        {
+            var entries = ChangeTracker.Entries<BaseEntity>()
+                .Where(e => e.State == EntityState.Added || e.State == EntityState.Modified);
+
+            foreach (var entry in entries)
+            {
+                if (entry.State == EntityState.Added)
+                {
+                    entry.Entity.CreatedAt = DateTime.UtcNow;
+                }
+
+                if (entry.State == EntityState.Modified)
+                {
+                    entry.Entity.UpdatedAt = DateTime.UtcNow;
+                    entry.Property(x => x.CreatedAt).IsModified = false;
+                    entry.Property(x => x.CreatedById).IsModified = false;
+                }
+            }
         }
     }
 }

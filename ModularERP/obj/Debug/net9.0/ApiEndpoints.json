@@ -788,6 +788,192 @@
     ]
   },
   {
+    "ContainingType": "ModularERP.Modules.Finance.Features.GlAccounts.Controllers.GlAccountController",
+    "Method": "CreateGlAccount",
+    "RelativePath": "api/GlAccount",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createDto",
+        "Type": "ModularERP.Modules.Finance.Features.GlAccounts.DTO.CreateGlAccountDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[ModularERP.Modules.Finance.Features.GlAccounts.DTO.GlAccountResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Finance.Features.GlAccounts.Controllers.GlAccountController",
+    "Method": "GetAllGlAccounts",
+    "RelativePath": "api/GlAccount",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "companyId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "searchTerm",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[System.Collections.Generic.List\u00601[[ModularERP.Modules.Finance.Features.GlAccounts.DTO.GlAccountResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Finance.Features.GlAccounts.Controllers.GlAccountController",
+    "Method": "UpdateGlAccount",
+    "RelativePath": "api/GlAccount/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateDto",
+        "Type": "ModularERP.Modules.Finance.Features.GlAccounts.DTO.UpdateGlAccountDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[ModularERP.Modules.Finance.Features.GlAccounts.DTO.GlAccountResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Finance.Features.GlAccounts.Controllers.GlAccountController",
+    "Method": "DeleteGlAccount",
+    "RelativePath": "api/GlAccount/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Finance.Features.GlAccounts.Controllers.GlAccountController",
+    "Method": "GetGlAccountById",
+    "RelativePath": "api/GlAccount/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[ModularERP.Modules.Finance.Features.GlAccounts.DTO.GlAccountResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Finance.Features.GlAccounts.Controllers.GlAccountController",
+    "Method": "GetGlAccountsByCompany",
+    "RelativePath": "api/GlAccount/by-company/{companyId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "companyId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[System.Collections.Generic.List\u00601[[ModularERP.Modules.Finance.Features.GlAccounts.DTO.GlAccountResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController",
     "Method": "CreateIncomeVoucher",
     "RelativePath": "api/IncomeVouchers",

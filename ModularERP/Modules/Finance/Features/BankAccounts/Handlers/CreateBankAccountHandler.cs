@@ -141,6 +141,17 @@ namespace ModularERP.Modules.Finance.Features.BankAccounts.Handlers
                 // Map to result DTO
                 var result = _mapper.Map<BankAccountCreatedDto>(bankAccount);
 
+                var glAccountExists = await _context.GlAccounts
+                    .AnyAsync(g => g.Id == request.BankAccount.JournalAccountId && !g.IsDeleted, cancellationToken);
+
+                if (!glAccountExists)
+                {
+                    return ResponseViewModel<BankAccountCreatedDto>.Error(
+                        "Invalid GL Account selected",
+                        FinanceErrorCode.InvalidData);
+                }
+
+
                 return ResponseViewModel<BankAccountCreatedDto>.Success(
                     result,
                     "Bank account created successfully");
@@ -166,7 +177,6 @@ namespace ModularERP.Modules.Finance.Features.BankAccounts.Handlers
         {
             try
             {
-                // Check if company already exists in tenant database
                 var companyExists = await _context.Companies
                     .AnyAsync(c => c.Id == companyId && !c.IsDeleted, cancellationToken);
 
@@ -178,7 +188,6 @@ namespace ModularERP.Modules.Finance.Features.BankAccounts.Handlers
 
                 _logger.LogInformation("Company {CompanyId} not found in tenant database, checking master database", companyId);
 
-                // Get company from master database
                 var masterCompany = await _masterDbService.GetCompanyAsync(companyId);
                 if (masterCompany == null)
                 {
@@ -186,13 +195,12 @@ namespace ModularERP.Modules.Finance.Features.BankAccounts.Handlers
                     throw new InvalidOperationException($"Company {companyId} not found in master database");
                 }
 
-                // Create company in tenant database
                 var tenantCompany = new Company
                 {
                     Id = masterCompany.Id,
                     Name = masterCompany.Name,
                     CurrencyCode = masterCompany.CurrencyCode,
-                    TenantId = Guid.Parse(tenantId), // Set the tenant ID
+                    TenantId = Guid.Parse(tenantId), 
                     CreatedAt = masterCompany.CreatedAt,
                     IsDeleted = false
                 };

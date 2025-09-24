@@ -7,12 +7,15 @@ using System.Net.Mail;
 
 namespace ModularERP.Common.Models
 {
-    public class ApplicationUser : IdentityUser<Guid>
+    public class ApplicationUser : IdentityUser<Guid>, ITenantEntity
     {
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public bool IsActive { get; set; } = true;
+
+        public Guid TenantId { get; set; }
+        public bool IsDeleted { get; set; }
 
         // Navigation properties
         public virtual ICollection<Voucher> CreatedVouchers { get; set; } = new List<Voucher>();

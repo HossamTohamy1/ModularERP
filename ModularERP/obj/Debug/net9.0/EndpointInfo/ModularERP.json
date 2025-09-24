@@ -953,6 +953,309 @@
         }
       }
     },
+    "/api/GlAccount": {
+      "post": {
+        "tags": [
+          "GlAccount"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.GlAccounts.DTO.CreateGlAccountDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.GlAccounts.DTO.CreateGlAccountDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.GlAccounts.DTO.CreateGlAccountDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.GlAccounts.DTO.GlAccountResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.GlAccounts.DTO.GlAccountResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.GlAccounts.DTO.GlAccountResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "GlAccount"
+        ],
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "searchTerm",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Finance.Features.GlAccounts.DTO.GlAccountResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Finance.Features.GlAccounts.DTO.GlAccountResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Finance.Features.GlAccounts.DTO.GlAccountResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/GlAccount/{id}": {
+      "put": {
+        "tags": [
+          "GlAccount"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.GlAccounts.DTO.UpdateGlAccountDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.GlAccounts.DTO.UpdateGlAccountDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.GlAccounts.DTO.UpdateGlAccountDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.GlAccounts.DTO.GlAccountResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.GlAccounts.DTO.GlAccountResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.GlAccounts.DTO.GlAccountResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "GlAccount"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "GlAccount"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.GlAccounts.DTO.GlAccountResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.GlAccounts.DTO.GlAccountResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.GlAccounts.DTO.GlAccountResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/GlAccount/by-company/{companyId}": {
+      "get": {
+        "tags": [
+          "GlAccount"
+        ],
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Finance.Features.GlAccounts.DTO.GlAccountResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Finance.Features.GlAccounts.DTO.GlAccountResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Finance.Features.GlAccounts.DTO.GlAccountResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/IncomeVouchers": {
       "post": {
         "tags": [
@@ -2090,6 +2393,17 @@
         },
         "additionalProperties": false
       },
+      "ModularERP.Common.Enum.Finance_Enum.AccountType": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
       "ModularERP.Common.Enum.Finance_Enum.BankAccountStatus": {
         "enum": [
           0,
@@ -2131,6 +2445,8 @@
           2204,
           2205,
           2206,
+          2207,
+          2208,
           2301,
           2302,
           2303,
@@ -2312,6 +2628,43 @@
           },
           "data": {
             "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ExpenseVoucherResponseDto"
+          },
+          "financeErrorCode": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
+          },
+          "traceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "validationErrors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.GlAccounts.DTO.GlAccountResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.GlAccounts.DTO.GlAccountResponseDto"
           },
           "financeErrorCode": {
             "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
@@ -2682,6 +3035,47 @@
         },
         "additionalProperties": false
       },
+      "ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Finance.Features.GlAccounts.DTO.GlAccountResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.GlAccounts.DTO.GlAccountResponseDto"
+            },
+            "nullable": true
+          },
+          "financeErrorCode": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
+          },
+          "traceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "validationErrors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
       "ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Finance.Features.WalletPermissions.DTO.WalletPermissionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
         "type": "object",
         "properties": {
@@ -2965,6 +3359,10 @@
           "withdrawAcl": {
             "type": "string",
             "nullable": true
+          },
+          "journalAccountId": {
+            "type": "string",
+            "format": "uuid"
           }
         },
         "additionalProperties": false
@@ -3224,6 +3622,120 @@
             "type": "string"
           },
           "id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Finance.Features.GlAccounts.DTO.CreateGlAccountDto": {
+        "required": [
+          "code",
+          "companyId",
+          "name",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "maxLength": 20,
+            "minLength": 1,
+            "type": "string"
+          },
+          "name": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.AccountType"
+          },
+          "isLeaf": {
+            "type": "boolean"
+          },
+          "companyId": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Finance.Features.GlAccounts.DTO.GlAccountResponseDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.AccountType"
+          },
+          "typeName": {
+            "type": "string",
+            "nullable": true
+          },
+          "isLeaf": {
+            "type": "boolean"
+          },
+          "companyId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "companyName": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Finance.Features.GlAccounts.DTO.UpdateGlAccountDto": {
+        "required": [
+          "code",
+          "companyId",
+          "id",
+          "name",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "maxLength": 20,
+            "minLength": 1,
+            "type": "string"
+          },
+          "name": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.AccountType"
+          },
+          "isLeaf": {
+            "type": "boolean"
+          },
+          "companyId": {
             "type": "string",
             "format": "uuid"
           }

@@ -61,12 +61,6 @@
     <Folder Include="Modules\Finance\Features\Customer\Mapping\" />
     <Folder Include="Modules\Finance\Features\Customer\Queries\" />
     <Folder Include="Modules\Finance\Features\Customer\Validators\" />
-    <Folder Include="Modules\Finance\Features\GlAccounts\Commands\" />
-    <Folder Include="Modules\Finance\Features\GlAccounts\Controllers\" />
-    <Folder Include="Modules\Finance\Features\GlAccounts\Handlers\" />
-    <Folder Include="Modules\Finance\Features\GlAccounts\Mapping\" />
-    <Folder Include="Modules\Finance\Features\GlAccounts\Queries\" />
-    <Folder Include="Modules\Finance\Features\GlAccounts\Validators\" />
     <Folder Include="Modules\Finance\Features\LedgerEntries\Commands\" />
     <Folder Include="Modules\Finance\Features\LedgerEntries\Controllers\" />
     <Folder Include="Modules\Finance\Features\LedgerEntries\Handlers\" />
