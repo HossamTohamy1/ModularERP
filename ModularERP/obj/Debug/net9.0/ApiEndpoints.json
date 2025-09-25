@@ -587,6 +587,128 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController",
+    "Method": "UpdateExpenseVoucher",
+    "RelativePath": "api/ExpenseVouchers/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "code",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "date",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "currencyCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "fxRate",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "amount",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "categoryId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "recurrenceId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "sourceType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sourceId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "counterpartyJson",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "taxLinesJson",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "newAttachments",
+        "Type": "System.Collections.Generic.List\u00601[[Microsoft.AspNetCore.Http.IFormFile, Microsoft.AspNetCore.Http.Features, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "keepAttachmentIds",
+        "Type": "System.Collections.Generic.List\u00601[[System.Guid, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ExpenseVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController",
+    "Method": "DeleteExpenseVoucher",
+    "RelativePath": "api/ExpenseVouchers/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "ModularERP.Modules.Finance.Features.WalletPermissions.Controllers.WalletPermissionsController",
     "Method": "GetWallets",
     "RelativePath": "api/finance/wallets",
@@ -1076,6 +1198,319 @@
     "ReturnTypes": [
       {
         "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController",
+    "Method": "UpdateIncomeVoucher",
+    "RelativePath": "api/IncomeVouchers/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "date",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "currencyCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "fxRate",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "amount",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "categoryId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "recurrenceId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "sourceType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sourceId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "counterpartyJson",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "taxLinesJson",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "newAttachments",
+        "Type": "System.Collections.Generic.List\u00601[[Microsoft.AspNetCore.Http.IFormFile, Microsoft.AspNetCore.Http.Features, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "attachmentsToRemoveJson",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController",
+    "Method": "DeleteIncomeVoucher",
+    "RelativePath": "api/IncomeVouchers/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Finance.Features.Taxs.Controllers.TaxController",
+    "Method": "Create",
+    "RelativePath": "api/Tax",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createTaxDto",
+        "Type": "ModularERP.Modules.Finance.Features.Taxs.DTO.CreateTaxDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[ModularERP.Modules.Finance.Features.Taxs.DTO.TaxResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Finance.Features.Taxs.Controllers.TaxController",
+    "Method": "GetAll",
+    "RelativePath": "api/Tax",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[System.Collections.Generic.IEnumerable\u00601[[ModularERP.Modules.Finance.Features.Taxs.DTO.TaxListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Finance.Features.Taxs.Controllers.TaxController",
+    "Method": "Update",
+    "RelativePath": "api/Tax",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateTaxDto",
+        "Type": "ModularERP.Modules.Finance.Features.Taxs.DTO.UpdateTaxDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Finance.Features.Taxs.Controllers.TaxController",
+    "Method": "GetById",
+    "RelativePath": "api/Tax/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[ModularERP.Modules.Finance.Features.Taxs.DTO.TaxResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Finance.Features.Taxs.Controllers.TaxController",
+    "Method": "Delete",
+    "RelativePath": "api/Tax/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Finance.Features.Taxs.Controllers.TaxController",
+    "Method": "ToggleActiveStatus",
+    "RelativePath": "api/Tax/{id}/toggle-status",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Finance.Features.Taxs.Controllers.TaxController",
+    "Method": "GetActive",
+    "RelativePath": "api/Tax/active",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[System.Collections.Generic.IEnumerable\u00601[[ModularERP.Modules.Finance.Features.Taxs.DTO.TaxListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Finance.Features.Taxs.Controllers.TaxController",
+    "Method": "Search",
+    "RelativePath": "api/Tax/search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "searchTerm",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[System.Collections.Generic.IEnumerable\u00601[[ModularERP.Modules.Finance.Features.Taxs.DTO.TaxListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

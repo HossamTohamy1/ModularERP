@@ -104,7 +104,7 @@ namespace ModularERP.Modules.Finance.Features.ExpensesVoucher.Handlers
 
                 // Check duplicate before insert
                 var exists = await _voucherRepo.AnyAsync(v =>
-                    v.CompanyId == Guid.Parse("d00cf078-c1ff-4feb-ae37-d66a827ae438") &&
+                    v.CompanyId == Guid.Parse("1edafb1b-de49-4fc8-b06a-d563864b9227") &&
                     v.Code == code);
 
                 if (exists)
@@ -117,8 +117,8 @@ namespace ModularERP.Modules.Finance.Features.ExpensesVoucher.Handlers
                 // Create voucher
                 var voucher = _mapper.Map<Voucher>(dto);
                 voucher.Code = code;
-                voucher.CompanyId = Guid.Parse("d00cf078-c1ff-4feb-ae37-d66a827ae438");
-                voucher.CreatedBy = Guid.Parse("5dbceb39-9677-46d7-bf8a-2eb914c55437");
+                voucher.CompanyId = Guid.Parse("1edafb1b-de49-4fc8-b06a-d563864b9227");
+                voucher.CreatedBy = Guid.Parse("f0602c31-0c12-4b5c-9ccf-fe17811d5c53");
 
                 // Use Source for JournalAccountId
                 voucher.JournalAccountId = await _expenseService.GetWalletControlAccountIdAsync(dto.Source.Id, dto.Source.Type);
@@ -187,7 +187,7 @@ namespace ModularERP.Modules.Finance.Features.ExpensesVoucher.Handlers
                             VoucherId = voucher.Id,
                             FilePath = $"/uploads/{fileName}",
                             Filename = file.FileName,
-                            UploadedBy = Guid.Parse("5dbceb39-9677-46d7-bf8a-2eb914c55437"),
+                            UploadedBy = Guid.Parse("f0602c31-0c12-4b5c-9ccf-fe17811d5c53"),
                             UploadedAt = DateTime.UtcNow
                         });
                     }

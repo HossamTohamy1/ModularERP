@@ -64,6 +64,17 @@ namespace ModularERP.Modules.Finance.Features.ExpensesVoucher.Mapping
             CreateMap<VoucherAttachment, AttachmentResponseDto>()
                 .ForMember(dest => dest.FileName, opt => opt.MapFrom(src => src.Filename))
                 .ForMember(dest => dest.FileUrl, opt => opt.MapFrom(src => src.FilePath));
+
+            CreateMap<UpdateExpenseVoucherDto, Voucher>()
+                .ForMember(dest => dest.Type, opt => opt.MapFrom(src => "Expense"))
+                .ForMember(dest => dest.CategoryAccountId, opt => opt.MapFrom(src => src.CategoryId))
+                .ForMember(dest => dest.WalletType, opt => opt.MapFrom(src => src.Source.Type))
+                .ForMember(dest => dest.WalletId, opt => opt.MapFrom(src => src.Source.Id))
+                .ForMember(dest => dest.CounterpartyType, opt => opt.MapFrom(src => src.Counterparty != null ? src.Counterparty.Type : null))
+                .ForMember(dest => dest.CounterpartyId, opt => opt.MapFrom(src => src.Counterparty != null ? src.Counterparty.Id : null))
+                .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(src => DateTime.UtcNow))
+                .ForMember(dest => dest.VoucherTaxes, opt => opt.Ignore())
+                .ForMember(dest => dest.Attachments, opt => opt.Ignore());
         }
     }
 }

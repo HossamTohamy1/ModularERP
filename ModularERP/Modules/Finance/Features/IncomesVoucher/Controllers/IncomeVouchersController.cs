@@ -115,6 +115,126 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers
 
             return Ok(result);
         }
+        [HttpPut("{id}")]
+        [Consumes("multipart/form-data")]
+        public async Task<ActionResult<ResponseViewModel<IncomeVoucherResponseDto>>> UpdateIncomeVoucher(
+            Guid id,
+            [FromForm] DateTime date,
+            [FromForm] string currencyCode,
+            [FromForm] decimal fxRate,
+            [FromForm] decimal amount,
+            [FromForm] string description,
+            [FromForm] Guid categoryId,
+            [FromForm] Guid? recurrenceId,
+            [FromForm] string sourceType,
+            [FromForm] Guid sourceId,
+            [FromForm] string? counterpartyJson,
+            [FromForm] string? taxLinesJson,
+            [FromForm] List<IFormFile>? newAttachments,
+            [FromForm] string? attachmentsToRemoveJson
+        )
+        {
+            try
+            {
+                var userId = GetCurrentUserId();
+
+                // Parse attachments to remove
+                List<Guid>? attachmentsToRemove = null;
+                if (!string.IsNullOrEmpty(attachmentsToRemoveJson))
+                {
+                    try
+                    {
+                        attachmentsToRemove = JsonSerializer.Deserialize<List<Guid>>(attachmentsToRemoveJson);
+                    }
+                    catch (JsonException ex)
+                    {
+                        _logger.LogWarning(ex, "Failed to parse attachmentsToRemoveJson: {Json}", attachmentsToRemoveJson);
+                        return BadRequest(ResponseViewModel<IncomeVoucherResponseDto>.Error(
+                            "Invalid format for attachments to remove",
+                            FinanceErrorCode.ValidationError));
+                    }
+                }
+
+                var dto = new UpdateIncomeVoucherDto
+                {
+                    Id = id,
+                    Date = date,
+                    CurrencyCode = currencyCode ?? "EGP",
+                    FxRate = fxRate,
+                    Amount = amount,
+                    Description = description ?? string.Empty,
+                    CategoryId = categoryId,
+                    RecurrenceId = recurrenceId,
+
+                    // Store JSON as strings
+                    SourceJson = $"{{\"Type\":\"{sourceType}\",\"Id\":\"{sourceId}\"}}",
+                    CounterpartyJson = counterpartyJson,
+                    TaxLinesJson = taxLinesJson,
+
+                    // Initialize Source object for validation
+                    Source = new WalletDto
+                    {
+                        Type = sourceType ?? string.Empty,
+                        Id = sourceId
+                    },
+
+                    // For business logic validation
+                    SourceId = sourceId,
+                    SourceType = sourceType,
+
+                    NewAttachments = newAttachments ?? new List<IFormFile>(),
+                    AttachmentsToRemove = attachmentsToRemove ?? new List<Guid>()
+                };
+
+                var command = new UpdateIncomeVoucherCommand(dto, userId);
+                var result = await _mediator.Send(command);
+
+                if (!result.IsSuccess)
+                {
+                    if (result.FinanceErrorCode == FinanceErrorCode.NotFound)
+                        return NotFound(result);
+
+                    return BadRequest(result);
+                }
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in UpdateIncomeVoucher controller");
+                return StatusCode(500, ResponseViewModel<IncomeVoucherResponseDto>.Error(
+                    "An error occurred while processing the request",
+                    FinanceErrorCode.InternalServerError));
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<ResponseViewModel<bool>>> DeleteIncomeVoucher(Guid id)
+        {
+            try
+            {
+                var userId = GetCurrentUserId();
+                var command = new DeleteIncomeVoucherCommand(id, userId);
+                var result = await _mediator.Send(command);
+
+                if (!result.IsSuccess)
+                {
+                    if (result.FinanceErrorCode == FinanceErrorCode.NotFound)
+                        return NotFound(result);
+
+                    return BadRequest(result);
+                }
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in DeleteIncomeVoucher controller");
+                return StatusCode(500, ResponseViewModel<bool>.Error(
+                    "An error occurred while processing the request",
+                    FinanceErrorCode.InternalServerError));
+            }
+        }
 
 
         private Guid GetCurrentUserId()

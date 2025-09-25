@@ -10,6 +10,11 @@ using ModularERP.Modules.Finance.Features.Vouchers.Models;
 using ModularERP.Modules.Finance.Features.VoucherTaxs.Models;
 using ModularERP.Modules.Finance.Features.Attachments.Models;
 using ModularERP.Shared.Interfaces;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace ModularERP.Modules.Finance.Features.ExpensesVoucher.Handlers
 {
@@ -37,15 +42,19 @@ namespace ModularERP.Modules.Finance.Features.ExpensesVoucher.Handlers
 
         public async Task<ResponseViewModel<ExpenseVoucherResponseDto>> Handle(GetExpenseVoucherByIdQuery request, CancellationToken cancellationToken)
         {
+            _logger.LogInformation("➡️ Start Handle GetExpenseVoucherById with ID: {VoucherId}", request.Id);
+
+            Voucher? voucher = null;
+            List<VoucherTax> taxLines = new();
+            List<VoucherAttachment> attachments = new();
+
+            // 1. Get Voucher
             try
             {
-                _logger.LogInformation("Fetching expense voucher with ID: {VoucherId}", request.Id);
-
-                // 1. Get voucher with validation
-                var voucher = await _voucherRepo.GetByID(request.Id);
+                voucher = await _voucherRepo.GetByID(request.Id);
                 if (voucher == null)
                 {
-                    _logger.LogWarning("Voucher with ID {VoucherId} not found", request.Id);
+                    _logger.LogWarning("❌ Voucher with ID {VoucherId} not found", request.Id);
                     return ResponseViewModel<ExpenseVoucherResponseDto>.Error(
                         "Voucher not found",
                         FinanceErrorCode.NotFound);
@@ -53,52 +62,87 @@ namespace ModularERP.Modules.Finance.Features.ExpensesVoucher.Handlers
 
                 if (voucher.Type != VoucherType.Expense)
                 {
-                    _logger.LogWarning("Voucher with ID {VoucherId} is not an expense voucher. Type: {VoucherType}",
+                    _logger.LogWarning("❌ Voucher with ID {VoucherId} is not an expense voucher. Type: {VoucherType}",
                         request.Id, voucher.Type);
                     return ResponseViewModel<ExpenseVoucherResponseDto>.Error(
                         "Requested voucher is not an expense voucher",
                         FinanceErrorCode.NotFound);
                 }
 
-                _logger.LogInformation("Found expense voucher: {VoucherCode}", voucher.Code);
+                _logger.LogInformation("✅ Voucher retrieved: {VoucherCode}", voucher.Code);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "❌ Error fetching voucher with ID {VoucherId}", request.Id);
+                return ResponseViewModel<ExpenseVoucherResponseDto>.Error(
+                    "Error fetching voucher",
+                    FinanceErrorCode.InternalServerError);
+            }
 
-                // 2. Get related data sequentially to avoid DbContext threading issues
-                var taxLines = await _voucherTaxRepo
+            // 2. Get Tax Lines
+            try
+            {
+                taxLines = await _voucherTaxRepo
                     .Get(t => t.VoucherId == voucher.Id)
                     .ToListAsync(cancellationToken);
 
-                var attachments = await _attachmentRepo
+                _logger.LogInformation("✅ Retrieved {Count} tax lines for voucher {VoucherId}", taxLines.Count, voucher.Id);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "❌ Error fetching tax lines for voucher {VoucherId}", voucher.Id);
+                return ResponseViewModel<ExpenseVoucherResponseDto>.Error(
+                    "Error fetching tax lines",
+                    FinanceErrorCode.InternalServerError);
+            }
+
+            // 3. Get Attachments
+            try
+            {
+                attachments = await _attachmentRepo
                     .Get(a => a.VoucherId == voucher.Id)
                     .ToListAsync(cancellationToken);
 
-                _logger.LogInformation("Retrieved {TaxCount} tax lines and {AttachmentCount} attachments for voucher {VoucherId}",
-                    taxLines.Count, attachments.Count, request.Id);
+                _logger.LogInformation("✅ Retrieved {Count} attachments for voucher {VoucherId}", attachments.Count, voucher.Id);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "❌ Error fetching attachments for voucher {VoucherId}", voucher.Id);
+                return ResponseViewModel<ExpenseVoucherResponseDto>.Error(
+                    "Error fetching attachments",
+                    FinanceErrorCode.InternalServerError);
+            }
 
-                // 3. Map to response DTO - AutoMapper will handle Source & Counterparty via mapping profile
+            // 4. Build Response
+            try
+            {
                 var response = _mapper.Map<ExpenseVoucherResponseDto>(voucher);
 
-                // Map related collections
-                response.TaxLines = _mapper.Map<List<TaxLineResponseDto>>(taxLines);
-                response.Attachments = _mapper.Map<List<AttachmentResponseDto>>(attachments);
+                response.TaxLines = taxLines.Select(t => new TaxLineResponseDto
+                {
+                    TaxId = t.TaxId,
+                    BaseAmount = t.BaseAmount,
+                    TaxAmount = t.TaxAmount,
+                    IsWithholding = t.IsWithholding
+                }).ToList();
 
-                _logger.LogInformation("Successfully retrieved expense voucher {VoucherCode} with all related data",
-                    voucher.Code);
+                response.Attachments = attachments.Select(a => new AttachmentResponseDto
+                {
+                    Id = a.Id,
+                    FileName = a.Filename,
+                    FileUrl = a.FilePath
+                }).ToList();
+
+                _logger.LogInformation("✅ Successfully built response for voucher {VoucherCode}", voucher.Code);
 
                 return ResponseViewModel<ExpenseVoucherResponseDto>.Success(response,
                     "Expense voucher retrieved successfully");
             }
-            catch (OperationCanceledException)
-            {
-                _logger.LogWarning("Request was cancelled while fetching expense voucher {VoucherId}", request.Id);
-                return ResponseViewModel<ExpenseVoucherResponseDto>.Error(
-                    "Request was cancelled",
-                    FinanceErrorCode.RequestCancelled);
-            }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Unhandled error occurred while fetching expense voucher {VoucherId}", request.Id);
+                _logger.LogError(ex, "❌ Error building response for voucher {VoucherId}", voucher.Id);
                 return ResponseViewModel<ExpenseVoucherResponseDto>.Error(
-                    "An error occurred while fetching the expense voucher",
+                    "Error building response",
                     FinanceErrorCode.InternalServerError);
             }
         }

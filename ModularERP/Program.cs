@@ -33,6 +33,9 @@ using ModularERP.Modules.Finance.Features.GlAccounts.Mapping;
 using ModularERP.Modules.Finance.Features.GlAccounts.Service;
 using Microsoft.AspNetCore.Identity;
 using ModularERP.Modules.Finance.Finance.Infrastructure.Seeds;
+using ModularERP.Modules.Finance.Features.Taxs.Mapping;
+using ModularERP.Modules.Finance.Features.Taxs.Handlers;
+using ModularERP.Modules.Finance.Features.Taxs.Service;
 
 namespace ModularERP
 {
@@ -122,6 +125,7 @@ namespace ModularERP
                 builder.Services.AddCommonServices();
                 builder.Services.AddCompanySerivces();
                 builder.Services.AddGlAccountServices();
+                builder.Services.AddTaxServices();
 
                 // ---------------------------
                 // 🟢 MediatR + AutoMapper
@@ -131,6 +135,7 @@ namespace ModularERP
                     cfg.RegisterServicesFromAssembly(typeof(CreateTreasuryHandler).Assembly);
                     cfg.RegisterServicesFromAssembly(typeof(CreateCompanyHandler).Assembly);
                     cfg.RegisterServicesFromAssembly(typeof(CreateGlAccountHandler).Assembly);
+                    cfg.RegisterServicesFromAssembly(typeof(CreateTaxCommandHandler).Assembly);
                 });
 
                 builder.Services.AddAutoMapper(cfg =>
@@ -140,6 +145,7 @@ namespace ModularERP
                     cfg.AddProfile<ExpenseVoucherMappingProfile>();
                     cfg.AddProfile<IncomeVoucherMappingProfile>();
                     cfg.AddProfile<GlAccountMappingProfile>();
+                    cfg.AddProfile<TaxProfile>();
                 });
 
                 // ---------------------------
@@ -152,6 +158,7 @@ namespace ModularERP
                 builder.Services.AddScoped<IValidator<UpdateTreasuryDto>, UpdateTreasuryDtoValidator>();
                 builder.Services.AddScoped<IValidator<CreateIncomeVoucherDto>, CreateIncomeVoucherValidator>();
                 builder.Services.AddTransient<IValidator<CreateExpenseVoucherDto>, CreateExpenseVoucherValidator>();
+                builder.Services.AddTransient<IValidator<UpdateIncomeVoucherDto>, UpdateIncomeVoucherValidator>();
 
                 // ---------------------------
                 // 🟢 Domain Services

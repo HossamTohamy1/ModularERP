@@ -116,7 +116,111 @@ namespace ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers
 
             return Ok(result); 
         }
+        [HttpPut("{id}")]
+        [Consumes("multipart/form-data")]
+        public async Task<ActionResult<ResponseViewModel<ExpenseVoucherResponseDto>>> UpdateExpenseVoucher(
+            Guid id,
+            [FromForm] string? code,
+            [FromForm] DateTime date,
+            [FromForm] string currencyCode,
+            [FromForm] decimal fxRate,
+            [FromForm] decimal amount,
+            [FromForm] string description,
+            [FromForm] Guid categoryId,
+            [FromForm] Guid? recurrenceId,
+            [FromForm] string sourceType,
+            [FromForm] Guid sourceId,
+            [FromForm] string? counterpartyJson,
+            [FromForm] string? taxLinesJson,
+            [FromForm] List<IFormFile>? newAttachments,
+            [FromForm] List<Guid>? keepAttachmentIds
+        )
+        {
+            try
+            {
+                var userId = GetCurrentUserId();
+                var dto = new UpdateExpenseVoucherDto
+                {
+                    Id = id,
+                    Code = code ?? string.Empty,
+                    Date = date,
+                    CurrencyCode = currencyCode ?? string.Empty,
+                    FxRate = fxRate,
+                    Amount = amount,
+                    Description = description ?? string.Empty,
+                    CategoryId = categoryId,
+                    RecurrenceId = recurrenceId,
 
+                    SourceJson = $"{{\"Type\":\"{sourceType}\",\"Id\":\"{sourceId}\"}}",
+                    CounterpartyJson = counterpartyJson,
+                    TaxLinesJson = taxLinesJson,
+                    Source = new WalletDto
+                    {
+                        Type = sourceType ?? string.Empty,
+                        Id = sourceId
+                    },
+                    // For business logic validation
+                    SourceId = sourceId,
+                    SourceType = sourceType,
+                    NewAttachments = newAttachments ?? new List<IFormFile>(),
+                    KeepAttachmentIds = keepAttachmentIds ?? new List<Guid>()
+                };
+
+                var command = new UpdateExpenseVoucherCommand(dto, userId);
+                var result = await _mediator.Send(command);
+
+                if (!result.IsSuccess)
+                {
+                    return result.FinanceErrorCode switch
+                    {
+                        FinanceErrorCode.NotFound => NotFound(result),
+                        FinanceErrorCode.BusinessLogicError => BadRequest(result),
+                        FinanceErrorCode.InternalServerError => StatusCode(500, result),
+                        _ => BadRequest(result)
+                    };
+                }
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in UpdateExpenseVoucher controller");
+                return StatusCode(500, ResponseViewModel<ExpenseVoucherResponseDto>.Error(
+                    "An error occurred while processing the request",
+                    FinanceErrorCode.InternalServerError));
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<ResponseViewModel<string>>> DeleteExpenseVoucher(Guid id)
+        {
+            try
+            {
+                var userId = GetCurrentUserId();
+                var command = new DeleteExpenseVoucherCommand(id, userId);
+                var result = await _mediator.Send(command);
+
+                if (!result.IsSuccess)
+                {
+                    return result.FinanceErrorCode switch
+                    {
+                        FinanceErrorCode.NotFound => NotFound(result),
+                        FinanceErrorCode.BusinessLogicError => BadRequest(result),
+                        FinanceErrorCode.InternalServerError => StatusCode(500, result),
+                        _ => BadRequest(result)
+                    };
+                }
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in DeleteExpenseVoucher controller");
+                return StatusCode(500, ResponseViewModel<string>.Error(
+                    "An error occurred while processing the request",
+                    FinanceErrorCode.InternalServerError));
+            }
+        }
         private Guid GetCurrentUserId()
         {
             var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;

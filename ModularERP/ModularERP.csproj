@@ -73,12 +73,6 @@
     <Folder Include="Modules\Finance\Features\RecurringSchedules\Mapping\" />
     <Folder Include="Modules\Finance\Features\RecurringSchedules\Queries\" />
     <Folder Include="Modules\Finance\Features\RecurringSchedules\Validators\" />
-    <Folder Include="Modules\Finance\Features\Taxs\Commands\" />
-    <Folder Include="Modules\Finance\Features\Taxs\Controllers\" />
-    <Folder Include="Modules\Finance\Features\Taxs\Handlers\" />
-    <Folder Include="Modules\Finance\Features\Taxs\Mapping\" />
-    <Folder Include="Modules\Finance\Features\Taxs\Queries\" />
-    <Folder Include="Modules\Finance\Features\Taxs\Validators\" />
     <Folder Include="Modules\Finance\Features\Vendor\Commands\" />
     <Folder Include="Modules\Finance\Features\Vendor\Controllers\" />
     <Folder Include="Modules\Finance\Features\Vendor\Handlers\" />

@@ -21,6 +21,18 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Mapping
                 .ForMember(dest => dest.VoucherTaxes, opt => opt.Ignore())
                 .ForMember(dest => dest.Attachments, opt => opt.Ignore());
 
+            // ✅ UpdateIncomeVoucherDto to Voucher mapping
+            CreateMap<UpdateIncomeVoucherDto, Voucher>()
+                .ForMember(dest => dest.Type, opt => opt.MapFrom(src => "Income"))
+                .ForMember(dest => dest.CategoryAccountId, opt => opt.MapFrom(src => src.CategoryId))
+                .ForMember(dest => dest.WalletType, opt => opt.MapFrom(src => src.Source.Type))
+                .ForMember(dest => dest.WalletId, opt => opt.MapFrom(src => src.Source.Id))
+                .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(src => DateTime.UtcNow))
+                .ForMember(dest => dest.VoucherTaxes, opt => opt.Ignore())
+                .ForMember(dest => dest.Attachments, opt => opt.Ignore())
+                .ForMember(dest => dest.CreatedAt, opt => opt.Ignore())
+                .ForMember(dest => dest.CreatedBy, opt => opt.Ignore());
+
             // ✅ TaxLineDto to VoucherTax mapping
             CreateMap<TaxLineDto, VoucherTax>()
                 .ForMember(dest => dest.Direction, opt => opt.MapFrom(src => "Income"));
@@ -47,6 +59,16 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Mapping
             // ✅ CreateIncomeVoucherDto to IncomeVoucherResponseDto mapping (for create response)
             CreateMap<CreateIncomeVoucherDto, IncomeVoucherResponseDto>()
                 .ForMember(dest => dest.Id, opt => opt.Ignore())
+                .ForMember(dest => dest.Code, opt => opt.Ignore())
+                .ForMember(dest => dest.Status, opt => opt.Ignore())
+                .ForMember(dest => dest.CreatedAt, opt => opt.Ignore())
+                .ForMember(dest => dest.Source, opt => opt.MapFrom(src => src.Source))
+                .ForMember(dest => dest.Counterparty, opt => opt.MapFrom(src => src.Counterparty))
+                .ForMember(dest => dest.TaxLines, opt => opt.Ignore())
+                .ForMember(dest => dest.Attachments, opt => opt.Ignore());
+
+            // ✅ UpdateIncomeVoucherDto to IncomeVoucherResponseDto mapping (for update response)
+            CreateMap<UpdateIncomeVoucherDto, IncomeVoucherResponseDto>()
                 .ForMember(dest => dest.Code, opt => opt.Ignore())
                 .ForMember(dest => dest.Status, opt => opt.Ignore())
                 .ForMember(dest => dest.CreatedAt, opt => opt.Ignore())

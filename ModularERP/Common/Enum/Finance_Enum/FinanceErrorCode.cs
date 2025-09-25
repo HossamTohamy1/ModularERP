@@ -45,7 +45,7 @@
         GlAccountNotLeaf = 2302,
         GlAccountWrongType = 2303,
         GlAccountCodeDuplicate = 2304,
-
+        DuplicateEntity = 2305,
         // Company Errors
         CompanyNotFound = 2401,
         CompanyInactive = 2402,
