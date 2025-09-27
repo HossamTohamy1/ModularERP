@@ -1,0 +1,526 @@
+2025-09-28 00:12:06.168 +03:00 [INF] Starting web host...
+2025-09-28 00:12:07.264 +03:00 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-28 00:12:07.339 +03:00 [INF] Executed DbCommand (58ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-09-28 00:12:07.418 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-28 00:12:07.425 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-09-28 00:12:07.441 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-09-28 00:12:07.503 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-09-28 00:12:07.519 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-28 00:12:07.524 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-09-28 00:12:07.531 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-09-28 00:12:07.543 +03:00 [INF] No migrations were applied. The database is already up to date.
+2025-09-28 00:12:07.549 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-09-28 00:12:07.731 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-09-28 00:12:07.739 +03:00 [INF] Master database initialized successfully
+2025-09-28 00:12:08.498 +03:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-28 00:12:08.623 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-28 00:12:08.625 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-28 00:12:08.705 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-28 00:12:08.708 +03:00 [INF] Hosting environment: Development
+2025-09-28 00:12:08.711 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-28 00:12:08.926 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-09-28 00:12:09.052 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 126.8066ms
+2025-09-28 00:12:09.055 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-09-28 00:12:09.055 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-28 00:12:09.085 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 30.0799ms
+2025-09-28 00:12:09.101 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 46.8464ms
+2025-09-28 00:12:09.293 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-09-28 00:12:09.351 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 57.1631ms
+2025-09-28 00:12:23.654 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/ExpenseVouchers - multipart/form-data; boundary=--------------------------359286060764555318696809 48401
+2025-09-28 00:12:23.674 +03:00 [INF] Request started
+2025-09-28 00:12:23.679 +03:00 [INF] Processing request for tenant: 9df6fad9-79f1-4722-bec3-fc20bb0d5c14
+2025-09-28 00:12:23.682 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController.CreateExpenseVoucher (ModularERP)'
+2025-09-28 00:12:23.702 +03:00 [INF] Route matched with {action = "CreateExpenseVoucher", controller = "ExpenseVouchers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ExpenseVoucherResponseDto]]] CreateExpenseVoucher(System.String, System.DateTime, System.String, System.Decimal, System.Decimal, System.String, System.Guid, System.Nullable`1[System.Guid], System.String, System.Guid, System.String, System.String, System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile]) on controller ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController (ModularERP).
+2025-09-28 00:12:23.711 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-28 00:12:23.800 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-09-28 00:12:24.051 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-28 00:12:24.100 +03:00 [INF] Start creating expense voucher with data: {"Code":"EXP-101","Date":"2025-09-18T19:22:40.3180000Z","Amount":500,"Description":"ant","CategoryId":"f7acf111-b0d2-47a5-f814-08ddfb9592b7","Source":{"Type":"Treasury","Id":"d95e2d80-581f-4cde-8d95-dafb9bdd8d88","$type":"WalletDto"},"Counterparty":{"Type":"Vendor","Id":"3fa85f64-5717-4562-b3fc-2c963f66afa6","$type":"CounterpartyDto"},"TaxLinesCount":1,"AttachmentsCount":1}
+2025-09-28 00:12:24.143 +03:00 [INF] Validation passed successfully.
+2025-09-28 00:12:24.271 +03:00 [INF] Business validations passed successfully.
+2025-09-28 00:12:24.300 +03:00 [INF] Adding voucher to repository: {"Code":"EXP-101","Amount":500,"Date":"2025-09-18T19:22:40.3180000Z"}
+2025-09-28 00:12:24.542 +03:00 [INF] Voucher saved successfully with ID: "36fe66f2-0900-4010-3652-08ddfe0a8e14"
+2025-09-28 00:12:24.544 +03:00 [INF] Processing 1 tax lines
+2025-09-28 00:12:24.545 +03:00 [INF] Processing tax line: TaxId="d2d9f0de-50a3-4e48-b386-08ddfc1cc3f9", BaseAmount=100, TaxAmount=14.0
+2025-09-28 00:12:24.592 +03:00 [INF] Successfully added 1 tax lines
+2025-09-28 00:12:24.594 +03:00 [INF] Processing 1 attachments
+2025-09-28 00:12:24.753 +03:00 [INF] ✅ Processed attachment: Hossam-Reda-Tohamy-BackEnd Laravel.pdf, Size: 46529 bytes, MimeType: application/pdf
+2025-09-28 00:12:24.770 +03:00 [INF] Successfully added 1 attachments
+2025-09-28 00:12:24.772 +03:00 [INF] Voucher "36fe66f2-0900-4010-3652-08ddfe0a8e14" created successfully with 1 taxes and 1 attachments.
+2025-09-28 00:12:24.811 +03:00 [INF] Response created with 1 attachments properly mapped from database
+2025-09-28 00:12:24.822 +03:00 [INF] Executing CreatedAtActionResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ExpenseVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-28 00:12:24.862 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController.CreateExpenseVoucher (ModularERP) in 1151.9712ms
+2025-09-28 00:12:24.865 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController.CreateExpenseVoucher (ModularERP)'
+2025-09-28 00:12:24.867 +03:00 [INF] Request completed successfully with status code 201
+2025-09-28 00:12:24.874 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/ExpenseVouchers - 201 null application/json; charset=utf-8 1219.3164ms
+2025-09-28 00:12:46.756 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/ExpenseVouchers/36fe66f2-0900-4010-3652-08ddfe0a8e14 - null null
+2025-09-28 00:12:46.761 +03:00 [INF] Request started
+2025-09-28 00:12:46.765 +03:00 [INF] Processing request for tenant: 9df6fad9-79f1-4722-bec3-fc20bb0d5c14
+2025-09-28 00:12:46.767 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController.GetExpenseVoucher (ModularERP)'
+2025-09-28 00:12:46.773 +03:00 [INF] Route matched with {action = "GetExpenseVoucher", controller = "ExpenseVouchers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetExpenseVoucher(System.Guid) on controller ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController (ModularERP).
+2025-09-28 00:12:46.785 +03:00 [INF] ➡️ Start Handle GetExpenseVoucherById with ID: "36fe66f2-0900-4010-3652-08ddfe0a8e14"
+2025-09-28 00:12:46.807 +03:00 [INF] ✅ Voucher retrieved: EXP-101
+2025-09-28 00:12:46.813 +03:00 [INF] ✅ Retrieved 1 tax lines for voucher "36fe66f2-0900-4010-3652-08ddfe0a8e14"
+2025-09-28 00:12:46.817 +03:00 [INF] ✅ Retrieved 1 attachments for voucher "36fe66f2-0900-4010-3652-08ddfe0a8e14"
+2025-09-28 00:12:46.819 +03:00 [INF] ✅ Successfully built response for voucher EXP-101 with 1 tax lines and 1 attachments
+2025-09-28 00:12:46.822 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ExpenseVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-28 00:12:46.825 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController.GetExpenseVoucher (ModularERP) in 48.4238ms
+2025-09-28 00:12:46.828 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController.GetExpenseVoucher (ModularERP)'
+2025-09-28 00:12:46.830 +03:00 [INF] Request completed successfully with status code 200
+2025-09-28 00:12:46.832 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/ExpenseVouchers/36fe66f2-0900-4010-3652-08ddfe0a8e14 - 200 null application/json; charset=utf-8 75.8183ms
+2025-09-28 00:12:58.025 +03:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7168/api/ExpenseVouchers/36fe66f2-0900-4010-3652-08ddfe0a8e14 - multipart/form-data; boundary=--------------------------885133397929664765640454 85535
+2025-09-28 00:12:58.032 +03:00 [INF] Request started
+2025-09-28 00:12:58.034 +03:00 [INF] Processing request for tenant: 9df6fad9-79f1-4722-bec3-fc20bb0d5c14
+2025-09-28 00:12:58.036 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController.UpdateExpenseVoucher (ModularERP)'
+2025-09-28 00:12:58.050 +03:00 [INF] Route matched with {action = "UpdateExpenseVoucher", controller = "ExpenseVouchers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ExpenseVoucherResponseDto]]] UpdateExpenseVoucher(System.Guid, System.String, System.DateTime, System.String, System.Decimal, System.Decimal, System.String, System.Guid, System.Nullable`1[System.Guid], System.String, System.Guid, System.String, System.String, System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile], System.Collections.Generic.List`1[System.Guid]) on controller ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController (ModularERP).
+2025-09-28 00:12:58.111 +03:00 [INF] Start updating expense voucher "36fe66f2-0900-4010-3652-08ddfe0a8e14"
+2025-09-28 00:12:58.147 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ExpenseVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-28 00:12:58.149 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController.UpdateExpenseVoucher (ModularERP) in 94.3184ms
+2025-09-28 00:12:58.151 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController.UpdateExpenseVoucher (ModularERP)'
+2025-09-28 00:12:58.152 +03:00 [INF] Request completed successfully with status code 400
+2025-09-28 00:12:58.156 +03:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7168/api/ExpenseVouchers/36fe66f2-0900-4010-3652-08ddfe0a8e14 - 400 null application/json; charset=utf-8 130.722ms
+2025-09-28 00:13:40.413 +03:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7168/api/ExpenseVouchers/36fe66f2-0900-4010-3652-08ddfe0a8e14 - multipart/form-data; boundary=--------------------------099960157632435729146236 85532
+2025-09-28 00:13:40.417 +03:00 [INF] Request started
+2025-09-28 00:13:40.418 +03:00 [INF] Processing request for tenant: 9df6fad9-79f1-4722-bec3-fc20bb0d5c14
+2025-09-28 00:13:40.420 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController.UpdateExpenseVoucher (ModularERP)'
+2025-09-28 00:13:40.422 +03:00 [INF] Route matched with {action = "UpdateExpenseVoucher", controller = "ExpenseVouchers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ExpenseVoucherResponseDto]]] UpdateExpenseVoucher(System.Guid, System.String, System.DateTime, System.String, System.Decimal, System.Decimal, System.String, System.Guid, System.Nullable`1[System.Guid], System.String, System.Guid, System.String, System.String, System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile], System.Collections.Generic.List`1[System.Guid]) on controller ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController (ModularERP).
+2025-09-28 00:13:40.433 +03:00 [INF] Start updating expense voucher "36fe66f2-0900-4010-3652-08ddfe0a8e14"
+2025-09-28 00:13:40.476 +03:00 [ERR] Error updating expense voucher "36fe66f2-0900-4010-3652-08ddfe0a8e14"
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'dbo.Vouchers' with unique index 'IX_Vouchers_CompanyId_Code'. The duplicate key value is (1edafb1b-de49-4fc8-b06a-d563864b9227, ).
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithRowsAffectedOnlyAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:6cedecfd-ec51-4904-9855-5880f8b8296f
+Error Number:2601,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at ModularERP.Modules.Finance.Finance.Infrastructure.Data.FinanceDbContext.SaveChangesAsync(CancellationToken cancellationToken) in C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP\Modules\Finance\Finance.Infrastructure\Data\FinanceDbContext.cs:line 345
+   at ModularERP.SharedKernel.Repository.GeneralRepository`1.SaveChanges() in C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP\Shared\Repository\GeneralRepository.cs:line 188
+   at ModularERP.Modules.Finance.Features.ExpensesVoucher.Handlers.UpdateExpenseVoucherHandler.Handle(UpdateExpenseVoucherCommand request, CancellationToken cancellationToken) in C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP\Modules\Finance\Features\ExpensesVoucher\Handlers\UpdateExpenseVoucherHandler.cs:line 124
+2025-09-28 00:13:40.541 +03:00 [INF] Executing ObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ExpenseVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-28 00:13:40.543 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController.UpdateExpenseVoucher (ModularERP) in 118.7618ms
+2025-09-28 00:13:40.545 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController.UpdateExpenseVoucher (ModularERP)'
+2025-09-28 00:13:40.548 +03:00 [INF] Request completed successfully with status code 500
+2025-09-28 00:13:40.550 +03:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7168/api/ExpenseVouchers/36fe66f2-0900-4010-3652-08ddfe0a8e14 - 500 null application/json; charset=utf-8 137.8332ms
+2025-09-28 00:14:23.843 +03:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7168/api/ExpenseVouchers/36fe66f2-0900-4010-3652-08ddfe0a8e14 - multipart/form-data; boundary=--------------------------999514279946129027749682 85532
+2025-09-28 00:14:23.850 +03:00 [INF] Request started
+2025-09-28 00:14:23.851 +03:00 [INF] Processing request for tenant: 9df6fad9-79f1-4722-bec3-fc20bb0d5c14
+2025-09-28 00:14:23.852 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController.UpdateExpenseVoucher (ModularERP)'
+2025-09-28 00:14:23.854 +03:00 [INF] Route matched with {action = "UpdateExpenseVoucher", controller = "ExpenseVouchers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ExpenseVoucherResponseDto]]] UpdateExpenseVoucher(System.Guid, System.String, System.DateTime, System.String, System.Decimal, System.Decimal, System.String, System.Guid, System.Nullable`1[System.Guid], System.String, System.Guid, System.String, System.String, System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile], System.Collections.Generic.List`1[System.Guid]) on controller ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController (ModularERP).
+2025-09-28 00:14:23.870 +03:00 [INF] Start updating expense voucher "36fe66f2-0900-4010-3652-08ddfe0a8e14"
+2025-09-28 00:14:23.895 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ExpenseVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-28 00:14:23.898 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController.UpdateExpenseVoucher (ModularERP) in 40.3774ms
+2025-09-28 00:14:23.900 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController.UpdateExpenseVoucher (ModularERP)'
+2025-09-28 00:14:23.902 +03:00 [INF] Request completed successfully with status code 400
+2025-09-28 00:14:23.905 +03:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7168/api/ExpenseVouchers/36fe66f2-0900-4010-3652-08ddfe0a8e14 - 400 null application/json; charset=utf-8 61.9644ms
+2025-09-28 00:15:02.010 +03:00 [INF] Starting web host...
+2025-09-28 00:15:03.209 +03:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-28 00:15:03.309 +03:00 [INF] Executed DbCommand (72ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-09-28 00:15:03.421 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-28 00:15:03.427 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-09-28 00:15:03.439 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-09-28 00:15:03.539 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-09-28 00:15:03.556 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-28 00:15:03.560 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-09-28 00:15:03.568 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-09-28 00:15:03.582 +03:00 [INF] No migrations were applied. The database is already up to date.
+2025-09-28 00:15:03.592 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-09-28 00:15:03.888 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-09-28 00:15:03.900 +03:00 [INF] Master database initialized successfully
+2025-09-28 00:15:05.011 +03:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-28 00:15:05.144 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-28 00:15:05.146 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-28 00:15:05.233 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-28 00:15:05.234 +03:00 [INF] Hosting environment: Development
+2025-09-28 00:15:05.236 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-28 00:15:05.511 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-09-28 00:15:05.656 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 145.719ms
+2025-09-28 00:15:05.812 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-09-28 00:15:05.812 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-28 00:15:05.822 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 9.874ms
+2025-09-28 00:15:05.840 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 28.3098ms
+2025-09-28 00:15:05.920 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-09-28 00:15:06.058 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 137.8689ms
+2025-09-28 00:15:06.390 +03:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7168/api/ExpenseVouchers/36fe66f2-0900-4010-3652-08ddfe0a8e14 - multipart/form-data; boundary=--------------------------785071389350691277821826 85532
+2025-09-28 00:15:06.416 +03:00 [INF] Request started
+2025-09-28 00:15:06.423 +03:00 [INF] Processing request for tenant: 9df6fad9-79f1-4722-bec3-fc20bb0d5c14
+2025-09-28 00:15:06.426 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController.UpdateExpenseVoucher (ModularERP)'
+2025-09-28 00:15:06.453 +03:00 [INF] Route matched with {action = "UpdateExpenseVoucher", controller = "ExpenseVouchers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ExpenseVoucherResponseDto]]] UpdateExpenseVoucher(System.Guid, System.String, System.DateTime, System.String, System.Decimal, System.Decimal, System.String, System.Guid, System.Nullable`1[System.Guid], System.String, System.Guid, System.String, System.String, System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile], System.Collections.Generic.List`1[System.Guid]) on controller ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController (ModularERP).
+2025-09-28 00:15:06.461 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-28 00:15:06.612 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-09-28 00:15:07.004 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-28 00:15:07.061 +03:00 [INF] Start updating expense voucher "36fe66f2-0900-4010-3652-08ddfe0a8e14"
+2025-09-28 00:15:07.550 +03:00 [ERR] Error updating expense voucher "36fe66f2-0900-4010-3652-08ddfe0a8e14"
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'dbo.Vouchers' with unique index 'IX_Vouchers_CompanyId_Code'. The duplicate key value is (1edafb1b-de49-4fc8-b06a-d563864b9227, ).
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithRowsAffectedOnlyAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:0597c215-edb4-432d-8a9a-a27eb02858e4
+Error Number:2601,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at ModularERP.Modules.Finance.Finance.Infrastructure.Data.FinanceDbContext.SaveChangesAsync(CancellationToken cancellationToken) in C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP\Modules\Finance\Finance.Infrastructure\Data\FinanceDbContext.cs:line 345
+   at ModularERP.SharedKernel.Repository.GeneralRepository`1.SaveChanges() in C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP\Shared\Repository\GeneralRepository.cs:line 188
+   at ModularERP.Modules.Finance.Features.ExpensesVoucher.Handlers.UpdateExpenseVoucherHandler.Handle(UpdateExpenseVoucherCommand request, CancellationToken cancellationToken) in C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP\Modules\Finance\Features\ExpensesVoucher\Handlers\UpdateExpenseVoucherHandler.cs:line 124
+2025-09-28 00:15:07.590 +03:00 [INF] Executing ObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ExpenseVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-28 00:15:07.611 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController.UpdateExpenseVoucher (ModularERP) in 1152.2939ms
+2025-09-28 00:15:07.615 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController.UpdateExpenseVoucher (ModularERP)'
+2025-09-28 00:15:07.617 +03:00 [INF] Request completed successfully with status code 500
+2025-09-28 00:15:07.628 +03:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7168/api/ExpenseVouchers/36fe66f2-0900-4010-3652-08ddfe0a8e14 - 500 null application/json; charset=utf-8 1237.9651ms
+2025-09-28 00:17:49.652 +03:00 [INF] Starting web host...
+2025-09-28 00:17:50.576 +03:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-28 00:17:50.644 +03:00 [INF] Executed DbCommand (51ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-09-28 00:17:50.712 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-28 00:17:50.721 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-09-28 00:17:50.726 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-09-28 00:17:50.804 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-09-28 00:17:50.824 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-28 00:17:50.829 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-09-28 00:17:50.839 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-09-28 00:17:50.851 +03:00 [INF] No migrations were applied. The database is already up to date.
+2025-09-28 00:17:50.864 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-09-28 00:17:51.045 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-09-28 00:17:51.052 +03:00 [INF] Master database initialized successfully
+2025-09-28 00:17:51.855 +03:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-28 00:17:51.978 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-28 00:17:51.980 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-28 00:17:52.103 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-28 00:17:52.105 +03:00 [INF] Hosting environment: Development
+2025-09-28 00:17:52.106 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-28 00:17:52.165 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-09-28 00:17:52.796 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 631.7718ms
+2025-09-28 00:17:52.802 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-09-28 00:17:52.802 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-28 00:17:52.823 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 19.0073ms
+2025-09-28 00:17:52.842 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 39.9075ms
+2025-09-28 00:17:53.024 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-09-28 00:17:53.084 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 60.6432ms
+2025-09-28 00:17:53.945 +03:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7168/api/ExpenseVouchers/36fe66f2-0900-4010-3652-08ddfe0a8e14 - multipart/form-data; boundary=--------------------------724662978538007929033381 85532
+2025-09-28 00:17:53.966 +03:00 [INF] Request started
+2025-09-28 00:17:53.971 +03:00 [INF] Processing request for tenant: 9df6fad9-79f1-4722-bec3-fc20bb0d5c14
+2025-09-28 00:17:53.974 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController.UpdateExpenseVoucher (ModularERP)'
+2025-09-28 00:17:54.006 +03:00 [INF] Route matched with {action = "UpdateExpenseVoucher", controller = "ExpenseVouchers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ExpenseVoucherResponseDto]]] UpdateExpenseVoucher(System.Guid, System.String, System.DateTime, System.String, System.Decimal, System.Decimal, System.String, System.Guid, System.Nullable`1[System.Guid], System.String, System.Guid, System.String, System.String, System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile], System.Collections.Generic.List`1[System.Guid]) on controller ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController (ModularERP).
+2025-09-28 00:17:54.014 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-28 00:17:54.127 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-09-28 00:17:54.403 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-28 00:17:54.441 +03:00 [INF] Start updating expense voucher "36fe66f2-0900-4010-3652-08ddfe0a8e14"
+2025-09-28 00:17:55.003 +03:00 [INF] 🗑️ Deleted file: /uploads/8fa27c05-0023-48c2-a3bb-f24e16d2e2dc_Hossam-Reda-Tohamy-BackEnd Laravel.pdf
+2025-09-28 00:17:55.114 +03:00 [INF] ✅ Processed new attachment: Back End .NET.pdf, Size: 83767 bytes, MimeType: application/pdf
+2025-09-28 00:17:55.173 +03:00 [INF] Successfully updated expense voucher "36fe66f2-0900-4010-3652-08ddfe0a8e14" with 1 attachments
+2025-09-28 00:17:55.186 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ExpenseVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-28 00:17:55.215 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController.UpdateExpenseVoucher (ModularERP) in 1202.6936ms
+2025-09-28 00:17:55.218 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController.UpdateExpenseVoucher (ModularERP)'
+2025-09-28 00:17:55.221 +03:00 [INF] Request completed successfully with status code 200
+2025-09-28 00:17:55.228 +03:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7168/api/ExpenseVouchers/36fe66f2-0900-4010-3652-08ddfe0a8e14 - 200 null application/json; charset=utf-8 1283.6476ms
+2025-09-28 00:19:14.119 +03:00 [INF] Starting web host...
+2025-09-28 00:19:14.943 +03:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-28 00:19:15.011 +03:00 [INF] Executed DbCommand (52ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-09-28 00:19:15.091 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-28 00:19:15.097 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-09-28 00:19:15.103 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-09-28 00:19:15.162 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-09-28 00:19:15.179 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-28 00:19:15.188 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-09-28 00:19:15.198 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-09-28 00:19:15.211 +03:00 [INF] No migrations were applied. The database is already up to date.
+2025-09-28 00:19:15.224 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-09-28 00:19:15.428 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-09-28 00:19:15.435 +03:00 [INF] Master database initialized successfully
+2025-09-28 00:19:16.040 +03:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-28 00:19:16.146 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-28 00:19:16.148 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-28 00:19:16.207 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-28 00:19:16.209 +03:00 [INF] Hosting environment: Development
+2025-09-28 00:19:16.211 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-28 00:19:16.545 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-09-28 00:19:16.657 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 112.7425ms
+2025-09-28 00:19:16.722 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-09-28 00:19:16.722 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-28 00:19:16.734 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 11.4073ms
+2025-09-28 00:19:16.747 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 24.458ms
+2025-09-28 00:19:16.771 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-09-28 00:19:16.815 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 44.177ms
+2025-09-28 00:19:23.071 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/ExpenseVouchers/36fe66f2-0900-4010-3652-08ddfe0a8e14 - null null
+2025-09-28 00:19:23.092 +03:00 [INF] Request started
+2025-09-28 00:19:23.095 +03:00 [INF] Processing request for tenant: 9df6fad9-79f1-4722-bec3-fc20bb0d5c14
+2025-09-28 00:19:23.098 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController.GetExpenseVoucher (ModularERP)'
+2025-09-28 00:19:23.116 +03:00 [INF] Route matched with {action = "GetExpenseVoucher", controller = "ExpenseVouchers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetExpenseVoucher(System.Guid) on controller ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController (ModularERP).
+2025-09-28 00:19:23.122 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-28 00:19:23.194 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-09-28 00:19:23.449 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-28 00:19:23.454 +03:00 [INF] ➡️ Start Handle GetExpenseVoucherById with ID: "36fe66f2-0900-4010-3652-08ddfe0a8e14"
+2025-09-28 00:19:23.595 +03:00 [INF] ✅ Voucher retrieved: EXP-101
+2025-09-28 00:19:23.638 +03:00 [INF] ✅ Retrieved 1 tax lines for voucher "36fe66f2-0900-4010-3652-08ddfe0a8e14"
+2025-09-28 00:19:23.670 +03:00 [INF] ✅ Retrieved 1 attachments for voucher "36fe66f2-0900-4010-3652-08ddfe0a8e14"
+2025-09-28 00:19:23.688 +03:00 [INF] ✅ Successfully built response for voucher EXP-101 with 1 tax lines and 1 attachments
+2025-09-28 00:19:23.698 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ExpenseVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-28 00:19:23.734 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController.GetExpenseVoucher (ModularERP) in 610.6386ms
+2025-09-28 00:19:23.740 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController.GetExpenseVoucher (ModularERP)'
+2025-09-28 00:19:23.745 +03:00 [INF] Request completed successfully with status code 200
+2025-09-28 00:19:23.757 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/ExpenseVouchers/36fe66f2-0900-4010-3652-08ddfe0a8e14 - 200 null application/json; charset=utf-8 686.8242ms
+2025-09-28 00:19:38.815 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/ExpenseVouchers - multipart/form-data; boundary=--------------------------296648508739912690065782 48401
+2025-09-28 00:19:38.823 +03:00 [INF] Request started
+2025-09-28 00:19:38.826 +03:00 [INF] Processing request for tenant: 9df6fad9-79f1-4722-bec3-fc20bb0d5c14
+2025-09-28 00:19:38.828 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController.CreateExpenseVoucher (ModularERP)'
+2025-09-28 00:19:38.835 +03:00 [INF] Route matched with {action = "CreateExpenseVoucher", controller = "ExpenseVouchers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ExpenseVoucherResponseDto]]] CreateExpenseVoucher(System.String, System.DateTime, System.String, System.Decimal, System.Decimal, System.String, System.Guid, System.Nullable`1[System.Guid], System.String, System.Guid, System.String, System.String, System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile]) on controller ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController (ModularERP).
+2025-09-28 00:19:38.910 +03:00 [INF] Start creating expense voucher with data: {"Code":"EXP-102","Date":"2025-09-18T19:22:40.3180000Z","Amount":500,"Description":"ant","CategoryId":"f7acf111-b0d2-47a5-f814-08ddfb9592b7","Source":{"Type":"Treasury","Id":"d95e2d80-581f-4cde-8d95-dafb9bdd8d88","$type":"WalletDto"},"Counterparty":{"Type":"Vendor","Id":"3fa85f64-5717-4562-b3fc-2c963f66afa6","$type":"CounterpartyDto"},"TaxLinesCount":1,"AttachmentsCount":1}
+2025-09-28 00:19:38.951 +03:00 [INF] Validation passed successfully.
+2025-09-28 00:19:39.020 +03:00 [INF] Business validations passed successfully.
+2025-09-28 00:19:39.048 +03:00 [INF] Adding voucher to repository: {"Code":"EXP-102","Amount":500,"Date":"2025-09-18T19:22:40.3180000Z"}
+2025-09-28 00:19:39.199 +03:00 [INF] Voucher saved successfully with ID: "112a1863-4f40-47bd-2b8a-08ddfe0b9135"
+2025-09-28 00:19:39.202 +03:00 [INF] Processing 1 tax lines
+2025-09-28 00:19:39.203 +03:00 [INF] Processing tax line: TaxId="d2d9f0de-50a3-4e48-b386-08ddfc1cc3f9", BaseAmount=100, TaxAmount=14.0
+2025-09-28 00:19:39.227 +03:00 [INF] Successfully added 1 tax lines
+2025-09-28 00:19:39.229 +03:00 [INF] Processing 1 attachments
+2025-09-28 00:19:39.285 +03:00 [INF] ✅ Processed attachment: Hossam-Reda-Tohamy-BackEnd Laravel.pdf, Size: 46529 bytes, MimeType: application/pdf
+2025-09-28 00:19:39.306 +03:00 [INF] Successfully added 1 attachments
+2025-09-28 00:19:39.308 +03:00 [INF] Voucher "112a1863-4f40-47bd-2b8a-08ddfe0b9135" created successfully with 1 taxes and 1 attachments.
+2025-09-28 00:19:39.316 +03:00 [INF] Response created with 1 attachments properly mapped from database
+2025-09-28 00:19:39.319 +03:00 [INF] Executing CreatedAtActionResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ExpenseVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-28 00:19:39.333 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController.CreateExpenseVoucher (ModularERP) in 494.9287ms
+2025-09-28 00:19:39.336 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController.CreateExpenseVoucher (ModularERP)'
+2025-09-28 00:19:39.338 +03:00 [INF] Request completed successfully with status code 201
+2025-09-28 00:19:39.339 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/ExpenseVouchers - 201 null application/json; charset=utf-8 524.4704ms
+2025-09-28 00:19:58.138 +03:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7168/api/ExpenseVouchers/112a1863-4f40-47bd-2b8a-08ddfe0b9135 - multipart/form-data; boundary=--------------------------349490650140721152174427 85532
+2025-09-28 00:19:58.143 +03:00 [INF] Request started
+2025-09-28 00:19:58.144 +03:00 [INF] Processing request for tenant: 9df6fad9-79f1-4722-bec3-fc20bb0d5c14
+2025-09-28 00:19:58.148 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController.UpdateExpenseVoucher (ModularERP)'
+2025-09-28 00:19:58.156 +03:00 [INF] Route matched with {action = "UpdateExpenseVoucher", controller = "ExpenseVouchers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ExpenseVoucherResponseDto]]] UpdateExpenseVoucher(System.Guid, System.String, System.DateTime, System.String, System.Decimal, System.Decimal, System.String, System.Guid, System.Nullable`1[System.Guid], System.String, System.Guid, System.String, System.String, System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile], System.Collections.Generic.List`1[System.Guid]) on controller ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController (ModularERP).
+2025-09-28 00:19:58.186 +03:00 [INF] Start updating expense voucher "112a1863-4f40-47bd-2b8a-08ddfe0b9135"
+2025-09-28 00:19:58.243 +03:00 [INF] 🗑️ Deleted file: /uploads/b1bdc98f-29d6-4d41-9a34-ddd73ba74cd6_Hossam-Reda-Tohamy-BackEnd Laravel.pdf
+2025-09-28 00:19:58.299 +03:00 [INF] ✅ Processed new attachment: Back End .NET.pdf, Size: 83767 bytes, MimeType: application/pdf
+2025-09-28 00:19:58.316 +03:00 [INF] Successfully updated expense voucher "112a1863-4f40-47bd-2b8a-08ddfe0b9135" with 1 attachments
+2025-09-28 00:19:58.319 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ExpenseVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-28 00:19:58.322 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController.UpdateExpenseVoucher (ModularERP) in 163.266ms
+2025-09-28 00:19:58.324 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController.UpdateExpenseVoucher (ModularERP)'
+2025-09-28 00:19:58.326 +03:00 [INF] Request completed successfully with status code 200
+2025-09-28 00:19:58.328 +03:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7168/api/ExpenseVouchers/112a1863-4f40-47bd-2b8a-08ddfe0b9135 - 200 null application/json; charset=utf-8 189.5864ms
+2025-09-28 00:28:28.854 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-09-28 00:28:28.863 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 8.6145ms
+2025-09-28 00:28:28.874 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-28 00:28:28.874 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-09-28 00:28:28.881 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 6.6051ms
+2025-09-28 00:28:28.898 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 23.7075ms
+2025-09-28 00:28:29.105 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-09-28 00:28:29.192 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 87.1923ms

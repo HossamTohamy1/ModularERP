@@ -83,7 +83,13 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Mapping
             // ✅ VoucherAttachment to AttachmentResponseDto mapping
             CreateMap<VoucherAttachment, AttachmentResponseDto>()
                 .ForMember(dest => dest.FileName, opt => opt.MapFrom(src => src.Filename))
-                .ForMember(dest => dest.FileUrl, opt => opt.MapFrom(src => src.FilePath));
+                .ForMember(dest => dest.FileUrl, opt => opt.MapFrom(src => src.FilePath))
+                .ForMember(dest => dest.MimeType, opt => opt.MapFrom(src => src.MimeType))
+                .ForMember(dest => dest.FileSize, opt => opt.MapFrom(src => src.FileSize))
+                .ForMember(dest => dest.Checksum, opt => opt.MapFrom(src => src.Checksum))
+                .ForMember(dest => dest.UploadedAt, opt => opt.MapFrom(src => src.UploadedAt))
+                .ForMember(dest => dest.UploadedBy, opt => opt.MapFrom(src => src.UploadedBy));
+
         }
     }
 }

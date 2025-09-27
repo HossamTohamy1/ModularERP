@@ -23,6 +23,7 @@ namespace ModularERP.Modules.Finance.Features.Taxs.Models
         public bool IsActive { get; set; } = true;
 
         // Navigation properties
+
         public virtual ICollection<VoucherTax> VoucherTaxes { get; set; } = new List<VoucherTax>();
     }
 }

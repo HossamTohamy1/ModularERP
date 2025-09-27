@@ -4329,6 +4329,31 @@
           "fileUrl": {
             "type": "string",
             "nullable": true
+          },
+          "mimeType": {
+            "type": "string",
+            "nullable": true
+          },
+          "fileSize": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "checksum": {
+            "type": "string",
+            "nullable": true
+          },
+          "uploadedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "uploadedBy": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "fileSizeFormatted": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
           }
         },
         "additionalProperties": false
@@ -4580,6 +4605,43 @@
           "fileUrl": {
             "type": "string",
             "nullable": true
+          },
+          "mimeType": {
+            "type": "string",
+            "nullable": true
+          },
+          "fileSize": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "checksum": {
+            "type": "string",
+            "nullable": true
+          },
+          "uploadedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "uploadedBy": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "fileSizeFormatted": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "isImage": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isPdf": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isDocument": {
+            "type": "boolean",
+            "readOnly": true
           }
         },
         "additionalProperties": false

@@ -109,7 +109,6 @@
     <Folder Include="Modules\Purchase\Features\Queries\" />
     <Folder Include="Modules\Purchase\Features\Validators\" />
     <Folder Include="Modules\Purchase\Purchase.Infrastructure\" />
-    <Folder Include="BuildingBlocks\" />
   </ItemGroup>
 
 </Project>

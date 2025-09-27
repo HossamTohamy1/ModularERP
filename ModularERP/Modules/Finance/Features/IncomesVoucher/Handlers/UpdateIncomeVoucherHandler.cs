@@ -290,18 +290,20 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
 
                     foreach (var attachment in attachmentsToRemove)
                     {
-                        // Delete physical file
                         var fullPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", attachment.FilePath.TrimStart('/'));
                         if (File.Exists(fullPath))
+                        {
                             File.Delete(fullPath);
+                            _logger.LogInformation("🗑️ Deleted file: {FilePath}", attachment.FilePath);
+                        }
 
-                        // Delete from database
                         await _attachmentRepo.Delete(attachment.Id);
                     }
                     await _attachmentRepo.SaveChanges();
+                    _logger.LogInformation("✅ Removed {Count} attachments", attachmentsToRemove.Count);
                 }
 
-                // Add new attachments
+                // Add new attachments with complete properties
                 if (dto.NewAttachments?.Any() == true)
                 {
                     var uploadDir = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
@@ -309,26 +311,51 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
 
                     foreach (var file in dto.NewAttachments)
                     {
+                        if (file.Length == 0)
+                        {
+                            _logger.LogWarning("Skipping empty file: {FileName}", file.FileName);
+                            continue;
+                        }
+
                         var fileName = $"{Guid.NewGuid()}_{file.FileName}";
                         var filePath = Path.Combine(uploadDir, fileName);
+                        string checksum = null;
 
                         using (var stream = new FileStream(filePath, FileMode.Create))
+                        using (var sha256 = System.Security.Cryptography.SHA256.Create())
+                        {
                             await file.CopyToAsync(stream, cancellationToken);
+                            stream.Position = 0;
+                            var hashBytes = await sha256.ComputeHashAsync(stream, cancellationToken);
+                            checksum = Convert.ToHexString(hashBytes);
+                        }
+
+                        var mimeType = GetMimeType(file.FileName, file.ContentType);
 
                         var attachment = new VoucherAttachment
                         {
                             VoucherId = voucher.Id,
                             FilePath = $"/uploads/{fileName}",
                             Filename = file.FileName,
+                            MimeType = mimeType,
+                            FileSize = (int)file.Length,
+                            Checksum = checksum,
                             UploadedBy = userId,
                             UploadedAt = DateTime.UtcNow,
                             TenantId = tenantGuid
                         };
                         attachments.Add(attachment);
+
+                        _logger.LogInformation("✅ Processed new attachment: {FileName}, Size: {Size} bytes, MimeType: {MimeType}",
+                            file.FileName, file.Length, mimeType);
                     }
 
-                    await _attachmentRepo.AddRangeAsync(attachments);
-                    await _attachmentRepo.SaveChanges();
+                    if (attachments.Any())
+                    {
+                        await _attachmentRepo.AddRangeAsync(attachments);
+                        await _attachmentRepo.SaveChanges();
+                        _logger.LogInformation("✅ Added {Count} new attachments", attachments.Count);
+                    }
                 }
                 _logger.LogInformation("✅ Attachments updated");
             }
@@ -354,12 +381,8 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
                     TaxAmount = t.TaxAmount,
                     IsWithholding = t.IsWithholding
                 }).ToList();
-                response.Attachments = allAttachments.Select(a => new AttachmentResponseDto
-                {
-                    Id = a.Id,
-                    FileName = a.Filename,
-                    FileUrl = a.FilePath
-                }).ToList();
+                response.Attachments = _mapper.Map<List<AttachmentResponseDto>>(attachments);
+
 
                 return ResponseViewModel<IncomeVoucherResponseDto>.Success(response, "Income voucher updated successfully");
             }
@@ -369,5 +392,33 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
                 return ResponseViewModel<IncomeVoucherResponseDto>.Error("Error creating response", FinanceErrorCode.InternalServerError);
             }
         }
+
+        private string GetMimeType(string fileName, string contentType)
+        {
+            if (!string.IsNullOrEmpty(contentType) && contentType != "application/octet-stream")
+                return contentType;
+
+            var extension = Path.GetExtension(fileName)?.ToLowerInvariant();
+
+            return extension switch
+            {
+                ".pdf" => "application/pdf",
+                ".doc" => "application/msword",
+                ".docx" => "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                ".xls" => "application/vnd.ms-excel",
+                ".xlsx" => "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                ".jpg" or ".jpeg" => "image/jpeg",
+                ".png" => "image/png",
+                ".gif" => "image/gif",
+                ".bmp" => "image/bmp",
+                ".txt" => "text/plain",
+                ".csv" => "text/csv",
+                ".zip" => "application/zip",
+                ".rar" => "application/x-rar-compressed",
+                ".7z" => "application/x-7z-compressed",
+                _ => "application/octet-stream"
+            };
+        }
+
     }
 }

@@ -16,6 +16,7 @@ using ModularERP.Modules.Finance.Finance.Infrastructure.Data;
 using ModularERP.Shared.Interfaces;
 using ModularERP.Common.Services;
 using System.Text.Json;
+using System.Security.Cryptography;
 
 namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
 {
@@ -91,8 +92,6 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
                 var user = await _context.Users
                     .Where(u => u.Id == userId && u.TenantId == tenantGuid && !u.IsDeleted)
                     .FirstOrDefaultAsync(cancellationToken);
-
-
 
                 if (user == null)
                     return ResponseViewModel<IncomeVoucherResponseDto>.Error("User not found in current tenant", FinanceErrorCode.BusinessLogicError);
@@ -229,7 +228,7 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
                 return ResponseViewModel<IncomeVoucherResponseDto>.Error("Error processing tax lines", FinanceErrorCode.InternalServerError);
             }
 
-            // 8. Attachments
+            // 8. Enhanced Attachments Processing
             try
             {
                 if (dto.Attachments?.Any() == true)
@@ -239,26 +238,56 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
 
                     foreach (var file in dto.Attachments)
                     {
+                        // Validate file
+                        if (file.Length == 0)
+                        {
+                            _logger.LogWarning("Skipping empty file: {FileName}", file.FileName);
+                            continue;
+                        }
+
+                        // Generate unique filename
                         var fileName = $"{Guid.NewGuid()}_{file.FileName}";
                         var filePath = Path.Combine(uploadDir, fileName);
+                        string checksum = null;
 
+                        // Save file and calculate checksum
                         using (var stream = new FileStream(filePath, FileMode.Create))
+                        using (var sha256 = SHA256.Create())
+                        {
                             await file.CopyToAsync(stream, cancellationToken);
+                            stream.Position = 0;
+                            var hashBytes = await sha256.ComputeHashAsync(stream, cancellationToken);
+                            checksum = Convert.ToHexString(hashBytes);
+                        }
+
+                        // Get file info
+                        var fileInfo = new FileInfo(filePath);
+                        var mimeType = GetMimeType(file.FileName, file.ContentType);
 
                         var attachment = new VoucherAttachment
                         {
                             VoucherId = voucher.Id,
                             FilePath = $"/uploads/{fileName}",
                             Filename = file.FileName,
+                            MimeType = mimeType,
+                            FileSize = (int)file.Length,
+                            Checksum = checksum,
                             UploadedBy = userId,
                             UploadedAt = DateTime.UtcNow,
                             TenantId = tenantGuid
                         };
                         attachments.Add(attachment);
+
+                        _logger.LogInformation("✅ Processed attachment: {FileName}, Size: {Size} bytes, MimeType: {MimeType}",
+                            file.FileName, file.Length, mimeType);
                     }
 
-                    await _attachmentRepo.AddRangeAsync(attachments);
-                    await _attachmentRepo.SaveChanges();
+                    if (attachments.Any())
+                    {
+                        await _attachmentRepo.AddRangeAsync(attachments);
+                        await _attachmentRepo.SaveChanges();
+                        _logger.LogInformation("✅ Saved {Count} attachments to database", attachments.Count);
+                    }
                 }
             }
             catch (Exception ex)
@@ -280,12 +309,8 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
                     TaxAmount = t.TaxAmount,
                     IsWithholding = t.IsWithholding
                 }).ToList();
-                response.Attachments = attachments.Select(a => new AttachmentResponseDto
-                {
-                    Id = a.Id,
-                    FileName = a.Filename,
-                    FileUrl = a.FilePath
-                }).ToList();
+                response.Attachments = _mapper.Map<List<AttachmentResponseDto>>(attachments);
+
 
                 return ResponseViewModel<IncomeVoucherResponseDto>.Success(response, "Income voucher created successfully");
             }
@@ -296,5 +321,34 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
             }
         }
 
+
+        private string GetMimeType(string fileName, string contentType)
+        {
+            // Use provided content type if valid
+            if (!string.IsNullOrEmpty(contentType) && contentType != "application/octet-stream")
+                return contentType;
+
+            // Fallback to extension-based detection
+            var extension = Path.GetExtension(fileName)?.ToLowerInvariant();
+
+            return extension switch
+            {
+                ".pdf" => "application/pdf",
+                ".doc" => "application/msword",
+                ".docx" => "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                ".xls" => "application/vnd.ms-excel",
+                ".xlsx" => "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                ".jpg" or ".jpeg" => "image/jpeg",
+                ".png" => "image/png",
+                ".gif" => "image/gif",
+                ".bmp" => "image/bmp",
+                ".txt" => "text/plain",
+                ".csv" => "text/csv",
+                ".zip" => "application/zip",
+                ".rar" => "application/x-rar-compressed",
+                ".7z" => "application/x-7z-compressed",
+                _ => "application/octet-stream"
+            };
+        }
     }
 }

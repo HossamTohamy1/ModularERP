@@ -60,10 +60,15 @@ namespace ModularERP.Modules.Finance.Features.ExpensesVoucher.Mapping
             // ✅ VoucherTax to TaxLineResponseDto mapping
             CreateMap<VoucherTax, TaxLineResponseDto>();
 
-            // ✅ VoucherAttachment to AttachmentResponseDto mapping
             CreateMap<VoucherAttachment, AttachmentResponseDto>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
                 .ForMember(dest => dest.FileName, opt => opt.MapFrom(src => src.Filename))
-                .ForMember(dest => dest.FileUrl, opt => opt.MapFrom(src => src.FilePath));
+                .ForMember(dest => dest.FileUrl, opt => opt.MapFrom(src => src.FilePath))
+                .ForMember(dest => dest.MimeType, opt => opt.MapFrom(src => src.MimeType ?? string.Empty))
+                .ForMember(dest => dest.FileSize, opt => opt.MapFrom(src => src.FileSize))
+                .ForMember(dest => dest.Checksum, opt => opt.MapFrom(src => src.Checksum))
+                .ForMember(dest => dest.UploadedAt, opt => opt.MapFrom(src => src.UploadedAt))
+                .ForMember(dest => dest.UploadedBy, opt => opt.MapFrom(src => src.UploadedBy));
 
             CreateMap<UpdateExpenseVoucherDto, Voucher>()
                 .ForMember(dest => dest.Type, opt => opt.MapFrom(src => "Expense"))

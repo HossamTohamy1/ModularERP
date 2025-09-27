@@ -113,27 +113,29 @@ namespace ModularERP.Modules.Finance.Features.ExpensesVoucher.Handlers
                     FinanceErrorCode.InternalServerError);
             }
 
-            // 4. Build Response
+            // استبدال قسم بناء الاستجابة في GetExpenseVoucherByIdHandler
+
+            // 4. Build Response using AutoMapper
             try
             {
                 var response = _mapper.Map<ExpenseVoucherResponseDto>(voucher);
 
-                response.TaxLines = taxLines.Select(t => new TaxLineResponseDto
-                {
-                    TaxId = t.TaxId,
-                    BaseAmount = t.BaseAmount,
-                    TaxAmount = t.TaxAmount,
-                    IsWithholding = t.IsWithholding
-                }).ToList();
+                // Map collections using AutoMapper for proper property mapping
+                response.TaxLines = _mapper.Map<List<TaxLineResponseDto>>(taxLines);
+                response.Attachments = _mapper.Map<List<AttachmentResponseDto>>(attachments);
 
-                response.Attachments = attachments.Select(a => new AttachmentResponseDto
-                {
-                    Id = a.Id,
-                    FileName = a.Filename,
-                    FileUrl = a.FilePath
-                }).ToList();
+                _logger.LogInformation("✅ Successfully built response for voucher {VoucherCode} with {TaxCount} tax lines and {AttachmentCount} attachments",
+                    voucher.Code, taxLines.Count, attachments.Count);
 
-                _logger.LogInformation("✅ Successfully built response for voucher {VoucherCode}", voucher.Code);
+                // Log attachment details for verification
+                if (_logger.IsEnabled(LogLevel.Debug))
+                {
+                    foreach (var attachment in response.Attachments)
+                    {
+                        _logger.LogDebug("Retrieved attachment: ID={Id}, Name={Name}, Size={Size}B, Type={Type}",
+                            attachment.Id, attachment.FileName, attachment.FileSize, attachment.MimeType);
+                    }
+                }
 
                 return ResponseViewModel<ExpenseVoucherResponseDto>.Success(response,
                     "Expense voucher retrieved successfully");

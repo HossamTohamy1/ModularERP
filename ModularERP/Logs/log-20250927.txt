@@ -628,3 +628,334 @@ WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
 2025-09-27 16:41:43.988 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetAllBankAccounts (ModularERP)'
 2025-09-27 16:41:43.990 +03:00 [INF] Request completed successfully with status code 200
 2025-09-27 16:41:43.991 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/BankAccount - 200 null application/json; charset=utf-8 54.7893ms
+2025-09-27 23:39:46.034 +03:00 [INF] Starting web host...
+2025-09-27 23:39:47.444 +03:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-27 23:39:47.524 +03:00 [INF] Executed DbCommand (62ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-09-27 23:39:47.622 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-27 23:39:47.629 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-09-27 23:39:47.642 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-09-27 23:39:47.709 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-09-27 23:39:47.727 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-27 23:39:47.732 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-09-27 23:39:47.741 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-09-27 23:39:47.753 +03:00 [INF] No migrations were applied. The database is already up to date.
+2025-09-27 23:39:47.759 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-09-27 23:39:47.992 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-09-27 23:39:48.001 +03:00 [INF] Master database initialized successfully
+2025-09-27 23:39:48.816 +03:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-27 23:39:48.984 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-27 23:39:48.987 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-27 23:39:49.103 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-27 23:39:49.106 +03:00 [INF] Hosting environment: Development
+2025-09-27 23:39:49.108 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-27 23:39:49.841 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-09-27 23:39:50.038 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 199.7027ms
+2025-09-27 23:39:50.050 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-27 23:39:50.061 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-09-27 23:39:50.077 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 27.1218ms
+2025-09-27 23:39:50.140 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 78.807ms
+2025-09-27 23:39:50.180 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-09-27 23:39:50.269 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 88.7709ms
+2025-09-27 23:40:22.568 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/IncomeVouchers?Code=INC-125468&Date=2025-09-18T19:22:40.318Z&CurrencyCode=EGP&FxRate=1.0&Amount=600&Description=anu&CategoryId=f8cd0c63-50d7-4a69-a344-bc53be110f77&RecurrenceId=7b6fd5d0-11ec-43b6-b9d6-eba78273f3fe - multipart/form-data; boundary=--------------------------230732972015356389055073 57878
+2025-09-27 23:40:22.594 +03:00 [INF] Request started
+2025-09-27 23:40:22.601 +03:00 [INF] Processing request for tenant: 9df6fad9-79f1-4722-bec3-fc20bb0d5c14
+2025-09-27 23:40:22.605 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-27 23:40:22.631 +03:00 [INF] Route matched with {action = "CreateIncomeVoucher", controller = "IncomeVouchers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto]]] CreateIncomeVoucher(System.String, System.DateTime, System.String, System.Decimal, System.Decimal, System.String, System.Guid, System.Nullable`1[System.Guid], System.String, System.Guid, System.String, System.String, System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile]) on controller ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController (ModularERP).
+2025-09-27 23:40:22.639 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-27 23:40:22.751 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-09-27 23:40:23.046 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-27 23:40:23.093 +03:00 [INF] ➡️ Start Handle CreateIncomeVoucher with Request: {"Code":"INC-145554","Date":"2025-09-18T19:22:40.3180000Z","CurrencyCode":"USD","FxRate":1.0,"Amount":500,"Description":"ant","CategoryId":"f7acf111-b0d2-47a5-f814-08ddfb9592b7","RecurrenceId":"7b6fd5d0-11ec-43b6-b9d6-eba78273f3fe","SourceJson":"{\"Type\":\"BankAccount\",\"Id\":\"e4d15aae-46c9-4d95-b030-50158457de62\"}","CounterpartyJson":"{\"Type\":\"Vendor\",\"Id\":\"3fa85f64-5717-4562-b3fc-2c963f66afa6\"}","TaxLinesJson":"[{\"TaxId\":\"d2d9f0de-50a3-4e48-b386-08ddfc1cc3f9\",\"BaseAmount\":100,\"TaxAmount\":14.0,\"IsWithholding\":true}]","Attachments":[{"ContentDisposition":"form-data; name=\"Attachments\"; filename=\"Hossam-Reda-Tohamy-Node Js .pdf\"","ContentType":"application/pdf","Headers":[{"Key":"Content-Disposition","Value":["form-data; name=\"Attachments\"; filename=\"Hossam-Reda-Tohamy-Node Js .pdf\""],"$type":"KeyValuePair`2"},{"Key":"Content-Type","Value":["application/pdf"],"$type":"KeyValuePair`2"}],"Length":56007,"Name":"Attachments","FileName":"Hossam-Reda-Tohamy-Node Js .pdf","$type":"FormFile"}],"SourceId":"e4d15aae-46c9-4d95-b030-50158457de62","SourceType":"BankAccount","Source":{"Type":"BankAccount","Id":"e4d15aae-46c9-4d95-b030-50158457de62","$type":"WalletDto"},"Counterparty":{"Type":"Vendor","Id":"3fa85f64-5717-4562-b3fc-2c963f66afa6","$type":"CounterpartyDto"},"$type":"CreateIncomeVoucherDto"}
+2025-09-27 23:40:23.136 +03:00 [INF] ✅ Tenant verified: "9df6fad9-79f1-4722-bec3-fc20bb0d5c14"
+2025-09-27 23:40:23.236 +03:00 [INF] ✅ User verified: "f0602c31-0c12-4b5c-9ccf-fe17811d5c53"
+2025-09-27 23:40:23.277 +03:00 [INF] ✅ Company verified: "1edafb1b-de49-4fc8-b06a-d563864b9227"
+2025-09-27 23:40:23.298 +03:00 [INF] ✅ DTO validation passed
+2025-09-27 23:40:23.339 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-27 23:40:23.366 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP) in 727.9315ms
+2025-09-27 23:40:23.370 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-27 23:40:23.372 +03:00 [INF] Request completed successfully with status code 400
+2025-09-27 23:40:23.378 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/IncomeVouchers?Code=INC-125468&Date=2025-09-18T19:22:40.318Z&CurrencyCode=EGP&FxRate=1.0&Amount=600&Description=anu&CategoryId=f8cd0c63-50d7-4a69-a344-bc53be110f77&RecurrenceId=7b6fd5d0-11ec-43b6-b9d6-eba78273f3fe - 400 null application/json; charset=utf-8 809.3407ms
+2025-09-27 23:40:55.081 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/IncomeVouchers?Code=INC-125468&Date=2025-09-18T19:22:40.318Z&CurrencyCode=EGP&FxRate=1.0&Amount=600&Description=anu&CategoryId=f8cd0c63-50d7-4a69-a344-bc53be110f77&RecurrenceId=7b6fd5d0-11ec-43b6-b9d6-eba78273f3fe - multipart/form-data; boundary=--------------------------660789867596435693372451 57875
+2025-09-27 23:40:55.089 +03:00 [INF] Request started
+2025-09-27 23:40:55.094 +03:00 [INF] Processing request for tenant: 9df6fad9-79f1-4722-bec3-fc20bb0d5c14
+2025-09-27 23:40:55.096 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-27 23:40:55.097 +03:00 [INF] Route matched with {action = "CreateIncomeVoucher", controller = "IncomeVouchers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto]]] CreateIncomeVoucher(System.String, System.DateTime, System.String, System.Decimal, System.Decimal, System.String, System.Guid, System.Nullable`1[System.Guid], System.String, System.Guid, System.String, System.String, System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile]) on controller ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController (ModularERP).
+2025-09-27 23:40:55.111 +03:00 [INF] ➡️ Start Handle CreateIncomeVoucher with Request: {"Code":"INC-145554","Date":"2025-09-18T19:22:40.3180000Z","CurrencyCode":"USD","FxRate":1.0,"Amount":500,"Description":"ant","CategoryId":"f7acf111-b0d2-47a5-f814-08ddfb9592b7","RecurrenceId":"7b6fd5d0-11ec-43b6-b9d6-eba78273f3fe","SourceJson":"{\"Type\":\"Treasury\",\"Id\":\"d95e2d80-581f-4cde-8d95-dafb9bdd8d88\"}","CounterpartyJson":"{\"Type\":\"Vendor\",\"Id\":\"3fa85f64-5717-4562-b3fc-2c963f66afa6\"}","TaxLinesJson":"[{\"TaxId\":\"d2d9f0de-50a3-4e48-b386-08ddfc1cc3f9\",\"BaseAmount\":100,\"TaxAmount\":14.0,\"IsWithholding\":true}]","Attachments":[{"ContentDisposition":"form-data; name=\"Attachments\"; filename=\"Hossam-Reda-Tohamy-Node Js .pdf\"","ContentType":"application/pdf","Headers":[{"Key":"Content-Disposition","Value":["form-data; name=\"Attachments\"; filename=\"Hossam-Reda-Tohamy-Node Js .pdf\""],"$type":"KeyValuePair`2"},{"Key":"Content-Type","Value":["application/pdf"],"$type":"KeyValuePair`2"}],"Length":56007,"Name":"Attachments","FileName":"Hossam-Reda-Tohamy-Node Js .pdf","$type":"FormFile"}],"SourceId":"d95e2d80-581f-4cde-8d95-dafb9bdd8d88","SourceType":"Treasury","Source":{"Type":"Treasury","Id":"d95e2d80-581f-4cde-8d95-dafb9bdd8d88","$type":"WalletDto"},"Counterparty":{"Type":"Vendor","Id":"3fa85f64-5717-4562-b3fc-2c963f66afa6","$type":"CounterpartyDto"},"$type":"CreateIncomeVoucherDto"}
+2025-09-27 23:40:55.141 +03:00 [INF] ✅ Tenant verified: "9df6fad9-79f1-4722-bec3-fc20bb0d5c14"
+2025-09-27 23:40:55.159 +03:00 [INF] ✅ User verified: "f0602c31-0c12-4b5c-9ccf-fe17811d5c53"
+2025-09-27 23:40:55.163 +03:00 [INF] ✅ Company verified: "1edafb1b-de49-4fc8-b06a-d563864b9227"
+2025-09-27 23:40:55.165 +03:00 [INF] ✅ DTO validation passed
+2025-09-27 23:40:55.248 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-27 23:40:55.252 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP) in 151.5322ms
+2025-09-27 23:40:55.254 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-27 23:40:55.256 +03:00 [INF] Request completed successfully with status code 400
+2025-09-27 23:40:55.258 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/IncomeVouchers?Code=INC-125468&Date=2025-09-18T19:22:40.318Z&CurrencyCode=EGP&FxRate=1.0&Amount=600&Description=anu&CategoryId=f8cd0c63-50d7-4a69-a344-bc53be110f77&RecurrenceId=7b6fd5d0-11ec-43b6-b9d6-eba78273f3fe - 400 null application/json; charset=utf-8 176.7594ms
+2025-09-27 23:41:17.358 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/IncomeVouchers?Code=INC-125468&Date=2025-09-18T19:22:40.318Z&CurrencyCode=EGP&FxRate=1.0&Amount=600&Description=anu&CategoryId=f8cd0c63-50d7-4a69-a344-bc53be110f77&RecurrenceId=7b6fd5d0-11ec-43b6-b9d6-eba78273f3fe - multipart/form-data; boundary=--------------------------111265362333126830094322 57875
+2025-09-27 23:41:17.364 +03:00 [INF] Request started
+2025-09-27 23:41:17.366 +03:00 [INF] Processing request for tenant: 9df6fad9-79f1-4722-bec3-fc20bb0d5c14
+2025-09-27 23:41:17.367 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-27 23:41:17.369 +03:00 [INF] Route matched with {action = "CreateIncomeVoucher", controller = "IncomeVouchers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto]]] CreateIncomeVoucher(System.String, System.DateTime, System.String, System.Decimal, System.Decimal, System.String, System.Guid, System.Nullable`1[System.Guid], System.String, System.Guid, System.String, System.String, System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile]) on controller ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController (ModularERP).
+2025-09-27 23:41:17.382 +03:00 [INF] ➡️ Start Handle CreateIncomeVoucher with Request: {"Code":"INC-145554","Date":"2025-09-18T19:22:40.3180000Z","CurrencyCode":"USD","FxRate":1.0,"Amount":500,"Description":"ant","CategoryId":"ed0ae414-91c4-4f72-ed80-08ddfdc16264","RecurrenceId":"7b6fd5d0-11ec-43b6-b9d6-eba78273f3fe","SourceJson":"{\"Type\":\"Treasury\",\"Id\":\"d95e2d80-581f-4cde-8d95-dafb9bdd8d88\"}","CounterpartyJson":"{\"Type\":\"Vendor\",\"Id\":\"3fa85f64-5717-4562-b3fc-2c963f66afa6\"}","TaxLinesJson":"[{\"TaxId\":\"d2d9f0de-50a3-4e48-b386-08ddfc1cc3f9\",\"BaseAmount\":100,\"TaxAmount\":14.0,\"IsWithholding\":true}]","Attachments":[{"ContentDisposition":"form-data; name=\"Attachments\"; filename=\"Hossam-Reda-Tohamy-Node Js .pdf\"","ContentType":"application/pdf","Headers":[{"Key":"Content-Disposition","Value":["form-data; name=\"Attachments\"; filename=\"Hossam-Reda-Tohamy-Node Js .pdf\""],"$type":"KeyValuePair`2"},{"Key":"Content-Type","Value":["application/pdf"],"$type":"KeyValuePair`2"}],"Length":56007,"Name":"Attachments","FileName":"Hossam-Reda-Tohamy-Node Js .pdf","$type":"FormFile"}],"SourceId":"d95e2d80-581f-4cde-8d95-dafb9bdd8d88","SourceType":"Treasury","Source":{"Type":"Treasury","Id":"d95e2d80-581f-4cde-8d95-dafb9bdd8d88","$type":"WalletDto"},"Counterparty":{"Type":"Vendor","Id":"3fa85f64-5717-4562-b3fc-2c963f66afa6","$type":"CounterpartyDto"},"$type":"CreateIncomeVoucherDto"}
+2025-09-27 23:41:17.418 +03:00 [INF] ✅ Tenant verified: "9df6fad9-79f1-4722-bec3-fc20bb0d5c14"
+2025-09-27 23:41:17.421 +03:00 [INF] ✅ User verified: "f0602c31-0c12-4b5c-9ccf-fe17811d5c53"
+2025-09-27 23:41:17.424 +03:00 [INF] ✅ Company verified: "1edafb1b-de49-4fc8-b06a-d563864b9227"
+2025-09-27 23:41:17.426 +03:00 [INF] ✅ DTO validation passed
+2025-09-27 23:41:17.430 +03:00 [INF] ✅ Business validations passed
+2025-09-27 23:41:17.704 +03:00 [INF] ✅ Voucher saved with ID: "578c1d52-8077-4f7e-09e9-08ddfe06355a"
+2025-09-27 23:41:17.766 +03:00 [INF] ✅ Processed attachment: Hossam-Reda-Tohamy-Node Js .pdf, Size: 56007 bytes, MimeType: application/pdf
+2025-09-27 23:41:17.816 +03:00 [INF] ✅ Saved 1 attachments to database
+2025-09-27 23:41:17.827 +03:00 [INF] Executing CreatedAtActionResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-27 23:41:17.866 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP) in 494.4228ms
+2025-09-27 23:41:17.868 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-27 23:41:17.870 +03:00 [INF] Request completed successfully with status code 201
+2025-09-27 23:41:17.871 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/IncomeVouchers?Code=INC-125468&Date=2025-09-18T19:22:40.318Z&CurrencyCode=EGP&FxRate=1.0&Amount=600&Description=anu&CategoryId=f8cd0c63-50d7-4a69-a344-bc53be110f77&RecurrenceId=7b6fd5d0-11ec-43b6-b9d6-eba78273f3fe - 201 null application/json; charset=utf-8 512.8146ms
+2025-09-27 23:49:00.174 +03:00 [INF] Starting web host...
+2025-09-27 23:49:01.374 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-27 23:49:01.552 +03:00 [INF] Executed DbCommand (115ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-09-27 23:49:01.646 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-27 23:49:01.654 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-09-27 23:49:01.664 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-09-27 23:49:01.734 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-09-27 23:49:01.749 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-27 23:49:01.753 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-09-27 23:49:01.760 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-09-27 23:49:01.771 +03:00 [INF] No migrations were applied. The database is already up to date.
+2025-09-27 23:49:01.777 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-09-27 23:49:01.977 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-09-27 23:49:01.984 +03:00 [INF] Master database initialized successfully
+2025-09-27 23:49:02.750 +03:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-27 23:49:02.873 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-27 23:49:02.875 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-27 23:49:02.978 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-27 23:49:02.981 +03:00 [INF] Hosting environment: Development
+2025-09-27 23:49:02.982 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-27 23:49:03.011 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-09-27 23:49:03.199 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 188.1727ms
+2025-09-27 23:49:03.212 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-27 23:49:03.212 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-09-27 23:49:03.224 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 12.0979ms
+2025-09-27 23:49:03.252 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 39.5728ms
+2025-09-27 23:49:03.507 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-09-27 23:49:03.597 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 89.4206ms
+2025-09-27 23:49:20.449 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/IncomeVouchers?Code=INC-125468&Date=2025-09-18T19:22:40.318Z&CurrencyCode=EGP&FxRate=1.0&Amount=600&Description=anu&CategoryId=f8cd0c63-50d7-4a69-a344-bc53be110f77&RecurrenceId=7b6fd5d0-11ec-43b6-b9d6-eba78273f3fe - multipart/form-data; boundary=--------------------------277703328201302469409605 57872
+2025-09-27 23:49:20.465 +03:00 [INF] Request started
+2025-09-27 23:49:20.470 +03:00 [INF] Processing request for tenant: 9df6fad9-79f1-4722-bec3-fc20bb0d5c14
+2025-09-27 23:49:20.474 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-27 23:49:20.491 +03:00 [INF] Route matched with {action = "CreateIncomeVoucher", controller = "IncomeVouchers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto]]] CreateIncomeVoucher(System.String, System.DateTime, System.String, System.Decimal, System.Decimal, System.String, System.Guid, System.Nullable`1[System.Guid], System.String, System.Guid, System.String, System.String, System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile]) on controller ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController (ModularERP).
+2025-09-27 23:49:20.498 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-27 23:49:20.581 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-09-27 23:49:20.826 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-27 23:49:20.860 +03:00 [INF] ➡️ Start Handle CreateIncomeVoucher with Request: {"Code":"INC-100","Date":"2025-09-18T19:22:40.3180000Z","CurrencyCode":"USD","FxRate":1.0,"Amount":500,"Description":"ant","CategoryId":"ed0ae414-91c4-4f72-ed80-08ddfdc16264","RecurrenceId":"7b6fd5d0-11ec-43b6-b9d6-eba78273f3fe","SourceJson":"{\"Type\":\"Treasury\",\"Id\":\"d95e2d80-581f-4cde-8d95-dafb9bdd8d88\"}","CounterpartyJson":"{\"Type\":\"Vendor\",\"Id\":\"3fa85f64-5717-4562-b3fc-2c963f66afa6\"}","TaxLinesJson":"[{\"TaxId\":\"d2d9f0de-50a3-4e48-b386-08ddfc1cc3f9\",\"BaseAmount\":100,\"TaxAmount\":14.0,\"IsWithholding\":true}]","Attachments":[{"ContentDisposition":"form-data; name=\"Attachments\"; filename=\"Hossam-Reda-Tohamy-Node Js .pdf\"","ContentType":"application/pdf","Headers":[{"Key":"Content-Disposition","Value":["form-data; name=\"Attachments\"; filename=\"Hossam-Reda-Tohamy-Node Js .pdf\""],"$type":"KeyValuePair`2"},{"Key":"Content-Type","Value":["application/pdf"],"$type":"KeyValuePair`2"}],"Length":56007,"Name":"Attachments","FileName":"Hossam-Reda-Tohamy-Node Js .pdf","$type":"FormFile"}],"SourceId":"d95e2d80-581f-4cde-8d95-dafb9bdd8d88","SourceType":"Treasury","Source":{"Type":"Treasury","Id":"d95e2d80-581f-4cde-8d95-dafb9bdd8d88","$type":"WalletDto"},"Counterparty":{"Type":"Vendor","Id":"3fa85f64-5717-4562-b3fc-2c963f66afa6","$type":"CounterpartyDto"},"$type":"CreateIncomeVoucherDto"}
+2025-09-27 23:49:20.896 +03:00 [INF] ✅ Tenant verified: "9df6fad9-79f1-4722-bec3-fc20bb0d5c14"
+2025-09-27 23:49:20.975 +03:00 [INF] ✅ User verified: "f0602c31-0c12-4b5c-9ccf-fe17811d5c53"
+2025-09-27 23:49:21.013 +03:00 [INF] ✅ Company verified: "1edafb1b-de49-4fc8-b06a-d563864b9227"
+2025-09-27 23:49:21.032 +03:00 [INF] ✅ DTO validation passed
+2025-09-27 23:49:21.136 +03:00 [INF] ✅ Business validations passed
+2025-09-27 23:49:21.419 +03:00 [INF] ✅ Voucher saved with ID: "a1b25ac8-5d77-4177-35a9-08ddfe0755aa"
+2025-09-27 23:49:21.495 +03:00 [INF] ✅ Processed attachment: Hossam-Reda-Tohamy-Node Js .pdf, Size: 56007 bytes, MimeType: application/pdf
+2025-09-27 23:49:21.546 +03:00 [INF] ✅ Saved 1 attachments to database
+2025-09-27 23:49:21.569 +03:00 [INF] Executing CreatedAtActionResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-27 23:49:21.608 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP) in 1110.5623ms
+2025-09-27 23:49:21.611 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.CreateIncomeVoucher (ModularERP)'
+2025-09-27 23:49:21.614 +03:00 [INF] Request completed successfully with status code 201
+2025-09-27 23:49:21.621 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/IncomeVouchers?Code=INC-125468&Date=2025-09-18T19:22:40.318Z&CurrencyCode=EGP&FxRate=1.0&Amount=600&Description=anu&CategoryId=f8cd0c63-50d7-4a69-a344-bc53be110f77&RecurrenceId=7b6fd5d0-11ec-43b6-b9d6-eba78273f3fe - 201 null application/json; charset=utf-8 1172.076ms
+2025-09-27 23:51:46.603 +03:00 [INF] Starting web host...
+2025-09-27 23:51:47.622 +03:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-27 23:51:47.741 +03:00 [INF] Executed DbCommand (100ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-09-27 23:51:47.821 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-27 23:51:47.829 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-09-27 23:51:47.845 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-09-27 23:51:47.907 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-09-27 23:51:47.924 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-27 23:51:47.929 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-09-27 23:51:47.937 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-09-27 23:51:47.948 +03:00 [INF] No migrations were applied. The database is already up to date.
+2025-09-27 23:51:47.959 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-09-27 23:51:48.137 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-09-27 23:51:48.145 +03:00 [INF] Master database initialized successfully
+2025-09-27 23:51:48.879 +03:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-27 23:51:49.002 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-27 23:51:49.004 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-27 23:51:49.073 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-27 23:51:49.075 +03:00 [INF] Hosting environment: Development
+2025-09-27 23:51:49.077 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-27 23:51:49.471 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-09-27 23:51:49.603 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 132.3267ms
+2025-09-27 23:51:49.648 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-27 23:51:49.648 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-09-27 23:51:49.655 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 6.5902ms
+2025-09-27 23:51:49.676 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 28.0401ms
+2025-09-27 23:51:49.702 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-09-27 23:51:49.758 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 56.5187ms
+2025-09-27 23:53:48.749 +03:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7168/api/IncomeVouchers/a1b25ac8-5d77-4177-35a9-08ddfe0755aa - multipart/form-data; boundary=--------------------------471117757342178409542704 99796
+2025-09-27 23:53:48.772 +03:00 [INF] Request started
+2025-09-27 23:53:48.778 +03:00 [INF] Processing request for tenant: 9df6fad9-79f1-4722-bec3-fc20bb0d5c14
+2025-09-27 23:53:48.781 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.UpdateIncomeVoucher (ModularERP)'
+2025-09-27 23:53:48.807 +03:00 [INF] Route matched with {action = "UpdateIncomeVoucher", controller = "IncomeVouchers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto]]] UpdateIncomeVoucher(System.Guid, System.DateTime, System.String, System.Decimal, System.Decimal, System.String, System.Guid, System.Nullable`1[System.Guid], System.String, System.Guid, System.String, System.String, System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile], System.String) on controller ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController (ModularERP).
+2025-09-27 23:53:48.816 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-27 23:53:48.947 +03:00 [INF] Executed DbCommand (17ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-09-27 23:53:49.234 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-27 23:53:49.269 +03:00 [INF] ➡️ Start Handle UpdateIncomeVoucher with ID: "a1b25ac8-5d77-4177-35a9-08ddfe0755aa"
+2025-09-27 23:53:49.271 +03:00 [INF] ✅ Tenant verified: "9df6fad9-79f1-4722-bec3-fc20bb0d5c14"
+2025-09-27 23:53:49.344 +03:00 [INF] ✅ User verified: "f0602c31-0c12-4b5c-9ccf-fe17811d5c53"
+2025-09-27 23:53:49.505 +03:00 [INF] ✅ Voucher and Company verified: "a1b25ac8-5d77-4177-35a9-08ddfe0755aa" - "1edafb1b-de49-4fc8-b06a-d563864b9227"
+2025-09-27 23:53:49.527 +03:00 [INF] ✅ DTO validation passed
+2025-09-27 23:53:49.606 +03:00 [INF] ✅ Business validations passed
+2025-09-27 23:53:49.770 +03:00 [INF] ✅ Voucher updated with ID: "a1b25ac8-5d77-4177-35a9-08ddfe0755aa"
+2025-09-27 23:53:49.892 +03:00 [INF] ✅ Tax lines updated
+2025-09-27 23:53:49.901 +03:00 [INF] ✅ Processed new attachment: Hossam-Reda-Tohamy-Full Stack NET Angular.pdf, Size: 98003 bytes, MimeType: application/pdf
+2025-09-27 23:53:49.945 +03:00 [INF] ✅ Added 1 new attachments
+2025-09-27 23:53:49.947 +03:00 [INF] ✅ Attachments updated
+2025-09-27 23:53:49.981 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-27 23:53:50.011 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.UpdateIncomeVoucher (ModularERP) in 1197.3062ms
+2025-09-27 23:53:50.014 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.UpdateIncomeVoucher (ModularERP)'
+2025-09-27 23:53:50.016 +03:00 [INF] Request completed successfully with status code 200
+2025-09-27 23:53:50.023 +03:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7168/api/IncomeVouchers/a1b25ac8-5d77-4177-35a9-08ddfe0755aa - 200 null application/json; charset=utf-8 1273.8558ms
+2025-09-27 23:54:17.326 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/IncomeVouchers/a1b25ac8-5d77-4177-35a9-08ddfe0755aa - null null
+2025-09-27 23:54:17.333 +03:00 [INF] Request started
+2025-09-27 23:54:17.338 +03:00 [INF] Processing request for tenant: 9df6fad9-79f1-4722-bec3-fc20bb0d5c14
+2025-09-27 23:54:17.339 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.GetIncomeVoucher (ModularERP)'
+2025-09-27 23:54:17.353 +03:00 [INF] Route matched with {action = "GetIncomeVoucher", controller = "IncomeVouchers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto]]] GetIncomeVoucher(System.Guid) on controller ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController (ModularERP).
+2025-09-27 23:54:17.363 +03:00 [INF] Fetching income voucher with ID: "a1b25ac8-5d77-4177-35a9-08ddfe0755aa"
+2025-09-27 23:54:17.374 +03:00 [INF] Found income voucher: INC-100
+2025-09-27 23:54:17.386 +03:00 [INF] Retrieved 1 tax lines and 2 attachments for voucher "a1b25ac8-5d77-4177-35a9-08ddfe0755aa"
+2025-09-27 23:54:17.392 +03:00 [INF] Successfully retrieved income voucher INC-100 with all related data
+2025-09-27 23:54:17.395 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-27 23:54:17.397 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.GetIncomeVoucher (ModularERP) in 40.7909ms
+2025-09-27 23:54:17.401 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.GetIncomeVoucher (ModularERP)'
+2025-09-27 23:54:17.403 +03:00 [INF] Request completed successfully with status code 200
+2025-09-27 23:54:17.405 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/IncomeVouchers/a1b25ac8-5d77-4177-35a9-08ddfe0755aa - 200 null application/json; charset=utf-8 79.6249ms

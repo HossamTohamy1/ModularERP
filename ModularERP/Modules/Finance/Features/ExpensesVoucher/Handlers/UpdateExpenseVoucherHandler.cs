@@ -105,7 +105,10 @@ namespace ModularERP.Modules.Finance.Features.ExpensesVoucher.Handlers
                 }
 
                 // Update voucher fields
-                existingVoucher.Code = dto.Code ?? existingVoucher.Code;
+                if (!string.IsNullOrWhiteSpace(dto.Code))
+                {
+                    existingVoucher.Code = dto.Code;
+                }
                 existingVoucher.Date = dto.Date;
                 existingVoucher.Amount = dto.Amount;
                 existingVoucher.CurrencyCode = dto.CurrencyCode;
@@ -153,7 +156,7 @@ namespace ModularERP.Modules.Finance.Features.ExpensesVoucher.Handlers
                     await _voucherTaxRepo.SaveChanges();
                 }
 
-                // Update attachments
+                // Enhanced attachment processing
                 var existingAttachments = await _attachmentRepo
                     .Get(a => a.VoucherId == dto.Id)
                     .ToListAsync(cancellationToken);
@@ -164,10 +167,12 @@ namespace ModularERP.Modules.Finance.Features.ExpensesVoucher.Handlers
 
                 foreach (var attachment in attachmentsToRemove)
                 {
+                    // Delete physical file
                     var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", attachment.FilePath.TrimStart('/'));
                     if (File.Exists(filePath))
                     {
                         File.Delete(filePath);
+                        _logger.LogInformation("🗑️ Deleted file: {FilePath}", attachment.FilePath);
                     }
 
                     await _attachmentRepo.Delete(attachment.Id);
@@ -182,55 +187,73 @@ namespace ModularERP.Modules.Finance.Features.ExpensesVoucher.Handlers
 
                     foreach (var file in dto.NewAttachments)
                     {
-                        var fileName = $"{Guid.NewGuid()}_{file.FileName}";
-                        var filePath = Path.Combine(uploadDir, fileName);
-
-                        using (var stream = new FileStream(filePath, FileMode.Create))
+                        // Validate file
+                        if (file.Length == 0)
                         {
-                            await file.CopyToAsync(stream, cancellationToken);
+                            _logger.LogWarning("Skipping empty file: {FileName}", file.FileName);
+                            continue;
                         }
 
-                        newAttachments.Add(new VoucherAttachment
+                        // Generate unique filename
+                        var fileName = $"{Guid.NewGuid()}_{file.FileName}";
+                        var filePath = Path.Combine(uploadDir, fileName);
+                        string checksum = null;
+
+                        // Save file to disk first
+                        using (var fileStream = new FileStream(filePath, FileMode.Create))
+                        {
+                            await file.CopyToAsync(fileStream, cancellationToken);
+                        }
+
+                        // Calculate checksum from saved file
+                        using (var fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
+                        using (var sha256 = System.Security.Cryptography.SHA256.Create())
+                        {
+                            var hashBytes = await sha256.ComputeHashAsync(fileStream, cancellationToken);
+                            checksum = Convert.ToHexString(hashBytes);
+                        }
+
+                        // Get MIME type
+                        var mimeType = GetMimeType(file.FileName, file.ContentType);
+
+                        var attachment = new VoucherAttachment
                         {
                             VoucherId = existingVoucher.Id,
                             FilePath = $"/uploads/{fileName}",
                             Filename = file.FileName,
-                            UploadedBy = staticUserId, // ✅ UserId ثابت
+                            MimeType = mimeType,
+                            FileSize = (int)file.Length,
+                            Checksum = checksum,
+                            UploadedBy = staticUserId,
                             UploadedAt = DateTime.UtcNow
-                        });
+                        };
+                        newAttachments.Add(attachment);
+
+                        _logger.LogInformation("✅ Processed new attachment: {FileName}, Size: {Size} bytes, MimeType: {MimeType}",
+                            file.FileName, file.Length, mimeType);
                     }
 
                     await _attachmentRepo.AddRangeAsync(newAttachments);
                     await _attachmentRepo.SaveChanges();
                 }
 
-                // Build response
+                // Enhanced Response with database fetch
+                var savedTaxes = await _voucherTaxRepo.Get(t => t.VoucherId == existingVoucher.Id).ToListAsync(cancellationToken);
+                var allSavedAttachments = await _attachmentRepo.Get(a => a.VoucherId == existingVoucher.Id).ToListAsync(cancellationToken);
+
                 var response = _mapper.Map<ExpenseVoucherResponseDto>(existingVoucher);
                 response.Source = dto.Source;
                 response.Counterparty = dto.Counterparty;
-                response.TaxLines = newTaxes.Select(t => new TaxLineResponseDto
-                {
-                    TaxId = t.TaxId,
-                    BaseAmount = t.BaseAmount,
-                    TaxAmount = t.TaxAmount,
-                    IsWithholding = t.IsWithholding
-                }).ToList();
 
-                var allAttachments = existingAttachments
-                    .Where(a => dto.KeepAttachmentIds.Contains(a.Id))
-                    .Concat(newAttachments)
-                    .ToList();
+                // Use AutoMapper for proper mapping
+                response.TaxLines = _mapper.Map<List<TaxLineResponseDto>>(savedTaxes);
+                response.Attachments = _mapper.Map<List<AttachmentResponseDto>>(allSavedAttachments);
 
-                response.Attachments = allAttachments.Select(a => new AttachmentResponseDto
-                {
-                    Id = a.Id,
-                    FileName = a.Filename,
-                    FileUrl = a.FilePath
-                }).ToList();
-
-                _logger.LogInformation("Successfully updated expense voucher {VoucherId}", dto.Id);
+                _logger.LogInformation("Successfully updated expense voucher {VoucherId} with {AttachmentCount} attachments",
+                    dto.Id, response.Attachments.Count);
 
                 return ResponseViewModel<ExpenseVoucherResponseDto>.Success(response, "Expense voucher updated successfully");
+
             }
             catch (Exception ex)
             {
@@ -238,6 +261,54 @@ namespace ModularERP.Modules.Finance.Features.ExpensesVoucher.Handlers
                 return ResponseViewModel<ExpenseVoucherResponseDto>.Error(
                     "An error occurred while updating the expense voucher", FinanceErrorCode.InternalServerError);
             }
+        }
+        /// <summary>
+        /// Get MIME type from file extension and content type
+        /// </summary>
+        private string GetMimeType(string fileName, string contentType)
+        {
+            // Use provided content type if valid and not generic
+            if (!string.IsNullOrEmpty(contentType) &&
+                contentType != "application/octet-stream" &&
+                !contentType.Contains("form-data"))
+            {
+                return contentType;
+            }
+
+            // Fallback to extension-based detection
+            var extension = Path.GetExtension(fileName)?.ToLowerInvariant();
+
+            return extension switch
+            {
+                ".pdf" => "application/pdf",
+                ".doc" => "application/msword",
+                ".docx" => "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                ".xls" => "application/vnd.ms-excel",
+                ".xlsx" => "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                ".ppt" => "application/vnd.ms-powerpoint",
+                ".pptx" => "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+                ".jpg" or ".jpeg" => "image/jpeg",
+                ".png" => "image/png",
+                ".gif" => "image/gif",
+                ".bmp" => "image/bmp",
+                ".webp" => "image/webp",
+                ".svg" => "image/svg+xml",
+                ".txt" => "text/plain",
+                ".csv" => "text/csv",
+                ".json" => "application/json",
+                ".xml" => "application/xml",
+                ".zip" => "application/zip",
+                ".rar" => "application/x-rar-compressed",
+                ".7z" => "application/x-7z-compressed",
+                ".tar" => "application/x-tar",
+                ".gz" => "application/gzip",
+                ".mp3" => "audio/mpeg",
+                ".wav" => "audio/wav",
+                ".mp4" => "video/mp4",
+                ".avi" => "video/x-msvideo",
+                ".mov" => "video/quicktime",
+                _ => "application/octet-stream"
+            };
         }
 
     }
