@@ -36,24 +36,6 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\2437c47e-4522-4420-a6af-a2e4907cd8b6_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\2f629f00-154e-448c-a420-2c684f2cde49_Hossam-Reda-Tohamy-BackEnd Laravel.pdf'))">
-      <SourceType>Package</SourceType>
-      <SourceId>ModularERP</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/ModularERP</BasePath>
-      <RelativePath>uploads/2f629f00-154e-448c-a420-2c684f2cde49_Hossam-Reda-Tohamy-BackEnd Laravel.pdf</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>qa2pfi903d</Fingerprint>
-      <Integrity>4l6wOvTslYRYqGLOHVTim7bHGbmaY0WkBsJVsybikzM=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\2f629f00-154e-448c-a420-2c684f2cde49_Hossam-Reda-Tohamy-BackEnd Laravel.pdf'))</OriginalItemSpec>
-    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\35cf3e0d-82f8-42b4-b918-632473ed371d_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf'))">
       <SourceType>Package</SourceType>
       <SourceId>ModularERP</SourceId>
@@ -198,6 +180,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\77b76736-1184-4254-8d46-02d5494f8e36_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\83487b5d-21f6-427b-aa7e-ff913c283f0a_Hossam-Reda-Tohamy-BackEnd Laravel.pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>ModularERP</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ModularERP</BasePath>
+      <RelativePath>uploads/83487b5d-21f6-427b-aa7e-ff913c283f0a_Hossam-Reda-Tohamy-BackEnd Laravel.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>qa2pfi903d</Fingerprint>
+      <Integrity>4l6wOvTslYRYqGLOHVTim7bHGbmaY0WkBsJVsybikzM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\83487b5d-21f6-427b-aa7e-ff913c283f0a_Hossam-Reda-Tohamy-BackEnd Laravel.pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\8fb2490b-9243-41d9-88b7-874eb8fbab1c_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf'))">
       <SourceType>Package</SourceType>
       <SourceId>ModularERP</SourceId>
@@ -251,6 +251,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\ba6c5cb0-81d9-4c9c-a565-e372313b176b_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\c160b997-d8b9-4093-aee5-34c5c0af675f_Back End .NET.pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>ModularERP</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ModularERP</BasePath>
+      <RelativePath>uploads/c160b997-d8b9-4093-aee5-34c5c0af675f_Back End .NET.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>zo5g8i8gda</Fingerprint>
+      <Integrity>05AJCb71GE0mZfJ3VvkgB2dqNm6qMEEvJ2Jm5CgqIw0=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\c160b997-d8b9-4093-aee5-34c5c0af675f_Back End .NET.pdf'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\db7e1b2d-815d-4c17-96fb-3651a9159c75_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf'))">
       <SourceType>Package</SourceType>

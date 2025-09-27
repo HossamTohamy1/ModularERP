@@ -12,6 +12,8 @@ namespace ModularERP.Modules.Finance.Features.Treasuries.DTO
         public DateTime CreatedAt { get; set; }
         public string? CompanyName { get; set; }
         public string? CurrencyName { get; set; }
+        public string? JournalAccountName { get; set; }  // For displaying GL Account name
+
         public int VouchersCount { get; set; }
     }
 }

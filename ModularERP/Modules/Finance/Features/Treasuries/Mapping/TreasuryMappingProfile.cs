@@ -17,6 +17,7 @@ namespace ModularERP.Modules.Finance.Features.Treasuries.Mapping
                 .ForMember(dest => dest.IsDeleted, opt => opt.Ignore())
                 .ForMember(dest => dest.Company, opt => opt.Ignore())
                 .ForMember(dest => dest.Currency, opt => opt.Ignore())
+                .ForMember(dest => dest.JournalAccount, opt => opt.Ignore())
                 .ForMember(dest => dest.Vouchers, opt => opt.Ignore());
 
             CreateMap<UpdateTreasuryDto, Treasury>()
@@ -25,17 +26,20 @@ namespace ModularERP.Modules.Finance.Features.Treasuries.Mapping
                 .ForMember(dest => dest.IsDeleted, opt => opt.Ignore())
                 .ForMember(dest => dest.Company, opt => opt.Ignore())
                 .ForMember(dest => dest.Currency, opt => opt.Ignore())
+                .ForMember(dest => dest.JournalAccount, opt => opt.Ignore())
                 .ForMember(dest => dest.Vouchers, opt => opt.Ignore());
 
             // Entity to DTO mappings
             CreateMap<Treasury, TreasuryDto>()
                 .ForMember(dest => dest.CompanyName, opt => opt.Ignore())
                 .ForMember(dest => dest.CurrencyName, opt => opt.Ignore())
+                .ForMember(dest => dest.JournalAccountName, opt => opt.Ignore())
                 .ForMember(dest => dest.VouchersCount, opt => opt.Ignore());
 
             CreateMap<Treasury, TreasuryListDto>()
                 .ForMember(dest => dest.CompanyName, opt => opt.Ignore())
                 .ForMember(dest => dest.CurrencyName, opt => opt.Ignore())
+                .ForMember(dest => dest.JournalAccountName, opt => opt.Ignore())
                 .ForMember(dest => dest.VouchersCount, opt => opt.Ignore());
 
             CreateMap<Treasury, TreasuryCreatedDto>();

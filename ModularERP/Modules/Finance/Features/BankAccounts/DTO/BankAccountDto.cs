@@ -14,12 +14,16 @@ namespace ModularERP.Modules.Finance.Features.BankAccounts.DTO
         public string? Description { get; set; }
         public string DepositAcl { get; set; } = string.Empty;
         public string WithdrawAcl { get; set; } = string.Empty;
+        public Guid? JournalAccountId { get; set; }  // Add this line
+
         public DateTime CreatedAt { get; set; }
         public DateTime? ModifiedAt { get; set; }
 
         // Related data
         public string? CompanyName { get; set; }
         public string? CurrencyName { get; set; }
+        public string? JournalAccountName { get; set; }  // Add this line
+
         public int VouchersCount { get; set; }
     }
 }

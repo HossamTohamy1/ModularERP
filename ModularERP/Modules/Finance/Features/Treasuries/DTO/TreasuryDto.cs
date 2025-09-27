@@ -18,6 +18,9 @@ namespace ModularERP.Modules.Finance.Features.Treasuries.DTO
         // Related data
         public string? CompanyName { get; set; }
         public string? CurrencyName { get; set; }
+        public Guid? JournalAccountId { get; set; }  // FK to GLAccount
+        public string? JournalAccountName { get; set; }
+
         public int VouchersCount { get; set; }
     }
 }

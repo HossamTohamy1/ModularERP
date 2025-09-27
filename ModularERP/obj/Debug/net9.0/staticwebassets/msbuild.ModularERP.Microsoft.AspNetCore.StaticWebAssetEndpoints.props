@@ -24,18 +24,6 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE\u002BhPtM="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"98003"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u00222IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE\u002BhPtM=\u0022"},{"Name":"Last-Modified","Value":"Sat, 20 Sep 2025 08:49:10 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/ModularERP/uploads/2f629f00-154e-448c-a420-2c684f2cde49_Hossam-Reda-Tohamy-BackEnd Laravel.pdf">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\2f629f00-154e-448c-a420-2c684f2cde49_Hossam-Reda-Tohamy-BackEnd Laravel.pdf'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-4l6wOvTslYRYqGLOHVTim7bHGbmaY0WkBsJVsybikzM="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"46529"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u00224l6wOvTslYRYqGLOHVTim7bHGbmaY0WkBsJVsybikzM=\u0022"},{"Name":"Last-Modified","Value":"Thu, 25 Sep 2025 15:54:20 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/ModularERP/uploads/2f629f00-154e-448c-a420-2c684f2cde49_Hossam-Reda-Tohamy-BackEnd Laravel.qa2pfi903d.pdf">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\2f629f00-154e-448c-a420-2c684f2cde49_Hossam-Reda-Tohamy-BackEnd Laravel.pdf'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"qa2pfi903d"},{"Name":"integrity","Value":"sha256-4l6wOvTslYRYqGLOHVTim7bHGbmaY0WkBsJVsybikzM="},{"Name":"label","Value":"_content/ModularERP/uploads/2f629f00-154e-448c-a420-2c684f2cde49_Hossam-Reda-Tohamy-BackEnd Laravel.pdf"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"46529"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u00224l6wOvTslYRYqGLOHVTim7bHGbmaY0WkBsJVsybikzM=\u0022"},{"Name":"Last-Modified","Value":"Thu, 25 Sep 2025 15:54:20 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/ModularERP/uploads/35cf3e0d-82f8-42b4-b918-632473ed371d_Hossam-Reda-Tohamy-Full Stack NET Angular.41798qlwtw.pdf">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\35cf3e0d-82f8-42b4-b918-632473ed371d_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -132,6 +120,18 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE\u002BhPtM="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"98003"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u00222IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE\u002BhPtM=\u0022"},{"Name":"Last-Modified","Value":"Sat, 20 Sep 2025 09:21:22 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/ModularERP/uploads/83487b5d-21f6-427b-aa7e-ff913c283f0a_Hossam-Reda-Tohamy-BackEnd Laravel.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\83487b5d-21f6-427b-aa7e-ff913c283f0a_Hossam-Reda-Tohamy-BackEnd Laravel.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-4l6wOvTslYRYqGLOHVTim7bHGbmaY0WkBsJVsybikzM="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"46529"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u00224l6wOvTslYRYqGLOHVTim7bHGbmaY0WkBsJVsybikzM=\u0022"},{"Name":"Last-Modified","Value":"Sat, 27 Sep 2025 12:59:06 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/ModularERP/uploads/83487b5d-21f6-427b-aa7e-ff913c283f0a_Hossam-Reda-Tohamy-BackEnd Laravel.qa2pfi903d.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\83487b5d-21f6-427b-aa7e-ff913c283f0a_Hossam-Reda-Tohamy-BackEnd Laravel.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"qa2pfi903d"},{"Name":"integrity","Value":"sha256-4l6wOvTslYRYqGLOHVTim7bHGbmaY0WkBsJVsybikzM="},{"Name":"label","Value":"_content/ModularERP/uploads/83487b5d-21f6-427b-aa7e-ff913c283f0a_Hossam-Reda-Tohamy-BackEnd Laravel.pdf"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"46529"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u00224l6wOvTslYRYqGLOHVTim7bHGbmaY0WkBsJVsybikzM=\u0022"},{"Name":"Last-Modified","Value":"Sat, 27 Sep 2025 12:59:06 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/ModularERP/uploads/8fb2490b-9243-41d9-88b7-874eb8fbab1c_Hossam-Reda-Tohamy-Full Stack NET Angular.41798qlwtw.pdf">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\8fb2490b-9243-41d9-88b7-874eb8fbab1c_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -167,6 +167,18 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE\u002BhPtM="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"98003"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u00222IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE\u002BhPtM=\u0022"},{"Name":"Last-Modified","Value":"Fri, 19 Sep 2025 11:08:53 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/ModularERP/uploads/c160b997-d8b9-4093-aee5-34c5c0af675f_Back End .NET.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\c160b997-d8b9-4093-aee5-34c5c0af675f_Back End .NET.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-05AJCb71GE0mZfJ3VvkgB2dqNm6qMEEvJ2Jm5CgqIw0="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"83767"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u002205AJCb71GE0mZfJ3VvkgB2dqNm6qMEEvJ2Jm5CgqIw0=\u0022"},{"Name":"Last-Modified","Value":"Thu, 25 Sep 2025 19:12:40 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/ModularERP/uploads/c160b997-d8b9-4093-aee5-34c5c0af675f_Back End .NET.zo5g8i8gda.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\c160b997-d8b9-4093-aee5-34c5c0af675f_Back End .NET.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"zo5g8i8gda"},{"Name":"integrity","Value":"sha256-05AJCb71GE0mZfJ3VvkgB2dqNm6qMEEvJ2Jm5CgqIw0="},{"Name":"label","Value":"_content/ModularERP/uploads/c160b997-d8b9-4093-aee5-34c5c0af675f_Back End .NET.pdf"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"83767"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u002205AJCb71GE0mZfJ3VvkgB2dqNm6qMEEvJ2Jm5CgqIw0=\u0022"},{"Name":"Last-Modified","Value":"Thu, 25 Sep 2025 19:12:40 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/ModularERP/uploads/db7e1b2d-815d-4c17-96fb-3651a9159c75_Hossam-Reda-Tohamy-Full Stack NET Angular.41798qlwtw.pdf">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\db7e1b2d-815d-4c17-96fb-3651a9159c75_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf'))</AssetFile>

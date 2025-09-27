@@ -9,6 +9,7 @@ using ModularERP.Modules.Finance.Features.BankAccounts.Models;
 using ModularERP.Shared.Interfaces;
 using ModularERP.Modules.Finance.Features.Companys.Models;
 using ModularERP.Modules.Finance.Features.Currencies.Models;
+using ModularERP.Modules.Finance.Features.GlAccounts.Models;
 
 namespace ModularERP.Modules.Finance.Features.BankAccounts.Handlers
 {
@@ -17,17 +18,20 @@ namespace ModularERP.Modules.Finance.Features.BankAccounts.Handlers
         private readonly IGeneralRepository<BankAccount> _bankAccountRepository;
         private readonly IGeneralRepository<Company> _companyRepository;
         private readonly IGeneralRepository<Currency> _currencyRepository;
+        private readonly IGeneralRepository<GlAccount> _glAccountRepository; // Add this
         private readonly IMapper _mapper;
 
         public GetAllBankAccountsHandler(
             IGeneralRepository<BankAccount> bankAccountRepository,
             IGeneralRepository<Company> companyRepository,
             IGeneralRepository<Currency> currencyRepository,
+            IGeneralRepository<GlAccount> glAccountRepository, // Add this
             IMapper mapper)
         {
             _bankAccountRepository = bankAccountRepository;
             _companyRepository = companyRepository;
             _currencyRepository = currencyRepository;
+            _glAccountRepository = glAccountRepository; // Add this
             _mapper = mapper;
         }
 
@@ -72,6 +76,15 @@ namespace ModularERP.Modules.Finance.Features.BankAccounts.Handlers
                         .Get(c => c.Code == bankAccount.CurrencyCode)
                         .FirstOrDefaultAsync(cancellationToken);
                     dto.CurrencyName = currency?.Code;
+
+                    // Add Journal Account Name logic
+                    if (bankAccount.JournalAccountId.HasValue)
+                    {
+                        var journalAccount = await _glAccountRepository
+                            .Get(g => g.Id == bankAccount.JournalAccountId.Value)
+                            .FirstOrDefaultAsync(cancellationToken);
+                        dto.JournalAccountName = journalAccount?.Name;
+                    }
 
                     dto.VouchersCount = await _bankAccountRepository
                         .Get(ba => ba.Id == bankAccount.Id)

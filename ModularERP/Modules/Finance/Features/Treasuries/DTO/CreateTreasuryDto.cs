@@ -11,5 +11,7 @@ namespace ModularERP.Modules.Finance.Features.Treasuries.DTO
         public string? Description { get; set; }
         public string DepositAcl { get; set; } = "{}";
         public string WithdrawAcl { get; set; } = "{}";
+        public Guid? JournalAccountId { get; set; }  // FK to GLAccount
+
     }
 }

@@ -14,5 +14,7 @@ namespace ModularERP.Modules.Finance.Features.BankAccounts.DTO
         public string? Description { get; set; }
         public string DepositAcl { get; set; } = "{}";
         public string WithdrawAcl { get; set; } = "{}";
+        public Guid? JournalAccountId { get; set; }  // Add this line
+
     }
 }

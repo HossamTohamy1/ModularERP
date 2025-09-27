@@ -1,0 +1,630 @@
+2025-09-27 14:57:52.069 +03:00 [INF] Starting web host...
+2025-09-27 14:57:52.949 +03:00 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-27 14:57:53.010 +03:00 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-09-27 14:57:53.114 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-27 14:57:53.119 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-09-27 14:57:53.125 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-09-27 14:57:53.194 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-09-27 14:57:53.212 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-27 14:57:53.217 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-09-27 14:57:53.225 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-09-27 14:57:53.236 +03:00 [INF] No migrations were applied. The database is already up to date.
+2025-09-27 14:57:53.240 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-09-27 14:57:53.435 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-09-27 14:57:53.441 +03:00 [INF] Master database initialized successfully
+2025-09-27 14:57:54.206 +03:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-27 14:57:54.435 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-27 14:57:54.437 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-27 14:57:54.519 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-27 14:57:54.521 +03:00 [INF] Hosting environment: Development
+2025-09-27 14:57:54.522 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-27 14:57:55.135 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-09-27 14:57:55.339 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 210.2584ms
+2025-09-27 14:57:55.343 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-09-27 14:57:55.343 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-27 14:57:55.366 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 22.2036ms
+2025-09-27 14:57:55.417 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 73.4685ms
+2025-09-27 14:57:55.563 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-09-27 14:57:55.618 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 55.2776ms
+2025-09-27 15:12:55.557 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-09-27 15:12:55.784 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 227.1658ms
+2025-09-27 15:12:55.870 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/favicon.ico - null null
+2025-09-27 15:12:55.890 +03:00 [INF] Request started
+2025-09-27 15:12:55.943 +03:00 [INF] Request completed successfully with status code 400
+2025-09-27 15:12:55.947 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/favicon.ico - 400 null application/json 76.8289ms
+2025-09-27 15:28:37.390 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/GlAccount - application/json 140
+2025-09-27 15:28:37.397 +03:00 [INF] Request started
+2025-09-27 15:28:37.404 +03:00 [INF] Processing request for tenant: 9df6fad9-79f1-4722-bec3-fc20bb0d5c14
+2025-09-27 15:28:37.407 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.GlAccounts.Controllers.GlAccountController.CreateGlAccount (ModularERP)'
+2025-09-27 15:28:37.431 +03:00 [INF] Route matched with {action = "CreateGlAccount", controller = "GlAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.GlAccounts.DTO.GlAccountResponseDto]]] CreateGlAccount(ModularERP.Modules.Finance.Features.GlAccounts.DTO.CreateGlAccountDto) on controller ModularERP.Modules.Finance.Features.GlAccounts.Controllers.GlAccountController (ModularERP).
+2025-09-27 15:28:37.439 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-27 15:28:37.469 +03:00 [INF] Received request to create GLAccount with Code: GlAccount_100
+2025-09-27 15:28:37.533 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-09-27 15:28:37.725 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-27 15:28:37.729 +03:00 [INF] Starting GLAccount creation process for Code: GlAccount_100, Company: "1edafb1b-de49-4fc8-b06a-d563864b9227"
+2025-09-27 15:28:37.896 +03:00 [INF] GLAccount created successfully with ID: "c3973eb3-bf67-4591-ed7e-08ddfdc16264", Code: GlAccount_100
+2025-09-27 15:28:37.953 +03:00 [INF] Executing CreatedAtActionResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.GlAccounts.DTO.GlAccountResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-27 15:28:37.989 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.GlAccounts.Controllers.GlAccountController.CreateGlAccount (ModularERP) in 550.5946ms
+2025-09-27 15:28:37.991 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.GlAccounts.Controllers.GlAccountController.CreateGlAccount (ModularERP)'
+2025-09-27 15:28:37.993 +03:00 [INF] Request completed successfully with status code 201
+2025-09-27 15:28:37.996 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/GlAccount - 201 null application/json; charset=utf-8 606.0193ms
+2025-09-27 15:29:10.722 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/GlAccount - application/json 140
+2025-09-27 15:29:10.729 +03:00 [INF] Request started
+2025-09-27 15:29:10.731 +03:00 [INF] Processing request for tenant: 9df6fad9-79f1-4722-bec3-fc20bb0d5c14
+2025-09-27 15:29:10.732 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.GlAccounts.Controllers.GlAccountController.CreateGlAccount (ModularERP)'
+2025-09-27 15:29:10.734 +03:00 [INF] Route matched with {action = "CreateGlAccount", controller = "GlAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.GlAccounts.DTO.GlAccountResponseDto]]] CreateGlAccount(ModularERP.Modules.Finance.Features.GlAccounts.DTO.CreateGlAccountDto) on controller ModularERP.Modules.Finance.Features.GlAccounts.Controllers.GlAccountController (ModularERP).
+2025-09-27 15:29:10.738 +03:00 [INF] Received request to create GLAccount with Code: GlAccount_101
+2025-09-27 15:29:10.779 +03:00 [INF] Starting GLAccount creation process for Code: GlAccount_101, Company: "1edafb1b-de49-4fc8-b06a-d563864b9227"
+2025-09-27 15:29:10.796 +03:00 [INF] GLAccount created successfully with ID: "75c3830f-34e8-4d05-ed7f-08ddfdc16264", Code: GlAccount_101
+2025-09-27 15:29:10.801 +03:00 [INF] Executing CreatedAtActionResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.GlAccounts.DTO.GlAccountResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-27 15:29:10.805 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.GlAccounts.Controllers.GlAccountController.CreateGlAccount (ModularERP) in 67.7178ms
+2025-09-27 15:29:10.807 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.GlAccounts.Controllers.GlAccountController.CreateGlAccount (ModularERP)'
+2025-09-27 15:29:10.810 +03:00 [INF] Request completed successfully with status code 201
+2025-09-27 15:29:10.811 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/GlAccount - 201 null application/json; charset=utf-8 88.9453ms
+2025-09-27 15:29:42.751 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/GlAccount - application/json 140
+2025-09-27 15:29:42.755 +03:00 [INF] Request started
+2025-09-27 15:29:42.756 +03:00 [INF] Processing request for tenant: 9df6fad9-79f1-4722-bec3-fc20bb0d5c14
+2025-09-27 15:29:42.756 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.GlAccounts.Controllers.GlAccountController.CreateGlAccount (ModularERP)'
+2025-09-27 15:29:42.758 +03:00 [INF] Route matched with {action = "CreateGlAccount", controller = "GlAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.GlAccounts.DTO.GlAccountResponseDto]]] CreateGlAccount(ModularERP.Modules.Finance.Features.GlAccounts.DTO.CreateGlAccountDto) on controller ModularERP.Modules.Finance.Features.GlAccounts.Controllers.GlAccountController (ModularERP).
+2025-09-27 15:29:42.762 +03:00 [INF] Received request to create GLAccount with Code: GlAccount_102
+2025-09-27 15:29:42.765 +03:00 [INF] Starting GLAccount creation process for Code: GlAccount_102, Company: "1edafb1b-de49-4fc8-b06a-d563864b9227"
+2025-09-27 15:29:42.769 +03:00 [INF] GLAccount created successfully with ID: "ed0ae414-91c4-4f72-ed80-08ddfdc16264", Code: GlAccount_102
+2025-09-27 15:29:42.772 +03:00 [INF] Executing CreatedAtActionResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.GlAccounts.DTO.GlAccountResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-27 15:29:42.773 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.GlAccounts.Controllers.GlAccountController.CreateGlAccount (ModularERP) in 11.934ms
+2025-09-27 15:29:42.775 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.GlAccounts.Controllers.GlAccountController.CreateGlAccount (ModularERP)'
+2025-09-27 15:29:42.777 +03:00 [INF] Request completed successfully with status code 201
+2025-09-27 15:29:42.778 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/GlAccount - 201 null application/json; charset=utf-8 27.8101ms
+2025-09-27 15:46:27.761 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/Companies?X-Tenant-ID=0794b76b-6560-41a1-a146-7e059ed3c64f - null null
+2025-09-27 15:46:27.767 +03:00 [INF] Request started
+2025-09-27 15:46:27.768 +03:00 [INF] Processing request for tenant: 0794b76b-6560-41a1-a146-7e059ed3c64f
+2025-09-27 15:46:27.769 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.Companys.Controllers.CompaniesController.GetAllCompanies (ModularERP)'
+2025-09-27 15:46:27.774 +03:00 [INF] Route matched with {action = "GetAllCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Collections.Generic.List`1[ModularERP.Modules.Finance.Features.Companys.DTO.CompanyResponseDto]]]] GetAllCompanies() on controller ModularERP.Modules.Finance.Features.Companys.Controllers.CompaniesController (ModularERP).
+2025-09-27 15:46:27.832 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-09-27 15:46:27.837 +03:00 [INF] Retrieving all companies
+2025-09-27 15:46:27.863 +03:00 [INF] Successfully retrieved 0 companies
+2025-09-27 15:46:27.866 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Finance.Features.Companys.DTO.CompanyResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-27 15:46:27.870 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.Companys.Controllers.CompaniesController.GetAllCompanies (ModularERP) in 94.2017ms
+2025-09-27 15:46:27.872 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.Companys.Controllers.CompaniesController.GetAllCompanies (ModularERP)'
+2025-09-27 15:46:27.874 +03:00 [INF] Request completed successfully with status code 200
+2025-09-27 15:46:27.875 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/Companies?X-Tenant-ID=0794b76b-6560-41a1-a146-7e059ed3c64f - 200 null application/json; charset=utf-8 113.4091ms
+2025-09-27 15:46:35.671 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/Companies?X-Tenant-ID=0794b76b-6560-41a1-a146-7e059ed3c64f - null null
+2025-09-27 15:46:35.673 +03:00 [INF] Request started
+2025-09-27 15:46:35.675 +03:00 [INF] Processing request for tenant: 9df6fad9-79f1-4722-bec3-fc20bb0d5c14
+2025-09-27 15:46:35.676 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.Companys.Controllers.CompaniesController.GetAllCompanies (ModularERP)'
+2025-09-27 15:46:35.677 +03:00 [INF] Route matched with {action = "GetAllCompanies", controller = "Companies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Collections.Generic.List`1[ModularERP.Modules.Finance.Features.Companys.DTO.CompanyResponseDto]]]] GetAllCompanies() on controller ModularERP.Modules.Finance.Features.Companys.Controllers.CompaniesController (ModularERP).
+2025-09-27 15:46:35.681 +03:00 [INF] Retrieving all companies
+2025-09-27 15:46:35.747 +03:00 [INF] Successfully retrieved 1 companies
+2025-09-27 15:46:35.749 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Finance.Features.Companys.DTO.CompanyResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-27 15:46:35.753 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.Companys.Controllers.CompaniesController.GetAllCompanies (ModularERP) in 73.0736ms
+2025-09-27 15:46:35.755 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.Companys.Controllers.CompaniesController.GetAllCompanies (ModularERP)'
+2025-09-27 15:46:35.757 +03:00 [INF] Request completed successfully with status code 200
+2025-09-27 15:46:35.760 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/Companies?X-Tenant-ID=0794b76b-6560-41a1-a146-7e059ed3c64f - 200 null application/json; charset=utf-8 88.6064ms
+2025-09-27 15:46:52.084 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/Treasury - application/json 208
+2025-09-27 15:46:52.087 +03:00 [INF] Request started
+2025-09-27 15:46:52.088 +03:00 [INF] Processing request for tenant: 9df6fad9-79f1-4722-bec3-fc20bb0d5c14
+2025-09-27 15:46:52.089 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.CreateTreasury (ModularERP)'
+2025-09-27 15:46:52.094 +03:00 [INF] Route matched with {action = "CreateTreasury", controller = "Treasury"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryCreatedDto]]] CreateTreasury(ModularERP.Modules.Finance.Features.Treasuries.DTO.CreateTreasuryDto) on controller ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController (ModularERP).
+2025-09-27 15:46:52.189 +03:00 [INF] Executing CreatedAtActionResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryCreatedDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-27 15:46:52.194 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.CreateTreasury (ModularERP) in 95.7133ms
+2025-09-27 15:46:52.196 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.CreateTreasury (ModularERP)'
+2025-09-27 15:46:52.197 +03:00 [INF] Request completed successfully with status code 201
+2025-09-27 15:46:52.198 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/Treasury - 201 null application/json; charset=utf-8 114.1375ms
+2025-09-27 15:56:45.427 +03:00 [INF] Starting web host...
+2025-09-27 15:56:46.432 +03:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-27 15:56:46.501 +03:00 [INF] Executed DbCommand (52ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-09-27 15:56:46.571 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-27 15:56:46.577 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-09-27 15:56:46.593 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-09-27 15:56:46.651 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-09-27 15:56:46.668 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-27 15:56:46.673 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-09-27 15:56:46.680 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-09-27 15:56:46.691 +03:00 [INF] No migrations were applied. The database is already up to date.
+2025-09-27 15:56:46.697 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-09-27 15:56:46.886 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-09-27 15:56:46.894 +03:00 [INF] Master database initialized successfully
+2025-09-27 15:56:47.563 +03:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-27 15:56:47.727 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-27 15:56:47.730 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-27 15:56:47.795 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-27 15:56:47.797 +03:00 [INF] Hosting environment: Development
+2025-09-27 15:56:47.799 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-27 15:56:48.192 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-09-27 15:56:48.308 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 116.4596ms
+2025-09-27 15:56:48.314 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-09-27 15:56:48.314 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-27 15:56:48.332 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 18.3742ms
+2025-09-27 15:56:48.348 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 34.2691ms
+2025-09-27 15:56:48.480 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-09-27 15:56:48.532 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 51.6769ms
+2025-09-27 15:58:00.334 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/Treasury - application/json 271
+2025-09-27 15:58:00.432 +03:00 [INF] Request started
+2025-09-27 15:58:00.439 +03:00 [INF] Processing request for tenant: 9df6fad9-79f1-4722-bec3-fc20bb0d5c14
+2025-09-27 15:58:00.444 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.CreateTreasury (ModularERP)'
+2025-09-27 15:58:00.463 +03:00 [INF] Route matched with {action = "CreateTreasury", controller = "Treasury"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryCreatedDto]]] CreateTreasury(ModularERP.Modules.Finance.Features.Treasuries.DTO.CreateTreasuryDto) on controller ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController (ModularERP).
+2025-09-27 15:58:00.471 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-27 15:58:00.546 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-09-27 15:58:00.718 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-27 15:58:00.806 +03:00 [INF] Executing ConflictObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryCreatedDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-27 15:58:00.822 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.CreateTreasury (ModularERP) in 351.5332ms
+2025-09-27 15:58:00.824 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.CreateTreasury (ModularERP)'
+2025-09-27 15:58:00.826 +03:00 [INF] Request completed successfully with status code 409
+2025-09-27 15:58:00.832 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/Treasury - 409 null application/json; charset=utf-8 497.8528ms
+2025-09-27 15:58:22.265 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/Treasury - application/json 277
+2025-09-27 15:58:22.270 +03:00 [INF] Request started
+2025-09-27 15:58:22.273 +03:00 [INF] Processing request for tenant: 9df6fad9-79f1-4722-bec3-fc20bb0d5c14
+2025-09-27 15:58:22.275 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.CreateTreasury (ModularERP)'
+2025-09-27 15:58:22.276 +03:00 [INF] Route matched with {action = "CreateTreasury", controller = "Treasury"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryCreatedDto]]] CreateTreasury(ModularERP.Modules.Finance.Features.Treasuries.DTO.CreateTreasuryDto) on controller ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController (ModularERP).
+2025-09-27 15:58:22.426 +03:00 [INF] Executing CreatedAtActionResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryCreatedDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-27 15:58:22.440 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.CreateTreasury (ModularERP) in 160.8869ms
+2025-09-27 15:58:22.443 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.CreateTreasury (ModularERP)'
+2025-09-27 15:58:22.445 +03:00 [INF] Request completed successfully with status code 201
+2025-09-27 15:58:22.446 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/Treasury - 201 null application/json; charset=utf-8 181.4314ms
+2025-09-27 15:59:05.677 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/ExpenseVouchers - multipart/form-data; boundary=--------------------------509101445703267836013405 48405
+2025-09-27 15:59:05.683 +03:00 [INF] Request started
+2025-09-27 15:59:05.685 +03:00 [INF] Processing request for tenant: 9df6fad9-79f1-4722-bec3-fc20bb0d5c14
+2025-09-27 15:59:05.686 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController.CreateExpenseVoucher (ModularERP)'
+2025-09-27 15:59:05.695 +03:00 [INF] Route matched with {action = "CreateExpenseVoucher", controller = "ExpenseVouchers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ExpenseVoucherResponseDto]]] CreateExpenseVoucher(System.String, System.DateTime, System.String, System.Decimal, System.Decimal, System.String, System.Guid, System.Nullable`1[System.Guid], System.String, System.Guid, System.String, System.String, System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile]) on controller ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController (ModularERP).
+2025-09-27 15:59:05.788 +03:00 [INF] Start creating expense voucher with data: {"Code":"EXP-1455523","Date":"2025-09-18T19:22:40.3180000Z","Amount":500,"Description":"ant","CategoryId":"f7acf111-b0d2-47a5-f814-08ddfb9592b7","Source":{"Type":"Treasury","Id":"d95e2d80-581f-4cde-8d95-dafb9bdd8d88","$type":"WalletDto"},"Counterparty":{"Type":"Vendor","Id":"3fa85f64-5717-4562-b3fc-2c963f66afa6","$type":"CounterpartyDto"},"TaxLinesCount":1,"AttachmentsCount":1}
+2025-09-27 15:59:05.828 +03:00 [INF] Validation passed successfully.
+2025-09-27 15:59:05.873 +03:00 [INF] Business validations passed successfully.
+2025-09-27 15:59:05.897 +03:00 [INF] Adding voucher to repository: {"Code":"EXP-1455523","Amount":500,"Date":"2025-09-18T19:22:40.3180000Z"}
+2025-09-27 15:59:06.019 +03:00 [INF] Voucher saved successfully with ID: "af35a424-508d-4de4-880b-08ddfdc5a40b"
+2025-09-27 15:59:06.021 +03:00 [INF] Processing 1 tax lines
+2025-09-27 15:59:06.022 +03:00 [INF] Processing tax line: TaxId="d2d9f0de-50a3-4e48-b386-08ddfc1cc3f9", BaseAmount=100, TaxAmount=14.0
+2025-09-27 15:59:06.062 +03:00 [INF] Successfully added 1 tax lines
+2025-09-27 15:59:06.064 +03:00 [INF] Processing 1 attachments
+2025-09-27 15:59:06.099 +03:00 [INF] Successfully added 1 attachments
+2025-09-27 15:59:06.101 +03:00 [INF] Voucher "af35a424-508d-4de4-880b-08ddfdc5a40b" created successfully with 1 taxes and 1 attachments.
+2025-09-27 15:59:06.107 +03:00 [INF] Executing CreatedAtActionResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ExpenseVoucherResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-27 15:59:06.118 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController.CreateExpenseVoucher (ModularERP) in 418.2663ms
+2025-09-27 15:59:06.121 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController.CreateExpenseVoucher (ModularERP)'
+2025-09-27 15:59:06.123 +03:00 [INF] Request completed successfully with status code 201
+2025-09-27 15:59:06.124 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/ExpenseVouchers - 201 null application/json; charset=utf-8 447.4347ms
+2025-09-27 16:01:15.129 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/Treasury - null null
+2025-09-27 16:01:15.133 +03:00 [INF] Request started
+2025-09-27 16:01:15.135 +03:00 [INF] Processing request for tenant: 9df6fad9-79f1-4722-bec3-fc20bb0d5c14
+2025-09-27 16:01:15.136 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.GetAllTreasuries (ModularERP)'
+2025-09-27 16:01:15.140 +03:00 [INF] Route matched with {action = "GetAllTreasuries", controller = "Treasury"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Collections.Generic.IEnumerable`1[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryListDto]]]] GetAllTreasuries(System.Nullable`1[System.Guid], System.String, Int32, Int32) on controller ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController (ModularERP).
+2025-09-27 16:01:15.290 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-27 16:01:15.296 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.GetAllTreasuries (ModularERP) in 153.5952ms
+2025-09-27 16:01:15.299 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.GetAllTreasuries (ModularERP)'
+2025-09-27 16:01:15.301 +03:00 [INF] Request completed successfully with status code 200
+2025-09-27 16:01:15.302 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/Treasury - 200 null application/json; charset=utf-8 173.2279ms
+2025-09-27 16:07:42.713 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/Treasury/{d95e2d80-581f-4cde-8d95-dafb9bdd8d88}?X-Tenant-ID=9df6fad9-79f1-4722-bec3-fc20bb0d5c14 - null null
+2025-09-27 16:07:42.718 +03:00 [INF] Request started
+2025-09-27 16:07:42.722 +03:00 [INF] Request completed successfully with status code 400
+2025-09-27 16:07:42.723 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/Treasury/{d95e2d80-581f-4cde-8d95-dafb9bdd8d88}?X-Tenant-ID=9df6fad9-79f1-4722-bec3-fc20bb0d5c14 - 400 null application/json 10.3383ms
+2025-09-27 16:08:02.426 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/Treasury/{d95e2d80-581f-4cde-8d95-dafb9bdd8d88}?= - null null
+2025-09-27 16:08:02.431 +03:00 [INF] Request started
+2025-09-27 16:08:02.432 +03:00 [INF] Processing request for tenant: 9df6fad9-79f1-4722-bec3-fc20bb0d5c14
+2025-09-27 16:08:02.433 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.GetTreasuryById (ModularERP)'
+2025-09-27 16:08:02.438 +03:00 [INF] Route matched with {action = "GetTreasuryById", controller = "Treasury"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryDto]]] GetTreasuryById(System.Guid) on controller ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController (ModularERP).
+2025-09-27 16:08:02.513 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-27 16:08:02.530 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.GetTreasuryById (ModularERP) in 89.9211ms
+2025-09-27 16:08:02.536 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.GetTreasuryById (ModularERP)'
+2025-09-27 16:08:02.538 +03:00 [INF] Request completed successfully with status code 200
+2025-09-27 16:08:02.540 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/Treasury/{d95e2d80-581f-4cde-8d95-dafb9bdd8d88}?= - 200 null application/json; charset=utf-8 113.1987ms
+2025-09-27 16:14:11.115 +03:00 [INF] Starting web host...
+2025-09-27 16:14:11.918 +03:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-27 16:14:11.983 +03:00 [INF] Executed DbCommand (50ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-09-27 16:14:12.050 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-27 16:14:12.056 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-09-27 16:14:12.075 +03:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-09-27 16:14:12.132 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-09-27 16:14:12.147 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-27 16:14:12.152 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-09-27 16:14:12.160 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-09-27 16:14:12.173 +03:00 [INF] No migrations were applied. The database is already up to date.
+2025-09-27 16:14:12.181 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-09-27 16:14:12.346 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-09-27 16:14:12.353 +03:00 [INF] Master database initialized successfully
+2025-09-27 16:14:12.991 +03:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-27 16:14:13.096 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-27 16:14:13.098 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-27 16:14:13.157 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-27 16:14:13.159 +03:00 [INF] Hosting environment: Development
+2025-09-27 16:14:13.160 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-27 16:14:13.538 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-09-27 16:14:13.650 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 112.5211ms
+2025-09-27 16:14:13.654 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-09-27 16:14:13.654 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-27 16:14:13.670 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 15.4188ms
+2025-09-27 16:14:13.685 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 30.7522ms
+2025-09-27 16:14:13.834 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-09-27 16:14:13.895 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 60.9701ms
+2025-09-27 16:14:23.308 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/Treasury - null null
+2025-09-27 16:14:23.325 +03:00 [INF] Request started
+2025-09-27 16:14:23.330 +03:00 [INF] Processing request for tenant: 9df6fad9-79f1-4722-bec3-fc20bb0d5c14
+2025-09-27 16:14:23.333 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.GetAllTreasuries (ModularERP)'
+2025-09-27 16:14:23.350 +03:00 [INF] Route matched with {action = "GetAllTreasuries", controller = "Treasury"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Collections.Generic.IEnumerable`1[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryListDto]]]] GetAllTreasuries(System.Nullable`1[System.Guid], System.String, Int32, Int32) on controller ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController (ModularERP).
+2025-09-27 16:14:23.356 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-27 16:14:23.414 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-09-27 16:14:23.633 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-27 16:14:23.855 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-27 16:14:23.877 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.GetAllTreasuries (ModularERP) in 520.6585ms
+2025-09-27 16:14:23.880 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.GetAllTreasuries (ModularERP)'
+2025-09-27 16:14:23.882 +03:00 [INF] Request completed successfully with status code 200
+2025-09-27 16:14:23.886 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/Treasury - 200 null application/json; charset=utf-8 578.6578ms
+2025-09-27 16:15:16.017 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/Treasury/by-company/{1edafb1b-de49-4fc8-b06a-d563864b9227} - null null
+2025-09-27 16:15:16.023 +03:00 [INF] Request started
+2025-09-27 16:15:16.028 +03:00 [INF] Processing request for tenant: 7579736e-aa3f-49f9-9c55-d416d15bbd8c
+2025-09-27 16:15:16.029 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.GetTreasuriesByCompany (ModularERP)'
+2025-09-27 16:15:16.034 +03:00 [INF] Route matched with {action = "GetTreasuriesByCompany", controller = "Treasury"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Collections.Generic.IEnumerable`1[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryListDto]]]] GetTreasuriesByCompany(System.Guid, Int32, Int32) on controller ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController (ModularERP).
+2025-09-27 16:15:16.089 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-09-27 16:15:16.121 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.GetTreasuriesByCompany (ModularERP) in 84.2929ms
+2025-09-27 16:15:16.125 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.GetTreasuriesByCompany (ModularERP)'
+2025-09-27 16:15:16.127 +03:00 [ERR] Unexpected error occurred
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure' to the 'UseSqlServer' call.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot open database "ModularERP_Tenant_6d102e1c787c401e9d3ef53f6a3d446a" requested by the login. The login failed.
+Login failed for user 'DESKTOP-JC03CE9\hossny D. monkey'.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+ClientConnectionId:dee8210b-5229-46fd-b21e-d5f64923f288
+Error Number:4060,State:1,Class:11
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at ModularERP.Modules.Finance.Features.Treasuries.Handlers.GetTreasuriesByCompanyHandler.Handle(GetTreasuriesByCompanyQuery request, CancellationToken cancellationToken) in C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP\Modules\Finance\Features\Treasuries\Handlers\GetTreasuriesByCompanyHandler.cs:line 43
+   at ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.GetTreasuriesByCompany(Guid companyId, Int32 pageNumber, Int32 pageSize) in C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP\Modules\Finance\Features\Treasuries\Controllers\TreasuryController.cs:line 151
+   at lambda_method463(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at ModularERP.Program.<>c.<<Main>b__0_6>d.MoveNext() in C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP\Program.cs:line 247
+--- End of stack trace from previous location ---
+   at ModularERP.Common.Middleware.GlobalErrorHandlerMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP\Common\Middleware\GlobalErrorHandlerMiddleware.cs:line 40
+2025-09-27 16:15:16.203 +03:00 [INF] Error response sent with status code 500
+2025-09-27 16:15:16.206 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/Treasury/by-company/{1edafb1b-de49-4fc8-b06a-d563864b9227} - 500 null application/json; charset=utf-8 189.7473ms
+2025-09-27 16:15:37.096 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/Treasury/by-company/{1edafb1b-de49-4fc8-b06a-d563864b9227} - null null
+2025-09-27 16:15:37.101 +03:00 [INF] Request started
+2025-09-27 16:15:37.103 +03:00 [INF] Processing request for tenant: 9df6fad9-79f1-4722-bec3-fc20bb0d5c14
+2025-09-27 16:15:37.104 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.GetTreasuriesByCompany (ModularERP)'
+2025-09-27 16:15:37.106 +03:00 [INF] Route matched with {action = "GetTreasuriesByCompany", controller = "Treasury"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Collections.Generic.IEnumerable`1[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryListDto]]]] GetTreasuriesByCompany(System.Guid, Int32, Int32) on controller ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController (ModularERP).
+2025-09-27 16:15:37.135 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-27 16:15:37.137 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.GetTreasuriesByCompany (ModularERP) in 29.0998ms
+2025-09-27 16:15:37.139 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.Treasuries.Controllers.TreasuryController.GetTreasuriesByCompany (ModularERP)'
+2025-09-27 16:15:37.140 +03:00 [INF] Request completed successfully with status code 200
+2025-09-27 16:15:37.141 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/Treasury/by-company/{1edafb1b-de49-4fc8-b06a-d563864b9227} - 200 null application/json; charset=utf-8 44.9789ms
+2025-09-27 16:36:06.372 +03:00 [INF] Starting web host...
+2025-09-27 16:36:07.252 +03:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-27 16:36:07.337 +03:00 [INF] Executed DbCommand (69ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-09-27 16:36:07.403 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-27 16:36:07.409 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-09-27 16:36:07.428 +03:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-09-27 16:36:07.482 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-09-27 16:36:07.498 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-09-27 16:36:07.502 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-09-27 16:36:07.509 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-09-27 16:36:07.519 +03:00 [INF] No migrations were applied. The database is already up to date.
+2025-09-27 16:36:07.525 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-09-27 16:36:07.679 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-09-27 16:36:07.686 +03:00 [INF] Master database initialized successfully
+2025-09-27 16:36:08.339 +03:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-27 16:36:08.436 +03:00 [INF] Now listening on: https://localhost:7168
+2025-09-27 16:36:08.438 +03:00 [INF] Now listening on: http://localhost:5004
+2025-09-27 16:36:08.496 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-27 16:36:08.498 +03:00 [INF] Hosting environment: Development
+2025-09-27 16:36:08.499 +03:00 [INF] Content root path: C:\Users\hossny D. monkey\source\repos\ModularERP\ModularERP
+2025-09-27 16:36:08.728 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-09-27 16:36:08.837 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 110.109ms
+2025-09-27 16:36:08.977 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-09-27 16:36:08.977 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-27 16:36:08.987 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 9.741ms
+2025-09-27 16:36:09.000 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 23.5913ms
+2025-09-27 16:36:09.046 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-09-27 16:36:09.101 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 55.0876ms
+2025-09-27 16:36:16.581 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-09-27 16:36:16.592 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 11.0951ms
+2025-09-27 16:36:16.601 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-27 16:36:16.601 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-09-27 16:36:16.606 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 4.8425ms
+2025-09-27 16:36:16.623 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 22.1789ms
+2025-09-27 16:36:16.701 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-09-27 16:36:16.758 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 56.7536ms
+2025-09-27 16:36:41.631 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/BankAccount - null null
+2025-09-27 16:36:41.645 +03:00 [INF] Request started
+2025-09-27 16:36:41.650 +03:00 [INF] Processing request for tenant: 7579736e-aa3f-49f9-9c55-d416d15bbd8c
+2025-09-27 16:36:41.652 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetAllBankAccounts (ModularERP)'
+2025-09-27 16:36:41.667 +03:00 [INF] Route matched with {action = "GetAllBankAccounts", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Collections.Generic.IEnumerable`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountListDto]]]] GetAllBankAccounts(Int32, Int32, System.String, System.String, Boolean, System.Nullable`1[System.Guid]) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-27 16:36:41.672 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-27 16:36:41.745 +03:00 [INF] Executed DbCommand (16ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-09-27 16:36:41.953 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-09-27 16:36:42.016 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-27 16:36:42.039 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetAllBankAccounts (ModularERP) in 366.8692ms
+2025-09-27 16:36:42.042 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetAllBankAccounts (ModularERP)'
+2025-09-27 16:36:42.045 +03:00 [INF] Request completed successfully with status code 400
+2025-09-27 16:36:42.049 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/BankAccount - 400 null application/json; charset=utf-8 418.1027ms
+2025-09-27 16:37:00.862 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/BankAccount - null null
+2025-09-27 16:37:00.867 +03:00 [INF] Request started
+2025-09-27 16:37:00.870 +03:00 [INF] Processing request for tenant: 9df6fad9-79f1-4722-bec3-fc20bb0d5c14
+2025-09-27 16:37:00.871 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetAllBankAccounts (ModularERP)'
+2025-09-27 16:37:00.872 +03:00 [INF] Route matched with {action = "GetAllBankAccounts", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Collections.Generic.IEnumerable`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountListDto]]]] GetAllBankAccounts(Int32, Int32, System.String, System.String, Boolean, System.Nullable`1[System.Guid]) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-27 16:37:00.921 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-09-27 16:37:00.954 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-27 16:37:00.958 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetAllBankAccounts (ModularERP) in 82.2511ms
+2025-09-27 16:37:00.960 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetAllBankAccounts (ModularERP)'
+2025-09-27 16:37:00.961 +03:00 [INF] Request completed successfully with status code 200
+2025-09-27 16:37:00.962 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/BankAccount - 200 null application/json; charset=utf-8 100.6701ms
+2025-09-27 16:37:12.891 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/BankAccount - application/json 327
+2025-09-27 16:37:12.895 +03:00 [INF] Request started
+2025-09-27 16:37:12.896 +03:00 [INF] Processing request for tenant: 9df6fad9-79f1-4722-bec3-fc20bb0d5c14
+2025-09-27 16:37:12.897 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.CreateBankAccount (ModularERP)'
+2025-09-27 16:37:12.902 +03:00 [INF] Route matched with {action = "CreateBankAccount", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountCreatedDto]]] CreateBankAccount(ModularERP.Modules.Finance.Features.BankAccounts.DTO.CreateBankAccountDto) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-27 16:37:12.924 +03:00 [INF] Received CreateBankAccountCommand for TenantId: 9df6fad9-79f1-4722-bec3-fc20bb0d5c14, CompanyId: "1edafb1b-de49-4fc8-b06a-d563864b9227"
+2025-09-27 16:37:12.941 +03:00 [INF] Checking if bank account already exists for CompanyId: "1edafb1b-de49-4fc8-b06a-d563864b9227"
+2025-09-27 16:37:12.957 +03:00 [INF] Adding new bank account: Egypt / 123 for Company: "1edafb1b-de49-4fc8-b06a-d563864b9227"
+2025-09-27 16:37:13.124 +03:00 [INF] Bank account "1ec73583-882b-4e7f-9f40-138395a684ec" created successfully
+2025-09-27 16:37:13.133 +03:00 [INF] Executing CreatedAtActionResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountCreatedDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-27 16:37:13.154 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.CreateBankAccount (ModularERP) in 248.9285ms
+2025-09-27 16:37:13.158 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.CreateBankAccount (ModularERP)'
+2025-09-27 16:37:13.159 +03:00 [INF] Request completed successfully with status code 201
+2025-09-27 16:37:13.161 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/BankAccount - 201 null application/json; charset=utf-8 269.7894ms
+2025-09-27 16:37:17.956 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/BankAccount - null null
+2025-09-27 16:37:17.961 +03:00 [INF] Request started
+2025-09-27 16:37:17.962 +03:00 [INF] Processing request for tenant: 9df6fad9-79f1-4722-bec3-fc20bb0d5c14
+2025-09-27 16:37:17.963 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetAllBankAccounts (ModularERP)'
+2025-09-27 16:37:17.965 +03:00 [INF] Route matched with {action = "GetAllBankAccounts", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Collections.Generic.IEnumerable`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountListDto]]]] GetAllBankAccounts(Int32, Int32, System.String, System.String, Boolean, System.Nullable`1[System.Guid]) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-27 16:37:18.112 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-27 16:37:18.118 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetAllBankAccounts (ModularERP) in 150.35ms
+2025-09-27 16:37:18.120 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetAllBankAccounts (ModularERP)'
+2025-09-27 16:37:18.121 +03:00 [INF] Request completed successfully with status code 200
+2025-09-27 16:37:18.122 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/BankAccount - 200 null application/json; charset=utf-8 166.4648ms
+2025-09-27 16:38:55.962 +03:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7168/api/BankAccount/1ec73583-882b-4e7f-9f40-138395a684ec - application/json 379
+2025-09-27 16:38:55.966 +03:00 [INF] Request started
+2025-09-27 16:38:55.968 +03:00 [INF] Processing request for tenant: 7579736e-aa3f-49f9-9c55-d416d15bbd8c
+2025-09-27 16:38:55.969 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdateBankAccount (ModularERP)'
+2025-09-27 16:38:55.974 +03:00 [INF] Route matched with {action = "UpdateBankAccount", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Boolean]]] UpdateBankAccount(System.Guid, ModularERP.Modules.Finance.Features.BankAccounts.DTO.UpdateBankAccountDto) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-27 16:38:56.003 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-27 16:38:56.006 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdateBankAccount (ModularERP) in 29.8339ms
+2025-09-27 16:38:56.008 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdateBankAccount (ModularERP)'
+2025-09-27 16:38:56.009 +03:00 [INF] Request completed successfully with status code 400
+2025-09-27 16:38:56.011 +03:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7168/api/BankAccount/1ec73583-882b-4e7f-9f40-138395a684ec - 400 null application/json; charset=utf-8 49.1662ms
+2025-09-27 16:39:24.797 +03:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7168/api/BankAccount/1ec73583-882b-4e7f-9f40-138395a684ec - application/json 379
+2025-09-27 16:39:24.801 +03:00 [INF] Request started
+2025-09-27 16:39:24.802 +03:00 [INF] Processing request for tenant: 7579736e-aa3f-49f9-9c55-d416d15bbd8c
+2025-09-27 16:39:24.803 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdateBankAccount (ModularERP)'
+2025-09-27 16:39:24.805 +03:00 [INF] Route matched with {action = "UpdateBankAccount", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Boolean]]] UpdateBankAccount(System.Guid, ModularERP.Modules.Finance.Features.BankAccounts.DTO.UpdateBankAccountDto) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-27 16:39:24.813 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-27 16:39:24.816 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdateBankAccount (ModularERP) in 8.0675ms
+2025-09-27 16:39:24.817 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdateBankAccount (ModularERP)'
+2025-09-27 16:39:24.819 +03:00 [INF] Request completed successfully with status code 400
+2025-09-27 16:39:24.821 +03:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7168/api/BankAccount/1ec73583-882b-4e7f-9f40-138395a684ec - 400 null application/json; charset=utf-8 24.2037ms
+2025-09-27 16:40:54.151 +03:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7168/api/BankAccount/1ec73583-882b-4e7f-9f40-138395a684ec - application/json 379
+2025-09-27 16:40:54.155 +03:00 [INF] Request started
+2025-09-27 16:40:54.156 +03:00 [INF] Processing request for tenant: 9df6fad9-79f1-4722-bec3-fc20bb0d5c14
+2025-09-27 16:40:54.158 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdateBankAccount (ModularERP)'
+2025-09-27 16:40:54.160 +03:00 [INF] Route matched with {action = "UpdateBankAccount", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Boolean]]] UpdateBankAccount(System.Guid, ModularERP.Modules.Finance.Features.BankAccounts.DTO.UpdateBankAccountDto) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-27 16:40:54.239 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-27 16:40:54.242 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdateBankAccount (ModularERP) in 72.6633ms
+2025-09-27 16:40:54.245 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.UpdateBankAccount (ModularERP)'
+2025-09-27 16:40:54.247 +03:00 [INF] Request completed successfully with status code 200
+2025-09-27 16:40:54.248 +03:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7168/api/BankAccount/1ec73583-882b-4e7f-9f40-138395a684ec - 200 null application/json; charset=utf-8 96.7332ms
+2025-09-27 16:41:43.936 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/BankAccount - null null
+2025-09-27 16:41:43.940 +03:00 [INF] Request started
+2025-09-27 16:41:43.942 +03:00 [INF] Processing request for tenant: 9df6fad9-79f1-4722-bec3-fc20bb0d5c14
+2025-09-27 16:41:43.943 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetAllBankAccounts (ModularERP)'
+2025-09-27 16:41:43.945 +03:00 [INF] Route matched with {action = "GetAllBankAccounts", controller = "BankAccount"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Collections.Generic.IEnumerable`1[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountListDto]]]] GetAllBankAccounts(Int32, Int32, System.String, System.String, Boolean, System.Nullable`1[System.Guid]) on controller ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController (ModularERP).
+2025-09-27 16:41:43.982 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-27 16:41:43.986 +03:00 [INF] Executed action ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetAllBankAccounts (ModularERP) in 34.533ms
+2025-09-27 16:41:43.988 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.BankAccounts.Controllers.BankAccountController.GetAllBankAccounts (ModularERP)'
+2025-09-27 16:41:43.990 +03:00 [INF] Request completed successfully with status code 200
+2025-09-27 16:41:43.991 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/BankAccount - 200 null application/json; charset=utf-8 54.7893ms

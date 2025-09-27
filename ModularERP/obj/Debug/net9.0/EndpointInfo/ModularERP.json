@@ -3932,6 +3932,11 @@
             "type": "string",
             "nullable": true
           },
+          "journalAccountId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -3981,6 +3986,11 @@
             "type": "string",
             "nullable": true
           },
+          "journalAccountId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -3995,6 +4005,10 @@
             "nullable": true
           },
           "currencyName": {
+            "type": "string",
+            "nullable": true
+          },
+          "journalAccountName": {
             "type": "string",
             "nullable": true
           },
@@ -4035,6 +4049,11 @@
             "type": "string",
             "nullable": true
           },
+          "journalAccountId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -4044,6 +4063,10 @@
             "nullable": true
           },
           "currencyName": {
+            "type": "string",
+            "nullable": true
+          },
+          "journalAccountName": {
             "type": "string",
             "nullable": true
           },
@@ -4203,6 +4226,11 @@
           },
           "withdrawAcl": {
             "type": "string",
+            "nullable": true
+          },
+          "journalAccountId": {
+            "type": "string",
+            "format": "uuid",
             "nullable": true
           }
         },
@@ -4859,6 +4887,11 @@
           "withdrawAcl": {
             "type": "string",
             "nullable": true
+          },
+          "journalAccountId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -4886,6 +4919,11 @@
           },
           "name": {
             "type": "string",
+            "nullable": true
+          },
+          "journalAccountId": {
+            "type": "string",
+            "format": "uuid",
             "nullable": true
           },
           "createdAt": {
@@ -4946,6 +4984,15 @@
             "type": "string",
             "nullable": true
           },
+          "journalAccountId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "journalAccountName": {
+            "type": "string",
+            "nullable": true
+          },
           "vouchersCount": {
             "type": "integer",
             "format": "int32"
@@ -4984,6 +5031,10 @@
             "nullable": true
           },
           "currencyName": {
+            "type": "string",
+            "nullable": true
+          },
+          "journalAccountName": {
             "type": "string",
             "nullable": true
           },
@@ -5055,6 +5106,11 @@
           },
           "withdrawAcl": {
             "type": "string",
+            "nullable": true
+          },
+          "journalAccountId": {
+            "type": "string",
+            "format": "uuid",
             "nullable": true
           }
         },

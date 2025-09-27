@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kc0NA4ZppgNkFmu6Uzy6uptex+3Gw8N9v1I0tVkxJd0=",
+  "Hash": "wOOjFaZ845ro7Y88sUmtJbpdHyA47nGx0sk4AOPlWng=",
   "Source": "ModularERP",
   "BasePath": "_content/ModularERP",
   "Mode": "Default",
@@ -57,27 +57,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\2437c47e-4522-4420-a6af-a2e4907cd8b6_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"
-    },
-    {
-      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\2f629f00-154e-448c-a420-2c684f2cde49_Hossam-Reda-Tohamy-BackEnd Laravel.pdf",
-      "SourceId": "ModularERP",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
-      "BasePath": "_content/ModularERP",
-      "RelativePath": "uploads/2f629f00-154e-448c-a420-2c684f2cde49_Hossam-Reda-Tohamy-BackEnd Laravel#[.{fingerprint}]?.pdf",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "qa2pfi903d",
-      "Integrity": "4l6wOvTslYRYqGLOHVTim7bHGbmaY0WkBsJVsybikzM=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\2f629f00-154e-448c-a420-2c684f2cde49_Hossam-Reda-Tohamy-BackEnd Laravel.pdf"
     },
     {
       "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\35cf3e0d-82f8-42b4-b918-632473ed371d_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
@@ -248,6 +227,27 @@
       "OriginalItemSpec": "wwwroot\\uploads\\77b76736-1184-4254-8d46-02d5494f8e36_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"
     },
     {
+      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\83487b5d-21f6-427b-aa7e-ff913c283f0a_Hossam-Reda-Tohamy-BackEnd Laravel.pdf",
+      "SourceId": "ModularERP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "BasePath": "_content/ModularERP",
+      "RelativePath": "uploads/83487b5d-21f6-427b-aa7e-ff913c283f0a_Hossam-Reda-Tohamy-BackEnd Laravel#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "qa2pfi903d",
+      "Integrity": "4l6wOvTslYRYqGLOHVTim7bHGbmaY0WkBsJVsybikzM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\83487b5d-21f6-427b-aa7e-ff913c283f0a_Hossam-Reda-Tohamy-BackEnd Laravel.pdf"
+    },
+    {
       "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\8fb2490b-9243-41d9-88b7-874eb8fbab1c_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "SourceId": "ModularERP",
       "SourceType": "Discovered",
@@ -309,6 +309,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\ba6c5cb0-81d9-4c9c-a565-e372313b176b_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\c160b997-d8b9-4093-aee5-34c5c0af675f_Back End .NET.pdf",
+      "SourceId": "ModularERP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "BasePath": "_content/ModularERP",
+      "RelativePath": "uploads/c160b997-d8b9-4093-aee5-34c5c0af675f_Back End .NET#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "zo5g8i8gda",
+      "Integrity": "05AJCb71GE0mZfJ3VvkgB2dqNm6qMEEvJ2Jm5CgqIw0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\c160b997-d8b9-4093-aee5-34c5c0af675f_Back End .NET.pdf"
     },
     {
       "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\db7e1b2d-815d-4c17-96fb-3651a9159c75_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
@@ -557,88 +578,6 @@
         {
           "Name": "integrity",
           "Value": "sha256-2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/2f629f00-154e-448c-a420-2c684f2cde49_Hossam-Reda-Tohamy-BackEnd Laravel.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\2f629f00-154e-448c-a420-2c684f2cde49_Hossam-Reda-Tohamy-BackEnd Laravel.pdf",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "46529"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/pdf"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"4l6wOvTslYRYqGLOHVTim7bHGbmaY0WkBsJVsybikzM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 25 Sep 2025 15:54:20 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-4l6wOvTslYRYqGLOHVTim7bHGbmaY0WkBsJVsybikzM="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/2f629f00-154e-448c-a420-2c684f2cde49_Hossam-Reda-Tohamy-BackEnd Laravel.qa2pfi903d.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\2f629f00-154e-448c-a420-2c684f2cde49_Hossam-Reda-Tohamy-BackEnd Laravel.pdf",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "46529"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/pdf"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"4l6wOvTslYRYqGLOHVTim7bHGbmaY0WkBsJVsybikzM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 25 Sep 2025 15:54:20 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "qa2pfi903d"
-        },
-        {
-          "Name": "label",
-          "Value": "uploads/2f629f00-154e-448c-a420-2c684f2cde49_Hossam-Reda-Tohamy-BackEnd Laravel.pdf"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-4l6wOvTslYRYqGLOHVTim7bHGbmaY0WkBsJVsybikzM="
         }
       ]
     },
@@ -1299,6 +1238,88 @@
       ]
     },
     {
+      "Route": "uploads/83487b5d-21f6-427b-aa7e-ff913c283f0a_Hossam-Reda-Tohamy-BackEnd Laravel.pdf",
+      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\83487b5d-21f6-427b-aa7e-ff913c283f0a_Hossam-Reda-Tohamy-BackEnd Laravel.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "46529"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4l6wOvTslYRYqGLOHVTim7bHGbmaY0WkBsJVsybikzM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 27 Sep 2025 12:59:06 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4l6wOvTslYRYqGLOHVTim7bHGbmaY0WkBsJVsybikzM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/83487b5d-21f6-427b-aa7e-ff913c283f0a_Hossam-Reda-Tohamy-BackEnd Laravel.qa2pfi903d.pdf",
+      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\83487b5d-21f6-427b-aa7e-ff913c283f0a_Hossam-Reda-Tohamy-BackEnd Laravel.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "46529"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4l6wOvTslYRYqGLOHVTim7bHGbmaY0WkBsJVsybikzM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 27 Sep 2025 12:59:06 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qa2pfi903d"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/83487b5d-21f6-427b-aa7e-ff913c283f0a_Hossam-Reda-Tohamy-BackEnd Laravel.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4l6wOvTslYRYqGLOHVTim7bHGbmaY0WkBsJVsybikzM="
+        }
+      ]
+    },
+    {
       "Route": "uploads/8fb2490b-9243-41d9-88b7-874eb8fbab1c_Hossam-Reda-Tohamy-Full Stack NET Angular.41798qlwtw.pdf",
       "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\8fb2490b-9243-41d9-88b7-874eb8fbab1c_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "Selectors": [],
@@ -1541,6 +1562,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/c160b997-d8b9-4093-aee5-34c5c0af675f_Back End .NET.pdf",
+      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\c160b997-d8b9-4093-aee5-34c5c0af675f_Back End .NET.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "83767"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"05AJCb71GE0mZfJ3VvkgB2dqNm6qMEEvJ2Jm5CgqIw0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 25 Sep 2025 19:12:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-05AJCb71GE0mZfJ3VvkgB2dqNm6qMEEvJ2Jm5CgqIw0="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/c160b997-d8b9-4093-aee5-34c5c0af675f_Back End .NET.zo5g8i8gda.pdf",
+      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\c160b997-d8b9-4093-aee5-34c5c0af675f_Back End .NET.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "83767"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"05AJCb71GE0mZfJ3VvkgB2dqNm6qMEEvJ2Jm5CgqIw0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 25 Sep 2025 19:12:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zo5g8i8gda"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/c160b997-d8b9-4093-aee5-34c5c0af675f_Back End .NET.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-05AJCb71GE0mZfJ3VvkgB2dqNm6qMEEvJ2Jm5CgqIw0="
         }
       ]
     },
