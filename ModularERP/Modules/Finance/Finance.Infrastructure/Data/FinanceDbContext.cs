@@ -16,8 +16,19 @@ using ModularERP.Modules.Finance.Features.Treasuries.Models;
 using ModularERP.Modules.Finance.Features.Vendor.Models;
 using ModularERP.Modules.Finance.Features.Vouchers.Models;
 using ModularERP.Modules.Finance.Features.VoucherTaxs.Models;
+using ModularERP.Modules.Inventory.Features.Warehouses.Models;
+using ModularERP.Modules.Inventory.Features.ProductSettings.Models;
 using ModularERP.Common.Services;
 using System.Reflection;
+using ModularERP.Common.Enum.Inventory_Enum;
+using ModularERP.Modules.Inventory.Features.TaxManagement.Models;
+using ModularERP.Modules.Inventory.Features.Products.Models;
+using ModularERP.Modules.Inventory.Features.Services.Models;
+using ModularERP.Modules.Inventory.Features.Suppliers.Models;
+using ModularERP.Modules.Inventory.Features.Requisitions.Models;
+using ModularERP.Modules.Inventory.Features.Stocktaking.Models;
+using ModularERP.Modules.Inventory.Features.StockTransactions.Models;
+using ModularERP.Modules.Inventory.Features.PriceLists.Models;
 
 namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
 {
@@ -34,7 +45,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
             _tenantService = tenantService;
         }
 
-        // DbSets
+        // Finance DbSets
         public DbSet<Company> Companies { get; set; }
         public DbSet<GlAccount> GlAccounts { get; set; }
         public DbSet<Treasury> Treasuries { get; set; }
@@ -50,6 +61,41 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
         public DbSet<RecurringSchedule> RecurringSchedules { get; set; }
         public DbSet<AuditLog> AuditLogs { get; set; }
 
+        // Inventory DbSets
+        public DbSet<Warehouse> Warehouses { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<CategoryAttachment> CategoryAttachments { get; set; }
+        public DbSet<Brand> Brands { get; set; }
+        public DbSet<UnitTemplate> UnitTemplates { get; set; }
+        public DbSet<UnitConversion> UnitConversions { get; set; }
+        public DbSet<BarcodeSettings> BarcodeSettings { get; set; }
+        public DbSet<CustomField> CustomFields { get; set; }
+        public DbSet<TaxComponent> TaxComponents { get; set; }
+        public DbSet<TaxProfile> TaxProfiles { get; set; }
+        public DbSet<TaxProfileComponent> TaxProfileComponents { get; set; }
+        public DbSet<Supplier> Suppliers { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Service> Services { get; set; }
+        public DbSet<ProductTaxProfile> ProductTaxProfiles { get; set; }
+        public DbSet<ServiceTaxProfile> ServiceTaxProfiles { get; set; }
+        public DbSet<ItemGroup> ItemGroups { get; set; }
+        public DbSet<ItemGroupItem> ItemGroupItems { get; set; }
+        public DbSet<ProductCustomFieldValue> ProductCustomFieldValues { get; set; }
+        public DbSet<StockTransaction> StockTransactions { get; set; }
+        public DbSet<ProductStats> ProductStats { get; set; }
+        public DbSet<Requisition> Requisitions { get; set; }
+        public DbSet<RequisitionItem> RequisitionItems { get; set; }
+        public DbSet<RequisitionApprovalLog> RequisitionApprovalLogs { get; set; }
+        public DbSet<StocktakingHeader> StocktakingHeaders { get; set; }
+        public DbSet<StocktakingLine> StocktakingLines { get; set; }
+        public DbSet<StocktakingAttachment> StocktakingAttachments { get; set; }
+        public DbSet<StockSnapshot> StockSnapshots { get; set; }
+        public DbSet<PriceList> PriceLists { get; set; }
+        public DbSet<PriceListItem> PriceListItems { get; set; }
+        public DbSet<PriceListRule> PriceListRules { get; set; }
+        public DbSet<BulkDiscount> BulkDiscounts { get; set; }
+        public DbSet<PriceListAssignment> PriceListAssignments { get; set; }
+        public DbSet<PriceCalculationLog> PriceCalculationLogs { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -62,7 +108,6 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.Property(e => e.IsDeleted).HasDefaultValue(false);
             });
 
-            // إضافة TenantId للجداول الأخرى في Identity إذا لزم الأمر
             builder.Entity<IdentityRole<Guid>>(entity =>
             {
                 entity.ToTable("AspNetRoles");
@@ -93,11 +138,11 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.ToTable("AspNetUserTokens");
             });
 
-            // Company Configuration - master entity in tenant DB
+            // Company Configuration
             builder.Entity<Company>(entity =>
             {
                 entity.HasIndex(e => e.Name).IsUnique();
-                // Company is the root entity - has foreign key relationships to major entities
+
                 entity.HasMany(e => e.Treasuries)
                       .WithOne(e => e.Company)
                       .HasForeignKey(e => e.CompanyId)
@@ -119,7 +164,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .OnDelete(DeleteBehavior.Restrict);
             });
 
-            // GlAccount Configuration - has CompanyId FK + TenantId for isolation
+            // GlAccount Configuration
             builder.Entity<GlAccount>(entity =>
             {
                 entity.HasIndex(e => new { e.CompanyId, e.Code }).IsUnique();
@@ -141,7 +186,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .OnDelete(DeleteBehavior.Restrict);
             });
 
-            // Treasury Configuration - has CompanyId FK + TenantId for isolation
+            // Treasury Configuration
             builder.Entity<Treasury>(entity =>
             {
                 entity.HasIndex(e => new { e.CompanyId, e.Name }).IsUnique();
@@ -155,7 +200,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .OnDelete(DeleteBehavior.Restrict);
             });
 
-            // BankAccount Configuration - has CompanyId FK + TenantId for isolation
+            // BankAccount Configuration
             builder.Entity<BankAccount>(entity =>
             {
                 entity.Property(e => e.DepositAcl).HasColumnType("nvarchar(max)");
@@ -168,7 +213,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .OnDelete(DeleteBehavior.Restrict);
             });
 
-            // Tax Configuration - has TenantId for isolation (no CompanyId FK as per BRSD)
+            // Tax Configuration
             builder.Entity<Tax>(entity =>
             {
                 entity.HasIndex(e => new { e.TenantId, e.Code }).IsUnique();
@@ -180,19 +225,19 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .OnDelete(DeleteBehavior.Restrict);
             });
 
-            // Vendor Configuration - has TenantId for isolation (no CompanyId FK as per BRSD)
+            // Vendor Configuration
             builder.Entity<Vendor>(entity =>
             {
                 entity.HasIndex(e => new { e.TenantId, e.Code }).IsUnique();
             });
 
-            // Customer Configuration - has TenantId for isolation (no CompanyId FK as per BRSD)
+            // Customer Configuration
             builder.Entity<Customer>(entity =>
             {
                 entity.HasIndex(e => new { e.TenantId, e.Code }).IsUnique();
             });
 
-            // Voucher Configuration - has CompanyId FK + TenantId for isolation
+            // Voucher Configuration
             builder.Entity<Voucher>(entity =>
             {
                 entity.HasIndex(e => new { e.CompanyId, e.Code }).IsUnique();
@@ -201,7 +246,6 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.Property(e => e.WalletType).HasConversion<string>();
                 entity.Property(e => e.CounterpartyType).HasConversion<string>();
 
-                // User relationships for audit trail
                 entity.HasOne(e => e.Creator)
                       .WithMany(e => e.CreatedVouchers)
                       .HasForeignKey(e => e.CreatedBy)
@@ -242,7 +286,6 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .HasForeignKey(e => e.VoucherId)
                       .OnDelete(DeleteBehavior.Restrict);
 
-                // Indexes for performance
                 entity.HasIndex(e => e.Date).HasDatabaseName("IX_Voucher_Date");
                 entity.HasIndex(e => e.Status).HasDatabaseName("IX_Voucher_Status");
                 entity.HasIndex(e => e.Type).HasDatabaseName("IX_Voucher_Type");
@@ -250,14 +293,14 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.HasIndex(e => new { e.CounterpartyType, e.CounterpartyId }).HasDatabaseName("IX_Voucher_Counterparty");
             });
 
-            // VoucherTax Configuration - has TenantId for isolation
+            // VoucherTax Configuration
             builder.Entity<VoucherTax>(entity =>
             {
                 entity.Property(e => e.Direction).HasConversion<string>();
                 entity.Property(e => e.IsWithholding).HasDefaultValue(false);
             });
 
-            // LedgerEntry Configuration - has TenantId for isolation
+            // LedgerEntry Configuration
             builder.Entity<LedgerEntry>(entity =>
             {
                 entity.HasOne(e => e.Currency)
@@ -270,14 +313,14 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.HasIndex(e => e.VoucherId).HasDatabaseName("IX_LedgerEntry_Voucher");
             });
 
-            // Currency Configuration - global entity (no TenantId)
+            // Currency Configuration
             builder.Entity<Currency>(entity =>
             {
                 entity.HasKey(e => e.Code);
                 entity.HasIndex(e => e.Code).IsUnique();
             });
 
-            // VoucherAttachment Configuration - has TenantId for isolation
+            // VoucherAttachment Configuration
             builder.Entity<VoucherAttachment>(entity =>
             {
                 entity.HasOne(e => e.UploadedByUser)
@@ -286,7 +329,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .OnDelete(DeleteBehavior.Restrict);
             });
 
-            // RecurringSchedule Configuration - has TenantId for isolation
+            // RecurringSchedule Configuration
             builder.Entity<RecurringSchedule>(entity =>
             {
                 entity.Property(e => e.Frequency).HasConversion<string>();
@@ -296,7 +339,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .OnDelete(DeleteBehavior.Restrict);
             });
 
-            // AuditLog Configuration - has TenantId for isolation
+            // AuditLog Configuration
             builder.Entity<AuditLog>(entity =>
             {
                 entity.HasOne(e => e.User)
@@ -308,11 +351,1368 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.HasIndex(e => e.CreatedAt).HasDatabaseName("IX_AuditLog_Timestamp");
             });
 
+            // ============================================
+            // INVENTORY MODULE CONFIGURATIONS
+            // ============================================
+
+            // Warehouse Configuration
+            builder.Entity<Warehouse>(entity =>
+            {
+                entity.ToTable("Warehouses");
+
+                // Unique constraint: Company + Name
+                entity.HasIndex(e => new { e.CompanyId, e.Name })
+                      .IsUnique()
+                      .HasDatabaseName("IX_Warehouse_Company_Name");
+
+                // Convert enum to string
+                entity.Property(e => e.Status)
+                      .HasConversion<string>();
+
+                // Default values
+                entity.Property(e => e.IsPrimary)
+                      .HasDefaultValue(false);
+
+                entity.Property(e => e.Status)
+                      .HasDefaultValue(WarehouseStatus.Active);
+
+                // Company relationship
+                entity.HasOne(e => e.Company)
+                      .WithMany()
+                      .HasForeignKey(e => e.CompanyId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // Indexes for performance
+                entity.HasIndex(e => e.Status)
+                      .HasDatabaseName("IX_Warehouse_Status");
+
+                entity.HasIndex(e => e.IsPrimary)
+                      .HasDatabaseName("IX_Warehouse_IsPrimary");
+
+                entity.HasIndex(e => e.CompanyId)
+                      .HasDatabaseName("IX_Warehouse_Company");
+            });
+
+            // Category Configuration
+            builder.Entity<Category>(entity =>
+            {
+                entity.ToTable("Categories");
+
+                // Unique constraint: TenantId + Name (categories are tenant-wide, not company-specific)
+                entity.HasIndex(e => new { e.TenantId, e.Name })
+                      .IsUnique()
+                      .HasDatabaseName("IX_Category_Tenant_Name");
+
+                // Self-referencing relationship for hierarchy
+                entity.HasOne(e => e.ParentCategory)
+                      .WithMany(e => e.SubCategories)
+                      .HasForeignKey(e => e.ParentCategoryId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // Attachments relationship
+                entity.HasMany(e => e.Attachments)
+                      .WithOne(e => e.Category)
+                      .HasForeignKey(e => e.CategoryId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                // Indexes for performance
+                entity.HasIndex(e => e.ParentCategoryId)
+                      .HasDatabaseName("IX_Category_Parent");
+
+                entity.HasIndex(e => e.TenantId)
+                      .HasDatabaseName("IX_Category_Tenant");
+            });
+
+            // Category Attachment Configuration
+            builder.Entity<CategoryAttachment>(entity =>
+            {
+                entity.ToTable("CategoryAttachments");
+
+                // User relationship
+                entity.HasOne(e => e.UploadedByUser)
+                      .WithMany()
+                      .HasForeignKey(e => e.UploadedBy)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // Indexes
+                entity.HasIndex(e => e.CategoryId)
+                      .HasDatabaseName("IX_CategoryAttachment_Category");
+
+                entity.HasIndex(e => e.UploadedBy)
+                      .HasDatabaseName("IX_CategoryAttachment_UploadedBy");
+            });
+
+            // Brand Configuration
+            builder.Entity<Brand>(entity =>
+            {
+                entity.ToTable("Brands");
+
+                // Unique constraint: TenantId + Name (brands are tenant-wide)
+                entity.HasIndex(e => new { e.TenantId, e.Name })
+                      .IsUnique()
+                      .HasDatabaseName("IX_Brand_Tenant_Name");
+
+                // Indexes for performance
+                entity.HasIndex(e => e.TenantId)
+                      .HasDatabaseName("IX_Brand_Tenant");
+
+                entity.HasIndex(e => e.Name)
+                      .HasDatabaseName("IX_Brand_Name");
+            });
+            // UnitTemplate Configuration
+            builder.Entity<UnitTemplate>(entity =>
+            {
+                entity.ToTable("UnitTemplates");
+
+                // Unique constraint: TenantId + Name
+                entity.HasIndex(e => new { e.TenantId, e.Name })
+                      .IsUnique()
+                      .HasDatabaseName("IX_UnitTemplate_Tenant_Name");
+
+                // Convert enum to string
+                entity.Property(e => e.Status)
+                      .HasConversion<string>()
+                      .HasDefaultValue(UnitTemplateStatus.Active);
+
+                // Unit conversions relationship
+                entity.HasMany(e => e.UnitConversions)
+                      .WithOne(e => e.UnitTemplate)
+                      .HasForeignKey(e => e.UnitTemplateId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                // Indexes
+                entity.HasIndex(e => e.Status)
+                      .HasDatabaseName("IX_UnitTemplate_Status");
+
+                entity.HasIndex(e => e.TenantId)
+                      .HasDatabaseName("IX_UnitTemplate_Tenant");
+            });
+
+            // UnitConversion Configuration
+            builder.Entity<UnitConversion>(entity =>
+            {
+                entity.ToTable("UnitConversions");
+
+                // Unique constraint: UnitTemplateId + UnitName
+                entity.HasIndex(e => new { e.UnitTemplateId, e.UnitName })
+                      .IsUnique()
+                      .HasDatabaseName("IX_UnitConversion_Template_Name");
+
+                // Unique constraint: UnitTemplateId + ShortName
+                entity.HasIndex(e => new { e.UnitTemplateId, e.ShortName })
+                      .IsUnique()
+                      .HasDatabaseName("IX_UnitConversion_Template_ShortName");
+
+                // Unique constraint: UnitTemplateId + Factor
+                entity.HasIndex(e => new { e.UnitTemplateId, e.Factor })
+                      .IsUnique()
+                      .HasDatabaseName("IX_UnitConversion_Template_Factor");
+
+                // Precision for decimal
+                entity.Property(e => e.Factor)
+                      .HasPrecision(18, 6);
+
+                // Indexes
+                entity.HasIndex(e => e.DisplayOrder)
+                      .HasDatabaseName("IX_UnitConversion_DisplayOrder");
+            });
+
+            // BarcodeSettings Configuration
+            builder.Entity<BarcodeSettings>(entity =>
+            {
+                entity.ToTable("BarcodeSettings");
+
+                // Only one default settings per tenant
+                entity.HasIndex(e => new { e.TenantId, e.IsDefault })
+                      .IsUnique()
+                      .HasFilter("[IsDefault] = 1")
+                      .HasDatabaseName("IX_BarcodeSettings_Tenant_Default");
+
+                // Precision for decimals
+                entity.Property(e => e.WeightUnitDivider)
+                      .HasPrecision(18, 6);
+
+                entity.Property(e => e.CurrencyDivider)
+                      .HasPrecision(18, 6);
+
+                // Default value
+                entity.Property(e => e.EnableWeightEmbedded)
+                      .HasDefaultValue(false);
+
+                entity.Property(e => e.IsDefault)
+                      .HasDefaultValue(true);
+
+                // Indexes
+                entity.HasIndex(e => e.TenantId)
+                      .HasDatabaseName("IX_BarcodeSettings_Tenant");
+
+                entity.HasIndex(e => e.BarcodeType)
+                      .HasDatabaseName("IX_BarcodeSettings_Type");
+            });
+
+            // CustomField Configuration
+            builder.Entity<CustomField>(entity =>
+            {
+                entity.ToTable("CustomFields");
+
+                // Unique constraint: TenantId + FieldName
+                entity.HasIndex(e => new { e.TenantId, e.FieldName })
+                      .IsUnique()
+                      .HasDatabaseName("IX_CustomField_Tenant_Name");
+
+                // Convert enums to string
+                entity.Property(e => e.FieldType)
+                      .HasConversion<string>();
+
+                entity.Property(e => e.Status)
+                      .HasConversion<string>()
+                      .HasDefaultValue(CustomFieldStatus.Active);
+
+                // Default values
+                entity.Property(e => e.IsRequired)
+                      .HasDefaultValue(false);
+
+                entity.Property(e => e.DisplayOrder)
+                      .HasDefaultValue(0);
+
+                // Indexes
+                entity.HasIndex(e => e.Status)
+                      .HasDatabaseName("IX_CustomField_Status");
+
+                entity.HasIndex(e => e.FieldType)
+                      .HasDatabaseName("IX_CustomField_Type");
+
+                entity.HasIndex(e => e.DisplayOrder)
+                      .HasDatabaseName("IX_CustomField_DisplayOrder");
+
+                entity.HasIndex(e => e.TenantId)
+                      .HasDatabaseName("IX_CustomField_Tenant");
+            });
+            builder.Entity<TaxComponent>(entity =>
+            {
+                entity.ToTable("TaxComponents");
+
+                // Unique constraint: TenantId + Name
+                entity.HasIndex(e => new { e.TenantId, e.Name })
+                      .IsUnique()
+                      .HasDatabaseName("IX_TaxComponent_Tenant_Name");
+
+                // Convert enums to string
+                entity.Property(e => e.RateType)
+                      .HasConversion<string>();
+
+                entity.Property(e => e.IncludedType)
+                      .HasConversion<string>();
+
+                entity.Property(e => e.AppliesOn)
+                      .HasConversion<string>()
+                      .HasDefaultValue(TaxAppliesOn.Both);
+
+                // Decimal precision
+                entity.Property(e => e.RateValue)
+                      .HasPrecision(10, 4);
+
+                // Default values
+                entity.Property(e => e.Active)
+                      .HasDefaultValue(true);
+
+                // Relationships
+                entity.HasMany(e => e.TaxProfileComponents)
+                      .WithOne(e => e.TaxComponent)
+                      .HasForeignKey(e => e.TaxComponentId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // Indexes
+                entity.HasIndex(e => e.TenantId)
+                      .HasDatabaseName("IX_TaxComponent_Tenant");
+
+                entity.HasIndex(e => e.Active)
+                      .HasDatabaseName("IX_TaxComponent_Active");
+
+                entity.HasIndex(e => e.AppliesOn)
+                      .HasDatabaseName("IX_TaxComponent_AppliesOn");
+            });
+
+            // TaxProfile Configuration
+            builder.Entity<TaxProfile>(entity =>
+            {
+                entity.ToTable("TaxProfiles");
+
+                // Unique constraint: TenantId + Name
+                entity.HasIndex(e => new { e.TenantId, e.Name })
+                      .IsUnique()
+                      .HasDatabaseName("IX_TaxProfile_Tenant_Name");
+
+                // Default values
+                entity.Property(e => e.Active)
+                      .HasDefaultValue(true);
+
+                // Relationships
+                entity.HasMany(e => e.TaxProfileComponents)
+                      .WithOne(e => e.TaxProfile)
+                      .HasForeignKey(e => e.TaxProfileId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                // Indexes
+                entity.HasIndex(e => e.TenantId)
+                      .HasDatabaseName("IX_TaxProfile_Tenant");
+
+                entity.HasIndex(e => e.Active)
+                      .HasDatabaseName("IX_TaxProfile_Active");
+            });
+
+            // TaxProfileComponent Configuration (Many-to-Many)
+            builder.Entity<TaxProfileComponent>(entity =>
+            {
+                entity.ToTable("TaxProfileComponents");
+
+                // Composite Primary Key
+                entity.HasKey(e => new { e.TaxProfileId, e.TaxComponentId });
+
+                // Default value
+                entity.Property(e => e.Priority)
+                      .HasDefaultValue(1);
+
+                // Indexes
+                entity.HasIndex(e => e.Priority)
+                      .HasDatabaseName("IX_TaxProfileComponent_Priority");
+            });
+            builder.Entity<Supplier>(entity =>
+            {
+                entity.ToTable("Suppliers");
+
+                // Unique constraint: TenantId + Name
+                entity.HasIndex(e => new { e.TenantId, e.Name })
+                      .IsUnique()
+                      .HasDatabaseName("IX_Supplier_Tenant_Name");
+
+                // Convert enum to string
+                entity.Property(e => e.Status)
+                      .HasConversion<string>()
+                      .HasDefaultValue(SupplierStatus.Active);
+
+                // Relationships
+                entity.HasMany(e => e.Products)
+                      .WithOne(e => e.Supplier)
+                      .HasForeignKey(e => e.SupplierId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasMany(e => e.Services)
+                      .WithOne(e => e.Supplier)
+                      .HasForeignKey(e => e.SupplierId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // Indexes
+                entity.HasIndex(e => e.TenantId)
+                      .HasDatabaseName("IX_Supplier_Tenant");
+
+                entity.HasIndex(e => e.Status)
+                      .HasDatabaseName("IX_Supplier_Status");
+
+                entity.HasIndex(e => e.Email)
+                      .HasDatabaseName("IX_Supplier_Email");
+            });
+
+            // ============================================
+            // PRODUCTS CONFIGURATION
+            // ============================================
+            builder.Entity<Product>(entity =>
+            {
+                entity.ToTable("Products");
+
+                // Unique constraints
+                entity.HasIndex(e => new { e.TenantId, e.SKU })
+                      .IsUnique()
+                      .HasFilter("[SKU] IS NOT NULL")
+                      .HasDatabaseName("IX_Product_Tenant_SKU");
+
+                entity.HasIndex(e => new { e.TenantId, e.Barcode })
+                      .IsUnique()
+                      .HasFilter("[Barcode] IS NOT NULL")
+                      .HasDatabaseName("IX_Product_Tenant_Barcode");
+
+                // Convert enums to string
+                entity.Property(e => e.Status)
+                      .HasConversion<string>()
+                      .HasDefaultValue(ProductStatus.Active);
+
+                entity.Property(e => e.DiscountType)
+                      .HasConversion<string>();
+
+                // Default values
+                entity.Property(e => e.TrackStock)
+                      .HasDefaultValue(true);
+
+                // Decimal precision
+                entity.Property(e => e.PurchasePrice)
+                      .HasPrecision(18, 4);
+
+                entity.Property(e => e.SellingPrice)
+                      .HasPrecision(18, 4);
+
+                entity.Property(e => e.MinPrice)
+                      .HasPrecision(18, 4);
+
+                entity.Property(e => e.Discount)
+                      .HasPrecision(18, 4);
+
+                entity.Property(e => e.ProfitMargin)
+                      .HasPrecision(10, 4);
+
+                entity.Property(e => e.InitialStock)
+                      .HasPrecision(18, 3);
+
+                entity.Property(e => e.LowStockThreshold)
+                      .HasPrecision(18, 3);
+
+                // Relationships
+                entity.HasOne(e => e.Category)
+                      .WithMany()
+                      .HasForeignKey(e => e.CategoryId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(e => e.Brand)
+                      .WithMany()
+                      .HasForeignKey(e => e.BrandId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(e => e.Supplier)
+                      .WithMany(e => e.Products)
+                      .HasForeignKey(e => e.SupplierId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasMany(e => e.ProductTaxProfiles)
+                      .WithOne(e => e.Product)
+                      .HasForeignKey(e => e.ProductId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                entity.HasMany(e => e.ItemGroupItems)
+                      .WithOne(e => e.Product)
+                      .HasForeignKey(e => e.ProductId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasMany(e => e.CustomFieldValues)
+                      .WithOne(e => e.Product)
+                      .HasForeignKey(e => e.ProductId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                // Performance indexes
+                entity.HasIndex(e => e.Status)
+                      .HasDatabaseName("IX_Product_Status");
+
+                entity.HasIndex(e => e.TrackStock)
+                      .HasDatabaseName("IX_Product_TrackStock");
+
+                entity.HasIndex(e => e.LowStockThreshold)
+                      .HasDatabaseName("IX_Product_LowStock");
+
+                entity.HasIndex(e => e.CategoryId)
+                      .HasDatabaseName("IX_Product_Category");
+
+                entity.HasIndex(e => e.BrandId)
+                      .HasDatabaseName("IX_Product_Brand");
+
+                entity.HasIndex(e => e.SupplierId)
+                      .HasDatabaseName("IX_Product_Supplier");
+            });
+
+            // ============================================
+            // SERVICES CONFIGURATION
+            // ============================================
+            builder.Entity<Service>(entity =>
+            {
+                entity.ToTable("Services");
+
+                // Unique constraint
+                entity.HasIndex(e => new { e.TenantId, e.Code })
+                      .IsUnique()
+                      .HasFilter("[Code] IS NOT NULL")
+                      .HasDatabaseName("IX_Service_Tenant_Code");
+
+                // Convert enums to string
+                entity.Property(e => e.Status)
+                      .HasConversion<string>()
+                      .HasDefaultValue(ServiceStatus.Active);
+
+                entity.Property(e => e.DiscountType)
+                      .HasConversion<string>();
+
+                // Decimal precision
+                entity.Property(e => e.PurchasePrice)
+                      .HasPrecision(18, 4);
+
+                entity.Property(e => e.UnitPrice)
+                      .HasPrecision(18, 4);
+
+                entity.Property(e => e.MinPrice)
+                      .HasPrecision(18, 4);
+
+                entity.Property(e => e.Discount)
+                      .HasPrecision(18, 4);
+
+                entity.Property(e => e.ProfitMargin)
+                      .HasPrecision(10, 4);
+
+                // Relationships
+                entity.HasOne(e => e.Category)
+                      .WithMany()
+                      .HasForeignKey(e => e.CategoryId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(e => e.Supplier)
+                      .WithMany(e => e.Services)
+                      .HasForeignKey(e => e.SupplierId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasMany(e => e.ServiceTaxProfiles)
+                      .WithOne(e => e.Service)
+                      .HasForeignKey(e => e.ServiceId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                // Indexes
+                entity.HasIndex(e => e.Status)
+                      .HasDatabaseName("IX_Service_Status");
+
+                entity.HasIndex(e => e.CategoryId)
+                      .HasDatabaseName("IX_Service_Category");
+
+                entity.HasIndex(e => e.SupplierId)
+                      .HasDatabaseName("IX_Service_Supplier");
+            });
+
+            // ============================================
+            // PRODUCT TAX PROFILES (Many-to-Many)
+            // ============================================
+            builder.Entity<ProductTaxProfile>(entity =>
+            {
+                entity.ToTable("ProductTaxProfiles");
+
+                // Composite Primary Key
+                entity.HasKey(e => new { e.ProductId, e.TaxProfileId });
+
+                // Default value
+                entity.Property(e => e.IsPrimary)
+                      .HasDefaultValue(false);
+
+                // Only one primary tax profile per product
+                entity.HasIndex(e => new { e.ProductId, e.IsPrimary })
+                      .IsUnique()
+                      .HasFilter("[IsPrimary] = 1")
+                      .HasDatabaseName("IX_ProductTaxProfile_Primary");
+
+                // Relationships
+                entity.HasOne(e => e.TaxProfile)
+                      .WithMany()
+                      .HasForeignKey(e => e.TaxProfileId)
+                      .OnDelete(DeleteBehavior.Restrict);
+            });
+
+            // ============================================
+            // SERVICE TAX PROFILES (Many-to-Many)
+            // ============================================
+            builder.Entity<ServiceTaxProfile>(entity =>
+            {
+                entity.ToTable("ServiceTaxProfiles");
+
+                // Composite Primary Key
+                entity.HasKey(e => new { e.ServiceId, e.TaxProfileId });
+
+                // Default value
+                entity.Property(e => e.IsPrimary)
+                      .HasDefaultValue(false);
+
+                // Only one primary tax profile per service
+                entity.HasIndex(e => new { e.ServiceId, e.IsPrimary })
+                      .IsUnique()
+                      .HasFilter("[IsPrimary] = 1")
+                      .HasDatabaseName("IX_ServiceTaxProfile_Primary");
+
+                // Relationships
+                entity.HasOne(e => e.TaxProfile)
+                      .WithMany()
+                      .HasForeignKey(e => e.TaxProfileId)
+                      .OnDelete(DeleteBehavior.Restrict);
+            });
+
+            // ============================================
+            // ITEM GROUPS CONFIGURATION
+            // ============================================
+            builder.Entity<ItemGroup>(entity =>
+            {
+                entity.ToTable("ItemGroups");
+
+                // Unique constraint
+                entity.HasIndex(e => new { e.TenantId, e.Name })
+                      .IsUnique()
+                      .HasDatabaseName("IX_ItemGroup_Tenant_Name");
+
+                // Relationships
+                entity.HasOne(e => e.Category)
+                      .WithMany()
+                      .HasForeignKey(e => e.CategoryId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(e => e.Brand)
+                      .WithMany()
+                      .HasForeignKey(e => e.BrandId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasMany(e => e.Items)
+                      .WithOne(e => e.Group)
+                      .HasForeignKey(e => e.GroupId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                // Indexes
+                entity.HasIndex(e => e.TenantId)
+                      .HasDatabaseName("IX_ItemGroup_Tenant");
+
+                entity.HasIndex(e => e.CategoryId)
+                      .HasDatabaseName("IX_ItemGroup_Category");
+            });
+
+            // ============================================
+            // ITEM GROUP ITEMS CONFIGURATION
+            // ============================================
+            builder.Entity<ItemGroupItem>(entity =>
+            {
+                entity.ToTable("ItemGroupItems");
+
+                // Unique constraint: GroupId + ProductId
+                entity.HasIndex(e => new { e.GroupId, e.ProductId })
+                      .IsUnique()
+                      .HasDatabaseName("IX_ItemGroupItem_Group_Product");
+
+                // Decimal precision
+                entity.Property(e => e.PurchasePrice)
+                      .HasPrecision(18, 4);
+
+                entity.Property(e => e.SellingPrice)
+                      .HasPrecision(18, 4);
+
+                // Indexes
+                entity.HasIndex(e => e.SKU)
+                      .HasDatabaseName("IX_ItemGroupItem_SKU");
+
+                entity.HasIndex(e => e.Barcode)
+                      .HasDatabaseName("IX_ItemGroupItem_Barcode");
+            });
+
+            // ============================================
+            // PRODUCT CUSTOM FIELD VALUES CONFIGURATION
+            // ============================================
+            builder.Entity<ProductCustomFieldValue>(entity =>
+            {
+                entity.ToTable("ProductCustomFieldValues");
+
+                // Unique constraint: ProductId + FieldId
+                entity.HasIndex(e => new { e.ProductId, e.FieldId })
+                      .IsUnique()
+                      .HasDatabaseName("IX_ProductCustomFieldValue_Product_Field");
+
+                // Relationships
+                entity.HasOne(e => e.CustomField)
+                      .WithMany()
+                      .HasForeignKey(e => e.FieldId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // Indexes
+                entity.HasIndex(e => e.FieldId)
+                      .HasDatabaseName("IX_ProductCustomFieldValue_Field");
+            });
+            builder.Entity<StockTransaction>(entity =>
+            {
+                entity.ToTable("StockTransactions");
+
+                // Convert enum to string
+                entity.Property(e => e.TransactionType)
+                      .HasConversion<string>();
+
+                // Decimal precision
+                entity.Property(e => e.Quantity)
+                      .HasPrecision(18, 3);
+
+                entity.Property(e => e.UnitCost)
+                      .HasPrecision(18, 4);
+
+                entity.Property(e => e.StockLevelAfter)
+                      .HasPrecision(18, 3);
+
+                // Relationships
+                entity.HasOne(e => e.Product)
+                      .WithMany()
+                      .HasForeignKey(e => e.ProductId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(e => e.Warehouse)
+                      .WithMany()
+                      .HasForeignKey(e => e.WarehouseId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(e => e.CreatedByUser)
+                      .WithMany()
+                      .HasForeignKey(e => e.CreatedByUserId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // Performance indexes
+                entity.HasIndex(e => e.ProductId)
+                      .HasDatabaseName("IX_StockTransaction_Product");
+
+                entity.HasIndex(e => e.WarehouseId)
+                      .HasDatabaseName("IX_StockTransaction_Warehouse");
+
+                entity.HasIndex(e => e.TransactionType)
+                      .HasDatabaseName("IX_StockTransaction_Type");
+
+                entity.HasIndex(e => e.CreatedAt)
+                      .HasDatabaseName("IX_StockTransaction_Date");
+
+                entity.HasIndex(e => new { e.ReferenceType, e.ReferenceId })
+                      .HasDatabaseName("IX_StockTransaction_Reference");
+            });
+
+            // ============================================
+            // PRODUCT STATS CONFIGURATION
+            // ============================================
+            builder.Entity<ProductStats>(entity =>
+            {
+                entity.ToTable("ProductStats");
+
+                // One-to-One relationship with Product
+                entity.HasKey(e => e.ProductId);
+
+                entity.HasOne(e => e.Product)
+                      .WithOne()
+                      .HasForeignKey<ProductStats>(e => e.ProductId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                // Decimal precision
+                entity.Property(e => e.TotalSold)
+                      .HasPrecision(18, 3);
+
+                entity.Property(e => e.SoldLast28Days)
+                      .HasPrecision(18, 3);
+
+                entity.Property(e => e.SoldLast7Days)
+                      .HasPrecision(18, 3);
+
+                entity.Property(e => e.OnHandStock)
+                      .HasPrecision(18, 3);
+
+                entity.Property(e => e.AvgUnitCost)
+                      .HasPrecision(18, 4);
+
+                // Default values
+                entity.Property(e => e.TotalSold)
+                      .HasDefaultValue(0);
+
+                entity.Property(e => e.SoldLast28Days)
+                      .HasDefaultValue(0);
+
+                entity.Property(e => e.SoldLast7Days)
+                      .HasDefaultValue(0);
+
+                entity.Property(e => e.OnHandStock)
+                      .HasDefaultValue(0);
+
+                entity.Property(e => e.AvgUnitCost)
+                      .HasDefaultValue(0);
+
+                entity.Property(e => e.LastUpdated)
+                      .HasDefaultValueSql("GETUTCDATE()");
+            });
+
+            // ============================================
+            // REQUISITIONS CONFIGURATION
+            // ============================================
+            builder.Entity<Requisition>(entity =>
+            {
+                entity.ToTable("Requisitions");
+
+                // Unique constraint: TenantId + Number
+                entity.HasIndex(e => new { e.TenantId, e.Number })
+                      .IsUnique()
+                      .HasDatabaseName("IX_Requisition_Tenant_Number");
+
+                // Convert enums to string
+                entity.Property(e => e.Type)
+                      .HasConversion<string>();
+
+                entity.Property(e => e.Status)
+                      .HasConversion<string>()
+                      .HasDefaultValue(RequisitionStatus.Draft);
+
+                // Relationships
+                entity.HasOne(e => e.Warehouse)
+                      .WithMany()
+                      .HasForeignKey(e => e.WarehouseId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(e => e.Supplier)
+                      .WithMany()
+                      .HasForeignKey(e => e.SupplierId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(e => e.ParentRequisition)
+                      .WithMany(e => e.ChildRequisitions)
+                      .HasForeignKey(e => e.ParentRequisitionId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // User relationships
+                entity.HasOne(e => e.SubmittedByUser)
+                      .WithMany()
+                      .HasForeignKey(e => e.SubmittedBy)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(e => e.ApprovedByUser)
+                      .WithMany()
+                      .HasForeignKey(e => e.ApprovedBy)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(e => e.ConfirmedByUser)
+                      .WithMany()
+                      .HasForeignKey(e => e.ConfirmedBy)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(e => e.ReversedByUser)
+                      .WithMany()
+                      .HasForeignKey(e => e.ReversedBy)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // Child collections
+                entity.HasMany(e => e.Items)
+                      .WithOne(e => e.Requisition)
+                      .HasForeignKey(e => e.RequisitionId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                entity.HasMany(e => e.ApprovalLogs)
+                      .WithOne(e => e.Requisition)
+                      .HasForeignKey(e => e.RequisitionId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                // Indexes
+                entity.HasIndex(e => e.Status)
+                      .HasDatabaseName("IX_Requisition_Status");
+
+                entity.HasIndex(e => e.Date)
+                      .HasDatabaseName("IX_Requisition_Date");
+
+                entity.HasIndex(e => e.Type)
+                      .HasDatabaseName("IX_Requisition_Type");
+
+                entity.HasIndex(e => e.WarehouseId)
+                      .HasDatabaseName("IX_Requisition_Warehouse");
+            });
+
+            // ============================================
+            // REQUISITION ITEMS CONFIGURATION
+            // ============================================
+            builder.Entity<RequisitionItem>(entity =>
+            {
+                entity.ToTable("RequisitionItems");
+
+                // Decimal precision
+                entity.Property(e => e.UnitPrice)
+                      .HasPrecision(18, 4);
+
+                entity.Property(e => e.Quantity)
+                      .HasPrecision(18, 3);
+
+                entity.Property(e => e.StockOnHand)
+                      .HasPrecision(18, 3);
+
+                entity.Property(e => e.NewStockOnHand)
+                      .HasPrecision(18, 3);
+
+                entity.Property(e => e.LineTotal)
+                      .HasPrecision(18, 4);
+
+                // Relationships
+                entity.HasOne(e => e.Product)
+                      .WithMany()
+                      .HasForeignKey(e => e.ProductId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // Indexes
+                entity.HasIndex(e => e.RequisitionId)
+                      .HasDatabaseName("IX_RequisitionItem_Requisition");
+
+                entity.HasIndex(e => e.ProductId)
+                      .HasDatabaseName("IX_RequisitionItem_Product");
+            });
+
+            // ============================================
+            // REQUISITION APPROVAL LOG CONFIGURATION
+            // ============================================
+            builder.Entity<RequisitionApprovalLog>(entity =>
+            {
+                entity.ToTable("RequisitionApprovalLogs");
+
+                // Convert enum to string
+                entity.Property(e => e.Action)
+                      .HasConversion<string>();
+
+                // Default value
+                entity.Property(e => e.Timestamp)
+                      .HasDefaultValueSql("GETUTCDATE()");
+
+                // Relationships
+                entity.HasOne(e => e.User)
+                      .WithMany()
+                      .HasForeignKey(e => e.UserId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // Indexes
+                entity.HasIndex(e => e.RequisitionId)
+                      .HasDatabaseName("IX_RequisitionApprovalLog_Requisition");
+
+                entity.HasIndex(e => e.Timestamp)
+                      .HasDatabaseName("IX_RequisitionApprovalLog_Timestamp");
+            });
+
+            // ============================================
+            // STOCKTAKING HEADER CONFIGURATION
+            // ============================================
+            builder.Entity<StocktakingHeader>(entity =>
+            {
+                entity.ToTable("StocktakingHeaders");
+
+                // Unique constraint: TenantId + Number
+                entity.HasIndex(e => new { e.TenantId, e.Number })
+                      .IsUnique()
+                      .HasDatabaseName("IX_Stocktaking_Tenant_Number");
+
+                // Convert enum to string
+                entity.Property(e => e.Status)
+                      .HasConversion<string>()
+                      .HasDefaultValue(StocktakingStatus.Draft);
+
+                // Default values
+                entity.Property(e => e.UpdateSystem)
+                      .HasDefaultValue(true);
+
+                // Relationships
+                entity.HasOne(e => e.Warehouse)
+                      .WithMany()
+                      .HasForeignKey(e => e.WarehouseId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(e => e.ApprovedByUser)
+                      .WithMany()
+                      .HasForeignKey(e => e.ApprovedBy)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(e => e.PostedByUser)
+                      .WithMany()
+                      .HasForeignKey(e => e.PostedBy)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // Child collections
+                entity.HasMany(e => e.Lines)
+                      .WithOne(e => e.Stocktaking)
+                      .HasForeignKey(e => e.StocktakingId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                entity.HasMany(e => e.Attachments)
+                      .WithOne(e => e.Stocktaking)
+                      .HasForeignKey(e => e.StocktakingId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                entity.HasMany(e => e.Snapshots)
+                      .WithOne(e => e.Stocktaking)
+                      .HasForeignKey(e => e.StocktakingId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                // Indexes
+                entity.HasIndex(e => e.Status)
+                      .HasDatabaseName("IX_Stocktaking_Status");
+
+                entity.HasIndex(e => e.DateTime)
+                      .HasDatabaseName("IX_Stocktaking_DateTime");
+
+                entity.HasIndex(e => e.WarehouseId)
+                      .HasDatabaseName("IX_Stocktaking_Warehouse");
+            });
+
+            // ============================================
+            // STOCKTAKING LINE CONFIGURATION
+            // ============================================
+            builder.Entity<StocktakingLine>(entity =>
+            {
+                entity.ToTable("StocktakingLines");
+
+                // Decimal precision
+                entity.Property(e => e.PhysicalQty)
+                      .HasPrecision(18, 3);
+
+                entity.Property(e => e.SystemQtySnapshot)
+                      .HasPrecision(18, 3);
+
+                entity.Property(e => e.SystemQtyAtPost)
+                      .HasPrecision(18, 3);
+
+                entity.Property(e => e.VarianceQty)
+                      .HasPrecision(18, 3);
+
+                entity.Property(e => e.ValuationCost)
+                      .HasPrecision(18, 4);
+
+                entity.Property(e => e.VarianceValue)
+                      .HasPrecision(18, 4);
+
+                // Relationships
+                entity.HasOne(e => e.Product)
+                      .WithMany()
+                      .HasForeignKey(e => e.ProductId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // Indexes
+                entity.HasIndex(e => e.StocktakingId)
+                      .HasDatabaseName("IX_StocktakingLine_Stocktaking");
+
+                entity.HasIndex(e => e.ProductId)
+                      .HasDatabaseName("IX_StocktakingLine_Product");
+
+                // Unique constraint: One line per product per stocktaking
+                entity.HasIndex(e => new { e.StocktakingId, e.ProductId })
+                      .IsUnique()
+                      .HasDatabaseName("IX_StocktakingLine_Stocktaking_Product");
+            });
+
+            // ============================================
+            // STOCKTAKING ATTACHMENT CONFIGURATION
+            // ============================================
+            builder.Entity<StocktakingAttachment>(entity =>
+            {
+                entity.ToTable("StocktakingAttachments");
+
+                // Default value
+                entity.Property(e => e.UploadedAt)
+                      .HasDefaultValueSql("GETUTCDATE()");
+
+                // Relationships
+                entity.HasOne(e => e.UploadedByUser)
+                      .WithMany()
+                      .HasForeignKey(e => e.UploadedBy)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // Indexes
+                entity.HasIndex(e => e.StocktakingId)
+                      .HasDatabaseName("IX_StocktakingAttachment_Stocktaking");
+
+                entity.HasIndex(e => e.UploadedBy)
+                      .HasDatabaseName("IX_StocktakingAttachment_UploadedBy");
+            });
+
+            // ============================================
+            // STOCK SNAPSHOT CONFIGURATION
+            // ============================================
+            builder.Entity<StockSnapshot>(entity =>
+            {
+                entity.ToTable("StockSnapshots");
+
+                // Primary Key
+                entity.HasKey(e => e.SnapshotId);
+
+                // Unique constraint: One snapshot per product per stocktaking
+                entity.HasIndex(e => new { e.StocktakingId, e.ProductId })
+                      .IsUnique()
+                      .HasDatabaseName("IX_StockSnapshot_Stocktaking_Product");
+
+                // Decimal precision
+                entity.Property(e => e.QtyAtStart)
+                      .HasPrecision(18, 3);
+
+                // Default value
+                entity.Property(e => e.CreatedAt)
+                      .HasDefaultValueSql("GETUTCDATE()");
+
+                // Relationships
+                entity.HasOne(e => e.Product)
+                      .WithMany()
+                      .HasForeignKey(e => e.ProductId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // Indexes
+                entity.HasIndex(e => e.ProductId)
+                      .HasDatabaseName("IX_StockSnapshot_Product");
+            });
+            builder.Entity<PriceList>(entity =>
+            {
+                entity.ToTable("PriceLists");
+
+                // Unique constraint: TenantId + Name
+                entity.HasIndex(e => new { e.TenantId, e.Name })
+                      .IsUnique()
+                      .HasDatabaseName("IX_PriceList_Tenant_Name");
+
+                // Convert enums to string
+                entity.Property(e => e.Type)
+                      .HasConversion<string>();
+
+                entity.Property(e => e.Status)
+                      .HasConversion<string>()
+                      .HasDefaultValue(PriceListStatus.Active);
+
+                // Default values
+                entity.Property(e => e.IsDefault)
+                      .HasDefaultValue(false);
+
+                // Relationship with Currency (الموجودة عندك)
+                entity.HasOne(e => e.Currency)
+                      .WithMany()  // Currency doesn't have PriceLists navigation
+                      .HasForeignKey(e => e.CurrencyCode)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // Child collections
+                entity.HasMany(e => e.Items)
+                      .WithOne(e => e.PriceList)
+                      .HasForeignKey(e => e.PriceListId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                entity.HasMany(e => e.Rules)
+                      .WithOne(e => e.PriceList)
+                      .HasForeignKey(e => e.PriceListId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                entity.HasMany(e => e.BulkDiscounts)
+                      .WithOne(e => e.PriceList)
+                      .HasForeignKey(e => e.PriceListId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                entity.HasMany(e => e.Assignments)
+                      .WithOne(e => e.PriceList)
+                      .HasForeignKey(e => e.PriceListId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                // Indexes
+                entity.HasIndex(e => e.Type)
+                      .HasDatabaseName("IX_PriceList_Type");
+
+                entity.HasIndex(e => e.Status)
+                      .HasDatabaseName("IX_PriceList_Status");
+
+                entity.HasIndex(e => new { e.ValidFrom, e.ValidTo })
+                      .HasDatabaseName("IX_PriceList_ValidityDates");
+
+                entity.HasIndex(e => e.CurrencyCode)
+                      .HasDatabaseName("IX_PriceList_Currency");
+
+                // Only one default price list per type per tenant
+                entity.HasIndex(e => new { e.TenantId, e.Type, e.IsDefault })
+                      .IsUnique()
+                      .HasFilter("[IsDefault] = 1")
+                      .HasDatabaseName("IX_PriceList_Tenant_Type_Default");
+            });
+
+            // ============================================
+            // PRICE LIST ITEMS CONFIGURATION
+            // ============================================
+            builder.Entity<PriceListItem>(entity =>
+            {
+                entity.ToTable("PriceListItems");
+
+                // Decimal precision
+                entity.Property(e => e.BasePrice)
+                      .HasPrecision(18, 4);
+
+                entity.Property(e => e.ListPrice)
+                      .HasPrecision(18, 4);
+
+                entity.Property(e => e.DiscountValue)
+                      .HasPrecision(18, 4);
+
+                entity.Property(e => e.FinalPrice)
+                      .HasPrecision(18, 4);
+
+                // Relationships
+                entity.HasOne(e => e.Product)
+                      .WithMany()
+                      .HasForeignKey(e => e.ProductId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(e => e.Service)
+                      .WithMany()
+                      .HasForeignKey(e => e.ServiceId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(e => e.TaxProfile)
+                      .WithMany()
+                      .HasForeignKey(e => e.TaxProfileId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // Check constraint: Either ProductId or ServiceId must be set, not both
+                entity.HasCheckConstraint(
+                    "CK_PriceListItem_ProductOrService",
+                    "([ProductId] IS NOT NULL AND [ServiceId] IS NULL) OR ([ProductId] IS NULL AND [ServiceId] IS NOT NULL)"
+                );
+
+                // Indexes
+                entity.HasIndex(e => e.PriceListId)
+                      .HasDatabaseName("IX_PriceListItem_PriceList");
+
+                entity.HasIndex(e => e.ProductId)
+                      .HasDatabaseName("IX_PriceListItem_Product");
+
+                entity.HasIndex(e => e.ServiceId)
+                      .HasDatabaseName("IX_PriceListItem_Service");
+
+                entity.HasIndex(e => new { e.ValidFrom, e.ValidTo })
+                      .HasDatabaseName("IX_PriceListItem_ValidityDates");
+
+                // Unique constraint: One product/service per price list
+                entity.HasIndex(e => new { e.PriceListId, e.ProductId })
+                      .IsUnique()
+                      .HasFilter("[ProductId] IS NOT NULL")
+                      .HasDatabaseName("IX_PriceListItem_PriceList_Product");
+
+                entity.HasIndex(e => new { e.PriceListId, e.ServiceId })
+                      .IsUnique()
+                      .HasFilter("[ServiceId] IS NOT NULL")
+                      .HasDatabaseName("IX_PriceListItem_PriceList_Service");
+            });
+
+            // ============================================
+            // PRICE LIST RULES CONFIGURATION
+            // ============================================
+            builder.Entity<PriceListRule>(entity =>
+            {
+                entity.ToTable("PriceListRules");
+
+                // Convert enum to string
+                entity.Property(e => e.RuleType)
+                      .HasConversion<string>();
+
+                // Decimal precision
+                entity.Property(e => e.Value)
+                      .HasPrecision(18, 4);
+
+                // Default value
+                entity.Property(e => e.Priority)
+                      .HasDefaultValue(1);
+
+                // Indexes
+                entity.HasIndex(e => e.PriceListId)
+                      .HasDatabaseName("IX_PriceListRule_PriceList");
+
+                entity.HasIndex(e => e.Priority)
+                      .HasDatabaseName("IX_PriceListRule_Priority");
+
+                entity.HasIndex(e => new { e.StartDate, e.EndDate })
+                      .HasDatabaseName("IX_PriceListRule_Dates");
+            });
+
+            // ============================================
+            // BULK DISCOUNTS CONFIGURATION
+            // ============================================
+            builder.Entity<BulkDiscount>(entity =>
+            {
+                entity.ToTable("BulkDiscounts");
+
+                // Convert enum to string
+                entity.Property(e => e.DiscountType)
+                      .HasConversion<string>();
+
+                // Decimal precision
+                entity.Property(e => e.MinQty)
+                      .HasPrecision(18, 3);
+
+                entity.Property(e => e.MaxQty)
+                      .HasPrecision(18, 3);
+
+                entity.Property(e => e.DiscountValue)
+                      .HasPrecision(18, 4);
+
+                // Relationships
+                entity.HasOne(e => e.Product)
+                      .WithMany()
+                      .HasForeignKey(e => e.ProductId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // Indexes
+                entity.HasIndex(e => e.PriceListId)
+                      .HasDatabaseName("IX_BulkDiscount_PriceList");
+
+                entity.HasIndex(e => e.ProductId)
+                      .HasDatabaseName("IX_BulkDiscount_Product");
+
+                entity.HasIndex(e => new { e.ProductId, e.PriceListId, e.MinQty })
+                      .HasDatabaseName("IX_BulkDiscount_Product_PriceList_MinQty");
+
+                // Check constraint: MinQty must be less than MaxQty
+                entity.HasCheckConstraint(
+                    "CK_BulkDiscount_QtyRange",
+                    "[MaxQty] IS NULL OR [MinQty] < [MaxQty]"
+                );
+            });
+
+            // ============================================
+            // PRICE LIST ASSIGNMENTS CONFIGURATION
+            // ============================================
+            builder.Entity<PriceListAssignment>(entity =>
+            {
+                entity.ToTable("PriceListAssignments");
+
+                // Convert enum to string
+                entity.Property(e => e.EntityType)
+                      .HasConversion<string>();
+
+                // Unique constraint: One price list per entity
+                entity.HasIndex(e => new { e.EntityType, e.EntityId, e.PriceListId })
+                      .IsUnique()
+                      .HasDatabaseName("IX_PriceListAssignment_Entity_PriceList");
+
+                // Indexes
+                entity.HasIndex(e => e.PriceListId)
+                      .HasDatabaseName("IX_PriceListAssignment_PriceList");
+
+                entity.HasIndex(e => new { e.EntityType, e.EntityId })
+                      .HasDatabaseName("IX_PriceListAssignment_Entity");
+            });
+
+            // ============================================
+            // PRICE CALCULATION LOG CONFIGURATION
+            // ============================================
+            builder.Entity<PriceCalculationLog>(entity =>
+            {
+                entity.ToTable("PriceCalculationLogs");
+
+                // Decimal precision
+                entity.Property(e => e.ValueBefore)
+                      .HasPrecision(18, 4);
+
+                entity.Property(e => e.ValueAfter)
+                      .HasPrecision(18, 4);
+
+                // Default value
+                entity.Property(e => e.Timestamp)
+                      .HasDefaultValueSql("GETUTCDATE()");
+
+                // Relationships
+                entity.HasOne(e => e.Product)
+                      .WithMany()
+                      .HasForeignKey(e => e.ProductId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(e => e.User)
+                      .WithMany()
+                      .HasForeignKey(e => e.UserId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // Indexes
+                entity.HasIndex(e => e.ProductId)
+                      .HasDatabaseName("IX_PriceCalcLog_Product");
+
+                entity.HasIndex(e => e.Timestamp)
+                      .HasDatabaseName("IX_PriceCalcLog_Timestamp");
+
+                entity.HasIndex(e => new { e.TransactionType, e.TransactionId })
+                      .HasDatabaseName("IX_PriceCalcLog_Transaction");
+            });
+
             // Apply Global Query Filters for Multi-tenancy
             ApplyGlobalFilters(builder);
         }
 
-        // دالة لتطبيق Global Filters للـ Multi-tenancy
         private void ApplyGlobalFilters(ModelBuilder builder)
         {
             foreach (var entityType in builder.Model.GetEntityTypes())
@@ -330,13 +1730,8 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
 
         private static void SetGlobalFilter<T>(ModelBuilder builder) where T : class, ITenantEntity
         {
-            // Global filter to automatically filter by TenantId and exclude deleted items
-            builder.Entity<T>().HasQueryFilter(e =>
-                !e.IsDeleted
-                /* && EF.Property<Guid>(e, "TenantId") == currentTenantId */);
-            // ملاحظة: يمكن تفعيل الفلتر بالـ TenantId لاحقاً عند الحاجة
+            builder.Entity<T>().HasQueryFilter(e => !e.IsDeleted);
         }
-
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LGdk9mxqiXE=",
+  "dgSpecHash": "YF3ovt+2dJg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\ModularERP.csproj",
+  "projectFilePath": "E:\\ModelerERP\\ModularERP\\ModularERP\\ModularERP.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hossny D. monkey\\.nuget\\packages\\automapper\\15.0.1\\automapper.15.0.1.nupkg.sha512",
     "C:\\Users\\hossny D. monkey\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",

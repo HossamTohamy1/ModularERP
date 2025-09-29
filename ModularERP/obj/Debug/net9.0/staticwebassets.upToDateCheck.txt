@@ -5,6 +5,7 @@ wwwroot\uploads\35cf3e0d-82f8-42b4-b918-632473ed371d_Hossam-Reda-Tohamy-Full Sta
 wwwroot\uploads\39bd3005-2977-41e4-82e1-78656ff09133_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf
 wwwroot\uploads\416caedf-61e2-4a12-8173-fec1b01dcdb3_Hossam-Reda-Tohamy-Node Js .pdf
 wwwroot\uploads\44506535-23ee-46ff-81ec-284f6fd68fc1_Hossam-Reda-Tohamy-Node Js .pdf
+wwwroot\uploads\4da5ecd5-4176-436c-8ef1-1fa43dde22e4_Back End .NET.pdf
 wwwroot\uploads\5d869d90-1022-4ad1-bddb-3a1fbb122d52_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf
 wwwroot\uploads\625e6c04-063a-4afe-8722-38a39c57a67a_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf
 wwwroot\uploads\6c01c6ff-c1ea-42ad-af1d-9660ac51b7ce_Hossam-Reda-Tohamy-Back End .NET.pdf

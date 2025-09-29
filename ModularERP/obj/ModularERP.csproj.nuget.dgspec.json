@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\ModularERP.csproj": {}
+    "E:\\ModelerERP\\ModularERP\\ModularERP\\ModularERP.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\ModularERP.csproj": {
+    "E:\\ModelerERP\\ModularERP\\ModularERP\\ModularERP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\ModularERP.csproj",
+        "projectUniqueName": "E:\\ModelerERP\\ModularERP\\ModularERP\\ModularERP.csproj",
         "projectName": "ModularERP",
-        "projectPath": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\ModularERP.csproj",
+        "projectPath": "E:\\ModelerERP\\ModularERP\\ModularERP\\ModularERP.csproj",
         "packagesPath": "C:\\Users\\hossny D. monkey\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\obj\\",
+        "outputPath": "E:\\ModelerERP\\ModularERP\\ModularERP\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

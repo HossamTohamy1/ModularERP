@@ -4630,18 +4630,6 @@
             "type": "string",
             "nullable": true,
             "readOnly": true
-          },
-          "isImage": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isPdf": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "isDocument": {
-            "type": "boolean",
-            "readOnly": true
           }
         },
         "additionalProperties": false

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Vxq4iPf9K+F2co4AazjBn4OfUUkQ0Xz6GYwEUuzu11o=",
+  "Hash": "UeOqJprPQqAteXcohUH0kp1YYWq5xazm4/eWZtp3Ee8=",
   "Source": "ModularERP",
   "BasePath": "_content/ModularERP",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "ModularERP\\wwwroot",
       "Source": "ModularERP",
-      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "ContentRoot": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\",
       "BasePath": "_content/ModularERP",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\0f2102f8-7dff-47cc-86d8-373a401f3ed2_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "Identity": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\0f2102f8-7dff-47cc-86d8-373a401f3ed2_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "SourceId": "ModularERP",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "ContentRoot": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\",
       "BasePath": "_content/ModularERP",
       "RelativePath": "uploads/0f2102f8-7dff-47cc-86d8-373a401f3ed2_Hossam-Reda-Tohamy-Full Stack NET Angular#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -38,10 +38,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\0f2102f8-7dff-47cc-86d8-373a401f3ed2_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"
     },
     {
-      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\2437c47e-4522-4420-a6af-a2e4907cd8b6_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "Identity": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\2437c47e-4522-4420-a6af-a2e4907cd8b6_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "SourceId": "ModularERP",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "ContentRoot": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\",
       "BasePath": "_content/ModularERP",
       "RelativePath": "uploads/2437c47e-4522-4420-a6af-a2e4907cd8b6_Hossam-Reda-Tohamy-Full Stack NET Angular#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -59,10 +59,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\2437c47e-4522-4420-a6af-a2e4907cd8b6_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"
     },
     {
-      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\30a4b7b0-7346-4f4c-99ca-0b0b24df5fe0_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "Identity": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\30a4b7b0-7346-4f4c-99ca-0b0b24df5fe0_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "SourceId": "ModularERP",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "ContentRoot": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\",
       "BasePath": "_content/ModularERP",
       "RelativePath": "uploads/30a4b7b0-7346-4f4c-99ca-0b0b24df5fe0_Hossam-Reda-Tohamy-Full Stack NET Angular#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -80,10 +80,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\30a4b7b0-7346-4f4c-99ca-0b0b24df5fe0_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"
     },
     {
-      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\35cf3e0d-82f8-42b4-b918-632473ed371d_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "Identity": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\35cf3e0d-82f8-42b4-b918-632473ed371d_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "SourceId": "ModularERP",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "ContentRoot": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\",
       "BasePath": "_content/ModularERP",
       "RelativePath": "uploads/35cf3e0d-82f8-42b4-b918-632473ed371d_Hossam-Reda-Tohamy-Full Stack NET Angular#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -101,10 +101,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\35cf3e0d-82f8-42b4-b918-632473ed371d_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"
     },
     {
-      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\39bd3005-2977-41e4-82e1-78656ff09133_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "Identity": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\39bd3005-2977-41e4-82e1-78656ff09133_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "SourceId": "ModularERP",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "ContentRoot": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\",
       "BasePath": "_content/ModularERP",
       "RelativePath": "uploads/39bd3005-2977-41e4-82e1-78656ff09133_Hossam-Reda-Tohamy-Full Stack NET Angular#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -122,10 +122,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\39bd3005-2977-41e4-82e1-78656ff09133_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"
     },
     {
-      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\416caedf-61e2-4a12-8173-fec1b01dcdb3_Hossam-Reda-Tohamy-Node Js .pdf",
+      "Identity": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\416caedf-61e2-4a12-8173-fec1b01dcdb3_Hossam-Reda-Tohamy-Node Js .pdf",
       "SourceId": "ModularERP",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "ContentRoot": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\",
       "BasePath": "_content/ModularERP",
       "RelativePath": "uploads/416caedf-61e2-4a12-8173-fec1b01dcdb3_Hossam-Reda-Tohamy-Node Js #[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -143,10 +143,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\416caedf-61e2-4a12-8173-fec1b01dcdb3_Hossam-Reda-Tohamy-Node Js .pdf"
     },
     {
-      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\44506535-23ee-46ff-81ec-284f6fd68fc1_Hossam-Reda-Tohamy-Node Js .pdf",
+      "Identity": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\44506535-23ee-46ff-81ec-284f6fd68fc1_Hossam-Reda-Tohamy-Node Js .pdf",
       "SourceId": "ModularERP",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "ContentRoot": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\",
       "BasePath": "_content/ModularERP",
       "RelativePath": "uploads/44506535-23ee-46ff-81ec-284f6fd68fc1_Hossam-Reda-Tohamy-Node Js #[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -164,10 +164,31 @@
       "OriginalItemSpec": "wwwroot\\uploads\\44506535-23ee-46ff-81ec-284f6fd68fc1_Hossam-Reda-Tohamy-Node Js .pdf"
     },
     {
-      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\5d869d90-1022-4ad1-bddb-3a1fbb122d52_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "Identity": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\4da5ecd5-4176-436c-8ef1-1fa43dde22e4_Back End .NET.pdf",
       "SourceId": "ModularERP",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "ContentRoot": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\",
+      "BasePath": "_content/ModularERP",
+      "RelativePath": "uploads/4da5ecd5-4176-436c-8ef1-1fa43dde22e4_Back End .NET#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "zo5g8i8gda",
+      "Integrity": "05AJCb71GE0mZfJ3VvkgB2dqNm6qMEEvJ2Jm5CgqIw0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\4da5ecd5-4176-436c-8ef1-1fa43dde22e4_Back End .NET.pdf"
+    },
+    {
+      "Identity": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\5d869d90-1022-4ad1-bddb-3a1fbb122d52_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "SourceId": "ModularERP",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\",
       "BasePath": "_content/ModularERP",
       "RelativePath": "uploads/5d869d90-1022-4ad1-bddb-3a1fbb122d52_Hossam-Reda-Tohamy-Full Stack NET Angular#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -185,10 +206,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\5d869d90-1022-4ad1-bddb-3a1fbb122d52_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"
     },
     {
-      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\625e6c04-063a-4afe-8722-38a39c57a67a_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "Identity": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\625e6c04-063a-4afe-8722-38a39c57a67a_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "SourceId": "ModularERP",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "ContentRoot": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\",
       "BasePath": "_content/ModularERP",
       "RelativePath": "uploads/625e6c04-063a-4afe-8722-38a39c57a67a_Hossam-Reda-Tohamy-Full Stack NET Angular#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -206,10 +227,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\625e6c04-063a-4afe-8722-38a39c57a67a_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"
     },
     {
-      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\6c01c6ff-c1ea-42ad-af1d-9660ac51b7ce_Hossam-Reda-Tohamy-Back End .NET.pdf",
+      "Identity": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\6c01c6ff-c1ea-42ad-af1d-9660ac51b7ce_Hossam-Reda-Tohamy-Back End .NET.pdf",
       "SourceId": "ModularERP",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "ContentRoot": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\",
       "BasePath": "_content/ModularERP",
       "RelativePath": "uploads/6c01c6ff-c1ea-42ad-af1d-9660ac51b7ce_Hossam-Reda-Tohamy-Back End .NET#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -227,10 +248,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\6c01c6ff-c1ea-42ad-af1d-9660ac51b7ce_Hossam-Reda-Tohamy-Back End .NET.pdf"
     },
     {
-      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\77b76736-1184-4254-8d46-02d5494f8e36_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "Identity": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\77b76736-1184-4254-8d46-02d5494f8e36_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "SourceId": "ModularERP",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "ContentRoot": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\",
       "BasePath": "_content/ModularERP",
       "RelativePath": "uploads/77b76736-1184-4254-8d46-02d5494f8e36_Hossam-Reda-Tohamy-Full Stack NET Angular#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -248,10 +269,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\77b76736-1184-4254-8d46-02d5494f8e36_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"
     },
     {
-      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\8038ff3f-42d3-4681-b38a-d140fdf7e539_Hossam-Reda-Tohamy-Node Js .pdf",
+      "Identity": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\8038ff3f-42d3-4681-b38a-d140fdf7e539_Hossam-Reda-Tohamy-Node Js .pdf",
       "SourceId": "ModularERP",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "ContentRoot": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\",
       "BasePath": "_content/ModularERP",
       "RelativePath": "uploads/8038ff3f-42d3-4681-b38a-d140fdf7e539_Hossam-Reda-Tohamy-Node Js #[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -269,10 +290,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\8038ff3f-42d3-4681-b38a-d140fdf7e539_Hossam-Reda-Tohamy-Node Js .pdf"
     },
     {
-      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\83487b5d-21f6-427b-aa7e-ff913c283f0a_Hossam-Reda-Tohamy-BackEnd Laravel.pdf",
+      "Identity": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\83487b5d-21f6-427b-aa7e-ff913c283f0a_Hossam-Reda-Tohamy-BackEnd Laravel.pdf",
       "SourceId": "ModularERP",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "ContentRoot": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\",
       "BasePath": "_content/ModularERP",
       "RelativePath": "uploads/83487b5d-21f6-427b-aa7e-ff913c283f0a_Hossam-Reda-Tohamy-BackEnd Laravel#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -290,10 +311,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\83487b5d-21f6-427b-aa7e-ff913c283f0a_Hossam-Reda-Tohamy-BackEnd Laravel.pdf"
     },
     {
-      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\8fb2490b-9243-41d9-88b7-874eb8fbab1c_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "Identity": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\8fb2490b-9243-41d9-88b7-874eb8fbab1c_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "SourceId": "ModularERP",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "ContentRoot": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\",
       "BasePath": "_content/ModularERP",
       "RelativePath": "uploads/8fb2490b-9243-41d9-88b7-874eb8fbab1c_Hossam-Reda-Tohamy-Full Stack NET Angular#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -311,10 +332,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\8fb2490b-9243-41d9-88b7-874eb8fbab1c_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"
     },
     {
-      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\90bead9c-d498-4173-b03d-372c5e987145_Back End .NET.pdf",
+      "Identity": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\90bead9c-d498-4173-b03d-372c5e987145_Back End .NET.pdf",
       "SourceId": "ModularERP",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "ContentRoot": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\",
       "BasePath": "_content/ModularERP",
       "RelativePath": "uploads/90bead9c-d498-4173-b03d-372c5e987145_Back End .NET#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -332,10 +353,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\90bead9c-d498-4173-b03d-372c5e987145_Back End .NET.pdf"
     },
     {
-      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\aa792792-b448-4c51-ac3d-913c1d9e7d8d_Hossam-Reda-Tohamy-Node Js .pdf",
+      "Identity": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\aa792792-b448-4c51-ac3d-913c1d9e7d8d_Hossam-Reda-Tohamy-Node Js .pdf",
       "SourceId": "ModularERP",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "ContentRoot": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\",
       "BasePath": "_content/ModularERP",
       "RelativePath": "uploads/aa792792-b448-4c51-ac3d-913c1d9e7d8d_Hossam-Reda-Tohamy-Node Js #[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -353,10 +374,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\aa792792-b448-4c51-ac3d-913c1d9e7d8d_Hossam-Reda-Tohamy-Node Js .pdf"
     },
     {
-      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\ba6c5cb0-81d9-4c9c-a565-e372313b176b_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "Identity": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\ba6c5cb0-81d9-4c9c-a565-e372313b176b_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "SourceId": "ModularERP",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "ContentRoot": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\",
       "BasePath": "_content/ModularERP",
       "RelativePath": "uploads/ba6c5cb0-81d9-4c9c-a565-e372313b176b_Hossam-Reda-Tohamy-Full Stack NET Angular#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -374,10 +395,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\ba6c5cb0-81d9-4c9c-a565-e372313b176b_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"
     },
     {
-      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\c160b997-d8b9-4093-aee5-34c5c0af675f_Back End .NET.pdf",
+      "Identity": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\c160b997-d8b9-4093-aee5-34c5c0af675f_Back End .NET.pdf",
       "SourceId": "ModularERP",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "ContentRoot": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\",
       "BasePath": "_content/ModularERP",
       "RelativePath": "uploads/c160b997-d8b9-4093-aee5-34c5c0af675f_Back End .NET#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -395,10 +416,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\c160b997-d8b9-4093-aee5-34c5c0af675f_Back End .NET.pdf"
     },
     {
-      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\db7e1b2d-815d-4c17-96fb-3651a9159c75_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "Identity": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\db7e1b2d-815d-4c17-96fb-3651a9159c75_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "SourceId": "ModularERP",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "ContentRoot": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\",
       "BasePath": "_content/ModularERP",
       "RelativePath": "uploads/db7e1b2d-815d-4c17-96fb-3651a9159c75_Hossam-Reda-Tohamy-Full Stack NET Angular#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -416,10 +437,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\db7e1b2d-815d-4c17-96fb-3651a9159c75_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"
     },
     {
-      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\e7e88cc1-e540-4720-8e49-d1b86be38c6f_Hossam-Reda-Tohamy-Node Js .pdf",
+      "Identity": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\e7e88cc1-e540-4720-8e49-d1b86be38c6f_Hossam-Reda-Tohamy-Node Js .pdf",
       "SourceId": "ModularERP",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "ContentRoot": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\",
       "BasePath": "_content/ModularERP",
       "RelativePath": "uploads/e7e88cc1-e540-4720-8e49-d1b86be38c6f_Hossam-Reda-Tohamy-Node Js #[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -437,10 +458,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\e7e88cc1-e540-4720-8e49-d1b86be38c6f_Hossam-Reda-Tohamy-Node Js .pdf"
     },
     {
-      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\ed2708de-d910-4cd1-b7e2-8799fc7c4df1_Hossam-Reda-Tohamy-Node Js .pdf",
+      "Identity": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\ed2708de-d910-4cd1-b7e2-8799fc7c4df1_Hossam-Reda-Tohamy-Node Js .pdf",
       "SourceId": "ModularERP",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "ContentRoot": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\",
       "BasePath": "_content/ModularERP",
       "RelativePath": "uploads/ed2708de-d910-4cd1-b7e2-8799fc7c4df1_Hossam-Reda-Tohamy-Node Js #[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -458,10 +479,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\ed2708de-d910-4cd1-b7e2-8799fc7c4df1_Hossam-Reda-Tohamy-Node Js .pdf"
     },
     {
-      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\feaa656d-63f7-4eed-b333-81fd67303bc5_Hossam-Reda-Tohamy-Node Js .pdf",
+      "Identity": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\feaa656d-63f7-4eed-b333-81fd67303bc5_Hossam-Reda-Tohamy-Node Js .pdf",
       "SourceId": "ModularERP",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "ContentRoot": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\",
       "BasePath": "_content/ModularERP",
       "RelativePath": "uploads/feaa656d-63f7-4eed-b333-81fd67303bc5_Hossam-Reda-Tohamy-Node Js #[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -479,10 +500,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\feaa656d-63f7-4eed-b333-81fd67303bc5_Hossam-Reda-Tohamy-Node Js .pdf"
     },
     {
-      "Identity": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\ff93be28-516c-46fa-ba45-238dea1c1b14_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "Identity": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\ff93be28-516c-46fa-ba45-238dea1c1b14_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "SourceId": "ModularERP",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\",
+      "ContentRoot": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\",
       "BasePath": "_content/ModularERP",
       "RelativePath": "uploads/ff93be28-516c-46fa-ba45-238dea1c1b14_Hossam-Reda-Tohamy-Full Stack NET Angular#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
@@ -503,7 +524,7 @@
   "Endpoints": [
     {
       "Route": "uploads/0f2102f8-7dff-47cc-86d8-373a401f3ed2_Hossam-Reda-Tohamy-Full Stack NET Angular.41798qlwtw.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\0f2102f8-7dff-47cc-86d8-373a401f3ed2_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\0f2102f8-7dff-47cc-86d8-373a401f3ed2_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -524,7 +545,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 18 Sep 2025 19:38:14 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -548,7 +569,7 @@
     },
     {
       "Route": "uploads/0f2102f8-7dff-47cc-86d8-373a401f3ed2_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\0f2102f8-7dff-47cc-86d8-373a401f3ed2_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\0f2102f8-7dff-47cc-86d8-373a401f3ed2_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -569,7 +590,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 18 Sep 2025 19:38:14 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -585,7 +606,7 @@
     },
     {
       "Route": "uploads/2437c47e-4522-4420-a6af-a2e4907cd8b6_Hossam-Reda-Tohamy-Full Stack NET Angular.41798qlwtw.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\2437c47e-4522-4420-a6af-a2e4907cd8b6_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\2437c47e-4522-4420-a6af-a2e4907cd8b6_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -606,7 +627,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 20 Sep 2025 08:49:10 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -630,7 +651,7 @@
     },
     {
       "Route": "uploads/2437c47e-4522-4420-a6af-a2e4907cd8b6_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\2437c47e-4522-4420-a6af-a2e4907cd8b6_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\2437c47e-4522-4420-a6af-a2e4907cd8b6_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -651,7 +672,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 20 Sep 2025 08:49:10 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -667,7 +688,7 @@
     },
     {
       "Route": "uploads/30a4b7b0-7346-4f4c-99ca-0b0b24df5fe0_Hossam-Reda-Tohamy-Full Stack NET Angular.41798qlwtw.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\30a4b7b0-7346-4f4c-99ca-0b0b24df5fe0_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\30a4b7b0-7346-4f4c-99ca-0b0b24df5fe0_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -688,7 +709,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 27 Sep 2025 20:53:49 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -712,7 +733,7 @@
     },
     {
       "Route": "uploads/30a4b7b0-7346-4f4c-99ca-0b0b24df5fe0_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\30a4b7b0-7346-4f4c-99ca-0b0b24df5fe0_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\30a4b7b0-7346-4f4c-99ca-0b0b24df5fe0_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -733,7 +754,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 27 Sep 2025 20:53:49 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -749,7 +770,7 @@
     },
     {
       "Route": "uploads/35cf3e0d-82f8-42b4-b918-632473ed371d_Hossam-Reda-Tohamy-Full Stack NET Angular.41798qlwtw.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\35cf3e0d-82f8-42b4-b918-632473ed371d_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\35cf3e0d-82f8-42b4-b918-632473ed371d_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -770,7 +791,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 20 Sep 2025 09:13:35 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -794,7 +815,7 @@
     },
     {
       "Route": "uploads/35cf3e0d-82f8-42b4-b918-632473ed371d_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\35cf3e0d-82f8-42b4-b918-632473ed371d_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\35cf3e0d-82f8-42b4-b918-632473ed371d_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -815,7 +836,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 20 Sep 2025 09:13:35 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -831,7 +852,7 @@
     },
     {
       "Route": "uploads/39bd3005-2977-41e4-82e1-78656ff09133_Hossam-Reda-Tohamy-Full Stack NET Angular.41798qlwtw.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\39bd3005-2977-41e4-82e1-78656ff09133_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\39bd3005-2977-41e4-82e1-78656ff09133_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -852,7 +873,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 19 Sep 2025 15:47:02 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -876,7 +897,7 @@
     },
     {
       "Route": "uploads/39bd3005-2977-41e4-82e1-78656ff09133_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\39bd3005-2977-41e4-82e1-78656ff09133_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\39bd3005-2977-41e4-82e1-78656ff09133_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -897,7 +918,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 19 Sep 2025 15:47:02 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -913,7 +934,7 @@
     },
     {
       "Route": "uploads/416caedf-61e2-4a12-8173-fec1b01dcdb3_Hossam-Reda-Tohamy-Node Js .nl1r0jgke5.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\416caedf-61e2-4a12-8173-fec1b01dcdb3_Hossam-Reda-Tohamy-Node Js .pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\416caedf-61e2-4a12-8173-fec1b01dcdb3_Hossam-Reda-Tohamy-Node Js .pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -934,7 +955,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 18 Sep 2025 19:31:16 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -958,7 +979,7 @@
     },
     {
       "Route": "uploads/416caedf-61e2-4a12-8173-fec1b01dcdb3_Hossam-Reda-Tohamy-Node Js .pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\416caedf-61e2-4a12-8173-fec1b01dcdb3_Hossam-Reda-Tohamy-Node Js .pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\416caedf-61e2-4a12-8173-fec1b01dcdb3_Hossam-Reda-Tohamy-Node Js .pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -979,7 +1000,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 18 Sep 2025 19:31:16 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -995,7 +1016,7 @@
     },
     {
       "Route": "uploads/44506535-23ee-46ff-81ec-284f6fd68fc1_Hossam-Reda-Tohamy-Node Js .nl1r0jgke5.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\44506535-23ee-46ff-81ec-284f6fd68fc1_Hossam-Reda-Tohamy-Node Js .pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\44506535-23ee-46ff-81ec-284f6fd68fc1_Hossam-Reda-Tohamy-Node Js .pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1016,7 +1037,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 25 Sep 2025 13:39:46 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1040,7 +1061,7 @@
     },
     {
       "Route": "uploads/44506535-23ee-46ff-81ec-284f6fd68fc1_Hossam-Reda-Tohamy-Node Js .pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\44506535-23ee-46ff-81ec-284f6fd68fc1_Hossam-Reda-Tohamy-Node Js .pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\44506535-23ee-46ff-81ec-284f6fd68fc1_Hossam-Reda-Tohamy-Node Js .pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1061,7 +1082,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 25 Sep 2025 13:39:46 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1076,8 +1097,90 @@
       ]
     },
     {
+      "Route": "uploads/4da5ecd5-4176-436c-8ef1-1fa43dde22e4_Back End .NET.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\4da5ecd5-4176-436c-8ef1-1fa43dde22e4_Back End .NET.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "83767"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"05AJCb71GE0mZfJ3VvkgB2dqNm6qMEEvJ2Jm5CgqIw0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-05AJCb71GE0mZfJ3VvkgB2dqNm6qMEEvJ2Jm5CgqIw0="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/4da5ecd5-4176-436c-8ef1-1fa43dde22e4_Back End .NET.zo5g8i8gda.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\4da5ecd5-4176-436c-8ef1-1fa43dde22e4_Back End .NET.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "83767"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"05AJCb71GE0mZfJ3VvkgB2dqNm6qMEEvJ2Jm5CgqIw0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zo5g8i8gda"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/4da5ecd5-4176-436c-8ef1-1fa43dde22e4_Back End .NET.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-05AJCb71GE0mZfJ3VvkgB2dqNm6qMEEvJ2Jm5CgqIw0="
+        }
+      ]
+    },
+    {
       "Route": "uploads/5d869d90-1022-4ad1-bddb-3a1fbb122d52_Hossam-Reda-Tohamy-Full Stack NET Angular.41798qlwtw.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\5d869d90-1022-4ad1-bddb-3a1fbb122d52_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\5d869d90-1022-4ad1-bddb-3a1fbb122d52_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1098,7 +1201,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 20 Sep 2025 09:36:38 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1122,7 +1225,7 @@
     },
     {
       "Route": "uploads/5d869d90-1022-4ad1-bddb-3a1fbb122d52_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\5d869d90-1022-4ad1-bddb-3a1fbb122d52_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\5d869d90-1022-4ad1-bddb-3a1fbb122d52_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1143,7 +1246,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 20 Sep 2025 09:36:38 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1159,7 +1262,7 @@
     },
     {
       "Route": "uploads/625e6c04-063a-4afe-8722-38a39c57a67a_Hossam-Reda-Tohamy-Full Stack NET Angular.41798qlwtw.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\625e6c04-063a-4afe-8722-38a39c57a67a_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\625e6c04-063a-4afe-8722-38a39c57a67a_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1180,7 +1283,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 20 Sep 2025 13:31:04 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1204,7 +1307,7 @@
     },
     {
       "Route": "uploads/625e6c04-063a-4afe-8722-38a39c57a67a_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\625e6c04-063a-4afe-8722-38a39c57a67a_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\625e6c04-063a-4afe-8722-38a39c57a67a_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1225,7 +1328,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 20 Sep 2025 13:31:04 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1241,7 +1344,7 @@
     },
     {
       "Route": "uploads/6c01c6ff-c1ea-42ad-af1d-9660ac51b7ce_Hossam-Reda-Tohamy-Back End .NET.8s7310upt6.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\6c01c6ff-c1ea-42ad-af1d-9660ac51b7ce_Hossam-Reda-Tohamy-Back End .NET.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\6c01c6ff-c1ea-42ad-af1d-9660ac51b7ce_Hossam-Reda-Tohamy-Back End .NET.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1262,7 +1365,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 19 Sep 2025 10:39:16 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1286,7 +1389,7 @@
     },
     {
       "Route": "uploads/6c01c6ff-c1ea-42ad-af1d-9660ac51b7ce_Hossam-Reda-Tohamy-Back End .NET.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\6c01c6ff-c1ea-42ad-af1d-9660ac51b7ce_Hossam-Reda-Tohamy-Back End .NET.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\6c01c6ff-c1ea-42ad-af1d-9660ac51b7ce_Hossam-Reda-Tohamy-Back End .NET.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1307,7 +1410,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 19 Sep 2025 10:39:16 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1323,7 +1426,7 @@
     },
     {
       "Route": "uploads/77b76736-1184-4254-8d46-02d5494f8e36_Hossam-Reda-Tohamy-Full Stack NET Angular.41798qlwtw.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\77b76736-1184-4254-8d46-02d5494f8e36_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\77b76736-1184-4254-8d46-02d5494f8e36_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1344,7 +1447,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 20 Sep 2025 09:21:22 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1368,7 +1471,7 @@
     },
     {
       "Route": "uploads/77b76736-1184-4254-8d46-02d5494f8e36_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\77b76736-1184-4254-8d46-02d5494f8e36_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\77b76736-1184-4254-8d46-02d5494f8e36_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1389,7 +1492,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 20 Sep 2025 09:21:22 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1405,7 +1508,7 @@
     },
     {
       "Route": "uploads/8038ff3f-42d3-4681-b38a-d140fdf7e539_Hossam-Reda-Tohamy-Node Js .nl1r0jgke5.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\8038ff3f-42d3-4681-b38a-d140fdf7e539_Hossam-Reda-Tohamy-Node Js .pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\8038ff3f-42d3-4681-b38a-d140fdf7e539_Hossam-Reda-Tohamy-Node Js .pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1426,7 +1529,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 27 Sep 2025 20:41:17 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1450,7 +1553,7 @@
     },
     {
       "Route": "uploads/8038ff3f-42d3-4681-b38a-d140fdf7e539_Hossam-Reda-Tohamy-Node Js .pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\8038ff3f-42d3-4681-b38a-d140fdf7e539_Hossam-Reda-Tohamy-Node Js .pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\8038ff3f-42d3-4681-b38a-d140fdf7e539_Hossam-Reda-Tohamy-Node Js .pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1471,7 +1574,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 27 Sep 2025 20:41:17 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1487,7 +1590,7 @@
     },
     {
       "Route": "uploads/83487b5d-21f6-427b-aa7e-ff913c283f0a_Hossam-Reda-Tohamy-BackEnd Laravel.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\83487b5d-21f6-427b-aa7e-ff913c283f0a_Hossam-Reda-Tohamy-BackEnd Laravel.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\83487b5d-21f6-427b-aa7e-ff913c283f0a_Hossam-Reda-Tohamy-BackEnd Laravel.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1508,7 +1611,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 27 Sep 2025 12:59:06 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1524,7 +1627,7 @@
     },
     {
       "Route": "uploads/83487b5d-21f6-427b-aa7e-ff913c283f0a_Hossam-Reda-Tohamy-BackEnd Laravel.qa2pfi903d.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\83487b5d-21f6-427b-aa7e-ff913c283f0a_Hossam-Reda-Tohamy-BackEnd Laravel.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\83487b5d-21f6-427b-aa7e-ff913c283f0a_Hossam-Reda-Tohamy-BackEnd Laravel.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1545,7 +1648,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 27 Sep 2025 12:59:06 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1569,7 +1672,7 @@
     },
     {
       "Route": "uploads/8fb2490b-9243-41d9-88b7-874eb8fbab1c_Hossam-Reda-Tohamy-Full Stack NET Angular.41798qlwtw.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\8fb2490b-9243-41d9-88b7-874eb8fbab1c_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\8fb2490b-9243-41d9-88b7-874eb8fbab1c_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1590,7 +1693,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 20 Sep 2025 09:01:09 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1614,7 +1717,7 @@
     },
     {
       "Route": "uploads/8fb2490b-9243-41d9-88b7-874eb8fbab1c_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\8fb2490b-9243-41d9-88b7-874eb8fbab1c_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\8fb2490b-9243-41d9-88b7-874eb8fbab1c_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1635,7 +1738,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 20 Sep 2025 09:01:09 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1651,7 +1754,7 @@
     },
     {
       "Route": "uploads/90bead9c-d498-4173-b03d-372c5e987145_Back End .NET.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\90bead9c-d498-4173-b03d-372c5e987145_Back End .NET.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\90bead9c-d498-4173-b03d-372c5e987145_Back End .NET.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1672,7 +1775,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 27 Sep 2025 21:17:55 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1688,7 +1791,7 @@
     },
     {
       "Route": "uploads/90bead9c-d498-4173-b03d-372c5e987145_Back End .NET.zo5g8i8gda.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\90bead9c-d498-4173-b03d-372c5e987145_Back End .NET.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\90bead9c-d498-4173-b03d-372c5e987145_Back End .NET.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1709,7 +1812,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 27 Sep 2025 21:17:55 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1733,7 +1836,7 @@
     },
     {
       "Route": "uploads/aa792792-b448-4c51-ac3d-913c1d9e7d8d_Hossam-Reda-Tohamy-Node Js .nl1r0jgke5.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\aa792792-b448-4c51-ac3d-913c1d9e7d8d_Hossam-Reda-Tohamy-Node Js .pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\aa792792-b448-4c51-ac3d-913c1d9e7d8d_Hossam-Reda-Tohamy-Node Js .pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1754,7 +1857,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 18 Sep 2025 19:14:57 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1778,7 +1881,7 @@
     },
     {
       "Route": "uploads/aa792792-b448-4c51-ac3d-913c1d9e7d8d_Hossam-Reda-Tohamy-Node Js .pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\aa792792-b448-4c51-ac3d-913c1d9e7d8d_Hossam-Reda-Tohamy-Node Js .pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\aa792792-b448-4c51-ac3d-913c1d9e7d8d_Hossam-Reda-Tohamy-Node Js .pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1799,7 +1902,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 18 Sep 2025 19:14:57 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1815,7 +1918,7 @@
     },
     {
       "Route": "uploads/ba6c5cb0-81d9-4c9c-a565-e372313b176b_Hossam-Reda-Tohamy-Full Stack NET Angular.41798qlwtw.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\ba6c5cb0-81d9-4c9c-a565-e372313b176b_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\ba6c5cb0-81d9-4c9c-a565-e372313b176b_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1836,7 +1939,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 19 Sep 2025 11:08:53 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1860,7 +1963,7 @@
     },
     {
       "Route": "uploads/ba6c5cb0-81d9-4c9c-a565-e372313b176b_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\ba6c5cb0-81d9-4c9c-a565-e372313b176b_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\ba6c5cb0-81d9-4c9c-a565-e372313b176b_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1881,7 +1984,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 19 Sep 2025 11:08:53 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1897,7 +2000,7 @@
     },
     {
       "Route": "uploads/c160b997-d8b9-4093-aee5-34c5c0af675f_Back End .NET.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\c160b997-d8b9-4093-aee5-34c5c0af675f_Back End .NET.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\c160b997-d8b9-4093-aee5-34c5c0af675f_Back End .NET.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1918,7 +2021,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 25 Sep 2025 19:12:40 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1934,7 +2037,7 @@
     },
     {
       "Route": "uploads/c160b997-d8b9-4093-aee5-34c5c0af675f_Back End .NET.zo5g8i8gda.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\c160b997-d8b9-4093-aee5-34c5c0af675f_Back End .NET.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\c160b997-d8b9-4093-aee5-34c5c0af675f_Back End .NET.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1955,7 +2058,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 25 Sep 2025 19:12:40 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1979,7 +2082,7 @@
     },
     {
       "Route": "uploads/db7e1b2d-815d-4c17-96fb-3651a9159c75_Hossam-Reda-Tohamy-Full Stack NET Angular.41798qlwtw.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\db7e1b2d-815d-4c17-96fb-3651a9159c75_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\db7e1b2d-815d-4c17-96fb-3651a9159c75_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2000,7 +2103,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 20 Sep 2025 09:30:04 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2024,7 +2127,7 @@
     },
     {
       "Route": "uploads/db7e1b2d-815d-4c17-96fb-3651a9159c75_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\db7e1b2d-815d-4c17-96fb-3651a9159c75_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\db7e1b2d-815d-4c17-96fb-3651a9159c75_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2045,7 +2148,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 20 Sep 2025 09:30:04 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2061,7 +2164,7 @@
     },
     {
       "Route": "uploads/e7e88cc1-e540-4720-8e49-d1b86be38c6f_Hossam-Reda-Tohamy-Node Js .nl1r0jgke5.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\e7e88cc1-e540-4720-8e49-d1b86be38c6f_Hossam-Reda-Tohamy-Node Js .pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\e7e88cc1-e540-4720-8e49-d1b86be38c6f_Hossam-Reda-Tohamy-Node Js .pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2082,7 +2185,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 27 Sep 2025 20:49:21 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2106,7 +2209,7 @@
     },
     {
       "Route": "uploads/e7e88cc1-e540-4720-8e49-d1b86be38c6f_Hossam-Reda-Tohamy-Node Js .pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\e7e88cc1-e540-4720-8e49-d1b86be38c6f_Hossam-Reda-Tohamy-Node Js .pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\e7e88cc1-e540-4720-8e49-d1b86be38c6f_Hossam-Reda-Tohamy-Node Js .pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2127,7 +2230,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 27 Sep 2025 20:49:21 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2143,7 +2246,7 @@
     },
     {
       "Route": "uploads/ed2708de-d910-4cd1-b7e2-8799fc7c4df1_Hossam-Reda-Tohamy-Node Js .nl1r0jgke5.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\ed2708de-d910-4cd1-b7e2-8799fc7c4df1_Hossam-Reda-Tohamy-Node Js .pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\ed2708de-d910-4cd1-b7e2-8799fc7c4df1_Hossam-Reda-Tohamy-Node Js .pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2164,7 +2267,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 18 Sep 2025 19:11:41 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2188,7 +2291,7 @@
     },
     {
       "Route": "uploads/ed2708de-d910-4cd1-b7e2-8799fc7c4df1_Hossam-Reda-Tohamy-Node Js .pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\ed2708de-d910-4cd1-b7e2-8799fc7c4df1_Hossam-Reda-Tohamy-Node Js .pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\ed2708de-d910-4cd1-b7e2-8799fc7c4df1_Hossam-Reda-Tohamy-Node Js .pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2209,7 +2312,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 18 Sep 2025 19:11:41 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2225,7 +2328,7 @@
     },
     {
       "Route": "uploads/feaa656d-63f7-4eed-b333-81fd67303bc5_Hossam-Reda-Tohamy-Node Js .nl1r0jgke5.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\feaa656d-63f7-4eed-b333-81fd67303bc5_Hossam-Reda-Tohamy-Node Js .pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\feaa656d-63f7-4eed-b333-81fd67303bc5_Hossam-Reda-Tohamy-Node Js .pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2246,7 +2349,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 18 Sep 2025 19:23:50 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2270,7 +2373,7 @@
     },
     {
       "Route": "uploads/feaa656d-63f7-4eed-b333-81fd67303bc5_Hossam-Reda-Tohamy-Node Js .pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\feaa656d-63f7-4eed-b333-81fd67303bc5_Hossam-Reda-Tohamy-Node Js .pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\feaa656d-63f7-4eed-b333-81fd67303bc5_Hossam-Reda-Tohamy-Node Js .pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2291,7 +2394,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 18 Sep 2025 19:23:50 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2307,7 +2410,7 @@
     },
     {
       "Route": "uploads/ff93be28-516c-46fa-ba45-238dea1c1b14_Hossam-Reda-Tohamy-Full Stack NET Angular.41798qlwtw.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\ff93be28-516c-46fa-ba45-238dea1c1b14_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\ff93be28-516c-46fa-ba45-238dea1c1b14_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2328,7 +2431,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 19 Sep 2025 15:49:36 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2352,7 +2455,7 @@
     },
     {
       "Route": "uploads/ff93be28-516c-46fa-ba45-238dea1c1b14_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
-      "AssetFile": "C:\\Users\\hossny D. monkey\\source\\repos\\ModularERP\\ModularERP\\wwwroot\\uploads\\ff93be28-516c-46fa-ba45-238dea1c1b14_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\ff93be28-516c-46fa-ba45-238dea1c1b14_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2373,7 +2476,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 19 Sep 2025 15:49:36 GMT"
+          "Value": "Sun, 28 Sep 2025 20:21:38 GMT"
         },
         {
           "Name": "Cache-Control",

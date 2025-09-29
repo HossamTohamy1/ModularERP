@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Modules\Purchase\**" />
+    <Content Remove="Modules\Purchase\**" />
+    <EmbeddedResource Remove="Modules\Purchase\**" />
+    <None Remove="Modules\Purchase\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="15.0.1" />
     <PackageReference Include="FluentValidation" Version="12.0.0" />
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.0.0" />
@@ -93,22 +100,6 @@
     <Folder Include="Modules\Finance\Features\Vouchers\Validators\" />
     <Folder Include="Modules\Finance\Features\WalletPermissions\Mapping\" />
     <Folder Include="Modules\Finance\Features\WalletPermissions\Models\" />
-    <Folder Include="Modules\Inventory\Features\Commands\" />
-    <Folder Include="Modules\Inventory\Features\Controllers\" />
-    <Folder Include="Modules\Inventory\Features\Handlers\" />
-    <Folder Include="Modules\Inventory\Features\Mapping\" />
-    <Folder Include="Modules\Inventory\Features\Models\" />
-    <Folder Include="Modules\Inventory\Features\Queries\" />
-    <Folder Include="Modules\Inventory\Features\Validators\" />
-    <Folder Include="Modules\Inventory\Inventory.Infrastructure\" />
-    <Folder Include="Modules\Purchase\Features\Commands\" />
-    <Folder Include="Modules\Purchase\Features\Controllers\" />
-    <Folder Include="Modules\Purchase\Features\Handlers\" />
-    <Folder Include="Modules\Purchase\Features\Mapping\" />
-    <Folder Include="Modules\Purchase\Features\Models\" />
-    <Folder Include="Modules\Purchase\Features\Queries\" />
-    <Folder Include="Modules\Purchase\Features\Validators\" />
-    <Folder Include="Modules\Purchase\Purchase.Infrastructure\" />
   </ItemGroup>
 
 </Project>
