@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "UeOqJprPQqAteXcohUH0kp1YYWq5xazm4/eWZtp3Ee8=",
+  "Hash": "mxdezm4WrTmnIiqFgQhqLcpdTn0vMI6dIxIydtRK324=",
   "Source": "ModularERP",
   "BasePath": "_content/ModularERP",
   "Mode": "Default",
@@ -414,6 +414,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\c160b997-d8b9-4093-aee5-34c5c0af675f_Back End .NET.pdf"
+    },
+    {
+      "Identity": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\categories\\d7034520-5aac-491f-86e8-d86708a804ac_Back End .NET.pdf",
+      "SourceId": "ModularERP",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\",
+      "BasePath": "_content/ModularERP",
+      "RelativePath": "uploads/categories/d7034520-5aac-491f-86e8-d86708a804ac_Back End .NET#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "zo5g8i8gda",
+      "Integrity": "05AJCb71GE0mZfJ3VvkgB2dqNm6qMEEvJ2Jm5CgqIw0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\categories\\d7034520-5aac-491f-86e8-d86708a804ac_Back End .NET.pdf"
     },
     {
       "Identity": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\db7e1b2d-815d-4c17-96fb-3651a9159c75_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
@@ -2073,6 +2094,88 @@
         {
           "Name": "label",
           "Value": "uploads/c160b997-d8b9-4093-aee5-34c5c0af675f_Back End .NET.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-05AJCb71GE0mZfJ3VvkgB2dqNm6qMEEvJ2Jm5CgqIw0="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/categories/d7034520-5aac-491f-86e8-d86708a804ac_Back End .NET.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\categories\\d7034520-5aac-491f-86e8-d86708a804ac_Back End .NET.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "83767"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"05AJCb71GE0mZfJ3VvkgB2dqNm6qMEEvJ2Jm5CgqIw0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 01 Oct 2025 10:37:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-05AJCb71GE0mZfJ3VvkgB2dqNm6qMEEvJ2Jm5CgqIw0="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/categories/d7034520-5aac-491f-86e8-d86708a804ac_Back End .NET.zo5g8i8gda.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\categories\\d7034520-5aac-491f-86e8-d86708a804ac_Back End .NET.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "83767"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"05AJCb71GE0mZfJ3VvkgB2dqNm6qMEEvJ2Jm5CgqIw0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 01 Oct 2025 10:37:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zo5g8i8gda"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/categories/d7034520-5aac-491f-86e8-d86708a804ac_Back End .NET.pdf"
         },
         {
           "Name": "integrity",

@@ -1,5 +1,6 @@
 ﻿using ModularERP.Common.Enum.Inventory_Enum;
 using ModularERP.Common.Models;
+using ModularERP.Modules.Finance.Features.Companys.Models;
 using ModularERP.Modules.Inventory.Features.Warehouses.Models;
 using System.ComponentModel.DataAnnotations;
 
@@ -8,6 +9,7 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Models
     public class StocktakingHeader : BaseEntity
     {
         public Guid WarehouseId { get; set; }
+        public Guid CompanyId { get; set; }
 
         [Required]
         [MaxLength(50)]
@@ -36,6 +38,8 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Models
         public bool IsDeleted { get; set; }
 
         // Navigation Properties
+        public virtual Company? Company { get; set; }
+
         public virtual Warehouse Warehouse { get; set; } = null!;
         public virtual ApplicationUser? ApprovedByUser { get; set; }
         public virtual ApplicationUser? PostedByUser { get; set; }

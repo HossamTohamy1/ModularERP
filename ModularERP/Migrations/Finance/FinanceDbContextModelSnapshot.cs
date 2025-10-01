@@ -1281,6 +1281,9 @@ namespace ModularERP.Migrations.Finance
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid>("CompanyId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -1334,6 +1337,8 @@ namespace ModularERP.Migrations.Finance
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CompanyId");
 
                     b.HasIndex("CurrencyCode")
                         .HasDatabaseName("IX_PriceList_Currency");
@@ -2167,144 +2172,6 @@ namespace ModularERP.Migrations.Finance
                     b.ToTable("ItemGroupItems", (string)null);
                 });
 
-            modelBuilder.Entity("ModularERP.Modules.Inventory.Features.Products.Models.Product", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Barcode")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<Guid?>("BrandId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("CategoryId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreatedById")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal?>("Discount")
-                        .HasPrecision(18, 4)
-                        .HasColumnType("decimal(18,4)");
-
-                    b.Property<string>("DiscountType")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal?>("InitialStock")
-                        .HasPrecision(18, 3)
-                        .HasColumnType("decimal(18,3)");
-
-                    b.Property<string>("InternalNotes")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<decimal?>("LowStockThreshold")
-                        .HasPrecision(18, 3)
-                        .HasColumnType("decimal(18,3)");
-
-                    b.Property<decimal?>("MinPrice")
-                        .HasPrecision(18, 4)
-                        .HasColumnType("decimal(18,4)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<string>("Photo")
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<decimal?>("ProfitMargin")
-                        .HasPrecision(10, 4)
-                        .HasColumnType("decimal(10,4)");
-
-                    b.Property<decimal?>("PurchasePrice")
-                        .HasPrecision(18, 4)
-                        .HasColumnType("decimal(18,4)");
-
-                    b.Property<string>("SKU")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<decimal?>("SellingPrice")
-                        .HasPrecision(18, 4)
-                        .HasColumnType("decimal(18,4)");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("nvarchar(450)")
-                        .HasDefaultValue("Active");
-
-                    b.Property<Guid?>("SupplierId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Tags")
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool>("TrackStock")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValue(true);
-
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("UpdatedById")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("BrandId")
-                        .HasDatabaseName("IX_Product_Brand");
-
-                    b.HasIndex("CategoryId")
-                        .HasDatabaseName("IX_Product_Category");
-
-                    b.HasIndex("LowStockThreshold")
-                        .HasDatabaseName("IX_Product_LowStock");
-
-                    b.HasIndex("Status")
-                        .HasDatabaseName("IX_Product_Status");
-
-                    b.HasIndex("SupplierId")
-                        .HasDatabaseName("IX_Product_Supplier");
-
-                    b.HasIndex("TrackStock")
-                        .HasDatabaseName("IX_Product_TrackStock");
-
-                    b.HasIndex("TenantId", "Barcode")
-                        .IsUnique()
-                        .HasDatabaseName("IX_Product_Tenant_Barcode")
-                        .HasFilter("[Barcode] IS NOT NULL");
-
-                    b.HasIndex("TenantId", "SKU")
-                        .IsUnique()
-                        .HasDatabaseName("IX_Product_Tenant_SKU")
-                        .HasFilter("[SKU] IS NOT NULL");
-
-                    b.ToTable("Products", (string)null);
-                });
-
             modelBuilder.Entity("ModularERP.Modules.Inventory.Features.Products.Models.ProductCustomFieldValue", b =>
                 {
                     b.Property<Guid>("Id")
@@ -2355,7 +2222,8 @@ namespace ModularERP.Migrations.Finance
 
             modelBuilder.Entity("ModularERP.Modules.Inventory.Features.Products.Models.ProductStats", b =>
                 {
-                    b.Property<Guid>("ProductId")
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("AvgUnitCost")
@@ -2363,6 +2231,21 @@ namespace ModularERP.Migrations.Finance
                         .HasPrecision(18, 4)
                         .HasColumnType("decimal(18,4)")
                         .HasDefaultValue(0m);
+
+                    b.Property<Guid>("CompanyId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedById")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<DateTime>("LastUpdated")
                         .ValueGeneratedOnAdd()
@@ -2374,6 +2257,9 @@ namespace ModularERP.Migrations.Finance
                         .HasPrecision(18, 3)
                         .HasColumnType("decimal(18,3)")
                         .HasDefaultValue(0m);
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("SoldLast28Days")
                         .ValueGeneratedOnAdd()
@@ -2387,13 +2273,29 @@ namespace ModularERP.Migrations.Finance
                         .HasColumnType("decimal(18,3)")
                         .HasDefaultValue(0m);
 
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<decimal>("TotalSold")
                         .ValueGeneratedOnAdd()
                         .HasPrecision(18, 3)
                         .HasColumnType("decimal(18,3)")
                         .HasDefaultValue(0m);
 
-                    b.HasKey("ProductId");
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedById")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CompanyId")
+                        .HasDatabaseName("IX_ProductStats_Company");
+
+                    b.HasIndex("ProductId")
+                        .IsUnique()
+                        .HasDatabaseName("IX_ProductStats_Product");
 
                     b.ToTable("ProductStats", (string)null);
                 });
@@ -2438,6 +2340,9 @@ namespace ModularERP.Migrations.Finance
                     b.Property<string>("Attachments")
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
+
+                    b.Property<Guid>("CompanyId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("ConfirmedAt")
                         .HasColumnType("datetime2");
@@ -2514,6 +2419,9 @@ namespace ModularERP.Migrations.Finance
                     b.HasKey("Id");
 
                     b.HasIndex("ApprovedBy");
+
+                    b.HasIndex("CompanyId")
+                        .HasDatabaseName("IX_Requisition_Company");
 
                     b.HasIndex("ConfirmedBy");
 
@@ -2801,6 +2709,9 @@ namespace ModularERP.Migrations.Finance
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid>("CompanyId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -2855,6 +2766,8 @@ namespace ModularERP.Migrations.Finance
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CompanyId");
 
                     b.HasIndex("CreatedAt")
                         .HasDatabaseName("IX_StockTransaction_Date");
@@ -2975,6 +2888,9 @@ namespace ModularERP.Migrations.Finance
                     b.Property<Guid?>("ApprovedBy")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid>("CompanyId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -3030,6 +2946,8 @@ namespace ModularERP.Migrations.Finance
                     b.HasKey("Id");
 
                     b.HasIndex("ApprovedBy");
+
+                    b.HasIndex("CompanyId");
 
                     b.HasIndex("DateTime")
                         .HasDatabaseName("IX_Stocktaking_DateTime");
@@ -3422,6 +3340,150 @@ namespace ModularERP.Migrations.Finance
                     b.ToTable("Warehouses", (string)null);
                 });
 
+            modelBuilder.Entity("Product", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Barcode")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<Guid?>("BrandId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("CategoryId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CompanyId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedById")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal?>("Discount")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<string>("DiscountType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal?>("InitialStock")
+                        .HasPrecision(18, 3)
+                        .HasColumnType("decimal(18,3)");
+
+                    b.Property<string>("InternalNotes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<decimal?>("LowStockThreshold")
+                        .HasPrecision(18, 3)
+                        .HasColumnType("decimal(18,3)");
+
+                    b.Property<decimal?>("MinPrice")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("Photo")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<decimal?>("ProfitMargin")
+                        .HasPrecision(10, 4)
+                        .HasColumnType("decimal(10,4)");
+
+                    b.Property<decimal?>("PurchasePrice")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<string>("SKU")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<decimal?>("SellingPrice")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasDefaultValue("Active");
+
+                    b.Property<Guid?>("SupplierId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Tags")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("TrackStock")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedById")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BrandId")
+                        .HasDatabaseName("IX_Product_Brand");
+
+                    b.HasIndex("CategoryId")
+                        .HasDatabaseName("IX_Product_Category");
+
+                    b.HasIndex("CompanyId")
+                        .HasDatabaseName("IX_Product_Company");
+
+                    b.HasIndex("LowStockThreshold")
+                        .HasDatabaseName("IX_Product_LowStock");
+
+                    b.HasIndex("Status")
+                        .HasDatabaseName("IX_Product_Status");
+
+                    b.HasIndex("SupplierId")
+                        .HasDatabaseName("IX_Product_Supplier");
+
+                    b.HasIndex("TrackStock")
+                        .HasDatabaseName("IX_Product_TrackStock");
+
+                    b.HasIndex("TenantId", "Barcode")
+                        .IsUnique()
+                        .HasDatabaseName("IX_Product_Tenant_Barcode")
+                        .HasFilter("[Barcode] IS NOT NULL");
+
+                    b.HasIndex("TenantId", "SKU")
+                        .IsUnique()
+                        .HasDatabaseName("IX_Product_Tenant_SKU")
+                        .HasFilter("[SKU] IS NOT NULL");
+
+                    b.ToTable("Products", (string)null);
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole<System.Guid>", null)
@@ -3708,7 +3770,7 @@ namespace ModularERP.Migrations.Finance
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ModularERP.Modules.Inventory.Features.Products.Models.Product", "Product")
+                    b.HasOne("Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -3721,7 +3783,7 @@ namespace ModularERP.Migrations.Finance
 
             modelBuilder.Entity("ModularERP.Modules.Inventory.Features.PriceLists.Models.PriceCalculationLog", b =>
                 {
-                    b.HasOne("ModularERP.Modules.Inventory.Features.Products.Models.Product", "Product")
+                    b.HasOne("Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Restrict);
@@ -3738,11 +3800,19 @@ namespace ModularERP.Migrations.Finance
 
             modelBuilder.Entity("ModularERP.Modules.Inventory.Features.PriceLists.Models.PriceList", b =>
                 {
+                    b.HasOne("ModularERP.Modules.Finance.Features.Companys.Models.Company", "Company")
+                        .WithMany()
+                        .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("ModularERP.Modules.Finance.Features.Currencies.Models.Currency", "Currency")
                         .WithMany()
                         .HasForeignKey("CurrencyCode")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.Navigation("Company");
 
                     b.Navigation("Currency");
                 });
@@ -3766,7 +3836,7 @@ namespace ModularERP.Migrations.Finance
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ModularERP.Modules.Inventory.Features.Products.Models.Product", "Product")
+                    b.HasOne("Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Restrict);
@@ -3865,7 +3935,7 @@ namespace ModularERP.Migrations.Finance
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ModularERP.Modules.Inventory.Features.Products.Models.Product", "Product")
+                    b.HasOne("Product", "Product")
                         .WithMany("ItemGroupItems")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -3876,30 +3946,6 @@ namespace ModularERP.Migrations.Finance
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("ModularERP.Modules.Inventory.Features.Products.Models.Product", b =>
-                {
-                    b.HasOne("ModularERP.Modules.Inventory.Features.ProductSettings.Models.Brand", "Brand")
-                        .WithMany()
-                        .HasForeignKey("BrandId")
-                        .OnDelete(DeleteBehavior.Restrict);
-
-                    b.HasOne("ModularERP.Modules.Inventory.Features.ProductSettings.Models.Category", "Category")
-                        .WithMany()
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Restrict);
-
-                    b.HasOne("ModularERP.Modules.Inventory.Features.Suppliers.Models.Supplier", "Supplier")
-                        .WithMany("Products")
-                        .HasForeignKey("SupplierId")
-                        .OnDelete(DeleteBehavior.Restrict);
-
-                    b.Navigation("Brand");
-
-                    b.Navigation("Category");
-
-                    b.Navigation("Supplier");
-                });
-
             modelBuilder.Entity("ModularERP.Modules.Inventory.Features.Products.Models.ProductCustomFieldValue", b =>
                 {
                     b.HasOne("ModularERP.Modules.Inventory.Features.ProductSettings.Models.CustomField", "CustomField")
@@ -3908,7 +3954,7 @@ namespace ModularERP.Migrations.Finance
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("ModularERP.Modules.Inventory.Features.Products.Models.Product", "Product")
+                    b.HasOne("Product", "Product")
                         .WithMany("CustomFieldValues")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -3921,18 +3967,26 @@ namespace ModularERP.Migrations.Finance
 
             modelBuilder.Entity("ModularERP.Modules.Inventory.Features.Products.Models.ProductStats", b =>
                 {
-                    b.HasOne("ModularERP.Modules.Inventory.Features.Products.Models.Product", "Product")
+                    b.HasOne("ModularERP.Modules.Finance.Features.Companys.Models.Company", "Company")
+                        .WithMany()
+                        .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Product", "Product")
                         .WithOne()
                         .HasForeignKey("ModularERP.Modules.Inventory.Features.Products.Models.ProductStats", "ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Company");
 
                     b.Navigation("Product");
                 });
 
             modelBuilder.Entity("ModularERP.Modules.Inventory.Features.Products.Models.ProductTaxProfile", b =>
                 {
-                    b.HasOne("ModularERP.Modules.Inventory.Features.Products.Models.Product", "Product")
+                    b.HasOne("Product", "Product")
                         .WithMany("ProductTaxProfiles")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -3955,6 +4009,12 @@ namespace ModularERP.Migrations.Finance
                         .WithMany()
                         .HasForeignKey("ApprovedBy")
                         .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("ModularERP.Modules.Finance.Features.Companys.Models.Company", "Company")
+                        .WithMany()
+                        .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.HasOne("ModularERP.Common.Models.ApplicationUser", "ConfirmedByUser")
                         .WithMany()
@@ -3989,6 +4049,8 @@ namespace ModularERP.Migrations.Finance
 
                     b.Navigation("ApprovedByUser");
 
+                    b.Navigation("Company");
+
                     b.Navigation("ConfirmedByUser");
 
                     b.Navigation("ParentRequisition");
@@ -4022,7 +4084,7 @@ namespace ModularERP.Migrations.Finance
 
             modelBuilder.Entity("ModularERP.Modules.Inventory.Features.Requisitions.Models.RequisitionItem", b =>
                 {
-                    b.HasOne("ModularERP.Modules.Inventory.Features.Products.Models.Product", "Product")
+                    b.HasOne("Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -4077,12 +4139,18 @@ namespace ModularERP.Migrations.Finance
 
             modelBuilder.Entity("ModularERP.Modules.Inventory.Features.StockTransactions.Models.StockTransaction", b =>
                 {
+                    b.HasOne("ModularERP.Modules.Finance.Features.Companys.Models.Company", "Company")
+                        .WithMany()
+                        .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("ModularERP.Common.Models.ApplicationUser", "CreatedByUser")
                         .WithMany()
                         .HasForeignKey("CreatedByUserId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("ModularERP.Modules.Inventory.Features.Products.Models.Product", "Product")
+                    b.HasOne("Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -4094,6 +4162,8 @@ namespace ModularERP.Migrations.Finance
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.Navigation("Company");
+
                     b.Navigation("CreatedByUser");
 
                     b.Navigation("Product");
@@ -4103,7 +4173,7 @@ namespace ModularERP.Migrations.Finance
 
             modelBuilder.Entity("ModularERP.Modules.Inventory.Features.Stocktaking.Models.StockSnapshot", b =>
                 {
-                    b.HasOne("ModularERP.Modules.Inventory.Features.Products.Models.Product", "Product")
+                    b.HasOne("Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -4145,6 +4215,12 @@ namespace ModularERP.Migrations.Finance
                         .HasForeignKey("ApprovedBy")
                         .OnDelete(DeleteBehavior.Restrict);
 
+                    b.HasOne("ModularERP.Modules.Finance.Features.Companys.Models.Company", "Company")
+                        .WithMany()
+                        .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("ModularERP.Common.Models.ApplicationUser", "PostedByUser")
                         .WithMany()
                         .HasForeignKey("PostedBy")
@@ -4158,6 +4234,8 @@ namespace ModularERP.Migrations.Finance
 
                     b.Navigation("ApprovedByUser");
 
+                    b.Navigation("Company");
+
                     b.Navigation("PostedByUser");
 
                     b.Navigation("Warehouse");
@@ -4165,7 +4243,7 @@ namespace ModularERP.Migrations.Finance
 
             modelBuilder.Entity("ModularERP.Modules.Inventory.Features.Stocktaking.Models.StocktakingLine", b =>
                 {
-                    b.HasOne("ModularERP.Modules.Inventory.Features.Products.Models.Product", "Product")
+                    b.HasOne("Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -4210,6 +4288,38 @@ namespace ModularERP.Migrations.Finance
                         .IsRequired();
 
                     b.Navigation("Company");
+                });
+
+            modelBuilder.Entity("Product", b =>
+                {
+                    b.HasOne("ModularERP.Modules.Inventory.Features.ProductSettings.Models.Brand", "Brand")
+                        .WithMany()
+                        .HasForeignKey("BrandId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("ModularERP.Modules.Inventory.Features.ProductSettings.Models.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("ModularERP.Modules.Finance.Features.Companys.Models.Company", "Company")
+                        .WithMany()
+                        .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("ModularERP.Modules.Inventory.Features.Suppliers.Models.Supplier", "Supplier")
+                        .WithMany("Products")
+                        .HasForeignKey("SupplierId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("Brand");
+
+                    b.Navigation("Category");
+
+                    b.Navigation("Company");
+
+                    b.Navigation("Supplier");
                 });
 
             modelBuilder.Entity("ModularERP.Common.Models.ApplicationUser", b =>
@@ -4317,15 +4427,6 @@ namespace ModularERP.Migrations.Finance
                     b.Navigation("Items");
                 });
 
-            modelBuilder.Entity("ModularERP.Modules.Inventory.Features.Products.Models.Product", b =>
-                {
-                    b.Navigation("CustomFieldValues");
-
-                    b.Navigation("ItemGroupItems");
-
-                    b.Navigation("ProductTaxProfiles");
-                });
-
             modelBuilder.Entity("ModularERP.Modules.Inventory.Features.Requisitions.Models.Requisition", b =>
                 {
                     b.Navigation("ApprovalLogs");
@@ -4364,6 +4465,15 @@ namespace ModularERP.Migrations.Finance
             modelBuilder.Entity("ModularERP.Modules.Inventory.Features.TaxManagement.Models.TaxProfile", b =>
                 {
                     b.Navigation("TaxProfileComponents");
+                });
+
+            modelBuilder.Entity("Product", b =>
+                {
+                    b.Navigation("CustomFieldValues");
+
+                    b.Navigation("ItemGroupItems");
+
+                    b.Navigation("ProductTaxProfiles");
                 });
 #pragma warning restore 612, 618
         }

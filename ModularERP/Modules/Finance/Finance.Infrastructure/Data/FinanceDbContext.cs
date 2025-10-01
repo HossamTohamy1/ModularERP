@@ -716,6 +716,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
             // ============================================
             // PRODUCTS CONFIGURATION
             // ============================================
+            // Product Configuration
             builder.Entity<Product>(entity =>
             {
                 entity.ToTable("Products");
@@ -744,28 +745,20 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .HasDefaultValue(true);
 
                 // Decimal precision
-                entity.Property(e => e.PurchasePrice)
-                      .HasPrecision(18, 4);
-
-                entity.Property(e => e.SellingPrice)
-                      .HasPrecision(18, 4);
-
-                entity.Property(e => e.MinPrice)
-                      .HasPrecision(18, 4);
-
-                entity.Property(e => e.Discount)
-                      .HasPrecision(18, 4);
-
-                entity.Property(e => e.ProfitMargin)
-                      .HasPrecision(10, 4);
-
-                entity.Property(e => e.InitialStock)
-                      .HasPrecision(18, 3);
-
-                entity.Property(e => e.LowStockThreshold)
-                      .HasPrecision(18, 3);
+                entity.Property(e => e.PurchasePrice).HasPrecision(18, 4);
+                entity.Property(e => e.SellingPrice).HasPrecision(18, 4);
+                entity.Property(e => e.MinPrice).HasPrecision(18, 4);
+                entity.Property(e => e.Discount).HasPrecision(18, 4);
+                entity.Property(e => e.ProfitMargin).HasPrecision(10, 4);
+                entity.Property(e => e.InitialStock).HasPrecision(18, 3);
+                entity.Property(e => e.LowStockThreshold).HasPrecision(18, 3);
 
                 // Relationships
+                entity.HasOne(e => e.Company)
+                      .WithMany()
+                      .HasForeignKey(e => e.CompanyId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
                 entity.HasOne(e => e.Category)
                       .WithMany()
                       .HasForeignKey(e => e.CategoryId)
@@ -797,24 +790,15 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .OnDelete(DeleteBehavior.Cascade);
 
                 // Performance indexes
-                entity.HasIndex(e => e.Status)
-                      .HasDatabaseName("IX_Product_Status");
-
-                entity.HasIndex(e => e.TrackStock)
-                      .HasDatabaseName("IX_Product_TrackStock");
-
-                entity.HasIndex(e => e.LowStockThreshold)
-                      .HasDatabaseName("IX_Product_LowStock");
-
-                entity.HasIndex(e => e.CategoryId)
-                      .HasDatabaseName("IX_Product_Category");
-
-                entity.HasIndex(e => e.BrandId)
-                      .HasDatabaseName("IX_Product_Brand");
-
-                entity.HasIndex(e => e.SupplierId)
-                      .HasDatabaseName("IX_Product_Supplier");
+                entity.HasIndex(e => e.CompanyId).HasDatabaseName("IX_Product_Company");
+                entity.HasIndex(e => e.Status).HasDatabaseName("IX_Product_Status");
+                entity.HasIndex(e => e.TrackStock).HasDatabaseName("IX_Product_TrackStock");
+                entity.HasIndex(e => e.LowStockThreshold).HasDatabaseName("IX_Product_LowStock");
+                entity.HasIndex(e => e.CategoryId).HasDatabaseName("IX_Product_Category");
+                entity.HasIndex(e => e.BrandId).HasDatabaseName("IX_Product_Brand");
+                entity.HasIndex(e => e.SupplierId).HasDatabaseName("IX_Product_Supplier");
             });
+
 
             // ============================================
             // SERVICES CONFIGURATION
@@ -1053,6 +1037,11 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .HasForeignKey(e => e.CreatedByUserId)
                       .OnDelete(DeleteBehavior.Restrict);
 
+                entity.HasOne(e => e.Company)
+                      .WithMany()
+                      .HasForeignKey(e => e.CompanyId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
                 // Performance indexes
                 entity.HasIndex(e => e.ProductId)
                       .HasDatabaseName("IX_StockTransaction_Product");
@@ -1124,6 +1113,46 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
             // ============================================
             // REQUISITIONS CONFIGURATION
             // ============================================
+            // ProductStats Configuration
+            builder.Entity<ProductStats>(entity =>
+            {
+                entity.ToTable("ProductStats");
+
+                // Primary Key من BaseEntity (Id)
+                entity.HasKey(e => e.Id);
+
+                // Unique index على ProductId
+                entity.HasIndex(e => e.ProductId)
+                      .IsUnique()
+                      .HasDatabaseName("IX_ProductStats_Product");
+
+                // One-to-One relationship with Product
+                entity.HasOne(e => e.Product)
+                      .WithOne()
+                      .HasForeignKey<ProductStats>(e => e.ProductId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                // Company relationship
+                entity.HasOne(e => e.Company)
+                      .WithMany()
+                      .HasForeignKey(e => e.CompanyId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // Decimal precision
+                entity.Property(e => e.TotalSold).HasPrecision(18, 3).HasDefaultValue(0);
+                entity.Property(e => e.SoldLast28Days).HasPrecision(18, 3).HasDefaultValue(0);
+                entity.Property(e => e.SoldLast7Days).HasPrecision(18, 3).HasDefaultValue(0);
+                entity.Property(e => e.OnHandStock).HasPrecision(18, 3).HasDefaultValue(0);
+                entity.Property(e => e.AvgUnitCost).HasPrecision(18, 4).HasDefaultValue(0);
+                entity.Property(e => e.LastUpdated).HasDefaultValueSql("GETUTCDATE()");
+
+                // Indexes
+                entity.HasIndex(e => e.CompanyId).HasDatabaseName("IX_ProductStats_Company");
+            });
+
+            // ============================================
+            // REQUISITIONS CONFIGURATION
+            // ============================================
             builder.Entity<Requisition>(entity =>
             {
                 entity.ToTable("Requisitions");
@@ -1142,6 +1171,11 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .HasDefaultValue(RequisitionStatus.Draft);
 
                 // Relationships
+                entity.HasOne(e => e.Company)
+                      .WithMany()
+                      .HasForeignKey(e => e.CompanyId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
                 entity.HasOne(e => e.Warehouse)
                       .WithMany()
                       .HasForeignKey(e => e.WarehouseId)
@@ -1190,22 +1224,25 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .OnDelete(DeleteBehavior.Cascade);
 
                 // Indexes
+                entity.HasIndex(e => e.CompanyId)
+                      .HasDatabaseName("IX_Requisition_Company");
+
                 entity.HasIndex(e => e.Status)
                       .HasDatabaseName("IX_Requisition_Status");
 
                 entity.HasIndex(e => e.Date)
                       .HasDatabaseName("IX_Requisition_Date");
 
-                entity.HasIndex(e => e.Type)
-                      .HasDatabaseName("IX_Requisition_Type");
-
                 entity.HasIndex(e => e.WarehouseId)
                       .HasDatabaseName("IX_Requisition_Warehouse");
-            });
 
+                entity.HasIndex(e => e.Type)
+                      .HasDatabaseName("IX_Requisition_Type");
+            });
             // ============================================
             // REQUISITION ITEMS CONFIGURATION
             // ============================================
+
             builder.Entity<RequisitionItem>(entity =>
             {
                 entity.ToTable("RequisitionItems");
@@ -1225,6 +1262,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
 
                 entity.Property(e => e.LineTotal)
                       .HasPrecision(18, 4);
+
 
                 // Relationships
                 entity.HasOne(e => e.Product)
@@ -1321,6 +1359,11 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .WithOne(e => e.Stocktaking)
                       .HasForeignKey(e => e.StocktakingId)
                       .OnDelete(DeleteBehavior.Cascade);
+
+                entity.HasOne(e => e.Company)
+                      .WithMany()
+                      .HasForeignKey(e => e.CompanyId)
+                      .OnDelete(DeleteBehavior.Restrict);
 
                 // Indexes
                 entity.HasIndex(e => e.Status)
@@ -1483,6 +1526,11 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .WithOne(e => e.PriceList)
                       .HasForeignKey(e => e.PriceListId)
                       .OnDelete(DeleteBehavior.Cascade);
+
+                entity.HasOne(e => e.Company)
+                      .WithMany()
+                      .HasForeignKey(e => e.CompanyId)
+                      .OnDelete(DeleteBehavior.Restrict);
 
                 // Indexes
                 entity.HasIndex(e => e.Type)

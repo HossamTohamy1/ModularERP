@@ -4,11 +4,14 @@ using ModularERP.Modules.Inventory.Features.Warehouses.Models;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using ModularERP.Common.Enum.Inventory_Enum;
+using ModularERP.Modules.Finance.Features.Companys.Models;
 
 namespace ModularERP.Modules.Inventory.Features.StockTransactions.Models
 {
     public class StockTransaction : BaseEntity
     {
+        public Guid CompanyId { get; set; }
+
         public Guid ProductId { get; set; }
 
         public Guid WarehouseId { get; set; }
@@ -37,6 +40,8 @@ namespace ModularERP.Modules.Inventory.Features.StockTransactions.Models
         public bool IsDeleted { get; set; }
 
         // Navigation Properties
+        public virtual Company? Company { get; set; }
+
         public virtual Product Product { get; set; } = null!;
         public virtual Warehouse Warehouse { get; set; } = null!;
         public virtual ApplicationUser? CreatedByUser { get; set; }

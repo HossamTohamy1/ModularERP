@@ -136,7 +136,7 @@ namespace ModularERP.Common.Middleware
             }
             else
             {
-                context.Response.Headers["X-Correlation-Id"] = correlationId; // overwrite
+                context.Response.Headers["X-Correlation-Id"] = correlationId; 
             }
 
             var jsonOptions = new JsonSerializerOptions

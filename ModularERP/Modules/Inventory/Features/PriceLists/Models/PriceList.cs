@@ -1,5 +1,6 @@
 ﻿using ModularERP.Common.Enum.Inventory_Enum;
 using ModularERP.Common.Models;
+using ModularERP.Modules.Finance.Features.Companys.Models;
 using ModularERP.Modules.Finance.Features.Currencies.Models;
 using System.ComponentModel.DataAnnotations;
 
@@ -7,6 +8,8 @@ namespace ModularERP.Modules.Inventory.Features.PriceLists.Models
 {
     public class PriceList : BaseEntity
     {
+        public Guid CompanyId { get; set; }
+
         [Required]
         [MaxLength(200)]
         public string Name { get; set; } = string.Empty;
@@ -30,6 +33,8 @@ namespace ModularERP.Modules.Inventory.Features.PriceLists.Models
         public bool IsDeleted { get; set; }
 
         // Navigation Properties
+        public virtual Company? Company { get; set; }
+
         public virtual Currency Currency { get; set; } = null!;
         public virtual ICollection<PriceListItem> Items { get; set; } = new List<PriceListItem>();
         public virtual ICollection<PriceListRule> Rules { get; set; } = new List<PriceListRule>();

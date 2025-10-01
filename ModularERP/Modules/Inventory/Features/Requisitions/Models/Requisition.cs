@@ -1,5 +1,6 @@
 ﻿using ModularERP.Common.Enum.Inventory_Enum;
 using ModularERP.Common.Models;
+using ModularERP.Modules.Finance.Features.Companys.Models;
 using ModularERP.Modules.Inventory.Features.Suppliers.Models;
 using ModularERP.Modules.Inventory.Features.Warehouses.Models;
 using System.ComponentModel.DataAnnotations;
@@ -30,6 +31,7 @@ namespace ModularERP.Modules.Inventory.Features.Requisitions.Models
         public string? Attachments { get; set; }
 
         public RequisitionStatus Status { get; set; } = RequisitionStatus.Draft;
+        public Guid CompanyId { get; set; }
 
         // Workflow tracking
         public Guid? SubmittedBy { get; set; }
@@ -53,6 +55,7 @@ namespace ModularERP.Modules.Inventory.Features.Requisitions.Models
         public virtual Warehouse Warehouse { get; set; } = null!;
         public virtual Supplier? Supplier { get; set; }
         public virtual Requisition? ParentRequisition { get; set; }
+        public virtual Company? Company { get; set; }
 
         public virtual ApplicationUser? SubmittedByUser { get; set; }
         public virtual ApplicationUser? ApprovedByUser { get; set; }

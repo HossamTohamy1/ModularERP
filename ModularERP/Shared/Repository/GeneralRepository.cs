@@ -26,23 +26,19 @@ namespace ModularERP.SharedKernel.Repository
 
         private string? GetTenantId()
         {
-            // استخراج TenantId من الـ HTTP Context
             var httpContext = _httpContextAccessor.HttpContext;
 
-            // طريقة 1: من الـ Headers
             if (httpContext?.Request.Headers.TryGetValue("X-Tenant-ID", out var tenantHeader) == true)
             {
                 return tenantHeader.FirstOrDefault();
             }
 
-            // طريقة 2: من الـ Claims في JWT Token
             var tenantClaim = httpContext?.User?.FindFirst("tenant_id")?.Value;
             if (!string.IsNullOrEmpty(tenantClaim))
             {
                 return tenantClaim;
             }
 
-            // طريقة 3: من الـ Subdomain
             var host = httpContext?.Request.Host.Host;
             if (!string.IsNullOrEmpty(host) && host.Contains('.'))
             {
@@ -63,7 +59,6 @@ namespace ModularERP.SharedKernel.Repository
                 throw new InvalidOperationException("Tenant ID is required but not found");
             }
 
-            // تطبيق فلتر الـ TenantId بس، مش الـ CompanyId
             if (typeof(T).GetProperty("TenantId") != null)
             {
                 if (Guid.TryParse(_tenantId, out var tenantId))
@@ -77,12 +72,10 @@ namespace ModularERP.SharedKernel.Repository
 
         public async Task AddAsync(T entity)
         {
-            // تعيين TenantId فقط للكيانات اللي محتاجة
             if (typeof(T).GetProperty("TenantId") != null && !string.IsNullOrEmpty(_tenantId))
             {
                 if (Guid.TryParse(_tenantId, out var tenantId))
                 {
-                    // تأكد إن الـ TenantId مش متعين من قبل
                     var currentTenantId = (Guid?)entity.GetType().GetProperty("TenantId")?.GetValue(entity);
                     if (currentTenantId == Guid.Empty || currentTenantId == null)
                     {
@@ -91,9 +84,7 @@ namespace ModularERP.SharedKernel.Repository
                 }
             }
 
-            // 👈 هنا مش هنعمل override للـ CompanyId خالص
-            // الـ CompanyId هيجي من الـ Handler أو الـ Client مباشرة
-
+    
             await _dbSet.AddAsync(entity);
         }
 
@@ -122,12 +113,10 @@ namespace ModularERP.SharedKernel.Repository
             return GetAll().Where(expression);
         }
 
-        // للحصول على البيانات بـ CompanyId معينة داخل نفس الـ Tenant
         public IQueryable<T> GetByCompanyId(Guid companyId)
         {
             var query = GetAll();
 
-            // إذا الـ Entity عندها CompanyId، فلترها
             if (typeof(T).GetProperty("CompanyId") != null)
             {
                 query = query.Where(e => EF.Property<Guid>(e, "CompanyId") == companyId);
@@ -138,7 +127,6 @@ namespace ModularERP.SharedKernel.Repository
 
         public async Task Update(T entity)
         {
-            // التأكد من أن الكيان ينتمي لنفس الـ Tenant (مش الـ Company)
             var existingEntity = await GetByIDWithTracking(entity.Id);
             if (existingEntity == null)
             {
@@ -197,7 +185,6 @@ namespace ModularERP.SharedKernel.Repository
 
         public async Task AddRangeAsync(IEnumerable<T> entities)
         {
-            // تعيين TenantId لجميع الكيانات (مش CompanyId)
             foreach (var entity in entities)
             {
                 if (typeof(T).GetProperty("TenantId") != null && !string.IsNullOrEmpty(_tenantId))

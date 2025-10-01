@@ -36,6 +36,9 @@ using ModularERP.Modules.Finance.Finance.Infrastructure.Seeds;
 using ModularERP.Modules.Finance.Features.Taxs.Mapping;
 using ModularERP.Modules.Finance.Features.Taxs.Handlers;
 using ModularERP.Modules.Finance.Features.Taxs.Service;
+using ModularERP.Modules.Inventory.Features.Warehouses.Mapping;
+using ModularERP.Modules.Inventory.Features.Products.Mapping;
+using ModularERP.Modules.Inventory.Features.ProductSettings.Service;
 
 namespace ModularERP
 {
@@ -126,6 +129,7 @@ namespace ModularERP
                 builder.Services.AddCompanySerivces();
                 builder.Services.AddGlAccountServices();
                 builder.Services.AddTaxServices();
+                builder.Services.AddCategoryServices();
 
                 // ---------------------------
                 // 🟢 MediatR + AutoMapper
@@ -146,6 +150,8 @@ namespace ModularERP
                     cfg.AddProfile<IncomeVoucherMappingProfile>();
                     cfg.AddProfile<GlAccountMappingProfile>();
                     cfg.AddProfile<TaxProfile>();
+                    cfg.AddProfile<WarehouseProfile>();
+                    cfg.AddProfile<ProductMappingProfile>();
                 });
 
                 // ---------------------------
