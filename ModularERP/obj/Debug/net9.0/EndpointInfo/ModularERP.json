@@ -590,6 +590,216 @@
         }
       }
     },
+    "/api/Brands": {
+      "get": {
+        "tags": [
+          "Brands"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.BrandDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.BrandDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.BrandDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Brands"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.CreateBrandDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.CreateBrandDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.CreateBrandDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.BrandDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.BrandDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.BrandDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Brands/{id}": {
+      "get": {
+        "tags": [
+          "Brands"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.BrandDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.BrandDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.BrandDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Brands"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.UpdateBrandDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.UpdateBrandDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.UpdateBrandDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.BrandDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.BrandDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.BrandDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Brands"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Categories": {
       "get": {
         "tags": [
@@ -636,17 +846,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.PaginatedResult`1[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.CategoryListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Category.PaginatedResult`1[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Category.CategoryListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.PaginatedResult`1[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.CategoryListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Category.PaginatedResult`1[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Category.CategoryListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.PaginatedResult`1[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.CategoryListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                  "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Category.PaginatedResult`1[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Category.CategoryListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
                 }
               }
             }
@@ -710,17 +920,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.CategoryResponseDto"
+                  "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Category.CategoryResponseDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.CategoryResponseDto"
+                  "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Category.CategoryResponseDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.CategoryResponseDto"
+                  "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Category.CategoryResponseDto"
                 }
               }
             }
@@ -770,17 +980,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.CategoryResponseDto"
+                  "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Category.CategoryResponseDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.CategoryResponseDto"
+                  "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Category.CategoryResponseDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.CategoryResponseDto"
+                  "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Category.CategoryResponseDto"
                 }
               }
             }
@@ -893,17 +1103,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.CategoryResponseDto"
+                  "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Category.CategoryResponseDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.CategoryResponseDto"
+                  "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Category.CategoryResponseDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.CategoryResponseDto"
+                  "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Category.CategoryResponseDto"
                 }
               }
             }
@@ -1025,7 +1235,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.CategoryHierarchyDto"
+                    "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Category.CategoryHierarchyDto"
                   }
                 }
               },
@@ -1033,7 +1243,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.CategoryHierarchyDto"
+                    "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Category.CategoryHierarchyDto"
                   }
                 }
               },
@@ -1041,7 +1251,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.CategoryHierarchyDto"
+                    "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Category.CategoryHierarchyDto"
                   }
                 }
               }
@@ -5017,6 +5227,43 @@
         },
         "additionalProperties": false
       },
+      "ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.BrandDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.BrandDto"
+          },
+          "financeErrorCode": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
+          },
+          "traceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "validationErrors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
       "ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Inventory.Features.Products.DTO.PaginatedProductListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
         "type": "object",
         "properties": {
@@ -5421,6 +5668,47 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.WalletPermissions.DTO.WalletPermissionDto"
+            },
+            "nullable": true
+          },
+          "financeErrorCode": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
+          },
+          "traceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "validationErrors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.BrandDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.BrandDto"
             },
             "nullable": true
           },
@@ -6888,7 +7176,91 @@
         },
         "additionalProperties": false
       },
-      "ModularERP.Modules.Inventory.Features.ProductSettings.DTO.CategoryAttachmentDto": {
+      "ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.BrandDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "logoPath": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.CreateBrandDto": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
+          },
+          "description": {
+            "maxLength": 500,
+            "type": "string",
+            "nullable": true
+          },
+          "logoPath": {
+            "maxLength": 500,
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.UpdateBrandDto": {
+        "required": [
+          "id",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
+          },
+          "description": {
+            "maxLength": 500,
+            "type": "string",
+            "nullable": true
+          },
+          "logoPath": {
+            "maxLength": 500,
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Category.CategoryAttachmentDto": {
         "type": "object",
         "properties": {
           "id": {
@@ -6931,7 +7303,7 @@
         },
         "additionalProperties": false
       },
-      "ModularERP.Modules.Inventory.Features.ProductSettings.DTO.CategoryHierarchyDto": {
+      "ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Category.CategoryHierarchyDto": {
         "type": "object",
         "properties": {
           "id": {
@@ -6958,7 +7330,7 @@
         },
         "additionalProperties": false
       },
-      "ModularERP.Modules.Inventory.Features.ProductSettings.DTO.CategoryListDto": {
+      "ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Category.CategoryListDto": {
         "type": "object",
         "properties": {
           "id": {
@@ -6997,14 +7369,14 @@
           "attachments": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.CategoryAttachmentDto"
+              "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Category.CategoryAttachmentDto"
             },
             "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "ModularERP.Modules.Inventory.Features.ProductSettings.DTO.CategoryResponseDto": {
+      "ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Category.CategoryResponseDto": {
         "type": "object",
         "properties": {
           "id": {
@@ -7040,7 +7412,7 @@
           "attachments": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.CategoryAttachmentDto"
+              "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Category.CategoryAttachmentDto"
             },
             "nullable": true
           },
@@ -7051,13 +7423,13 @@
         },
         "additionalProperties": false
       },
-      "ModularERP.Modules.Inventory.Features.ProductSettings.DTO.PaginatedResult`1[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.CategoryListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+      "ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Category.PaginatedResult`1[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Category.CategoryListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
         "type": "object",
         "properties": {
           "items": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.CategoryListDto"
+              "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Category.CategoryListDto"
             },
             "nullable": true
           },

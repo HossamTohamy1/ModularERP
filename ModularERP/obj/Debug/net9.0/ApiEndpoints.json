@@ -356,6 +356,135 @@
     ]
   },
   {
+    "ContainingType": "ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.BrandsController",
+    "Method": "GetAll",
+    "RelativePath": "api/Brands",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[System.Collections.Generic.List\u00601[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.BrandDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.BrandsController",
+    "Method": "Create",
+    "RelativePath": "api/Brands",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.CreateBrandDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.BrandDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.BrandsController",
+    "Method": "GetById",
+    "RelativePath": "api/Brands/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.BrandDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.BrandsController",
+    "Method": "Update",
+    "RelativePath": "api/Brands/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.UpdateBrandDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.BrandDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.BrandsController",
+    "Method": "Delete",
+    "RelativePath": "api/Brands/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.CategoriesController",
     "Method": "GetAll",
     "RelativePath": "api/Categories",
@@ -386,7 +515,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ModularERP.Modules.Inventory.Features.ProductSettings.DTO.PaginatedResult\u00601[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.CategoryListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Category.PaginatedResult\u00601[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Category.CategoryListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -427,7 +556,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ModularERP.Modules.Inventory.Features.ProductSettings.DTO.CategoryResponseDto",
+        "Type": "ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Category.CategoryResponseDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -498,7 +627,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ModularERP.Modules.Inventory.Features.ProductSettings.DTO.CategoryResponseDto",
+        "Type": "ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Category.CategoryResponseDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -563,7 +692,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ModularERP.Modules.Inventory.Features.ProductSettings.DTO.CategoryResponseDto",
+        "Type": "ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Category.CategoryResponseDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -641,7 +770,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.CategoryHierarchyDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Category.CategoryHierarchyDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

@@ -39,6 +39,7 @@ using ModularERP.Modules.Finance.Features.Taxs.Service;
 using ModularERP.Modules.Inventory.Features.Warehouses.Mapping;
 using ModularERP.Modules.Inventory.Features.Products.Mapping;
 using ModularERP.Modules.Inventory.Features.ProductSettings.Service;
+using ModularERP.Modules.Finance.Features.Services_For_Finance;
 
 namespace ModularERP
 {
@@ -129,30 +130,13 @@ namespace ModularERP
                 builder.Services.AddCompanySerivces();
                 builder.Services.AddGlAccountServices();
                 builder.Services.AddTaxServices();
-                builder.Services.AddCategoryServices();
+                builder.Services.AddProductSettingsServices();
+                builder.Services.AddAllEntitiesSettingsServices();
 
                 // ---------------------------
                 // 🟢 MediatR + AutoMapper
                 // ---------------------------
-                builder.Services.AddMediatR(cfg =>
-                {
-                    cfg.RegisterServicesFromAssembly(typeof(CreateTreasuryHandler).Assembly);
-                    cfg.RegisterServicesFromAssembly(typeof(CreateCompanyHandler).Assembly);
-                    cfg.RegisterServicesFromAssembly(typeof(CreateGlAccountHandler).Assembly);
-                    cfg.RegisterServicesFromAssembly(typeof(CreateTaxCommandHandler).Assembly);
-                });
 
-                builder.Services.AddAutoMapper(cfg =>
-                {
-                    cfg.AddProfile<TreasuryMappingProfile>();
-                    cfg.AddProfile<BankAccountMappingProfile>();
-                    cfg.AddProfile<ExpenseVoucherMappingProfile>();
-                    cfg.AddProfile<IncomeVoucherMappingProfile>();
-                    cfg.AddProfile<GlAccountMappingProfile>();
-                    cfg.AddProfile<TaxProfile>();
-                    cfg.AddProfile<WarehouseProfile>();
-                    cfg.AddProfile<ProductMappingProfile>();
-                });
 
                 // ---------------------------
                 // 🟢 Validators

@@ -2,8 +2,10 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ModularERP.Modules.Inventory.Features.ProductSettings.Commends;
-using ModularERP.Modules.Inventory.Features.ProductSettings.DTO;
+using ModularERP.Modules.Inventory.Features.ProductSettings.Commends.Commends_Category;
+using ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Category;
 using ModularERP.Modules.Inventory.Features.ProductSettings.Qeuries;
+using ModularERP.Modules.Inventory.Features.ProductSettings.Qeuries.Qeuries_Category;
 
 namespace ModularERP.Modules.Inventory.Features.ProductSettings.Controllers
 {
@@ -18,9 +20,7 @@ namespace ModularERP.Modules.Inventory.Features.ProductSettings.Controllers
             _mediator = mediator;
         }
 
-        /// <summary>
-        /// Get all categories with pagination and filtering
-        /// </summary>
+  
         [HttpGet]
         [ProducesResponseType(typeof(PaginatedResult<CategoryListDto>), StatusCodes.Status200OK)]
         public async Task<IActionResult> GetAll(
@@ -34,9 +34,7 @@ namespace ModularERP.Modules.Inventory.Features.ProductSettings.Controllers
             return Ok(result);
         }
 
-        /// <summary>
-        /// Get category by ID
-        /// </summary>
+
         [HttpGet("{id:guid}")]
         [ProducesResponseType(typeof(CategoryResponseDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -47,9 +45,7 @@ namespace ModularERP.Modules.Inventory.Features.ProductSettings.Controllers
             return Ok(result);
         }
 
-        /// <summary>
-        /// Get category hierarchy (for dropdowns/tree views)
-        /// </summary>
+  
         [HttpGet("hierarchy")]
         [ProducesResponseType(typeof(List<CategoryHierarchyDto>), StatusCodes.Status200OK)]
         public async Task<IActionResult> GetHierarchy()
@@ -59,9 +55,7 @@ namespace ModularERP.Modules.Inventory.Features.ProductSettings.Controllers
             return Ok(result);
         }
 
-        /// <summary>
-        /// Create new category
-        /// </summary>
+
         [HttpPost]
         [ProducesResponseType(typeof(CategoryResponseDto), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -81,9 +75,7 @@ namespace ModularERP.Modules.Inventory.Features.ProductSettings.Controllers
             return BadRequest(result);
         }
 
-        /// <summary>
-        /// Update existing category
-        /// </summary>
+ 
         [HttpPut("{id:guid}")]
         [ProducesResponseType(typeof(CategoryResponseDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -100,9 +92,7 @@ namespace ModularERP.Modules.Inventory.Features.ProductSettings.Controllers
             return Ok(result);
         }
 
-        /// <summary>
-        /// Delete category (soft delete)
-        /// </summary>
+
         [HttpDelete("{id:guid}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -114,9 +104,7 @@ namespace ModularERP.Modules.Inventory.Features.ProductSettings.Controllers
             return Ok(result);
         }
 
-        /// <summary>
-        /// Delete specific attachment from category
-        /// </summary>
+ 
         [HttpDelete("{categoryId:guid}/attachments/{attachmentId:guid}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

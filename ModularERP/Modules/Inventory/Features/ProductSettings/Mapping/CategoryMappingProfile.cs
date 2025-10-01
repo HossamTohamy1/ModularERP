@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using ModularERP.Modules.Inventory.Features.ProductSettings.Models;
-using ModularERP.Modules.Inventory.Features.ProductSettings.DTO;
+using ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Category;
 
 namespace ModularERP.Modules.Inventory.Features.ProductSettings.Mapping
 {

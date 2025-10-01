@@ -910,3 +910,363 @@ WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
 2025-10-01 16:16:35.051 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.CategoriesController.GetHierarchy (ModularERP)'
 2025-10-01 16:16:35.053 +03:00 [INF] Request completed successfully with status code 200
 2025-10-01 16:16:35.054 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/Categories/hierarchy - 200 null application/json; charset=utf-8 20.6303ms
+2025-10-01 22:19:09.539 +03:00 [INF] Starting web host...
+2025-10-01 22:19:13.653 +03:00 [INF] Executed DbCommand (31ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-01 22:19:13.765 +03:00 [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-10-01 22:19:13.883 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-01 22:19:13.889 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-10-01 22:19:13.905 +03:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-10-01 22:19:14.003 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-10-01 22:19:14.020 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-01 22:19:14.025 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-10-01 22:19:14.034 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-10-01 22:19:14.049 +03:00 [INF] No migrations were applied. The database is already up to date.
+2025-10-01 22:19:14.056 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-10-01 22:19:14.321 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-10-01 22:19:14.328 +03:00 [INF] Master database initialized successfully
+2025-10-01 22:19:16.177 +03:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-10-01 22:19:16.350 +03:00 [INF] Now listening on: https://localhost:7168
+2025-10-01 22:19:16.352 +03:00 [INF] Now listening on: http://localhost:5004
+2025-10-01 22:19:16.448 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-01 22:19:16.449 +03:00 [INF] Hosting environment: Development
+2025-10-01 22:19:16.451 +03:00 [INF] Content root path: E:\ModelerERP\ModularERP\ModularERP
+2025-10-01 22:19:16.815 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-10-01 22:19:17.070 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 257.1413ms
+2025-10-01 22:19:17.076 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-01 22:19:17.086 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-10-01 22:19:17.105 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 29.1398ms
+2025-10-01 22:19:17.165 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 79.416ms
+2025-10-01 22:19:17.230 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-10-01 22:19:17.340 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 109.4708ms
+2025-10-01 22:25:03.592 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/Brands - null null
+2025-10-01 22:25:03.616 +03:00 [INF] Request started
+2025-10-01 22:25:03.620 +03:00 [INF] Processing request for tenant: 8bed874f-cf2a-4ffa-a188-4cfef779774a
+2025-10-01 22:25:03.624 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.BrandsController.GetAll (ModularERP)'
+2025-10-01 22:25:03.640 +03:00 [INF] Route matched with {action = "GetAll", controller = "Brands"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Collections.Generic.List`1[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.BrandDto]]]] GetAll() on controller ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.BrandsController (ModularERP).
+2025-10-01 22:25:03.647 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-10-01 22:25:03.755 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-10-01 22:25:04.118 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-10-01 22:25:04.212 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.BrandDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-01 22:25:04.241 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.BrandsController.GetAll (ModularERP) in 593.7123ms
+2025-10-01 22:25:04.244 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.BrandsController.GetAll (ModularERP)'
+2025-10-01 22:25:04.246 +03:00 [INF] Request completed successfully with status code 200
+2025-10-01 22:25:04.251 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/Brands - 200 null application/json; charset=utf-8 658.7557ms
+2025-10-01 22:27:42.647 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/Brands - application/json 584
+2025-10-01 22:27:42.653 +03:00 [INF] Request started
+2025-10-01 22:27:42.655 +03:00 [INF] Processing request for tenant: 8bed874f-cf2a-4ffa-a188-4cfef779774a
+2025-10-01 22:27:42.656 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.BrandsController.Create (ModularERP)'
+2025-10-01 22:27:42.664 +03:00 [INF] Route matched with {action = "Create", controller = "Brands"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.BrandDto]]] Create(ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.CreateBrandDto) on controller ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.BrandsController (ModularERP).
+2025-10-01 22:27:42.965 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.BrandDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-01 22:27:42.971 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.BrandsController.Create (ModularERP) in 303.1309ms
+2025-10-01 22:27:42.972 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.BrandsController.Create (ModularERP)'
+2025-10-01 22:27:42.974 +03:00 [INF] Request completed successfully with status code 200
+2025-10-01 22:27:42.976 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/Brands - 200 null application/json; charset=utf-8 328.8878ms
+2025-10-01 22:31:48.879 +03:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7168/api/Brands/{c4e59260-647a-4293-9cc2-243549746540} - application/json 623
+2025-10-01 22:31:48.885 +03:00 [INF] Request started
+2025-10-01 22:31:48.887 +03:00 [INF] Processing request for tenant: 8bed874f-cf2a-4ffa-a188-4cfef779774a
+2025-10-01 22:31:48.889 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.BrandsController.Update (ModularERP)'
+2025-10-01 22:31:48.893 +03:00 [INF] Route matched with {action = "Update", controller = "Brands"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.BrandDto]]] Update(System.Guid, ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.UpdateBrandDto) on controller ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.BrandsController (ModularERP).
+2025-10-01 22:31:48.982 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.BrandDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-01 22:31:48.985 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.BrandsController.Update (ModularERP) in 87.6274ms
+2025-10-01 22:31:48.987 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.BrandsController.Update (ModularERP)'
+2025-10-01 22:31:48.989 +03:00 [INF] Request completed successfully with status code 200
+2025-10-01 22:31:48.990 +03:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7168/api/Brands/{c4e59260-647a-4293-9cc2-243549746540} - 200 null application/json; charset=utf-8 111.7308ms
+2025-10-01 22:34:12.879 +03:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:7168//api/Brands/{c4e59260-647a-4293-9cc2-243549746540} - null null
+2025-10-01 22:34:12.884 +03:00 [INF] Request started
+2025-10-01 22:34:12.885 +03:00 [INF] Processing request for tenant: 8bed874f-cf2a-4ffa-a188-4cfef779774a
+2025-10-01 22:34:12.887 +03:00 [INF] Request completed successfully with status code 404
+2025-10-01 22:34:12.889 +03:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:7168//api/Brands/{c4e59260-647a-4293-9cc2-243549746540} - 404 0 null 9.2285ms
+2025-10-01 22:34:12.893 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: DELETE https://localhost:7168//api/Brands/%7Bc4e59260-647a-4293-9cc2-243549746540%7D, Response status code: 404
+2025-10-01 22:34:54.876 +03:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:7168//api/Brands/{c4e59260-647a-4293-9cc2-243549746540} - null null
+2025-10-01 22:34:54.879 +03:00 [INF] Request started
+2025-10-01 22:34:54.880 +03:00 [INF] Processing request for tenant: 8bed874f-cf2a-4ffa-a188-4cfef779774a
+2025-10-01 22:34:54.881 +03:00 [INF] Request completed successfully with status code 404
+2025-10-01 22:34:54.882 +03:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:7168//api/Brands/{c4e59260-647a-4293-9cc2-243549746540} - 404 0 null 6.3245ms
+2025-10-01 22:34:54.886 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: DELETE https://localhost:7168//api/Brands/%7Bc4e59260-647a-4293-9cc2-243549746540%7D, Response status code: 404
+2025-10-01 22:35:13.234 +03:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:7168/api/Brands/{c4e59260-647a-4293-9cc2-243549746540} - null null
+2025-10-01 22:35:13.237 +03:00 [INF] Request started
+2025-10-01 22:35:13.238 +03:00 [INF] Processing request for tenant: 8bed874f-cf2a-4ffa-a188-4cfef779774a
+2025-10-01 22:35:13.239 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.BrandsController.Delete (ModularERP)'
+2025-10-01 22:35:13.244 +03:00 [INF] Route matched with {action = "Delete", controller = "Brands"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Boolean]]] Delete(System.Guid) on controller ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.BrandsController (ModularERP).
+2025-10-01 22:35:13.292 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-01 22:35:13.295 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.BrandsController.Delete (ModularERP) in 48.5992ms
+2025-10-01 22:35:13.298 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.BrandsController.Delete (ModularERP)'
+2025-10-01 22:35:13.299 +03:00 [INF] Request completed successfully with status code 200
+2025-10-01 22:35:13.300 +03:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:7168/api/Brands/{c4e59260-647a-4293-9cc2-243549746540} - 200 null application/json; charset=utf-8 65.8289ms
+2025-10-01 22:36:23.431 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/Brands/{c4e59260-647a-4293-9cc2-243549746540}?X-Tenant-ID=8bed874f-cf2a-4ffa-a188-4cfef779774a - null null
+2025-10-01 22:36:23.435 +03:00 [INF] Request started
+2025-10-01 22:36:23.444 +03:00 [INF] Request completed successfully with status code 400
+2025-10-01 22:36:23.445 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/Brands/{c4e59260-647a-4293-9cc2-243549746540}?X-Tenant-ID=8bed874f-cf2a-4ffa-a188-4cfef779774a - 400 null application/json 14.5972ms
+2025-10-01 22:36:53.274 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/Brands/{c4e59260-647a-4293-9cc2-243549746540}?X-Tenant-ID=8bed874f-cf2a-4ffa-a188-4cfef779774a - null null
+2025-10-01 22:36:53.279 +03:00 [INF] Request started
+2025-10-01 22:36:53.280 +03:00 [INF] Request completed successfully with status code 400
+2025-10-01 22:36:53.281 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/Brands/{c4e59260-647a-4293-9cc2-243549746540}?X-Tenant-ID=8bed874f-cf2a-4ffa-a188-4cfef779774a - 400 null application/json 6.8923ms
+2025-10-01 22:38:06.087 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/Brands/{c4e59260-647a-4293-9cc2-243549746540} - null null
+2025-10-01 22:38:06.092 +03:00 [INF] Request started
+2025-10-01 22:38:06.093 +03:00 [INF] Processing request for tenant: 8bed874f-cf2a-4ffa-a188-4cfef779774a
+2025-10-01 22:38:06.095 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.BrandsController.GetById (ModularERP)'
+2025-10-01 22:38:06.099 +03:00 [INF] Route matched with {action = "GetById", controller = "Brands"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.BrandDto]]] GetById(System.Guid) on controller ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.BrandsController (ModularERP).
+2025-10-01 22:38:06.114 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Brand.BrandDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-01 22:38:06.117 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.BrandsController.GetById (ModularERP) in 14.6685ms
+2025-10-01 22:38:06.119 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.BrandsController.GetById (ModularERP)'
+2025-10-01 22:38:06.121 +03:00 [INF] Request completed successfully with status code 200
+2025-10-01 22:38:06.123 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/Brands/{c4e59260-647a-4293-9cc2-243549746540} - 200 null application/json; charset=utf-8 35.5043ms
+2025-10-01 22:41:23.533 +03:00 [INF] Starting web host...
+2025-10-01 22:41:24.506 +03:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-01 22:41:24.587 +03:00 [INF] Executed DbCommand (60ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-10-01 22:41:24.680 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-01 22:41:24.685 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-10-01 22:41:24.700 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-10-01 22:41:24.780 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-10-01 22:41:24.796 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-01 22:41:24.800 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-10-01 22:41:24.809 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-10-01 22:41:24.821 +03:00 [INF] No migrations were applied. The database is already up to date.
+2025-10-01 22:41:24.828 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-10-01 22:41:25.035 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-10-01 22:41:25.042 +03:00 [INF] Master database initialized successfully
+2025-10-01 22:41:26.673 +03:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-10-01 22:41:26.787 +03:00 [INF] Now listening on: https://localhost:7168
+2025-10-01 22:41:26.789 +03:00 [INF] Now listening on: http://localhost:5004
+2025-10-01 22:41:26.855 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-01 22:41:26.857 +03:00 [INF] Hosting environment: Development
+2025-10-01 22:41:26.858 +03:00 [INF] Content root path: E:\ModelerERP\ModularERP\ModularERP
+2025-10-01 22:41:26.959 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-10-01 22:41:27.088 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 129.7557ms
+2025-10-01 22:41:27.093 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-01 22:41:27.093 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-10-01 22:41:27.100 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 7.7812ms
+2025-10-01 22:41:27.123 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 30.2759ms
+2025-10-01 22:41:27.296 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-10-01 22:41:27.375 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 79.6361ms
+2025-10-01 22:41:32.879 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/Categories/{225267ad-51e8-46ce-fec1-08de00d3a7fa} - null null
+2025-10-01 22:41:32.902 +03:00 [INF] Request started
+2025-10-01 22:41:32.906 +03:00 [INF] Processing request for tenant: 8bed874f-cf2a-4ffa-a188-4cfef779774a
+2025-10-01 22:41:32.909 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.CategoriesController.GetById (ModularERP)'
+2025-10-01 22:41:32.934 +03:00 [INF] Route matched with {action = "GetById", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(System.Guid) on controller ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.CategoriesController (ModularERP).
+2025-10-01 22:41:32.939 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-10-01 22:41:33.029 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-10-01 22:41:33.444 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-10-01 22:41:33.503 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.CategoriesController.GetById (ModularERP) in 563.8415ms
+2025-10-01 22:41:33.506 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.CategoriesController.GetById (ModularERP)'
+2025-10-01 22:41:33.509 +03:00 [ERR] Application exception occurred: Category not found
+ModularERP.Common.Exceptions.NotFoundException: Category not found
+   at ModularERP.Modules.Inventory.Features.ProductSettings.Handlers.Handelrs_Category.GetCategoryByIdHandler.Handle(GetCategoryByIdQuery request, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Modules\Inventory\Features\ProductSettings\Handlers\Handelrs_Category\GetCategoryByIdHandler.cs:line 37
+   at ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.CategoriesController.GetById(Guid id) in E:\ModelerERP\ModularERP\ModularERP\Modules\Inventory\Features\ProductSettings\Controllers\CategoriesController.cs:line 44
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at ModularERP.Program.<>c.<<Main>b__0_4>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 237
+--- End of stack trace from previous location ---
+   at ModularERP.Common.Middleware.GlobalErrorHandlerMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\ModelerERP\ModularERP\ModularERP\Common\Middleware\GlobalErrorHandlerMiddleware.cs:line 40
+2025-10-01 22:41:33.590 +03:00 [INF] Error response sent with status code 404
+2025-10-01 22:41:33.596 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/Categories/{225267ad-51e8-46ce-fec1-08de00d3a7fa} - 404 null application/json; charset=utf-8 717.3055ms
+2025-10-01 22:41:58.602 +03:00 [INF] Starting web host...
+2025-10-01 22:41:59.511 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-01 22:41:59.578 +03:00 [INF] Executed DbCommand (46ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-10-01 22:41:59.647 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-01 22:41:59.653 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-10-01 22:41:59.667 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-10-01 22:41:59.727 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-10-01 22:41:59.743 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-01 22:41:59.747 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-10-01 22:41:59.761 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-10-01 22:41:59.773 +03:00 [INF] No migrations were applied. The database is already up to date.
+2025-10-01 22:41:59.779 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-10-01 22:41:59.947 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-10-01 22:41:59.953 +03:00 [INF] Master database initialized successfully
+2025-10-01 22:42:01.453 +03:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-10-01 22:42:01.571 +03:00 [INF] Now listening on: https://localhost:7168
+2025-10-01 22:42:01.573 +03:00 [INF] Now listening on: http://localhost:5004
+2025-10-01 22:42:01.639 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-01 22:42:01.641 +03:00 [INF] Hosting environment: Development
+2025-10-01 22:42:01.642 +03:00 [INF] Content root path: E:\ModelerERP\ModularERP\ModularERP
+2025-10-01 22:42:02.012 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-10-01 22:42:02.142 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 130.4025ms
+2025-10-01 22:42:02.143 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-01 22:42:02.143 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-10-01 22:42:02.154 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 10.8088ms
+2025-10-01 22:42:02.174 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 31.1638ms
+2025-10-01 22:42:02.244 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-10-01 22:42:02.304 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 60.0662ms
+2025-10-01 22:42:11.004 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/Categories/{225267ad-51e8-46ce-fec1-08de00d3a7fa} - null null
+2025-10-01 22:42:11.023 +03:00 [INF] Request started
+2025-10-01 22:42:11.028 +03:00 [INF] Processing request for tenant: 8bed874f-cf2a-4ffa-a188-4cfef779774a
+2025-10-01 22:42:11.031 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.CategoriesController.GetById (ModularERP)'
+2025-10-01 22:42:11.051 +03:00 [INF] Route matched with {action = "GetById", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(System.Guid) on controller ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.CategoriesController (ModularERP).
+2025-10-01 22:42:11.057 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-10-01 22:42:11.148 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-10-01 22:42:11.531 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-10-01 22:42:11.581 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.CategoriesController.GetById (ModularERP) in 524.5564ms
+2025-10-01 22:42:11.583 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.CategoriesController.GetById (ModularERP)'
+2025-10-01 22:42:11.586 +03:00 [ERR] Application exception occurred: Category not found
+ModularERP.Common.Exceptions.NotFoundException: Category not found
+   at ModularERP.Modules.Inventory.Features.ProductSettings.Handlers.Handelrs_Category.GetCategoryByIdHandler.Handle(GetCategoryByIdQuery request, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Modules\Inventory\Features\ProductSettings\Handlers\Handelrs_Category\GetCategoryByIdHandler.cs:line 37
+   at ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.CategoriesController.GetById(Guid id) in E:\ModelerERP\ModularERP\ModularERP\Modules\Inventory\Features\ProductSettings\Controllers\CategoriesController.cs:line 44
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at ModularERP.Program.<>c.<<Main>b__0_4>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 237
+--- End of stack trace from previous location ---
+   at ModularERP.Common.Middleware.GlobalErrorHandlerMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\ModelerERP\ModularERP\ModularERP\Common\Middleware\GlobalErrorHandlerMiddleware.cs:line 40
+2025-10-01 22:42:11.648 +03:00 [INF] Error response sent with status code 404
+2025-10-01 22:42:11.654 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/Categories/{225267ad-51e8-46ce-fec1-08de00d3a7fa} - 404 null application/json; charset=utf-8 650.3418ms
+2025-10-01 22:42:21.427 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/Categories/{215267ad-51e8-46ce-fec1-08de00d3a7fa} - null null
+2025-10-01 22:42:21.433 +03:00 [INF] Request started
+2025-10-01 22:42:21.437 +03:00 [INF] Processing request for tenant: 8bed874f-cf2a-4ffa-a188-4cfef779774a
+2025-10-01 22:42:21.438 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.CategoriesController.GetById (ModularERP)'
+2025-10-01 22:42:21.439 +03:00 [INF] Route matched with {action = "GetById", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(System.Guid) on controller ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.CategoriesController (ModularERP).
+2025-10-01 22:42:21.609 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Category.CategoryResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-01 22:42:21.629 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.CategoriesController.GetById (ModularERP) in 187.6654ms
+2025-10-01 22:42:21.632 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.CategoriesController.GetById (ModularERP)'
+2025-10-01 22:42:21.634 +03:00 [INF] Request completed successfully with status code 200
+2025-10-01 22:42:21.635 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/Categories/{215267ad-51e8-46ce-fec1-08de00d3a7fa} - 200 null application/json; charset=utf-8 208.6509ms
