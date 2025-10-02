@@ -2308,14 +2308,25 @@ namespace ModularERP.Migrations.Finance
                     b.Property<Guid>("TaxProfileId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
                     b.Property<bool>("IsPrimary")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
                         .HasDefaultValue(false);
 
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("ProductId", "TaxProfileId");
 
                     b.HasIndex("TaxProfileId");
+
+                    b.HasIndex("TenantId")
+                        .HasDatabaseName("IX_ProductTaxProfile_Tenant");
 
                     b.HasIndex("ProductId", "IsPrimary")
                         .IsUnique()
@@ -2587,6 +2598,9 @@ namespace ModularERP.Migrations.Finance
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<Guid>("CompanyId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -2670,6 +2684,11 @@ namespace ModularERP.Migrations.Finance
                     b.HasIndex("SupplierId")
                         .HasDatabaseName("IX_Service_Supplier");
 
+                    b.HasIndex("CompanyId", "Code")
+                        .IsUnique()
+                        .HasDatabaseName("IX_Service_Company_Code")
+                        .HasFilter("[Code] IS NOT NULL");
+
                     b.HasIndex("TenantId", "Code")
                         .IsUnique()
                         .HasDatabaseName("IX_Service_Tenant_Code")
@@ -2686,14 +2705,25 @@ namespace ModularERP.Migrations.Finance
                     b.Property<Guid>("TaxProfileId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
                     b.Property<bool>("IsPrimary")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
                         .HasDefaultValue(false);
 
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("ServiceId", "TaxProfileId");
 
                     b.HasIndex("TaxProfileId");
+
+                    b.HasIndex("TenantId")
+                        .HasDatabaseName("IX_ServiceTaxProfile_Tenant");
 
                     b.HasIndex("ServiceId", "IsPrimary")
                         .IsUnique()
@@ -2800,6 +2830,11 @@ namespace ModularERP.Migrations.Finance
                         .HasColumnType("datetime2")
                         .HasDefaultValueSql("GETUTCDATE()");
 
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
@@ -2810,10 +2845,16 @@ namespace ModularERP.Migrations.Finance
                     b.Property<Guid>("StocktakingId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("SnapshotId");
 
                     b.HasIndex("ProductId")
                         .HasDatabaseName("IX_StockSnapshot_Product");
+
+                    b.HasIndex("TenantId")
+                        .HasDatabaseName("IX_StockSnapshot_Tenant");
 
                     b.HasIndex("StocktakingId", "ProductId")
                         .IsUnique()
@@ -3058,6 +3099,9 @@ namespace ModularERP.Migrations.Finance
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid>("CompanyId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("ContactPerson")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
@@ -3113,6 +3157,10 @@ namespace ModularERP.Migrations.Finance
                     b.HasIndex("TenantId")
                         .HasDatabaseName("IX_Supplier_Tenant");
 
+                    b.HasIndex("CompanyId", "Name")
+                        .IsUnique()
+                        .HasDatabaseName("IX_Supplier_Company_Name");
+
                     b.HasIndex("TenantId", "Name")
                         .IsUnique()
                         .HasDatabaseName("IX_Supplier_Tenant_Name");
@@ -3125,11 +3173,6 @@ namespace ModularERP.Migrations.Finance
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool>("Active")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValue(true);
 
                     b.Property<string>("AppliesOn")
                         .IsRequired()
@@ -3177,9 +3220,6 @@ namespace ModularERP.Migrations.Finance
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Active")
-                        .HasDatabaseName("IX_TaxComponent_Active");
-
                     b.HasIndex("AppliesOn")
                         .HasDatabaseName("IX_TaxComponent_AppliesOn");
 
@@ -3198,11 +3238,6 @@ namespace ModularERP.Migrations.Finance
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool>("Active")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValue(true);
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -3236,9 +3271,6 @@ namespace ModularERP.Migrations.Finance
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Active")
-                        .HasDatabaseName("IX_TaxProfile_Active");
-
                     b.HasIndex("TenantId")
                         .HasDatabaseName("IX_TaxProfile_Tenant");
 
@@ -3257,10 +3289,18 @@ namespace ModularERP.Migrations.Finance
                     b.Property<Guid>("TaxComponentId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
                     b.Property<int>("Priority")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasDefaultValue(1);
+
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("TaxProfileId", "TaxComponentId");
 
@@ -3268,6 +3308,9 @@ namespace ModularERP.Migrations.Finance
                         .HasDatabaseName("IX_TaxProfileComponent_Priority");
 
                     b.HasIndex("TaxComponentId");
+
+                    b.HasIndex("TenantId")
+                        .HasDatabaseName("IX_TaxProfileComponent_Tenant");
 
                     b.ToTable("TaxProfileComponents", (string)null);
                 });
@@ -4108,12 +4151,20 @@ namespace ModularERP.Migrations.Finance
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Restrict);
 
+                    b.HasOne("ModularERP.Modules.Finance.Features.Companys.Models.Company", "Company")
+                        .WithMany()
+                        .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("ModularERP.Modules.Inventory.Features.Suppliers.Models.Supplier", "Supplier")
                         .WithMany("Services")
                         .HasForeignKey("SupplierId")
                         .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("Category");
+
+                    b.Navigation("Company");
 
                     b.Navigation("Supplier");
                 });
@@ -4258,6 +4309,17 @@ namespace ModularERP.Migrations.Finance
                     b.Navigation("Product");
 
                     b.Navigation("Stocktaking");
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Inventory.Features.Suppliers.Models.Supplier", b =>
+                {
+                    b.HasOne("ModularERP.Modules.Finance.Features.Companys.Models.Company", "Company")
+                        .WithMany()
+                        .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Company");
                 });
 
             modelBuilder.Entity("ModularERP.Modules.Inventory.Features.TaxManagement.Models.TaxProfileComponent", b =>

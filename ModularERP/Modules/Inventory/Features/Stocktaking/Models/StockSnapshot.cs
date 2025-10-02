@@ -18,6 +18,8 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Models
         public decimal QtyAtStart { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public Guid TenantId { get; set; }
+        public bool IsDeleted { get; set; }
 
         // Navigation Properties
         public virtual StocktakingHeader Stocktaking { get; set; } = null!;

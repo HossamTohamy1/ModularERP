@@ -40,6 +40,9 @@ using ModularERP.Modules.Inventory.Features.Warehouses.Mapping;
 using ModularERP.Modules.Inventory.Features.Products.Mapping;
 using ModularERP.Modules.Inventory.Features.ProductSettings.Service;
 using ModularERP.Modules.Finance.Features.Services_For_Finance;
+using ModularERP.Modules.Inventory.Features.TaxManagement.Services;
+using ModularERP.Modules.Inventory.Features.TaxManagement.Models;
+using ModularERP.Shared.Repository;
 
 namespace ModularERP
 {
@@ -132,23 +135,7 @@ namespace ModularERP
                 builder.Services.AddTaxServices();
                 builder.Services.AddProductSettingsServices();
                 builder.Services.AddAllEntitiesSettingsServices();
-
-                // ---------------------------
-                // 🟢 MediatR + AutoMapper
-                // ---------------------------
-
-
-                // ---------------------------
-                // 🟢 Validators
-                // ---------------------------
-                builder.Services.AddScoped<IValidator<CreateTreasuryCommand>, CreateTreasuryCommandValidator>();
-                builder.Services.AddScoped<IValidator<UpdateTreasuryCommand>, UpdateTreasuryCommandValidator>();
-                builder.Services.AddScoped<IValidator<DeleteTreasuryCommand>, DeleteTreasuryCommandValidator>();
-                builder.Services.AddScoped<IValidator<CreateTreasuryDto>, CreateTreasuryDtoValidator>();
-                builder.Services.AddScoped<IValidator<UpdateTreasuryDto>, UpdateTreasuryDtoValidator>();
-                builder.Services.AddScoped<IValidator<CreateIncomeVoucherDto>, CreateIncomeVoucherValidator>();
-                builder.Services.AddTransient<IValidator<CreateExpenseVoucherDto>, CreateExpenseVoucherValidator>();
-                builder.Services.AddTransient<IValidator<UpdateIncomeVoucherDto>, UpdateIncomeVoucherValidator>();
+                builder.Services.AddTaxManagementServices();
 
                 // ---------------------------
                 // 🟢 Domain Services
@@ -157,7 +144,7 @@ namespace ModularERP
                 builder.Services.AddScoped<IGeneralRepository<BankAccount>, GeneralRepository<BankAccount>>();
                 builder.Services.AddScoped<IExpenseVoucherService, ExpenseVoucherService>();
                 builder.Services.AddScoped<IIncomeVoucherService, IncomeVoucherService>();
-
+                builder.Services.AddScoped<IJoinTableRepository<TaxProfileComponent>, JoinTableRepository<TaxProfileComponent>>();
                 // ---------------------------
                 // 🟢 Build App
                 // ---------------------------

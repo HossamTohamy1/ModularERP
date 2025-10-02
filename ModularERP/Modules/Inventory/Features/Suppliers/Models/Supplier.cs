@@ -1,5 +1,6 @@
 ﻿using ModularERP.Common.Enum.Inventory_Enum;
 using ModularERP.Common.Models;
+using ModularERP.Modules.Finance.Features.Companys.Models;
 using ModularERP.Modules.Inventory.Features.Products.Models;
 using ModularERP.Modules.Inventory.Features.Services.Models;
 using System.ComponentModel.DataAnnotations;
@@ -26,11 +27,13 @@ namespace ModularERP.Modules.Inventory.Features.Suppliers.Models
 
         public SupplierStatus Status { get; set; } = SupplierStatus.Active;
 
-        public Guid TenantId { get; set; }
-        public bool IsDeleted { get; set; }
+        public Guid CompanyId { get; set; } 
+
 
         // Navigation Properties
         public virtual ICollection<Product> Products { get; set; } = new List<Product>();
         public virtual ICollection<Service> Services { get; set; } = new List<Service>();
+        public virtual Company? Company { get; set; } 
+
     }
 }

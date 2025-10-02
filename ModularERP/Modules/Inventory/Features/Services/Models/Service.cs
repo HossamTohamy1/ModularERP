@@ -4,6 +4,7 @@ using ModularERP.Modules.Inventory.Features.Suppliers.Models;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using ModularERP.Common.Enum.Inventory_Enum;
+using ModularERP.Modules.Finance.Features.Companys.Models;
 
 namespace ModularERP.Modules.Inventory.Features.Services.Models
 {
@@ -49,12 +50,12 @@ namespace ModularERP.Modules.Inventory.Features.Services.Models
 
         public ServiceStatus Status { get; set; } = ServiceStatus.Active;
 
-        public Guid TenantId { get; set; }
-        public bool IsDeleted { get; set; }
+        public Guid CompanyId { get; set; }
 
         // Navigation Properties
         public virtual Category? Category { get; set; }
         public virtual Supplier? Supplier { get; set; }
         public virtual ICollection<ServiceTaxProfile> ServiceTaxProfiles { get; set; } = new List<ServiceTaxProfile>();
+        public virtual Company? Company { get; set; }
     }
 }

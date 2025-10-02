@@ -269,13 +269,14 @@
     <Folder Include="Modules\Finance\Features\BankAccounts\Queries\" />
     <Folder Include="Modules\Finance\Features\BankAccounts\Validators\" />
     <Folder Include="Modules\Inventory\Features\Products\Services\" />
-    <Folder Include="Modules\Inventory\Features\TaxManagement\Commends\" />
-    <Folder Include="Modules\Inventory\Features\TaxManagement\Controllers\" />
-    <Folder Include="Modules\Inventory\Features\TaxManagement\DTO\" />
-    <Folder Include="Modules\Inventory\Features\TaxManagement\Handlers\" />
-    <Folder Include="Modules\Inventory\Features\TaxManagement\Mapping\" />
-    <Folder Include="Modules\Inventory\Features\TaxManagement\Qeuries\" />
-    <Folder Include="Modules\Inventory\Features\TaxManagement\Services\" />
+    <Folder Include="Modules\Inventory\Features\Suppliers\Commends\" />
+    <Folder Include="Modules\Inventory\Features\Suppliers\Controllers\" />
+    <Folder Include="Modules\Inventory\Features\Suppliers\DTO\" />
+    <Folder Include="Modules\Inventory\Features\Suppliers\Handlers\" />
+    <Folder Include="Modules\Inventory\Features\Suppliers\Mapping\" />
+    <Folder Include="Modules\Inventory\Features\Suppliers\Qeuries\" />
+    <Folder Include="Modules\Inventory\Features\Suppliers\Services\" />
+    <Folder Include="Modules\Inventory\Features\Suppliers\Validators\" />
   </ItemGroup>
 
 </Project>

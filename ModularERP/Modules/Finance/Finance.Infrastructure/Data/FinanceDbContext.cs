@@ -612,9 +612,6 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.Property(e => e.RateValue)
                       .HasPrecision(10, 4);
 
-                // Default values
-                entity.Property(e => e.Active)
-                      .HasDefaultValue(true);
 
                 // Relationships
                 entity.HasMany(e => e.TaxProfileComponents)
@@ -626,8 +623,6 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.HasIndex(e => e.TenantId)
                       .HasDatabaseName("IX_TaxComponent_Tenant");
 
-                entity.HasIndex(e => e.Active)
-                      .HasDatabaseName("IX_TaxComponent_Active");
 
                 entity.HasIndex(e => e.AppliesOn)
                       .HasDatabaseName("IX_TaxComponent_AppliesOn");
@@ -644,8 +639,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .HasDatabaseName("IX_TaxProfile_Tenant_Name");
 
                 // Default values
-                entity.Property(e => e.Active)
-                      .HasDefaultValue(true);
+
 
                 // Relationships
                 entity.HasMany(e => e.TaxProfileComponents)
@@ -657,8 +651,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.HasIndex(e => e.TenantId)
                       .HasDatabaseName("IX_TaxProfile_Tenant");
 
-                entity.HasIndex(e => e.Active)
-                      .HasDatabaseName("IX_TaxProfile_Active");
+
             });
 
             // TaxProfileComponent Configuration (Many-to-Many)
@@ -672,6 +665,12 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 // Default value
                 entity.Property(e => e.Priority)
                       .HasDefaultValue(1);
+                // Multi-tenancy support
+                entity.Property(e => e.IsDeleted)
+                      .HasDefaultValue(false);
+
+                entity.HasIndex(e => e.TenantId)
+                      .HasDatabaseName("IX_TaxProfileComponent_Tenant");
 
                 // Indexes
                 entity.HasIndex(e => e.Priority)
@@ -680,6 +679,16 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
             builder.Entity<Supplier>(entity =>
             {
                 entity.ToTable("Suppliers");
+                // Unique constraint: CompanyId + Name
+                entity.HasIndex(e => new { e.CompanyId, e.Name })
+                      .IsUnique()
+                      .HasDatabaseName("IX_Supplier_Company_Name");
+
+                // Company relationship
+                entity.HasOne(e => e.Company)
+                      .WithMany()
+                      .HasForeignKey(e => e.CompanyId)
+                      .OnDelete(DeleteBehavior.Restrict);
 
                 // Unique constraint: TenantId + Name
                 entity.HasIndex(e => new { e.TenantId, e.Name })
@@ -807,6 +816,18 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
             {
                 entity.ToTable("Services");
 
+                entity.HasIndex(e => new { e.CompanyId, e.Code })
+                      .IsUnique()
+                      .HasFilter("[Code] IS NOT NULL")
+                      .HasDatabaseName("IX_Service_Company_Code");
+
+                // Company relationship
+                entity.HasOne(e => e.Company)
+                      .WithMany()
+                      .HasForeignKey(e => e.CompanyId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+
                 // Unique constraint
                 entity.HasIndex(e => new { e.TenantId, e.Code })
                       .IsUnique()
@@ -878,6 +899,13 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.Property(e => e.IsPrimary)
                       .HasDefaultValue(false);
 
+                // Multi-tenancy support
+                entity.Property(e => e.IsDeleted)
+                      .HasDefaultValue(false);
+
+                entity.HasIndex(e => e.TenantId)
+                      .HasDatabaseName("IX_ProductTaxProfile_Tenant");
+
                 // Only one primary tax profile per product
                 entity.HasIndex(e => new { e.ProductId, e.IsPrimary })
                       .IsUnique()
@@ -890,7 +918,6 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .HasForeignKey(e => e.TaxProfileId)
                       .OnDelete(DeleteBehavior.Restrict);
             });
-
             // ============================================
             // SERVICE TAX PROFILES (Many-to-Many)
             // ============================================
@@ -904,6 +931,13 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 // Default value
                 entity.Property(e => e.IsPrimary)
                       .HasDefaultValue(false);
+
+                // Multi-tenancy support
+                entity.Property(e => e.IsDeleted)
+                      .HasDefaultValue(false);
+
+                entity.HasIndex(e => e.TenantId)
+                      .HasDatabaseName("IX_ServiceTaxProfile_Tenant");
 
                 // Only one primary tax profile per service
                 entity.HasIndex(e => new { e.ServiceId, e.IsPrimary })
@@ -1468,6 +1502,12 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 // Default value
                 entity.Property(e => e.CreatedAt)
                       .HasDefaultValueSql("GETUTCDATE()");
+
+                entity.Property(e => e.IsDeleted)
+                      .HasDefaultValue(false);
+
+                entity.HasIndex(e => e.TenantId)
+                      .HasDatabaseName("IX_StockSnapshot_Tenant");
 
                 // Relationships
                 entity.HasOne(e => e.Product)
