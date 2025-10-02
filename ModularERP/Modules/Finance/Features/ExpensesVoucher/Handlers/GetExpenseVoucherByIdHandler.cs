@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ModularERP.Modules.Finance.Features.IncomesVoucher.DTO;
 
 namespace ModularERP.Modules.Finance.Features.ExpensesVoucher.Handlers
 {
@@ -84,6 +85,8 @@ namespace ModularERP.Modules.Finance.Features.ExpensesVoucher.Handlers
             {
                 taxLines = await _voucherTaxRepo
                     .Get(t => t.VoucherId == voucher.Id)
+                    .Include(t => t.TaxProfile)
+                    .Include(t => t.TaxComponent)
                     .ToListAsync(cancellationToken);
 
                 _logger.LogInformation("✅ Retrieved {Count} tax lines for voucher {VoucherId}", taxLines.Count, voucher.Id);

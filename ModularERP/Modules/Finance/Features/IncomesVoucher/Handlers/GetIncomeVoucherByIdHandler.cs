@@ -10,6 +10,7 @@ using ModularERP.Modules.Finance.Features.Vouchers.Models;
 using ModularERP.Modules.Finance.Features.VoucherTaxs.Models;
 using ModularERP.Modules.Finance.Features.Attachments.Models;
 using ModularERP.Shared.Interfaces;
+using ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.ModularERP.Modules.Finance.Features.IncomesVoucher.DTO;
 
 namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
 {
@@ -65,8 +66,9 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
                 // 2. Get related data sequentially to avoid DbContext threading issues
                 var taxLines = await _voucherTaxRepo
                     .Get(t => t.VoucherId == voucher.Id)
+                    .Include(t => t.TaxProfile)
+                    .Include(t => t.TaxComponent)
                     .ToListAsync(cancellationToken);
-
                 var attachments = await _attachmentRepo
                     .Get(a => a.VoucherId == voucher.Id)
                     .ToListAsync(cancellationToken);

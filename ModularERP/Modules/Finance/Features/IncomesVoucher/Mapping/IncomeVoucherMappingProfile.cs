@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using ModularERP.Modules.Finance.Features.Attachments.Models;
 using ModularERP.Modules.Finance.Features.IncomesVoucher.DTO;
+using ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.ModularERP.Modules.Finance.Features.IncomesVoucher.DTO;
 using ModularERP.Modules.Finance.Features.Vouchers.Models;
 using ModularERP.Modules.Finance.Features.VoucherTaxs.Models;
 

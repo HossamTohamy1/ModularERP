@@ -268,6 +268,7 @@
     <Folder Include="Modules\Finance\Features\BankAccounts\Mapping\" />
     <Folder Include="Modules\Finance\Features\BankAccounts\Queries\" />
     <Folder Include="Modules\Finance\Features\BankAccounts\Validators\" />
+    <Folder Include="Modules\Inventory\Features\Products\Validators\" />
     <Folder Include="Modules\Inventory\Features\Products\Services\" />
     <Folder Include="Modules\Inventory\Features\Suppliers\Commends\" />
     <Folder Include="Modules\Inventory\Features\Suppliers\Controllers\" />

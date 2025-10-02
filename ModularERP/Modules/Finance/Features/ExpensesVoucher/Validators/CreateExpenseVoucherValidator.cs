@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO;
+using ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ModularERP.Modules.Finance.Features.IncomesVoucher.DTO;
 
 namespace ModularERP.Modules.Finance.Features.ExpensesVoucher.Validators
 {
@@ -76,7 +77,7 @@ namespace ModularERP.Modules.Finance.Features.ExpensesVoucher.Validators
     {
         public TaxLineDtoValidator()
         {
-            RuleFor(x => x.TaxId)
+            RuleFor(x => x.TaxProfileId)
                 .NotEmpty()
                 .WithMessage("Tax ID is required");
 

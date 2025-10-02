@@ -1,4 +1,6 @@
-﻿namespace ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO
+﻿using ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ModularERP.Modules.Finance.Features.IncomesVoucher.DTO;
+
+namespace ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO
 {
     public class ExpenseVoucherResponseDto
     {

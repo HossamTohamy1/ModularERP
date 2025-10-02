@@ -17,6 +17,7 @@ using ModularERP.Shared.Interfaces;
 using ModularERP.Common.Services;
 using System.Text.Json;
 using System.Security.Cryptography;
+using ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.ModularERP.Modules.Finance.Features.IncomesVoucher.DTO;
 
 namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
 {
@@ -107,7 +108,7 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
             // 3. التحقق من الشركة
             try
             {
-                companyId = Guid.Parse("1edafb1b-de49-4fc8-b06a-d563864b9227");
+                companyId = Guid.Parse("82b0fb02-1282-483c-ae26-c8466423707e");
                 var company = await _context.Companies
                     .Where(c => c.Id == companyId && c.TenantId == tenantGuid && !c.IsDeleted)
                     .FirstOrDefaultAsync(cancellationToken);
@@ -209,16 +210,21 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
                             var voucherTax = new VoucherTax
                             {
                                 VoucherId = voucher.Id,
-                                TaxId = taxLineDto.TaxId,
+                                TaxProfileId = taxLineDto.TaxProfileId,
+                                TaxComponentId = taxLineDto.TaxComponentId,
                                 BaseAmount = taxLineDto.BaseAmount,
                                 TaxAmount = taxLineDto.TaxAmount,
+                                AppliedRate = taxLineDto.AppliedRate,
                                 IsWithholding = taxLineDto.IsWithholding,
+                                Direction = TaxDirection.Income,
                                 TenantId = tenantGuid
                             };
                             taxes.Add(voucherTax);
                         }
                         await _voucherTaxRepo.AddRangeAsync(taxes);
                         await _voucherTaxRepo.SaveChanges();
+
+                        _logger.LogInformation("✅ Saved {Count} tax lines", taxes.Count);
                     }
                 }
             }
@@ -238,19 +244,16 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
 
                     foreach (var file in dto.Attachments)
                     {
-                        // Validate file
                         if (file.Length == 0)
                         {
                             _logger.LogWarning("Skipping empty file: {FileName}", file.FileName);
                             continue;
                         }
 
-                        // Generate unique filename
                         var fileName = $"{Guid.NewGuid()}_{file.FileName}";
                         var filePath = Path.Combine(uploadDir, fileName);
                         string checksum = null;
 
-                        // Save file and calculate checksum
                         using (var stream = new FileStream(filePath, FileMode.Create))
                         using (var sha256 = SHA256.Create())
                         {
@@ -260,8 +263,6 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
                             checksum = Convert.ToHexString(hashBytes);
                         }
 
-                        // Get file info
-                        var fileInfo = new FileInfo(filePath);
                         var mimeType = GetMimeType(file.FileName, file.ContentType);
 
                         var attachment = new VoucherAttachment
@@ -302,15 +303,26 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
                 var response = _mapper.Map<IncomeVoucherResponseDto>(voucher);
                 response.Source = dto.Source;
                 response.Counterparty = dto.Counterparty;
-                response.TaxLines = taxes.Select(t => new TaxLineResponseDto
-                {
-                    TaxId = t.TaxId,
-                    BaseAmount = t.BaseAmount,
-                    TaxAmount = t.TaxAmount,
-                    IsWithholding = t.IsWithholding
-                }).ToList();
-                response.Attachments = _mapper.Map<List<AttachmentResponseDto>>(attachments);
 
+                // Load tax details with profile and component names
+                response.TaxLines = await _context.VoucherTaxes
+                    .Where(vt => vt.VoucherId == voucher.Id)
+                    .Include(vt => vt.TaxProfile)
+                    .Include(vt => vt.TaxComponent)
+                    .Select(vt => new TaxLineResponseDto
+                    {
+                        TaxProfileId = vt.TaxProfileId,
+                        TaxComponentId = vt.TaxComponentId,
+                        TaxProfileName = vt.TaxProfile.Name,
+                        TaxComponentName = vt.TaxComponent.Name,
+                        BaseAmount = vt.BaseAmount,
+                        TaxAmount = vt.TaxAmount,
+                        AppliedRate = vt.AppliedRate,
+                        IsWithholding = vt.IsWithholding
+                    })
+                    .ToListAsync(cancellationToken);
+
+                response.Attachments = _mapper.Map<List<AttachmentResponseDto>>(attachments);
 
                 return ResponseViewModel<IncomeVoucherResponseDto>.Success(response, "Income voucher created successfully");
             }
@@ -321,14 +333,11 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
             }
         }
 
-
         private string GetMimeType(string fileName, string contentType)
         {
-            // Use provided content type if valid
             if (!string.IsNullOrEmpty(contentType) && contentType != "application/octet-stream")
                 return contentType;
 
-            // Fallback to extension-based detection
             var extension = Path.GetExtension(fileName)?.ToLowerInvariant();
 
             return extension switch

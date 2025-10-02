@@ -16,6 +16,8 @@ using ModularERP.Modules.Finance.Finance.Infrastructure.Data;
 using ModularERP.Shared.Interfaces;
 using ModularERP.Common.Services;
 using System.Text.Json;
+using System.Security.Cryptography;
+using ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.ModularERP.Modules.Finance.Features.IncomesVoucher.DTO;
 
 namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
 {
@@ -55,7 +57,6 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
 
         public async Task<ResponseViewModel<IncomeVoucherResponseDto>> Handle(UpdateIncomeVoucherCommand request, CancellationToken cancellationToken)
         {
-            // 0. التهيئة
             var dto = request.Request;
             _logger.LogInformation("➡️ Start Handle UpdateIncomeVoucher with ID: {VoucherId}", dto.Id);
 
@@ -118,7 +119,6 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
 
                 companyId = voucher.CompanyId;
 
-                // التحقق من الشركة
                 var company = await _context.Companies
                     .Where(c => c.Id == companyId && c.TenantId == tenantGuid && !c.IsDeleted)
                     .FirstOrDefaultAsync(cancellationToken);
@@ -187,31 +187,26 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
                 voucher.Description = dto.Description;
                 voucher.CategoryAccountId = dto.CategoryId;
                 voucher.RecurrenceId = dto.RecurrenceId;
+
                 if (!string.IsNullOrEmpty(dto.Source?.Type) && Enum.TryParse<WalletType>(dto.Source.Type, out var walletType))
                 {
                     voucher.WalletType = walletType;
                 }
                 else
                 {
-                    voucher.WalletType = WalletType.BankAccount; // default
+                    voucher.WalletType = WalletType.BankAccount;
                 }
+
                 voucher.WalletId = dto.Source?.Id ?? Guid.Empty;
                 voucher.CreatedBy = userId;
                 voucher.UpdatedAt = DateTime.UtcNow;
 
-                // Update counterparty
                 if (dto.Counterparty != null)
                 {
                     voucher.CounterpartyId = dto.Counterparty.Id;
-                    if (dto.Counterparty != null && Enum.TryParse<CounterpartyType>(dto.Counterparty.Type, out var counterpartyType))
+                    if (Enum.TryParse<CounterpartyType>(dto.Counterparty.Type, out var counterpartyType))
                     {
-                        voucher.CounterpartyId = dto.Counterparty.Id;
                         voucher.CounterpartyType = counterpartyType;
-                    }
-                    else
-                    {
-                        voucher.CounterpartyId = null;
-                        voucher.CounterpartyType = null;
                     }
                 }
                 else
@@ -237,7 +232,6 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
             // 7. Update Tax Lines
             try
             {
-                // Remove existing tax lines
                 var existingTaxes = await _voucherTaxRepo.Get(t => t.VoucherId == voucher.Id).ToListAsync(cancellationToken);
                 if (existingTaxes.Any())
                 {
@@ -248,7 +242,6 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
                     await _voucherTaxRepo.SaveChanges();
                 }
 
-                // Add new tax lines
                 if (!string.IsNullOrEmpty(dto.TaxLinesJson))
                 {
                     var taxLinesFromJson = JsonSerializer.Deserialize<List<TaxLineDto>>(dto.TaxLinesJson);
@@ -259,19 +252,23 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
                             var voucherTax = new VoucherTax
                             {
                                 VoucherId = voucher.Id,
-                                TaxId = taxLineDto.TaxId,
+                                TaxProfileId = taxLineDto.TaxProfileId,
+                                TaxComponentId = taxLineDto.TaxComponentId,
                                 BaseAmount = taxLineDto.BaseAmount,
                                 TaxAmount = taxLineDto.TaxAmount,
+                                AppliedRate = taxLineDto.AppliedRate,
                                 IsWithholding = taxLineDto.IsWithholding,
+                                Direction = TaxDirection.Income,
                                 TenantId = tenantGuid
                             };
                             taxes.Add(voucherTax);
                         }
                         await _voucherTaxRepo.AddRangeAsync(taxes);
                         await _voucherTaxRepo.SaveChanges();
+
+                        _logger.LogInformation("✅ Saved {Count} tax lines", taxes.Count);
                     }
                 }
-                _logger.LogInformation("✅ Tax lines updated");
             }
             catch (Exception ex)
             {
@@ -282,7 +279,7 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
             // 8. Update Attachments
             try
             {
-                // Remove specified attachments
+                // حذف المرفقات القديمة المحددة للحذف
                 if (dto.AttachmentsToRemove?.Any() == true)
                 {
                     var attachmentsToRemove = await _attachmentRepo.Get(a => a.VoucherId == voucher.Id && dto.AttachmentsToRemove.Contains(a.Id))
@@ -303,7 +300,7 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
                     _logger.LogInformation("✅ Removed {Count} attachments", attachmentsToRemove.Count);
                 }
 
-                // Add new attachments with complete properties
+                // إضافة المرفقات الجديدة
                 if (dto.NewAttachments?.Any() == true)
                 {
                     var uploadDir = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
@@ -322,7 +319,7 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
                         string checksum = null;
 
                         using (var stream = new FileStream(filePath, FileMode.Create))
-                        using (var sha256 = System.Security.Cryptography.SHA256.Create())
+                        using (var sha256 = SHA256.Create())
                         {
                             await file.CopyToAsync(stream, cancellationToken);
                             stream.Position = 0;
@@ -346,7 +343,7 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
                         };
                         attachments.Add(attachment);
 
-                        _logger.LogInformation("✅ Processed new attachment: {FileName}, Size: {Size} bytes, MimeType: {MimeType}",
+                        _logger.LogInformation("✅ Processed attachment: {FileName}, Size: {Size} bytes, MimeType: {MimeType}",
                             file.FileName, file.Length, mimeType);
                     }
 
@@ -354,35 +351,45 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
                     {
                         await _attachmentRepo.AddRangeAsync(attachments);
                         await _attachmentRepo.SaveChanges();
-                        _logger.LogInformation("✅ Added {Count} new attachments", attachments.Count);
+                        _logger.LogInformation("✅ Saved {Count} new attachments to database", attachments.Count);
                     }
                 }
-                _logger.LogInformation("✅ Attachments updated");
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "❌ Error updating attachments");
-                return ResponseViewModel<IncomeVoucherResponseDto>.Error("Error updating attachments", FinanceErrorCode.InternalServerError);
+                _logger.LogError(ex, "❌ Error processing attachments");
+                return ResponseViewModel<IncomeVoucherResponseDto>.Error("Error processing attachments", FinanceErrorCode.InternalServerError);
             }
 
             // 9. Response
             try
             {
-                // Get all current attachments
-                var allAttachments = await _attachmentRepo.Get(a => a.VoucherId == voucher.Id).ToListAsync(cancellationToken);
-
                 var response = _mapper.Map<IncomeVoucherResponseDto>(voucher);
                 response.Source = dto.Source;
                 response.Counterparty = dto.Counterparty;
-                response.TaxLines = taxes.Select(t => new TaxLineResponseDto
-                {
-                    TaxId = t.TaxId,
-                    BaseAmount = t.BaseAmount,
-                    TaxAmount = t.TaxAmount,
-                    IsWithholding = t.IsWithholding
-                }).ToList();
-                response.Attachments = _mapper.Map<List<AttachmentResponseDto>>(attachments);
 
+                // Load tax details with profile and component names
+                response.TaxLines = await _context.VoucherTaxes
+                    .Where(vt => vt.VoucherId == voucher.Id)
+                    .Include(vt => vt.TaxProfile)
+                    .Include(vt => vt.TaxComponent)
+                    .Select(vt => new TaxLineResponseDto
+                    {
+                        TaxProfileId = vt.TaxProfileId,
+                        TaxComponentId = vt.TaxComponentId,
+                        TaxProfileName = vt.TaxProfile.Name,
+                        TaxComponentName = vt.TaxComponent.Name,
+                        BaseAmount = vt.BaseAmount,
+                        TaxAmount = vt.TaxAmount,
+                        AppliedRate = vt.AppliedRate,
+                        IsWithholding = vt.IsWithholding
+                    })
+                    .ToListAsync(cancellationToken);
+
+                // Load all current attachments (existing + newly added)
+                var allAttachments = await _attachmentRepo.Get(a => a.VoucherId == voucher.Id)
+                    .ToListAsync(cancellationToken);
+                response.Attachments = _mapper.Map<List<AttachmentResponseDto>>(allAttachments);
 
                 return ResponseViewModel<IncomeVoucherResponseDto>.Success(response, "Income voucher updated successfully");
             }
@@ -419,6 +426,5 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
                 _ => "application/octet-stream"
             };
         }
-
     }
 }

@@ -11,7 +11,6 @@ using ModularERP.Modules.Finance.Features.Customer.Models;
 using ModularERP.Modules.Finance.Features.GlAccounts.Models;
 using ModularERP.Modules.Finance.Features.LedgerEntries.Models;
 using ModularERP.Modules.Finance.Features.RecurringSchedules.Models;
-using ModularERP.Modules.Finance.Features.Taxs.Models;
 using ModularERP.Modules.Finance.Features.Treasuries.Models;
 using ModularERP.Modules.Finance.Features.Vendor.Models;
 using ModularERP.Modules.Finance.Features.Vouchers.Models;
@@ -53,7 +52,6 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
         public DbSet<Voucher> Vouchers { get; set; }
         public DbSet<VoucherTax> VoucherTaxes { get; set; }
         public DbSet<LedgerEntry> LedgerEntries { get; set; }
-        public DbSet<Tax> Taxes { get; set; }
         public DbSet<Vendor> Vendors { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Currency> Currencies { get; set; }
@@ -213,17 +211,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .OnDelete(DeleteBehavior.Restrict);
             });
 
-            // Tax Configuration
-            builder.Entity<Tax>(entity =>
-            {
-                entity.HasIndex(e => new { e.TenantId, e.Code }).IsUnique();
-                entity.Property(e => e.Type).HasConversion<string>();
 
-                entity.HasMany(e => e.VoucherTaxes)
-                      .WithOne(e => e.Tax)
-                      .HasForeignKey(e => e.TaxId)
-                      .OnDelete(DeleteBehavior.Restrict);
-            });
 
             // Vendor Configuration
             builder.Entity<Vendor>(entity =>

@@ -2840,312 +2840,6 @@
         }
       }
     },
-    "/api/Tax": {
-      "post": {
-        "tags": [
-          "Tax"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.Taxs.DTO.CreateTaxDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.Taxs.DTO.CreateTaxDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.Taxs.DTO.CreateTaxDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Taxs.DTO.TaxResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Taxs.DTO.TaxResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Taxs.DTO.TaxResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
-                }
-              }
-            }
-          }
-        }
-      },
-      "get": {
-        "tags": [
-          "Tax"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.Taxs.DTO.TaxListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.Taxs.DTO.TaxListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.Taxs.DTO.TaxListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
-                }
-              }
-            }
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Tax"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.Taxs.DTO.UpdateTaxDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.Taxs.DTO.UpdateTaxDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.Taxs.DTO.UpdateTaxDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Tax/{id}": {
-      "get": {
-        "tags": [
-          "Tax"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Taxs.DTO.TaxResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Taxs.DTO.TaxResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Taxs.DTO.TaxResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
-                }
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Tax"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Tax/active": {
-      "get": {
-        "tags": [
-          "Tax"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.Taxs.DTO.TaxListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.Taxs.DTO.TaxListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.Taxs.DTO.TaxListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Tax/search": {
-      "get": {
-        "tags": [
-          "Tax"
-        ],
-        "parameters": [
-          {
-            "name": "searchTerm",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.Taxs.DTO.TaxListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.Taxs.DTO.TaxListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.Taxs.DTO.TaxListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Tax/{id}/toggle-status": {
-      "patch": {
-        "tags": [
-          "Tax"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/api/TaxComponent": {
       "get": {
         "tags": [
@@ -5294,15 +4988,6 @@
         "type": "integer",
         "format": "int32"
       },
-      "ModularERP.Common.Enum.Finance_Enum.TaxType": {
-        "enum": [
-          0,
-          1,
-          2
-        ],
-        "type": "integer",
-        "format": "int32"
-      },
       "ModularERP.Common.Enum.Finance_Enum.TreasuryStatus": {
         "enum": [
           0,
@@ -5570,43 +5255,6 @@
           },
           "data": {
             "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.IncomeVoucherResponseDto"
-          },
-          "financeErrorCode": {
-            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
-          },
-          "traceId": {
-            "type": "string",
-            "nullable": true
-          },
-          "validationErrors": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "nullable": true
-          },
-          "timestamp": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "additionalProperties": false
-      },
-      "ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.Taxs.DTO.TaxResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
-        "type": "object",
-        "properties": {
-          "isSuccess": {
-            "type": "boolean"
-          },
-          "message": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.Taxs.DTO.TaxResponseDto"
           },
           "financeErrorCode": {
             "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
@@ -6127,47 +5775,6 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountListDto"
-            },
-            "nullable": true
-          },
-          "financeErrorCode": {
-            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
-          },
-          "traceId": {
-            "type": "string",
-            "nullable": true
-          },
-          "validationErrors": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "nullable": true
-          },
-          "timestamp": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "additionalProperties": false
-      },
-      "ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.IEnumerable`1[[ModularERP.Modules.Finance.Features.Taxs.DTO.TaxListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
-        "type": "object",
-        "properties": {
-          "isSuccess": {
-            "type": "boolean"
-          },
-          "message": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.Taxs.DTO.TaxListDto"
             },
             "nullable": true
           },
@@ -7106,7 +6713,7 @@
           "taxLines": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.TaxLineResponseDto"
+              "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.TaxLineResponseDto"
             },
             "nullable": true
           },
@@ -7120,18 +6727,34 @@
         },
         "additionalProperties": false
       },
-      "ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.TaxLineResponseDto": {
+      "ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.TaxLineResponseDto": {
         "type": "object",
         "properties": {
-          "taxId": {
+          "taxProfileId": {
             "type": "string",
             "format": "uuid"
+          },
+          "taxComponentId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "taxProfileName": {
+            "type": "string",
+            "nullable": true
+          },
+          "taxComponentName": {
+            "type": "string",
+            "nullable": true
           },
           "baseAmount": {
             "type": "number",
             "format": "double"
           },
           "taxAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "appliedRate": {
             "type": "number",
             "format": "double"
           },
@@ -7382,7 +7005,7 @@
           "taxLines": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.TaxLineResponseDto"
+              "$ref": "#/components/schemas/ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.TaxLineResponseDto"
             },
             "nullable": true
           },
@@ -7396,18 +7019,34 @@
         },
         "additionalProperties": false
       },
-      "ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.TaxLineResponseDto": {
+      "ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.ModularERP.Modules.Finance.Features.IncomesVoucher.DTO.TaxLineResponseDto": {
         "type": "object",
         "properties": {
-          "taxId": {
+          "taxProfileId": {
             "type": "string",
             "format": "uuid"
+          },
+          "taxComponentId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "taxProfileName": {
+            "type": "string",
+            "nullable": true
+          },
+          "taxComponentName": {
+            "type": "string",
+            "nullable": true
           },
           "baseAmount": {
             "type": "number",
             "format": "double"
           },
           "taxAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "appliedRate": {
             "type": "number",
             "format": "double"
           },
@@ -7431,161 +7070,6 @@
           "id": {
             "type": "string",
             "format": "uuid"
-          }
-        },
-        "additionalProperties": false
-      },
-      "ModularERP.Modules.Finance.Features.Taxs.DTO.CreateTaxDto": {
-        "required": [
-          "code",
-          "name",
-          "rate",
-          "type"
-        ],
-        "type": "object",
-        "properties": {
-          "code": {
-            "maxLength": 20,
-            "minLength": 0,
-            "type": "string"
-          },
-          "name": {
-            "maxLength": 100,
-            "minLength": 0,
-            "type": "string"
-          },
-          "rate": {
-            "maximum": 100,
-            "minimum": 0,
-            "type": "number",
-            "format": "double"
-          },
-          "type": {
-            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.TaxType"
-          },
-          "isActive": {
-            "type": "boolean"
-          }
-        },
-        "additionalProperties": false
-      },
-      "ModularERP.Modules.Finance.Features.Taxs.DTO.TaxListDto": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "code": {
-            "type": "string",
-            "nullable": true
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "rate": {
-            "type": "number",
-            "format": "double"
-          },
-          "type": {
-            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.TaxType"
-          },
-          "typeName": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "isActive": {
-            "type": "boolean"
-          },
-          "canDelete": {
-            "type": "boolean"
-          }
-        },
-        "additionalProperties": false
-      },
-      "ModularERP.Modules.Finance.Features.Taxs.DTO.TaxResponseDto": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "code": {
-            "type": "string",
-            "nullable": true
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "rate": {
-            "type": "number",
-            "format": "double"
-          },
-          "type": {
-            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.TaxType"
-          },
-          "typeName": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "isActive": {
-            "type": "boolean"
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "updatedAt": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "voucherTaxesCount": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
-      "ModularERP.Modules.Finance.Features.Taxs.DTO.UpdateTaxDto": {
-        "required": [
-          "code",
-          "id",
-          "name",
-          "rate",
-          "type"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "code": {
-            "maxLength": 20,
-            "minLength": 0,
-            "type": "string"
-          },
-          "name": {
-            "maxLength": 100,
-            "minLength": 0,
-            "type": "string"
-          },
-          "rate": {
-            "maximum": 100,
-            "minimum": 0,
-            "type": "number",
-            "format": "double"
-          },
-          "type": {
-            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.TaxType"
-          },
-          "isActive": {
-            "type": "boolean"
           }
         },
         "additionalProperties": false

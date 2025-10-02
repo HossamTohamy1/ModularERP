@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using ModularERP.Modules.Finance.Features.Attachments.Models;
 using ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO;
+using ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ModularERP.Modules.Finance.Features.IncomesVoucher.DTO;
 using ModularERP.Modules.Finance.Features.Vouchers.Models;
 using ModularERP.Modules.Finance.Features.VoucherTaxs.Models;
 
@@ -58,7 +59,10 @@ namespace ModularERP.Modules.Finance.Features.ExpensesVoucher.Mapping
                 .ForMember(dest => dest.Attachments, opt => opt.Ignore());
 
             // ✅ VoucherTax to TaxLineResponseDto mapping
-            CreateMap<VoucherTax, TaxLineResponseDto>();
+            // ✅ VoucherTax to TaxLineResponseDto mapping
+            CreateMap<VoucherTax, TaxLineResponseDto>()
+                .ForMember(dest => dest.TaxProfileName, opt => opt.MapFrom(src => src.TaxProfile.Name))
+                .ForMember(dest => dest.TaxComponentName, opt => opt.MapFrom(src => src.TaxComponent.Name));
 
             CreateMap<VoucherAttachment, AttachmentResponseDto>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))

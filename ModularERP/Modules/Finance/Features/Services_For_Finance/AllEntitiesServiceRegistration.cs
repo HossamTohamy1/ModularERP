@@ -9,8 +9,7 @@ using ModularERP.Modules.Finance.Features.GlAccounts.Mapping;
 using ModularERP.Modules.Finance.Features.IncomesVoucher.DTO;
 using ModularERP.Modules.Finance.Features.IncomesVoucher.Mapping;
 using ModularERP.Modules.Finance.Features.IncomesVoucher.Validators;
-using ModularERP.Modules.Finance.Features.Taxs.Handlers;
-using ModularERP.Modules.Finance.Features.Taxs.Mapping;
+
 using ModularERP.Modules.Finance.Features.Treasuries.Commands;
 using ModularERP.Modules.Finance.Features.Treasuries.DTO;
 using ModularERP.Modules.Finance.Features.Treasuries.Handlers;
@@ -36,7 +35,6 @@ namespace ModularERP.Modules.Finance.Features.Services_For_Finance
                 cfg.RegisterServicesFromAssembly(typeof(CreateTreasuryHandler).Assembly);
                 cfg.RegisterServicesFromAssembly(typeof(CreateCompanyHandler).Assembly);
                 cfg.RegisterServicesFromAssembly(typeof(CreateGlAccountHandler).Assembly);
-                cfg.RegisterServicesFromAssembly(typeof(CreateTaxCommandHandler).Assembly);
             });
 
             services.AddAutoMapper(cfg =>
@@ -46,7 +44,6 @@ namespace ModularERP.Modules.Finance.Features.Services_For_Finance
                 cfg.AddProfile<ExpenseVoucherMappingProfile>();
                 cfg.AddProfile<IncomeVoucherMappingProfile>();
                 cfg.AddProfile<GlAccountMappingProfile>();
-                cfg.AddProfile<TaxProfile>();
                 cfg.AddProfile<WarehouseProfile>();
                 cfg.AddProfile<ProductMappingProfile>();
             });

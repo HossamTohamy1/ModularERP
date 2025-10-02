@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO.ModularERP.Modules.Finance.Features.IncomesVoucher.DTO;
+using System.ComponentModel.DataAnnotations;
 using System.Text.Json;
 
 namespace ModularERP.Modules.Finance.Features.ExpensesVoucher.DTO

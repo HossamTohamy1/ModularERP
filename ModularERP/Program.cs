@@ -33,9 +33,7 @@ using ModularERP.Modules.Finance.Features.GlAccounts.Mapping;
 using ModularERP.Modules.Finance.Features.GlAccounts.Service;
 using Microsoft.AspNetCore.Identity;
 using ModularERP.Modules.Finance.Finance.Infrastructure.Seeds;
-using ModularERP.Modules.Finance.Features.Taxs.Mapping;
-using ModularERP.Modules.Finance.Features.Taxs.Handlers;
-using ModularERP.Modules.Finance.Features.Taxs.Service;
+
 using ModularERP.Modules.Inventory.Features.Warehouses.Mapping;
 using ModularERP.Modules.Inventory.Features.Products.Mapping;
 using ModularERP.Modules.Inventory.Features.ProductSettings.Service;
@@ -132,7 +130,6 @@ namespace ModularERP
                 builder.Services.AddCommonServices();
                 builder.Services.AddCompanySerivces();
                 builder.Services.AddGlAccountServices();
-                builder.Services.AddTaxServices();
                 builder.Services.AddProductSettingsServices();
                 builder.Services.AddAllEntitiesSettingsServices();
                 builder.Services.AddTaxManagementServices();
