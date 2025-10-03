@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ModularERP")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6f1ee8477a749ba80f8e353665a321385adcec4a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d766735801f3169a0d77ea91646372cd9f489491")]
 [assembly: System.Reflection.AssemblyProductAttribute("ModularERP")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ModularERP")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -2405,3 +2405,109 @@ WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
 2025-10-02 15:40:07.555 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Finance.Features.IncomesVoucher.Controllers.IncomeVouchersController.GetIncomeVoucher (ModularERP)'
 2025-10-02 15:40:07.556 +03:00 [INF] Request completed successfully with status code 200
 2025-10-02 15:40:07.560 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/IncomeVouchers/{1cd6730f-09ed-463a-f67b-08de01aeedfa} - 200 null application/json; charset=utf-8 50.9073ms
+2025-10-02 17:06:05.912 +03:00 [INF] Starting web host...
+2025-10-02 17:06:09.077 +03:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-02 17:06:09.125 +03:00 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-10-02 17:06:09.204 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-02 17:06:09.210 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-10-02 17:06:09.215 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-10-02 17:06:09.271 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-10-02 17:06:09.288 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-02 17:06:09.292 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-10-02 17:06:09.298 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-10-02 17:06:09.312 +03:00 [INF] No migrations were applied. The database is already up to date.
+2025-10-02 17:06:09.316 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-10-02 17:06:09.496 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-10-02 17:06:09.504 +03:00 [INF] Master database initialized successfully
+2025-10-02 17:06:11.100 +03:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-10-02 17:06:11.274 +03:00 [INF] Now listening on: https://localhost:7168
+2025-10-02 17:06:11.275 +03:00 [INF] Now listening on: http://localhost:5004
+2025-10-02 17:06:11.361 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-02 17:06:11.362 +03:00 [INF] Hosting environment: Development
+2025-10-02 17:06:11.364 +03:00 [INF] Content root path: E:\ModelerERP\ModularERP\ModularERP
+2025-10-02 17:06:11.748 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-10-02 17:06:11.946 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 199.707ms
+2025-10-02 17:06:11.959 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-02 17:06:11.967 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 7.4216ms
+2025-10-02 17:06:11.976 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-10-02 17:06:12.022 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 46.6787ms
+2025-10-02 17:06:12.260 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-10-02 17:06:12.399 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 138.232ms
+2025-10-02 17:22:23.137 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/ItemGroup - null null
+2025-10-02 17:22:23.203 +03:00 [INF] Request started
+2025-10-02 17:22:23.255 +03:00 [INF] Processing request for tenant: 8bed874f-cf2a-4ffa-a188-4cfef779774a
+2025-10-02 17:22:23.259 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.Products.Controllers.ItemGroupController.GetAll (ModularERP)'
+2025-10-02 17:22:23.322 +03:00 [INF] Route matched with {action = "GetAll", controller = "ItemGroup"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Collections.Generic.List`1[ModularERP.Modules.Inventory.Features.Products.DTO.DTO_ItemGroup.ItemGroupDto]]]] GetAll() on controller ModularERP.Modules.Inventory.Features.Products.Controllers.ItemGroupController (ModularERP).
+2025-10-02 17:22:23.331 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-10-02 17:22:23.456 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-10-02 17:22:24.188 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-10-02 17:22:24.324 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Inventory.Features.Products.DTO.DTO_ItemGroup.ItemGroupDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-02 17:22:24.356 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.Products.Controllers.ItemGroupController.GetAll (ModularERP) in 1027.0645ms
+2025-10-02 17:22:24.359 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.Products.Controllers.ItemGroupController.GetAll (ModularERP)'
+2025-10-02 17:22:24.361 +03:00 [INF] Request completed successfully with status code 200
+2025-10-02 17:22:24.367 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/ItemGroup - 200 null application/json; charset=utf-8 1229.4137ms
+2025-10-02 17:33:19.739 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/ItemGroup - application/json 167
+2025-10-02 17:33:19.745 +03:00 [INF] Request started
+2025-10-02 17:33:19.748 +03:00 [INF] Processing request for tenant: 8bed874f-cf2a-4ffa-a188-4cfef779774a
+2025-10-02 17:33:19.750 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.Products.Controllers.ItemGroupController.Create (ModularERP)'
+2025-10-02 17:33:19.774 +03:00 [INF] Route matched with {action = "Create", controller = "ItemGroup"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Inventory.Features.Products.DTO.DTO_ItemGroup.ItemGroupDto]]] Create(ModularERP.Modules.Inventory.Features.Products.Commends.Commands_ItemGroup.CreateItemGroupCommand) on controller ModularERP.Modules.Inventory.Features.Products.Controllers.ItemGroupController (ModularERP).
+2025-10-02 17:33:20.101 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Inventory.Features.Products.DTO.DTO_ItemGroup.ItemGroupDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-02 17:33:20.113 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.Products.Controllers.ItemGroupController.Create (ModularERP) in 334.6559ms
+2025-10-02 17:33:20.119 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.Products.Controllers.ItemGroupController.Create (ModularERP)'
+2025-10-02 17:33:20.121 +03:00 [INF] Request completed successfully with status code 200
+2025-10-02 17:33:20.123 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/ItemGroup - 200 null application/json; charset=utf-8 384.0592ms
+2025-10-02 17:38:12.752 +03:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7168/api/ItemGroup/f86965cd-0f27-42ae-9800-35f8c9007465 - application/json 208
+2025-10-02 17:38:12.757 +03:00 [INF] Request started
+2025-10-02 17:38:12.758 +03:00 [INF] Processing request for tenant: 8bed874f-cf2a-4ffa-a188-4cfef779774a
+2025-10-02 17:38:12.759 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.Products.Controllers.ItemGroupController.Update (ModularERP)'
+2025-10-02 17:38:12.764 +03:00 [INF] Route matched with {action = "Update", controller = "ItemGroup"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Inventory.Features.Products.DTO.DTO_ItemGroup.ItemGroupDto]]] Update(System.Guid, ModularERP.Modules.Inventory.Features.Products.Commends.Commands_ItemGroup.UpdateItemGroupCommand) on controller ModularERP.Modules.Inventory.Features.Products.Controllers.ItemGroupController (ModularERP).
+2025-10-02 17:38:12.843 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Inventory.Features.Products.DTO.DTO_ItemGroup.ItemGroupDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-02 17:38:12.846 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.Products.Controllers.ItemGroupController.Update (ModularERP) in 78.0459ms
+2025-10-02 17:38:12.848 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.Products.Controllers.ItemGroupController.Update (ModularERP)'
+2025-10-02 17:38:12.850 +03:00 [INF] Request completed successfully with status code 200
+2025-10-02 17:38:12.851 +03:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7168/api/ItemGroup/f86965cd-0f27-42ae-9800-35f8c9007465 - 200 null application/json; charset=utf-8 99.5929ms

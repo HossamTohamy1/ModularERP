@@ -1,4 +1,6 @@
-﻿namespace ModularERP.Modules.Inventory.Features.Products.DTO
+﻿using ModularERP.Modules.Inventory.Features.Products.DTO.DTO_Product;
+
+namespace ModularERP.Modules.Inventory.Features.Products.DTO
 {
     public class ProductDetailsDto
     {
@@ -40,6 +42,8 @@
         public string? InternalNotes { get; set; }
         public string? Tags { get; set; }
         public DateTime CreatedAt { get; set; }
+        public Guid CompanyId { get; set; }
+
         public DateTime? UpdatedAt { get; set; }
     }
 }

@@ -55,15 +55,22 @@ namespace ModularERP.Shared.Repository
                 throw new InvalidOperationException("Tenant ID is required but not found");
             }
 
-            // Check if entity has TenantId property through navigation
             var entityType = typeof(T);
 
-            // For TaxProfileComponent, we need to filter through TaxProfile or TaxComponent
+            // Check if the entity itself has TenantId property
+            if (entityType.GetProperty("TenantId") != null)
+            {
+                if (Guid.TryParse(_tenantId, out var tenantId))
+                {
+                    return query.Where(e => EF.Property<Guid>(e, "TenantId") == tenantId);
+                }
+            }
+
+            // For TaxProfileComponent, filter through TaxProfile's TenantId
             if (entityType.Name == "TaxProfileComponent")
             {
                 if (Guid.TryParse(_tenantId, out var tenantId))
                 {
-                    // Filter through TaxProfile's TenantId
                     return query.Where(e =>
                         EF.Property<Guid>(EF.Property<object>(e, "TaxProfile"), "TenantId") == tenantId);
                 }
@@ -72,13 +79,41 @@ namespace ModularERP.Shared.Repository
             return query;
         }
 
+        private void SetTenantId(T entity)
+        {
+            if (string.IsNullOrEmpty(_tenantId))
+            {
+                return;
+            }
+
+            var entityType = typeof(T);
+            var tenantIdProperty = entityType.GetProperty("TenantId");
+
+            if (tenantIdProperty != null && Guid.TryParse(_tenantId, out var tenantId))
+            {
+                var currentTenantId = (Guid?)tenantIdProperty.GetValue(entity);
+
+                // Only set if it's empty or default
+                if (currentTenantId == Guid.Empty || currentTenantId == null)
+                {
+                    tenantIdProperty.SetValue(entity, tenantId);
+                }
+            }
+        }
+
         public async Task AddAsync(T entity)
         {
+            SetTenantId(entity);
             await _dbSet.AddAsync(entity);
         }
 
         public async Task AddRangeAsync(IEnumerable<T> entities)
         {
+            foreach (var entity in entities)
+            {
+                SetTenantId(entity);
+            }
+
             await _dbSet.AddRangeAsync(entities);
         }
 
@@ -114,10 +149,10 @@ namespace ModularERP.Shared.Repository
             query = ApplyTenantFilter(query);
             return await query.AnyAsync();
         }
-    
+
         public async Task Delete(T entity)
         {
-          _context.Entry(entity).State = EntityState.Deleted;
+            _context.Entry(entity).State = EntityState.Deleted;
         }
 
         public async Task DeleteRange(IEnumerable<T> entities)

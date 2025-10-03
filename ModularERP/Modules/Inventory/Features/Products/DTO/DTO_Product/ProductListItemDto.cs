@@ -1,4 +1,4 @@
-﻿namespace ModularERP.Modules.Inventory.Features.Products.DTO
+﻿namespace ModularERP.Modules.Inventory.Features.Products.DTO.DTO_Product
 {
     public class ProductListItemDto
     {

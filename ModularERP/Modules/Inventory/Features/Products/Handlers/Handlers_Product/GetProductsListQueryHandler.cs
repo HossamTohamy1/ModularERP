@@ -3,26 +3,33 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using ModularERP.Common.Enum.Inventory_Enum;
 using ModularERP.Common.ViewModel;
-using ModularERP.Modules.Inventory.Features.Products.DTO;
+using ModularERP.Modules.Inventory.Features.Products.DTO.DTO_Product;
 using ModularERP.Modules.Inventory.Features.Products.Models;
-using ModularERP.Modules.Inventory.Features.Products.Qeuries;
+using ModularERP.Modules.Inventory.Features.Products.Qeuries.Qeuries_Product;
+using ModularERP.Modules.Inventory.Features.ProductSettings.Models;
 using ModularERP.Shared.Interfaces;
 
-namespace ModularERP.Modules.Inventory.Features.Products.Handlers
+namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Product
 {
     public class GetProductsListQueryHandler : IRequestHandler<GetProductsListQuery, ResponseViewModel<PaginatedProductListDto>>
     {
         private readonly IGeneralRepository<Product> _productRepository;
         private readonly IGeneralRepository<ProductStats> _statsRepository;
+        private readonly IGeneralRepository<Category> _categoryRepository;
+        private readonly IGeneralRepository<Brand> _brandRepository;
         private readonly IMapper _mapper;
 
         public GetProductsListQueryHandler(
             IGeneralRepository<Product> productRepository,
             IGeneralRepository<ProductStats> statsRepository,
+            IGeneralRepository<Category> categoryRepository,
+            IGeneralRepository<Brand> brandRepository,
             IMapper mapper)
         {
             _productRepository = productRepository;
             _statsRepository = statsRepository;
+            _categoryRepository = categoryRepository;
+            _brandRepository = brandRepository;
             _mapper = mapper;
         }
 
@@ -30,12 +37,10 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers
         {
             var req = request.Request;
 
-            // Build query
-            var query = _productRepository
-                .GetByCompanyId(req.CompanyId)
-                .AsNoTracking();
+            var query = _productRepository.GetAll();
 
-            // Apply filters
+            query = query.Where(p => p.CompanyId == req.CompanyId);
+
             if (!string.IsNullOrWhiteSpace(req.SearchTerm))
             {
                 var searchTerm = req.SearchTerm.ToLower();
@@ -68,37 +73,60 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers
                 query = query.Where(p => p.TrackStock == req.TrackStock.Value);
             }
 
-            // Get total count
             var totalCount = await query.CountAsync(cancellationToken);
 
-            // Apply sorting
             query = ApplySorting(query, req.SortBy, req.SortOrder);
 
-            // Apply pagination
             var products = await query
                 .Skip((req.PageNumber - 1) * req.PageSize)
                 .Take(req.PageSize)
                 .ToListAsync(cancellationToken);
 
-            // Map to DTOs
-            var productDtos = _mapper.Map<List<ProductListItemDto>>(products);
+            var productIds = products.Select(p => p.Id).ToList();
+            var categoryIds = products.Where(p => p.CategoryId.HasValue).Select(p => p.CategoryId!.Value).Distinct().ToList();
+            var brandIds = products.Where(p => p.BrandId.HasValue).Select(p => p.BrandId!.Value).Distinct().ToList();
 
-            // Get stock data for tracked products
-            if (productDtos.Any(p => p.TrackStock))
+            var categoriesLookup = await _categoryRepository
+                .Get(c => categoryIds.Contains(c.Id))
+                .ToDictionaryAsync(c => c.Id, c => c.Name, cancellationToken);
+
+            var brandsLookup = await _brandRepository
+                .Get(b => brandIds.Contains(b.Id))
+                .ToDictionaryAsync(b => b.Id, b => b.Name, cancellationToken);
+
+            var stockLookup = await _statsRepository
+                .Get(s => productIds.Contains(s.ProductId))
+                .ToDictionaryAsync(s => s.ProductId, s => s.OnHandStock, cancellationToken);
+
+            var productDtos = new List<ProductListItemDto>();
+
+            foreach (var product in products)
             {
-                var productIds = productDtos.Where(p => p.TrackStock).Select(p => p.Id).ToList();
-                var stockData = await _statsRepository
-                    .Get(s => productIds.Contains(s.ProductId))
-                    .Select(s => new { s.ProductId, s.OnHandStock })
-                    .ToDictionaryAsync(s => s.ProductId, s => s.OnHandStock, cancellationToken);
+                var dto = _mapper.Map<ProductListItemDto>(product);
 
-                foreach (var product in productDtos.Where(p => p.TrackStock))
+                // Set Category name
+                if (product.CategoryId.HasValue && categoriesLookup.ContainsKey(product.CategoryId.Value))
                 {
-                    if (stockData.TryGetValue(product.Id, out var stock))
-                    {
-                        product.OnHandStock = stock;
-                    }
+                    dto.CategoryName = categoriesLookup[product.CategoryId.Value];
                 }
+                else
+                {
+                    dto.CategoryName = "N/A";
+                }
+
+                // Set Brand name
+                if (product.BrandId.HasValue && brandsLookup.ContainsKey(product.BrandId.Value))
+                {
+                    dto.BrandName = brandsLookup[product.BrandId.Value];
+                }
+
+                // Set Stock
+                if (product.TrackStock && stockLookup.ContainsKey(product.Id))
+                {
+                    dto.OnHandStock = stockLookup[product.Id];
+                }
+
+                productDtos.Add(dto);
             }
 
             var result = new PaginatedProductListDto
@@ -115,7 +143,7 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers
             return ResponseViewModel<PaginatedProductListDto>.Success(result, "Products retrieved successfully");
         }
 
-        private IQueryable<Product> ApplySorting(IQueryable<Product> query, string sortBy, string sortOrder)
+        private IQueryable<Product> ApplySorting(IQueryable<Product> query, string? sortBy, string? sortOrder)
         {
             var isDescending = sortOrder?.ToLower() == "desc";
 

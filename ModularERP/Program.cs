@@ -41,6 +41,8 @@ using ModularERP.Modules.Finance.Features.Services_For_Finance;
 using ModularERP.Modules.Inventory.Features.TaxManagement.Services;
 using ModularERP.Modules.Inventory.Features.TaxManagement.Models;
 using ModularERP.Shared.Repository;
+using ModularERP.Modules.Inventory.Features.Products.Services;
+using ModularERP.Modules.Inventory.Features.Services.Models;
 
 namespace ModularERP
 {
@@ -133,6 +135,8 @@ namespace ModularERP
                 builder.Services.AddProductSettingsServices();
                 builder.Services.AddAllEntitiesSettingsServices();
                 builder.Services.AddTaxManagementServices();
+                builder.Services.AddInventoryModule();
+
 
                 // ---------------------------
                 // 🟢 Domain Services
@@ -142,6 +146,8 @@ namespace ModularERP
                 builder.Services.AddScoped<IExpenseVoucherService, ExpenseVoucherService>();
                 builder.Services.AddScoped<IIncomeVoucherService, IncomeVoucherService>();
                 builder.Services.AddScoped<IJoinTableRepository<TaxProfileComponent>, JoinTableRepository<TaxProfileComponent>>();
+                builder.Services.AddScoped(typeof(IJoinTableRepository<>), typeof(JoinTableRepository<>));
+
                 // ---------------------------
                 // 🟢 Build App
                 // ---------------------------

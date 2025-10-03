@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using ModularERP.Modules.Inventory.Features.Products.DTO;
+using ModularERP.Modules.Inventory.Features.Products.DTO.DTO_Product;
 using ModularERP.Modules.Inventory.Features.Products.Models;
 
 namespace ModularERP.Modules.Inventory.Features.Products.Mapping
@@ -15,28 +16,40 @@ namespace ModularERP.Modules.Inventory.Features.Products.Mapping
                 .ForMember(dest => dest.CreatedAt, opt => opt.Ignore())
                 .ForMember(dest => dest.UpdatedAt, opt => opt.Ignore())
                 .ForMember(dest => dest.IsDeleted, opt => opt.Ignore())
+                .ForMember(dest => dest.Photo, opt => opt.MapFrom(src => src.PhotoUrl))
                 .ForMember(dest => dest.ProfitMargin, opt => opt.MapFrom(src => CalculateProfitMargin(src.PurchasePrice, src.SellingPrice)));
+
+            // ========== UpdateProductDto -> Product ==========
+            CreateMap<UpdateProductDto, Product>()
+                .ForMember(dest => dest.TenantId, opt => opt.Ignore())
+                .ForMember(dest => dest.CreatedAt, opt => opt.Ignore())
+                .ForMember(dest => dest.IsDeleted, opt => opt.Ignore())
+                .ForMember(dest => dest.Photo, opt => opt.MapFrom(src => src.PhotoUrl))
+                .ForMember(dest => dest.ProfitMargin, opt => opt.MapFrom(src => CalculateProfitMargin(src.PurchasePrice, src.SellingPrice)))
+                .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(src => DateTime.UtcNow));
 
             // ========== Product -> ProductListItemDto ==========
             CreateMap<Product, ProductListItemDto>()
-                .ForMember(dest => dest.CategoryName, opt => opt.Ignore()) // Will be populated from join
-                .ForMember(dest => dest.BrandName, opt => opt.Ignore())    // Will be populated from join
-                .ForMember(dest => dest.OnHandStock, opt => opt.Ignore()); // Will be populated from ProductStats
+                .ForMember(dest => dest.PhotoUrl, opt => opt.MapFrom(src => src.Photo))
+                .ForMember(dest => dest.CategoryName, opt => opt.Ignore())
+                .ForMember(dest => dest.BrandName, opt => opt.Ignore())
+                .ForMember(dest => dest.OnHandStock, opt => opt.Ignore());
 
             // ========== Product -> ProductDetailsDto ==========
             CreateMap<Product, ProductDetailsDto>()
-                .ForMember(dest => dest.CategoryName, opt => opt.Ignore())    // Will be populated from join
-                .ForMember(dest => dest.BrandName, opt => opt.Ignore())       // Will be populated from join
-                .ForMember(dest => dest.SupplierName, opt => opt.Ignore())    // Will be populated from join
-                .ForMember(dest => dest.ItemGroupName, opt => opt.Ignore())   // Will be populated from join
-                .ForMember(dest => dest.Stats, opt => opt.Ignore());          // Will be populated separately
+                .ForMember(dest => dest.PhotoUrl, opt => opt.MapFrom(src => src.Photo))
+                .ForMember(dest => dest.CategoryName, opt => opt.Ignore())
+                .ForMember(dest => dest.BrandName, opt => opt.Ignore())
+                .ForMember(dest => dest.SupplierName, opt => opt.Ignore())
+                .ForMember(dest => dest.ItemGroupName, opt => opt.Ignore())
+                .ForMember(dest => dest.Stats, opt => opt.Ignore());
 
             // ========== ProductStats -> ProductStatsDto ==========
             CreateMap<ProductStats, ProductStatsDto>()
-                .ForMember(dest => dest.StockStatus, opt => opt.Ignore()); // Calculated in handler
+                .ForMember(dest => dest.AverageUnitCost, opt => opt.MapFrom(src => src.AvgUnitCost))
+                .ForMember(dest => dest.StockStatus, opt => opt.Ignore());
         }
 
-        // Helper method to calculate profit margin
         private static decimal? CalculateProfitMargin(decimal purchasePrice, decimal sellingPrice)
         {
             if (sellingPrice > 0 && purchasePrice > 0)
@@ -47,4 +60,3 @@ namespace ModularERP.Modules.Inventory.Features.Products.Mapping
         }
     }
 }
-
