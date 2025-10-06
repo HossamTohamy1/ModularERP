@@ -16,8 +16,7 @@ namespace ModularERP.Modules.Inventory.Features.Products.Models
 
         public string? Description { get; set; }
 
-        public Guid TenantId { get; set; }
-        public bool IsDeleted { get; set; }
+        //public Guid TenantId { get; set; }
 
         // Navigation Properties
         public virtual Category? Category { get; set; }

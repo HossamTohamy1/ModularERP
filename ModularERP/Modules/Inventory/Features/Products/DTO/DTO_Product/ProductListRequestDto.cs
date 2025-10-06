@@ -7,9 +7,10 @@ namespace ModularERP.Modules.Inventory.Features.Products.DTO.DTO_Product
         public string? SearchTerm { get; set; }
         public Guid? CategoryId { get; set; }
         public Guid? BrandId { get; set; }
+        public Guid? WarehouseId { get; set; }  // NEW
         public string? Status { get; set; }
         public bool? TrackStock { get; set; }
-        public string? StockStatus { get; set; } // InStock, OutOfStock, LowStock
+        public string? StockStatus { get; set; }
         public int PageNumber { get; set; } = 1;
         public int PageSize { get; set; } = 20;
         public string? SortBy { get; set; } = "CreatedAt";

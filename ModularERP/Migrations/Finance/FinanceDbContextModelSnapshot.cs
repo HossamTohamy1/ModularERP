@@ -216,9 +216,6 @@ namespace ModularERP.Migrations.Finance
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
 
@@ -235,8 +232,6 @@ namespace ModularERP.Migrations.Finance
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
-
-                    b.HasIndex("TenantId");
 
                     b.ToTable("AspNetUsers", (string)null);
                 });
@@ -280,9 +275,6 @@ namespace ModularERP.Migrations.Finance
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
-
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -336,9 +328,6 @@ namespace ModularERP.Migrations.Finance
 
                     b.Property<string>("OldValues")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -420,9 +409,6 @@ namespace ModularERP.Migrations.Finance
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -472,9 +458,6 @@ namespace ModularERP.Migrations.Finance
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -517,9 +500,6 @@ namespace ModularERP.Migrations.Finance
                         .IsRequired()
                         .HasMaxLength(5)
                         .HasColumnType("nvarchar(5)");
-
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -567,9 +547,6 @@ namespace ModularERP.Migrations.Finance
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -578,7 +555,7 @@ namespace ModularERP.Migrations.Finance
 
                     b.HasKey("Id");
 
-                    b.HasIndex("TenantId", "Code")
+                    b.HasIndex("Code")
                         .IsUnique();
 
                     b.ToTable("Customers");
@@ -617,9 +594,6 @@ namespace ModularERP.Migrations.Finance
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
-
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Type")
                         .IsRequired()
@@ -683,9 +657,6 @@ namespace ModularERP.Migrations.Finance
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -741,9 +712,6 @@ namespace ModularERP.Migrations.Finance
 
                     b.Property<string>("RRule")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -803,9 +771,6 @@ namespace ModularERP.Migrations.Finance
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -860,9 +825,6 @@ namespace ModularERP.Migrations.Finance
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -871,7 +833,7 @@ namespace ModularERP.Migrations.Finance
 
                     b.HasKey("Id");
 
-                    b.HasIndex("TenantId", "Code")
+                    b.HasIndex("Code")
                         .IsUnique();
 
                     b.ToTable("Vendors");
@@ -917,9 +879,6 @@ namespace ModularERP.Migrations.Finance
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("TaxProfileId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("TenantId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("UpdatedAt")
@@ -1028,9 +987,6 @@ namespace ModularERP.Migrations.Finance
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<Guid?>("TreasuryId")
                         .HasColumnType("uniqueidentifier");
 
@@ -1132,9 +1088,6 @@ namespace ModularERP.Migrations.Finance
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -1181,9 +1134,6 @@ namespace ModularERP.Migrations.Finance
                         .HasColumnType("bit");
 
                     b.Property<Guid?>("ProductId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("TenantId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("Timestamp")
@@ -1273,9 +1223,6 @@ namespace ModularERP.Migrations.Finance
                         .HasColumnType("nvarchar(450)")
                         .HasDefaultValue("Active");
 
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("Type")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
@@ -1305,17 +1252,8 @@ namespace ModularERP.Migrations.Finance
                     b.HasIndex("Type")
                         .HasDatabaseName("IX_PriceList_Type");
 
-                    b.HasIndex("TenantId", "Name")
-                        .IsUnique()
-                        .HasDatabaseName("IX_PriceList_Tenant_Name");
-
                     b.HasIndex("ValidFrom", "ValidTo")
                         .HasDatabaseName("IX_PriceList_ValidityDates");
-
-                    b.HasIndex("TenantId", "Type", "IsDefault")
-                        .IsUnique()
-                        .HasDatabaseName("IX_PriceList_Tenant_Type_Default")
-                        .HasFilter("[IsDefault] = 1");
 
                     b.ToTable("PriceLists", (string)null);
                 });
@@ -1346,9 +1284,6 @@ namespace ModularERP.Migrations.Finance
                         .HasColumnType("bit");
 
                     b.Property<Guid>("PriceListId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("TenantId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("UpdatedAt")
@@ -1420,9 +1355,6 @@ namespace ModularERP.Migrations.Finance
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid?>("TaxProfileId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("TenantId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("UpdatedAt")
@@ -1505,9 +1437,6 @@ namespace ModularERP.Migrations.Finance
                     b.Property<DateTime?>("StartDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -1577,9 +1506,6 @@ namespace ModularERP.Migrations.Finance
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -1594,14 +1520,6 @@ namespace ModularERP.Migrations.Finance
 
                     b.HasIndex("BarcodeType")
                         .HasDatabaseName("IX_BarcodeSettings_Type");
-
-                    b.HasIndex("TenantId")
-                        .HasDatabaseName("IX_BarcodeSettings_Tenant");
-
-                    b.HasIndex("TenantId", "IsDefault")
-                        .IsUnique()
-                        .HasDatabaseName("IX_BarcodeSettings_Tenant_Default")
-                        .HasFilter("[IsDefault] = 1");
 
                     b.ToTable("BarcodeSettings", (string)null);
                 });
@@ -1637,9 +1555,6 @@ namespace ModularERP.Migrations.Finance
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -1650,13 +1565,6 @@ namespace ModularERP.Migrations.Finance
 
                     b.HasIndex("Name")
                         .HasDatabaseName("IX_Brand_Name");
-
-                    b.HasIndex("TenantId")
-                        .HasDatabaseName("IX_Brand_Tenant");
-
-                    b.HasIndex("TenantId", "Name")
-                        .IsUnique()
-                        .HasDatabaseName("IX_Brand_Tenant_Name");
 
                     b.ToTable("Brands", (string)null);
                 });
@@ -1691,9 +1599,6 @@ namespace ModularERP.Migrations.Finance
                     b.Property<Guid?>("ParentCategoryId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -1704,13 +1609,6 @@ namespace ModularERP.Migrations.Finance
 
                     b.HasIndex("ParentCategoryId")
                         .HasDatabaseName("IX_Category_Parent");
-
-                    b.HasIndex("TenantId")
-                        .HasDatabaseName("IX_Category_Tenant");
-
-                    b.HasIndex("TenantId", "Name")
-                        .IsUnique()
-                        .HasDatabaseName("IX_Category_Tenant_Name");
 
                     b.ToTable("Categories", (string)null);
                 });
@@ -1752,9 +1650,6 @@ namespace ModularERP.Migrations.Finance
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
-
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -1836,9 +1731,6 @@ namespace ModularERP.Migrations.Finance
                         .HasColumnType("nvarchar(450)")
                         .HasDefaultValue("Active");
 
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -1859,13 +1751,6 @@ namespace ModularERP.Migrations.Finance
 
                     b.HasIndex("Status")
                         .HasDatabaseName("IX_CustomField_Status");
-
-                    b.HasIndex("TenantId")
-                        .HasDatabaseName("IX_CustomField_Tenant");
-
-                    b.HasIndex("TenantId", "FieldName")
-                        .IsUnique()
-                        .HasDatabaseName("IX_CustomField_Tenant_Name");
 
                     b.ToTable("CustomFields", (string)null);
                 });
@@ -1899,9 +1784,6 @@ namespace ModularERP.Migrations.Finance
                         .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
-
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("UnitName")
                         .IsRequired()
@@ -1980,9 +1862,6 @@ namespace ModularERP.Migrations.Finance
                         .HasColumnType("nvarchar(450)")
                         .HasDefaultValue("Active");
 
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -1993,13 +1872,6 @@ namespace ModularERP.Migrations.Finance
 
                     b.HasIndex("Status")
                         .HasDatabaseName("IX_UnitTemplate_Status");
-
-                    b.HasIndex("TenantId")
-                        .HasDatabaseName("IX_UnitTemplate_Tenant");
-
-                    b.HasIndex("TenantId", "Name")
-                        .IsUnique()
-                        .HasDatabaseName("IX_UnitTemplate_Tenant_Name");
 
                     b.ToTable("UnitTemplates", (string)null);
                 });
@@ -2036,9 +1908,6 @@ namespace ModularERP.Migrations.Finance
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -2051,13 +1920,6 @@ namespace ModularERP.Migrations.Finance
 
                     b.HasIndex("CategoryId")
                         .HasDatabaseName("IX_ItemGroup_Category");
-
-                    b.HasIndex("TenantId")
-                        .HasDatabaseName("IX_ItemGroup_Tenant");
-
-                    b.HasIndex("TenantId", "Name")
-                        .IsUnique()
-                        .HasDatabaseName("IX_ItemGroup_Tenant_Name");
 
                     b.ToTable("ItemGroups", (string)null);
                 });
@@ -2101,9 +1963,6 @@ namespace ModularERP.Migrations.Finance
                     b.Property<decimal?>("SellingPrice")
                         .HasPrecision(18, 4)
                         .HasColumnType("decimal(18,4)");
-
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -2153,9 +2012,6 @@ namespace ModularERP.Migrations.Finance
                         .HasColumnType("bit");
 
                     b.Property<Guid>("ProductId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("TenantId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("UpdatedAt")
@@ -2229,9 +2085,6 @@ namespace ModularERP.Migrations.Finance
                         .HasColumnType("decimal(18,3)")
                         .HasDefaultValue(0m);
 
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<decimal>("TotalSold")
                         .ValueGeneratedOnAdd()
                         .HasPrecision(18, 3)
@@ -2274,15 +2127,9 @@ namespace ModularERP.Migrations.Finance
                         .HasColumnType("bit")
                         .HasDefaultValue(false);
 
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("ProductId", "TaxProfileId");
 
                     b.HasIndex("TaxProfileId");
-
-                    b.HasIndex("TenantId")
-                        .HasDatabaseName("IX_ProductTaxProfile_Tenant");
 
                     b.HasIndex("ProductId", "IsPrimary")
                         .IsUnique()
@@ -2367,9 +2214,6 @@ namespace ModularERP.Migrations.Finance
                     b.Property<Guid?>("SupplierId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("Type")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
@@ -2412,10 +2256,6 @@ namespace ModularERP.Migrations.Finance
                     b.HasIndex("WarehouseId")
                         .HasDatabaseName("IX_Requisition_Warehouse");
 
-                    b.HasIndex("TenantId", "Number")
-                        .IsUnique()
-                        .HasDatabaseName("IX_Requisition_Tenant_Number");
-
                     b.ToTable("Requisitions", (string)null);
                 });
 
@@ -2445,9 +2285,6 @@ namespace ModularERP.Migrations.Finance
                         .HasColumnType("bit");
 
                     b.Property<Guid>("RequisitionId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("TenantId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("Timestamp")
@@ -2516,9 +2353,6 @@ namespace ModularERP.Migrations.Finance
                     b.Property<decimal?>("StockOnHand")
                         .HasPrecision(18, 3)
                         .HasColumnType("decimal(18,3)");
-
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal?>("UnitPrice")
                         .HasPrecision(18, 4)
@@ -2591,10 +2425,6 @@ namespace ModularERP.Migrations.Finance
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
-                    b.Property<string>("Photo")
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
                     b.Property<decimal?>("ProfitMargin")
                         .HasPrecision(10, 4)
                         .HasColumnType("decimal(10,4)");
@@ -2616,9 +2446,6 @@ namespace ModularERP.Migrations.Finance
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<decimal?>("UnitPrice")
                         .HasPrecision(18, 4)
                         .HasColumnType("decimal(18,4)");
@@ -2629,10 +2456,16 @@ namespace ModularERP.Migrations.Finance
                     b.Property<string>("UpdatedById")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid>("WarehouseId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId")
                         .HasDatabaseName("IX_Service_Category");
+
+                    b.HasIndex("CompanyId")
+                        .HasDatabaseName("IX_Service_Company");
 
                     b.HasIndex("Status")
                         .HasDatabaseName("IX_Service_Status");
@@ -2640,14 +2473,12 @@ namespace ModularERP.Migrations.Finance
                     b.HasIndex("SupplierId")
                         .HasDatabaseName("IX_Service_Supplier");
 
+                    b.HasIndex("WarehouseId")
+                        .HasDatabaseName("IX_Service_Warehouse");
+
                     b.HasIndex("CompanyId", "Code")
                         .IsUnique()
                         .HasDatabaseName("IX_Service_Company_Code")
-                        .HasFilter("[Code] IS NOT NULL");
-
-                    b.HasIndex("TenantId", "Code")
-                        .IsUnique()
-                        .HasDatabaseName("IX_Service_Tenant_Code")
                         .HasFilter("[Code] IS NOT NULL");
 
                     b.ToTable("Services", (string)null);
@@ -2671,15 +2502,9 @@ namespace ModularERP.Migrations.Finance
                         .HasColumnType("bit")
                         .HasDefaultValue(false);
 
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("ServiceId", "TaxProfileId");
 
                     b.HasIndex("TaxProfileId");
-
-                    b.HasIndex("TenantId")
-                        .HasDatabaseName("IX_ServiceTaxProfile_Tenant");
 
                     b.HasIndex("ServiceId", "IsPrimary")
                         .IsUnique()
@@ -2730,9 +2555,6 @@ namespace ModularERP.Migrations.Finance
                     b.Property<decimal>("StockLevelAfter")
                         .HasPrecision(18, 3)
                         .HasColumnType("decimal(18,3)");
-
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("TransactionType")
                         .IsRequired()
@@ -2801,16 +2623,10 @@ namespace ModularERP.Migrations.Finance
                     b.Property<Guid>("StocktakingId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("SnapshotId");
 
                     b.HasIndex("ProductId")
                         .HasDatabaseName("IX_StockSnapshot_Product");
-
-                    b.HasIndex("TenantId")
-                        .HasDatabaseName("IX_StockSnapshot_Tenant");
 
                     b.HasIndex("StocktakingId", "ProductId")
                         .IsUnique()
@@ -2843,9 +2659,6 @@ namespace ModularERP.Migrations.Finance
                         .HasColumnType("bit");
 
                     b.Property<Guid>("StocktakingId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("TenantId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("UpdatedAt")
@@ -2923,9 +2736,6 @@ namespace ModularERP.Migrations.Finance
                         .HasColumnType("nvarchar(450)")
                         .HasDefaultValue("Draft");
 
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<bool>("UpdateSystem")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
@@ -2956,10 +2766,6 @@ namespace ModularERP.Migrations.Finance
 
                     b.HasIndex("WarehouseId")
                         .HasDatabaseName("IX_Stocktaking_Warehouse");
-
-                    b.HasIndex("TenantId", "Number")
-                        .IsUnique()
-                        .HasDatabaseName("IX_Stocktaking_Tenant_Number");
 
                     b.ToTable("StocktakingHeaders", (string)null);
                 });
@@ -3006,9 +2812,6 @@ namespace ModularERP.Migrations.Finance
                     b.Property<decimal>("SystemQtySnapshot")
                         .HasPrecision(18, 3)
                         .HasColumnType("decimal(18,3)");
-
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid?>("UnitId")
                         .HasColumnType("uniqueidentifier");
@@ -3093,9 +2896,6 @@ namespace ModularERP.Migrations.Finance
                         .HasColumnType("nvarchar(450)")
                         .HasDefaultValue("Active");
 
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -3110,16 +2910,9 @@ namespace ModularERP.Migrations.Finance
                     b.HasIndex("Status")
                         .HasDatabaseName("IX_Supplier_Status");
 
-                    b.HasIndex("TenantId")
-                        .HasDatabaseName("IX_Supplier_Tenant");
-
                     b.HasIndex("CompanyId", "Name")
                         .IsUnique()
                         .HasDatabaseName("IX_Supplier_Company_Name");
-
-                    b.HasIndex("TenantId", "Name")
-                        .IsUnique()
-                        .HasDatabaseName("IX_Supplier_Tenant_Name");
 
                     b.ToTable("Suppliers", (string)null);
                 });
@@ -3165,9 +2958,6 @@ namespace ModularERP.Migrations.Finance
                         .HasPrecision(10, 4)
                         .HasColumnType("decimal(10,4)");
 
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -3178,13 +2968,6 @@ namespace ModularERP.Migrations.Finance
 
                     b.HasIndex("AppliesOn")
                         .HasDatabaseName("IX_TaxComponent_AppliesOn");
-
-                    b.HasIndex("TenantId")
-                        .HasDatabaseName("IX_TaxComponent_Tenant");
-
-                    b.HasIndex("TenantId", "Name")
-                        .IsUnique()
-                        .HasDatabaseName("IX_TaxComponent_Tenant_Name");
 
                     b.ToTable("TaxComponents", (string)null);
                 });
@@ -3216,9 +2999,6 @@ namespace ModularERP.Migrations.Finance
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -3226,13 +3006,6 @@ namespace ModularERP.Migrations.Finance
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("TenantId")
-                        .HasDatabaseName("IX_TaxProfile_Tenant");
-
-                    b.HasIndex("TenantId", "Name")
-                        .IsUnique()
-                        .HasDatabaseName("IX_TaxProfile_Tenant_Name");
 
                     b.ToTable("TaxProfiles", (string)null);
                 });
@@ -3255,18 +3028,12 @@ namespace ModularERP.Migrations.Finance
                         .HasColumnType("int")
                         .HasDefaultValue(1);
 
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("TaxProfileId", "TaxComponentId");
 
                     b.HasIndex("Priority")
                         .HasDatabaseName("IX_TaxProfileComponent_Priority");
 
                     b.HasIndex("TaxComponentId");
-
-                    b.HasIndex("TenantId")
-                        .HasDatabaseName("IX_TaxProfileComponent_Tenant");
 
                     b.ToTable("TaxProfileComponents", (string)null);
                 });
@@ -3311,9 +3078,6 @@ namespace ModularERP.Migrations.Finance
                         .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)")
                         .HasDefaultValue("Active");
-
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -3433,9 +3197,6 @@ namespace ModularERP.Migrations.Finance
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<bool>("TrackStock")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
@@ -3446,6 +3207,9 @@ namespace ModularERP.Migrations.Finance
 
                     b.Property<string>("UpdatedById")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("WarehouseId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
@@ -3470,15 +3234,8 @@ namespace ModularERP.Migrations.Finance
                     b.HasIndex("TrackStock")
                         .HasDatabaseName("IX_Product_TrackStock");
 
-                    b.HasIndex("TenantId", "Barcode")
-                        .IsUnique()
-                        .HasDatabaseName("IX_Product_Tenant_Barcode")
-                        .HasFilter("[Barcode] IS NOT NULL");
-
-                    b.HasIndex("TenantId", "SKU")
-                        .IsUnique()
-                        .HasDatabaseName("IX_Product_Tenant_SKU")
-                        .HasFilter("[SKU] IS NOT NULL");
+                    b.HasIndex("WarehouseId")
+                        .HasDatabaseName("IX_Product_Warehouse");
 
                     b.ToTable("Products", (string)null);
                 });
@@ -4126,11 +3883,19 @@ namespace ModularERP.Migrations.Finance
                         .HasForeignKey("SupplierId")
                         .OnDelete(DeleteBehavior.Restrict);
 
+                    b.HasOne("ModularERP.Modules.Inventory.Features.Warehouses.Models.Warehouse", "Warehouse")
+                        .WithMany()
+                        .HasForeignKey("WarehouseId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.Navigation("Category");
 
                     b.Navigation("Company");
 
                     b.Navigation("Supplier");
+
+                    b.Navigation("Warehouse");
                 });
 
             modelBuilder.Entity("ModularERP.Modules.Inventory.Features.Services.Models.ServiceTaxProfile", b =>
@@ -4339,6 +4104,12 @@ namespace ModularERP.Migrations.Finance
                         .HasForeignKey("SupplierId")
                         .OnDelete(DeleteBehavior.Restrict);
 
+                    b.HasOne("ModularERP.Modules.Inventory.Features.Warehouses.Models.Warehouse", "Warehouse")
+                        .WithMany()
+                        .HasForeignKey("WarehouseId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.Navigation("Brand");
 
                     b.Navigation("Category");
@@ -4346,6 +4117,8 @@ namespace ModularERP.Migrations.Finance
                     b.Navigation("Company");
 
                     b.Navigation("Supplier");
+
+                    b.Navigation("Warehouse");
                 });
 
             modelBuilder.Entity("ModularERP.Common.Models.ApplicationUser", b =>

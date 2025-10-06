@@ -21,6 +21,12 @@ namespace ModularERP.Modules.Inventory.Features.Products.DTO.DTO_Product
         [MaxLength(500)]
         public string? PhotoUrl { get; set; }
 
+        [Required(ErrorMessage = "Company ID is required")]
+        public Guid CompanyId { get; set; }
+
+        [Required(ErrorMessage = "Warehouse is required")]
+        public Guid WarehouseId { get; set; }
+
         [Required(ErrorMessage = "Category is required")]
         public Guid CategoryId { get; set; }
 
@@ -60,10 +66,7 @@ namespace ModularERP.Modules.Inventory.Features.Products.DTO.DTO_Product
         public string Status { get; set; } = "Active";
 
         public Guid? ItemGroupId { get; set; }
-
-        [Required(ErrorMessage = "Company ID is required")]
-        public Guid CompanyId { get; set; }
-
         public List<Guid>? TaxProfileIds { get; set; }
     }
+
 }

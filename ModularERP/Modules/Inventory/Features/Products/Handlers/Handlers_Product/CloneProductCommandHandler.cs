@@ -8,6 +8,7 @@ using ModularERP.Modules.Inventory.Features.Products.DTO;
 using ModularERP.Modules.Inventory.Features.Products.Models;
 using ModularERP.Modules.Inventory.Features.ProductSettings.Models;
 using ModularERP.Modules.Inventory.Features.Suppliers.Models;
+using ModularERP.Modules.Inventory.Features.Warehouses.Models;
 using ModularERP.Shared.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,6 +21,7 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
         private readonly IGeneralRepository<Category> _categoryRepository;
         private readonly IGeneralRepository<Brand> _brandRepository;
         private readonly IGeneralRepository<Supplier> _supplierRepository;
+        private readonly IGeneralRepository<Warehouse> _warehouseRepository;
         private readonly IGeneralRepository<ItemGroupItem> _itemGroupItemRepository;
         private readonly IGeneralRepository<ItemGroup> _itemGroupRepository;
         private readonly IJoinTableRepository<ProductTaxProfile> _productTaxProfileRepository;
@@ -31,6 +33,7 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
             IGeneralRepository<Category> categoryRepository,
             IGeneralRepository<Brand> brandRepository,
             IGeneralRepository<Supplier> supplierRepository,
+            IGeneralRepository<Warehouse> warehouseRepository,
             IGeneralRepository<ItemGroupItem> itemGroupItemRepository,
             IGeneralRepository<ItemGroup> itemGroupRepository,
             IJoinTableRepository<ProductTaxProfile> productTaxProfileRepository,
@@ -41,6 +44,7 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
             _categoryRepository = categoryRepository;
             _brandRepository = brandRepository;
             _supplierRepository = supplierRepository;
+            _warehouseRepository = warehouseRepository;
             _itemGroupItemRepository = itemGroupItemRepository;
             _itemGroupRepository = itemGroupRepository;
             _productTaxProfileRepository = productTaxProfileRepository;
@@ -68,10 +72,11 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
                 Description = sourceProduct.Description,
                 Photo = sourceProduct.Photo,
                 CompanyId = sourceProduct.CompanyId,
+                WarehouseId = sourceProduct.WarehouseId,  // ✅ Clone warehouse
                 CategoryId = sourceProduct.CategoryId,
                 BrandId = sourceProduct.BrandId,
                 SupplierId = sourceProduct.SupplierId,
-                Barcode = null,
+                Barcode = null,  // Don't clone barcode
                 PurchasePrice = sourceProduct.PurchasePrice,
                 SellingPrice = sourceProduct.SellingPrice,
                 MinPrice = sourceProduct.MinPrice,
@@ -79,7 +84,7 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
                 DiscountType = sourceProduct.DiscountType,
                 ProfitMargin = sourceProduct.ProfitMargin,
                 TrackStock = sourceProduct.TrackStock,
-                InitialStock = 0,
+                InitialStock = 0,  // Start with zero stock
                 LowStockThreshold = sourceProduct.LowStockThreshold,
                 InternalNotes = sourceProduct.InternalNotes,
                 Tags = sourceProduct.Tags,
@@ -152,54 +157,7 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
             if (createdProduct == null)
                 throw new NotFoundException("Product not found after cloning", Common.Enum.Finance_Enum.FinanceErrorCode.NotFound);
 
-            var responseDto = _mapper.Map<ProductDetailsDto>(createdProduct);
-            responseDto.PhotoUrl = createdProduct.Photo;
-
-            if (createdProduct.CategoryId.HasValue)
-            {
-                var category = await _categoryRepository.GetByID(createdProduct.CategoryId.Value);
-                responseDto.CategoryName = category?.Name ?? "N/A";
-            }
-            else
-            {
-                responseDto.CategoryName = "N/A";
-            }
-
-            if (createdProduct.BrandId.HasValue)
-            {
-                var brand = await _brandRepository.GetByID(createdProduct.BrandId.Value);
-                responseDto.BrandName = brand?.Name;
-            }
-
-            if (createdProduct.SupplierId.HasValue)
-            {
-                var supplier = await _supplierRepository.GetByID(createdProduct.SupplierId.Value);
-                responseDto.SupplierName = supplier?.Name;
-            }
-
-            var clonedItemGroup = await _itemGroupItemRepository
-                .Get(igi => igi.ProductId == createdProduct.Id)
-                .FirstOrDefaultAsync(cancellationToken);
-
-            if (clonedItemGroup != null)
-            {
-                var itemGroup = await _itemGroupRepository.GetByID(clonedItemGroup.GroupId);
-                responseDto.ItemGroupId = itemGroup?.Id;
-                responseDto.ItemGroupName = itemGroup?.Name;
-            }
-
-            if (createdProduct.TrackStock)
-            {
-                var stats = await _statsRepository
-                    .Get(s => s.ProductId == createdProduct.Id)
-                    .FirstOrDefaultAsync(cancellationToken);
-
-                if (stats != null)
-                {
-                    responseDto.Stats = _mapper.Map<ProductStatsDto>(stats);
-                    responseDto.Stats.StockStatus = "OutOfStock";
-                }
-            }
+            var responseDto = await MapToDetailsDto(createdProduct, cancellationToken);
 
             return ResponseViewModel<ProductDetailsDto>.Success(responseDto, "Product cloned successfully");
         }
@@ -218,6 +176,64 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
             }
 
             return newSKU;
+        }
+
+        private async Task<ProductDetailsDto> MapToDetailsDto(Product product, CancellationToken cancellationToken)
+        {
+            var responseDto = _mapper.Map<ProductDetailsDto>(product);
+            responseDto.PhotoUrl = product.Photo;
+
+            // Load Warehouse
+            var warehouse = await _warehouseRepository.GetByID(product.WarehouseId);
+            responseDto.WarehouseName = warehouse?.Name;
+
+            if (product.CategoryId.HasValue)
+            {
+                var category = await _categoryRepository.GetByID(product.CategoryId.Value);
+                responseDto.CategoryName = category?.Name ?? "N/A";
+            }
+            else
+            {
+                responseDto.CategoryName = "N/A";
+            }
+
+            if (product.BrandId.HasValue)
+            {
+                var brand = await _brandRepository.GetByID(product.BrandId.Value);
+                responseDto.BrandName = brand?.Name;
+            }
+
+            if (product.SupplierId.HasValue)
+            {
+                var supplier = await _supplierRepository.GetByID(product.SupplierId.Value);
+                responseDto.SupplierName = supplier?.Name;
+            }
+
+            var clonedItemGroup = await _itemGroupItemRepository
+                .Get(igi => igi.ProductId == product.Id)
+                .FirstOrDefaultAsync(cancellationToken);
+
+            if (clonedItemGroup != null)
+            {
+                var itemGroup = await _itemGroupRepository.GetByID(clonedItemGroup.GroupId);
+                responseDto.ItemGroupId = itemGroup?.Id;
+                responseDto.ItemGroupName = itemGroup?.Name;
+            }
+
+            if (product.TrackStock)
+            {
+                var stats = await _statsRepository
+                    .Get(s => s.ProductId == product.Id)
+                    .FirstOrDefaultAsync(cancellationToken);
+
+                if (stats != null)
+                {
+                    responseDto.Stats = _mapper.Map<ProductStatsDto>(stats);
+                    responseDto.Stats.StockStatus = "OutOfStock";
+                }
+            }
+
+            return responseDto;
         }
     }
 }

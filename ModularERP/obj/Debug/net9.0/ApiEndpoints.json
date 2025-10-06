@@ -910,6 +910,161 @@
     ]
   },
   {
+    "ContainingType": "ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.CustomFieldController",
+    "Method": "Create",
+    "RelativePath": "api/CustomField",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "ModularERP.Modules.Inventory.Features.ProductSettings.Commends.Command_Custom.CreateCustomFieldCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Custom.CustomFieldResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.CustomFieldController",
+    "Method": "GetAll",
+    "RelativePath": "api/CustomField",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[System.Collections.Generic.List\u00601[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Custom.CustomFieldResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.CustomFieldController",
+    "Method": "GetById",
+    "RelativePath": "api/CustomField/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Custom.CustomFieldResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.CustomFieldController",
+    "Method": "Update",
+    "RelativePath": "api/CustomField/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "ModularERP.Modules.Inventory.Features.ProductSettings.Commends.Command_Custom.UpdateCustomFieldCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Custom.CustomFieldResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.CustomFieldController",
+    "Method": "Delete",
+    "RelativePath": "api/CustomField/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.CustomFieldController",
+    "Method": "GetByEntity",
+    "RelativePath": "api/CustomField/by-entity/{entityType}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entityType",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[System.Collections.Generic.List\u00601[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_Custom.CustomFieldResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "ModularERP.Modules.Finance.Features.ExpensesVoucher.Controllers.ExpenseVouchersController",
     "Method": "CreateExpenseVoucher",
     "RelativePath": "api/ExpenseVouchers",
@@ -1964,6 +2119,11 @@
         "IsRequired": false
       },
       {
+        "Name": "WarehouseId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
         "Name": "Status",
         "Type": "System.String",
         "IsRequired": false
@@ -2986,6 +3146,197 @@
     "ReturnTypes": [
       {
         "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[ModularERP.Modules.Finance.Features.Treasuries.DTO.TreasuryStatisticsDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.UnitTemplatesController",
+    "Method": "GetAll",
+    "RelativePath": "api/UnitTemplates",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[System.Collections.Generic.List\u00601[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_UnitTemplates.UnitTemplateListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.UnitTemplatesController",
+    "Method": "Create",
+    "RelativePath": "api/UnitTemplates",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_UnitTemplates.CreateUnitTemplateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_UnitTemplates.UnitTemplateDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.UnitTemplatesController",
+    "Method": "GetById",
+    "RelativePath": "api/UnitTemplates/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_UnitTemplates.UnitTemplateDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.UnitTemplatesController",
+    "Method": "Update",
+    "RelativePath": "api/UnitTemplates/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_UnitTemplates.UpdateUnitTemplateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_UnitTemplates.UnitTemplateDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.UnitTemplatesController",
+    "Method": "Delete",
+    "RelativePath": "api/UnitTemplates/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.UnitTemplatesController",
+    "Method": "AddUnitConversion",
+    "RelativePath": "api/UnitTemplates/{id}/units",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_UnitTemplates.CreateUnitConversionDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_UnitTemplates.UnitConversionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ModularERP.Modules.Inventory.Features.ProductSettings.Controllers.UnitTemplatesController",
+    "Method": "DeleteUnitConversion",
+    "RelativePath": "api/UnitTemplates/{id}/units/{unitId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "unitId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

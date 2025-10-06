@@ -91,7 +91,7 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
             {
                 userId = Guid.Parse("f0602c31-0c12-4b5c-9ccf-fe17811d5c53");
                 var user = await _context.Users
-                    .Where(u => u.Id == userId && u.TenantId == tenantGuid && !u.IsDeleted)
+                    .Where(u => u.Id == userId && !u.IsDeleted)
                     .FirstOrDefaultAsync(cancellationToken);
 
                 if (user == null)
@@ -110,7 +110,7 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
             {
                 companyId = Guid.Parse("82b0fb02-1282-483c-ae26-c8466423707e");
                 var company = await _context.Companies
-                    .Where(c => c.Id == companyId && c.TenantId == tenantGuid && !c.IsDeleted)
+                    .Where(c => c.Id == companyId &&  !c.IsDeleted)
                     .FirstOrDefaultAsync(cancellationToken);
 
                 if (company == null)
@@ -180,7 +180,6 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
                 voucher = _mapper.Map<Voucher>(dto);
                 voucher.Code = code;
                 voucher.CompanyId = companyId;
-                voucher.TenantId = tenantGuid;
                 voucher.CreatedBy = userId;
 
                 if (dto.SourceId.HasValue && !string.IsNullOrEmpty(dto.SourceType))
@@ -217,7 +216,6 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
                                 AppliedRate = taxLineDto.AppliedRate,
                                 IsWithholding = taxLineDto.IsWithholding,
                                 Direction = TaxDirection.Income,
-                                TenantId = tenantGuid
                             };
                             taxes.Add(voucherTax);
                         }
@@ -275,7 +273,6 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
                             Checksum = checksum,
                             UploadedBy = userId,
                             UploadedAt = DateTime.UtcNow,
-                            TenantId = tenantGuid
                         };
                         attachments.Add(attachment);
 

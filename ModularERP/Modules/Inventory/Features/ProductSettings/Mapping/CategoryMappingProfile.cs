@@ -14,7 +14,6 @@ namespace ModularERP.Modules.Inventory.Features.ProductSettings.Mapping
                 .ForMember(dest => dest.CreatedAt, opt => opt.Ignore())
                 .ForMember(dest => dest.UpdatedAt, opt => opt.Ignore())
                 .ForMember(dest => dest.IsDeleted, opt => opt.Ignore())
-                .ForMember(dest => dest.TenantId, opt => opt.Ignore())
                 .ForMember(dest => dest.SubCategories, opt => opt.Ignore())
                 .ForMember(dest => dest.Attachments, opt => opt.Ignore())
                 .ForMember(dest => dest.ParentCategory, opt => opt.Ignore());
@@ -23,7 +22,6 @@ namespace ModularERP.Modules.Inventory.Features.ProductSettings.Mapping
                 .ForMember(dest => dest.CreatedAt, opt => opt.Ignore())
                 .ForMember(dest => dest.UpdatedAt, opt => opt.Ignore())
                 .ForMember(dest => dest.IsDeleted, opt => opt.Ignore())
-                .ForMember(dest => dest.TenantId, opt => opt.Ignore())
                 .ForMember(dest => dest.SubCategories, opt => opt.Ignore())
                 .ForMember(dest => dest.Attachments, opt => opt.Ignore())
                 .ForMember(dest => dest.ParentCategory, opt => opt.Ignore());

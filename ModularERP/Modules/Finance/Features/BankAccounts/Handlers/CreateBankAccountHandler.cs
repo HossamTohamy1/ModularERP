@@ -200,7 +200,7 @@ namespace ModularERP.Modules.Finance.Features.BankAccounts.Handlers
                     Id = masterCompany.Id,
                     Name = masterCompany.Name,
                     CurrencyCode = masterCompany.CurrencyCode,
-                    TenantId = Guid.Parse(tenantId), 
+     
                     CreatedAt = masterCompany.CreatedAt,
                     IsDeleted = false
                 };

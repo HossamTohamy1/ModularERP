@@ -102,7 +102,6 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
             builder.Entity<ApplicationUser>(entity =>
             {
                 entity.ToTable("AspNetUsers");
-                entity.HasIndex(e => e.TenantId);
                 entity.Property(e => e.IsDeleted).HasDefaultValue(false);
             });
 
@@ -216,13 +215,13 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
             // Vendor Configuration
             builder.Entity<Vendor>(entity =>
             {
-                entity.HasIndex(e => new { e.TenantId, e.Code }).IsUnique();
+                entity.HasIndex(e => new {  e.Code }).IsUnique();
             });
 
             // Customer Configuration
             builder.Entity<Customer>(entity =>
             {
-                entity.HasIndex(e => new { e.TenantId, e.Code }).IsUnique();
+                entity.HasIndex(e => new {  e.Code }).IsUnique();
             });
 
             // Voucher Configuration
@@ -386,10 +385,6 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
             {
                 entity.ToTable("Categories");
 
-                // Unique constraint: TenantId + Name (categories are tenant-wide, not company-specific)
-                entity.HasIndex(e => new { e.TenantId, e.Name })
-                      .IsUnique()
-                      .HasDatabaseName("IX_Category_Tenant_Name");
 
                 // Self-referencing relationship for hierarchy
                 entity.HasOne(e => e.ParentCategory)
@@ -407,8 +402,6 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.HasIndex(e => e.ParentCategoryId)
                       .HasDatabaseName("IX_Category_Parent");
 
-                entity.HasIndex(e => e.TenantId)
-                      .HasDatabaseName("IX_Category_Tenant");
             });
 
             // Category Attachment Configuration
@@ -435,14 +428,9 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
             {
                 entity.ToTable("Brands");
 
-                // Unique constraint: TenantId + Name (brands are tenant-wide)
-                entity.HasIndex(e => new { e.TenantId, e.Name })
-                      .IsUnique()
-                      .HasDatabaseName("IX_Brand_Tenant_Name");
+   
 
-                // Indexes for performance
-                entity.HasIndex(e => e.TenantId)
-                      .HasDatabaseName("IX_Brand_Tenant");
+    
 
                 entity.HasIndex(e => e.Name)
                       .HasDatabaseName("IX_Brand_Name");
@@ -452,10 +440,6 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
             {
                 entity.ToTable("UnitTemplates");
 
-                // Unique constraint: TenantId + Name
-                entity.HasIndex(e => new { e.TenantId, e.Name })
-                      .IsUnique()
-                      .HasDatabaseName("IX_UnitTemplate_Tenant_Name");
 
                 // Convert enum to string
                 entity.Property(e => e.Status)
@@ -472,8 +456,6 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.HasIndex(e => e.Status)
                       .HasDatabaseName("IX_UnitTemplate_Status");
 
-                entity.HasIndex(e => e.TenantId)
-                      .HasDatabaseName("IX_UnitTemplate_Tenant");
             });
 
             // UnitConversion Configuration
@@ -511,10 +493,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.ToTable("BarcodeSettings");
 
                 // Only one default settings per tenant
-                entity.HasIndex(e => new { e.TenantId, e.IsDefault })
-                      .IsUnique()
-                      .HasFilter("[IsDefault] = 1")
-                      .HasDatabaseName("IX_BarcodeSettings_Tenant_Default");
+    
 
                 // Precision for decimals
                 entity.Property(e => e.WeightUnitDivider)
@@ -530,9 +509,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.Property(e => e.IsDefault)
                       .HasDefaultValue(true);
 
-                // Indexes
-                entity.HasIndex(e => e.TenantId)
-                      .HasDatabaseName("IX_BarcodeSettings_Tenant");
+
 
                 entity.HasIndex(e => e.BarcodeType)
                       .HasDatabaseName("IX_BarcodeSettings_Type");
@@ -543,10 +520,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
             {
                 entity.ToTable("CustomFields");
 
-                // Unique constraint: TenantId + FieldName
-                entity.HasIndex(e => new { e.TenantId, e.FieldName })
-                      .IsUnique()
-                      .HasDatabaseName("IX_CustomField_Tenant_Name");
+ 
 
                 // Convert enums to string
                 entity.Property(e => e.FieldType)
@@ -573,17 +547,14 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.HasIndex(e => e.DisplayOrder)
                       .HasDatabaseName("IX_CustomField_DisplayOrder");
 
-                entity.HasIndex(e => e.TenantId)
-                      .HasDatabaseName("IX_CustomField_Tenant");
+
+                     
             });
             builder.Entity<TaxComponent>(entity =>
             {
                 entity.ToTable("TaxComponents");
 
-                // Unique constraint: TenantId + Name
-                entity.HasIndex(e => new { e.TenantId, e.Name })
-                      .IsUnique()
-                      .HasDatabaseName("IX_TaxComponent_Tenant_Name");
+    
 
                 // Convert enums to string
                 entity.Property(e => e.RateType)
@@ -607,9 +578,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .HasForeignKey(e => e.TaxComponentId)
                       .OnDelete(DeleteBehavior.Restrict);
 
-                // Indexes
-                entity.HasIndex(e => e.TenantId)
-                      .HasDatabaseName("IX_TaxComponent_Tenant");
+
 
 
                 entity.HasIndex(e => e.AppliesOn)
@@ -621,10 +590,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
             {
                 entity.ToTable("TaxProfiles");
 
-                // Unique constraint: TenantId + Name
-                entity.HasIndex(e => new { e.TenantId, e.Name })
-                      .IsUnique()
-                      .HasDatabaseName("IX_TaxProfile_Tenant_Name");
+
 
                 // Default values
 
@@ -635,9 +601,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .HasForeignKey(e => e.TaxProfileId)
                       .OnDelete(DeleteBehavior.Cascade);
 
-                // Indexes
-                entity.HasIndex(e => e.TenantId)
-                      .HasDatabaseName("IX_TaxProfile_Tenant");
+       
 
 
             });
@@ -657,8 +621,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.Property(e => e.IsDeleted)
                       .HasDefaultValue(false);
 
-                entity.HasIndex(e => e.TenantId)
-                      .HasDatabaseName("IX_TaxProfileComponent_Tenant");
+       
 
                 // Indexes
                 entity.HasIndex(e => e.Priority)
@@ -678,10 +641,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .HasForeignKey(e => e.CompanyId)
                       .OnDelete(DeleteBehavior.Restrict);
 
-                // Unique constraint: TenantId + Name
-                entity.HasIndex(e => new { e.TenantId, e.Name })
-                      .IsUnique()
-                      .HasDatabaseName("IX_Supplier_Tenant_Name");
+
 
                 // Convert enum to string
                 entity.Property(e => e.Status)
@@ -699,9 +659,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .HasForeignKey(e => e.SupplierId)
                       .OnDelete(DeleteBehavior.Restrict);
 
-                // Indexes
-                entity.HasIndex(e => e.TenantId)
-                      .HasDatabaseName("IX_Supplier_Tenant");
+ 
 
                 entity.HasIndex(e => e.Status)
                       .HasDatabaseName("IX_Supplier_Status");
@@ -718,16 +676,6 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
             {
                 entity.ToTable("Products");
 
-                // Unique constraints
-                entity.HasIndex(e => new { e.TenantId, e.SKU })
-                      .IsUnique()
-                      .HasFilter("[SKU] IS NOT NULL")
-                      .HasDatabaseName("IX_Product_Tenant_SKU");
-
-                entity.HasIndex(e => new { e.TenantId, e.Barcode })
-                      .IsUnique()
-                      .HasFilter("[Barcode] IS NOT NULL")
-                      .HasDatabaseName("IX_Product_Tenant_Barcode");
 
                 // Convert enums to string
                 entity.Property(e => e.Status)
@@ -754,6 +702,12 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.HasOne(e => e.Company)
                       .WithMany()
                       .HasForeignKey(e => e.CompanyId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // ✅ NEW: Warehouse Relationship
+                entity.HasOne(e => e.Warehouse)
+                      .WithMany()
+                      .HasForeignKey(e => e.WarehouseId)
                       .OnDelete(DeleteBehavior.Restrict);
 
                 entity.HasOne(e => e.Category)
@@ -788,6 +742,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
 
                 // Performance indexes
                 entity.HasIndex(e => e.CompanyId).HasDatabaseName("IX_Product_Company");
+                entity.HasIndex(e => e.WarehouseId).HasDatabaseName("IX_Product_Warehouse");  // ✅ NEW
                 entity.HasIndex(e => e.Status).HasDatabaseName("IX_Product_Status");
                 entity.HasIndex(e => e.TrackStock).HasDatabaseName("IX_Product_TrackStock");
                 entity.HasIndex(e => e.LowStockThreshold).HasDatabaseName("IX_Product_LowStock");
@@ -795,7 +750,6 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.HasIndex(e => e.BrandId).HasDatabaseName("IX_Product_Brand");
                 entity.HasIndex(e => e.SupplierId).HasDatabaseName("IX_Product_Supplier");
             });
-
 
             // ============================================
             // SERVICES CONFIGURATION
@@ -815,12 +769,13 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .HasForeignKey(e => e.CompanyId)
                       .OnDelete(DeleteBehavior.Restrict);
 
+                // ✅ NEW: Warehouse Relationship
+                entity.HasOne(e => e.Warehouse)
+                      .WithMany()
+                      .HasForeignKey(e => e.WarehouseId)
+                      .OnDelete(DeleteBehavior.Restrict);
 
-                // Unique constraint
-                entity.HasIndex(e => new { e.TenantId, e.Code })
-                      .IsUnique()
-                      .HasFilter("[Code] IS NOT NULL")
-                      .HasDatabaseName("IX_Service_Tenant_Code");
+    
 
                 // Convert enums to string
                 entity.Property(e => e.Status)
@@ -863,16 +818,12 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .OnDelete(DeleteBehavior.Cascade);
 
                 // Indexes
-                entity.HasIndex(e => e.Status)
-                      .HasDatabaseName("IX_Service_Status");
-
-                entity.HasIndex(e => e.CategoryId)
-                      .HasDatabaseName("IX_Service_Category");
-
-                entity.HasIndex(e => e.SupplierId)
-                      .HasDatabaseName("IX_Service_Supplier");
+                entity.HasIndex(e => e.CompanyId).HasDatabaseName("IX_Service_Company");
+                entity.HasIndex(e => e.WarehouseId).HasDatabaseName("IX_Service_Warehouse");  // ✅ NEW
+                entity.HasIndex(e => e.Status).HasDatabaseName("IX_Service_Status");
+                entity.HasIndex(e => e.CategoryId).HasDatabaseName("IX_Service_Category");
+                entity.HasIndex(e => e.SupplierId).HasDatabaseName("IX_Service_Supplier");
             });
-
             // ============================================
             // PRODUCT TAX PROFILES (Many-to-Many)
             // ============================================
@@ -891,8 +842,6 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.Property(e => e.IsDeleted)
                       .HasDefaultValue(false);
 
-                entity.HasIndex(e => e.TenantId)
-                      .HasDatabaseName("IX_ProductTaxProfile_Tenant");
 
                 // Only one primary tax profile per product
                 entity.HasIndex(e => new { e.ProductId, e.IsPrimary })
@@ -924,8 +873,6 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.Property(e => e.IsDeleted)
                       .HasDefaultValue(false);
 
-                entity.HasIndex(e => e.TenantId)
-                      .HasDatabaseName("IX_ServiceTaxProfile_Tenant");
 
                 // Only one primary tax profile per service
                 entity.HasIndex(e => new { e.ServiceId, e.IsPrimary })
@@ -948,9 +895,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.ToTable("ItemGroups");
 
                 // Unique constraint
-                entity.HasIndex(e => new { e.TenantId, e.Name })
-                      .IsUnique()
-                      .HasDatabaseName("IX_ItemGroup_Tenant_Name");
+
 
                 // Relationships
                 entity.HasOne(e => e.Category)
@@ -968,9 +913,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .HasForeignKey(e => e.GroupId)
                       .OnDelete(DeleteBehavior.Cascade);
 
-                // Indexes
-                entity.HasIndex(e => e.TenantId)
-                      .HasDatabaseName("IX_ItemGroup_Tenant");
+  
 
                 entity.HasIndex(e => e.CategoryId)
                       .HasDatabaseName("IX_ItemGroup_Category");
@@ -1179,10 +1122,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
             {
                 entity.ToTable("Requisitions");
 
-                // Unique constraint: TenantId + Number
-                entity.HasIndex(e => new { e.TenantId, e.Number })
-                      .IsUnique()
-                      .HasDatabaseName("IX_Requisition_Tenant_Number");
+
 
                 // Convert enums to string
                 entity.Property(e => e.Type)
@@ -1336,10 +1276,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
             {
                 entity.ToTable("StocktakingHeaders");
 
-                // Unique constraint: TenantId + Number
-                entity.HasIndex(e => new { e.TenantId, e.Number })
-                      .IsUnique()
-                      .HasDatabaseName("IX_Stocktaking_Tenant_Number");
+
 
                 // Convert enum to string
                 entity.Property(e => e.Status)
@@ -1494,8 +1431,6 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.Property(e => e.IsDeleted)
                       .HasDefaultValue(false);
 
-                entity.HasIndex(e => e.TenantId)
-                      .HasDatabaseName("IX_StockSnapshot_Tenant");
 
                 // Relationships
                 entity.HasOne(e => e.Product)
@@ -1511,10 +1446,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
             {
                 entity.ToTable("PriceLists");
 
-                // Unique constraint: TenantId + Name
-                entity.HasIndex(e => new { e.TenantId, e.Name })
-                      .IsUnique()
-                      .HasDatabaseName("IX_PriceList_Tenant_Name");
+
 
                 // Convert enums to string
                 entity.Property(e => e.Type)
@@ -1573,11 +1505,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.HasIndex(e => e.CurrencyCode)
                       .HasDatabaseName("IX_PriceList_Currency");
 
-                // Only one default price list per type per tenant
-                entity.HasIndex(e => new { e.TenantId, e.Type, e.IsDefault })
-                      .IsUnique()
-                      .HasFilter("[IsDefault] = 1")
-                      .HasDatabaseName("IX_PriceList_Tenant_Type_Default");
+  
             });
 
             // ============================================

@@ -48,8 +48,8 @@ namespace ModularERP.Modules.Inventory.Features.Requisitions.Models
 
         public Guid? ParentRequisitionId { get; set; }
 
-        public Guid TenantId { get; set; }
-        public bool IsDeleted { get; set; }
+        //public Guid TenantId { get; set; }
+      
 
         // Navigation Properties
         public virtual Warehouse Warehouse { get; set; } = null!;

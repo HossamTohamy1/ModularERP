@@ -5,7 +5,6 @@ using System.Linq.Expressions;
 using ModularERP.Common.Models;
 using ModularERP.Modules.Finance.Finance.Infrastructure.Data;
 using Microsoft.AspNetCore.Http;
-using System.Security.Claims;
 
 namespace ModularERP.SharedKernel.Repository
 {
@@ -52,26 +51,9 @@ namespace ModularERP.SharedKernel.Repository
             return null;
         }
 
-        private IQueryable<T> ApplyTenantFilter(IQueryable<T> query)
-        {
-            if (string.IsNullOrEmpty(_tenantId))
-            {
-                throw new InvalidOperationException("Tenant ID is required but not found");
-            }
-
-            if (typeof(T).GetProperty("TenantId") != null)
-            {
-                if (Guid.TryParse(_tenantId, out var tenantId))
-                {
-                    return query.Where(e => EF.Property<Guid>(e, "TenantId") == tenantId);
-                }
-            }
-
-            return query;
-        }
-
         public async Task AddAsync(T entity)
         {
+            // Set TenantId للـ audit purposes فقط
             if (typeof(T).GetProperty("TenantId") != null && !string.IsNullOrEmpty(_tenantId))
             {
                 if (Guid.TryParse(_tenantId, out var tenantId))
@@ -84,28 +66,27 @@ namespace ModularERP.SharedKernel.Repository
                 }
             }
 
-    
             await _dbSet.AddAsync(entity);
         }
 
         public IQueryable<T> GetAll()
         {
-            var query = _dbSet.Where(x => !x.IsDeleted);
-            return ApplyTenantFilter(query);
+            return _dbSet.Where(x => !x.IsDeleted);
         }
 
         public async Task<T?> GetByID(Guid id)
         {
-            var query = _dbSet.Where(c => c.Id == id && !c.IsDeleted);
-            query = ApplyTenantFilter(query);
-            return await query.FirstOrDefaultAsync();
+            return await _dbSet
+                .Where(c => c.Id == id && !c.IsDeleted)
+                .FirstOrDefaultAsync();
         }
 
         public async Task<T?> GetByIDWithTracking(Guid id)
         {
-            var query = _dbSet.AsTracking().Where(c => c.Id == id && !c.IsDeleted);
-            query = ApplyTenantFilter(query);
-            return await query.FirstOrDefaultAsync();
+            return await _dbSet
+                .AsTracking()
+                .Where(c => c.Id == id && !c.IsDeleted)
+                .FirstOrDefaultAsync();
         }
 
         public IQueryable<T> Get(Expression<Func<T, bool>> expression)
@@ -130,7 +111,7 @@ namespace ModularERP.SharedKernel.Repository
             var existingEntity = await GetByIDWithTracking(entity.Id);
             if (existingEntity == null)
             {
-                throw new UnauthorizedAccessException("Entity not found or does not belong to current tenant");
+                throw new KeyNotFoundException($"Entity with ID {entity.Id} not found");
             }
 
             _context.Entry(existingEntity).CurrentValues.SetValues(entity);
@@ -178,15 +159,14 @@ namespace ModularERP.SharedKernel.Repository
 
         public async Task<bool> AnyAsync(Expression<Func<T, bool>> predicate)
         {
-            var query = _dbSet.Where(predicate);
-            query = ApplyTenantFilter(query);
-            return await query.AnyAsync();
+            return await _dbSet.Where(predicate).AnyAsync();
         }
 
         public async Task AddRangeAsync(IEnumerable<T> entities)
         {
             foreach (var entity in entities)
             {
+                // Set TenantId للـ audit purposes فقط
                 if (typeof(T).GetProperty("TenantId") != null && !string.IsNullOrEmpty(_tenantId))
                 {
                     if (Guid.TryParse(_tenantId, out var tenantId))

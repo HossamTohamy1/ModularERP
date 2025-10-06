@@ -9,6 +9,6 @@
         public string IncludedType { get; set; } = string.Empty;
         public string AppliesOn { get; set; } = string.Empty;
         public bool Active { get; set; }
-        public Guid TenantId { get; set; }
+        //public Guid TenantId { get; set; }
     }
 }

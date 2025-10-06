@@ -7,6 +7,7 @@ using ModularERP.Modules.Inventory.Features.Products.DTO;
 using ModularERP.Modules.Inventory.Features.Products.Models;
 using ModularERP.Modules.Inventory.Features.ProductSettings.Models;
 using ModularERP.Modules.Inventory.Features.Suppliers.Models;
+using ModularERP.Modules.Inventory.Features.Warehouses.Models;
 using ModularERP.Shared.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using ModularERP.Modules.Inventory.Features.Products.Commends.Commends_Product;
@@ -20,6 +21,7 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
         private readonly IGeneralRepository<Category> _categoryRepository;
         private readonly IGeneralRepository<Brand> _brandRepository;
         private readonly IGeneralRepository<Supplier> _supplierRepository;
+        private readonly IGeneralRepository<Warehouse> _warehouseRepository;
         private readonly IGeneralRepository<ItemGroupItem> _itemGroupItemRepository;
         private readonly IGeneralRepository<ItemGroup> _itemGroupRepository;
         private readonly IJoinTableRepository<ProductTaxProfile> _productTaxProfileRepository;
@@ -31,6 +33,7 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
             IGeneralRepository<Category> categoryRepository,
             IGeneralRepository<Brand> brandRepository,
             IGeneralRepository<Supplier> supplierRepository,
+            IGeneralRepository<Warehouse> warehouseRepository,
             IGeneralRepository<ItemGroupItem> itemGroupItemRepository,
             IGeneralRepository<ItemGroup> itemGroupRepository,
             IJoinTableRepository<ProductTaxProfile> productTaxProfileRepository,
@@ -41,6 +44,7 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
             _categoryRepository = categoryRepository;
             _brandRepository = brandRepository;
             _supplierRepository = supplierRepository;
+            _warehouseRepository = warehouseRepository;
             _itemGroupItemRepository = itemGroupItemRepository;
             _itemGroupRepository = itemGroupRepository;
             _productTaxProfileRepository = productTaxProfileRepository;
@@ -66,6 +70,7 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
             existingProduct.SKU = dto.SKU;
             existingProduct.Description = dto.Description;
             existingProduct.Photo = dto.PhotoUrl;
+            existingProduct.WarehouseId = dto.WarehouseId;  // ✅ NEW
             existingProduct.CategoryId = dto.CategoryId;
             existingProduct.BrandId = dto.BrandId;
             existingProduct.SupplierId = dto.SupplierId;
@@ -169,57 +174,7 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
             if (updatedProduct == null)
                 throw new NotFoundException("Product not found after update", Common.Enum.Finance_Enum.FinanceErrorCode.NotFound);
 
-            var responseDto = _mapper.Map<ProductDetailsDto>(updatedProduct);
-            responseDto.PhotoUrl = updatedProduct.Photo;
-
-            if (updatedProduct.CategoryId.HasValue)
-            {
-                var category = await _categoryRepository.GetByID(updatedProduct.CategoryId.Value);
-                responseDto.CategoryName = category?.Name ?? "N/A";
-            }
-            else
-            {
-                responseDto.CategoryName = "N/A";
-            }
-
-            if (updatedProduct.BrandId.HasValue)
-            {
-                var brand = await _brandRepository.GetByID(updatedProduct.BrandId.Value);
-                responseDto.BrandName = brand?.Name;
-            }
-
-            if (updatedProduct.SupplierId.HasValue)
-            {
-                var supplier = await _supplierRepository.GetByID(updatedProduct.SupplierId.Value);
-                responseDto.SupplierName = supplier?.Name;
-            }
-
-            if (dto.ItemGroupId.HasValue)
-            {
-                var itemGroupItem = await _itemGroupItemRepository
-                    .Get(igi => igi.ProductId == updatedProduct.Id)
-                    .FirstOrDefaultAsync(cancellationToken);
-
-                if (itemGroupItem != null)
-                {
-                    var itemGroup = await _itemGroupRepository.GetByID(itemGroupItem.GroupId);
-                    responseDto.ItemGroupId = itemGroup?.Id;
-                    responseDto.ItemGroupName = itemGroup?.Name;
-                }
-            }
-
-            if (updatedProduct.TrackStock)
-            {
-                var stats = await _statsRepository
-                    .Get(s => s.ProductId == updatedProduct.Id)
-                    .FirstOrDefaultAsync(cancellationToken);
-
-                if (stats != null)
-                {
-                    responseDto.Stats = _mapper.Map<ProductStatsDto>(stats);
-                    responseDto.Stats.StockStatus = GetStockStatus(stats.OnHandStock, updatedProduct.LowStockThreshold);
-                }
-            }
+            var responseDto = await MapToDetailsDto(updatedProduct, cancellationToken);
 
             return ResponseViewModel<ProductDetailsDto>.Success(responseDto, "Product updated successfully");
         }
@@ -251,6 +206,17 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
                 }
             }
 
+            // Validate Warehouse
+            var warehouseExists = await _warehouseRepository.AnyAsync(w =>
+                w.Id == dto.WarehouseId &&
+                w.CompanyId == dto.CompanyId &&
+                w.Status == Common.Enum.Inventory_Enum.WarehouseStatus.Active);
+
+            if (!warehouseExists)
+            {
+                errors.Add("WarehouseId", new[] { "Warehouse not found or not active" });
+            }
+
             if (dto.MinimumPrice.HasValue && dto.SellingPrice < dto.MinimumPrice.Value)
             {
                 errors.Add("SellingPrice", new[] { "Selling price cannot be lower than minimum price" });
@@ -260,6 +226,64 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
             {
                 throw new ValidationException("Product validation failed", errors, "Inventory");
             }
+        }
+
+        private async Task<ProductDetailsDto> MapToDetailsDto(Product product, CancellationToken cancellationToken)
+        {
+            var responseDto = _mapper.Map<ProductDetailsDto>(product);
+            responseDto.PhotoUrl = product.Photo;
+
+            // Load Warehouse
+            var warehouse = await _warehouseRepository.GetByID(product.WarehouseId);
+            responseDto.WarehouseName = warehouse?.Name;
+
+            if (product.CategoryId.HasValue)
+            {
+                var category = await _categoryRepository.GetByID(product.CategoryId.Value);
+                responseDto.CategoryName = category?.Name ?? "N/A";
+            }
+            else
+            {
+                responseDto.CategoryName = "N/A";
+            }
+
+            if (product.BrandId.HasValue)
+            {
+                var brand = await _brandRepository.GetByID(product.BrandId.Value);
+                responseDto.BrandName = brand?.Name;
+            }
+
+            if (product.SupplierId.HasValue)
+            {
+                var supplier = await _supplierRepository.GetByID(product.SupplierId.Value);
+                responseDto.SupplierName = supplier?.Name;
+            }
+
+            var itemGroupItem = await _itemGroupItemRepository
+                .Get(igi => igi.ProductId == product.Id)
+                .FirstOrDefaultAsync(cancellationToken);
+
+            if (itemGroupItem != null)
+            {
+                var itemGroup = await _itemGroupRepository.GetByID(itemGroupItem.GroupId);
+                responseDto.ItemGroupId = itemGroup?.Id;
+                responseDto.ItemGroupName = itemGroup?.Name;
+            }
+
+            if (product.TrackStock)
+            {
+                var stats = await _statsRepository
+                    .Get(s => s.ProductId == product.Id)
+                    .FirstOrDefaultAsync(cancellationToken);
+
+                if (stats != null)
+                {
+                    responseDto.Stats = _mapper.Map<ProductStatsDto>(stats);
+                    responseDto.Stats.StockStatus = GetStockStatus(stats.OnHandStock, product.LowStockThreshold);
+                }
+            }
+
+            return responseDto;
         }
 
         private decimal? CalculateProfitMargin(decimal purchasePrice, decimal sellingPrice)

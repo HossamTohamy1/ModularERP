@@ -11,6 +11,11 @@ namespace ModularERP.Modules.Inventory.Features.Products.DTO
         public string? PhotoUrl { get; set; }
         public string Status { get; set; }
 
+        // Company & Warehouse
+        public Guid CompanyId { get; set; }
+        public Guid WarehouseId { get; set; }
+        public string? WarehouseName { get; set; }
+
         // Pricing
         public decimal PurchasePrice { get; set; }
         public decimal SellingPrice { get; set; }
@@ -42,8 +47,6 @@ namespace ModularERP.Modules.Inventory.Features.Products.DTO
         public string? InternalNotes { get; set; }
         public string? Tags { get; set; }
         public DateTime CreatedAt { get; set; }
-        public Guid CompanyId { get; set; }
-
         public DateTime? UpdatedAt { get; set; }
     }
 }

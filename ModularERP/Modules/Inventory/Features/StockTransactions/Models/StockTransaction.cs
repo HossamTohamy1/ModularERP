@@ -36,8 +36,8 @@ namespace ModularERP.Modules.Inventory.Features.StockTransactions.Models
 
         public Guid? CreatedByUserId { get; set; }
 
-        public Guid TenantId { get; set; }
-        public bool IsDeleted { get; set; }
+        //public Guid TenantId { get; set; }
+        
 
         // Navigation Properties
         public virtual Company? Company { get; set; }

@@ -69,7 +69,7 @@ namespace ModularERP.Modules.Finance.Features.IncomesVoucher.Handlers
                 userId = Guid.Parse("f0602c31-0c12-4b5c-9ccf-fe17811d5c53");
 
                 var user = await _context.Users
-                    .Where(u => u.Id == userId && u.TenantId == tenantGuid && !u.IsDeleted)
+                    .Where(u => u.Id == userId &&  !u.IsDeleted)
                     .FirstOrDefaultAsync(cancellationToken);
 
                 if (user == null)

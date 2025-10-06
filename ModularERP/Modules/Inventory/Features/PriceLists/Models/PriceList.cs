@@ -29,8 +29,7 @@ namespace ModularERP.Modules.Inventory.Features.PriceLists.Models
 
         public PriceListStatus Status { get; set; } = PriceListStatus.Active;
 
-        public Guid TenantId { get; set; }
-        public bool IsDeleted { get; set; }
+//        public Guid TenantId { get; set; }
 
         // Navigation Properties
         public virtual Company? Company { get; set; }

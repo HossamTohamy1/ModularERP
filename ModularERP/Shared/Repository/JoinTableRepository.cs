@@ -48,79 +48,52 @@ namespace ModularERP.Shared.Repository
             return null;
         }
 
-        private IQueryable<T> ApplyTenantFilter(IQueryable<T> query)
-        {
-            if (string.IsNullOrEmpty(_tenantId))
-            {
-                throw new InvalidOperationException("Tenant ID is required but not found");
-            }
+        //private void SetTenantId(T entity)
+        //{
+        //    if (string.IsNullOrEmpty(_tenantId))
+        //    {
+        //        return;
+        //    }
 
-            var entityType = typeof(T);
+        //    var entityType = typeof(T);
+        //    var tenantIdProperty = entityType.GetProperty("TenantId");
 
-            // Check if the entity itself has TenantId property
-            if (entityType.GetProperty("TenantId") != null)
-            {
-                if (Guid.TryParse(_tenantId, out var tenantId))
-                {
-                    return query.Where(e => EF.Property<Guid>(e, "TenantId") == tenantId);
-                }
-            }
-
-            // For TaxProfileComponent, filter through TaxProfile's TenantId
-            if (entityType.Name == "TaxProfileComponent")
-            {
-                if (Guid.TryParse(_tenantId, out var tenantId))
-                {
-                    return query.Where(e =>
-                        EF.Property<Guid>(EF.Property<object>(e, "TaxProfile"), "TenantId") == tenantId);
-                }
-            }
-
-            return query;
-        }
-
-        private void SetTenantId(T entity)
-        {
-            if (string.IsNullOrEmpty(_tenantId))
-            {
-                return;
-            }
-
-            var entityType = typeof(T);
-            var tenantIdProperty = entityType.GetProperty("TenantId");
-
-            if (tenantIdProperty != null && Guid.TryParse(_tenantId, out var tenantId))
-            {
-                var currentTenantId = (Guid?)tenantIdProperty.GetValue(entity);
-
-                // Only set if it's empty or default
-                if (currentTenantId == Guid.Empty || currentTenantId == null)
-                {
-                    tenantIdProperty.SetValue(entity, tenantId);
-                }
-            }
-        }
+        //    if (tenantIdProperty != null && Guid.TryParse(_tenantId, out var tenantId))
+        //    {
+        //        var currentTenantId = (Guid?)tenantIdProperty.GetValue(entity);
+        //        if (currentTenantId == Guid.Empty || currentTenantId == null)
+        //        {
+        //            tenantIdProperty.SetValue(entity, tenantId);
+        //        }
+        //    }
+        //}
 
         public async Task AddAsync(T entity)
         {
-            SetTenantId(entity);
+            //SetTenantId(entity);
             await _dbSet.AddAsync(entity);
         }
 
         public async Task AddRangeAsync(IEnumerable<T> entities)
         {
-            foreach (var entity in entities)
-            {
-                SetTenantId(entity);
-            }
-
+  
             await _dbSet.AddRangeAsync(entities);
         }
 
         public IQueryable<T> GetAll()
         {
             var query = _dbSet.AsQueryable();
-            return ApplyTenantFilter(query);
+
+            // ✅ إضافة فلتر soft delete لو موجود
+            var entityType = typeof(T);
+            var isDeletedProperty = entityType.GetProperty("IsDeleted");
+
+            if (isDeletedProperty != null)
+            {
+                query = query.Where(e => !EF.Property<bool>(e, "IsDeleted"));
+            }
+
+            return query;
         }
 
         public IQueryable<T> Get(Expression<Func<T, bool>> expression)
@@ -132,32 +105,69 @@ namespace ModularERP.Shared.Repository
         {
             var entity = await _dbSet.FindAsync(keyValues);
 
+            // ✅ التحقق من soft delete
             if (entity != null)
             {
-                // Verify tenant access
-                var query = _dbSet.Where(e => e.Equals(entity));
-                query = ApplyTenantFilter(query);
-                return await query.FirstOrDefaultAsync();
+                var isDeletedProperty = typeof(T).GetProperty("IsDeleted");
+                if (isDeletedProperty != null)
+                {
+                    var isDeleted = (bool?)isDeletedProperty.GetValue(entity);
+                    if (isDeleted == true)
+                    {
+                        return null;
+                    }
+                }
             }
 
-            return null;
+            return entity;
         }
 
         public async Task<bool> AnyAsync(Expression<Func<T, bool>> predicate)
         {
-            var query = _dbSet.Where(predicate);
-            query = ApplyTenantFilter(query);
-            return await query.AnyAsync();
+            return await GetAll().Where(predicate).AnyAsync();
         }
 
+        // ✅ Soft Delete (إذا كان الـ entity فيه IsDeleted)
         public async Task Delete(T entity)
         {
-            _context.Entry(entity).State = EntityState.Deleted;
+            var entityType = typeof(T);
+            var isDeletedProperty = entityType.GetProperty("IsDeleted");
+
+            if (isDeletedProperty != null)
+            {
+                // Soft delete
+                isDeletedProperty.SetValue(entity, true);
+                _context.Entry(entity).State = EntityState.Modified;
+            }
+            else
+            {
+                // Hard delete
+                _context.Entry(entity).State = EntityState.Deleted;
+            }
+
+            await _context.SaveChangesAsync();
         }
 
         public async Task DeleteRange(IEnumerable<T> entities)
         {
-            _dbSet.RemoveRange(entities);
+            var entityType = typeof(T);
+            var isDeletedProperty = entityType.GetProperty("IsDeleted");
+
+            if (isDeletedProperty != null)
+            {
+                // Soft delete
+                foreach (var entity in entities)
+                {
+                    isDeletedProperty.SetValue(entity, true);
+                    _context.Entry(entity).State = EntityState.Modified;
+                }
+            }
+            else
+            {
+                // Hard delete
+                _dbSet.RemoveRange(entities);
+            }
+
             await _context.SaveChangesAsync();
         }
 

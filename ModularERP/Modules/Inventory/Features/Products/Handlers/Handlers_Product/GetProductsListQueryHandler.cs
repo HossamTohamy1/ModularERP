@@ -7,6 +7,7 @@ using ModularERP.Modules.Inventory.Features.Products.DTO.DTO_Product;
 using ModularERP.Modules.Inventory.Features.Products.Models;
 using ModularERP.Modules.Inventory.Features.Products.Qeuries.Qeuries_Product;
 using ModularERP.Modules.Inventory.Features.ProductSettings.Models;
+using ModularERP.Modules.Inventory.Features.Warehouses.Models;
 using ModularERP.Shared.Interfaces;
 
 namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Product
@@ -17,6 +18,7 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
         private readonly IGeneralRepository<ProductStats> _statsRepository;
         private readonly IGeneralRepository<Category> _categoryRepository;
         private readonly IGeneralRepository<Brand> _brandRepository;
+        private readonly IGeneralRepository<Warehouse> _warehouseRepository;
         private readonly IMapper _mapper;
 
         public GetProductsListQueryHandler(
@@ -24,12 +26,14 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
             IGeneralRepository<ProductStats> statsRepository,
             IGeneralRepository<Category> categoryRepository,
             IGeneralRepository<Brand> brandRepository,
+            IGeneralRepository<Warehouse> warehouseRepository,
             IMapper mapper)
         {
             _productRepository = productRepository;
             _statsRepository = statsRepository;
             _categoryRepository = categoryRepository;
             _brandRepository = brandRepository;
+            _warehouseRepository = warehouseRepository;
             _mapper = mapper;
         }
 
@@ -38,7 +42,6 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
             var req = request.Request;
 
             var query = _productRepository.GetAll();
-
             query = query.Where(p => p.CompanyId == req.CompanyId);
 
             if (!string.IsNullOrWhiteSpace(req.SearchTerm))
@@ -60,9 +63,15 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
                 query = query.Where(p => p.BrandId == req.BrandId.Value);
             }
 
+            // Filter by Warehouse
+            if (req.WarehouseId.HasValue)
+            {
+                query = query.Where(p => p.WarehouseId == req.WarehouseId.Value);
+            }
+
             if (!string.IsNullOrWhiteSpace(req.Status))
             {
-                if (Enum.TryParse<ProductStatus>(req.Status, true, out var statusEnum))
+                if (Enum.TryParse<Common.Enum.Inventory_Enum.ProductStatus>(req.Status, true, out var statusEnum))
                 {
                     query = query.Where(p => p.Status == statusEnum);
                 }
@@ -74,7 +83,6 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
             }
 
             var totalCount = await query.CountAsync(cancellationToken);
-
             query = ApplySorting(query, req.SortBy, req.SortOrder);
 
             var products = await query
@@ -85,6 +93,7 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
             var productIds = products.Select(p => p.Id).ToList();
             var categoryIds = products.Where(p => p.CategoryId.HasValue).Select(p => p.CategoryId!.Value).Distinct().ToList();
             var brandIds = products.Where(p => p.BrandId.HasValue).Select(p => p.BrandId!.Value).Distinct().ToList();
+            var warehouseIds = products.Select(p => p.WarehouseId).Distinct().ToList();
 
             var categoriesLookup = await _categoryRepository
                 .Get(c => categoryIds.Contains(c.Id))
@@ -93,6 +102,10 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
             var brandsLookup = await _brandRepository
                 .Get(b => brandIds.Contains(b.Id))
                 .ToDictionaryAsync(b => b.Id, b => b.Name, cancellationToken);
+
+            var warehousesLookup = await _warehouseRepository
+                .Get(w => warehouseIds.Contains(w.Id))
+                .ToDictionaryAsync(w => w.Id, w => w.Name, cancellationToken);
 
             var stockLookup = await _statsRepository
                 .Get(s => productIds.Contains(s.ProductId))
@@ -104,7 +117,6 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
             {
                 var dto = _mapper.Map<ProductListItemDto>(product);
 
-                // Set Category name
                 if (product.CategoryId.HasValue && categoriesLookup.ContainsKey(product.CategoryId.Value))
                 {
                     dto.CategoryName = categoriesLookup[product.CategoryId.Value];
@@ -114,13 +126,16 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
                     dto.CategoryName = "N/A";
                 }
 
-                // Set Brand name
                 if (product.BrandId.HasValue && brandsLookup.ContainsKey(product.BrandId.Value))
                 {
                     dto.BrandName = brandsLookup[product.BrandId.Value];
                 }
 
-                // Set Stock
+                if (warehousesLookup.ContainsKey(product.WarehouseId))
+                {
+                    dto.WarehouseName = warehousesLookup[product.WarehouseId];
+                }
+
                 if (product.TrackStock && stockLookup.ContainsKey(product.Id))
                 {
                     dto.OnHandStock = stockLookup[product.Id];

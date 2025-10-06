@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using ModularERP.Common.Enum.Inventory_Enum;
 using ModularERP.Modules.Finance.Features.Companys.Models;
+using ModularERP.Modules.Inventory.Features.Warehouses.Models;
 
 namespace ModularERP.Modules.Inventory.Features.Services.Models
 {
@@ -19,11 +20,14 @@ namespace ModularERP.Modules.Inventory.Features.Services.Models
 
         public string? Description { get; set; }
 
-        [MaxLength(500)]
-        public string? Photo { get; set; }
+        // Company & Warehouse
+        [Required]
+        public Guid CompanyId { get; set; }
+
+        [Required(ErrorMessage = "Warehouse is required")]
+        public Guid WarehouseId { get; set; }
 
         public Guid? CategoryId { get; set; }
-
         public Guid? SupplierId { get; set; }
 
         [Column(TypeName = "decimal(18,4)")]
@@ -50,12 +54,12 @@ namespace ModularERP.Modules.Inventory.Features.Services.Models
 
         public ServiceStatus Status { get; set; } = ServiceStatus.Active;
 
-        public Guid CompanyId { get; set; }
-
         // Navigation Properties
+        public virtual Company? Company { get; set; }
+        public virtual Warehouse? Warehouse { get; set; }
         public virtual Category? Category { get; set; }
         public virtual Supplier? Supplier { get; set; }
         public virtual ICollection<ServiceTaxProfile> ServiceTaxProfiles { get; set; } = new List<ServiceTaxProfile>();
-        public virtual Company? Company { get; set; }
     }
 }
+

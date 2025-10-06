@@ -91,7 +91,7 @@ namespace ModularERP
                 });
 
                 // ---------------------------
-                // 🟢 MasterDbContext
+                //  MasterDbContext
                 // ---------------------------
                 builder.Services.AddDbContext<MasterDbContext>(options =>
                     options.UseSqlServer(builder.Configuration.GetConnectionString("MasterConnection")));
@@ -102,7 +102,7 @@ namespace ModularERP
                 builder.Services.AddScoped<ITenantDbContextProvider, TenantDbContextProvider>();
 
                 // ---------------------------
-                // 🟢 FinanceDbContext (Dynamic Tenant DB)
+                // FinanceDbContext (Dynamic Tenant DB)
                 // ---------------------------
                 builder.Services.AddTransient<FinanceDbContext>(provider =>
                 {

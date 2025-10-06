@@ -6,6 +6,7 @@ using ModularERP.Modules.Inventory.Features.ProductSettings.Models;
 using ModularERP.Modules.Inventory.Features.Suppliers.Models;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using ModularERP.Modules.Inventory.Features.Warehouses.Models;
 
 public class Product : BaseEntity
 {
@@ -21,8 +22,12 @@ public class Product : BaseEntity
     [MaxLength(500)]
     public string? Photo { get; set; }
 
-    // إضافة CompanyId هنا
+    // Company & Warehouse
+    [Required]
     public Guid CompanyId { get; set; }
+
+    [Required(ErrorMessage = "Warehouse is required")]
+    public Guid WarehouseId { get; set; }
 
     public Guid? CategoryId { get; set; }
     public Guid? BrandId { get; set; }
@@ -64,7 +69,8 @@ public class Product : BaseEntity
     public ProductStatus Status { get; set; } = ProductStatus.Active;
 
     // Navigation Properties
-    public virtual Company? Company { get; set; }  
+    public virtual Company? Company { get; set; }
+    public virtual Warehouse? Warehouse { get; set; }
     public virtual Category? Category { get; set; }
     public virtual Brand? Brand { get; set; }
     public virtual Supplier? Supplier { get; set; }

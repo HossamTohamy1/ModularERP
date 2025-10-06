@@ -68,7 +68,6 @@ namespace ModularERP.Common.InfrastructureMaster.Data
                             Id = masterCompany.Id,
                             Name = masterCompany.Name,
                             CurrencyCode = masterCompany.CurrencyCode,
-                            TenantId = masterCompany.Id,
                             CreatedAt = masterCompany.CreatedAt
                         };
 

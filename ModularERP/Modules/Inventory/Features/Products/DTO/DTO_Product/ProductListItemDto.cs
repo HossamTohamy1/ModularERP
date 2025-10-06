@@ -8,6 +8,7 @@
         public string? PhotoUrl { get; set; }
         public string CategoryName { get; set; }
         public string? BrandName { get; set; }
+        public string? WarehouseName { get; set; }  // NEW
         public decimal SellingPrice { get; set; }
         public decimal? OnHandStock { get; set; }
         public string Status { get; set; }

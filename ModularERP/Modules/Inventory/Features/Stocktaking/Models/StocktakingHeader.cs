@@ -34,8 +34,8 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Models
         public Guid? PostedBy { get; set; }
         public DateTime? PostedAt { get; set; }
 
-        public Guid TenantId { get; set; }
-        public bool IsDeleted { get; set; }
+        //public Guid TenantId { get; set; }
+        
 
         // Navigation Properties
         public virtual Company? Company { get; set; }

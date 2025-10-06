@@ -12,7 +12,7 @@ namespace ModularERP.Modules.Inventory.Features.Services.Models
         /// Indicates if this is the primary/default tax profile for the service
         /// </summary>
         public bool IsPrimary { get; set; } = false;
-        public Guid TenantId { get; set; }
+        //public Guid TenantId { get; set; }
         public bool IsDeleted { get; set; }
 
         // Navigation Properties
