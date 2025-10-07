@@ -1,0 +1,33 @@
+﻿using ModularERP.Common.Enum.Inventory_Enum;
+using System.ComponentModel.DataAnnotations;
+
+namespace ModularERP.Modules.Inventory.Features.PriceLists.DTO.DTO_PriceListItems
+{
+    public class UpdatePriceListDto
+    {
+        [Required]
+        public Guid Id { get; set; }
+
+        [Required]
+        public Guid CompanyId { get; set; }
+
+        [Required]
+        [MaxLength(200)]
+        public string Name { get; set; } = string.Empty;
+
+        [Required]
+        public PriceListType Type { get; set; }
+
+        [Required]
+        [MaxLength(3)]
+        public string CurrencyCode { get; set; } = string.Empty;
+
+        public DateTime? ValidFrom { get; set; }
+
+        public DateTime? ValidTo { get; set; }
+
+        public bool IsDefault { get; set; }
+
+        public PriceListStatus Status { get; set; }
+    }
+}

@@ -12,6 +12,6 @@ namespace ModularERP.Modules.Inventory.Features.ProductSettings.Service
         Task<ResponseViewModel<bool>> DeleteAsync(DeleteCustomFieldCommand command);
         Task<ResponseViewModel<List<CustomFieldResponseDto>>> GetAllAsync(GetAllCustomFieldsQuery query);
         Task<ResponseViewModel<CustomFieldResponseDto>> GetByIdAsync(GetCustomFieldByIdQuery query);
-        Task<ResponseViewModel<List<CustomFieldResponseDto>>> GetByEntityTypeAsync(GetCustomFieldsByEntityQuery query);
+        //Task<ResponseViewModel<List<CustomFieldResponseDto>>> GetByEntityTypeAsync(GetCustomFieldsByEntityQuery query);
     }
 }

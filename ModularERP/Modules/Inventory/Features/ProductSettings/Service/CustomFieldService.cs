@@ -127,28 +127,30 @@ namespace ModularERP.Modules.Inventory.Features.ProductSettings.Service
             return ResponseViewModel<CustomFieldResponseDto>.Success(customField, "Custom field retrieved successfully");
         }
 
-        public async Task<ResponseViewModel<List<CustomFieldResponseDto>>> GetByEntityTypeAsync(GetCustomFieldsByEntityQuery query)
-        {
-            var entityType = query.EntityType.ToLower();
+        //public async Task<ResponseViewModel<List<CustomFieldResponseDto>>> GetByEntityTypeAsync(GetCustomFieldsByEntityQuery query)
+        //{
+        //    var entityType = query.EntityType.ToLower();
 
-            if (entityType != "product" && entityType != "service")
-            {
-                throw new BusinessLogicException(
-                    "Invalid entity type. Allowed values are: product, service",
-                    "Inventory",
-                    FinanceErrorCode.ValidationError);
-            }
+        //    if (entityType != "product" && entityType != "service" && entityType != "warehouse")
+        //    {
+        //        throw new BusinessLogicException(
+        //            "Invalid entity type. Allowed values are: product, service, warehouse",
+        //            "Inventory",
+        //            FinanceErrorCode.ValidationError);
+        //    }
 
-            var customFields = await _repository
-                .GetAll()
-                .Where(x => x.Status == Common.Enum.Inventory_Enum.CustomFieldStatus.Active)
-                .OrderBy(x => x.DisplayOrder)
-                .ProjectTo<CustomFieldResponseDto>(_mapper.ConfigurationProvider)
-                .ToListAsync();
+        //    var customFields = await _repository
+        //        .GetAll()
+        //        .Where(x => x.EntityType.ToLower() == entityType &&
+        //                    x.Status == Common.Enum.Inventory_Enum.CustomFieldStatus.Active)
+        //        .OrderBy(x => x.DisplayOrder)
+        //        .ProjectTo<CustomFieldResponseDto>(_mapper.ConfigurationProvider)
+        //        .ToListAsync();
 
-            return ResponseViewModel<List<CustomFieldResponseDto>>.Success(
-                customFields,
-                $"Custom fields for {entityType} retrieved successfully");
-        }
+
+        //    return ResponseViewModel<List<CustomFieldResponseDto>>.Success(
+        //        customFields,
+        //        $"Custom fields for {entityType} retrieved successfully");
+        //}
     }
 }

@@ -17,22 +17,23 @@ namespace ModularERP.Modules.Inventory.Features.ProductSettings.Controllers
         private readonly DeleteCustomFieldHandler _deleteHandler;
         private readonly GetAllCustomFieldsHandler _getAllHandler;
         private readonly GetCustomFieldByIdHandler _getByIdHandler;
-        private readonly GetCustomFieldsByEntityHandler _getByEntityHandler;
+        //private readonly GetCustomFieldsByEntityHandler _getByEntityHandler;
 
         public CustomFieldController(
             CreateCustomFieldHandler createHandler,
             UpdateCustomFieldHandler updateHandler,
             DeleteCustomFieldHandler deleteHandler,
             GetAllCustomFieldsHandler getAllHandler,
-            GetCustomFieldByIdHandler getByIdHandler,
-            GetCustomFieldsByEntityHandler getByEntityHandler)
+            GetCustomFieldByIdHandler getByIdHandler
+            //GetCustomFieldsByEntityHandler getByEntityHandler
+            )
         {
             _createHandler = createHandler;
             _updateHandler = updateHandler;
             _deleteHandler = deleteHandler;
             _getAllHandler = getAllHandler;
             _getByIdHandler = getByIdHandler;
-            _getByEntityHandler = getByEntityHandler;
+            //_getByEntityHandler = getByEntityHandler;
         }
 
         [HttpPost]
@@ -56,12 +57,12 @@ namespace ModularERP.Modules.Inventory.Features.ProductSettings.Controllers
             return Ok(result);
         }
 
-        [HttpGet("by-entity/{entityType}")]
-        public async Task<ActionResult<ResponseViewModel<List<CustomFieldResponseDto>>>> GetByEntity(string entityType)
-        {
-            var result = await _getByEntityHandler.Handle(new GetCustomFieldsByEntityQuery { EntityType = entityType });
-            return Ok(result);
-        }
+        //[HttpGet("by-entity/{entityType}")]
+        //public async Task<ActionResult<ResponseViewModel<List<CustomFieldResponseDto>>>> GetByEntity(string entityType)
+        //{
+        //    var result = await _getByEntityHandler.Handle(new GetCustomFieldsByEntityQuery { EntityType = entityType });
+        //    return Ok(result);
+        //}
 
         [HttpPut("{id:guid}")]
         public async Task<ActionResult<ResponseViewModel<CustomFieldResponseDto>>> Update(Guid id, [FromBody] UpdateCustomFieldCommand command)

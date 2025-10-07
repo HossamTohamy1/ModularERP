@@ -1,5 +1,7 @@
 ﻿using FluentValidation;
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
+using ModularERP.Common.Behaviors;
 using ModularERP.Modules.Finance.Features.BankAccounts.Mapping;
 using ModularERP.Modules.Finance.Features.ExpensesVoucher.Mapping;
 using ModularERP.Modules.Finance.Features.GlAccounts.Mapping;
@@ -13,6 +15,7 @@ using ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_UnitTemplate
 using ModularERP.Modules.Inventory.Features.ProductSettings.Handlers.Handelrs_UnitTemplates;
 using ModularERP.Modules.Inventory.Features.ProductSettings.Handlers.Handler_CustomField;
 using ModularERP.Modules.Inventory.Features.ProductSettings.Mapping;
+using ModularERP.Modules.Inventory.Features.ProductSettings.Validators.Validators_Barcode;
 using ModularERP.Modules.Inventory.Features.ProductSettings.Validators.Validators_Brand;
 using ModularERP.Modules.Inventory.Features.ProductSettings.Validators.Validators_Category;
 using ModularERP.Modules.Inventory.Features.ProductSettings.Validators.Validators_CustomField;
@@ -38,6 +41,7 @@ namespace ModularERP.Modules.Inventory.Features.ProductSettings.Service
                 cfg.AddProfile<BrandMappingProfile>();
                 cfg.AddProfile<UnitTemplateMappingProfile>();
                 cfg.AddProfile<CustomFieldMappingProfile>();
+                cfg.AddProfile<BarcodeSettingsMappingProfile>();
             });
 
             // Register FluentValidation validators
@@ -79,12 +83,24 @@ namespace ModularERP.Modules.Inventory.Features.ProductSettings.Service
             services.AddScoped<DeleteCustomFieldHandler>();
             services.AddScoped<GetAllCustomFieldsHandler>();
             services.AddScoped<GetCustomFieldByIdHandler>();
-            services.AddScoped<GetCustomFieldsByEntityHandler>();
+            //services.AddScoped<GetCustomFieldsByEntityHandler>();
 
             // Validators
             services.AddScoped<IValidator<CreateCustomFieldCommand>, CreateCustomFieldValidator>();
             services.AddScoped<IValidator<UpdateCustomFieldCommand>, UpdateCustomFieldValidator>();
             services.AddScoped<IValidator<DeleteCustomFieldCommand>, DeleteCustomFieldValidator>();
+
+            // Register MediatR handlers
+            services.AddMediatR(cfg =>
+                cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+
+
+            // Register FluentValidation validators
+            services.AddValidatorsFromAssemblyContaining<CreateBarcodeSettingsValidator>();
+
+            // Add validation behavior for MediatR pipeline
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+
 
             return services;
         }

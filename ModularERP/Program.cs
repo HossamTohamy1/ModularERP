@@ -43,6 +43,7 @@ using ModularERP.Modules.Inventory.Features.TaxManagement.Models;
 using ModularERP.Shared.Repository;
 using ModularERP.Modules.Inventory.Features.Products.Services;
 using ModularERP.Modules.Inventory.Features.Services.Models;
+using ModularERP.Modules.Inventory.Features.PriceLists.Services;
 
 namespace ModularERP
 {
@@ -136,6 +137,7 @@ namespace ModularERP
                 builder.Services.AddAllEntitiesSettingsServices();
                 builder.Services.AddTaxManagementServices();
                 builder.Services.AddInventoryModule();
+                builder.Services.AddPriceListServices();
 
 
                 // ---------------------------
