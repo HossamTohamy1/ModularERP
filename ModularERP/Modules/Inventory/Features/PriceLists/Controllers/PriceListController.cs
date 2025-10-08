@@ -158,12 +158,12 @@ namespace ModularERP.Modules.Inventory.Features.PriceLists.Controllers
         /// <summary>
         /// Import price list from file
         /// </summary>
-        [HttpPost("import")]
-        public async Task<IActionResult> Import([FromForm] ImportPriceListDto dto)
-        {
-            var command = new ImportPriceListCommand(dto);
-            var result = await _mediator.Send(command);
-            return Ok(result);
-        }
+        //[HttpPost("import")]
+        //public async Task<IActionResult> Import([FromForm] ImportPriceListDto dto)
+        //{
+        //    var command = new ImportPriceListCommand(dto);
+        //    var result = await _mediator.Send(command);
+        //    return Ok(result);
+        //}
     }
 }

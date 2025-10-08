@@ -1,6 +1,8 @@
 ﻿using FluentValidation;
+using Microsoft.Extensions.DependencyInjection;
 using ModularERP.Modules.Inventory.Features.PriceLists.DTO.DTO_PriceListItems;
 using ModularERP.Modules.Inventory.Features.PriceLists.Mapping;
+using ModularERP.Modules.Inventory.Features.PriceLists.Validators.Validators_PriceList;
 using ModularERP.Modules.Inventory.Features.PriceLists.Validators.Validators_PriceListItems;
 using ModularERP.Modules.Inventory.Features.ProductSettings.Mapping;
 using System.Reflection;
@@ -19,6 +21,8 @@ namespace ModularERP.Modules.Inventory.Features.PriceLists.Services
             {
 
                 cfg.AddProfile<PriceListMappingProfile>();
+                cfg.AddProfile<PriceListItemMappingProfile>();
+                cfg.AddProfile<PriceListRuleMappingProfile>();
 
             });
             // Register FluentValidation validators
@@ -26,6 +30,13 @@ namespace ModularERP.Modules.Inventory.Features.PriceLists.Services
             services.AddScoped<IValidator<UpdatePriceListDto>, UpdatePriceListValidator>();
             services.AddScoped<IValidator<ClonePriceListDto>, ClonePriceListValidator>();
             services.AddScoped<IValidator<PriceListFilterDto>, PriceListFilterValidator>();
+
+
+            // Register FluentValidation
+            services.AddValidatorsFromAssemblyContaining<CreatePriceListItemValidator>();
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+
+
 
             return services;
         }

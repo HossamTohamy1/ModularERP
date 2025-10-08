@@ -36,7 +36,7 @@ namespace ModularERP.Modules.Inventory.Features.PriceLists.Mapping
             // Response Mapping with Projection
             CreateMap<PriceList, PriceListDto>()
                 .ForMember(dest => dest.CompanyName, opt => opt.MapFrom(src => src.Company != null ? src.Company.Name : string.Empty))
-                .ForMember(dest => dest.CurrencyName, opt => opt.MapFrom(src => src.Currency != null ? src.Currency.Code : string.Empty))
+                .ForMember(dest => dest.CurrencyName,opt => opt.MapFrom(src => src.Currency.Name ?? src.CurrencyCode))
                 .ForMember(dest => dest.TypeName, opt => opt.MapFrom(src => src.Type.ToString()))
                 .ForMember(dest => dest.StatusName, opt => opt.MapFrom(src => src.Status.ToString()));
 

@@ -496,6 +496,11 @@ namespace ModularERP.Migrations.Finance
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
                     b.Property<string>("Symbol")
                         .IsRequired()
                         .HasMaxLength(5)
