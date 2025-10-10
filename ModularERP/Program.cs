@@ -164,8 +164,8 @@ namespace ModularERP
                 using (var scope = app.Services.CreateScope())
                 {
                     var dbContext = scope.ServiceProvider.GetRequiredService<FinanceDbContext>();
-                    dbContext.Database.Migrate(); // تأكد من عمل migrate للـ tenant DB
-                    dbContext.SeedUsers();        // عمل seed للمستخدمين
+                    dbContext.Database.Migrate(); 
+                    dbContext.SeedUsers();        
                 }
 
                 // ---------------------------
