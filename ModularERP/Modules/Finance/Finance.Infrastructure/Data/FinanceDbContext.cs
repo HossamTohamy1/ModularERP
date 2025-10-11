@@ -215,13 +215,33 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
             // Vendor Configuration
             builder.Entity<Vendor>(entity =>
             {
-                entity.HasIndex(e => new {  e.Code }).IsUnique();
+                entity.HasIndex(e => e.Code).IsUnique();
+
+                // ✅ إضافة علاقة Company
+                entity.HasOne(e => e.Company)
+                      .WithMany()
+                      .HasForeignKey(e => e.CompanyId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // ✅ إضافة Index على CompanyId
+                entity.HasIndex(e => e.CompanyId)
+                      .HasDatabaseName("IX_Vendor_Company");
             });
 
             // Customer Configuration
             builder.Entity<Customer>(entity =>
             {
-                entity.HasIndex(e => new {  e.Code }).IsUnique();
+                entity.HasIndex(e => e.Code).IsUnique();
+
+                // ✅ إضافة علاقة Company
+                entity.HasOne(e => e.Company)
+                      .WithMany()
+                      .HasForeignKey(e => e.CompanyId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // ✅ إضافة Index على CompanyId
+                entity.HasIndex(e => e.CompanyId)
+                      .HasDatabaseName("IX_Customer_Company");
             });
 
             // Voucher Configuration
@@ -440,6 +460,11 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
             {
                 entity.ToTable("UnitTemplates");
 
+                // ✅ إضافة علاقة Company
+                entity.HasOne(e => e.Company)
+                      .WithMany()
+                      .HasForeignKey(e => e.CompanyId)
+                      .OnDelete(DeleteBehavior.Restrict);
 
                 // Convert enum to string
                 entity.Property(e => e.Status)
@@ -456,8 +481,10 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.HasIndex(e => e.Status)
                       .HasDatabaseName("IX_UnitTemplate_Status");
 
+                // ✅ إضافة Index على CompanyId
+                entity.HasIndex(e => e.CompanyId)
+                      .HasDatabaseName("IX_UnitTemplate_Company");
             });
-
             // UnitConversion Configuration
             builder.Entity<UnitConversion>(entity =>
             {
@@ -492,8 +519,11 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
             {
                 entity.ToTable("BarcodeSettings");
 
-                // Only one default settings per tenant
-    
+                // ✅ إضافة علاقة Company
+                entity.HasOne(e => e.Company)
+                      .WithMany()
+                      .HasForeignKey(e => e.CompanyId)
+                      .OnDelete(DeleteBehavior.Restrict);
 
                 // Precision for decimals
                 entity.Property(e => e.WeightUnitDivider)
@@ -509,12 +539,13 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.Property(e => e.IsDefault)
                       .HasDefaultValue(true);
 
-
+                // ✅ إضافة Index على CompanyId
+                entity.HasIndex(e => e.CompanyId)
+                      .HasDatabaseName("IX_BarcodeSettings_Company");
 
                 entity.HasIndex(e => e.BarcodeType)
                       .HasDatabaseName("IX_BarcodeSettings_Type");
             });
-
             // CustomField Configuration
             builder.Entity<CustomField>(entity =>
             {

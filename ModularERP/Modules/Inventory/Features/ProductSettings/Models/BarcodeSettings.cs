@@ -1,4 +1,5 @@
 ﻿using ModularERP.Common.Models;
+using ModularERP.Modules.Finance.Features.Companys.Models;
 using System.ComponentModel.DataAnnotations;
 
 namespace ModularERP.Modules.Inventory.Features.ProductSettings.Models
@@ -23,5 +24,8 @@ namespace ModularERP.Modules.Inventory.Features.ProductSettings.Models
 
         // Single settings per tenant (only one active record should exist)
         public bool IsDefault { get; set; } = true;
+        public Guid CompanyId { get; set; }
+        public Company Company { get; set; }
+
     }
 }

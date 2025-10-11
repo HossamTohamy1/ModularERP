@@ -1,4 +1,5 @@
 ﻿using ModularERP.Common.Models;
+using ModularERP.Modules.Finance.Features.Companys.Models;
 using System.ComponentModel.DataAnnotations;
 
 namespace ModularERP.Modules.Inventory.Features.ProductSettings.Models
@@ -21,6 +22,8 @@ namespace ModularERP.Modules.Inventory.Features.ProductSettings.Models
         public decimal Factor { get; set; } // e.g., 1000 (1 kg = 1000 gm)
 
         public int DisplayOrder { get; set; } = 0;
+        public Guid CompanyId { get; set; }
+        public Company Company { get; set; }
     }
 
 }

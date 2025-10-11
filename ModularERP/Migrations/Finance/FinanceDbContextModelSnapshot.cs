@@ -531,6 +531,9 @@ namespace ModularERP.Migrations.Finance
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
+                    b.Property<Guid>("CompanyId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -562,6 +565,9 @@ namespace ModularERP.Migrations.Finance
 
                     b.HasIndex("Code")
                         .IsUnique();
+
+                    b.HasIndex("CompanyId")
+                        .HasDatabaseName("IX_Customer_Company");
 
                     b.ToTable("Customers");
                 });
@@ -809,6 +815,9 @@ namespace ModularERP.Migrations.Finance
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
+                    b.Property<Guid>("CompanyId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -840,6 +849,9 @@ namespace ModularERP.Migrations.Finance
 
                     b.HasIndex("Code")
                         .IsUnique();
+
+                    b.HasIndex("CompanyId")
+                        .HasDatabaseName("IX_Vendor_Company");
 
                     b.ToTable("Vendors");
                 });
@@ -1477,6 +1489,9 @@ namespace ModularERP.Migrations.Finance
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<Guid>("CompanyId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -1525,6 +1540,9 @@ namespace ModularERP.Migrations.Finance
 
                     b.HasIndex("BarcodeType")
                         .HasDatabaseName("IX_BarcodeSettings_Type");
+
+                    b.HasIndex("CompanyId")
+                        .HasDatabaseName("IX_BarcodeSettings_Company");
 
                     b.ToTable("BarcodeSettings", (string)null);
                 });
@@ -1766,6 +1784,9 @@ namespace ModularERP.Migrations.Finance
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid>("CompanyId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -1806,6 +1827,8 @@ namespace ModularERP.Migrations.Finance
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CompanyId");
+
                     b.HasIndex("DisplayOrder")
                         .HasDatabaseName("IX_UnitConversion_DisplayOrder");
 
@@ -1839,6 +1862,9 @@ namespace ModularERP.Migrations.Finance
                         .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
+
+                    b.Property<Guid>("CompanyId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -1874,6 +1900,9 @@ namespace ModularERP.Migrations.Finance
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CompanyId")
+                        .HasDatabaseName("IX_UnitTemplate_Company");
 
                     b.HasIndex("Status")
                         .HasDatabaseName("IX_UnitTemplate_Status");
@@ -3359,6 +3388,17 @@ namespace ModularERP.Migrations.Finance
                     b.Navigation("JournalAccount");
                 });
 
+            modelBuilder.Entity("ModularERP.Modules.Finance.Features.Customer.Models.Customer", b =>
+                {
+                    b.HasOne("ModularERP.Modules.Finance.Features.Companys.Models.Company", "Company")
+                        .WithMany()
+                        .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Company");
+                });
+
             modelBuilder.Entity("ModularERP.Modules.Finance.Features.GlAccounts.Models.GlAccount", b =>
                 {
                     b.HasOne("ModularERP.Modules.Finance.Features.Companys.Models.Company", "Company")
@@ -3431,6 +3471,17 @@ namespace ModularERP.Migrations.Finance
                     b.Navigation("Currency");
 
                     b.Navigation("JournalAccount");
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Finance.Features.Vendor.Models.Vendor", b =>
+                {
+                    b.HasOne("ModularERP.Modules.Finance.Features.Companys.Models.Company", "Company")
+                        .WithMany()
+                        .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Company");
                 });
 
             modelBuilder.Entity("ModularERP.Modules.Finance.Features.VoucherTaxs.Models.VoucherTax", b =>
@@ -3640,6 +3691,17 @@ namespace ModularERP.Migrations.Finance
                     b.Navigation("PriceList");
                 });
 
+            modelBuilder.Entity("ModularERP.Modules.Inventory.Features.ProductSettings.Models.BarcodeSettings", b =>
+                {
+                    b.HasOne("ModularERP.Modules.Finance.Features.Companys.Models.Company", "Company")
+                        .WithMany()
+                        .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Company");
+                });
+
             modelBuilder.Entity("ModularERP.Modules.Inventory.Features.ProductSettings.Models.Category", b =>
                 {
                     b.HasOne("ModularERP.Modules.Inventory.Features.ProductSettings.Models.Category", "ParentCategory")
@@ -3670,13 +3732,32 @@ namespace ModularERP.Migrations.Finance
 
             modelBuilder.Entity("ModularERP.Modules.Inventory.Features.ProductSettings.Models.UnitConversion", b =>
                 {
+                    b.HasOne("ModularERP.Modules.Finance.Features.Companys.Models.Company", "Company")
+                        .WithMany()
+                        .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("ModularERP.Modules.Inventory.Features.ProductSettings.Models.UnitTemplate", "UnitTemplate")
                         .WithMany("UnitConversions")
                         .HasForeignKey("UnitTemplateId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("Company");
+
                     b.Navigation("UnitTemplate");
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Inventory.Features.ProductSettings.Models.UnitTemplate", b =>
+                {
+                    b.HasOne("ModularERP.Modules.Finance.Features.Companys.Models.Company", "Company")
+                        .WithMany()
+                        .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Company");
                 });
 
             modelBuilder.Entity("ModularERP.Modules.Inventory.Features.Products.Models.ItemGroup", b =>

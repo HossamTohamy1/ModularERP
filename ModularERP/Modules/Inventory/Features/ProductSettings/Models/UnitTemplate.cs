@@ -1,5 +1,6 @@
 ﻿using ModularERP.Common.Enum.Inventory_Enum;
 using ModularERP.Common.Models;
+using ModularERP.Modules.Finance.Features.Companys.Models;
 using System.ComponentModel.DataAnnotations;
 
 namespace ModularERP.Modules.Inventory.Features.ProductSettings.Models
@@ -22,8 +23,11 @@ namespace ModularERP.Modules.Inventory.Features.ProductSettings.Models
         public string? Description { get; set; }
 
         public UnitTemplateStatus Status { get; set; } = UnitTemplateStatus.Active;
+        public Guid CompanyId { get; set; }
 
         // Navigation properties
         public virtual ICollection<UnitConversion> UnitConversions { get; set; } = new List<UnitConversion>();
+        public Company Company { get; set; }
+
     }
 }

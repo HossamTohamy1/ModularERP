@@ -1,4 +1,5 @@
 ﻿using ModularERP.Common.Models;
+using ModularERP.Modules.Finance.Features.Companys.Models;
 using System.ComponentModel.DataAnnotations;
 
 namespace ModularERP.Modules.Finance.Features.Customer.Models
@@ -16,6 +17,8 @@ namespace ModularERP.Modules.Finance.Features.Customer.Models
         public string? TaxId { get; set; }
 
         public bool IsActive { get; set; } = true;
+        public Guid CompanyId { get; set; }
+        public Company Company { get; set; }
 
     }
 }
