@@ -20,6 +20,7 @@ using ModularERP.Modules.Inventory.Features.ProductSettings.Validators.Validator
 using ModularERP.Modules.Inventory.Features.ProductSettings.Validators.Validators_Category;
 using ModularERP.Modules.Inventory.Features.ProductSettings.Validators.Validators_CustomField;
 using ModularERP.Modules.Inventory.Features.ProductSettings.Validators.Validators_UnitTemplates;
+using ModularERP.Modules.Inventory.Features.Requisitions.Mapping;
 using ModularERP.Modules.Inventory.Features.Warehouses.Mapping;
 using System.Reflection;
 
@@ -42,6 +43,8 @@ namespace ModularERP.Modules.Inventory.Features.ProductSettings.Service
                 cfg.AddProfile<UnitTemplateMappingProfile>();
                 cfg.AddProfile<CustomFieldMappingProfile>();
                 cfg.AddProfile<BarcodeSettingsMappingProfile>();
+                cfg.AddProfile<RequisitionItemMappingProfile>();
+                cfg.AddProfile<WarehouseStockMappingProfile>();
             });
 
             // Register FluentValidation validators

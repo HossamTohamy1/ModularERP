@@ -28,6 +28,8 @@ using ModularERP.Modules.Inventory.Features.Requisitions.Models;
 using ModularERP.Modules.Inventory.Features.Stocktaking.Models;
 using ModularERP.Modules.Inventory.Features.StockTransactions.Models;
 using ModularERP.Modules.Inventory.Features.PriceLists.Models;
+using System.Reflection.Emit;
+using ModularERP.Modules.Inventory.Features.Warehouses.Configurations;
 
 namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
 {
@@ -60,6 +62,8 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
         public DbSet<AuditLog> AuditLogs { get; set; }
 
         // Inventory DbSets
+        public DbSet<WarehouseStock> WarehouseStocks { get; set; }
+
         public DbSet<Warehouse> Warehouses { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<CategoryAttachment> CategoryAttachments { get; set; }
@@ -95,6 +99,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
         public DbSet<BulkDiscount> BulkDiscounts { get; set; }
         public DbSet<PriceListAssignment> PriceListAssignments { get; set; }
         public DbSet<PriceCalculationLog> PriceCalculationLogs { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -362,6 +367,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
             // ============================================
             // INVENTORY MODULE CONFIGURATIONS
             // ============================================
+            builder.ApplyConfiguration(new WarehouseStockConfiguration());
 
             // Warehouse Configuration
             builder.Entity<Warehouse>(entity =>

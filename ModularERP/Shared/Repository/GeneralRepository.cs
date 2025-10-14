@@ -186,5 +186,6 @@ namespace ModularERP.SharedKernel.Repository
 
             await _dbSet.AddRangeAsync(entities);
         }
+
     }
 }
