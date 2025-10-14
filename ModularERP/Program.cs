@@ -33,7 +33,6 @@ using ModularERP.Modules.Finance.Features.GlAccounts.Mapping;
 using ModularERP.Modules.Finance.Features.GlAccounts.Service;
 using Microsoft.AspNetCore.Identity;
 using ModularERP.Modules.Finance.Finance.Infrastructure.Seeds;
-
 using ModularERP.Modules.Inventory.Features.Warehouses.Mapping;
 using ModularERP.Modules.Inventory.Features.Products.Mapping;
 using ModularERP.Modules.Inventory.Features.ProductSettings.Service;
@@ -44,6 +43,7 @@ using ModularERP.Shared.Repository;
 using ModularERP.Modules.Inventory.Features.Products.Services;
 using ModularERP.Modules.Inventory.Features.Services.Models;
 using ModularERP.Modules.Inventory.Features.PriceLists.Services;
+using Microsoft.OpenApi.Models;
 
 namespace ModularERP
 {
@@ -76,9 +76,72 @@ namespace ModularERP
 
                 builder.Services.AddControllers();
                 builder.Services.AddEndpointsApiExplorer();
+
+                // ---------------------------
+                // 🟢 Swagger Configuration with TenantId
+                // ---------------------------
                 builder.Services.AddSwaggerGen(c =>
                 {
+                    c.SwaggerDoc("v1", new OpenApiInfo
+                    {
+                        Title = "ModularERP API",
+                        Version = "v1",
+                        Description = "Multi-tenant ERP System API"
+                    });
+
                     c.CustomSchemaIds(type => type.FullName!.Replace("+", "."));
+
+                    // إضافة TenantId كـ Header parameter (بدون Global Requirement)
+                    c.AddSecurityDefinition("TenantId", new OpenApiSecurityScheme
+                    {
+                        Description = "Enter your Tenant ID (Company ID)",
+                        Name = "TenantId",
+                        In = ParameterLocation.Header,
+                        Type = SecuritySchemeType.ApiKey,
+                        Scheme = "TenantIdScheme"
+                    });
+
+                    // لو عندك Bearer Token Authentication
+                    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                    {
+                        Description = "JWT Authorization header using the Bearer scheme. Example: \"Bearer {token}\"",
+                        Name = "Authorization",
+                        In = ParameterLocation.Header,
+                        Type = SecuritySchemeType.Http,
+                        Scheme = "bearer",
+                        BearerFormat = "JWT"
+                    });
+
+                    // Apply both security schemes globally
+                    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                    {
+                        {
+                            new OpenApiSecurityScheme
+                            {
+                                Reference = new OpenApiReference
+                                {
+                                    Type = ReferenceType.SecurityScheme,
+                                    Id = "TenantId"
+                                },
+                                In = ParameterLocation.Header,
+                                Name = "TenantId"
+                            },
+                            Array.Empty<string>()
+                        },
+                        {
+                            new OpenApiSecurityScheme
+                            {
+                                Reference = new OpenApiReference
+                                {
+                                    Type = ReferenceType.SecurityScheme,
+                                    Id = "Bearer"
+                                },
+                                In = ParameterLocation.Header,
+                                Name = "Authorization"
+                            },
+                            Array.Empty<string>()
+                        }
+                    });
                 });
 
                 builder.Services.AddCors(options =>
@@ -139,11 +202,11 @@ namespace ModularERP
                 builder.Services.AddInventoryModule();
                 builder.Services.AddPriceListServices();
 
-
                 // ---------------------------
                 // 🟢 Domain Services
                 // ---------------------------
                 builder.Services.AddScoped<IGeneralRepository<Treasury>, GeneralRepository<Treasury>>();
+                builder.Services.AddScoped<IFileUploadService, FileUploadService>();
                 builder.Services.AddScoped<IGeneralRepository<BankAccount>, GeneralRepository<BankAccount>>();
                 builder.Services.AddScoped<IExpenseVoucherService, ExpenseVoucherService>();
                 builder.Services.AddScoped<IIncomeVoucherService, IncomeVoucherService>();
@@ -164,8 +227,8 @@ namespace ModularERP
                 using (var scope = app.Services.CreateScope())
                 {
                     var dbContext = scope.ServiceProvider.GetRequiredService<FinanceDbContext>();
-                    dbContext.Database.Migrate(); 
-                    dbContext.SeedUsers();        
+                    dbContext.Database.Migrate();
+                    dbContext.SeedUsers();
                 }
 
                 // ---------------------------
@@ -174,7 +237,13 @@ namespace ModularERP
                 if (app.Environment.IsDevelopment())
                 {
                     app.UseSwagger();
-                    app.UseSwaggerUI();
+                    app.UseSwaggerUI(c =>
+                    {
+                        c.SwaggerEndpoint("/swagger/v1/swagger.json", "ModularERP API V1");
+                        c.DisplayRequestDuration();
+                        c.EnableTryItOutByDefault();
+                        c.DocExpansion(Swashbuckle.AspNetCore.SwaggerUI.DocExpansion.None);
+                    });
                 }
 
                 app.UseHttpsRedirection();
@@ -182,7 +251,24 @@ namespace ModularERP
                 app.UseAuthorization();
 
                 app.UseMiddleware<GlobalErrorHandlerMiddleware>();
-                //              app.UseMiddleware<TenantResolutionMiddleware>();
+
+                // 🔍 Debug Headers Middleware (للتجربة فقط)
+                app.Use(async (context, next) =>
+                {
+                    var logger = context.RequestServices.GetRequiredService<ILogger<Program>>();
+
+                    logger.LogInformation("=== Incoming Request ===");
+                    logger.LogInformation("Path: {Path}", context.Request.Path);
+                    logger.LogInformation("Method: {Method}", context.Request.Method);
+                    logger.LogInformation("=== Headers ===");
+
+                    foreach (var header in context.Request.Headers)
+                    {
+                        logger.LogInformation("{HeaderName}: {HeaderValue}", header.Key, header.Value);
+                    }
+
+                    await next();
+                });
 
                 // ✅ Tenant Validation Middleware
                 app.Use(async (context, next) =>
@@ -205,6 +291,7 @@ namespace ModularERP
                     }
 
                     var tenantId = tenantService.GetCurrentTenantId();
+                    logger.LogInformation("🔍 TenantService returned: '{TenantId}'", tenantId ?? "NULL");
 
                     if (string.IsNullOrEmpty(tenantId))
                     {
@@ -214,6 +301,7 @@ namespace ModularERP
                         var response = new
                         {
                             error = "Tenant ID is required",
+                            message = "Please provide TenantId in the request header",
                             timestamp = DateTime.UtcNow,
                             path = context.Request.Path.Value
                         };
@@ -223,7 +311,7 @@ namespace ModularERP
                         return;
                     }
 
-                    logger.LogInformation("Processing request for tenant: {TenantId}", tenantId);
+                    logger.LogInformation("✅ Processing request for tenant: {TenantId}", tenantId);
                     context.Items["TenantId"] = tenantId;
 
                     await next();

@@ -161,6 +161,10 @@ namespace ModularERP.SharedKernel.Repository
         {
             return await _dbSet.Where(predicate).AnyAsync();
         }
+        public async Task<bool> AnyAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken = default)
+        {
+            return await _dbSet.Where(predicate).AnyAsync(cancellationToken);
+        }
 
         public async Task AddRangeAsync(IEnumerable<T> entities)
         {

@@ -28,13 +28,23 @@ namespace ModularERP.Modules.Inventory.Features.ProductSettings.Handlers.Handelr
 
         public async Task<ResponseViewModel<BrandDto>> Handle(CreateBrandCommand request, CancellationToken cancellationToken)
         {
+            // Validate basic rules
             var validationResult = await _validator.ValidateAsync(request, cancellationToken);
             if (!validationResult.IsValid)
             {
                 var errors = validationResult.Errors
                     .GroupBy(e => e.PropertyName)
                     .ToDictionary(g => g.Key, g => g.Select(e => e.ErrorMessage).ToArray());
+                throw new AppValidationException("Validation failed for creating brand", errors, "Inventory");
+            }
 
+            // Database validation for uniqueness
+            if (await _repository.AnyAsync(b => b.Name == request.Dto.Name, cancellationToken))
+            {
+                var errors = new Dictionary<string, string[]>
+        {
+            { "Name", new[] { "Brand name already exists" } }
+        };
                 throw new AppValidationException("Validation failed for creating brand", errors, "Inventory");
             }
 

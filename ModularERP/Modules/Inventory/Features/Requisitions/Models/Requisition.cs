@@ -9,6 +9,7 @@ namespace ModularERP.Modules.Inventory.Features.Requisitions.Models
 {
     public class Requisition: BaseEntity
     {
+
         [Required]
         public RequisitionType Type { get; set; }
 
@@ -27,13 +28,13 @@ namespace ModularERP.Modules.Inventory.Features.Requisitions.Models
 
         public string? Notes { get; set; }
 
-        [MaxLength(500)]
-        public string? Attachments { get; set; }
+        // Removed: public string? Attachments { get; set; }
 
         public RequisitionStatus Status { get; set; } = RequisitionStatus.Draft;
         public Guid CompanyId { get; set; }
 
         // Workflow tracking
+
         public Guid? SubmittedBy { get; set; }
         public DateTime? SubmittedAt { get; set; }
 
@@ -48,15 +49,13 @@ namespace ModularERP.Modules.Inventory.Features.Requisitions.Models
 
         public Guid? ParentRequisitionId { get; set; }
 
-        //public Guid TenantId { get; set; }
-      
-
         // Navigation Properties
         public virtual Warehouse Warehouse { get; set; } = null!;
         public virtual Supplier? Supplier { get; set; }
         public virtual Requisition? ParentRequisition { get; set; }
         public virtual Company? Company { get; set; }
 
+        public virtual ApplicationUser? CreatedByUser { get; set; }
         public virtual ApplicationUser? SubmittedByUser { get; set; }
         public virtual ApplicationUser? ApprovedByUser { get; set; }
         public virtual ApplicationUser? ConfirmedByUser { get; set; }
@@ -65,5 +64,8 @@ namespace ModularERP.Modules.Inventory.Features.Requisitions.Models
         public virtual ICollection<RequisitionItem> Items { get; set; } = new List<RequisitionItem>();
         public virtual ICollection<RequisitionApprovalLog> ApprovalLogs { get; set; } = new List<RequisitionApprovalLog>();
         public virtual ICollection<Requisition> ChildRequisitions { get; set; } = new List<Requisition>();
+
+        // Add new navigation property for attachments
+        public virtual ICollection<RequisitionAttachment> Attachments { get; set; } = new List<RequisitionAttachment>();
     }
 }

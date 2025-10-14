@@ -3,6 +3,304 @@
   "ManifestType": "Build",
   "Endpoints": [
     {
+      "Route": "swagger/swagger-tenant-header.js",
+      "AssetFile": "swagger/swagger-tenant-header.js.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001626016260"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "614"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ewZfaVSxydKzBkx8n//ljGpBLO0Po2a+IneGtJfeF/U=\""
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"8s81IwQEKGd0ucKfWKZMwustfPTTQJixuGegBBjOlqc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 14 Oct 2025 08:31:11 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-8s81IwQEKGd0ucKfWKZMwustfPTTQJixuGegBBjOlqc="
+        }
+      ]
+    },
+    {
+      "Route": "swagger/swagger-tenant-header.js",
+      "AssetFile": "swagger/swagger-tenant-header.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1598"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8s81IwQEKGd0ucKfWKZMwustfPTTQJixuGegBBjOlqc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 14 Oct 2025 08:31:11 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-8s81IwQEKGd0ucKfWKZMwustfPTTQJixuGegBBjOlqc="
+        }
+      ]
+    },
+    {
+      "Route": "swagger/swagger-tenant-header.js.gz",
+      "AssetFile": "swagger/swagger-tenant-header.js.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "614"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ewZfaVSxydKzBkx8n//ljGpBLO0Po2a+IneGtJfeF/U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 14 Oct 2025 08:31:11 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ewZfaVSxydKzBkx8n//ljGpBLO0Po2a+IneGtJfeF/U="
+        }
+      ]
+    },
+    {
+      "Route": "swagger/swagger-tenant-header.uhz98fhcj9.js",
+      "AssetFile": "swagger/swagger-tenant-header.js.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001626016260"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "614"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ewZfaVSxydKzBkx8n//ljGpBLO0Po2a+IneGtJfeF/U=\""
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"8s81IwQEKGd0ucKfWKZMwustfPTTQJixuGegBBjOlqc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 14 Oct 2025 08:31:11 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "uhz98fhcj9"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-8s81IwQEKGd0ucKfWKZMwustfPTTQJixuGegBBjOlqc="
+        },
+        {
+          "Name": "label",
+          "Value": "swagger/swagger-tenant-header.js"
+        }
+      ]
+    },
+    {
+      "Route": "swagger/swagger-tenant-header.uhz98fhcj9.js",
+      "AssetFile": "swagger/swagger-tenant-header.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1598"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8s81IwQEKGd0ucKfWKZMwustfPTTQJixuGegBBjOlqc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 14 Oct 2025 08:31:11 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "uhz98fhcj9"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-8s81IwQEKGd0ucKfWKZMwustfPTTQJixuGegBBjOlqc="
+        },
+        {
+          "Name": "label",
+          "Value": "swagger/swagger-tenant-header.js"
+        }
+      ]
+    },
+    {
+      "Route": "swagger/swagger-tenant-header.uhz98fhcj9.js.gz",
+      "AssetFile": "swagger/swagger-tenant-header.js.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "614"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ewZfaVSxydKzBkx8n//ljGpBLO0Po2a+IneGtJfeF/U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 14 Oct 2025 08:31:11 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "uhz98fhcj9"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ewZfaVSxydKzBkx8n//ljGpBLO0Po2a+IneGtJfeF/U="
+        },
+        {
+          "Name": "label",
+          "Value": "swagger/swagger-tenant-header.js.gz"
+        }
+      ]
+    },
+    {
       "Route": "uploads/0f2102f8-7dff-47cc-86d8-373a401f3ed2_Hossam-Reda-Tohamy-Full Stack NET Angular.41798qlwtw.pdf",
       "AssetFile": "uploads/0f2102f8-7dff-47cc-86d8-373a401f3ed2_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "Selectors": [],
@@ -1725,6 +2023,88 @@
       ]
     },
     {
+      "Route": "uploads/categories/00a877ac-2765-4705-8850-c85275a430f7_Hossam-Reda-Tohamy-Node Js .nl1r0jgke5.pdf",
+      "AssetFile": "uploads/categories/00a877ac-2765-4705-8850-c85275a430f7_Hossam-Reda-Tohamy-Node Js .pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "56007"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JZMyuoHxGEvHmXJCtp7A+BEDr7zkS8SLDkytGyRxW3s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 14 Oct 2025 09:50:36 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "nl1r0jgke5"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-JZMyuoHxGEvHmXJCtp7A+BEDr7zkS8SLDkytGyRxW3s="
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/categories/00a877ac-2765-4705-8850-c85275a430f7_Hossam-Reda-Tohamy-Node Js .pdf"
+        }
+      ]
+    },
+    {
+      "Route": "uploads/categories/00a877ac-2765-4705-8850-c85275a430f7_Hossam-Reda-Tohamy-Node Js .pdf",
+      "AssetFile": "uploads/categories/00a877ac-2765-4705-8850-c85275a430f7_Hossam-Reda-Tohamy-Node Js .pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "56007"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JZMyuoHxGEvHmXJCtp7A+BEDr7zkS8SLDkytGyRxW3s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 14 Oct 2025 09:50:36 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-JZMyuoHxGEvHmXJCtp7A+BEDr7zkS8SLDkytGyRxW3s="
+        }
+      ]
+    },
+    {
       "Route": "uploads/categories/02328d91-7504-494d-9d0d-7646d75b126b_Hossam-Reda-Tohamy-Node Js .nl1r0jgke5.pdf",
       "AssetFile": "uploads/categories/02328d91-7504-494d-9d0d-7646d75b126b_Hossam-Reda-Tohamy-Node Js .pdf",
       "Selectors": [],
@@ -2213,6 +2593,88 @@
         {
           "Name": "label",
           "Value": "uploads/categories/d7034520-5aac-491f-86e8-d86708a804ac_Back End .NET.pdf"
+        }
+      ]
+    },
+    {
+      "Route": "uploads/categories/eb6cf295-9457-4845-8b2a-057ed8c2fd2c_Hossam-Reda-Tohamy-Node Js .nl1r0jgke5.pdf",
+      "AssetFile": "uploads/categories/eb6cf295-9457-4845-8b2a-057ed8c2fd2c_Hossam-Reda-Tohamy-Node Js .pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "56007"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JZMyuoHxGEvHmXJCtp7A+BEDr7zkS8SLDkytGyRxW3s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 14 Oct 2025 09:46:45 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "nl1r0jgke5"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-JZMyuoHxGEvHmXJCtp7A+BEDr7zkS8SLDkytGyRxW3s="
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/categories/eb6cf295-9457-4845-8b2a-057ed8c2fd2c_Hossam-Reda-Tohamy-Node Js .pdf"
+        }
+      ]
+    },
+    {
+      "Route": "uploads/categories/eb6cf295-9457-4845-8b2a-057ed8c2fd2c_Hossam-Reda-Tohamy-Node Js .pdf",
+      "AssetFile": "uploads/categories/eb6cf295-9457-4845-8b2a-057ed8c2fd2c_Hossam-Reda-Tohamy-Node Js .pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "56007"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JZMyuoHxGEvHmXJCtp7A+BEDr7zkS8SLDkytGyRxW3s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 14 Oct 2025 09:46:45 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-JZMyuoHxGEvHmXJCtp7A+BEDr7zkS8SLDkytGyRxW3s="
         }
       ]
     },

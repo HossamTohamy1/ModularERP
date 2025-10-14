@@ -7,6 +7,7 @@ using ModularERP.Modules.Finance.Features.GlAccounts.Mapping;
 using ModularERP.Modules.Finance.Features.IncomesVoucher.Mapping;
 using ModularERP.Modules.Finance.Features.Treasuries.Mapping;
 using ModularERP.Modules.Inventory.Features.Products.Mapping;
+using ModularERP.Modules.Inventory.Features.Requisitions.Mapping;
 using ModularERP.Modules.Inventory.Features.Warehouses.Mapping;
 using System.Reflection;
 
@@ -26,6 +27,7 @@ namespace ModularERP.Modules.Inventory.Features.Products.Services
             {
                 cfg.AddProfile<ItemGroupMappingProfile>();
                 cfg.AddProfile<ProductMappingProfile>();
+                cfg.AddProfile<RequisitionMappingProfile>();
 
             });
 

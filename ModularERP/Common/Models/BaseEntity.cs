@@ -7,7 +7,7 @@
         public DateTime? UpdatedAt { get; set; }
         public bool IsActive { get; set; } = true;
         public bool IsDeleted { get; set; }
-        public string? CreatedById { get; set; }
-        public string? UpdatedById { get; set; }
+        public Guid? CreatedById { get; set; }
+        public Guid? UpdatedById { get; set; }
     }
 }

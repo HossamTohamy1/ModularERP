@@ -82,6 +82,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
         public DbSet<StockTransaction> StockTransactions { get; set; }
         public DbSet<ProductStats> ProductStats { get; set; }
         public DbSet<Requisition> Requisitions { get; set; }
+        public DbSet<RequisitionAttachment> RequisitionAttachments { get; set; }
         public DbSet<RequisitionItem> RequisitionItems { get; set; }
         public DbSet<RequisitionApprovalLog> RequisitionApprovalLogs { get; set; }
         public DbSet<StocktakingHeader> StocktakingHeaders { get; set; }
@@ -1153,7 +1154,10 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
             {
                 entity.ToTable("Requisitions");
 
-
+                entity.HasMany(e => e.Attachments)
+                      .WithOne(e => e.Requisition)
+                      .HasForeignKey(e => e.RequisitionId)
+                      .OnDelete(DeleteBehavior.Cascade);
 
                 // Convert enums to string
                 entity.Property(e => e.Type)
@@ -1184,7 +1188,13 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .HasForeignKey(e => e.ParentRequisitionId)
                       .OnDelete(DeleteBehavior.Restrict);
 
-                // User relationships
+                // ✅ User relationships - صححناهم
+                entity.HasOne(e => e.CreatedByUser)
+                      .WithMany()
+                      .HasForeignKey(e => e.CreatedById)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // ✅ كان غلط: CreatedByUser مكررة، المفروض SubmittedByUser
                 entity.HasOne(e => e.SubmittedByUser)
                       .WithMany()
                       .HasForeignKey(e => e.SubmittedBy)
@@ -1231,6 +1241,35 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
 
                 entity.HasIndex(e => e.Type)
                       .HasDatabaseName("IX_Requisition_Type");
+            });
+            // ============================================
+            // REQUISITION ATTACHMENT CONFIGURATION
+            // ============================================
+            builder.Entity<RequisitionAttachment>(entity =>
+            {
+                entity.ToTable("RequisitionAttachments");
+
+                // Relationships
+                entity.HasOne(e => e.Requisition)
+                      .WithMany(e => e.Attachments)
+                      .HasForeignKey(e => e.RequisitionId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                entity.HasOne(e => e.UploadedByUser)
+                      .WithMany()
+                      .HasForeignKey(e => e.UploadedBy)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // Default value
+                entity.Property(e => e.UploadedAt)
+                      .HasDefaultValueSql("GETUTCDATE()");
+
+                // Indexes
+                entity.HasIndex(e => e.RequisitionId)
+                      .HasDatabaseName("IX_RequisitionAttachment_Requisition");
+
+                entity.HasIndex(e => e.UploadedBy)
+                      .HasDatabaseName("IX_RequisitionAttachment_UploadedBy");
             });
             // ============================================
             // REQUISITION ITEMS CONFIGURATION

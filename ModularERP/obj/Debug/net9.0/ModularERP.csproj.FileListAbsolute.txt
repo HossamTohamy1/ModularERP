@@ -378,3 +378,4 @@ E:\ModelerERP\ModularERP\ModularERP\obj\Debug\net9.0\refint\ModularERP.dll
 E:\ModelerERP\ModularERP\ModularERP\obj\Debug\net9.0\ModularERP.pdb
 E:\ModelerERP\ModularERP\ModularERP\obj\Debug\net9.0\ModularERP.genruntimeconfig.cache
 E:\ModelerERP\ModularERP\ModularERP\obj\Debug\net9.0\ref\ModularERP.dll
+E:\ModelerERP\ModularERP\ModularERP\obj\Debug\net9.0\compressed\x9ivmup3fr-uhz98fhcj9.gz

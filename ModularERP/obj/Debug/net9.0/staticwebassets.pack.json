@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\swagger\\swagger-tenant-header.js",
+      "PackagePath": "staticwebassets\\swagger\\swagger-tenant-header.js"
+    },
+    {
       "Id": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\0f2102f8-7dff-47cc-86d8-373a401f3ed2_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",
       "PackagePath": "staticwebassets\\uploads\\0f2102f8-7dff-47cc-86d8-373a401f3ed2_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"
     },
@@ -85,6 +89,10 @@
       "PackagePath": "staticwebassets\\uploads\\c160b997-d8b9-4093-aee5-34c5c0af675f_Back End .NET.pdf"
     },
     {
+      "Id": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\categories\\00a877ac-2765-4705-8850-c85275a430f7_Hossam-Reda-Tohamy-Node Js .pdf",
+      "PackagePath": "staticwebassets\\uploads\\categories\\00a877ac-2765-4705-8850-c85275a430f7_Hossam-Reda-Tohamy-Node Js .pdf"
+    },
+    {
       "Id": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\categories\\02328d91-7504-494d-9d0d-7646d75b126b_Hossam-Reda-Tohamy-Node Js .pdf",
       "PackagePath": "staticwebassets\\uploads\\categories\\02328d91-7504-494d-9d0d-7646d75b126b_Hossam-Reda-Tohamy-Node Js .pdf"
     },
@@ -107,6 +115,10 @@
     {
       "Id": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\categories\\d7034520-5aac-491f-86e8-d86708a804ac_Back End .NET.pdf",
       "PackagePath": "staticwebassets\\uploads\\categories\\d7034520-5aac-491f-86e8-d86708a804ac_Back End .NET.pdf"
+    },
+    {
+      "Id": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\categories\\eb6cf295-9457-4845-8b2a-057ed8c2fd2c_Hossam-Reda-Tohamy-Node Js .pdf",
+      "PackagePath": "staticwebassets\\uploads\\categories\\eb6cf295-9457-4845-8b2a-057ed8c2fd2c_Hossam-Reda-Tohamy-Node Js .pdf"
     },
     {
       "Id": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\db7e1b2d-815d-4c17-96fb-3651a9159c75_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf",

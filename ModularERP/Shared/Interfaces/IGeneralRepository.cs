@@ -16,6 +16,7 @@ namespace ModularERP.Shared.Interfaces
         Task Delete(Guid id);
         Task SaveChanges();
         Task<bool> AnyAsync(Expression<Func<T, bool>> predicate);
+        Task<bool> AnyAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken = default);
         Task AddRangeAsync(IEnumerable<T> entities);
     }
 }
