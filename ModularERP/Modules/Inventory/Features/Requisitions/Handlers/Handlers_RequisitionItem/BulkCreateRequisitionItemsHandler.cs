@@ -44,7 +44,6 @@ namespace ModularERP.Modules.Inventory.Features.Requisitions.Handlers.Handlers_R
                 _logger.Information("Bulk creating {Count} items for requisition {RequisitionId}",
                     request.BulkItems.Items.Count, request.RequisitionId);
 
-                // التحقق من وجود الـ Requisition
                 var requisition = await _requisitionRepository.GetByID(request.RequisitionId);
                 if (requisition == null)
                 {
@@ -55,7 +54,6 @@ namespace ModularERP.Modules.Inventory.Features.Requisitions.Handlers.Handlers_R
                     );
                 }
 
-                // التحقق من حالة الـ Requisition
                 if (requisition.Status != RequisitionStatus.Draft)
                 {
                     _logger.Warning("Cannot add items to requisition {RequisitionId} with status {Status}",
@@ -67,12 +65,10 @@ namespace ModularERP.Modules.Inventory.Features.Requisitions.Handlers.Handlers_R
                     );
                 }
 
-                // جلب المنتجات الموجودة مسبقاً
                 var existingProductIds = await _repository.Get(x => x.RequisitionId == request.RequisitionId && !x.IsDeleted)
                     .Select(x => x.ProductId)
                     .ToListAsync(cancellationToken);
 
-                // التحقق من التكرارات في الـ Request
                 var newProductIds = request.BulkItems.Items.Select(x => x.ProductId).ToList();
                 var duplicates = newProductIds.GroupBy(x => x)
                     .Where(g => g.Count() > 1)
@@ -90,7 +86,6 @@ namespace ModularERP.Modules.Inventory.Features.Requisitions.Handlers.Handlers_R
                     );
                 }
 
-                // التحقق من المنتجات الموجودة مسبقاً
                 var conflictingProducts = newProductIds.Intersect(existingProductIds).ToList();
                 if (conflictingProducts.Any())
                 {
@@ -103,12 +98,10 @@ namespace ModularERP.Modules.Inventory.Features.Requisitions.Handlers.Handlers_R
                     );
                 }
 
-                // ✅ جلب معلومات المخزون لكل المنتجات دفعة واحدة
                 var warehouseStocks = await _dbContext.WarehouseStocks
                     .Where(ws => ws.WarehouseId == requisition.WarehouseId && newProductIds.Contains(ws.ProductId))
                     .ToDictionaryAsync(ws => ws.ProductId, ws => ws.Quantity, cancellationToken);
 
-                // التحقق من وجود كل المنتجات في المخزن
                 var missingProducts = newProductIds.Except(warehouseStocks.Keys).ToList();
                 if (missingProducts.Any())
                 {
@@ -121,7 +114,6 @@ namespace ModularERP.Modules.Inventory.Features.Requisitions.Handlers.Handlers_R
                     );
                 }
 
-                // إنشاء العناصر
                 var items = new List<RequisitionItem>();
                 foreach (var itemDto in request.BulkItems.Items)
                 {
@@ -132,7 +124,6 @@ namespace ModularERP.Modules.Inventory.Features.Requisitions.Handlers.Handlers_R
                     item.CreatedAt = DateTime.UtcNow;
                     item.StockOnHand = currentStock;
 
-                    // ✅ حساب NewStockOnHand بناءً على نوع Requisition
                     if (requisition.Type == RequisitionType.Inbound)
                     {
                         item.NewStockOnHand = currentStock + item.Quantity;
@@ -164,7 +155,6 @@ namespace ModularERP.Modules.Inventory.Features.Requisitions.Handlers.Handlers_R
                 _logger.Information("Successfully created {Count} items for requisition {RequisitionId}",
                     items.Count, request.RequisitionId);
 
-                // استخدام Projection لجلب البيانات المضافة
                 var itemIds = items.Select(x => x.Id).ToList();
                 var itemDtos = await _dbContext.Set<RequisitionItem>()
                     .Where(x => itemIds.Contains(x.Id))

@@ -1,0 +1,442 @@
+2025-10-15 22:50:14.924 +03:00 [INF] Starting web host...
+2025-10-15 22:50:23.491 +03:00 [INF] Executed DbCommand (96ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-15 22:50:23.760 +03:00 [INF] Executed DbCommand (193ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-10-15 22:50:24.115 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-15 22:50:24.133 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-10-15 22:50:24.161 +03:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-10-15 22:50:24.289 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-10-15 22:50:24.311 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-15 22:50:24.316 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-10-15 22:50:24.333 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-10-15 22:50:24.347 +03:00 [INF] No migrations were applied. The database is already up to date.
+2025-10-15 22:50:24.354 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-10-15 22:50:24.680 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-10-15 22:50:24.698 +03:00 [INF] Master database initialized successfully
+2025-10-15 22:50:28.128 +03:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-10-15 22:50:28.522 +03:00 [INF] Now listening on: https://localhost:7168
+2025-10-15 22:50:28.529 +03:00 [INF] Now listening on: http://localhost:5004
+2025-10-15 22:50:28.806 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-15 22:50:28.810 +03:00 [INF] Hosting environment: Development
+2025-10-15 22:50:28.813 +03:00 [INF] Content root path: E:\ModelerERP\ModularERP\ModularERP
+2025-10-15 22:50:29.962 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-10-15 22:50:31.158 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-10-15 22:50:31.158 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-15 22:50:31.162 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 1203.6134ms
+2025-10-15 22:50:31.196 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 37.488ms
+2025-10-15 22:50:31.267 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 109.4362ms
+2025-10-15 22:50:31.435 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-10-15 22:50:32.066 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 630.9114ms
+2025-10-15 22:52:12.103 +03:00 [INF] Starting web host...
+2025-10-15 22:52:14.064 +03:00 [INF] Executed DbCommand (64ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-15 22:52:14.254 +03:00 [INF] Executed DbCommand (149ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-10-15 22:52:14.414 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-15 22:52:14.421 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-10-15 22:52:14.428 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-10-15 22:52:14.500 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-10-15 22:52:14.520 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-15 22:52:14.525 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-10-15 22:52:14.533 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-10-15 22:52:14.548 +03:00 [INF] No migrations were applied. The database is already up to date.
+2025-10-15 22:52:14.556 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-10-15 22:52:14.778 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-10-15 22:52:14.787 +03:00 [INF] Master database initialized successfully
+2025-10-15 22:52:17.715 +03:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-10-15 22:52:17.926 +03:00 [INF] Now listening on: https://localhost:7168
+2025-10-15 22:52:17.930 +03:00 [INF] Now listening on: http://localhost:5004
+2025-10-15 22:52:18.138 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-15 22:52:18.143 +03:00 [INF] Hosting environment: Development
+2025-10-15 22:52:18.147 +03:00 [INF] Content root path: E:\ModelerERP\ModularERP\ModularERP
+2025-10-15 22:52:18.400 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-10-15 22:52:18.590 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 192.1046ms
+2025-10-15 22:52:18.603 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-10-15 22:52:18.603 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-15 22:52:18.619 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 15.7691ms
+2025-10-15 22:52:18.652 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 49.2834ms
+2025-10-15 22:52:18.783 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-10-15 22:52:19.129 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 345.6378ms
+2025-10-15 23:01:52.635 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/RequisitionWorkflow/{5f3a01e1-635d-40db-2d90-08de0b170b68}/submit - application/json 96
+2025-10-15 23:01:52.683 +03:00 [INF] Request started
+2025-10-15 23:01:52.688 +03:00 [INF] === Incoming Request ===
+2025-10-15 23:01:52.694 +03:00 [INF] Path: /api/RequisitionWorkflow/%7B5f3a01e1-635d-40db-2d90-08de0b170b68%7D/submit
+2025-10-15 23:01:52.697 +03:00 [INF] Method: POST
+2025-10-15 23:01:52.700 +03:00 [INF] === Headers ===
+2025-10-15 23:01:52.707 +03:00 [INF] Accept: ["*/*"]
+2025-10-15 23:01:52.716 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-15 23:01:52.721 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-15 23:01:52.727 +03:00 [INF] User-Agent: ["PostmanRuntime/7.48.0"]
+2025-10-15 23:01:52.731 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-15 23:01:52.736 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-15 23:01:52.741 +03:00 [INF] Content-Length: ["96"]
+2025-10-15 23:01:52.747 +03:00 [INF] X-Tenant-ID: ["7e4a49eb-2e0e-4be8-8d60-c13d7db0f018"]
+2025-10-15 23:01:52.751 +03:00 [INF] Postman-Token: ["8ac4f3e9-d6d3-471b-b9db-9bf26f43c4b8"]
+2025-10-15 23:01:52.766 +03:00 [INF] 🔍 TenantService returned: '7e4a49eb-2e0e-4be8-8d60-c13d7db0f018'
+2025-10-15 23:01:52.769 +03:00 [INF] ✅ Processing request for tenant: 7e4a49eb-2e0e-4be8-8d60-c13d7db0f018
+2025-10-15 23:01:52.774 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.SubmitRequisition (ModularERP)'
+2025-10-15 23:01:52.828 +03:00 [INF] Route matched with {action = "SubmitRequisition", controller = "RequisitionWorkflow"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SubmitRequisition(System.Guid, ModularERP.Modules.Inventory.Features.Requisitions.Commends.Commends_Requisition_Workflow.SubmitRequisitionCommand) on controller ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController (ModularERP).
+2025-10-15 23:01:52.844 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-10-15 23:01:53.205 +03:00 [INF] Executed DbCommand (16ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-10-15 23:01:54.668 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-15 23:01:54.709 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.SubmitRequisition (ModularERP) in 1865.2087ms
+2025-10-15 23:01:54.715 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.SubmitRequisition (ModularERP)'
+2025-10-15 23:01:54.721 +03:00 [INF] Request completed successfully with status code 200
+2025-10-15 23:01:54.735 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/RequisitionWorkflow/{5f3a01e1-635d-40db-2d90-08de0b170b68}/submit - 200 null application/json; charset=utf-8 2099.5534ms
+2025-10-15 23:03:22.346 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/RequisitionWorkflow/{5f3a01e1-635d-40db-2d90-08de0b170b68}/approve - application/json 88
+2025-10-15 23:03:22.587 +03:00 [INF] Request started
+2025-10-15 23:03:22.591 +03:00 [INF] === Incoming Request ===
+2025-10-15 23:03:22.598 +03:00 [INF] Path: /api/RequisitionWorkflow/%7B5f3a01e1-635d-40db-2d90-08de0b170b68%7D/approve
+2025-10-15 23:03:22.601 +03:00 [INF] Method: POST
+2025-10-15 23:03:22.604 +03:00 [INF] === Headers ===
+2025-10-15 23:03:22.608 +03:00 [INF] Accept: ["*/*"]
+2025-10-15 23:03:22.614 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-15 23:03:22.701 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-15 23:03:22.704 +03:00 [INF] User-Agent: ["PostmanRuntime/7.48.0"]
+2025-10-15 23:03:22.708 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-15 23:03:22.711 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-15 23:03:22.715 +03:00 [INF] Content-Length: ["88"]
+2025-10-15 23:03:22.719 +03:00 [INF] X-Tenant-ID: ["7e4a49eb-2e0e-4be8-8d60-c13d7db0f018"]
+2025-10-15 23:03:22.723 +03:00 [INF] Postman-Token: ["a5f0e3bd-10fd-4e03-94ec-418b0f3b81ee"]
+2025-10-15 23:03:22.734 +03:00 [INF] 🔍 TenantService returned: '7e4a49eb-2e0e-4be8-8d60-c13d7db0f018'
+2025-10-15 23:03:22.738 +03:00 [INF] ✅ Processing request for tenant: 7e4a49eb-2e0e-4be8-8d60-c13d7db0f018
+2025-10-15 23:03:22.748 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.ApproveRequisition (ModularERP)'
+2025-10-15 23:03:22.769 +03:00 [INF] Route matched with {action = "ApproveRequisition", controller = "RequisitionWorkflow"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ApproveRequisition(System.Guid, ModularERP.Modules.Inventory.Features.Requisitions.Commends.Commends_Requisition_Workflow.ApproveRequisitionCommand) on controller ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController (ModularERP).
+2025-10-15 23:03:23.059 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-15 23:03:23.063 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.ApproveRequisition (ModularERP) in 214.8547ms
+2025-10-15 23:03:23.066 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.ApproveRequisition (ModularERP)'
+2025-10-15 23:03:23.068 +03:00 [INF] Request completed successfully with status code 200
+2025-10-15 23:03:23.070 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/RequisitionWorkflow/{5f3a01e1-635d-40db-2d90-08de0b170b68}/approve - 200 null application/json; charset=utf-8 723.9344ms
+2025-10-15 23:05:04.886 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/RequisitionWorkflow/{5f3a01e1-635d-40db-2d90-08de0b170b68}/reject - application/json 88
+2025-10-15 23:05:04.896 +03:00 [INF] Request started
+2025-10-15 23:05:04.898 +03:00 [INF] === Incoming Request ===
+2025-10-15 23:05:04.900 +03:00 [INF] Path: /api/RequisitionWorkflow/%7B5f3a01e1-635d-40db-2d90-08de0b170b68%7D/reject
+2025-10-15 23:05:04.903 +03:00 [INF] Method: POST
+2025-10-15 23:05:04.906 +03:00 [INF] === Headers ===
+2025-10-15 23:05:04.909 +03:00 [INF] Accept: ["*/*"]
+2025-10-15 23:05:04.912 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-15 23:05:04.916 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-15 23:05:04.921 +03:00 [INF] User-Agent: ["PostmanRuntime/7.48.0"]
+2025-10-15 23:05:04.927 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-15 23:05:04.931 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-15 23:05:04.936 +03:00 [INF] Content-Length: ["88"]
+2025-10-15 23:05:04.938 +03:00 [INF] X-Tenant-ID: ["7e4a49eb-2e0e-4be8-8d60-c13d7db0f018"]
+2025-10-15 23:05:04.941 +03:00 [INF] Postman-Token: ["bd5f2ef4-2421-424b-bab5-fd863438de86"]
+2025-10-15 23:05:04.944 +03:00 [INF] 🔍 TenantService returned: '7e4a49eb-2e0e-4be8-8d60-c13d7db0f018'
+2025-10-15 23:05:04.946 +03:00 [INF] ✅ Processing request for tenant: 7e4a49eb-2e0e-4be8-8d60-c13d7db0f018
+2025-10-15 23:05:04.948 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.RejectRequisition (ModularERP)'
+2025-10-15 23:05:04.955 +03:00 [INF] Route matched with {action = "RejectRequisition", controller = "RequisitionWorkflow"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RejectRequisition(System.Guid, ModularERP.Modules.Inventory.Features.Requisitions.Commends.Commends_Requisition_Workflow.RejectRequisitionCommand) on controller ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController (ModularERP).
+2025-10-15 23:05:04.964 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-10-15 23:05:04.987 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.RejectRequisition (ModularERP) in 27.796ms
+2025-10-15 23:05:04.990 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.RejectRequisition (ModularERP)'
+2025-10-15 23:05:04.993 +03:00 [INF] Request completed successfully with status code 400
+2025-10-15 23:05:04.996 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/RequisitionWorkflow/{5f3a01e1-635d-40db-2d90-08de0b170b68}/reject - 400 null application/problem+json; charset=utf-8 109.5687ms
+2025-10-15 23:05:48.520 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/RequisitionWorkflow/{5f3a01e1-635d-40db-2d90-08de0b170b68}/confirm - application/json 88
+2025-10-15 23:05:48.527 +03:00 [INF] Request started
+2025-10-15 23:05:48.529 +03:00 [INF] === Incoming Request ===
+2025-10-15 23:05:48.531 +03:00 [INF] Path: /api/RequisitionWorkflow/%7B5f3a01e1-635d-40db-2d90-08de0b170b68%7D/confirm
+2025-10-15 23:05:48.533 +03:00 [INF] Method: GET
+2025-10-15 23:05:48.536 +03:00 [INF] === Headers ===
+2025-10-15 23:05:48.537 +03:00 [INF] Accept: ["*/*"]
+2025-10-15 23:05:48.540 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-15 23:05:48.543 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-15 23:05:48.546 +03:00 [INF] User-Agent: ["PostmanRuntime/7.48.0"]
+2025-10-15 23:05:48.550 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-15 23:05:48.554 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-15 23:05:48.559 +03:00 [INF] Content-Length: ["88"]
+2025-10-15 23:05:48.564 +03:00 [INF] X-Tenant-ID: ["7e4a49eb-2e0e-4be8-8d60-c13d7db0f018"]
+2025-10-15 23:05:48.569 +03:00 [INF] Postman-Token: ["cd3435d8-fbf0-44e3-a32d-e910cf7220f8"]
+2025-10-15 23:05:48.575 +03:00 [INF] 🔍 TenantService returned: '7e4a49eb-2e0e-4be8-8d60-c13d7db0f018'
+2025-10-15 23:05:48.578 +03:00 [INF] ✅ Processing request for tenant: 7e4a49eb-2e0e-4be8-8d60-c13d7db0f018
+2025-10-15 23:05:48.582 +03:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-10-15 23:05:48.593 +03:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-10-15 23:05:48.597 +03:00 [INF] Request completed successfully with status code 405
+2025-10-15 23:05:48.601 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/RequisitionWorkflow/{5f3a01e1-635d-40db-2d90-08de0b170b68}/confirm - 405 0 null 80.9911ms
+2025-10-15 23:06:15.177 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/RequisitionWorkflow/{5f3a01e1-635d-40db-2d90-08de0b170b68}/confirm - application/json 99
+2025-10-15 23:06:15.186 +03:00 [INF] Request started
+2025-10-15 23:06:15.189 +03:00 [INF] === Incoming Request ===
+2025-10-15 23:06:15.192 +03:00 [INF] Path: /api/RequisitionWorkflow/%7B5f3a01e1-635d-40db-2d90-08de0b170b68%7D/confirm
+2025-10-15 23:06:15.195 +03:00 [INF] Method: GET
+2025-10-15 23:06:15.199 +03:00 [INF] === Headers ===
+2025-10-15 23:06:15.203 +03:00 [INF] Accept: ["*/*"]
+2025-10-15 23:06:15.208 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-15 23:06:15.213 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-15 23:06:15.219 +03:00 [INF] User-Agent: ["PostmanRuntime/7.48.0"]
+2025-10-15 23:06:15.224 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-15 23:06:15.228 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-15 23:06:15.233 +03:00 [INF] Content-Length: ["99"]
+2025-10-15 23:06:15.238 +03:00 [INF] X-Tenant-ID: ["7e4a49eb-2e0e-4be8-8d60-c13d7db0f018"]
+2025-10-15 23:06:15.244 +03:00 [INF] Postman-Token: ["725032a7-79bc-4edc-a69e-51464f0672d9"]
+2025-10-15 23:06:15.249 +03:00 [INF] 🔍 TenantService returned: '7e4a49eb-2e0e-4be8-8d60-c13d7db0f018'
+2025-10-15 23:06:15.253 +03:00 [INF] ✅ Processing request for tenant: 7e4a49eb-2e0e-4be8-8d60-c13d7db0f018
+2025-10-15 23:06:15.256 +03:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-10-15 23:06:15.260 +03:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-10-15 23:06:15.264 +03:00 [INF] Request completed successfully with status code 405
+2025-10-15 23:06:15.269 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/RequisitionWorkflow/{5f3a01e1-635d-40db-2d90-08de0b170b68}/confirm - 405 0 null 91.8749ms
+2025-10-15 23:06:24.073 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/RequisitionWorkflow/{5f3a01e1-635d-40db-2d90-08de0b170b68}/confirm - application/json 99
+2025-10-15 23:06:24.084 +03:00 [INF] Request started
+2025-10-15 23:06:24.087 +03:00 [INF] === Incoming Request ===
+2025-10-15 23:06:24.090 +03:00 [INF] Path: /api/RequisitionWorkflow/%7B5f3a01e1-635d-40db-2d90-08de0b170b68%7D/confirm
+2025-10-15 23:06:24.094 +03:00 [INF] Method: POST
+2025-10-15 23:06:24.098 +03:00 [INF] === Headers ===
+2025-10-15 23:06:24.102 +03:00 [INF] Accept: ["*/*"]
+2025-10-15 23:06:24.108 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-15 23:06:24.112 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-15 23:06:24.119 +03:00 [INF] User-Agent: ["PostmanRuntime/7.48.0"]
+2025-10-15 23:06:24.125 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-15 23:06:24.130 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-15 23:06:24.136 +03:00 [INF] Content-Length: ["99"]
+2025-10-15 23:06:24.141 +03:00 [INF] X-Tenant-ID: ["7e4a49eb-2e0e-4be8-8d60-c13d7db0f018"]
+2025-10-15 23:06:24.146 +03:00 [INF] Postman-Token: ["0b33d619-b7b2-42e2-96df-c05132b125db"]
+2025-10-15 23:06:24.152 +03:00 [INF] 🔍 TenantService returned: '7e4a49eb-2e0e-4be8-8d60-c13d7db0f018'
+2025-10-15 23:06:24.156 +03:00 [INF] ✅ Processing request for tenant: 7e4a49eb-2e0e-4be8-8d60-c13d7db0f018
+2025-10-15 23:06:24.159 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.ConfirmRequisition (ModularERP)'
+2025-10-15 23:06:24.170 +03:00 [INF] Route matched with {action = "ConfirmRequisition", controller = "RequisitionWorkflow"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ConfirmRequisition(System.Guid, ModularERP.Modules.Inventory.Features.Requisitions.Commends.Commends_Requisition_Workflow.ConfirmRequisitionCommand) on controller ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController (ModularERP).
+2025-10-15 23:06:24.263 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-15 23:06:24.269 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.ConfirmRequisition (ModularERP) in 92.1992ms
+2025-10-15 23:06:24.275 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.ConfirmRequisition (ModularERP)'
+2025-10-15 23:06:24.279 +03:00 [INF] Request completed successfully with status code 200
+2025-10-15 23:06:24.283 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/RequisitionWorkflow/{5f3a01e1-635d-40db-2d90-08de0b170b68}/confirm - 200 null application/json; charset=utf-8 210.1298ms
+2025-10-15 23:07:06.889 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/RequisitionWorkflow/{5f3a01e1-635d-40db-2d90-08de0b170b68}/cancel - application/json 88
+2025-10-15 23:07:06.898 +03:00 [INF] Request started
+2025-10-15 23:07:06.901 +03:00 [INF] === Incoming Request ===
+2025-10-15 23:07:06.906 +03:00 [INF] Path: /api/RequisitionWorkflow/%7B5f3a01e1-635d-40db-2d90-08de0b170b68%7D/cancel
+2025-10-15 23:07:06.910 +03:00 [INF] Method: POST
+2025-10-15 23:07:06.912 +03:00 [INF] === Headers ===
+2025-10-15 23:07:06.920 +03:00 [INF] Accept: ["*/*"]
+2025-10-15 23:07:06.926 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-15 23:07:06.932 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-15 23:07:06.937 +03:00 [INF] User-Agent: ["PostmanRuntime/7.48.0"]
+2025-10-15 23:07:06.943 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-15 23:07:06.949 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-15 23:07:06.959 +03:00 [INF] Content-Length: ["88"]
+2025-10-15 23:07:06.966 +03:00 [INF] X-Tenant-ID: ["7e4a49eb-2e0e-4be8-8d60-c13d7db0f018"]
+2025-10-15 23:07:06.970 +03:00 [INF] Postman-Token: ["85c0fd3e-2b2f-4139-ab0c-709f9df05172"]
+2025-10-15 23:07:06.974 +03:00 [INF] 🔍 TenantService returned: '7e4a49eb-2e0e-4be8-8d60-c13d7db0f018'
+2025-10-15 23:07:06.976 +03:00 [INF] ✅ Processing request for tenant: 7e4a49eb-2e0e-4be8-8d60-c13d7db0f018
+2025-10-15 23:07:06.979 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.CancelRequisition (ModularERP)'
+2025-10-15 23:07:06.986 +03:00 [INF] Route matched with {action = "CancelRequisition", controller = "RequisitionWorkflow"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CancelRequisition(System.Guid, ModularERP.Modules.Inventory.Features.Requisitions.Commends.Commends_Requisition_Workflow.CancelRequisitionCommand) on controller ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController (ModularERP).
+2025-10-15 23:07:07.010 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.CancelRequisition (ModularERP) in 18.6439ms
+2025-10-15 23:07:07.016 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.CancelRequisition (ModularERP)'
+2025-10-15 23:07:07.028 +03:00 [WRN] Business logic exception occurred: Confirmed requisitions cannot be cancelled. Use reverse instead.
+ModularERP.Common.Exceptions.BusinessLogicException: Confirmed requisitions cannot be cancelled. Use reverse instead.
+   at ModularERP.Modules.Inventory.Features.Requisitions.Handlers.Handlers_Requisition_Workflow.CancelRequisitionHandler.Handle(CancelRequisitionCommand request, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Modules\Inventory\Features\Requisitions\Handlers\Handlers_Requisition_Workflow\CancelRequisitionHandler.cs:line 47
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.CancelRequisition(Guid id, CancelRequisitionCommand command) in E:\ModelerERP\ModularERP\ModularERP\Modules\Inventory\Features\Requisitions\Controllers\RequisitionWorkflowController.cs:line 88
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at ModularERP.Program.<>c.<<Main>b__0_6>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 317
+--- End of stack trace from previous location ---
+   at ModularERP.Program.<>c.<<Main>b__0_5>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 270
+--- End of stack trace from previous location ---
+   at ModularERP.Common.Middleware.GlobalErrorHandlerMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\ModelerERP\ModularERP\ModularERP\Common\Middleware\GlobalErrorHandlerMiddleware.cs:line 40
+2025-10-15 23:07:07.155 +03:00 [INF] Error response sent with status code 400
+2025-10-15 23:07:07.160 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/RequisitionWorkflow/{5f3a01e1-635d-40db-2d90-08de0b170b68}/cancel - 400 null application/json; charset=utf-8 270.5561ms
+2025-10-15 23:07:58.972 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/RequisitionWorkflow/{5f3a01e1-635d-40db-2d90-08de0b170b68}/reverse - application/json 88
+2025-10-15 23:07:58.981 +03:00 [INF] Request started
+2025-10-15 23:07:58.984 +03:00 [INF] === Incoming Request ===
+2025-10-15 23:07:58.986 +03:00 [INF] Path: /api/RequisitionWorkflow/%7B5f3a01e1-635d-40db-2d90-08de0b170b68%7D/reverse
+2025-10-15 23:07:58.989 +03:00 [INF] Method: POST
+2025-10-15 23:07:58.991 +03:00 [INF] === Headers ===
+2025-10-15 23:07:58.992 +03:00 [INF] Accept: ["*/*"]
+2025-10-15 23:07:58.995 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-15 23:07:58.998 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-15 23:07:59.000 +03:00 [INF] User-Agent: ["PostmanRuntime/7.48.0"]
+2025-10-15 23:07:59.003 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-15 23:07:59.005 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-15 23:07:59.010 +03:00 [INF] Content-Length: ["88"]
+2025-10-15 23:07:59.014 +03:00 [INF] X-Tenant-ID: ["7e4a49eb-2e0e-4be8-8d60-c13d7db0f018"]
+2025-10-15 23:07:59.017 +03:00 [INF] Postman-Token: ["e7d91a57-e078-4a98-a1cf-df6fe374ed64"]
+2025-10-15 23:07:59.020 +03:00 [INF] 🔍 TenantService returned: '7e4a49eb-2e0e-4be8-8d60-c13d7db0f018'
+2025-10-15 23:07:59.024 +03:00 [INF] ✅ Processing request for tenant: 7e4a49eb-2e0e-4be8-8d60-c13d7db0f018
+2025-10-15 23:07:59.026 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.ReverseRequisition (ModularERP)'
+2025-10-15 23:07:59.037 +03:00 [INF] Route matched with {action = "ReverseRequisition", controller = "RequisitionWorkflow"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ReverseRequisition(System.Guid, ModularERP.Modules.Inventory.Features.Requisitions.Commends.Commends_Requisition_Workflow.ReverseRequisitionCommand) on controller ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController (ModularERP).
+2025-10-15 23:07:59.052 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-10-15 23:07:59.057 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.ReverseRequisition (ModularERP) in 10.908ms
+2025-10-15 23:07:59.065 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.ReverseRequisition (ModularERP)'
+2025-10-15 23:07:59.071 +03:00 [INF] Request completed successfully with status code 400
+2025-10-15 23:07:59.075 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/RequisitionWorkflow/{5f3a01e1-635d-40db-2d90-08de0b170b68}/reverse - 400 null application/problem+json; charset=utf-8 103.2874ms
+2025-10-15 23:08:31.963 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/RequisitionWorkflow/{5f3a01e1-635d-40db-2d90-08de0b170b68}/reverse - application/json 134
+2025-10-15 23:08:31.975 +03:00 [INF] Request started
+2025-10-15 23:08:31.978 +03:00 [INF] === Incoming Request ===
+2025-10-15 23:08:31.983 +03:00 [INF] Path: /api/RequisitionWorkflow/%7B5f3a01e1-635d-40db-2d90-08de0b170b68%7D/reverse
+2025-10-15 23:08:31.987 +03:00 [INF] Method: POST
+2025-10-15 23:08:31.992 +03:00 [INF] === Headers ===
+2025-10-15 23:08:31.995 +03:00 [INF] Accept: ["*/*"]
+2025-10-15 23:08:31.999 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-15 23:08:32.004 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-15 23:08:32.010 +03:00 [INF] User-Agent: ["PostmanRuntime/7.48.0"]
+2025-10-15 23:08:32.015 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-15 23:08:32.021 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-15 23:08:32.026 +03:00 [INF] Content-Length: ["134"]
+2025-10-15 23:08:32.031 +03:00 [INF] X-Tenant-ID: ["7e4a49eb-2e0e-4be8-8d60-c13d7db0f018"]
+2025-10-15 23:08:32.036 +03:00 [INF] Postman-Token: ["f56fdcdc-78e3-4356-bdad-a657402f44c7"]
+2025-10-15 23:08:32.041 +03:00 [INF] 🔍 TenantService returned: '7e4a49eb-2e0e-4be8-8d60-c13d7db0f018'
+2025-10-15 23:08:32.046 +03:00 [INF] ✅ Processing request for tenant: 7e4a49eb-2e0e-4be8-8d60-c13d7db0f018
+2025-10-15 23:08:32.050 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.ReverseRequisition (ModularERP)'
+2025-10-15 23:08:32.055 +03:00 [INF] Route matched with {action = "ReverseRequisition", controller = "RequisitionWorkflow"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ReverseRequisition(System.Guid, ModularERP.Modules.Inventory.Features.Requisitions.Commends.Commends_Requisition_Workflow.ReverseRequisitionCommand) on controller ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController (ModularERP).
+2025-10-15 23:08:32.233 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Guid, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-15 23:08:32.245 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.ReverseRequisition (ModularERP) in 179.5729ms
+2025-10-15 23:08:32.251 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.ReverseRequisition (ModularERP)'
+2025-10-15 23:08:32.256 +03:00 [INF] Request completed successfully with status code 200
+2025-10-15 23:08:32.260 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/RequisitionWorkflow/{5f3a01e1-635d-40db-2d90-08de0b170b68}/reverse - 200 null application/json; charset=utf-8 296.6946ms
+2025-10-15 23:14:56.426 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/RequisitionWorkflow/{5f3a01e1-635d-40db-2d90-08de0b170b68}/reject - application/json 134
+2025-10-15 23:14:56.432 +03:00 [INF] Request started
+2025-10-15 23:14:56.434 +03:00 [INF] === Incoming Request ===
+2025-10-15 23:14:56.436 +03:00 [INF] Path: /api/RequisitionWorkflow/%7B5f3a01e1-635d-40db-2d90-08de0b170b68%7D/reject
+2025-10-15 23:14:56.438 +03:00 [INF] Method: POST
+2025-10-15 23:14:56.441 +03:00 [INF] === Headers ===
+2025-10-15 23:14:56.444 +03:00 [INF] Accept: ["*/*"]
+2025-10-15 23:14:56.448 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-15 23:14:56.452 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-15 23:14:56.456 +03:00 [INF] User-Agent: ["PostmanRuntime/7.48.0"]
+2025-10-15 23:14:56.461 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-15 23:14:56.466 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-15 23:14:56.471 +03:00 [INF] Content-Length: ["134"]
+2025-10-15 23:14:56.475 +03:00 [INF] X-Tenant-ID: ["7e4a49eb-2e0e-4be8-8d60-c13d7db0f018"]
+2025-10-15 23:14:56.479 +03:00 [INF] Postman-Token: ["cf672c7a-db7e-4e98-9ebe-8bd56cbdfcc4"]
+2025-10-15 23:14:56.483 +03:00 [INF] 🔍 TenantService returned: '7e4a49eb-2e0e-4be8-8d60-c13d7db0f018'
+2025-10-15 23:14:56.486 +03:00 [INF] ✅ Processing request for tenant: 7e4a49eb-2e0e-4be8-8d60-c13d7db0f018
+2025-10-15 23:14:56.489 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.RejectRequisition (ModularERP)'
+2025-10-15 23:14:56.494 +03:00 [INF] Route matched with {action = "RejectRequisition", controller = "RequisitionWorkflow"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RejectRequisition(System.Guid, ModularERP.Modules.Inventory.Features.Requisitions.Commends.Commends_Requisition_Workflow.RejectRequisitionCommand) on controller ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController (ModularERP).
+2025-10-15 23:14:56.536 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.RejectRequisition (ModularERP) in 35.2505ms
+2025-10-15 23:14:56.540 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.RejectRequisition (ModularERP)'
+2025-10-15 23:14:56.544 +03:00 [WRN] Business logic exception occurred: Only submitted requisitions can be rejected. Current status: Confirmed
+ModularERP.Common.Exceptions.BusinessLogicException: Only submitted requisitions can be rejected. Current status: Confirmed
+   at ModularERP.Modules.Inventory.Features.Requisitions.Commends.Commends_Requisition_Workflow.RejectRequisitionHandler.Handle(RejectRequisitionCommand request, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Modules\Inventory\Features\Requisitions\Commends\Commends_Requisition_Workflow\RejectRequisitionHandler.cs:line 46
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.RejectRequisition(Guid id, RejectRequisitionCommand command) in E:\ModelerERP\ModularERP\ModularERP\Modules\Inventory\Features\Requisitions\Controllers\RequisitionWorkflowController.cs:line 60
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at ModularERP.Program.<>c.<<Main>b__0_6>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 317
+--- End of stack trace from previous location ---
+   at ModularERP.Program.<>c.<<Main>b__0_5>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 270
+--- End of stack trace from previous location ---
+   at ModularERP.Common.Middleware.GlobalErrorHandlerMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\ModelerERP\ModularERP\ModularERP\Common\Middleware\GlobalErrorHandlerMiddleware.cs:line 40
+2025-10-15 23:14:56.582 +03:00 [INF] Error response sent with status code 400
+2025-10-15 23:14:56.586 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/RequisitionWorkflow/{5f3a01e1-635d-40db-2d90-08de0b170b68}/reject - 400 null application/json; charset=utf-8 159.0673ms
+2025-10-15 23:16:05.624 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/RequisitionWorkflow/{5f3a01e1-635d-40db-2d90-08de0b170b68}/workflow-status - null null
+2025-10-15 23:16:05.633 +03:00 [INF] Request started
+2025-10-15 23:16:05.634 +03:00 [INF] === Incoming Request ===
+2025-10-15 23:16:05.637 +03:00 [INF] Path: /api/RequisitionWorkflow/%7B5f3a01e1-635d-40db-2d90-08de0b170b68%7D/workflow-status
+2025-10-15 23:16:05.639 +03:00 [INF] Method: GET
+2025-10-15 23:16:05.643 +03:00 [INF] === Headers ===
+2025-10-15 23:16:05.644 +03:00 [INF] Accept: ["*/*"]
+2025-10-15 23:16:05.647 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-15 23:16:05.651 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-15 23:16:05.655 +03:00 [INF] User-Agent: ["PostmanRuntime/7.48.0"]
+2025-10-15 23:16:05.659 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-15 23:16:05.662 +03:00 [INF] X-Tenant-ID: ["7e4a49eb-2e0e-4be8-8d60-c13d7db0f018"]
+2025-10-15 23:16:05.666 +03:00 [INF] Postman-Token: ["e9e0db17-e836-49bd-8cf4-f8fc57f68aed"]
+2025-10-15 23:16:05.669 +03:00 [INF] 🔍 TenantService returned: '7e4a49eb-2e0e-4be8-8d60-c13d7db0f018'
+2025-10-15 23:16:05.671 +03:00 [INF] ✅ Processing request for tenant: 7e4a49eb-2e0e-4be8-8d60-c13d7db0f018
+2025-10-15 23:16:05.674 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.GetWorkflowStatus (ModularERP)'
+2025-10-15 23:16:05.680 +03:00 [INF] Route matched with {action = "GetWorkflowStatus", controller = "RequisitionWorkflow"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetWorkflowStatus(System.Guid) on controller ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController (ModularERP).
+2025-10-15 23:16:06.528 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-10-15 23:16:06.675 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Inventory.Features.Requisitions.DTO.DTO_Requisition_Workflow.WorkflowStatusDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-15 23:16:06.707 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.GetWorkflowStatus (ModularERP) in 1021.3968ms
+2025-10-15 23:16:06.713 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.GetWorkflowStatus (ModularERP)'
+2025-10-15 23:16:06.722 +03:00 [INF] Request completed successfully with status code 200
+2025-10-15 23:16:06.726 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/RequisitionWorkflow/{5f3a01e1-635d-40db-2d90-08de0b170b68}/workflow-status - 200 null application/json; charset=utf-8 1102.5991ms
