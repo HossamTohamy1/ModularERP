@@ -3,12 +3,14 @@ using AutoMapper.QueryableExtensions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using ModularERP.Common.Enum.Finance_Enum;
+using ModularERP.Common.Enum.Inventory_Enum;
 using ModularERP.Common.Exceptions;
 using ModularERP.Common.ViewModel;
 using ModularERP.Modules.Finance.Finance.Infrastructure.Data;
 using ModularERP.Modules.Inventory.Features.Requisitions.Commends.Commends_Requisition;
 using ModularERP.Modules.Inventory.Features.Requisitions.DTO.DTO_Requisition;
 using ModularERP.Modules.Inventory.Features.Requisitions.Models;
+using ModularERP.Modules.Inventory.Features.Warehouses.Models;
 using ModularERP.Shared.Interfaces;
 
 namespace ModularERP.Modules.Inventory.Features.Requisitions.Handlers.Handlers_Requisition
@@ -17,9 +19,10 @@ namespace ModularERP.Modules.Inventory.Features.Requisitions.Handlers.Handlers_R
     {
         private readonly IGeneralRepository<Requisition> _requisitionRepo;
         private readonly IGeneralRepository<Product> _productRepo;
+        private readonly IGeneralRepository<WarehouseStock> _warehouseStockRepo;
         private readonly IFileUploadService _fileUploadService;
         private readonly IMapper _mapper;
-        private readonly FinanceDbContext _dbContext; 
+        private readonly FinanceDbContext _dbContext;
 
         private readonly string[] _allowedExtensions =
         {
@@ -31,12 +34,14 @@ namespace ModularERP.Modules.Inventory.Features.Requisitions.Handlers.Handlers_R
         public CreateRequisitionHandler(
             IGeneralRepository<Requisition> requisitionRepo,
             IGeneralRepository<Product> productRepo,
+            IGeneralRepository<WarehouseStock> warehouseStockRepo,
             IFileUploadService fileUploadService,
             IMapper mapper,
-            FinanceDbContext dbContext) 
+            FinanceDbContext dbContext)
         {
             _requisitionRepo = requisitionRepo;
             _productRepo = productRepo;
+            _warehouseStockRepo = warehouseStockRepo;
             _fileUploadService = fileUploadService;
             _mapper = mapper;
             _dbContext = dbContext;
@@ -93,13 +98,21 @@ namespace ModularERP.Modules.Inventory.Features.Requisitions.Handlers.Handlers_R
                         );
                     }
 
+                    // Get stock from warehouse
+                    var warehouseStock = await _dbContext.Set<WarehouseStock>()
+                        .Where(ws => ws.WarehouseId == request.WarehouseId
+                                  && ws.ProductId == itemDto.ProductId)
+                        .FirstOrDefaultAsync(cancellationToken);
+
+                    decimal stockOnHand = warehouseStock?.AvailableQuantity ?? 0;
+
                     var item = _mapper.Map<RequisitionItem>(itemDto);
                     item.CreatedById = userId;
                     item.CreatedAt = DateTime.UtcNow;
-                    item.StockOnHand = 0; // TODO: Get from warehouse
+                    item.StockOnHand = stockOnHand;
                     item.NewStockOnHand = request.Type == Common.Enum.Inventory_Enum.RequisitionType.Inbound
-                        ? (item.StockOnHand ?? 0) + item.Quantity
-                        : (item.StockOnHand ?? 0) - item.Quantity;
+                        ? stockOnHand + item.Quantity
+                        : stockOnHand - item.Quantity;
                     item.LineTotal = (item.UnitPrice ?? 0) * item.Quantity;
 
                     requisition.Items.Add(item);

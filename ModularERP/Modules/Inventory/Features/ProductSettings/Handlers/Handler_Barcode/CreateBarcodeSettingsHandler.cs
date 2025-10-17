@@ -41,6 +41,7 @@ namespace ModularERP.Modules.Inventory.Features.ProductSettings.Handlers.Handler
             }
 
             var entity = _mapper.Map<BarcodeSettings>(request);
+            entity.CompanyId= Guid.Parse("90137c92-382d-404c-bade-e5fefb1e8dbf");
 
             await _repository.AddAsync(entity);
             await _repository.SaveChanges();

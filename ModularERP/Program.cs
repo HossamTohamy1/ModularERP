@@ -44,6 +44,8 @@ using ModularERP.Modules.Inventory.Features.Products.Services;
 using ModularERP.Modules.Inventory.Features.Services.Models;
 using ModularERP.Modules.Inventory.Features.PriceLists.Services;
 using Microsoft.OpenApi.Models;
+using ModularERP.Modules.Inventory.Features.Requisitions.Services;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace ModularERP
 {
@@ -193,6 +195,35 @@ namespace ModularERP
                 // 🟢 Repositories & Common
                 // ---------------------------
                 builder.Services.AddScoped(typeof(IGeneralRepository<>), typeof(GeneralRepository<>));
+                // ---------------------------
+                // 🟢 AutoMapper Global Configuration
+                // ---------------------------
+                // Add this section in Program.cs BEFORE builder.Services.AddCommonServices();
+                // Around line 195-200, after the repository registrations
+
+                // ---------------------------
+                // 🟢 AutoMapper Global Configuration
+                // ---------------------------
+                // Add this section in Program.cs BEFORE builder.Services.AddCommonServices();
+                // Around line 195-200, after the repository registrations
+
+                // ---------------------------
+                // 🟢 AutoMapper Global Configuration
+                // ---------------------------
+                builder.Services.AddAutoMapper(cfg =>
+                {
+                    cfg.AddMaps(
+                        typeof(ModularERP.Modules.Inventory.Features.StockTransactions.Mapping.StockTransactionMappingProfile).Assembly,
+                        typeof(ModularERP.Modules.Finance.Features.Treasuries.Mapping.TreasuryMappingProfile).Assembly,
+                        typeof(Program).Assembly
+                    );
+                });
+
+                // IMPORTANT: Remove or comment out the AddAutoMapper call inside AddInventoryModule()
+                // to avoid duplicate registrations
+
+                // IMPORTANT: Remove or comment out the AddAutoMapper call inside AddInventoryModule()
+                // to avoid duplicate registrations
                 builder.Services.AddCommonServices();
                 builder.Services.AddCompanySerivces();
                 builder.Services.AddGlAccountServices();
@@ -201,6 +232,7 @@ namespace ModularERP
                 builder.Services.AddTaxManagementServices();
                 builder.Services.AddInventoryModule();
                 builder.Services.AddPriceListServices();
+                builder.Services.AddRequisitionWorkflowServices();
 
                 // ---------------------------
                 // 🟢 Domain Services

@@ -6,6 +6,7 @@
         public string UnitName { get; set; } = string.Empty;
         public string ShortName { get; set; } = string.Empty;
         public decimal Factor { get; set; }
+        public Guid CompanyId { get; set; }
         public int DisplayOrder { get; set; }
     }
 }

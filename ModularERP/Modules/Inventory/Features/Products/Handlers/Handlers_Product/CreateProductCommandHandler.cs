@@ -25,6 +25,7 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
         private readonly IGeneralRepository<ItemGroupItem> _itemGroupItemRepository;
         private readonly IGeneralRepository<ItemGroup> _itemGroupRepository;
         private readonly IJoinTableRepository<ProductTaxProfile> _productTaxProfileRepository;
+        private readonly IJoinTableRepository<WarehouseStock> _warehouseStockRepository;
         private readonly IMapper _mapper;
 
         public CreateProductCommandHandler(
@@ -37,6 +38,7 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
             IGeneralRepository<ItemGroupItem> itemGroupItemRepository,
             IGeneralRepository<ItemGroup> itemGroupRepository,
             IJoinTableRepository<ProductTaxProfile> productTaxProfileRepository,
+            IJoinTableRepository<WarehouseStock> warehouseStockRepository,
             IMapper mapper)
         {
             _productRepository = productRepository;
@@ -48,6 +50,7 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
             _itemGroupItemRepository = itemGroupItemRepository;
             _itemGroupRepository = itemGroupRepository;
             _productTaxProfileRepository = productTaxProfileRepository;
+            _warehouseStockRepository = warehouseStockRepository;
             _mapper = mapper;
         }
 
@@ -66,6 +69,7 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
             await _productRepository.AddAsync(product);
             await _productRepository.SaveChanges();
 
+            // ✅ إضافة المخزون إلى WarehouseStocks
             if (dto.TrackStock)
             {
                 var stats = new ProductStats
@@ -82,6 +86,25 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
 
                 await _statsRepository.AddAsync(stats);
                 await _statsRepository.SaveChanges();
+
+                // ✅ NEW: إضافة سجل WarehouseStock
+                var warehouseStock = new WarehouseStock
+                {
+                    Id = Guid.NewGuid(),
+                    WarehouseId = dto.WarehouseId,
+                    ProductId = product.Id,
+                    Quantity = dto.InitialStock ?? 0,
+                    ReservedQuantity = 0,
+                    AvailableQuantity = dto.InitialStock ?? 0,
+                    AverageUnitCost = dto.PurchasePrice > 0 ? dto.PurchasePrice : 0,
+                    TotalValue = (dto.InitialStock ?? 0) * (dto.PurchasePrice > 0 ? dto.PurchasePrice : 0),
+                    MinStockLevel = dto.LowStockThreshold,
+                    LastStockInDate = DateTime.UtcNow,
+                    CreatedAt = DateTime.UtcNow
+                };
+
+                await _warehouseStockRepository.AddAsync(warehouseStock);
+                await _warehouseStockRepository.SaveChangesAsync();
             }
 
             if (dto.ItemGroupId.HasValue)
@@ -143,7 +166,6 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
                     errors.Add("Barcode", new[] { "Barcode already exists for this company" });
             }
 
-            // Validate Warehouse
             var warehouseExists = await _warehouseRepository.AnyAsync(w =>
                 w.Id == dto.WarehouseId &&
                 w.CompanyId == dto.CompanyId &&
@@ -174,14 +196,12 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
             var responseDto = _mapper.Map<ProductDetailsDto>(product);
             responseDto.PhotoUrl = product.Photo;
 
-            // Load Warehouse
             if (product.WarehouseId != Guid.Empty)
             {
                 var warehouse = await _warehouseRepository.GetByID(product.WarehouseId);
                 responseDto.WarehouseName = warehouse?.Name;
             }
 
-            // Load Category
             if (product.CategoryId.HasValue)
             {
                 var category = await _categoryRepository.GetByID(product.CategoryId.Value);
@@ -192,21 +212,18 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
                 responseDto.CategoryName = "N/A";
             }
 
-            // Load Brand
             if (product.BrandId.HasValue)
             {
                 var brand = await _brandRepository.GetByID(product.BrandId.Value);
                 responseDto.BrandName = brand?.Name;
             }
 
-            // Load Supplier
             if (product.SupplierId.HasValue)
             {
                 var supplier = await _supplierRepository.GetByID(product.SupplierId.Value);
                 responseDto.SupplierName = supplier?.Name;
             }
 
-            // Load ItemGroup
             var itemGroupItem = await _itemGroupItemRepository
                 .Get(igi => igi.ProductId == product.Id)
                 .FirstOrDefaultAsync(cancellationToken);
@@ -218,7 +235,6 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
                 responseDto.ItemGroupName = itemGroup?.Name;
             }
 
-            // Load Stats
             if (product.TrackStock)
             {
                 var stats = await _statsRepository

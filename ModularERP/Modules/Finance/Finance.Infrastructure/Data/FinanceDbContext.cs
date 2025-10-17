@@ -99,7 +99,8 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
         public DbSet<BulkDiscount> BulkDiscounts { get; set; }
         public DbSet<PriceListAssignment> PriceListAssignments { get; set; }
         public DbSet<PriceCalculationLog> PriceCalculationLogs { get; set; }
-
+        public DbSet<ActivityLog> ActivityLogs { get; set; }
+        public DbSet<ProductTimeline> ProductTimelines { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -1788,6 +1789,119 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.HasIndex(e => new { e.TransactionType, e.TransactionId })
                       .HasDatabaseName("IX_PriceCalcLog_Transaction");
             });
+
+            builder.Entity<ActivityLog>(entity =>
+            {
+                entity.ToTable("ActivityLogs");
+
+                // Required fields
+                entity.Property(e => e.ProductId)
+                    .IsRequired();
+
+                entity.Property(e => e.ActionType)
+                    .IsRequired()
+                    .HasMaxLength(100);
+
+                entity.Property(e => e.BeforeValues)
+                    .HasColumnType("nvarchar(max)");
+
+                entity.Property(e => e.AfterValues)
+                    .HasColumnType("nvarchar(max)");
+
+                entity.Property(e => e.Description)
+                    .HasMaxLength(500);
+
+                // Relationships
+                entity.HasOne(e => e.Product)
+                    .WithMany()
+                    .HasForeignKey(e => e.ProductId)
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                // User relationship
+                entity.HasOne<ApplicationUser>()
+                    .WithMany()
+                    .HasForeignKey(e => e.UserId)
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                // Indexes for performance
+                entity.HasIndex(e => e.ProductId)
+                    .HasDatabaseName("IX_ActivityLog_Product");
+
+                entity.HasIndex(e => e.ActionType)
+                    .HasDatabaseName("IX_ActivityLog_ActionType");
+
+                entity.HasIndex(e => e.UserId)
+                    .HasDatabaseName("IX_ActivityLog_User");
+
+                entity.HasIndex(e => e.CreatedAt)
+                    .HasDatabaseName("IX_ActivityLog_CreatedAt");
+
+                entity.HasIndex(e => new { e.ProductId, e.CreatedAt })
+                    .HasDatabaseName("IX_ActivityLog_Product_Date");
+
+                entity.HasIndex(e => new { e.ActionType, e.CreatedAt })
+                    .HasDatabaseName("IX_ActivityLog_ActionType_Date");
+            });
+
+            // ============================================
+            // PRODUCT TIMELINE CONFIGURATION
+            // ============================================
+            builder.Entity<ProductTimeline>(entity =>
+            {
+                entity.ToTable("ProductTimelines");
+
+                // Required fields
+                entity.Property(e => e.ProductId)
+                    .IsRequired();
+
+                entity.Property(e => e.ActionType)
+                    .IsRequired()
+                    .HasMaxLength(100);
+
+                entity.Property(e => e.ItemReference)
+                    .HasMaxLength(200);
+
+                entity.Property(e => e.StockBalance)
+                    .HasPrecision(18, 3);
+
+                entity.Property(e => e.AveragePrice)
+                    .HasPrecision(18, 4);
+
+                entity.Property(e => e.Description)
+                    .HasMaxLength(500);
+
+                // Relationships
+                entity.HasOne(e => e.Product)
+                    .WithMany()
+                    .HasForeignKey(e => e.ProductId)
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                // User relationship
+                entity.HasOne<ApplicationUser>()
+                    .WithMany()
+                    .HasForeignKey(e => e.UserId)
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                // Indexes for performance
+                entity.HasIndex(e => e.ProductId)
+                    .HasDatabaseName("IX_ProductTimeline_Product");
+
+                entity.HasIndex(e => e.ActionType)
+                    .HasDatabaseName("IX_ProductTimeline_ActionType");
+
+                entity.HasIndex(e => e.UserId)
+                    .HasDatabaseName("IX_ProductTimeline_User");
+
+                entity.HasIndex(e => e.CreatedAt)
+                    .HasDatabaseName("IX_ProductTimeline_CreatedAt");
+
+                entity.HasIndex(e => new { e.ProductId, e.CreatedAt })
+                    .HasDatabaseName("IX_ProductTimeline_Product_Date");
+
+                entity.HasIndex(e => new { e.ProductId, e.ActionType })
+                    .HasDatabaseName("IX_ProductTimeline_Product_ActionType");
+            });
+
 
             // Apply Global Query Filters for Multi-tenancy
             ApplyGlobalFilters(builder);

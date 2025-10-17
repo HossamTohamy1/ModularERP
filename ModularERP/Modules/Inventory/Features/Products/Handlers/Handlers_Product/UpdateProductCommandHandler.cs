@@ -24,6 +24,7 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
         private readonly IGeneralRepository<Warehouse> _warehouseRepository;
         private readonly IGeneralRepository<ItemGroupItem> _itemGroupItemRepository;
         private readonly IGeneralRepository<ItemGroup> _itemGroupRepository;
+        private readonly IGeneralRepository<WarehouseStock> _warehouseStockRepository; // ✅ NEW
         private readonly IJoinTableRepository<ProductTaxProfile> _productTaxProfileRepository;
         private readonly IMapper _mapper;
 
@@ -36,6 +37,7 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
             IGeneralRepository<Warehouse> warehouseRepository,
             IGeneralRepository<ItemGroupItem> itemGroupItemRepository,
             IGeneralRepository<ItemGroup> itemGroupRepository,
+            IGeneralRepository<WarehouseStock> warehouseStockRepository, // ✅ NEW
             IJoinTableRepository<ProductTaxProfile> productTaxProfileRepository,
             IMapper mapper)
         {
@@ -47,6 +49,7 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
             _warehouseRepository = warehouseRepository;
             _itemGroupItemRepository = itemGroupItemRepository;
             _itemGroupRepository = itemGroupRepository;
+            _warehouseStockRepository = warehouseStockRepository; // ✅ NEW
             _productTaxProfileRepository = productTaxProfileRepository;
             _mapper = mapper;
         }
@@ -70,7 +73,7 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
             existingProduct.SKU = dto.SKU;
             existingProduct.Description = dto.Description;
             existingProduct.Photo = dto.PhotoUrl;
-            existingProduct.WarehouseId = dto.WarehouseId;  // ✅ NEW
+            existingProduct.WarehouseId = dto.WarehouseId;
             existingProduct.CategoryId = dto.CategoryId;
             existingProduct.BrandId = dto.BrandId;
             existingProduct.SupplierId = dto.SupplierId;
@@ -92,6 +95,58 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
 
             await _productRepository.Update(existingProduct);
 
+            // ✅ NEW: معالجة WarehouseStock
+            if (dto.TrackStock)
+            {
+                var existingWarehouseStock = await _warehouseStockRepository
+                    .Get(ws => ws.ProductId == existingProduct.Id && ws.WarehouseId == dto.WarehouseId)
+                    .FirstOrDefaultAsync(cancellationToken);
+
+                if (existingWarehouseStock != null)
+                {
+                    // تحديث السجل الموجود
+                    existingWarehouseStock.AverageUnitCost = dto.PurchasePrice > 0 ? dto.PurchasePrice : 0;
+                    existingWarehouseStock.TotalValue = existingWarehouseStock.Quantity * (dto.PurchasePrice > 0 ? dto.PurchasePrice : 0);
+                    existingWarehouseStock.MinStockLevel = dto.LowStockThreshold;
+
+                    await _warehouseStockRepository.Update(existingWarehouseStock);
+                }
+                else
+                {
+                    // إنشاء سجل جديد إذا لم يكن موجوداً
+                    var newWarehouseStock = new WarehouseStock
+                    {
+                        Id = Guid.NewGuid(),
+                        WarehouseId = dto.WarehouseId,
+                        ProductId = existingProduct.Id,
+                        Quantity = 0,
+                        ReservedQuantity = 0,
+                        AvailableQuantity = 0,
+                        AverageUnitCost = dto.PurchasePrice > 0 ? dto.PurchasePrice : 0,
+                        TotalValue = 0,
+                        MinStockLevel = dto.LowStockThreshold,
+                        CreatedAt = DateTime.UtcNow
+                    };
+
+                    await _warehouseStockRepository.AddAsync(newWarehouseStock);
+                    await _warehouseStockRepository.SaveChanges();
+                }
+
+                // إذا تغير المخزن، احذف السجل القديم من المخزن السابق
+                if (existingProduct.WarehouseId != dto.WarehouseId)
+                {
+                    var oldWarehouseStock = await _warehouseStockRepository
+                        .Get(ws => ws.ProductId == existingProduct.Id && ws.WarehouseId == existingProduct.WarehouseId)
+                        .FirstOrDefaultAsync(cancellationToken);
+
+                    if (oldWarehouseStock != null)
+                    {
+                        await _warehouseStockRepository.Delete(oldWarehouseStock.Id);
+                    }
+                }
+            }
+
+            // معالجة ItemGroup
             var existingItemGroupItem = await _itemGroupItemRepository
                 .Get(igi => igi.ProductId == existingProduct.Id)
                 .FirstOrDefaultAsync(cancellationToken);
@@ -150,14 +205,21 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
                 await _itemGroupItemRepository.Delete(existingItemGroupItem.Id);
             }
 
+            // معالجة Tax Profiles
             if (dto.TaxProfileIds != null && dto.TaxProfileIds.Any())
             {
                 var existingTaxProfiles = await _productTaxProfileRepository
                     .Get(ptp => ptp.ProductId == existingProduct.Id)
                     .ToListAsync(cancellationToken);
 
-                await _productTaxProfileRepository.DeleteRange(existingTaxProfiles);
+                // حذف جميع السجلات الموجودة أولاً
+                if (existingTaxProfiles.Any())
+                {
+                    await _productTaxProfileRepository.DeleteRange(existingTaxProfiles);
+                    await _productTaxProfileRepository.SaveChangesAsync(); // ✅ Save بعد الحذف مباشرة
+                }
 
+                // ثم أضف السجلات الجديدة
                 var productTaxProfiles = dto.TaxProfileIds.Select((taxProfileId, index) => new ProductTaxProfile
                 {
                     ProductId = existingProduct.Id,
@@ -167,6 +229,18 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
 
                 await _productTaxProfileRepository.AddRangeAsync(productTaxProfiles);
                 await _productTaxProfileRepository.SaveChangesAsync();
+            }
+            else
+            {
+                var existingTaxProfiles = await _productTaxProfileRepository
+                    .Get(ptp => ptp.ProductId == existingProduct.Id)
+                    .ToListAsync(cancellationToken);
+
+                if (existingTaxProfiles.Any())
+                {
+                    await _productTaxProfileRepository.DeleteRange(existingTaxProfiles);
+                    await _productTaxProfileRepository.SaveChangesAsync();
+                }
             }
 
             var updatedProduct = await _productRepository.GetByID(existingProduct.Id);

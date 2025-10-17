@@ -52,6 +52,8 @@ namespace ModularERP.Modules.Inventory.Features.ProductSettings.Handlers.Handelr
             var conversion = _mapper.Map<UnitConversion>(request.Data);
             conversion.Id = Guid.NewGuid();
             conversion.UnitTemplateId = request.UnitTemplateId;
+            conversion.CompanyId = Guid.Parse("90137c92-382d-404c-bade-e5fefb1e8dbf");
+
 
             await _conversionRepository.AddAsync(conversion);
             await _conversionRepository.SaveChanges();

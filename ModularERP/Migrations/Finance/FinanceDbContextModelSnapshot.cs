@@ -1910,6 +1910,74 @@ namespace ModularERP.Migrations
                     b.ToTable("UnitTemplates", (string)null);
                 });
 
+            modelBuilder.Entity("ModularERP.Modules.Inventory.Features.Products.Models.ActivityLog", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ActionType")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("AfterValues")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BeforeValues")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("CreatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ActionType")
+                        .HasDatabaseName("IX_ActivityLog_ActionType");
+
+                    b.HasIndex("CreatedAt")
+                        .HasDatabaseName("IX_ActivityLog_CreatedAt");
+
+                    b.HasIndex("ProductId")
+                        .HasDatabaseName("IX_ActivityLog_Product");
+
+                    b.HasIndex("UserId")
+                        .HasDatabaseName("IX_ActivityLog_User");
+
+                    b.HasIndex("ActionType", "CreatedAt")
+                        .HasDatabaseName("IX_ActivityLog_ActionType_Date");
+
+                    b.HasIndex("ProductId", "CreatedAt")
+                        .HasDatabaseName("IX_ActivityLog_Product_Date");
+
+                    b.ToTable("ActivityLogs", (string)null);
+                });
+
             modelBuilder.Entity("ModularERP.Modules.Inventory.Features.Products.Models.ItemGroup", b =>
                 {
                     b.Property<Guid>("Id")
@@ -2171,6 +2239,80 @@ namespace ModularERP.Migrations
                         .HasFilter("[IsPrimary] = 1");
 
                     b.ToTable("ProductTaxProfiles", (string)null);
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Inventory.Features.Products.Models.ProductTimeline", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ActionType")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<decimal?>("AveragePrice")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("CreatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("ItemReference")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal?>("StockBalance")
+                        .HasPrecision(18, 3)
+                        .HasColumnType("decimal(18,3)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ActionType")
+                        .HasDatabaseName("IX_ProductTimeline_ActionType");
+
+                    b.HasIndex("CreatedAt")
+                        .HasDatabaseName("IX_ProductTimeline_CreatedAt");
+
+                    b.HasIndex("ProductId")
+                        .HasDatabaseName("IX_ProductTimeline_Product");
+
+                    b.HasIndex("UserId")
+                        .HasDatabaseName("IX_ProductTimeline_User");
+
+                    b.HasIndex("ProductId", "ActionType")
+                        .HasDatabaseName("IX_ProductTimeline_Product_ActionType");
+
+                    b.HasIndex("ProductId", "CreatedAt")
+                        .HasDatabaseName("IX_ProductTimeline_Product_Date");
+
+                    b.ToTable("ProductTimelines", (string)null);
                 });
 
             modelBuilder.Entity("ModularERP.Modules.Inventory.Features.Requisitions.Models.Requisition", b =>
@@ -3917,6 +4059,22 @@ namespace ModularERP.Migrations
                     b.Navigation("Company");
                 });
 
+            modelBuilder.Entity("ModularERP.Modules.Inventory.Features.Products.Models.ActivityLog", b =>
+                {
+                    b.HasOne("Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("ModularERP.Common.Models.ApplicationUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("ModularERP.Modules.Inventory.Features.Products.Models.ItemGroup", b =>
                 {
                     b.HasOne("ModularERP.Modules.Inventory.Features.ProductSettings.Models.Brand", "Brand")
@@ -4008,6 +4166,22 @@ namespace ModularERP.Migrations
                     b.Navigation("Product");
 
                     b.Navigation("TaxProfile");
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Inventory.Features.Products.Models.ProductTimeline", b =>
+                {
+                    b.HasOne("Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("ModularERP.Common.Models.ApplicationUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("ModularERP.Modules.Inventory.Features.Requisitions.Models.Requisition", b =>

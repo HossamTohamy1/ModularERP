@@ -6,6 +6,7 @@ using ModularERP.Common.Exceptions;
 using ModularERP.Common.ViewModel;
 using ModularERP.Modules.Inventory.Features.Requisitions.Commends.Commends_Requisition_Workflow;
 using ModularERP.Modules.Inventory.Features.Requisitions.Models;
+using ModularERP.Modules.Inventory.Features.Warehouses.Models;
 using ModularERP.Shared.Interfaces;
 
 namespace ModularERP.Modules.Inventory.Features.Requisitions.Handlers.Handlers_Requisition_Workflow
@@ -15,6 +16,7 @@ namespace ModularERP.Modules.Inventory.Features.Requisitions.Handlers.Handlers_R
         private readonly IGeneralRepository<Requisition> _requisitionRepo;
         private readonly IGeneralRepository<RequisitionItem> _requisitionItemRepo;
         private readonly IGeneralRepository<RequisitionApprovalLog> _approvalLogRepo;
+        private readonly IGeneralRepository<WarehouseStock> _warehouseStockRepo;
         private readonly IHttpContextAccessor _httpContextAccessor;
         private const string MODULE_NAME = "Inventory";
 
@@ -22,11 +24,13 @@ namespace ModularERP.Modules.Inventory.Features.Requisitions.Handlers.Handlers_R
             IGeneralRepository<Requisition> requisitionRepo,
             IGeneralRepository<RequisitionItem> requisitionItemRepo,
             IGeneralRepository<RequisitionApprovalLog> approvalLogRepo,
+            IGeneralRepository<WarehouseStock> warehouseStockRepo,
             IHttpContextAccessor httpContextAccessor)
         {
             _requisitionRepo = requisitionRepo;
             _requisitionItemRepo = requisitionItemRepo;
             _approvalLogRepo = approvalLogRepo;
+            _warehouseStockRepo = warehouseStockRepo;
             _httpContextAccessor = httpContextAccessor;
         }
 
@@ -54,10 +58,12 @@ namespace ModularERP.Modules.Inventory.Features.Requisitions.Handlers.Handlers_R
                     FinanceErrorCode.BusinessLogicError);
             }
 
+            // عكس النوع: Inbound → Outbound والعكس
             var reverseType = originalRequisition.Type == RequisitionType.Inbound
                 ? RequisitionType.Outbound
                 : RequisitionType.Inbound;
 
+            // إنشاء Requisition عكسي
             var reverseRequisition = new Requisition
             {
                 Type = reverseType,
@@ -71,33 +77,97 @@ namespace ModularERP.Modules.Inventory.Features.Requisitions.Handlers.Handlers_R
                 CompanyId = originalRequisition.CompanyId,
                 ParentRequisitionId = originalRequisition.Id,
                 ConfirmedBy = userId,
-                ConfirmedAt = DateTime.UtcNow
+                ConfirmedAt = DateTime.UtcNow,
+                CreatedById = userId,
+                CreatedAt = DateTime.UtcNow
             };
 
             await _requisitionRepo.AddAsync(reverseRequisition);
             await _requisitionRepo.SaveChanges();
 
+            // إضافة Items العكسية وتحديث المخزون
             foreach (var originalItem in originalRequisition.Items)
             {
+                // جلب المخزون الحالي
+                var warehouseStock = await _warehouseStockRepo
+                    .GetAll()
+                    .FirstOrDefaultAsync(ws => ws.WarehouseId == originalRequisition.WarehouseId
+                                            && ws.ProductId == originalItem.ProductId,
+                                         cancellationToken);
+
+                if (warehouseStock == null)
+                {
+                    throw new BusinessLogicException(
+                        $"Warehouse stock not found for product ID {originalItem.ProductId}",
+                        MODULE_NAME,
+                        FinanceErrorCode.NotFound);
+                }
+
+                decimal currentQuantity = warehouseStock.AvailableQuantity;
+                decimal newQuantity;
+
+                // عكس العملية
+                if (reverseType == RequisitionType.Inbound)
+                {
+                    // كانت Outbound، نرجعها Inbound
+                    newQuantity = currentQuantity + originalItem.Quantity;
+                    warehouseStock.LastStockInDate = DateTime.UtcNow;
+
+                    // تحديث متوسط التكلفة
+                    if (originalItem.UnitPrice.HasValue && originalItem.UnitPrice.Value > 0)
+                    {
+                        decimal oldValue = currentQuantity * (warehouseStock.AverageUnitCost ?? 0);
+                        decimal newValue = originalItem.Quantity * originalItem.UnitPrice.Value;
+                        warehouseStock.AverageUnitCost = (oldValue + newValue) / newQuantity;
+                    }
+                }
+                else // Outbound
+                {
+                    // كانت Inbound، نخصمها Outbound
+                    if (currentQuantity < originalItem.Quantity)
+                    {
+                        throw new BusinessLogicException(
+                            $"Insufficient stock for reversal. Product ID {originalItem.ProductId}. Available: {currentQuantity}, Required: {originalItem.Quantity}",
+                            MODULE_NAME,
+                            FinanceErrorCode.BusinessLogicError);
+                    }
+
+                    newQuantity = currentQuantity - originalItem.Quantity;
+                    warehouseStock.LastStockOutDate = DateTime.UtcNow;
+                }
+
+                // تحديث المخزون
+                warehouseStock.Quantity = newQuantity;
+                warehouseStock.AvailableQuantity = newQuantity - (warehouseStock.ReservedQuantity ?? 0);
+                warehouseStock.TotalValue = newQuantity * (warehouseStock.AverageUnitCost ?? 0);
+                warehouseStock.UpdatedAt = DateTime.UtcNow;
+
+                await _warehouseStockRepo.Update(warehouseStock);
+
+                // إنشاء Item العكسي
                 var reverseItem = new RequisitionItem
                 {
                     RequisitionId = reverseRequisition.Id,
                     ProductId = originalItem.ProductId,
                     UnitPrice = originalItem.UnitPrice,
                     Quantity = originalItem.Quantity,
-                    StockOnHand = originalItem.NewStockOnHand,
-                    NewStockOnHand = originalItem.StockOnHand,
-                    LineTotal = originalItem.LineTotal
+                    StockOnHand = currentQuantity,
+                    NewStockOnHand = newQuantity,
+                    LineTotal = originalItem.LineTotal,
+                    CreatedById = userId,
+                    CreatedAt = DateTime.UtcNow
                 };
 
                 await _requisitionItemRepo.AddAsync(reverseItem);
             }
 
+            // تحديث الـ Requisition الأصلي
             originalRequisition.ReversedBy = userId;
             originalRequisition.ReversedAt = DateTime.UtcNow;
 
             await _requisitionRepo.Update(originalRequisition);
 
+            // تسجيل في Approval Log للـ Requisition الأصلي
             var approvalLog = new RequisitionApprovalLog
             {
                 RequisitionId = originalRequisition.Id,
@@ -109,6 +179,7 @@ namespace ModularERP.Modules.Inventory.Features.Requisitions.Handlers.Handlers_R
 
             await _approvalLogRepo.AddAsync(approvalLog);
 
+            // تسجيل في Approval Log للـ Requisition العكسي
             var reverseApprovalLog = new RequisitionApprovalLog
             {
                 RequisitionId = reverseRequisition.Id,

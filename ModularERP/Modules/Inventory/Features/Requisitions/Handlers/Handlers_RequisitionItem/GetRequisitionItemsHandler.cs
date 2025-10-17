@@ -56,8 +56,8 @@ namespace ModularERP.Modules.Inventory.Features.Requisitions.Handlers.Handlers_R
                         ProductSKU = x.Product.SKU,
                         UnitPrice = x.UnitPrice,
                         Quantity = x.Quantity,
-                        //StockOnHand = x.StockOnHand,
-                        //NewStockOnHand = x.NewStockOnHand,
+                        StockOnHand = x.StockOnHand,
+                        NewStockOnHand = x.NewStockOnHand,
                         LineTotal = x.LineTotal,
                         CreatedAt = x.CreatedAt
                     })

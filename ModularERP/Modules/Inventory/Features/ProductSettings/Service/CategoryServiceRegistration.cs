@@ -43,8 +43,7 @@ namespace ModularERP.Modules.Inventory.Features.ProductSettings.Service
                 cfg.AddProfile<UnitTemplateMappingProfile>();
                 cfg.AddProfile<CustomFieldMappingProfile>();
                 cfg.AddProfile<BarcodeSettingsMappingProfile>();
-                cfg.AddProfile<RequisitionItemMappingProfile>();
-                cfg.AddProfile<WarehouseStockMappingProfile>();
+
             });
 
             // Register FluentValidation validators

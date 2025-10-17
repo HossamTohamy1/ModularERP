@@ -450,6 +450,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\categories\11dca51f-4b65-4e95-abb3-ec5b02e4b489_Hossam-Reda-Tohamy-Node Js .pdf'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\categories\15b510a3-a399-430a-9aeb-c911c2f39aec_Hossam-Reda-Tohamy-Node Js .pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>ModularERP</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ModularERP</BasePath>
+      <RelativePath>uploads/categories/15b510a3-a399-430a-9aeb-c911c2f39aec_Hossam-Reda-Tohamy-Node Js .pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>nl1r0jgke5</Fingerprint>
+      <Integrity>JZMyuoHxGEvHmXJCtp7A+BEDr7zkS8SLDkytGyRxW3s=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\categories\15b510a3-a399-430a-9aeb-c911c2f39aec_Hossam-Reda-Tohamy-Node Js .pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\categories\22726021-c28a-449e-917a-5f543cfdd7fc_Hossam-Reda-Tohamy-Node Js .pdf'))">
       <SourceType>Package</SourceType>
       <SourceId>ModularERP</SourceId>
@@ -467,6 +485,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\categories\22726021-c28a-449e-917a-5f543cfdd7fc_Hossam-Reda-Tohamy-Node Js .pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\categories\c44833e8-25c7-462a-8978-c6706feefd48_Hossam-Reda-Tohamy-Node Js .pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>ModularERP</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ModularERP</BasePath>
+      <RelativePath>uploads/categories/c44833e8-25c7-462a-8978-c6706feefd48_Hossam-Reda-Tohamy-Node Js .pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>nl1r0jgke5</Fingerprint>
+      <Integrity>JZMyuoHxGEvHmXJCtp7A+BEDr7zkS8SLDkytGyRxW3s=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\categories\c44833e8-25c7-462a-8978-c6706feefd48_Hossam-Reda-Tohamy-Node Js .pdf'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\categories\cdbad27b-27b9-4d95-8fa5-040db4f74dc2_Hossam-Reda-Tohamy-Node Js .pdf'))">
       <SourceType>Package</SourceType>

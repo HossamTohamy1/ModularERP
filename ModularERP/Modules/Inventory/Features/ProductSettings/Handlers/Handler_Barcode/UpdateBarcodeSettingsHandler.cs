@@ -51,6 +51,7 @@ namespace ModularERP.Modules.Inventory.Features.ProductSettings.Handlers.Handler
 
             _mapper.Map(request, entity);
             entity.UpdatedAt = DateTime.UtcNow;
+            entity.CompanyId = Guid.Parse("90137c92-382d-404c-bade-e5fefb1e8dbf");
 
             await _repository.SaveChanges();
 

@@ -10,6 +10,7 @@
         public decimal? CurrencyDivider { get; set; }
         public string? Notes { get; set; }
         public bool IsDefault { get; set; }
+        public Guid CompanyId { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
         public bool IsActive { get; set; }

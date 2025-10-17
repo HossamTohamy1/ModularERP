@@ -36,6 +36,7 @@ namespace ModularERP.Modules.Inventory.Features.ProductSettings.Handlers.Handelr
 
             var template = _mapper.Map<UnitTemplate>(request.Data);
             template.Id = Guid.NewGuid();
+            template.CompanyId = Guid.Parse("90137c92-382d-404c-bade-e5fefb1e8dbf");
 
             await _repository.AddAsync(template);
             await _repository.SaveChanges();

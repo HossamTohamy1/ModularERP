@@ -1,6 +1,9 @@
 ﻿using FluentValidation;
+using ModularERP.Modules.Inventory.Features.ProductSettings.Mapping;
 using ModularERP.Modules.Inventory.Features.Requisitions.Commends.Commends_Requisition_Workflow;
+using ModularERP.Modules.Inventory.Features.Requisitions.Mapping;
 using ModularERP.Modules.Inventory.Features.Requisitions.Validators.Validators_Requisition_Workflow;
+using ModularERP.Modules.Inventory.Features.Warehouses.Mapping;
 using System.Reflection;
 
 namespace ModularERP.Modules.Inventory.Features.Requisitions.Services
@@ -11,6 +14,12 @@ namespace ModularERP.Modules.Inventory.Features.Requisitions.Services
         {
             // Register MediatR handlers
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+            services.AddAutoMapper(cfg =>
+             { 
+                cfg.AddProfile<RequisitionItemMappingProfile>();
+                cfg.AddProfile<WarehouseStockMappingProfile>();
+                cfg.AddProfile<ApprovalWorkflowMappingProfile>();
+            });
 
             // Register FluentValidation validators
             services.AddScoped<IValidator<SubmitRequisitionCommand>, SubmitRequisitionValidator>();

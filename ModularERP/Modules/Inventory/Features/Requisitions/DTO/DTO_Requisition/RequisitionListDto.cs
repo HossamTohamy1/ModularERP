@@ -13,6 +13,7 @@ namespace ModularERP.Modules.Inventory.Features.Requisitions.DTO.DTO_Requisition
         public RequisitionStatus Status { get; set; }
         public decimal ItemsTotal { get; set; }
         public int ItemsCount { get; set; }
+
         public DateTime CreatedAt { get; set; }
         public string CreatedByName { get; set; } = string.Empty;
     }

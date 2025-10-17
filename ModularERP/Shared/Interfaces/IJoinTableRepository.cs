@@ -7,6 +7,7 @@ namespace ModularERP.Shared.Interfaces
         Task AddAsync(T entity);
         Task AddRangeAsync(IEnumerable<T> entities);
         IQueryable<T> GetAll();
+        Task<T?> GetByIDWithTracking(Guid id);
 
         IQueryable<T> Get(Expression<Func<T, bool>> expression);
         Task<T?> FindAsync(params object[] keyValues);

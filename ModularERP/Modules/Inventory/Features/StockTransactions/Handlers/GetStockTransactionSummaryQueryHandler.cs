@@ -55,10 +55,11 @@ namespace ModularERP.Modules.Inventory.Features.StockTransactions.Handlers
                                             x.TransactionType == StockTransactionType.Transfer
                                             ? -x.Quantity : x.Quantity),
                     CurrentStock = g.OrderByDescending(x => x.CreatedAt).Select(x => x.StockLevelAfter).FirstOrDefault(),
-                    AverageUnitCost = g.Where(x => x.UnitCost.HasValue).Average(x => x.UnitCost),
+                    AverageUnitCost = g.Sum(x => (x.UnitCost ?? 0) * x.Quantity) / g.Sum(x => x.Quantity),
                     TransactionCount = g.Count()
                 })
                 .ToListAsync(cancellationToken);
+
 
             return summary;
         }

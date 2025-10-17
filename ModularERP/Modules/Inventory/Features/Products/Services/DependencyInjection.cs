@@ -28,6 +28,9 @@ namespace ModularERP.Modules.Inventory.Features.Products.Services
                 cfg.AddProfile<ItemGroupMappingProfile>();
                 cfg.AddProfile<ProductMappingProfile>();
                 cfg.AddProfile<RequisitionMappingProfile>();
+                cfg.AddProfile<ProductStatsProfile>();
+                cfg.AddProfile<ProductTimelineProfile>();
+                cfg.AddProfile<ActivityLogProfile>();
 
             });
 

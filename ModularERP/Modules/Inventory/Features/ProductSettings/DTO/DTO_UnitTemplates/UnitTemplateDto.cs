@@ -12,6 +12,8 @@ namespace ModularERP.Modules.Inventory.Features.ProductSettings.DTO.DTO_UnitTemp
         public UnitTemplateStatus Status { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
+        public Guid CompanyId { get; set; }
+
         public List<UnitConversionDto> UnitConversions { get; set; } = new();
     }
 }

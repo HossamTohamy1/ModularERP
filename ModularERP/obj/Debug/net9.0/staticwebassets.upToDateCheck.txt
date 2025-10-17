@@ -24,7 +24,9 @@ wwwroot\uploads\c160b997-d8b9-4093-aee5-34c5c0af675f_Back End .NET.pdf
 wwwroot\uploads\categories\00a877ac-2765-4705-8850-c85275a430f7_Hossam-Reda-Tohamy-Node Js .pdf
 wwwroot\uploads\categories\02328d91-7504-494d-9d0d-7646d75b126b_Hossam-Reda-Tohamy-Node Js .pdf
 wwwroot\uploads\categories\11dca51f-4b65-4e95-abb3-ec5b02e4b489_Hossam-Reda-Tohamy-Node Js .pdf
+wwwroot\uploads\categories\15b510a3-a399-430a-9aeb-c911c2f39aec_Hossam-Reda-Tohamy-Node Js .pdf
 wwwroot\uploads\categories\22726021-c28a-449e-917a-5f543cfdd7fc_Hossam-Reda-Tohamy-Node Js .pdf
+wwwroot\uploads\categories\c44833e8-25c7-462a-8978-c6706feefd48_Hossam-Reda-Tohamy-Node Js .pdf
 wwwroot\uploads\categories\cdbad27b-27b9-4d95-8fa5-040db4f74dc2_Hossam-Reda-Tohamy-Node Js .pdf
 wwwroot\uploads\categories\d00e4a7a-0ad1-4523-b347-1445b8e58e35_Hossam-Reda-Tohamy-Node Js .pdf
 wwwroot\uploads\categories\d7034520-5aac-491f-86e8-d86708a804ac_Back End .NET.pdf
