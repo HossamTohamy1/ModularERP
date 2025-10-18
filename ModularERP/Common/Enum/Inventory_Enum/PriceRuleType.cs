@@ -6,6 +6,7 @@
         Margin,              // Calculate based on profit margin
         FixedAdjustment,     // Fixed amount adjustment
         CurrencyConversion,  // Convert from one currency to another
-        Promotion            // Promotional pricing
+        Promotion   ,         // Promotional pricing
+  
     }
 }

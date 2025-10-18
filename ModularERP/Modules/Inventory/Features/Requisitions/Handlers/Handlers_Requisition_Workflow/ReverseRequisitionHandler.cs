@@ -6,6 +6,7 @@ using ModularERP.Common.Exceptions;
 using ModularERP.Common.ViewModel;
 using ModularERP.Modules.Inventory.Features.Requisitions.Commends.Commends_Requisition_Workflow;
 using ModularERP.Modules.Inventory.Features.Requisitions.Models;
+using ModularERP.Modules.Inventory.Features.Requisitions.Services;
 using ModularERP.Modules.Inventory.Features.Warehouses.Models;
 using ModularERP.Shared.Interfaces;
 
@@ -17,6 +18,7 @@ namespace ModularERP.Modules.Inventory.Features.Requisitions.Handlers.Handlers_R
         private readonly IGeneralRepository<RequisitionItem> _requisitionItemRepo;
         private readonly IGeneralRepository<RequisitionApprovalLog> _approvalLogRepo;
         private readonly IGeneralRepository<WarehouseStock> _warehouseStockRepo;
+        private readonly IProductStatsService _productStatsService;
         private readonly IHttpContextAccessor _httpContextAccessor;
         private const string MODULE_NAME = "Inventory";
 
@@ -25,12 +27,14 @@ namespace ModularERP.Modules.Inventory.Features.Requisitions.Handlers.Handlers_R
             IGeneralRepository<RequisitionItem> requisitionItemRepo,
             IGeneralRepository<RequisitionApprovalLog> approvalLogRepo,
             IGeneralRepository<WarehouseStock> warehouseStockRepo,
+            IProductStatsService productStatsService,
             IHttpContextAccessor httpContextAccessor)
         {
             _requisitionRepo = requisitionRepo;
             _requisitionItemRepo = requisitionItemRepo;
             _approvalLogRepo = approvalLogRepo;
             _warehouseStockRepo = warehouseStockRepo;
+            _productStatsService = productStatsService;
             _httpContextAccessor = httpContextAccessor;
         }
 
@@ -159,6 +163,9 @@ namespace ModularERP.Modules.Inventory.Features.Requisitions.Handlers.Handlers_R
                 };
 
                 await _requisitionItemRepo.AddAsync(reverseItem);
+
+                // 🔥 تحديث ProductStats بعد كل منتج
+                await _productStatsService.UpdateProductStats(originalItem.ProductId, originalRequisition.CompanyId, cancellationToken);
             }
 
             // تحديث الـ Requisition الأصلي

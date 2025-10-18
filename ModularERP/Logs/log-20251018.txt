@@ -924,3 +924,1459 @@ END
 2025-10-18 00:41:47.537 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 68.8443ms
 2025-10-18 00:41:48.054 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
 2025-10-18 00:41:48.368 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 313.8178ms
+2025-10-18 09:40:58.578 +03:00 [INF] Starting web host...
+2025-10-18 09:41:02.471 +03:00 [INF] Executed DbCommand (58ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-18 09:41:02.779 +03:00 [INF] Executed DbCommand (213ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-10-18 09:41:03.089 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-18 09:41:03.237 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-10-18 09:41:03.390 +03:00 [INF] Executed DbCommand (85ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-10-18 09:41:03.885 +03:00 [INF] Executed DbCommand (64ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-10-18 09:41:03.956 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-18 09:41:04.128 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-10-18 09:41:04.145 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-10-18 09:41:04.188 +03:00 [INF] No migrations were applied. The database is already up to date.
+2025-10-18 09:41:04.314 +03:00 [INF] Executed DbCommand (50ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-10-18 09:41:04.846 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-10-18 09:41:04.855 +03:00 [INF] Master database initialized successfully
+2025-10-18 09:41:08.803 +03:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-10-18 09:41:09.088 +03:00 [INF] Now listening on: https://localhost:7168
+2025-10-18 09:41:09.091 +03:00 [INF] Now listening on: http://localhost:5004
+2025-10-18 09:41:09.231 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-18 09:41:09.234 +03:00 [INF] Hosting environment: Development
+2025-10-18 09:41:09.235 +03:00 [INF] Content root path: E:\ModelerERP\ModularERP\ModularERP
+2025-10-18 09:41:10.035 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-10-18 09:41:10.877 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 844.721ms
+2025-10-18 09:41:10.885 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-18 09:41:10.889 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-10-18 09:41:11.004 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 119.1422ms
+2025-10-18 09:41:11.150 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 261.6607ms
+2025-10-18 09:41:11.340 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-10-18 09:41:11.879 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 539.264ms
+2025-10-18 09:43:24.433 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/StockTransactions - application/json 236
+2025-10-18 09:43:24.460 +03:00 [INF] Request started
+2025-10-18 09:43:24.462 +03:00 [INF] === Incoming Request ===
+2025-10-18 09:43:24.465 +03:00 [INF] Path: /api/StockTransactions
+2025-10-18 09:43:24.468 +03:00 [INF] Method: POST
+2025-10-18 09:43:24.470 +03:00 [INF] === Headers ===
+2025-10-18 09:43:24.475 +03:00 [INF] Accept: ["*/*"]
+2025-10-18 09:43:24.479 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-18 09:43:24.481 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-18 09:43:24.484 +03:00 [INF] User-Agent: ["PostmanRuntime/7.49.0"]
+2025-10-18 09:43:24.486 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-18 09:43:24.488 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-18 09:43:24.491 +03:00 [INF] Content-Length: ["236"]
+2025-10-18 09:43:24.493 +03:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-10-18 09:43:24.495 +03:00 [INF] Postman-Token: ["4e02d9ef-2cd4-4780-9daf-c15dd312faae"]
+2025-10-18 09:43:24.502 +03:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-10-18 09:43:24.504 +03:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-10-18 09:43:24.507 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.StockTransactions.Controllers.StockTransactionsController.Create (ModularERP)'
+2025-10-18 09:43:24.537 +03:00 [INF] Route matched with {action = "Create", controller = "StockTransactions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Inventory.Features.StockTransactions.DTO.StockTransactionDto]]] Create(ModularERP.Modules.Inventory.Features.StockTransactions.DTO.CreateStockTransactionDto) on controller ModularERP.Modules.Inventory.Features.StockTransactions.Controllers.StockTransactionsController (ModularERP).
+2025-10-18 09:43:24.547 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-10-18 09:43:24.726 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-10-18 09:43:26.042 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-10-18 09:43:27.838 +03:00 [INF] Executing CreatedAtActionResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Inventory.Features.StockTransactions.DTO.StockTransactionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-18 09:43:27.946 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.StockTransactions.Controllers.StockTransactionsController.Create (ModularERP) in 3397.0101ms
+2025-10-18 09:43:27.953 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.StockTransactions.Controllers.StockTransactionsController.Create (ModularERP)'
+2025-10-18 09:43:27.959 +03:00 [INF] Request completed successfully with status code 201
+2025-10-18 09:43:27.972 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/StockTransactions - 201 null application/json; charset=utf-8 3539.5174ms
+2025-10-18 09:43:53.599 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/StockTransactions - application/json 236
+2025-10-18 09:43:53.615 +03:00 [INF] Request started
+2025-10-18 09:43:53.618 +03:00 [INF] === Incoming Request ===
+2025-10-18 09:43:53.620 +03:00 [INF] Path: /api/StockTransactions
+2025-10-18 09:43:53.623 +03:00 [INF] Method: POST
+2025-10-18 09:43:53.625 +03:00 [INF] === Headers ===
+2025-10-18 09:43:53.628 +03:00 [INF] Accept: ["*/*"]
+2025-10-18 09:43:53.631 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-18 09:43:53.637 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-18 09:43:53.642 +03:00 [INF] User-Agent: ["PostmanRuntime/7.49.0"]
+2025-10-18 09:43:53.647 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-18 09:43:53.652 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-18 09:43:53.658 +03:00 [INF] Content-Length: ["236"]
+2025-10-18 09:43:53.663 +03:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-10-18 09:43:53.667 +03:00 [INF] Postman-Token: ["be930acb-da27-47f5-adb7-f3a98182b8dd"]
+2025-10-18 09:43:53.677 +03:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-10-18 09:43:53.680 +03:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-10-18 09:43:53.684 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.StockTransactions.Controllers.StockTransactionsController.Create (ModularERP)'
+2025-10-18 09:43:53.688 +03:00 [INF] Route matched with {action = "Create", controller = "StockTransactions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Inventory.Features.StockTransactions.DTO.StockTransactionDto]]] Create(ModularERP.Modules.Inventory.Features.StockTransactions.DTO.CreateStockTransactionDto) on controller ModularERP.Modules.Inventory.Features.StockTransactions.Controllers.StockTransactionsController (ModularERP).
+2025-10-18 09:43:53.850 +03:00 [INF] Executing CreatedAtActionResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Inventory.Features.StockTransactions.DTO.StockTransactionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-18 09:43:53.857 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.StockTransactions.Controllers.StockTransactionsController.Create (ModularERP) in 161.1112ms
+2025-10-18 09:43:53.863 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.StockTransactions.Controllers.StockTransactionsController.Create (ModularERP)'
+2025-10-18 09:43:53.867 +03:00 [INF] Request completed successfully with status code 201
+2025-10-18 09:43:53.872 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/StockTransactions - 201 null application/json; charset=utf-8 272.3539ms
+2025-10-18 09:50:36.208 +03:00 [INF] Starting web host...
+2025-10-18 09:50:37.080 +03:00 [FTL] Host terminated unexpectedly
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[ModularERP.Modules.Inventory.Features.Requisitions.Commends.Commends_Requisition_Workflow.ConfirmRequisitionCommand,ModularERP.Common.ViewModel.ResponseViewModel`1[System.Boolean]] Lifetime: Transient ImplementationType: ModularERP.Modules.Inventory.Features.Requisitions.Handlers.Handlers_Requisition_Workflow.ConfirmRequisitionHandler': Unable to resolve service for type 'ModularERP.Modules.Inventory.Features.Requisitions.Services.IProductStatsService' while attempting to activate 'ModularERP.Modules.Inventory.Features.Requisitions.Handlers.Handlers_Requisition_Workflow.ConfirmRequisitionHandler'.) (Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[ModularERP.Modules.Inventory.Features.Requisitions.Commends.Commends_Requisition_Workflow.ReverseRequisitionCommand,ModularERP.Common.ViewModel.ResponseViewModel`1[System.Guid]] Lifetime: Transient ImplementationType: ModularERP.Modules.Inventory.Features.Requisitions.Handlers.Handlers_Requisition_Workflow.ReverseRequisitionHandler': Unable to resolve service for type 'ModularERP.Modules.Inventory.Features.Requisitions.Services.IProductStatsService' while attempting to activate 'ModularERP.Modules.Inventory.Features.Requisitions.Handlers.Handlers_Requisition_Workflow.ReverseRequisitionHandler'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[ModularERP.Modules.Inventory.Features.Requisitions.Commends.Commends_Requisition_Workflow.ConfirmRequisitionCommand,ModularERP.Common.ViewModel.ResponseViewModel`1[System.Boolean]] Lifetime: Transient ImplementationType: ModularERP.Modules.Inventory.Features.Requisitions.Handlers.Handlers_Requisition_Workflow.ConfirmRequisitionHandler': Unable to resolve service for type 'ModularERP.Modules.Inventory.Features.Requisitions.Services.IProductStatsService' while attempting to activate 'ModularERP.Modules.Inventory.Features.Requisitions.Handlers.Handlers_Requisition_Workflow.ConfirmRequisitionHandler'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'ModularERP.Modules.Inventory.Features.Requisitions.Services.IProductStatsService' while attempting to activate 'ModularERP.Modules.Inventory.Features.Requisitions.Handlers.Handlers_Requisition_Workflow.ConfirmRequisitionHandler'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at ModularERP.Program.Main(String[] args) in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 251
+ ---> (Inner Exception #1) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[ModularERP.Modules.Inventory.Features.Requisitions.Commends.Commends_Requisition_Workflow.ReverseRequisitionCommand,ModularERP.Common.ViewModel.ResponseViewModel`1[System.Guid]] Lifetime: Transient ImplementationType: ModularERP.Modules.Inventory.Features.Requisitions.Handlers.Handlers_Requisition_Workflow.ReverseRequisitionHandler': Unable to resolve service for type 'ModularERP.Modules.Inventory.Features.Requisitions.Services.IProductStatsService' while attempting to activate 'ModularERP.Modules.Inventory.Features.Requisitions.Handlers.Handlers_Requisition_Workflow.ReverseRequisitionHandler'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'ModularERP.Modules.Inventory.Features.Requisitions.Services.IProductStatsService' while attempting to activate 'ModularERP.Modules.Inventory.Features.Requisitions.Handlers.Handlers_Requisition_Workflow.ReverseRequisitionHandler'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+2025-10-18 09:51:29.661 +03:00 [INF] Starting web host...
+2025-10-18 09:51:31.330 +03:00 [INF] Executed DbCommand (49ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-18 09:51:31.516 +03:00 [INF] Executed DbCommand (127ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-10-18 09:51:31.707 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-18 09:51:31.723 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-10-18 09:51:31.749 +03:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-10-18 09:51:31.904 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-10-18 09:51:31.955 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-18 09:51:31.966 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-10-18 09:51:31.987 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-10-18 09:51:32.010 +03:00 [INF] No migrations were applied. The database is already up to date.
+2025-10-18 09:51:32.020 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-10-18 09:51:32.310 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-10-18 09:51:32.325 +03:00 [INF] Master database initialized successfully
+2025-10-18 09:51:35.552 +03:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-10-18 09:51:35.817 +03:00 [INF] Now listening on: https://localhost:7168
+2025-10-18 09:51:35.821 +03:00 [INF] Now listening on: http://localhost:5004
+2025-10-18 09:51:35.955 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-18 09:51:35.959 +03:00 [INF] Hosting environment: Development
+2025-10-18 09:51:35.961 +03:00 [INF] Content root path: E:\ModelerERP\ModularERP\ModularERP
+2025-10-18 09:51:36.403 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-10-18 09:51:36.829 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 428.3307ms
+2025-10-18 09:51:36.852 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-10-18 09:51:36.852 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-18 09:51:36.878 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 26.4598ms
+2025-10-18 09:51:36.917 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 65.0448ms
+2025-10-18 09:51:37.400 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-10-18 09:51:37.917 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 517.0782ms
+2025-10-18 09:51:50.954 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/Requisitions - multipart/form-data; boundary=--------------------------374020412465312555571495 47769
+2025-10-18 09:51:50.999 +03:00 [INF] Request started
+2025-10-18 09:51:51.004 +03:00 [INF] === Incoming Request ===
+2025-10-18 09:51:51.009 +03:00 [INF] Path: /api/Requisitions
+2025-10-18 09:51:51.012 +03:00 [INF] Method: POST
+2025-10-18 09:51:51.016 +03:00 [INF] === Headers ===
+2025-10-18 09:51:51.023 +03:00 [INF] Accept: ["*/*"]
+2025-10-18 09:51:51.032 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-18 09:51:51.036 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-18 09:51:51.041 +03:00 [INF] User-Agent: ["PostmanRuntime/7.49.0"]
+2025-10-18 09:51:51.047 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-18 09:51:51.051 +03:00 [INF] Content-Type: ["multipart/form-data; boundary=--------------------------374020412465312555571495"]
+2025-10-18 09:51:51.057 +03:00 [INF] Content-Length: ["47769"]
+2025-10-18 09:51:51.062 +03:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-10-18 09:51:51.068 +03:00 [INF] Postman-Token: ["6b4a52d6-04fd-406d-8b1f-4b30beb36168"]
+2025-10-18 09:51:51.082 +03:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-10-18 09:51:51.086 +03:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-10-18 09:51:51.091 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionsController.CreateRequisition (ModularERP)'
+2025-10-18 09:51:51.146 +03:00 [INF] Route matched with {action = "CreateRequisition", controller = "Requisitions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Inventory.Features.Requisitions.DTO.DTO_Requisition.RequisitionResponseDto]]] CreateRequisition(ModularERP.Modules.Inventory.Features.Requisitions.Commends.Commends_Requisition.CreateRequisitionCommand) on controller ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionsController (ModularERP).
+2025-10-18 09:51:51.163 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-10-18 09:51:51.438 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-10-18 09:51:53.353 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-10-18 09:51:55.792 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Inventory.Features.Requisitions.DTO.DTO_Requisition.RequisitionResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-18 09:51:55.941 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionsController.CreateRequisition (ModularERP) in 4774.0848ms
+2025-10-18 09:51:55.950 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionsController.CreateRequisition (ModularERP)'
+2025-10-18 09:51:55.959 +03:00 [INF] Request completed successfully with status code 200
+2025-10-18 09:51:55.970 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/Requisitions - 200 null application/json; charset=utf-8 5015.8776ms
+2025-10-18 09:52:24.726 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/RequisitionWorkflow/{22b8d5f0-08e2-40b2-29d4-08de0e12d2f7}/submit - application/json 96
+2025-10-18 09:52:24.756 +03:00 [INF] Request started
+2025-10-18 09:52:24.759 +03:00 [INF] === Incoming Request ===
+2025-10-18 09:52:24.762 +03:00 [INF] Path: /api/RequisitionWorkflow/%7B22b8d5f0-08e2-40b2-29d4-08de0e12d2f7%7D/submit
+2025-10-18 09:52:24.765 +03:00 [INF] Method: POST
+2025-10-18 09:52:24.768 +03:00 [INF] === Headers ===
+2025-10-18 09:52:24.771 +03:00 [INF] Accept: ["*/*"]
+2025-10-18 09:52:24.777 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-18 09:52:24.781 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-18 09:52:24.788 +03:00 [INF] User-Agent: ["PostmanRuntime/7.49.0"]
+2025-10-18 09:52:24.793 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-18 09:52:24.799 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-18 09:52:24.806 +03:00 [INF] Content-Length: ["96"]
+2025-10-18 09:52:24.812 +03:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-10-18 09:52:24.818 +03:00 [INF] Postman-Token: ["b4ae79a5-408d-41d6-8d6a-a55093e164f0"]
+2025-10-18 09:52:24.829 +03:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-10-18 09:52:24.833 +03:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-10-18 09:52:24.836 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.SubmitRequisition (ModularERP)'
+2025-10-18 09:52:24.856 +03:00 [INF] Route matched with {action = "SubmitRequisition", controller = "RequisitionWorkflow"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SubmitRequisition(System.Guid, ModularERP.Modules.Inventory.Features.Requisitions.Commends.Commends_Requisition_Workflow.SubmitRequisitionCommand) on controller ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController (ModularERP).
+2025-10-18 09:52:25.299 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-18 09:52:25.311 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.SubmitRequisition (ModularERP) in 445.4668ms
+2025-10-18 09:52:25.316 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.SubmitRequisition (ModularERP)'
+2025-10-18 09:52:25.320 +03:00 [INF] Request completed successfully with status code 200
+2025-10-18 09:52:25.324 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/RequisitionWorkflow/{22b8d5f0-08e2-40b2-29d4-08de0e12d2f7}/submit - 200 null application/json; charset=utf-8 597.4665ms
+2025-10-18 09:52:36.899 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/RequisitionWorkflow/{22b8d5f0-08e2-40b2-29d4-08de0e12d2f7}/approve - application/json 88
+2025-10-18 09:52:36.909 +03:00 [INF] Request started
+2025-10-18 09:52:36.911 +03:00 [INF] === Incoming Request ===
+2025-10-18 09:52:36.913 +03:00 [INF] Path: /api/RequisitionWorkflow/%7B22b8d5f0-08e2-40b2-29d4-08de0e12d2f7%7D/approve
+2025-10-18 09:52:36.915 +03:00 [INF] Method: POST
+2025-10-18 09:52:36.916 +03:00 [INF] === Headers ===
+2025-10-18 09:52:36.919 +03:00 [INF] Accept: ["*/*"]
+2025-10-18 09:52:36.921 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-18 09:52:36.925 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-18 09:52:36.929 +03:00 [INF] User-Agent: ["PostmanRuntime/7.49.0"]
+2025-10-18 09:52:36.931 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-18 09:52:36.934 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-18 09:52:36.937 +03:00 [INF] Content-Length: ["88"]
+2025-10-18 09:52:36.941 +03:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-10-18 09:52:36.943 +03:00 [INF] Postman-Token: ["cd53c4b4-6ebc-4437-b401-a8b15b9caa7d"]
+2025-10-18 09:52:36.947 +03:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-10-18 09:52:36.949 +03:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-10-18 09:52:36.951 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.ApproveRequisition (ModularERP)'
+2025-10-18 09:52:36.958 +03:00 [INF] Route matched with {action = "ApproveRequisition", controller = "RequisitionWorkflow"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ApproveRequisition(System.Guid, ModularERP.Modules.Inventory.Features.Requisitions.Commends.Commends_Requisition_Workflow.ApproveRequisitionCommand) on controller ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController (ModularERP).
+2025-10-18 09:52:37.040 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-18 09:52:37.045 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.ApproveRequisition (ModularERP) in 79.0538ms
+2025-10-18 09:52:37.051 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.ApproveRequisition (ModularERP)'
+2025-10-18 09:52:37.056 +03:00 [INF] Request completed successfully with status code 200
+2025-10-18 09:52:37.058 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/RequisitionWorkflow/{22b8d5f0-08e2-40b2-29d4-08de0e12d2f7}/approve - 200 null application/json; charset=utf-8 159.0257ms
+2025-10-18 09:52:48.788 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/RequisitionWorkflow/{22b8d5f0-08e2-40b2-29d4-08de0e12d2f7}/confirm - application/json 99
+2025-10-18 09:52:48.798 +03:00 [INF] Request started
+2025-10-18 09:52:48.801 +03:00 [INF] === Incoming Request ===
+2025-10-18 09:52:48.804 +03:00 [INF] Path: /api/RequisitionWorkflow/%7B22b8d5f0-08e2-40b2-29d4-08de0e12d2f7%7D/confirm
+2025-10-18 09:52:48.807 +03:00 [INF] Method: POST
+2025-10-18 09:52:48.812 +03:00 [INF] === Headers ===
+2025-10-18 09:52:48.820 +03:00 [INF] Accept: ["*/*"]
+2025-10-18 09:52:48.826 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-18 09:52:48.832 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-18 09:52:48.837 +03:00 [INF] User-Agent: ["PostmanRuntime/7.49.0"]
+2025-10-18 09:52:48.842 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-18 09:52:48.847 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-18 09:52:48.853 +03:00 [INF] Content-Length: ["99"]
+2025-10-18 09:52:48.858 +03:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-10-18 09:52:48.865 +03:00 [INF] Postman-Token: ["a7413426-f9df-4b2d-9007-4eb81ce76213"]
+2025-10-18 09:52:48.872 +03:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-10-18 09:52:48.876 +03:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-10-18 09:52:48.881 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.ConfirmRequisition (ModularERP)'
+2025-10-18 09:52:48.894 +03:00 [INF] Route matched with {action = "ConfirmRequisition", controller = "RequisitionWorkflow"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ConfirmRequisition(System.Guid, ModularERP.Modules.Inventory.Features.Requisitions.Commends.Commends_Requisition_Workflow.ConfirmRequisitionCommand) on controller ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController (ModularERP).
+2025-10-18 09:52:49.413 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-18 09:52:49.418 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.ConfirmRequisition (ModularERP) in 515.7519ms
+2025-10-18 09:52:49.426 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.ConfirmRequisition (ModularERP)'
+2025-10-18 09:52:49.435 +03:00 [INF] Request completed successfully with status code 200
+2025-10-18 09:52:49.440 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/RequisitionWorkflow/{22b8d5f0-08e2-40b2-29d4-08de0e12d2f7}/confirm - 200 null application/json; charset=utf-8 651.1225ms
+2025-10-18 09:54:03.723 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/Requisitions - multipart/form-data; boundary=--------------------------398231143409512227096361 47769
+2025-10-18 09:54:03.729 +03:00 [INF] Request started
+2025-10-18 09:54:03.730 +03:00 [INF] === Incoming Request ===
+2025-10-18 09:54:03.731 +03:00 [INF] Path: /api/Requisitions
+2025-10-18 09:54:03.734 +03:00 [INF] Method: POST
+2025-10-18 09:54:03.737 +03:00 [INF] === Headers ===
+2025-10-18 09:54:03.740 +03:00 [INF] Accept: ["*/*"]
+2025-10-18 09:54:03.745 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-18 09:54:03.749 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-18 09:54:03.753 +03:00 [INF] User-Agent: ["PostmanRuntime/7.49.0"]
+2025-10-18 09:54:03.759 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-18 09:54:03.763 +03:00 [INF] Content-Type: ["multipart/form-data; boundary=--------------------------398231143409512227096361"]
+2025-10-18 09:54:03.767 +03:00 [INF] Content-Length: ["47769"]
+2025-10-18 09:54:03.772 +03:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-10-18 09:54:03.777 +03:00 [INF] Postman-Token: ["05216d40-7d73-4883-a2a9-2175b7a55b61"]
+2025-10-18 09:54:03.782 +03:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-10-18 09:54:03.785 +03:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-10-18 09:54:03.790 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionsController.CreateRequisition (ModularERP)'
+2025-10-18 09:54:03.795 +03:00 [INF] Route matched with {action = "CreateRequisition", controller = "Requisitions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Inventory.Features.Requisitions.DTO.DTO_Requisition.RequisitionResponseDto]]] CreateRequisition(ModularERP.Modules.Inventory.Features.Requisitions.Commends.Commends_Requisition.CreateRequisitionCommand) on controller ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionsController (ModularERP).
+2025-10-18 09:54:04.191 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Inventory.Features.Requisitions.DTO.DTO_Requisition.RequisitionResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-18 09:54:04.194 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionsController.CreateRequisition (ModularERP) in 392.2763ms
+2025-10-18 09:54:04.196 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionsController.CreateRequisition (ModularERP)'
+2025-10-18 09:54:04.199 +03:00 [INF] Request completed successfully with status code 200
+2025-10-18 09:54:04.201 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/Requisitions - 200 null application/json; charset=utf-8 477.8809ms
+2025-10-18 09:54:14.911 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/RequisitionWorkflow/{22b8d5f0-08e2-40b2-29d4-08de0e12d2f7}/submit - application/json 96
+2025-10-18 09:54:14.918 +03:00 [INF] Request started
+2025-10-18 09:54:14.919 +03:00 [INF] === Incoming Request ===
+2025-10-18 09:54:14.921 +03:00 [INF] Path: /api/RequisitionWorkflow/%7B22b8d5f0-08e2-40b2-29d4-08de0e12d2f7%7D/submit
+2025-10-18 09:54:14.923 +03:00 [INF] Method: POST
+2025-10-18 09:54:14.925 +03:00 [INF] === Headers ===
+2025-10-18 09:54:14.928 +03:00 [INF] Accept: ["*/*"]
+2025-10-18 09:54:14.932 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-18 09:54:14.938 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-18 09:54:14.943 +03:00 [INF] User-Agent: ["PostmanRuntime/7.49.0"]
+2025-10-18 09:54:14.947 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-18 09:54:14.953 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-18 09:54:14.958 +03:00 [INF] Content-Length: ["96"]
+2025-10-18 09:54:14.963 +03:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-10-18 09:54:14.968 +03:00 [INF] Postman-Token: ["5355fcb4-566d-4831-a224-e5579e48d649"]
+2025-10-18 09:54:14.975 +03:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-10-18 09:54:14.980 +03:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-10-18 09:54:14.982 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.SubmitRequisition (ModularERP)'
+2025-10-18 09:54:14.988 +03:00 [INF] Route matched with {action = "SubmitRequisition", controller = "RequisitionWorkflow"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SubmitRequisition(System.Guid, ModularERP.Modules.Inventory.Features.Requisitions.Commends.Commends_Requisition_Workflow.SubmitRequisitionCommand) on controller ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController (ModularERP).
+2025-10-18 09:54:15.012 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.SubmitRequisition (ModularERP) in 16.0928ms
+2025-10-18 09:54:15.017 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.SubmitRequisition (ModularERP)'
+2025-10-18 09:54:15.025 +03:00 [WRN] Business logic exception occurred: Only draft requisitions can be submitted. Current status: Confirmed
+ModularERP.Common.Exceptions.BusinessLogicException: Only draft requisitions can be submitted. Current status: Confirmed
+   at ModularERP.Modules.Inventory.Features.Requisitions.Handlers.Handlers_Requisition_Workflow.SubmitRequisitionHandler.Handle(SubmitRequisitionCommand request, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Modules\Inventory\Features\Requisitions\Handlers\Handlers_Requisition_Workflow\SubmitRequisitionHandler.cs:line 48
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.SubmitRequisition(Guid id, SubmitRequisitionCommand command) in E:\ModelerERP\ModularERP\ModularERP\Modules\Inventory\Features\Requisitions\Controllers\RequisitionWorkflowController.cs:line 32
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at ModularERP.Program.<>c.<<Main>b__0_7>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 350
+--- End of stack trace from previous location ---
+   at ModularERP.Program.<>c.<<Main>b__0_6>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 303
+--- End of stack trace from previous location ---
+   at ModularERP.Common.Middleware.GlobalErrorHandlerMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\ModelerERP\ModularERP\ModularERP\Common\Middleware\GlobalErrorHandlerMiddleware.cs:line 40
+2025-10-18 09:54:15.137 +03:00 [INF] Error response sent with status code 400
+2025-10-18 09:54:15.141 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/RequisitionWorkflow/{22b8d5f0-08e2-40b2-29d4-08de0e12d2f7}/submit - 400 null application/json; charset=utf-8 229.5484ms
+2025-10-18 09:55:09.275 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/Products - application/json 925
+2025-10-18 09:55:09.286 +03:00 [INF] Request started
+2025-10-18 09:55:09.291 +03:00 [INF] === Incoming Request ===
+2025-10-18 09:55:09.296 +03:00 [INF] Path: /api/Products
+2025-10-18 09:55:09.301 +03:00 [INF] Method: POST
+2025-10-18 09:55:09.306 +03:00 [INF] === Headers ===
+2025-10-18 09:55:09.310 +03:00 [INF] Accept: ["*/*"]
+2025-10-18 09:55:09.319 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-18 09:55:09.328 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-18 09:55:09.335 +03:00 [INF] User-Agent: ["PostmanRuntime/7.49.0"]
+2025-10-18 09:55:09.341 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-18 09:55:09.347 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-18 09:55:09.354 +03:00 [INF] Content-Length: ["925"]
+2025-10-18 09:55:09.360 +03:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-10-18 09:55:09.366 +03:00 [INF] Postman-Token: ["aae637f2-e882-4445-948c-2b132e5943e1"]
+2025-10-18 09:55:09.375 +03:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-10-18 09:55:09.380 +03:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-10-18 09:55:09.385 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.Products.Controllers.ProductsController.CreateProduct (ModularERP)'
+2025-10-18 09:55:09.397 +03:00 [INF] Route matched with {action = "CreateProduct", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateProduct(ModularERP.Modules.Inventory.Features.Products.DTO.CreateProductDto) on controller ModularERP.Modules.Inventory.Features.Products.Controllers.ProductsController (ModularERP).
+2025-10-18 09:55:09.443 +03:00 [INF] Creating new product with SKU SKU-105 for company "90137c92-382d-404c-bade-e5fefb1e8dbf"
+2025-10-18 09:55:10.490 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Inventory.Features.Products.DTO.ProductDetailsDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-18 09:55:10.512 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.Products.Controllers.ProductsController.CreateProduct (ModularERP) in 1104.0725ms
+2025-10-18 09:55:10.518 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.Products.Controllers.ProductsController.CreateProduct (ModularERP)'
+2025-10-18 09:55:10.523 +03:00 [INF] Request completed successfully with status code 200
+2025-10-18 09:55:10.527 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/Products - 200 null application/json; charset=utf-8 1252.2925ms
+2025-10-18 09:55:32.818 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/Requisitions - multipart/form-data; boundary=--------------------------518713972148991330716159 47769
+2025-10-18 09:55:32.827 +03:00 [INF] Request started
+2025-10-18 09:55:32.829 +03:00 [INF] === Incoming Request ===
+2025-10-18 09:55:32.831 +03:00 [INF] Path: /api/Requisitions
+2025-10-18 09:55:32.834 +03:00 [INF] Method: POST
+2025-10-18 09:55:32.837 +03:00 [INF] === Headers ===
+2025-10-18 09:55:32.839 +03:00 [INF] Accept: ["*/*"]
+2025-10-18 09:55:32.842 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-18 09:55:32.845 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-18 09:55:32.847 +03:00 [INF] User-Agent: ["PostmanRuntime/7.49.0"]
+2025-10-18 09:55:32.851 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-18 09:55:32.855 +03:00 [INF] Content-Type: ["multipart/form-data; boundary=--------------------------518713972148991330716159"]
+2025-10-18 09:55:32.862 +03:00 [INF] Content-Length: ["47769"]
+2025-10-18 09:55:32.867 +03:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-10-18 09:55:32.871 +03:00 [INF] Postman-Token: ["cbb30c16-efba-4089-a26b-18ea896ff9a4"]
+2025-10-18 09:55:32.878 +03:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-10-18 09:55:32.884 +03:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-10-18 09:55:32.888 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionsController.CreateRequisition (ModularERP)'
+2025-10-18 09:55:32.894 +03:00 [INF] Route matched with {action = "CreateRequisition", controller = "Requisitions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Inventory.Features.Requisitions.DTO.DTO_Requisition.RequisitionResponseDto]]] CreateRequisition(ModularERP.Modules.Inventory.Features.Requisitions.Commends.Commends_Requisition.CreateRequisitionCommand) on controller ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionsController (ModularERP).
+2025-10-18 09:55:33.175 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Inventory.Features.Requisitions.DTO.DTO_Requisition.RequisitionResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-18 09:55:33.182 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionsController.CreateRequisition (ModularERP) in 278.3879ms
+2025-10-18 09:55:33.188 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionsController.CreateRequisition (ModularERP)'
+2025-10-18 09:55:33.192 +03:00 [INF] Request completed successfully with status code 200
+2025-10-18 09:55:33.197 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/Requisitions - 200 null application/json; charset=utf-8 378.7408ms
+2025-10-18 09:57:43.092 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/RequisitionWorkflow/{f6c30b21-ea13-4218-29d6-08de0e12d2f7}/submit - application/json 96
+2025-10-18 09:57:43.104 +03:00 [INF] Request started
+2025-10-18 09:57:43.109 +03:00 [INF] === Incoming Request ===
+2025-10-18 09:57:43.113 +03:00 [INF] Path: /api/RequisitionWorkflow/%7Bf6c30b21-ea13-4218-29d6-08de0e12d2f7%7D/submit
+2025-10-18 09:57:43.117 +03:00 [INF] Method: POST
+2025-10-18 09:57:43.122 +03:00 [INF] === Headers ===
+2025-10-18 09:57:43.125 +03:00 [INF] Accept: ["*/*"]
+2025-10-18 09:57:43.129 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-18 09:57:43.133 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-18 09:57:43.136 +03:00 [INF] User-Agent: ["PostmanRuntime/7.49.0"]
+2025-10-18 09:57:43.138 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-18 09:57:43.141 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-18 09:57:43.147 +03:00 [INF] Content-Length: ["96"]
+2025-10-18 09:57:43.150 +03:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-10-18 09:57:43.155 +03:00 [INF] Postman-Token: ["eb73255a-06ff-476a-a504-8b289006b037"]
+2025-10-18 09:57:43.157 +03:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-10-18 09:57:43.159 +03:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-10-18 09:57:43.162 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.SubmitRequisition (ModularERP)'
+2025-10-18 09:57:43.165 +03:00 [INF] Route matched with {action = "SubmitRequisition", controller = "RequisitionWorkflow"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SubmitRequisition(System.Guid, ModularERP.Modules.Inventory.Features.Requisitions.Commends.Commends_Requisition_Workflow.SubmitRequisitionCommand) on controller ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController (ModularERP).
+2025-10-18 09:57:43.216 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-18 09:57:43.222 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.SubmitRequisition (ModularERP) in 52.242ms
+2025-10-18 09:57:43.228 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.SubmitRequisition (ModularERP)'
+2025-10-18 09:57:43.233 +03:00 [INF] Request completed successfully with status code 200
+2025-10-18 09:57:43.237 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/RequisitionWorkflow/{f6c30b21-ea13-4218-29d6-08de0e12d2f7}/submit - 200 null application/json; charset=utf-8 144.4232ms
+2025-10-18 09:57:51.988 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/RequisitionWorkflow/{f6c30b21-ea13-4218-29d6-08de0e12d2f7}/approve - application/json 88
+2025-10-18 09:57:51.994 +03:00 [INF] Request started
+2025-10-18 09:57:51.997 +03:00 [INF] === Incoming Request ===
+2025-10-18 09:57:51.999 +03:00 [INF] Path: /api/RequisitionWorkflow/%7Bf6c30b21-ea13-4218-29d6-08de0e12d2f7%7D/approve
+2025-10-18 09:57:52.002 +03:00 [INF] Method: POST
+2025-10-18 09:57:52.005 +03:00 [INF] === Headers ===
+2025-10-18 09:57:52.007 +03:00 [INF] Accept: ["*/*"]
+2025-10-18 09:57:52.011 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-18 09:57:52.013 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-18 09:57:52.016 +03:00 [INF] User-Agent: ["PostmanRuntime/7.49.0"]
+2025-10-18 09:57:52.019 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-18 09:57:52.021 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-18 09:57:52.024 +03:00 [INF] Content-Length: ["88"]
+2025-10-18 09:57:52.027 +03:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-10-18 09:57:52.030 +03:00 [INF] Postman-Token: ["c607100c-7640-47e4-b166-c8b837a92f97"]
+2025-10-18 09:57:52.033 +03:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-10-18 09:57:52.035 +03:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-10-18 09:57:52.037 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.ApproveRequisition (ModularERP)'
+2025-10-18 09:57:52.039 +03:00 [INF] Route matched with {action = "ApproveRequisition", controller = "RequisitionWorkflow"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ApproveRequisition(System.Guid, ModularERP.Modules.Inventory.Features.Requisitions.Commends.Commends_Requisition_Workflow.ApproveRequisitionCommand) on controller ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController (ModularERP).
+2025-10-18 09:57:52.070 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-18 09:57:52.073 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.ApproveRequisition (ModularERP) in 30.3245ms
+2025-10-18 09:57:52.077 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.ApproveRequisition (ModularERP)'
+2025-10-18 09:57:52.079 +03:00 [INF] Request completed successfully with status code 200
+2025-10-18 09:57:52.081 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/RequisitionWorkflow/{f6c30b21-ea13-4218-29d6-08de0e12d2f7}/approve - 200 null application/json; charset=utf-8 92.5688ms
+2025-10-18 09:57:58.979 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/RequisitionWorkflow/{f6c30b21-ea13-4218-29d6-08de0e12d2f7}/confirm - application/json 99
+2025-10-18 09:57:58.988 +03:00 [INF] Request started
+2025-10-18 09:57:58.992 +03:00 [INF] === Incoming Request ===
+2025-10-18 09:57:58.995 +03:00 [INF] Path: /api/RequisitionWorkflow/%7Bf6c30b21-ea13-4218-29d6-08de0e12d2f7%7D/confirm
+2025-10-18 09:57:58.998 +03:00 [INF] Method: POST
+2025-10-18 09:57:59.001 +03:00 [INF] === Headers ===
+2025-10-18 09:57:59.003 +03:00 [INF] Accept: ["*/*"]
+2025-10-18 09:57:59.007 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-18 09:57:59.013 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-18 09:57:59.017 +03:00 [INF] User-Agent: ["PostmanRuntime/7.49.0"]
+2025-10-18 09:57:59.022 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-18 09:57:59.026 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-18 09:57:59.031 +03:00 [INF] Content-Length: ["99"]
+2025-10-18 09:57:59.036 +03:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-10-18 09:57:59.042 +03:00 [INF] Postman-Token: ["55b1b389-a3c1-432d-a307-070e9b2cd882"]
+2025-10-18 09:57:59.048 +03:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-10-18 09:57:59.052 +03:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-10-18 09:57:59.056 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.ConfirmRequisition (ModularERP)'
+2025-10-18 09:57:59.062 +03:00 [INF] Route matched with {action = "ConfirmRequisition", controller = "RequisitionWorkflow"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ConfirmRequisition(System.Guid, ModularERP.Modules.Inventory.Features.Requisitions.Commends.Commends_Requisition_Workflow.ConfirmRequisitionCommand) on controller ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController (ModularERP).
+2025-10-18 09:57:59.295 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-18 09:57:59.302 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.ConfirmRequisition (ModularERP) in 232.1421ms
+2025-10-18 09:57:59.308 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.Requisitions.Controllers.RequisitionWorkflowController.ConfirmRequisition (ModularERP)'
+2025-10-18 09:57:59.313 +03:00 [INF] Request completed successfully with status code 200
+2025-10-18 09:57:59.317 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/RequisitionWorkflow/{f6c30b21-ea13-4218-29d6-08de0e12d2f7}/confirm - 200 null application/json; charset=utf-8 337.7297ms
+2025-10-18 09:59:14.205 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/StockTransactions - application/json 236
+2025-10-18 09:59:14.217 +03:00 [INF] Request started
+2025-10-18 09:59:14.220 +03:00 [INF] === Incoming Request ===
+2025-10-18 09:59:14.224 +03:00 [INF] Path: /api/StockTransactions
+2025-10-18 09:59:14.228 +03:00 [INF] Method: POST
+2025-10-18 09:59:14.232 +03:00 [INF] === Headers ===
+2025-10-18 09:59:14.237 +03:00 [INF] Accept: ["*/*"]
+2025-10-18 09:59:14.244 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-18 09:59:14.250 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-18 09:59:14.256 +03:00 [INF] User-Agent: ["PostmanRuntime/7.49.0"]
+2025-10-18 09:59:14.263 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-18 09:59:14.269 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-18 09:59:14.276 +03:00 [INF] Content-Length: ["236"]
+2025-10-18 09:59:14.282 +03:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-10-18 09:59:14.289 +03:00 [INF] Postman-Token: ["38665a71-09d1-46e6-9871-16251f4e58d1"]
+2025-10-18 09:59:14.297 +03:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-10-18 09:59:14.302 +03:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-10-18 09:59:14.307 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.StockTransactions.Controllers.StockTransactionsController.Create (ModularERP)'
+2025-10-18 09:59:14.325 +03:00 [INF] Route matched with {action = "Create", controller = "StockTransactions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Inventory.Features.StockTransactions.DTO.StockTransactionDto]]] Create(ModularERP.Modules.Inventory.Features.StockTransactions.DTO.CreateStockTransactionDto) on controller ModularERP.Modules.Inventory.Features.StockTransactions.Controllers.StockTransactionsController (ModularERP).
+2025-10-18 09:59:15.032 +03:00 [INF] Executing CreatedAtActionResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Inventory.Features.StockTransactions.DTO.StockTransactionDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-18 09:59:15.098 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.StockTransactions.Controllers.StockTransactionsController.Create (ModularERP) in 760.6905ms
+2025-10-18 09:59:15.105 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.StockTransactions.Controllers.StockTransactionsController.Create (ModularERP)'
+2025-10-18 09:59:15.111 +03:00 [INF] Request completed successfully with status code 201
+2025-10-18 09:59:15.115 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/StockTransactions - 201 null application/json; charset=utf-8 909.9841ms
+2025-10-18 13:02:24.895 +03:00 [INF] Starting web host...
+2025-10-18 13:02:28.843 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-18 13:02:28.922 +03:00 [INF] Executed DbCommand (62ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-10-18 13:02:29.034 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-18 13:02:29.041 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-10-18 13:02:29.051 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-10-18 13:02:29.139 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-10-18 13:02:29.154 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-18 13:02:29.158 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-10-18 13:02:29.166 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-10-18 13:02:29.179 +03:00 [INF] No migrations were applied. The database is already up to date.
+2025-10-18 13:02:29.185 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-10-18 13:02:29.407 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-10-18 13:02:29.419 +03:00 [INF] Master database initialized successfully
+2025-10-18 13:02:31.188 +03:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-10-18 13:02:31.357 +03:00 [INF] Now listening on: https://localhost:7168
+2025-10-18 13:02:31.359 +03:00 [INF] Now listening on: http://localhost:5004
+2025-10-18 13:02:31.471 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-18 13:02:31.472 +03:00 [INF] Hosting environment: Development
+2025-10-18 13:02:31.474 +03:00 [INF] Content root path: E:\ModelerERP\ModularERP\ModularERP
+2025-10-18 13:02:32.144 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-10-18 13:02:32.533 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 391.2413ms
+2025-10-18 13:02:32.538 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-18 13:02:32.542 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-10-18 13:02:32.620 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 80.135ms
+2025-10-18 13:02:32.700 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 158.0446ms
+2025-10-18 13:02:32.873 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-10-18 13:02:33.181 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 307.261ms
+2025-10-18 13:02:43.443 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/PriceList - application/json 247
+2025-10-18 13:02:43.458 +03:00 [INF] Request started
+2025-10-18 13:02:43.460 +03:00 [INF] === Incoming Request ===
+2025-10-18 13:02:43.462 +03:00 [INF] Path: /api/PriceList
+2025-10-18 13:02:43.463 +03:00 [INF] Method: POST
+2025-10-18 13:02:43.464 +03:00 [INF] === Headers ===
+2025-10-18 13:02:43.466 +03:00 [INF] Accept: ["*/*"]
+2025-10-18 13:02:43.468 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-18 13:02:43.470 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-18 13:02:43.471 +03:00 [INF] User-Agent: ["PostmanRuntime/7.49.0"]
+2025-10-18 13:02:43.473 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-18 13:02:43.474 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-18 13:02:43.476 +03:00 [INF] Content-Length: ["247"]
+2025-10-18 13:02:43.477 +03:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-10-18 13:02:43.479 +03:00 [INF] Postman-Token: ["fcacffa3-a7a0-42e0-9956-fc72ee5a2087"]
+2025-10-18 13:02:43.482 +03:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-10-18 13:02:43.484 +03:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-10-18 13:02:43.485 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListController.Create (ModularERP)'
+2025-10-18 13:02:43.506 +03:00 [INF] Route matched with {action = "Create", controller = "PriceList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(ModularERP.Modules.Inventory.Features.PriceLists.DTO.DTO_PriceListItems.CreatePriceListDto) on controller ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListController (ModularERP).
+2025-10-18 13:02:43.512 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-10-18 13:02:43.606 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-10-18 13:02:44.082 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-10-18 13:02:44.351 +03:00 [INF] Executing CreatedAtActionResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Inventory.Features.PriceLists.DTO.DTO_PriceListItems.PriceListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-18 13:02:44.383 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListController.Create (ModularERP) in 870.9376ms
+2025-10-18 13:02:44.386 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListController.Create (ModularERP)'
+2025-10-18 13:02:44.389 +03:00 [INF] Request completed successfully with status code 201
+2025-10-18 13:02:44.394 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/PriceList - 201 null application/json; charset=utf-8 950.3016ms
+2025-10-18 13:05:51.111 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/PriceList/{7407219b-6da2-47fb-a40c-adc0ff25cd9b}/items - application/json 292
+2025-10-18 13:05:51.120 +03:00 [INF] Request started
+2025-10-18 13:05:51.121 +03:00 [INF] === Incoming Request ===
+2025-10-18 13:05:51.122 +03:00 [INF] Path: /api/PriceList/%7B7407219b-6da2-47fb-a40c-adc0ff25cd9b%7D/items
+2025-10-18 13:05:51.123 +03:00 [INF] Method: POST
+2025-10-18 13:05:51.124 +03:00 [INF] === Headers ===
+2025-10-18 13:05:51.126 +03:00 [INF] Accept: ["*/*"]
+2025-10-18 13:05:51.127 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-18 13:05:51.129 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-18 13:05:51.130 +03:00 [INF] User-Agent: ["PostmanRuntime/7.49.0"]
+2025-10-18 13:05:51.132 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-18 13:05:51.133 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-18 13:05:51.134 +03:00 [INF] Content-Length: ["292"]
+2025-10-18 13:05:51.135 +03:00 [INF] X-Tenant-ID: ["8bed874f-cf2a-4ffa-a188-4cfef779774a","6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-10-18 13:05:51.137 +03:00 [INF] Postman-Token: ["02ccd494-e0c4-4a35-9224-d98cdeba3670"]
+2025-10-18 13:05:51.140 +03:00 [INF] 🔍 TenantService returned: '8bed874f-cf2a-4ffa-a188-4cfef779774a'
+2025-10-18 13:05:51.141 +03:00 [INF] ✅ Processing request for tenant: 8bed874f-cf2a-4ffa-a188-4cfef779774a
+2025-10-18 13:05:51.142 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListItemsController.Create (ModularERP)'
+2025-10-18 13:05:51.148 +03:00 [INF] Route matched with {action = "Create", controller = "PriceListItems"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(System.Guid, ModularERP.Modules.Inventory.Features.PriceLists.DTO.DTO_PriceList.CreatePriceListItemDto) on controller ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListItemsController (ModularERP).
+2025-10-18 13:05:51.227 +03:00 [INF] Executed DbCommand (19ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-10-18 13:05:51.269 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-10-18 13:05:51.311 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListItemsController.Create (ModularERP) in 160.0184ms
+2025-10-18 13:05:51.313 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListItemsController.Create (ModularERP)'
+2025-10-18 13:05:51.316 +03:00 [ERR] Application exception occurred: Price list with ID 7407219b-6da2-47fb-a40c-adc0ff25cd9b not found
+ModularERP.Common.Exceptions.NotFoundException: Price list with ID 7407219b-6da2-47fb-a40c-adc0ff25cd9b not found
+   at ModularERP.Modules.Inventory.Features.PriceLists.Handlers.Handler_PriceList.CreatePriceListItemHandler.Handle(CreatePriceListItemCommand request, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Modules\Inventory\Features\PriceLists\Handlers\Handler_PriceList\CreatePriceListItemHandler.cs:line 39
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListItemsController.Create(Guid priceListId, CreatePriceListItemDto dto) in E:\ModelerERP\ModularERP\ModularERP\Modules\Inventory\Features\PriceLists\Controllers\PriceListItemsController.cs:line 81
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at ModularERP.Program.<>c.<<Main>b__0_7>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 350
+--- End of stack trace from previous location ---
+   at ModularERP.Program.<>c.<<Main>b__0_6>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 303
+--- End of stack trace from previous location ---
+   at ModularERP.Common.Middleware.GlobalErrorHandlerMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\ModelerERP\ModularERP\ModularERP\Common\Middleware\GlobalErrorHandlerMiddleware.cs:line 40
+2025-10-18 13:05:51.373 +03:00 [INF] Error response sent with status code 404
+2025-10-18 13:05:51.375 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/PriceList/{7407219b-6da2-47fb-a40c-adc0ff25cd9b}/items - 404 null application/json; charset=utf-8 264.7301ms
+2025-10-18 13:06:17.906 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/PriceList/{3a375be2-4334-465b-88bc-b859b4aacf2e}/items - application/json 292
+2025-10-18 13:06:17.912 +03:00 [INF] Request started
+2025-10-18 13:06:17.913 +03:00 [INF] === Incoming Request ===
+2025-10-18 13:06:17.914 +03:00 [INF] Path: /api/PriceList/%7B3a375be2-4334-465b-88bc-b859b4aacf2e%7D/items
+2025-10-18 13:06:17.914 +03:00 [INF] Method: POST
+2025-10-18 13:06:17.915 +03:00 [INF] === Headers ===
+2025-10-18 13:06:17.917 +03:00 [INF] Accept: ["*/*"]
+2025-10-18 13:06:17.918 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-18 13:06:17.920 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-18 13:06:17.922 +03:00 [INF] User-Agent: ["PostmanRuntime/7.49.0"]
+2025-10-18 13:06:17.924 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-18 13:06:17.926 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-18 13:06:17.927 +03:00 [INF] Content-Length: ["292"]
+2025-10-18 13:06:17.928 +03:00 [INF] X-Tenant-ID: ["8bed874f-cf2a-4ffa-a188-4cfef779774a","6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-10-18 13:06:17.930 +03:00 [INF] Postman-Token: ["7bb3f815-caa0-46ca-9ab9-272e5f03b263"]
+2025-10-18 13:06:17.931 +03:00 [INF] 🔍 TenantService returned: '8bed874f-cf2a-4ffa-a188-4cfef779774a'
+2025-10-18 13:06:17.932 +03:00 [INF] ✅ Processing request for tenant: 8bed874f-cf2a-4ffa-a188-4cfef779774a
+2025-10-18 13:06:17.933 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListItemsController.Create (ModularERP)'
+2025-10-18 13:06:17.935 +03:00 [INF] Route matched with {action = "Create", controller = "PriceListItems"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(System.Guid, ModularERP.Modules.Inventory.Features.PriceLists.DTO.DTO_PriceList.CreatePriceListItemDto) on controller ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListItemsController (ModularERP).
+2025-10-18 13:06:17.939 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-10-18 13:06:17.946 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-10-18 13:06:17.952 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListItemsController.Create (ModularERP) in 14.2864ms
+2025-10-18 13:06:17.954 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListItemsController.Create (ModularERP)'
+2025-10-18 13:06:17.955 +03:00 [ERR] Application exception occurred: Price list with ID 3a375be2-4334-465b-88bc-b859b4aacf2e not found
+ModularERP.Common.Exceptions.NotFoundException: Price list with ID 3a375be2-4334-465b-88bc-b859b4aacf2e not found
+   at ModularERP.Modules.Inventory.Features.PriceLists.Handlers.Handler_PriceList.CreatePriceListItemHandler.Handle(CreatePriceListItemCommand request, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Modules\Inventory\Features\PriceLists\Handlers\Handler_PriceList\CreatePriceListItemHandler.cs:line 39
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListItemsController.Create(Guid priceListId, CreatePriceListItemDto dto) in E:\ModelerERP\ModularERP\ModularERP\Modules\Inventory\Features\PriceLists\Controllers\PriceListItemsController.cs:line 81
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at ModularERP.Program.<>c.<<Main>b__0_7>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 350
+--- End of stack trace from previous location ---
+   at ModularERP.Program.<>c.<<Main>b__0_6>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 303
+--- End of stack trace from previous location ---
+   at ModularERP.Common.Middleware.GlobalErrorHandlerMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\ModelerERP\ModularERP\ModularERP\Common\Middleware\GlobalErrorHandlerMiddleware.cs:line 40
+2025-10-18 13:06:17.964 +03:00 [INF] Error response sent with status code 404
+2025-10-18 13:06:17.966 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/PriceList/{3a375be2-4334-465b-88bc-b859b4aacf2e}/items - 404 null application/json; charset=utf-8 59.5915ms
+2025-10-18 13:06:42.485 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/PriceList/{3a375be2-4334-465b-88bc-b859b4aacf2e}/items - application/json 292
+2025-10-18 13:06:42.489 +03:00 [INF] Request started
+2025-10-18 13:06:42.490 +03:00 [INF] === Incoming Request ===
+2025-10-18 13:06:42.491 +03:00 [INF] Path: /api/PriceList/%7B3a375be2-4334-465b-88bc-b859b4aacf2e%7D/items
+2025-10-18 13:06:42.493 +03:00 [INF] Method: POST
+2025-10-18 13:06:42.494 +03:00 [INF] === Headers ===
+2025-10-18 13:06:42.495 +03:00 [INF] Accept: ["*/*"]
+2025-10-18 13:06:42.497 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-18 13:06:42.499 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-18 13:06:42.500 +03:00 [INF] User-Agent: ["PostmanRuntime/7.49.0"]
+2025-10-18 13:06:42.501 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-18 13:06:42.503 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-18 13:06:42.505 +03:00 [INF] Content-Length: ["292"]
+2025-10-18 13:06:42.506 +03:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-10-18 13:06:42.508 +03:00 [INF] Postman-Token: ["43ead727-548b-42ad-88be-a542e12eec11"]
+2025-10-18 13:06:42.510 +03:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-10-18 13:06:42.512 +03:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-10-18 13:06:42.513 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListItemsController.Create (ModularERP)'
+2025-10-18 13:06:42.515 +03:00 [INF] Route matched with {action = "Create", controller = "PriceListItems"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(System.Guid, ModularERP.Modules.Inventory.Features.PriceLists.DTO.DTO_PriceList.CreatePriceListItemDto) on controller ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListItemsController (ModularERP).
+2025-10-18 13:06:42.644 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Inventory.Features.PriceLists.DTO.DTO_PriceList.PriceListItemDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-18 13:06:42.654 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListItemsController.Create (ModularERP) in 137.2016ms
+2025-10-18 13:06:42.656 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListItemsController.Create (ModularERP)'
+2025-10-18 13:06:42.659 +03:00 [INF] Request completed successfully with status code 200
+2025-10-18 13:06:42.661 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/PriceList/{3a375be2-4334-465b-88bc-b859b4aacf2e}/items - 200 null application/json; charset=utf-8 176.3013ms
+2025-10-18 13:22:06.166 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/PriceList/{3a375be2-4334-465b-88bc-b859b4aacf2e}/activate - null 0
+2025-10-18 13:22:06.170 +03:00 [INF] Request started
+2025-10-18 13:22:06.171 +03:00 [INF] === Incoming Request ===
+2025-10-18 13:22:06.172 +03:00 [INF] Path: /api/PriceList/%7B3a375be2-4334-465b-88bc-b859b4aacf2e%7D/activate
+2025-10-18 13:22:06.173 +03:00 [INF] Method: POST
+2025-10-18 13:22:06.174 +03:00 [INF] === Headers ===
+2025-10-18 13:22:06.175 +03:00 [INF] Accept: ["*/*"]
+2025-10-18 13:22:06.177 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-18 13:22:06.178 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-18 13:22:06.180 +03:00 [INF] User-Agent: ["PostmanRuntime/7.49.0"]
+2025-10-18 13:22:06.181 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-18 13:22:06.183 +03:00 [INF] Content-Length: ["0"]
+2025-10-18 13:22:06.185 +03:00 [INF] X-Tenant-ID: ["8bed874f-cf2a-4ffa-a188-4cfef779774a","6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-10-18 13:22:06.187 +03:00 [INF] Postman-Token: ["225953ab-2052-48b0-89f0-7baec88cd765"]
+2025-10-18 13:22:06.188 +03:00 [INF] 🔍 TenantService returned: '8bed874f-cf2a-4ffa-a188-4cfef779774a'
+2025-10-18 13:22:06.189 +03:00 [INF] ✅ Processing request for tenant: 8bed874f-cf2a-4ffa-a188-4cfef779774a
+2025-10-18 13:22:06.190 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListController.Activate (ModularERP)'
+2025-10-18 13:22:06.195 +03:00 [INF] Route matched with {action = "Activate", controller = "PriceList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Activate(System.Guid) on controller ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListController (ModularERP).
+2025-10-18 13:22:06.218 +03:00 [INF] Executed DbCommand (15ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-10-18 13:22:06.250 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListController.Activate (ModularERP) in 53.0118ms
+2025-10-18 13:22:06.252 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListController.Activate (ModularERP)'
+2025-10-18 13:22:06.254 +03:00 [ERR] Application exception occurred: Price list with ID 3a375be2-4334-465b-88bc-b859b4aacf2e not found
+ModularERP.Common.Exceptions.NotFoundException: Price list with ID 3a375be2-4334-465b-88bc-b859b4aacf2e not found
+   at ModularERP.Modules.Inventory.Features.PriceLists.Handlers.Handlers_PriceListItems.ActivatePriceListCommandHandler.Handle(ActivatePriceListCommand request, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Modules\Inventory\Features\PriceLists\Handlers\Handlers_PriceListItems\ActivatePriceListCommandHandler.cs:line 28
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListController.Activate(Guid id) in E:\ModelerERP\ModularERP\ModularERP\Modules\Inventory\Features\PriceLists\Controllers\PriceListController.cs:line 126
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at ModularERP.Program.<>c.<<Main>b__0_7>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 350
+--- End of stack trace from previous location ---
+   at ModularERP.Program.<>c.<<Main>b__0_6>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 303
+--- End of stack trace from previous location ---
+   at ModularERP.Common.Middleware.GlobalErrorHandlerMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\ModelerERP\ModularERP\ModularERP\Common\Middleware\GlobalErrorHandlerMiddleware.cs:line 40
+2025-10-18 13:22:06.266 +03:00 [INF] Error response sent with status code 404
+2025-10-18 13:22:06.267 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/PriceList/{3a375be2-4334-465b-88bc-b859b4aacf2e}/activate - 404 null application/json; charset=utf-8 101.2167ms
+2025-10-18 13:22:15.360 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/PriceList/{3a375be2-4334-465b-88bc-b859b4aacf2e}/activate - null 0
+2025-10-18 13:22:15.364 +03:00 [INF] Request started
+2025-10-18 13:22:15.365 +03:00 [INF] === Incoming Request ===
+2025-10-18 13:22:15.366 +03:00 [INF] Path: /api/PriceList/%7B3a375be2-4334-465b-88bc-b859b4aacf2e%7D/activate
+2025-10-18 13:22:15.367 +03:00 [INF] Method: POST
+2025-10-18 13:22:15.368 +03:00 [INF] === Headers ===
+2025-10-18 13:22:15.369 +03:00 [INF] Accept: ["*/*"]
+2025-10-18 13:22:15.371 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-18 13:22:15.373 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-18 13:22:15.375 +03:00 [INF] User-Agent: ["PostmanRuntime/7.49.0"]
+2025-10-18 13:22:15.376 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-18 13:22:15.377 +03:00 [INF] Content-Length: ["0"]
+2025-10-18 13:22:15.379 +03:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-10-18 13:22:15.381 +03:00 [INF] Postman-Token: ["65e34e71-7f9d-4785-a79b-dcaf295d1658"]
+2025-10-18 13:22:15.382 +03:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-10-18 13:22:15.384 +03:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-10-18 13:22:15.385 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListController.Activate (ModularERP)'
+2025-10-18 13:22:15.387 +03:00 [INF] Route matched with {action = "Activate", controller = "PriceList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Activate(System.Guid) on controller ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListController (ModularERP).
+2025-10-18 13:22:15.440 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-18 13:22:15.444 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListController.Activate (ModularERP) in 52.415ms
+2025-10-18 13:22:15.445 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListController.Activate (ModularERP)'
+2025-10-18 13:22:15.447 +03:00 [INF] Request completed successfully with status code 200
+2025-10-18 13:22:15.449 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/PriceList/{3a375be2-4334-465b-88bc-b859b4aacf2e}/activate - 200 null application/json; charset=utf-8 87.9126ms
+2025-10-18 13:23:31.378 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/PriceList/{3a375be2-4334-465b-88bc-b859b4aacf2e} - null null
+2025-10-18 13:23:31.382 +03:00 [INF] Request started
+2025-10-18 13:23:31.383 +03:00 [INF] === Incoming Request ===
+2025-10-18 13:23:31.385 +03:00 [INF] Path: /api/PriceList/%7B3a375be2-4334-465b-88bc-b859b4aacf2e%7D
+2025-10-18 13:23:31.386 +03:00 [INF] Method: GET
+2025-10-18 13:23:31.386 +03:00 [INF] === Headers ===
+2025-10-18 13:23:31.388 +03:00 [INF] Accept: ["*/*"]
+2025-10-18 13:23:31.389 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-18 13:23:31.391 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-18 13:23:31.392 +03:00 [INF] User-Agent: ["PostmanRuntime/7.49.0"]
+2025-10-18 13:23:31.393 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-18 13:23:31.395 +03:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-10-18 13:23:31.396 +03:00 [INF] Postman-Token: ["2b4981fc-59db-434f-b21e-87f295930478"]
+2025-10-18 13:23:31.398 +03:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-10-18 13:23:31.399 +03:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-10-18 13:23:31.400 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListController.GetById (ModularERP)'
+2025-10-18 13:23:31.403 +03:00 [INF] Route matched with {action = "GetById", controller = "PriceList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(System.Guid) on controller ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListController (ModularERP).
+2025-10-18 13:23:31.446 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Inventory.Features.PriceLists.DTO.DTO_PriceListItems.PriceListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-18 13:23:31.448 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListController.GetById (ModularERP) in 42.7914ms
+2025-10-18 13:23:31.450 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListController.GetById (ModularERP)'
+2025-10-18 13:23:31.451 +03:00 [INF] Request completed successfully with status code 200
+2025-10-18 13:23:31.452 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/PriceList/{3a375be2-4334-465b-88bc-b859b4aacf2e} - 200 null application/json; charset=utf-8 74.7454ms
+2025-10-18 13:34:01.335 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/price-list-assignments - application/json 136
+2025-10-18 13:34:01.340 +03:00 [INF] Request started
+2025-10-18 13:34:01.341 +03:00 [INF] === Incoming Request ===
+2025-10-18 13:34:01.342 +03:00 [INF] Path: /api/price-list-assignments
+2025-10-18 13:34:01.343 +03:00 [INF] Method: POST
+2025-10-18 13:34:01.343 +03:00 [INF] === Headers ===
+2025-10-18 13:34:01.344 +03:00 [INF] Accept: ["*/*"]
+2025-10-18 13:34:01.345 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-18 13:34:01.347 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-18 13:34:01.348 +03:00 [INF] User-Agent: ["PostmanRuntime/7.49.0"]
+2025-10-18 13:34:01.350 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-18 13:34:01.351 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-18 13:34:01.353 +03:00 [INF] Content-Length: ["136"]
+2025-10-18 13:34:01.354 +03:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-10-18 13:34:01.356 +03:00 [INF] Postman-Token: ["b6e4de29-a25f-4bf9-bf68-3cc1926f6853"]
+2025-10-18 13:34:01.357 +03:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-10-18 13:34:01.358 +03:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-10-18 13:34:01.360 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListAssignmentsController.Create (ModularERP)'
+2025-10-18 13:34:01.363 +03:00 [INF] Route matched with {action = "Create", controller = "PriceListAssignments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(ModularERP.Modules.Inventory.Features.PriceLists.DTO.DTO_PriceListAssignment.CreatePriceListAssignmentDto) on controller ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListAssignmentsController (ModularERP).
+2025-10-18 13:34:01.398 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListAssignmentsController.Create (ModularERP) in 31.7554ms
+2025-10-18 13:34:01.400 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListAssignmentsController.Create (ModularERP)'
+2025-10-18 13:34:01.402 +03:00 [ERR] Application exception occurred: Price List not found
+ModularERP.Common.Exceptions.NotFoundException: Price List not found
+   at ModularERP.Modules.Inventory.Features.PriceLists.Handlers.Handlers_PriceListAssignment.CreatePriceListAssignmentHandler.Handle(CreatePriceListAssignmentCommand request, CancellationToken ct) in E:\ModelerERP\ModularERP\ModularERP\Modules\Inventory\Features\PriceLists\Handlers\Handlers_PriceListAssignment\CreatePriceListAssignmentHandler.cs:line 42
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListAssignmentsController.Create(CreatePriceListAssignmentDto dto) in E:\ModelerERP\ModularERP\ModularERP\Modules\Inventory\Features\PriceLists\Controllers\PriceListAssignmentsController.cs:line 32
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at ModularERP.Program.<>c.<<Main>b__0_7>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 350
+--- End of stack trace from previous location ---
+   at ModularERP.Program.<>c.<<Main>b__0_6>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 303
+--- End of stack trace from previous location ---
+   at ModularERP.Common.Middleware.GlobalErrorHandlerMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\ModelerERP\ModularERP\ModularERP\Common\Middleware\GlobalErrorHandlerMiddleware.cs:line 40
+2025-10-18 13:34:01.413 +03:00 [INF] Error response sent with status code 404
+2025-10-18 13:34:01.414 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/price-list-assignments - 404 null application/json; charset=utf-8 79.0158ms
+2025-10-18 13:34:26.156 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/price-list-assignments - application/json 136
+2025-10-18 13:34:26.160 +03:00 [INF] Request started
+2025-10-18 13:34:26.162 +03:00 [INF] === Incoming Request ===
+2025-10-18 13:34:26.162 +03:00 [INF] Path: /api/price-list-assignments
+2025-10-18 13:34:26.163 +03:00 [INF] Method: POST
+2025-10-18 13:34:26.165 +03:00 [INF] === Headers ===
+2025-10-18 13:34:26.166 +03:00 [INF] Accept: ["*/*"]
+2025-10-18 13:34:26.167 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-18 13:34:26.169 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-18 13:34:26.170 +03:00 [INF] User-Agent: ["PostmanRuntime/7.49.0"]
+2025-10-18 13:34:26.171 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-18 13:34:26.173 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-18 13:34:26.175 +03:00 [INF] Content-Length: ["136"]
+2025-10-18 13:34:26.176 +03:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-10-18 13:34:26.178 +03:00 [INF] Postman-Token: ["585d2392-6de6-4e4e-b8aa-55cf35ed9ff4"]
+2025-10-18 13:34:26.179 +03:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-10-18 13:34:26.180 +03:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-10-18 13:34:26.181 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListAssignmentsController.Create (ModularERP)'
+2025-10-18 13:34:26.183 +03:00 [INF] Route matched with {action = "Create", controller = "PriceListAssignments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(ModularERP.Modules.Inventory.Features.PriceLists.DTO.DTO_PriceListAssignment.CreatePriceListAssignmentDto) on controller ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListAssignmentsController (ModularERP).
+2025-10-18 13:34:26.246 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Inventory.Features.PriceLists.DTO.DTO_PriceListAssignment.PriceListAssignmentDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-18 13:34:26.252 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListAssignmentsController.Create (ModularERP) in 66.6769ms
+2025-10-18 13:34:26.253 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListAssignmentsController.Create (ModularERP)'
+2025-10-18 13:34:26.255 +03:00 [INF] Request completed successfully with status code 200
+2025-10-18 13:34:26.256 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/price-list-assignments - 200 null application/json; charset=utf-8 100.6284ms
+2025-10-18 13:36:02.366 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/price-calculation/calculate - application/json 296
+2025-10-18 13:36:02.371 +03:00 [INF] Request started
+2025-10-18 13:36:02.373 +03:00 [INF] === Incoming Request ===
+2025-10-18 13:36:02.374 +03:00 [INF] Path: /api/price-calculation/calculate
+2025-10-18 13:36:02.375 +03:00 [INF] Method: POST
+2025-10-18 13:36:02.376 +03:00 [INF] === Headers ===
+2025-10-18 13:36:02.378 +03:00 [INF] Accept: ["*/*"]
+2025-10-18 13:36:02.379 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-18 13:36:02.381 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-18 13:36:02.383 +03:00 [INF] User-Agent: ["PostmanRuntime/7.49.0"]
+2025-10-18 13:36:02.385 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-18 13:36:02.387 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-18 13:36:02.388 +03:00 [INF] Content-Length: ["296"]
+2025-10-18 13:36:02.389 +03:00 [INF] X-Tenant-ID: ["8bed874f-cf2a-4ffa-a188-4cfef779774a","6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-10-18 13:36:02.391 +03:00 [INF] Postman-Token: ["10463a9e-b35d-4388-804b-ce1ed10aae78"]
+2025-10-18 13:36:02.392 +03:00 [INF] 🔍 TenantService returned: '8bed874f-cf2a-4ffa-a188-4cfef779774a'
+2025-10-18 13:36:02.393 +03:00 [INF] ✅ Processing request for tenant: 8bed874f-cf2a-4ffa-a188-4cfef779774a
+2025-10-18 13:36:02.394 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceCalculationController.Calculate (ModularERP)'
+2025-10-18 13:36:02.398 +03:00 [INF] Route matched with {action = "Calculate", controller = "PriceCalculation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Inventory.Features.PriceLists.DTO.DTO_PriceCalculation.PriceCalculationResultDTO]]] Calculate(ModularERP.Modules.Inventory.Features.PriceLists.Commends.Commands_PriceCalculation.CalculatePriceCommand) on controller ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceCalculationController (ModularERP).
+2025-10-18 13:36:02.471 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-10-18 13:36:02.476 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-10-18 13:36:02.512 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceCalculationController.Calculate (ModularERP) in 108.9375ms
+2025-10-18 13:36:02.515 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceCalculationController.Calculate (ModularERP)'
+2025-10-18 13:36:02.517 +03:00 [ERR] Application exception occurred: Product with ID 1455fbe8-d0b2-4615-b998-5b00ed509ab7 not found
+ModularERP.Common.Exceptions.NotFoundException: Product with ID 1455fbe8-d0b2-4615-b998-5b00ed509ab7 not found
+   at ModularERP.Modules.Inventory.Features.PriceLists.Handlers.Handlers_PriceCalculation.CalculatePriceCommandHandler.Handle(CalculatePriceCommand request, CancellationToken ct) in E:\ModelerERP\ModularERP\ModularERP\Modules\Inventory\Features\PriceLists\Handlers\Handlers_PriceCalculation\CalculatePriceCommandHandler.cs:line 45
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceCalculationController.Calculate(CalculatePriceCommand command) in E:\ModelerERP\ModularERP\ModularERP\Modules\Inventory\Features\PriceLists\Controllers\PriceCalculationController.cs:line 29
+   at lambda_method756(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at ModularERP.Program.<>c.<<Main>b__0_7>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 350
+--- End of stack trace from previous location ---
+   at ModularERP.Program.<>c.<<Main>b__0_6>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 303
+--- End of stack trace from previous location ---
+   at ModularERP.Common.Middleware.GlobalErrorHandlerMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\ModelerERP\ModularERP\ModularERP\Common\Middleware\GlobalErrorHandlerMiddleware.cs:line 40
+2025-10-18 13:36:02.526 +03:00 [INF] Error response sent with status code 404
+2025-10-18 13:36:02.528 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/price-calculation/calculate - 404 null application/json; charset=utf-8 161.3659ms
+2025-10-18 13:37:01.642 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/price-calculation/calculate - application/json 296
+2025-10-18 13:37:01.647 +03:00 [INF] Request started
+2025-10-18 13:37:01.648 +03:00 [INF] === Incoming Request ===
+2025-10-18 13:37:01.649 +03:00 [INF] Path: /api/price-calculation/calculate
+2025-10-18 13:37:01.650 +03:00 [INF] Method: POST
+2025-10-18 13:37:01.651 +03:00 [INF] === Headers ===
+2025-10-18 13:37:01.652 +03:00 [INF] Accept: ["*/*"]
+2025-10-18 13:37:01.653 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-18 13:37:01.654 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-18 13:37:01.656 +03:00 [INF] User-Agent: ["PostmanRuntime/7.49.0"]
+2025-10-18 13:37:01.657 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-18 13:37:01.659 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-18 13:37:01.660 +03:00 [INF] Content-Length: ["296"]
+2025-10-18 13:37:01.662 +03:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-10-18 13:37:01.663 +03:00 [INF] Postman-Token: ["99b66fc9-a6dd-43ac-92db-4c1ee8ed7111"]
+2025-10-18 13:37:01.664 +03:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-10-18 13:37:01.665 +03:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-10-18 13:37:01.666 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceCalculationController.Calculate (ModularERP)'
+2025-10-18 13:37:01.667 +03:00 [INF] Route matched with {action = "Calculate", controller = "PriceCalculation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Inventory.Features.PriceLists.DTO.DTO_PriceCalculation.PriceCalculationResultDTO]]] Calculate(ModularERP.Modules.Inventory.Features.PriceLists.Commends.Commands_PriceCalculation.CalculatePriceCommand) on controller ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceCalculationController (ModularERP).
+2025-10-18 13:37:01.689 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceCalculationController.Calculate (ModularERP) in 18.8581ms
+2025-10-18 13:37:01.691 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceCalculationController.Calculate (ModularERP)'
+2025-10-18 13:37:01.692 +03:00 [WRN] Business logic exception occurred: The Price List (ID: 3a375be2-4334-465b-88bc-b859b4aacf2e) must have at least one active Price Rule before calculating prices.
+ModularERP.Common.Exceptions.BusinessLogicException: The Price List (ID: 3a375be2-4334-465b-88bc-b859b4aacf2e) must have at least one active Price Rule before calculating prices.
+   at ModularERP.Modules.Inventory.Features.PriceLists.Handlers.Handlers_PriceCalculation.CalculatePriceCommandHandler.Handle(CalculatePriceCommand request, CancellationToken ct) in E:\ModelerERP\ModularERP\ModularERP\Modules\Inventory\Features\PriceLists\Handlers\Handlers_PriceCalculation\CalculatePriceCommandHandler.cs:line 105
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceCalculationController.Calculate(CalculatePriceCommand command) in E:\ModelerERP\ModularERP\ModularERP\Modules\Inventory\Features\PriceLists\Controllers\PriceCalculationController.cs:line 29
+   at lambda_method756(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at ModularERP.Program.<>c.<<Main>b__0_7>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 350
+--- End of stack trace from previous location ---
+   at ModularERP.Program.<>c.<<Main>b__0_6>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 303
+--- End of stack trace from previous location ---
+   at ModularERP.Common.Middleware.GlobalErrorHandlerMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\ModelerERP\ModularERP\ModularERP\Common\Middleware\GlobalErrorHandlerMiddleware.cs:line 40
+2025-10-18 13:37:01.703 +03:00 [INF] Error response sent with status code 400
+2025-10-18 13:37:01.704 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/price-calculation/calculate - 400 null application/json; charset=utf-8 62.6807ms
+2025-10-18 13:37:59.161 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/price-lists/{3a375be2-4334-465b-88bc-b859b4aacf2e}/rules - application/json 135
+2025-10-18 13:37:59.165 +03:00 [INF] Request started
+2025-10-18 13:37:59.165 +03:00 [INF] === Incoming Request ===
+2025-10-18 13:37:59.166 +03:00 [INF] Path: /api/price-lists/%7B3a375be2-4334-465b-88bc-b859b4aacf2e%7D/rules
+2025-10-18 13:37:59.167 +03:00 [INF] Method: POST
+2025-10-18 13:37:59.168 +03:00 [INF] === Headers ===
+2025-10-18 13:37:59.169 +03:00 [INF] Accept: ["*/*"]
+2025-10-18 13:37:59.170 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-18 13:37:59.171 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-18 13:37:59.173 +03:00 [INF] User-Agent: ["PostmanRuntime/7.49.0"]
+2025-10-18 13:37:59.174 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-18 13:37:59.176 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-18 13:37:59.177 +03:00 [INF] Content-Length: ["135"]
+2025-10-18 13:37:59.179 +03:00 [INF] X-Tenant-ID: ["8bed874f-cf2a-4ffa-a188-4cfef779774a","6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-10-18 13:37:59.181 +03:00 [INF] Postman-Token: ["61e3d2be-8b25-4b53-963d-cb65c7fe4e97"]
+2025-10-18 13:37:59.183 +03:00 [INF] 🔍 TenantService returned: '8bed874f-cf2a-4ffa-a188-4cfef779774a'
+2025-10-18 13:37:59.184 +03:00 [INF] ✅ Processing request for tenant: 8bed874f-cf2a-4ffa-a188-4cfef779774a
+2025-10-18 13:37:59.185 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListRulesController.CreateRule (ModularERP)'
+2025-10-18 13:37:59.188 +03:00 [INF] Route matched with {action = "CreateRule", controller = "PriceListRules"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Inventory.Features.PriceLists.DTO.DTO_PriceRule.PriceListRuleResponseDTO]]] CreateRule(System.Guid, ModularERP.Modules.Inventory.Features.PriceLists.DTO.DTO_PriceRule.CreatePriceListRuleDTO) on controller ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListRulesController (ModularERP).
+2025-10-18 13:37:59.244 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-10-18 13:37:59.251 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-10-18 13:37:59.269 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListRulesController.CreateRule (ModularERP) in 77.6712ms
+2025-10-18 13:37:59.271 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListRulesController.CreateRule (ModularERP)'
+2025-10-18 13:37:59.272 +03:00 [ERR] Application exception occurred: Price list with ID 3a375be2-4334-465b-88bc-b859b4aacf2e not found
+ModularERP.Common.Exceptions.NotFoundException: Price list with ID 3a375be2-4334-465b-88bc-b859b4aacf2e not found
+   at ModularERP.Modules.Inventory.Features.PriceLists.Handlers.Handler_PriceRule.CreatePriceListRuleHandler.Handle(CreatePriceListRuleCommand request, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Modules\Inventory\Features\PriceLists\Handlers\Handler_PriceRule\CreatePriceListRuleHandler.cs:line 34
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListRulesController.CreateRule(Guid priceListId, CreatePriceListRuleDTO dto) in E:\ModelerERP\ModularERP\ModularERP\Modules\Inventory\Features\PriceLists\Controllers\PriceListRulesController.cs:line 33
+   at lambda_method775(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at ModularERP.Program.<>c.<<Main>b__0_7>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 350
+--- End of stack trace from previous location ---
+   at ModularERP.Program.<>c.<<Main>b__0_6>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 303
+--- End of stack trace from previous location ---
+   at ModularERP.Common.Middleware.GlobalErrorHandlerMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\ModelerERP\ModularERP\ModularERP\Common\Middleware\GlobalErrorHandlerMiddleware.cs:line 40
+2025-10-18 13:37:59.287 +03:00 [INF] Error response sent with status code 404
+2025-10-18 13:37:59.288 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/price-lists/{3a375be2-4334-465b-88bc-b859b4aacf2e}/rules - 404 null application/json; charset=utf-8 127.3113ms
+2025-10-18 13:38:08.788 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/price-lists/{3a375be2-4334-465b-88bc-b859b4aacf2e}/rules - application/json 135
+2025-10-18 13:38:08.793 +03:00 [INF] Request started
+2025-10-18 13:38:08.794 +03:00 [INF] === Incoming Request ===
+2025-10-18 13:38:08.796 +03:00 [INF] Path: /api/price-lists/%7B3a375be2-4334-465b-88bc-b859b4aacf2e%7D/rules
+2025-10-18 13:38:08.797 +03:00 [INF] Method: POST
+2025-10-18 13:38:08.798 +03:00 [INF] === Headers ===
+2025-10-18 13:38:08.798 +03:00 [INF] Accept: ["*/*"]
+2025-10-18 13:38:08.800 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-18 13:38:08.801 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-18 13:38:08.802 +03:00 [INF] User-Agent: ["PostmanRuntime/7.49.0"]
+2025-10-18 13:38:08.804 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-18 13:38:08.806 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-18 13:38:08.807 +03:00 [INF] Content-Length: ["135"]
+2025-10-18 13:38:08.809 +03:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-10-18 13:38:08.810 +03:00 [INF] Postman-Token: ["8b5db193-15ed-4c23-9d10-d7e13517481c"]
+2025-10-18 13:38:08.811 +03:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-10-18 13:38:08.812 +03:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-10-18 13:38:08.813 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListRulesController.CreateRule (ModularERP)'
+2025-10-18 13:38:08.815 +03:00 [INF] Route matched with {action = "CreateRule", controller = "PriceListRules"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Inventory.Features.PriceLists.DTO.DTO_PriceRule.PriceListRuleResponseDTO]]] CreateRule(System.Guid, ModularERP.Modules.Inventory.Features.PriceLists.DTO.DTO_PriceRule.CreatePriceListRuleDTO) on controller ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListRulesController (ModularERP).
+2025-10-18 13:38:08.864 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Inventory.Features.PriceLists.DTO.DTO_PriceRule.PriceListRuleResponseDTO, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-18 13:38:08.869 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListRulesController.CreateRule (ModularERP) in 51.5406ms
+2025-10-18 13:38:08.872 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListRulesController.CreateRule (ModularERP)'
+2025-10-18 13:38:08.873 +03:00 [INF] Request completed successfully with status code 200
+2025-10-18 13:38:08.874 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/price-lists/{3a375be2-4334-465b-88bc-b859b4aacf2e}/rules - 200 null application/json; charset=utf-8 85.8833ms
+2025-10-18 13:38:24.036 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/price-calculation/calculate - application/json 296
+2025-10-18 13:38:24.040 +03:00 [INF] Request started
+2025-10-18 13:38:24.040 +03:00 [INF] === Incoming Request ===
+2025-10-18 13:38:24.041 +03:00 [INF] Path: /api/price-calculation/calculate
+2025-10-18 13:38:24.042 +03:00 [INF] Method: POST
+2025-10-18 13:38:24.043 +03:00 [INF] === Headers ===
+2025-10-18 13:38:24.044 +03:00 [INF] Accept: ["*/*"]
+2025-10-18 13:38:24.045 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-18 13:38:24.047 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-18 13:38:24.048 +03:00 [INF] User-Agent: ["PostmanRuntime/7.49.0"]
+2025-10-18 13:38:24.050 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-18 13:38:24.051 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-18 13:38:24.053 +03:00 [INF] Content-Length: ["296"]
+2025-10-18 13:38:24.055 +03:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-10-18 13:38:24.056 +03:00 [INF] Postman-Token: ["0a40d2b8-57fa-4af8-bba2-37b73c6003c3"]
+2025-10-18 13:38:24.058 +03:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-10-18 13:38:24.059 +03:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-10-18 13:38:24.060 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceCalculationController.Calculate (ModularERP)'
+2025-10-18 13:38:24.061 +03:00 [INF] Route matched with {action = "Calculate", controller = "PriceCalculation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Inventory.Features.PriceLists.DTO.DTO_PriceCalculation.PriceCalculationResultDTO]]] Calculate(ModularERP.Modules.Inventory.Features.PriceLists.Commends.Commands_PriceCalculation.CalculatePriceCommand) on controller ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceCalculationController (ModularERP).
+2025-10-18 13:38:24.155 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Inventory.Features.PriceLists.DTO.DTO_PriceCalculation.PriceCalculationResultDTO, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-18 13:38:24.162 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceCalculationController.Calculate (ModularERP) in 98.2339ms
+2025-10-18 13:38:24.166 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceCalculationController.Calculate (ModularERP)'
+2025-10-18 13:38:24.167 +03:00 [INF] Request completed successfully with status code 200
+2025-10-18 13:38:24.168 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/price-calculation/calculate - 200 null application/json; charset=utf-8 131.8131ms
+2025-10-18 14:14:29.496 +03:00 [INF] Starting web host...
+2025-10-18 14:14:33.800 +03:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-18 14:14:33.889 +03:00 [INF] Executed DbCommand (68ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-10-18 14:14:33.975 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-18 14:14:33.981 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-10-18 14:14:33.997 +03:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-10-18 14:14:34.058 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-10-18 14:14:34.074 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-18 14:14:34.079 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-10-18 14:14:34.086 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-10-18 14:14:34.096 +03:00 [INF] No migrations were applied. The database is already up to date.
+2025-10-18 14:14:34.102 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-10-18 14:14:34.267 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-10-18 14:14:34.276 +03:00 [INF] Master database initialized successfully
+2025-10-18 14:14:36.148 +03:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-10-18 14:14:36.444 +03:00 [INF] Now listening on: https://localhost:7168
+2025-10-18 14:14:36.445 +03:00 [INF] Now listening on: http://localhost:5004
+2025-10-18 14:14:36.556 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-18 14:14:36.557 +03:00 [INF] Hosting environment: Development
+2025-10-18 14:14:36.558 +03:00 [INF] Content root path: E:\ModelerERP\ModularERP\ModularERP
+2025-10-18 14:14:36.644 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-10-18 14:14:36.788 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 144.7013ms
+2025-10-18 14:14:36.799 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-10-18 14:14:36.799 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-18 14:14:36.810 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 10.7449ms
+2025-10-18 14:14:36.872 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 73.4863ms
+2025-10-18 14:14:37.018 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-10-18 14:14:37.238 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 220.1247ms
+2025-10-18 14:14:55.642 +03:00 [INF] Starting web host...
+2025-10-18 14:14:56.688 +03:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-18 14:14:56.768 +03:00 [INF] Executed DbCommand (63ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-10-18 14:14:56.843 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-18 14:14:56.851 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-10-18 14:14:56.867 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-10-18 14:14:56.924 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-10-18 14:14:56.940 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-18 14:14:56.944 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-10-18 14:14:56.951 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-10-18 14:14:56.963 +03:00 [INF] No migrations were applied. The database is already up to date.
+2025-10-18 14:14:56.970 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-10-18 14:14:57.130 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-10-18 14:14:57.138 +03:00 [INF] Master database initialized successfully
+2025-10-18 14:14:58.839 +03:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-10-18 14:14:58.939 +03:00 [INF] Now listening on: https://localhost:7168
+2025-10-18 14:14:58.941 +03:00 [INF] Now listening on: http://localhost:5004
+2025-10-18 14:14:59.031 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-18 14:14:59.033 +03:00 [INF] Hosting environment: Development
+2025-10-18 14:14:59.034 +03:00 [INF] Content root path: E:\ModelerERP\ModularERP\ModularERP
+2025-10-18 14:14:59.059 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-10-18 14:14:59.185 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 126.1768ms
+2025-10-18 14:14:59.187 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-18 14:14:59.187 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-10-18 14:14:59.199 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 12.3474ms
+2025-10-18 14:14:59.223 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 36.5491ms
+2025-10-18 14:14:59.317 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-10-18 14:14:59.533 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 215.998ms
+2025-10-18 14:15:20.960 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/price-calculation/calculate - application/json 296
+2025-10-18 14:15:20.981 +03:00 [INF] Request started
+2025-10-18 14:15:20.983 +03:00 [INF] === Incoming Request ===
+2025-10-18 14:15:20.987 +03:00 [INF] Path: /api/price-calculation/calculate
+2025-10-18 14:15:20.989 +03:00 [INF] Method: POST
+2025-10-18 14:15:20.991 +03:00 [INF] === Headers ===
+2025-10-18 14:15:20.994 +03:00 [INF] Accept: ["*/*"]
+2025-10-18 14:15:20.996 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-18 14:15:20.998 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-18 14:15:20.999 +03:00 [INF] User-Agent: ["PostmanRuntime/7.49.0"]
+2025-10-18 14:15:21.002 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-18 14:15:21.004 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-18 14:15:21.006 +03:00 [INF] Content-Length: ["296"]
+2025-10-18 14:15:21.008 +03:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-10-18 14:15:21.009 +03:00 [INF] Postman-Token: ["27e2eb6f-0d9c-4ea3-a47a-f0fc44f46ba3"]
+2025-10-18 14:15:21.013 +03:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-10-18 14:15:21.014 +03:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-10-18 14:15:21.016 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceCalculationController.Calculate (ModularERP)'
+2025-10-18 14:15:21.036 +03:00 [INF] Route matched with {action = "Calculate", controller = "PriceCalculation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Inventory.Features.PriceLists.DTO.DTO_PriceCalculation.PriceCalculationResultDTO]]] Calculate(ModularERP.Modules.Inventory.Features.PriceLists.Commends.Commands_PriceCalculation.CalculatePriceCommand) on controller ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceCalculationController (ModularERP).
+2025-10-18 14:15:21.043 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-10-18 14:15:21.168 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-10-18 14:15:21.680 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-10-18 14:15:22.380 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Inventory.Features.PriceLists.DTO.DTO_PriceCalculation.PriceCalculationResultDTO, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-18 14:15:22.401 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceCalculationController.Calculate (ModularERP) in 1357.9119ms
+2025-10-18 14:15:22.404 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceCalculationController.Calculate (ModularERP)'
+2025-10-18 14:15:22.405 +03:00 [INF] Request completed successfully with status code 200
+2025-10-18 14:15:22.410 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/price-calculation/calculate - 200 null application/json; charset=utf-8 1449.5015ms
+2025-10-18 14:16:06.427 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/price-lists/{3a375be2-4334-465b-88bc-b859b4aacf2e}/rules - application/json 135
+2025-10-18 14:16:06.436 +03:00 [INF] Request started
+2025-10-18 14:16:06.438 +03:00 [INF] === Incoming Request ===
+2025-10-18 14:16:06.439 +03:00 [INF] Path: /api/price-lists/%7B3a375be2-4334-465b-88bc-b859b4aacf2e%7D/rules
+2025-10-18 14:16:06.440 +03:00 [INF] Method: POST
+2025-10-18 14:16:06.440 +03:00 [INF] === Headers ===
+2025-10-18 14:16:06.442 +03:00 [INF] Accept: ["*/*"]
+2025-10-18 14:16:06.444 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-18 14:16:06.445 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-18 14:16:06.447 +03:00 [INF] User-Agent: ["PostmanRuntime/7.49.0"]
+2025-10-18 14:16:06.449 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-18 14:16:06.450 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-18 14:16:06.451 +03:00 [INF] Content-Length: ["135"]
+2025-10-18 14:16:06.452 +03:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-10-18 14:16:06.454 +03:00 [INF] Postman-Token: ["0eacc84b-14f5-4c8b-9f56-64fbf41bcded"]
+2025-10-18 14:16:06.458 +03:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-10-18 14:16:06.459 +03:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-10-18 14:16:06.460 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListRulesController.CreateRule (ModularERP)'
+2025-10-18 14:16:06.466 +03:00 [INF] Route matched with {action = "CreateRule", controller = "PriceListRules"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Inventory.Features.PriceLists.DTO.DTO_PriceRule.PriceListRuleResponseDTO]]] CreateRule(System.Guid, ModularERP.Modules.Inventory.Features.PriceLists.DTO.DTO_PriceRule.CreatePriceListRuleDTO) on controller ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListRulesController (ModularERP).
+2025-10-18 14:16:06.560 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListRulesController.CreateRule (ModularERP) in 91.1205ms
+2025-10-18 14:16:06.563 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListRulesController.CreateRule (ModularERP)'
+2025-10-18 14:16:06.565 +03:00 [WRN] Business logic exception occurred: A rule with Priority 1 already exists for this price list
+ModularERP.Common.Exceptions.BusinessLogicException: A rule with Priority 1 already exists for this price list
+   at ModularERP.Modules.Inventory.Features.PriceLists.Handlers.Handler_PriceRule.CreatePriceListRuleHandler.Handle(CreatePriceListRuleCommand request, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Modules\Inventory\Features\PriceLists\Handlers\Handler_PriceRule\CreatePriceListRuleHandler.cs:line 49
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListRulesController.CreateRule(Guid priceListId, CreatePriceListRuleDTO dto) in E:\ModelerERP\ModularERP\ModularERP\Modules\Inventory\Features\PriceLists\Controllers\PriceListRulesController.cs:line 33
+   at lambda_method1164(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at ModularERP.Program.<>c.<<Main>b__0_7>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 350
+--- End of stack trace from previous location ---
+   at ModularERP.Program.<>c.<<Main>b__0_6>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 303
+--- End of stack trace from previous location ---
+   at ModularERP.Common.Middleware.GlobalErrorHandlerMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\ModelerERP\ModularERP\ModularERP\Common\Middleware\GlobalErrorHandlerMiddleware.cs:line 40
+2025-10-18 14:16:06.614 +03:00 [INF] Error response sent with status code 400
+2025-10-18 14:16:06.616 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/price-lists/{3a375be2-4334-465b-88bc-b859b4aacf2e}/rules - 400 null application/json; charset=utf-8 189.1863ms
+2025-10-18 14:16:37.751 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/price-lists/{3a375be2-4334-465b-88bc-b859b4aacf2e}/rules - application/json 135
+2025-10-18 14:16:37.756 +03:00 [INF] Request started
+2025-10-18 14:16:37.757 +03:00 [INF] === Incoming Request ===
+2025-10-18 14:16:37.758 +03:00 [INF] Path: /api/price-lists/%7B3a375be2-4334-465b-88bc-b859b4aacf2e%7D/rules
+2025-10-18 14:16:37.759 +03:00 [INF] Method: POST
+2025-10-18 14:16:37.760 +03:00 [INF] === Headers ===
+2025-10-18 14:16:37.761 +03:00 [INF] Accept: ["*/*"]
+2025-10-18 14:16:37.763 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-18 14:16:37.765 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-18 14:16:37.766 +03:00 [INF] User-Agent: ["PostmanRuntime/7.49.0"]
+2025-10-18 14:16:37.768 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-18 14:16:37.769 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-18 14:16:37.770 +03:00 [INF] Content-Length: ["135"]
+2025-10-18 14:16:37.772 +03:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-10-18 14:16:37.774 +03:00 [INF] Postman-Token: ["6195867a-92fd-475c-94f0-71338b473d0a"]
+2025-10-18 14:16:37.775 +03:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-10-18 14:16:37.776 +03:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-10-18 14:16:37.777 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListRulesController.CreateRule (ModularERP)'
+2025-10-18 14:16:37.780 +03:00 [INF] Route matched with {action = "CreateRule", controller = "PriceListRules"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Inventory.Features.PriceLists.DTO.DTO_PriceRule.PriceListRuleResponseDTO]]] CreateRule(System.Guid, ModularERP.Modules.Inventory.Features.PriceLists.DTO.DTO_PriceRule.CreatePriceListRuleDTO) on controller ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListRulesController (ModularERP).
+2025-10-18 14:16:37.832 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Inventory.Features.PriceLists.DTO.DTO_PriceRule.PriceListRuleResponseDTO, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-18 14:16:37.838 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListRulesController.CreateRule (ModularERP) in 55.7001ms
+2025-10-18 14:16:37.841 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListRulesController.CreateRule (ModularERP)'
+2025-10-18 14:16:37.842 +03:00 [INF] Request completed successfully with status code 200
+2025-10-18 14:16:37.843 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/price-lists/{3a375be2-4334-465b-88bc-b859b4aacf2e}/rules - 200 null application/json; charset=utf-8 92.5861ms
+2025-10-18 14:20:14.394 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/price-lists/{3a375be2-4334-465b-88bc-b859b4aacf2e}/rules - application/json 135
+2025-10-18 14:20:14.398 +03:00 [INF] Request started
+2025-10-18 14:20:14.400 +03:00 [INF] === Incoming Request ===
+2025-10-18 14:20:14.401 +03:00 [INF] Path: /api/price-lists/%7B3a375be2-4334-465b-88bc-b859b4aacf2e%7D/rules
+2025-10-18 14:20:14.403 +03:00 [INF] Method: POST
+2025-10-18 14:20:14.404 +03:00 [INF] === Headers ===
+2025-10-18 14:20:14.405 +03:00 [INF] Accept: ["*/*"]
+2025-10-18 14:20:14.406 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-18 14:20:14.407 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-18 14:20:14.409 +03:00 [INF] User-Agent: ["PostmanRuntime/7.49.0"]
+2025-10-18 14:20:14.410 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-18 14:20:14.412 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-18 14:20:14.414 +03:00 [INF] Content-Length: ["135"]
+2025-10-18 14:20:14.415 +03:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-10-18 14:20:14.416 +03:00 [INF] Postman-Token: ["047cf668-b993-4bed-8c3f-64cadcb61985"]
+2025-10-18 14:20:14.418 +03:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-10-18 14:20:14.419 +03:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-10-18 14:20:14.421 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListRulesController.CreateRule (ModularERP)'
+2025-10-18 14:20:14.422 +03:00 [INF] Route matched with {action = "CreateRule", controller = "PriceListRules"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Inventory.Features.PriceLists.DTO.DTO_PriceRule.PriceListRuleResponseDTO]]] CreateRule(System.Guid, ModularERP.Modules.Inventory.Features.PriceLists.DTO.DTO_PriceRule.CreatePriceListRuleDTO) on controller ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListRulesController (ModularERP).
+2025-10-18 14:20:14.437 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListRulesController.CreateRule (ModularERP) in 11.8837ms
+2025-10-18 14:20:14.440 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListRulesController.CreateRule (ModularERP)'
+2025-10-18 14:20:14.442 +03:00 [WRN] Business logic exception occurred: A rule with Priority 1 already exists for this price list
+ModularERP.Common.Exceptions.BusinessLogicException: A rule with Priority 1 already exists for this price list
+   at ModularERP.Modules.Inventory.Features.PriceLists.Handlers.Handler_PriceRule.CreatePriceListRuleHandler.Handle(CreatePriceListRuleCommand request, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Modules\Inventory\Features\PriceLists\Handlers\Handler_PriceRule\CreatePriceListRuleHandler.cs:line 49
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListRulesController.CreateRule(Guid priceListId, CreatePriceListRuleDTO dto) in E:\ModelerERP\ModularERP\ModularERP\Modules\Inventory\Features\PriceLists\Controllers\PriceListRulesController.cs:line 33
+   at lambda_method1164(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at ModularERP.Program.<>c.<<Main>b__0_7>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 350
+--- End of stack trace from previous location ---
+   at ModularERP.Program.<>c.<<Main>b__0_6>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 303
+--- End of stack trace from previous location ---
+   at ModularERP.Common.Middleware.GlobalErrorHandlerMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\ModelerERP\ModularERP\ModularERP\Common\Middleware\GlobalErrorHandlerMiddleware.cs:line 40
+2025-10-18 14:20:14.454 +03:00 [INF] Error response sent with status code 400
+2025-10-18 14:20:14.455 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/price-lists/{3a375be2-4334-465b-88bc-b859b4aacf2e}/rules - 400 null application/json; charset=utf-8 60.4643ms
+2025-10-18 14:20:26.874 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/price-lists/{3a375be2-4334-465b-88bc-b859b4aacf2e}/rules - application/json 135
+2025-10-18 14:20:26.878 +03:00 [INF] Request started
+2025-10-18 14:20:26.879 +03:00 [INF] === Incoming Request ===
+2025-10-18 14:20:26.880 +03:00 [INF] Path: /api/price-lists/%7B3a375be2-4334-465b-88bc-b859b4aacf2e%7D/rules
+2025-10-18 14:20:26.881 +03:00 [INF] Method: POST
+2025-10-18 14:20:26.882 +03:00 [INF] === Headers ===
+2025-10-18 14:20:26.882 +03:00 [INF] Accept: ["*/*"]
+2025-10-18 14:20:26.884 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-18 14:20:26.885 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-18 14:20:26.888 +03:00 [INF] User-Agent: ["PostmanRuntime/7.49.0"]
+2025-10-18 14:20:26.890 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-18 14:20:26.892 +03:00 [INF] Content-Type: ["application/json"]
+2025-10-18 14:20:26.894 +03:00 [INF] Content-Length: ["135"]
+2025-10-18 14:20:26.896 +03:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-10-18 14:20:26.897 +03:00 [INF] Postman-Token: ["5b52dfcc-3c19-4e2e-9020-02ab750ecbfa"]
+2025-10-18 14:20:26.898 +03:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-10-18 14:20:26.899 +03:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-10-18 14:20:26.900 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListRulesController.CreateRule (ModularERP)'
+2025-10-18 14:20:26.902 +03:00 [INF] Route matched with {action = "CreateRule", controller = "PriceListRules"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Inventory.Features.PriceLists.DTO.DTO_PriceRule.PriceListRuleResponseDTO]]] CreateRule(System.Guid, ModularERP.Modules.Inventory.Features.PriceLists.DTO.DTO_PriceRule.CreatePriceListRuleDTO) on controller ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListRulesController (ModularERP).
+2025-10-18 14:20:26.926 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Inventory.Features.PriceLists.DTO.DTO_PriceRule.PriceListRuleResponseDTO, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-18 14:20:26.928 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListRulesController.CreateRule (ModularERP) in 22.4232ms
+2025-10-18 14:20:26.930 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListRulesController.CreateRule (ModularERP)'
+2025-10-18 14:20:26.931 +03:00 [INF] Request completed successfully with status code 200
+2025-10-18 14:20:26.933 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/price-lists/{3a375be2-4334-465b-88bc-b859b4aacf2e}/rules - 200 null application/json; charset=utf-8 58.4622ms
+2025-10-18 14:22:17.736 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/price-lists/{3a375be2-4334-465b-88bc-b859b4aacf2e}/rules - null null
+2025-10-18 14:22:17.741 +03:00 [INF] Request started
+2025-10-18 14:22:17.742 +03:00 [INF] === Incoming Request ===
+2025-10-18 14:22:17.743 +03:00 [INF] Path: /api/price-lists/%7B3a375be2-4334-465b-88bc-b859b4aacf2e%7D/rules
+2025-10-18 14:22:17.744 +03:00 [INF] Method: GET
+2025-10-18 14:22:17.745 +03:00 [INF] === Headers ===
+2025-10-18 14:22:17.746 +03:00 [INF] Accept: ["*/*"]
+2025-10-18 14:22:17.747 +03:00 [INF] Connection: ["keep-alive"]
+2025-10-18 14:22:17.749 +03:00 [INF] Host: ["localhost:7168"]
+2025-10-18 14:22:17.750 +03:00 [INF] User-Agent: ["PostmanRuntime/7.49.0"]
+2025-10-18 14:22:17.751 +03:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-10-18 14:22:17.754 +03:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-10-18 14:22:17.756 +03:00 [INF] Postman-Token: ["ff129d46-0c9c-41aa-ba69-4227ecf1a3f6"]
+2025-10-18 14:22:17.758 +03:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-10-18 14:22:17.759 +03:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-10-18 14:22:17.760 +03:00 [INF] Executing endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListRulesController.GetAllRules (ModularERP)'
+2025-10-18 14:22:17.763 +03:00 [INF] Route matched with {action = "GetAllRules", controller = "PriceListRules"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Collections.Generic.List`1[ModularERP.Modules.Inventory.Features.PriceLists.DTO.DTO_PriceRule.PriceListRuleResponseDTO]]]] GetAllRules(System.Guid) on controller ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListRulesController (ModularERP).
+2025-10-18 14:22:17.799 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Inventory.Features.PriceLists.DTO.DTO_PriceRule.PriceListRuleResponseDTO, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-10-18 14:22:17.803 +03:00 [INF] Executed action ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListRulesController.GetAllRules (ModularERP) in 37.5686ms
+2025-10-18 14:22:17.805 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.PriceLists.Controllers.PriceListRulesController.GetAllRules (ModularERP)'
+2025-10-18 14:22:17.806 +03:00 [INF] Request completed successfully with status code 200
+2025-10-18 14:22:17.808 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/price-lists/{3a375be2-4334-465b-88bc-b859b4aacf2e}/rules - 200 null application/json; charset=utf-8 71.7143ms

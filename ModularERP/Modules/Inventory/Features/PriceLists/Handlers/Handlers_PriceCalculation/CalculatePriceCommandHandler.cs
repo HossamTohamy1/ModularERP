@@ -8,6 +8,7 @@ using ModularERP.Modules.Finance.Finance.Infrastructure.Data;
 using ModularERP.Modules.Inventory.Features.PriceLists.Commends.Commands_PriceCalculation;
 using ModularERP.Modules.Inventory.Features.PriceLists.DTO.DTO_PriceCalculation;
 using ModularERP.Modules.Inventory.Features.PriceLists.Models;
+using ModularERP.Modules.Inventory.Features.TaxManagement.Models;
 using ModularERP.Shared.Interfaces;
 
 namespace ModularERP.Modules.Inventory.Features.PriceLists.Handlers.Handlers_PriceCalculation
@@ -30,15 +31,19 @@ namespace ModularERP.Modules.Inventory.Features.PriceLists.Handlers.Handlers_Pri
 
         public async Task<PriceCalculationResultDTO> Handle(CalculatePriceCommand request, CancellationToken ct)
         {
+            if (request.Quantity <= 0)
+                throw new BusinessLogicException(
+                    "Quantity must be greater than zero",
+                    "Inventory",
+                    FinanceErrorCode.ValidationError);
+
+            // Get product with TaxProfiles
             var product = await _context.Products
                 .Where(p => p.Id == request.ProductId && !p.IsDeleted)
-                .Select(p => new
-                {
-                    p.Id,
-                    p.Name,
-                    p.PurchasePrice,
-                    p.SellingPrice
-                })
+                .Include(p => p.ProductTaxProfiles.Where(ptp => !ptp.IsDeleted))
+                    .ThenInclude(ptp => ptp.TaxProfile)
+                        .ThenInclude(tp => tp.TaxProfileComponents.Where(tpc => !tpc.IsDeleted))
+                            .ThenInclude(tpc => tpc.TaxComponent)
                 .FirstOrDefaultAsync(ct);
 
             if (product == null)
@@ -48,10 +53,10 @@ namespace ModularERP.Modules.Inventory.Features.PriceLists.Handlers.Handlers_Pri
 
             var transactionId = Guid.NewGuid();
             var steps = new List<PriceStepDTO>();
-            decimal currentPrice = product.PurchasePrice ?? 0;
+            decimal currentPrice = product.PurchasePrice ?? product.SellingPrice ?? 0;
             int stepOrder = 0;
 
-            // Base price step
+            // Base Price Step
             steps.Add(new PriceStepDTO
             {
                 StepOrder = stepOrder++,
@@ -62,9 +67,134 @@ namespace ModularERP.Modules.Inventory.Features.PriceLists.Handlers.Handlers_Pri
                 AdjustmentAmount = currentPrice
             });
 
+            // Get PriceList
+            Guid? priceListId = await GetPriceListId(request, ct);
+            await ValidatePriceList(priceListId, ct);
+
+            // Check PriceListItem override
+            var priceListItem = await _context.Set<PriceListItem>()
+                .Where(i => i.PriceListId == priceListId.Value &&
+                            i.ProductId == request.ProductId &&
+                            !i.IsDeleted &&
+                            (i.ValidFrom == null || i.ValidFrom <= DateTime.UtcNow) &&
+                            (i.ValidTo == null || i.ValidTo >= DateTime.UtcNow))
+                .FirstOrDefaultAsync(ct);
+
+            if (priceListItem != null && priceListItem.BasePrice.HasValue)
+            {
+                decimal priceBefore = currentPrice;
+                currentPrice = priceListItem.BasePrice.Value;
+
+                steps.Add(new PriceStepDTO
+                {
+                    StepOrder = stepOrder++,
+                    RuleName = "Price List Item Override",
+                    RuleType = "Override",
+                    ValueBefore = priceBefore,
+                    ValueAfter = currentPrice,
+                    AdjustmentAmount = currentPrice - priceBefore
+                });
+            }
+
+            // Apply Price Rules
+            var rules = await _context.Set<PriceListRule>()
+                .Where(r => r.PriceListId == priceListId.Value &&
+                           !r.IsDeleted &&
+                           (r.StartDate == null || r.StartDate <= DateTime.UtcNow) &&
+                           (r.EndDate == null || r.EndDate >= DateTime.UtcNow))
+                .OrderBy(r => r.Priority)
+                .ToListAsync(ct);
+
+            foreach (var rule in rules)
+            {
+                decimal priceBefore = currentPrice;
+                currentPrice = ApplyRule(currentPrice, rule);
+
+                steps.Add(new PriceStepDTO
+                {
+                    StepOrder = stepOrder++,
+                    RuleName = $"{rule.RuleType} ({rule.Value}%)",
+                    RuleType = rule.RuleType.ToString(),
+                    ValueBefore = priceBefore,
+                    ValueAfter = currentPrice,
+                    AdjustmentAmount = currentPrice - priceBefore
+                });
+
+                if (request.CreateLog)
+                {
+                    await LogStep(transactionId, request, rule.RuleType.ToString(), priceBefore, currentPrice);
+                }
+            }
+
+            // Apply Bulk Discounts
+            (currentPrice, stepOrder) = await ApplyBulkDiscounts(
+                priceListId.Value,
+                request.ProductId,
+                request.Quantity,
+                currentPrice,
+                steps,
+                stepOrder,
+                transactionId,
+                request,
+                ct);
+
+            // Apply Tax using ProductTaxProfiles
+            decimal totalTax = 0;
+            if (product.ProductTaxProfiles.Any() || priceListItem?.TaxProfileId != null)
+            {
+                var taxProfiles = product.ProductTaxProfiles.Select(ptp => ptp.TaxProfile).ToList();
+
+                foreach (var tp in taxProfiles)
+                {
+                    (decimal taxAmount, int newStepOrder) = await ApplyTax(tp, currentPrice, steps, stepOrder, ct);
+                    totalTax += taxAmount;
+                    stepOrder = newStepOrder;
+                    currentPrice += taxAmount;
+                }
+
+                // If PriceListItem has TaxProfile override
+                if (priceListItem?.TaxProfileId != null)
+                {
+                    var taxProfile = await _context.Set<TaxProfile>()
+                        .Include(tp => tp.TaxProfileComponents.Where(c => !c.IsDeleted))
+                            .ThenInclude(tpc => tpc.TaxComponent)
+                        .FirstOrDefaultAsync(tp => tp.Id == priceListItem.TaxProfileId, ct);
+
+                    if (taxProfile != null)
+                    {
+                        (decimal taxAmount, int newStepOrder) = await ApplyTax(taxProfile, currentPrice, steps, stepOrder, ct);
+                        totalTax += taxAmount;
+                        stepOrder = newStepOrder;
+                        currentPrice += taxAmount;
+                    }
+                }
+            }
+
+            if (request.CreateLog)
+                await _logRepository.SaveChanges();
+
+            var totalDiscount = steps
+                .Where(s => s.RuleType == "BulkDiscount" || s.RuleType == "Promotion")
+                .Sum(s => Math.Abs(s.AdjustmentAmount));
+
+            return new PriceCalculationResultDTO
+            {
+                TransactionId = request.CreateLog ? transactionId : null,
+                ProductId = product.Id,
+                ProductName = product.Name,
+                BasePrice = product.PurchasePrice ?? product.SellingPrice ?? 0,
+                FinalPrice = currentPrice,
+                TotalDiscount = totalDiscount,
+                TotalTax = totalTax,
+                CalculationSteps = steps,
+                CalculatedAt = DateTime.UtcNow
+            };
+        }
+
+        private async Task<Guid?> GetPriceListId(CalculatePriceCommand request, CancellationToken ct)
+        {
             Guid? priceListId = request.PriceListId;
 
-            // Try to get customer-specific price list
             if (priceListId == null && request.CustomerId.HasValue)
             {
                 priceListId = await _context.Set<PriceListAssignment>()
@@ -75,7 +205,6 @@ namespace ModularERP.Modules.Inventory.Features.PriceLists.Handlers.Handlers_Pri
                     .FirstOrDefaultAsync(ct);
             }
 
-            // If still null, get default price list
             if (priceListId == null)
             {
                 priceListId = await _context.PriceLists
@@ -87,105 +216,73 @@ namespace ModularERP.Modules.Inventory.Features.PriceLists.Handlers.Handlers_Pri
                     .FirstOrDefaultAsync(ct);
             }
 
-            // 🔥 Validation: تحقق من وجود Price List
+            return priceListId;
+        }
+
+        private async Task ValidatePriceList(Guid? priceListId, CancellationToken ct)
+        {
             if (!priceListId.HasValue)
-            {
                 throw new BusinessLogicException(
-                    "No valid Price List found. Please provide a valid PriceListId or ensure a default price list exists.",
+                    "No valid Price List found.",
                     "Inventory",
                     FinanceErrorCode.ValidationError);
-            }
 
-            // 🔥 Validation: تحقق من وجود Rules للـ Price List
             var hasRules = await _context.Set<PriceListRule>()
                 .AnyAsync(r => r.PriceListId == priceListId.Value && !r.IsDeleted, ct);
 
             if (!hasRules)
-            {
                 throw new BusinessLogicException(
-                    $"The Price List (ID: {priceListId.Value}) must have at least one active Price Rule before calculating prices.",
+                    $"The Price List (ID: {priceListId.Value}) must have at least one active Price Rule.",
                     "Inventory",
                     FinanceErrorCode.ValidationError);
-            }
+        }
 
-            // Apply price rules
-            var rules = await _context.Set<PriceListRule>()
-                .Where(r => r.PriceListId == priceListId.Value && !r.IsDeleted)
-                .OrderBy(r => r.Priority)
-                .Select(r => new
-                {
-                    r.Id,
-                    r.RuleType,
-                    r.Value
-                })
-                .ToListAsync(ct);
-
-            foreach (var rule in rules)
+        private decimal ApplyRule(decimal currentPrice, PriceListRule rule)
+        {
+            return rule.RuleType switch
             {
-                decimal priceBefore = currentPrice;
+                PriceRuleType.Markup => currentPrice * (1 + (rule.Value ?? 0) / 100),
+                PriceRuleType.Margin => currentPrice / (1 - ((rule.Value ?? 0) / 100)),
+                PriceRuleType.FixedAdjustment => currentPrice + (rule.Value ?? 0),
+                PriceRuleType.CurrencyConversion => currentPrice * (rule.Value ?? 1),
+                PriceRuleType.Promotion => currentPrice * (1 - (rule.Value ?? 0) / 100),
+                _ => currentPrice
+            };
+        }
 
-                currentPrice = rule.RuleType switch
-                {
-                    PriceRuleType.Markup => currentPrice * (1 + (rule.Value ?? 0) / 100),
-                    PriceRuleType.Margin => currentPrice / (1 - ((rule.Value ?? 0) / 100)),
-                    PriceRuleType.FixedAdjustment => currentPrice + (rule.Value ?? 0),
-                    _ => currentPrice
-                };
-
-                steps.Add(new PriceStepDTO
-                {
-                    StepOrder = stepOrder++,
-                    RuleName = rule.RuleType.ToString(),
-                    RuleType = rule.RuleType.ToString(),
-                    ValueBefore = priceBefore,
-                    ValueAfter = currentPrice,
-                    AdjustmentAmount = currentPrice - priceBefore
-                });
-
-                if (request.CreateLog)
-                {
-                    await _logRepository.AddAsync(new PriceCalculationLog
-                    {
-                        TransactionId = transactionId,
-                        TransactionType = request.TransactionType,
-                        ProductId = request.ProductId,
-                        AppliedRule = $"{rule.RuleType}",
-                        ValueBefore = priceBefore,
-                        ValueAfter = currentPrice,
-                        UserId = request.UserId,
-                        Timestamp = DateTime.UtcNow
-                    });
-                }
-            }
-
-            // Apply bulk discounts
-            var discounts = await _context.Set<BulkDiscount>()
-                .Where(d => d.PriceListId == priceListId.Value &&
-                           d.ProductId == request.ProductId &&
-                           d.MinQty <= request.Quantity &&
-                           (d.MaxQty == null || d.MaxQty >= request.Quantity) &&
-                           !d.IsDeleted)
+        private async Task<(decimal newPrice, int newStepOrder)> ApplyBulkDiscounts(
+            Guid priceListId,
+            Guid productId,
+            decimal quantity,
+            decimal currentPrice,
+            List<PriceStepDTO> steps,
+            int stepOrder,
+            Guid transactionId,
+            CalculatePriceCommand request,
+            CancellationToken ct)
+        {
+            var discount = await _context.Set<BulkDiscount>()
+                .Where(d => d.PriceListId == priceListId &&
+                            d.ProductId == productId &&
+                            d.MinQty <= quantity &&
+                            (d.MaxQty == null || d.MaxQty >= quantity) &&
+                            !d.IsDeleted)
                 .OrderByDescending(d => d.DiscountValue)
-                .Select(d => new
-                {
-                    d.DiscountType,
-                    d.DiscountValue
-                })
                 .FirstOrDefaultAsync(ct);
 
-            if (discounts != null)
+            if (discount != null)
             {
                 decimal priceBefore = currentPrice;
-                decimal discountAmount = discounts.DiscountType == DiscountType.Percentage
-                    ? currentPrice * (discounts.DiscountValue / 100)
-                    : discounts.DiscountValue;
+                decimal discountAmount = discount.DiscountType == DiscountType.Percentage
+                    ? currentPrice * (discount.DiscountValue / 100)
+                    : discount.DiscountValue;
 
                 currentPrice -= discountAmount;
 
                 steps.Add(new PriceStepDTO
                 {
-                    StepOrder = stepOrder++,
-                    RuleName = $"Bulk Discount (Qty: {request.Quantity})",
+                    StepOrder = stepOrder,
+                    RuleName = $"Bulk Discount (Qty: {quantity})",
                     RuleType = "BulkDiscount",
                     ValueBefore = priceBefore,
                     ValueAfter = currentPrice,
@@ -193,42 +290,64 @@ namespace ModularERP.Modules.Inventory.Features.PriceLists.Handlers.Handlers_Pri
                 });
 
                 if (request.CreateLog)
+                    await LogStep(transactionId, request, $"Bulk Discount - {discount.DiscountType}", priceBefore, currentPrice);
+
+                stepOrder++;
+            }
+
+            return (currentPrice, stepOrder);
+        }
+
+        private async Task<(decimal, int)> ApplyTax(
+            TaxProfile taxProfile,
+            decimal currentPrice,
+            List<PriceStepDTO> steps,
+            int stepOrder,
+            CancellationToken ct)
+        {
+            decimal totalTax = 0;
+
+            foreach (var component in taxProfile.TaxProfileComponents.OrderBy(c => c.Priority))
+            {
+                decimal taxAmount = component.TaxComponent.RateType == TaxRateType.Percentage
+                    ? currentPrice * (component.TaxComponent.RateValue / 100)
+                    : component.TaxComponent.RateValue;
+
+                steps.Add(new PriceStepDTO
                 {
-                    await _logRepository.AddAsync(new PriceCalculationLog
-                    {
-                        TransactionId = transactionId,
-                        TransactionType = request.TransactionType,
-                        ProductId = request.ProductId,
-                        AppliedRule = $"Bulk Discount - {discounts.DiscountType}",
-                        ValueBefore = priceBefore,
-                        ValueAfter = currentPrice,
-                        UserId = request.UserId,
-                        Timestamp = DateTime.UtcNow
-                    });
-                }
+                    StepOrder = stepOrder++,
+                    RuleName = $"Tax - {component.TaxComponent.Name} ({component.TaxComponent.RateValue}{(component.TaxComponent.RateType == TaxRateType.Percentage ? "%" : "")})",
+                    RuleType = "Tax",
+                    ValueBefore = currentPrice,
+                    ValueAfter = currentPrice + taxAmount,
+                    AdjustmentAmount = taxAmount
+                });
+
+                currentPrice += taxAmount;
+                totalTax += taxAmount;
             }
 
-            if (request.CreateLog)
-            {
-                await _logRepository.SaveChanges();
-            }
+            return (totalTax, stepOrder);
+        }
 
-            var totalDiscount = steps
-                .Where(s => s.AdjustmentAmount < 0)
-                .Sum(s => Math.Abs(s.AdjustmentAmount));
-
-            return new PriceCalculationResultDTO
+        private async Task LogStep(
+            Guid transactionId,
+            CalculatePriceCommand request,
+            string ruleName,
+            decimal valueBefore,
+            decimal valueAfter)
+        {
+            await _logRepository.AddAsync(new PriceCalculationLog
             {
-                TransactionId = request.CreateLog ? transactionId : null,
-                ProductId = product.Id,
-                ProductName = product.Name,
-                BasePrice = product.PurchasePrice ?? 0,
-                FinalPrice = currentPrice,
-                TotalDiscount = totalDiscount,
-                TotalTax = 0,
-                CalculationSteps = steps,
-                CalculatedAt = DateTime.UtcNow
-            };
+                TransactionId = transactionId,
+                TransactionType = request.TransactionType,
+                ProductId = request.ProductId,
+                AppliedRule = ruleName,
+                ValueBefore = valueBefore,
+                ValueAfter = valueAfter,
+                UserId = request.UserId,
+                Timestamp = DateTime.UtcNow
+            });
         }
     }
 }

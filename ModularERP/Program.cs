@@ -239,6 +239,7 @@ namespace ModularERP
                 // ---------------------------
                 builder.Services.AddScoped<IGeneralRepository<Treasury>, GeneralRepository<Treasury>>();
                 builder.Services.AddScoped<IFileUploadService, FileUploadService>();
+                builder.Services.AddScoped<IProductStatsService, ProductStatsService>();
                 builder.Services.AddScoped<IGeneralRepository<BankAccount>, GeneralRepository<BankAccount>>();
                 builder.Services.AddScoped<IExpenseVoucherService, ExpenseVoucherService>();
                 builder.Services.AddScoped<IIncomeVoucherService, IncomeVoucherService>();
