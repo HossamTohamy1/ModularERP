@@ -23,7 +23,6 @@ namespace ModularERP.Modules.Inventory.Features.PriceLists.Handlers.Handler_Pric
 
         public async Task<Unit> Handle(ReorderPriceListRulesCommand request, CancellationToken cancellationToken)
         {
-            // 1. Validate Price List exists
             var priceListExists = await _priceListRepository.AnyAsync(pl => pl.Id == request.PriceListId);
             if (!priceListExists)
             {
@@ -32,7 +31,6 @@ namespace ModularERP.Modules.Inventory.Features.PriceLists.Handlers.Handler_Pric
                     FinanceErrorCode.NotFound);
             }
 
-            // 2. Validate input data
             if (request.Data?.Rules == null || !request.Data.Rules.Any())
             {
                 throw new BusinessLogicException(

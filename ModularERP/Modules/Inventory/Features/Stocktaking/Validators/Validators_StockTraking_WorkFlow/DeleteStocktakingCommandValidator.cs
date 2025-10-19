@@ -1,0 +1,18 @@
+﻿using FluentValidation;
+
+namespace ModularERP.Modules.Inventory.Features.Stocktaking.Validators.Validators_StockTraking_WorkFlow
+{
+    public class DeleteStocktakingCommandValidator : AbstractValidator<DeleteStocktakingCommand>
+    {
+        public DeleteStocktakingCommandValidator()
+        {
+            RuleFor(x => x.StocktakingId)
+                .NotEmpty()
+                .WithMessage("Stocktaking ID is required");
+
+            RuleFor(x => x.CompanyId)
+                .NotEmpty()
+                .WithMessage("Company ID is required");
+        }
+    }
+}

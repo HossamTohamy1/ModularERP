@@ -46,6 +46,7 @@ using ModularERP.Modules.Inventory.Features.PriceLists.Services;
 using Microsoft.OpenApi.Models;
 using ModularERP.Modules.Inventory.Features.Requisitions.Services;
 using Microsoft.Extensions.DependencyInjection;
+using ModularERP.Modules.Inventory.Features.Stocktaking.Services;
 
 namespace ModularERP
 {
@@ -233,6 +234,7 @@ namespace ModularERP
                 builder.Services.AddInventoryModule();
                 builder.Services.AddPriceListServices();
                 builder.Services.AddRequisitionWorkflowServices();
+                builder.Services.AddStocktakingServices();
 
                 // ---------------------------
                 // 🟢 Domain Services
