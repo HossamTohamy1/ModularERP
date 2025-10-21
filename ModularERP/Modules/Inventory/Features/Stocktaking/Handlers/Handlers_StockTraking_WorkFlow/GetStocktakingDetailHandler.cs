@@ -14,12 +14,12 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Handlers.Handlers_St
     {
         private readonly IGeneralRepository<StocktakingHeader> _stocktakingRepo;
         private readonly IMapper _mapper;
-        private readonly ILogger _logger;
+        private readonly ILogger<GetStocktakingDetailHandler> _logger;
 
         public GetStocktakingDetailHandler(
             IGeneralRepository<StocktakingHeader> stocktakingRepo,
             IMapper mapper,
-            ILogger logger)
+            ILogger<GetStocktakingDetailHandler> logger)
         {
             _stocktakingRepo = stocktakingRepo;
             _mapper = mapper;
@@ -32,11 +32,11 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Handlers.Handlers_St
         {
             try
             {
-                _logger.Information("Fetching stocktaking detail {StocktakingId}", request.StocktakingId);
+                _logger.LogInformation("Fetching stocktaking detail {StocktakingId}", request.StocktakingId);
 
                 var stocktaking = await _stocktakingRepo.GetByID(request.StocktakingId);
                 if (stocktaking == null)
-                    throw new NotFoundException("Stocktaking not found", FinanceErrorCode.RecordNotFound);
+                    throw new NotFoundException("Stocktaking not found", FinanceErrorCode.NotFound);
 
                 if (stocktaking.CompanyId != request.CompanyId)
                     throw new BusinessLogicException("Unauthorized access", "Inventory", FinanceErrorCode.UnauthorizedAccess);
@@ -46,7 +46,7 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Handlers.Handlers_St
             }
             catch (Exception ex)
             {
-                _logger.Error(ex, "Error fetching stocktaking detail {StocktakingId}", request.StocktakingId);
+                _logger.LogError(ex, "Error fetching stocktaking detail {StocktakingId}", request.StocktakingId);
                 throw;
             }
         }

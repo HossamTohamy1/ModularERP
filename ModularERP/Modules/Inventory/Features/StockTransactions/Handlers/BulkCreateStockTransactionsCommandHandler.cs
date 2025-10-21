@@ -288,21 +288,21 @@ namespace ModularERP.Modules.Inventory.Features.StockTransactions.Handlers
             var totalSold = await _transactionRepository.GetAll()
                 .Where(t => t.ProductId == productId && t.TransactionType == StockTransactionType.Sale)
                 .SumAsync(t => t.Quantity, cancellationToken);
-            stats.TotalSold = totalSold;
+            stats.TotalSold = (decimal)totalSold;
 
             var last28Days = await _transactionRepository.GetAll()
                 .Where(t => t.ProductId == productId &&
                            t.TransactionType == StockTransactionType.Sale &&
                            t.CreatedAt >= DateTime.UtcNow.AddDays(-28))
                 .SumAsync(t => t.Quantity, cancellationToken);
-            stats.SoldLast28Days = last28Days;
+            stats.SoldLast28Days = (decimal)last28Days;
 
             var last7Days = await _transactionRepository.GetAll()
                 .Where(t => t.ProductId == productId &&
                            t.TransactionType == StockTransactionType.Sale &&
                            t.CreatedAt >= DateTime.UtcNow.AddDays(-7))
                 .SumAsync(t => t.Quantity, cancellationToken);
-            stats.SoldLast7Days = last7Days;
+            stats.SoldLast7Days = (decimal)last7Days;
 
             stats.OnHandStock = currentStock;
             stats.AvgUnitCost = avgUnitCost;

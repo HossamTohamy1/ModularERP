@@ -5,6 +5,7 @@ using ModularERP.Common.Enum.Inventory_Enum;
 using ModularERP.Common.Exceptions;
 using ModularERP.Common.ViewModel;
 using ModularERP.Modules.Inventory.Features.Stocktaking.Commends.Commands_StockTraking_WorkFlow;
+using ModularERP.Modules.Inventory.Features.Stocktaking.DTO.DTO_StockTaking_WorkFlow;
 using ModularERP.Modules.Inventory.Features.Stocktaking.Models;
 using ModularERP.Shared.Interfaces;
 
@@ -14,12 +15,12 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Handlers.Handlers_St
     {
         private readonly IGeneralRepository<StocktakingHeader> _stocktakingRepo;
         private readonly IMapper _mapper;
-        private readonly ILogger _logger;
+        private readonly ILogger<ReviewStocktakingHandler> _logger;
 
         public ReviewStocktakingHandler(
             IGeneralRepository<StocktakingHeader> stocktakingRepo,
             IMapper mapper,
-            ILogger logger)
+            ILogger<ReviewStocktakingHandler> logger)
         {
             _stocktakingRepo = stocktakingRepo;
             _mapper = mapper;
@@ -32,11 +33,11 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Handlers.Handlers_St
         {
             try
             {
-                _logger.Information("Moving stocktaking {StocktakingId} to review", request.StocktakingId);
+                _logger.LogInformation("Moving stocktaking {StocktakingId} to review", request.StocktakingId);
 
                 var stocktaking = await _stocktakingRepo.GetByID(request.StocktakingId);
                 if (stocktaking == null)
-                    throw new NotFoundException("Stocktaking not found", FinanceErrorCode.RecordNotFound);
+                    throw new NotFoundException("Stocktaking not found", FinanceErrorCode.NotFound);
 
                 if (stocktaking.Status != StocktakingStatus.Counting)
                     throw new BusinessLogicException("Only counting sessions can be moved to review", "Inventory");
@@ -53,7 +54,7 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Handlers.Handlers_St
             }
             catch (Exception ex)
             {
-                _logger.Error(ex, "Error reviewing stocktaking {StocktakingId}", request.StocktakingId);
+                _logger.LogError(ex, "Error reviewing stocktaking {StocktakingId}", request.StocktakingId);
                 throw;
             }
         }

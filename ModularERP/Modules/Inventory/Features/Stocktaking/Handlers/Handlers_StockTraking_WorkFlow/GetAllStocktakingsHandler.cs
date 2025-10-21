@@ -12,12 +12,12 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Handlers.Handlers_St
     {
         private readonly IGeneralRepository<StocktakingHeader> _stocktakingRepo;
         private readonly IMapper _mapper;
-        private readonly ILogger _logger;
+        private readonly ILogger<DeleteStocktakingHandler> _logger;
 
         public GetAllStocktakingsHandler(
             IGeneralRepository<StocktakingHeader> stocktakingRepo,
             IMapper mapper,
-            ILogger logger)
+            ILogger<DeleteStocktakingHandler> logger)
         {
             _stocktakingRepo = stocktakingRepo;
             _mapper = mapper;
@@ -30,7 +30,7 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Handlers.Handlers_St
         {
             try
             {
-                _logger.Information("Fetching stocktakings for company {CompanyId}", request.CompanyId);
+                _logger.LogInformation("Fetching stocktakings for company {CompanyId}", request.CompanyId);
 
                 var query = _stocktakingRepo.GetByCompanyId(request.CompanyId);
 
@@ -57,7 +57,7 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Handlers.Handlers_St
             }
             catch (Exception ex)
             {
-                _logger.Error(ex, "Error fetching stocktakings for company {CompanyId}", request.CompanyId);
+                _logger.LogError(ex, "Error fetching stocktakings for company {CompanyId}", request.CompanyId);
                 throw;
             }
         }

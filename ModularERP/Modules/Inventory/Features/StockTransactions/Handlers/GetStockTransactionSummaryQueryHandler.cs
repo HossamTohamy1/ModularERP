@@ -44,14 +44,14 @@ namespace ModularERP.Modules.Inventory.Features.StockTransactions.Handlers
                     ProductName = g.Select(x => x.Product.Name).FirstOrDefault(),
                     WarehouseId = g.Key.WarehouseId,
                     WarehouseName = g.Select(x => x.Warehouse.Name).FirstOrDefault(),
-                    TotalIn = g.Where(x => x.TransactionType == StockTransactionType.Adjustment ||
+                    TotalIn = (decimal)g.Where(x => x.TransactionType == StockTransactionType.Adjustment ||
                                           x.TransactionType == StockTransactionType.Purchase ||
                                           x.TransactionType == StockTransactionType.Return)
                               .Sum(x => x.Quantity),
-                    TotalOut = g.Where(x => x.TransactionType == StockTransactionType.Sale ||
+                    TotalOut = (decimal)g.Where(x => x.TransactionType == StockTransactionType.Sale ||
                                            x.TransactionType == StockTransactionType.Transfer)
                                .Sum(x => x.Quantity),
-                    NetMovement = g.Sum(x => x.TransactionType == StockTransactionType.Sale ||
+                    NetMovement = (decimal)g.Sum(x => x.TransactionType == StockTransactionType.Sale ||
                                             x.TransactionType == StockTransactionType.Transfer
                                             ? -x.Quantity : x.Quantity),
                     CurrentStock = g.OrderByDescending(x => x.CreatedAt).Select(x => x.StockLevelAfter).FirstOrDefault(),

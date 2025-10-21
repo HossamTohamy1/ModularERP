@@ -3,6 +3,7 @@ using MediatR;
 using ModularERP.Common.Enum.Finance_Enum;
 using ModularERP.Common.Exceptions;
 using ModularERP.Common.ViewModel;
+using ModularERP.Modules.Inventory.Features.Stocktaking.DTO.DTO_StockTaking_WorkFlow;
 using ModularERP.Modules.Inventory.Features.Stocktaking.Models;
 using ModularERP.Modules.Inventory.Features.Stocktaking.Qeuries.Qeuries_StockTraking_WorkFlow;
 using ModularERP.Shared.Interfaces;
@@ -13,12 +14,12 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Handlers.Handlers_St
     {
         private readonly IGeneralRepository<StocktakingHeader> _stocktakingRepo;
         private readonly IMapper _mapper;
-        private readonly ILogger _logger;
+        private readonly ILogger<GetStocktakingVarianceSummaryHandler> _logger;
 
         public GetStocktakingVarianceSummaryHandler(
             IGeneralRepository<StocktakingHeader> stocktakingRepo,
             IMapper mapper,
-            ILogger logger)
+            ILogger<GetStocktakingVarianceSummaryHandler> logger)
         {
             _stocktakingRepo = stocktakingRepo;
             _mapper = mapper;
@@ -31,11 +32,11 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Handlers.Handlers_St
         {
             try
             {
-                _logger.Information("Fetching variance summary for stocktaking {StocktakingId}", request.StocktakingId);
+                _logger.LogInformation("Fetching variance summary for stocktaking {StocktakingId}", request.StocktakingId);
 
                 var stocktaking = await _stocktakingRepo.GetByID(request.StocktakingId);
                 if (stocktaking == null)
-                    throw new NotFoundException("Stocktaking not found", FinanceErrorCode.RecordNotFound);
+                    throw new NotFoundException("Stocktaking not found", FinanceErrorCode.NotFound);
 
                 if (stocktaking.CompanyId != request.CompanyId)
                     throw new BusinessLogicException("Unauthorized access", "Inventory", FinanceErrorCode.UnauthorizedAccess);
@@ -64,7 +65,7 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Handlers.Handlers_St
             }
             catch (Exception ex)
             {
-                _logger.Error(ex, "Error fetching variance summary for stocktaking {StocktakingId}", request.StocktakingId);
+                _logger.LogError(ex, "Error fetching variance summary for stocktaking {StocktakingId}", request.StocktakingId);
                 throw;
             }
         }

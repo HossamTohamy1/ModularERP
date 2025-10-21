@@ -65,13 +65,13 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
             // Calculate statistics
             var salesTransactions = transactions.Where(t => t.TransactionType == StockTransactionType.Sale);
 
-            existingStats.TotalSold = salesTransactions.Sum(t => Math.Abs(t.Quantity));
+            existingStats.TotalSold = salesTransactions.Sum(t => Math.Abs(t.Quantity.GetValueOrDefault()));
             existingStats.SoldLast28Days = salesTransactions
                 .Where(t => t.CreatedAt >= last28DaysDate)
-                .Sum(t => Math.Abs(t.Quantity));
+                .Sum(t => Math.Abs(t.Quantity.GetValueOrDefault()));
             existingStats.SoldLast7Days = salesTransactions
                 .Where(t => t.CreatedAt >= last7DaysDate)
-                .Sum(t => Math.Abs(t.Quantity));
+                .Sum(t => Math.Abs(t.Quantity.GetValueOrDefault()));
 
             // Calculate on-hand stock (latest transaction's StockLevelAfter)
             var latestTransaction = transactions.OrderByDescending(t => t.CreatedAt).FirstOrDefault();
@@ -79,16 +79,17 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
 
             // Calculate weighted average unit cost
             var inboundTransactions = transactions
-                .Where(t => t.TransactionType == StockTransactionType.Purchase || t.TransactionType == StockTransactionType .Adjustment&& t.Quantity > 0)
+                .Where(t =>
+                    (t.TransactionType == StockTransactionType.Purchase ||
+                     (t.TransactionType == StockTransactionType.Adjustment && t.Quantity.GetValueOrDefault() > 0)))
                 .ToList();
 
             if (inboundTransactions.Any())
             {
-                var totalCost = inboundTransactions.Sum(t => (t.Quantity) * (t.UnitCost ?? 0));
-                var totalQty = inboundTransactions.Sum(t => t.Quantity );
+                var totalCost = inboundTransactions.Sum(t => t.Quantity.GetValueOrDefault() * (t.UnitCost ?? 0));
+                var totalQty = inboundTransactions.Sum(t => t.Quantity.GetValueOrDefault());
 
                 existingStats.AvgUnitCost = totalQty > 0 ? totalCost / totalQty : 0;
-
             }
 
             existingStats.LastUpdated = DateTime.UtcNow;
@@ -113,5 +114,4 @@ namespace ModularERP.Modules.Inventory.Features.Products.Handlers.Handlers_Produ
             };
         }
     }
-
 }

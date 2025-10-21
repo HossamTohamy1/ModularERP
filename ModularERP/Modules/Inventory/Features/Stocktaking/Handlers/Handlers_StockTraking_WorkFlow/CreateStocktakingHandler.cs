@@ -2,6 +2,7 @@
 using MediatR;
 using ModularERP.Common.Enum.Inventory_Enum;
 using ModularERP.Common.ViewModel;
+using ModularERP.Modules.Inventory.Features.Stocktaking.Commends.Commands_StockTraking_WorkFlow;
 using ModularERP.Modules.Inventory.Features.Stocktaking.DTO.DTO_StockTaking_Header;
 using ModularERP.Modules.Inventory.Features.Stocktaking.Models;
 using ModularERP.Shared.Interfaces;
@@ -12,12 +13,12 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Handlers.Handlers_St
     {
         private readonly IGeneralRepository<StocktakingHeader> _repo;
         private readonly IMapper _mapper;
-        private readonly ILogger _logger;
+        private readonly ILogger<CreateStocktakingHandler> _logger;
 
         public CreateStocktakingHandler(
             IGeneralRepository<StocktakingHeader> repo,
             IMapper mapper,
-            ILogger logger)
+            ILogger<CreateStocktakingHandler> logger)
         {
             _repo = repo;
             _mapper = mapper;
@@ -30,7 +31,7 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Handlers.Handlers_St
         {
             try
             {
-                _logger.Information("Creating stocktaking {Number} for warehouse {WarehouseId}",
+                _logger.LogInformation("Creating stocktaking {Number} for warehouse {WarehouseId}",
                     request.Number, request.WarehouseId);
 
                 var entity = new StocktakingHeader
@@ -55,7 +56,7 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Handlers.Handlers_St
             }
             catch (Exception ex)
             {
-                _logger.Error(ex, "Error creating stocktaking");
+                _logger.LogError(ex, "Error creating stocktaking");
                 throw;
             }
         }

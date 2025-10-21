@@ -21,7 +21,7 @@ namespace ModularERP.Modules.Inventory.Features.StockTransactions.Models
 
         [Required]
         [Column(TypeName = "decimal(18,3)")]
-        public decimal Quantity { get; set; }
+        public decimal? Quantity { get; set; }
 
         [Column(TypeName = "decimal(18,4)")]
         public decimal? UnitCost { get; set; }

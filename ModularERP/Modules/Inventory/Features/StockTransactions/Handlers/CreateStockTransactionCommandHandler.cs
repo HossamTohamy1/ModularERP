@@ -250,7 +250,7 @@ namespace ModularERP.Modules.Inventory.Features.StockTransactions.Handlers
                                t.TransactionType == StockTransactionType.Sale &&
                                t.CreatedAt >= DateTime.UtcNow.AddDays(-28))
                     .SumAsync(t => t.Quantity, cancellationToken);
-                stats.SoldLast28Days = last28Days;
+                stats.SoldLast28Days = (decimal)last28Days;
 
                 // Update sold last 7 days
                 var last7Days = await _transactionRepository.GetAll()
@@ -258,7 +258,7 @@ namespace ModularERP.Modules.Inventory.Features.StockTransactions.Handlers
                                t.TransactionType == StockTransactionType.Sale &&
                                t.CreatedAt >= DateTime.UtcNow.AddDays(-7))
                     .SumAsync(t => t.Quantity, cancellationToken);
-                stats.SoldLast7Days = last7Days;
+                stats.SoldLast7Days = (decimal)last7Days;
             }
 
             stats.OnHandStock = currentStock;

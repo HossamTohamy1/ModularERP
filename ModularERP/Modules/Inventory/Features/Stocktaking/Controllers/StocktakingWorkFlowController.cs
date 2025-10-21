@@ -16,7 +16,7 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Controllers
         private readonly IMediator _mediator;
         private readonly ILogger _logger;
 
-        public StocktakingController(IMediator mediator, ILogger logger)
+        public StocktakingWorkFlowController(IMediator mediator, ILogger logger)
         {
             _mediator = mediator;
             _logger = logger;
@@ -30,7 +30,7 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Controllers
             [FromBody] CreateStocktakingCommand command,
             CancellationToken cancellationToken = default)
         {
-            _logger.Information("POST: Create Stocktaking");
+            _logger.LogInformation("POST: Create Stocktaking");
             var result = await _mediator.Send(command, cancellationToken);
             return Ok(result);
         }
@@ -44,7 +44,7 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Controllers
             [FromBody] UpdateStocktakingCommand command,
             CancellationToken cancellationToken = default)
         {
-            _logger.Information("PUT: Update Stocktaking {StocktakingId}", id);
+            _logger.LogInformation("PUT: Update Stocktaking {StocktakingId}", id);
             command.StocktakingId = id;
             var result = await _mediator.Send(command, cancellationToken);
             return Ok(result);
@@ -59,7 +59,7 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Controllers
             [FromQuery] Guid companyId,
             CancellationToken cancellationToken = default)
         {
-            _logger.Information("DELETE: Delete Stocktaking {StocktakingId}", id);
+            _logger.LogInformation("DELETE: Delete Stocktaking {StocktakingId}", id);
             var command = new DeleteStocktakingCommand { StocktakingId = id, CompanyId = companyId };
             var result = await _mediator.Send(command, cancellationToken);
             return Ok(result);
@@ -74,7 +74,7 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Controllers
             [FromQuery] Guid companyId,
             CancellationToken cancellationToken = default)
         {
-            _logger.Information("GET: Stocktaking Detail {StocktakingId}", id);
+            _logger.LogInformation("GET: Stocktaking Detail {StocktakingId}", id);
             var query = new GetStocktakingDetailQuery { StocktakingId = id, CompanyId = companyId };
             var result = await _mediator.Send(query, cancellationToken);
             return Ok(result);
@@ -94,7 +94,7 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Controllers
             [FromQuery] int pageSize = 10,
             CancellationToken cancellationToken = default)
         {
-            _logger.Information("GET: List Stocktakings for Company {CompanyId}", companyId);
+            _logger.LogInformation("GET: List Stocktakings for Company {CompanyId}", companyId);
 
             StocktakingStatus? parsedStatus = null;
             if (!string.IsNullOrEmpty(status) && Enum.TryParse<StocktakingStatus>(status, true, out var enumStatus))
@@ -126,7 +126,7 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Controllers
             [FromQuery] Guid companyId,
             CancellationToken cancellationToken = default)
         {
-            _logger.Information("POST: Start Stocktaking {StocktakingId}", id);
+            _logger.LogInformation("POST: Start Stocktaking {StocktakingId}", id);
             var userId = GetCurrentUserId();
             var command = new StartStocktakingCommand
             {
@@ -147,7 +147,7 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Controllers
             [FromQuery] Guid companyId,
             CancellationToken cancellationToken = default)
         {
-            _logger.Information("POST: Review Stocktaking {StocktakingId}", id);
+            _logger.LogInformation("POST: Review Stocktaking {StocktakingId}", id);
             var userId = GetCurrentUserId();
             var command = new ReviewStocktakingCommand
             {
@@ -169,7 +169,7 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Controllers
             [FromQuery] bool forcePost = false,
             CancellationToken cancellationToken = default)
         {
-            _logger.Information("POST: Post Stocktaking {StocktakingId}", id);
+            _logger.LogInformation("POST: Post Stocktaking {StocktakingId}", id);
             var userId = GetCurrentUserId();
             var command = new PostStocktakingCommand
             {
@@ -191,7 +191,7 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Controllers
             [FromQuery] Guid companyId,
             CancellationToken cancellationToken = default)
         {
-            _logger.Information("GET: Variance Summary for Stocktaking {StocktakingId}", id);
+            _logger.LogInformation("GET: Variance Summary for Stocktaking {StocktakingId}", id);
             var query = new GetStocktakingVarianceSummaryQuery { StocktakingId = id, CompanyId = companyId };
             var result = await _mediator.Send(query, cancellationToken);
             return Ok(result);
@@ -206,7 +206,7 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Controllers
             [FromQuery] Guid companyId,
             CancellationToken cancellationToken = default)
         {
-            _logger.Information("GET: Preview Adjustments for Stocktaking {StocktakingId}", id);
+            _logger.LogInformation("GET: Preview Adjustments for Stocktaking {StocktakingId}", id);
             var query = new GetPreviewAdjustmentsQuery { StocktakingId = id, CompanyId = companyId };
             var result = await _mediator.Send(query, cancellationToken);
             return Ok(result);

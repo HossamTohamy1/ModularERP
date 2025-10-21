@@ -5,6 +5,7 @@ using ModularERP.Common.Enum.Inventory_Enum;
 using ModularERP.Common.Exceptions;
 using ModularERP.Common.ViewModel;
 using ModularERP.Modules.Inventory.Features.Stocktaking.Commends.Commands_StockTraking_WorkFlow;
+using ModularERP.Modules.Inventory.Features.Stocktaking.DTO.DTO_StockTaking_WorkFlow;
 using ModularERP.Modules.Inventory.Features.Stocktaking.Models;
 using ModularERP.Modules.Inventory.Features.StockTransactions.Models;
 using ModularERP.Modules.Inventory.Features.Warehouses.Models;
@@ -18,14 +19,14 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Handlers.Handlers_St
         private readonly IGeneralRepository<WarehouseStock> _warehouseStockRepo;
         private readonly IGeneralRepository<StockTransaction> _transactionRepo;
         private readonly IMapper _mapper;
-        private readonly ILogger _logger;
+        private readonly ILogger<PostStocktakingHandler> _logger;
 
         public PostStocktakingHandler(
             IGeneralRepository<StocktakingHeader> stocktakingRepo,
             IGeneralRepository<WarehouseStock> warehouseStockRepo,
             IGeneralRepository<StockTransaction> transactionRepo,
             IMapper mapper,
-            ILogger logger)
+            ILogger<PostStocktakingHandler> logger)
         {
             _stocktakingRepo = stocktakingRepo;
             _warehouseStockRepo = warehouseStockRepo;
@@ -40,18 +41,18 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Handlers.Handlers_St
         {
             try
             {
-                _logger.Information("Posting stocktaking {StocktakingId}", request.StocktakingId);
+                _logger.LogInformation("Posting stocktaking {StocktakingId}", request.StocktakingId);
 
                 var stocktaking = await _stocktakingRepo.GetByID(request.StocktakingId);
                 if (stocktaking == null)
-                    throw new NotFoundException("Stocktaking not found", FinanceErrorCode.RecordNotFound);
+                    throw new NotFoundException("Stocktaking not found", FinanceErrorCode.NotFound);
 
                 if (stocktaking.Status != StocktakingStatus.Review && !request.ForcePost)
                     throw new BusinessLogicException("Stocktaking must be in Review status to post", "Inventory");
 
                 if (!stocktaking.UpdateSystem)
                 {
-                    _logger.Information("Stocktaking {StocktakingId} marked as record-only", request.StocktakingId);
+                    _logger.LogInformation("Stocktaking {StocktakingId} marked as record-only", request.StocktakingId);
                     stocktaking.Status = StocktakingStatus.Posted;
                     stocktaking.PostedBy = request.UserId;
                     stocktaking.PostedAt = DateTime.UtcNow;
@@ -78,48 +79,24 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Handlers.Handlers_St
                     {
                         decimal oldAuc = warehouseStock.AverageUnitCost ?? 0;
                         decimal oldQty = warehouseStock.Quantity;
+                        decimal variance = line.VarianceQty ?? 0; 
 
-                        if (line.VarianceQty > 0)
+                        if (variance > 0)
                         {
                             line.ValuationCost = oldAuc;
-                            warehouseStock.Quantity += line.VarianceQty;
+                            warehouseStock.Quantity += variance;
                             warehouseStock.AvailableQuantity = warehouseStock.Quantity - (warehouseStock.ReservedQuantity ?? 0);
 
-                            _logger.Information("Write-on: Product {ProductId} +{Qty}", line.ProductId, line.VarianceQty);
+                            _logger.LogInformation("Write-on: Product {ProductId} +{Qty}", line.ProductId, variance);
                         }
                         else
                         {
                             line.ValuationCost = oldAuc;
-                            warehouseStock.Quantity += line.VarianceQty;
+                            warehouseStock.Quantity += variance;
                             warehouseStock.AvailableQuantity = warehouseStock.Quantity - (warehouseStock.ReservedQuantity ?? 0);
 
-                            _logger.Information("Write-off: Product {ProductId} {Qty}", line.ProductId, line.VarianceQty);
+                            _logger.LogInformation("Write-off: Product {ProductId} {Qty}", line.ProductId, variance);
                         }
-
-                        line.VarianceValue = line.VarianceQty * line.ValuationCost;
-                        warehouseStock.TotalValue = warehouseStock.Quantity * warehouseStock.AverageUnitCost;
-                        warehouseStock.LastStockInDate = line.VarianceQty > 0 ? DateTime.UtcNow : warehouseStock.LastStockInDate;
-                        warehouseStock.LastStockOutDate = line.VarianceQty < 0 ? DateTime.UtcNow : warehouseStock.LastStockOutDate;
-
-                        await _warehouseStockRepo.Update(warehouseStock);
-
-                        var txn = new StockTransaction
-                        {
-                            CompanyId = request.StocktakingId,
-                            ProductId = line.ProductId,
-                            WarehouseId = stocktaking.WarehouseId,
-                            TransactionType = StockTransactionType.Adjustment,
-                            Quantity = line.VarianceQty,
-                            UnitCost = line.ValuationCost,
-                            StockLevelAfter = warehouseStock.Quantity,
-                            ReferenceType = "StockTaking",
-                            ReferenceId = request.StocktakingId,
-                            CreatedByUserId = request.UserId,
-                            CreatedAt = DateTime.UtcNow
-                        };
-
-                        await _transactionRepo.AddAsync(txn);
-                        adjustmentCount++;
                     }
                 }
 
@@ -131,7 +108,7 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Handlers.Handlers_St
                 stocktaking.PostedAt = DateTime.UtcNow;
                 await _stocktakingRepo.Update(stocktaking);
 
-                _logger.Information("Stocktaking {StocktakingId} posted with {AdjustmentCount} adjustments",
+                _logger.LogInformation("Stocktaking {StocktakingId} posted with {AdjustmentCount} adjustments",
                     request.StocktakingId, adjustmentCount);
 
                 return ResponseViewModel<PostStocktakingDto>.Success(
@@ -140,7 +117,7 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Handlers.Handlers_St
             }
             catch (Exception ex)
             {
-                _logger.Error(ex, "Error posting stocktaking {StocktakingId}", request.StocktakingId);
+                _logger.LogError(ex, "Error posting stocktaking {StocktakingId}", request.StocktakingId);
                 throw;
             }
         }
