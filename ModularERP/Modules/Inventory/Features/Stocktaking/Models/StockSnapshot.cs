@@ -1,10 +1,11 @@
 ﻿using ModularERP.Modules.Inventory.Features.Products.Models;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using ModularERP.Common.Models;
 
 namespace ModularERP.Modules.Inventory.Features.Stocktaking.Models
 {
-    public class StockSnapshot
+    public class StockSnapshot : BaseEntity
     {
         [Key]
         public Guid SnapshotId { get; set; }
@@ -17,9 +18,6 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Models
         [Column(TypeName = "decimal(18,3)")]
         public decimal QtyAtStart { get; set; }
 
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-        //public Guid TenantId { get; set; }
-        public bool IsDeleted { get; set; }
 
         // Navigation Properties
         public virtual StocktakingHeader Stocktaking { get; set; } = null!;

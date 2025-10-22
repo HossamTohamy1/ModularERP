@@ -1489,8 +1489,8 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
             {
                 entity.ToTable("StockSnapshots");
 
-                // Primary Key
-                entity.HasKey(e => e.SnapshotId);
+                // Primary Key - استخدم Id من BaseEntity
+                entity.HasKey(e => e.Id);
 
                 // Unique constraint: One snapshot per product per stocktaking
                 entity.HasIndex(e => new { e.StocktakingId, e.ProductId })
@@ -1499,25 +1499,45 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
 
                 // Decimal precision
                 entity.Property(e => e.QtyAtStart)
-                      .HasPrecision(18, 3);
+                      .HasPrecision(18, 3)
+                      .IsRequired();
 
-                // Default value
+                // BaseEntity properties configuration
                 entity.Property(e => e.CreatedAt)
-                      .HasDefaultValueSql("GETUTCDATE()");
+                      .HasDefaultValueSql("GETUTCDATE()")
+                      .IsRequired();
 
                 entity.Property(e => e.IsDeleted)
-                      .HasDefaultValue(false);
+                      .HasDefaultValue(false)
+                      .IsRequired();
 
+                entity.Property(e => e.IsActive)
+                      .HasDefaultValue(true)
+                      .IsRequired();
 
                 // Relationships
+                entity.HasOne(e => e.Stocktaking)
+                      .WithMany() // أو .WithMany(s => s.StockSnapshots) لو عندك navigation property
+                      .HasForeignKey(e => e.StocktakingId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
                 entity.HasOne(e => e.Product)
                       .WithMany()
                       .HasForeignKey(e => e.ProductId)
                       .OnDelete(DeleteBehavior.Restrict);
 
                 // Indexes
+                entity.HasIndex(e => e.StocktakingId)
+                      .HasDatabaseName("IX_StockSnapshot_Stocktaking");
+
                 entity.HasIndex(e => e.ProductId)
                       .HasDatabaseName("IX_StockSnapshot_Product");
+
+                entity.HasIndex(e => e.IsDeleted)
+                      .HasDatabaseName("IX_StockSnapshot_IsDeleted");
+
+                // Query filter للـ soft delete
+                entity.HasQueryFilter(e => !e.IsDeleted);
             });
             builder.Entity<PriceList>(entity =>
             {

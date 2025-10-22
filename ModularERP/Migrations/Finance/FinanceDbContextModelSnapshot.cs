@@ -2841,7 +2841,7 @@ namespace ModularERP.Migrations
 
             modelBuilder.Entity("ModularERP.Modules.Inventory.Features.Stocktaking.Models.StockSnapshot", b =>
                 {
-                    b.Property<Guid>("SnapshotId")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
@@ -2849,6 +2849,14 @@ namespace ModularERP.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
                         .HasDefaultValueSql("GETUTCDATE()");
+
+                    b.Property<Guid?>("CreatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
 
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
@@ -2862,13 +2870,33 @@ namespace ModularERP.Migrations
                         .HasPrecision(18, 3)
                         .HasColumnType("decimal(18,3)");
 
+                    b.Property<Guid>("SnapshotId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("StocktakingHeaderId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<Guid>("StocktakingId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.HasKey("SnapshotId");
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IsDeleted")
+                        .HasDatabaseName("IX_StockSnapshot_IsDeleted");
 
                     b.HasIndex("ProductId")
                         .HasDatabaseName("IX_StockSnapshot_Product");
+
+                    b.HasIndex("StocktakingHeaderId");
+
+                    b.HasIndex("StocktakingId")
+                        .HasDatabaseName("IX_StockSnapshot_Stocktaking");
 
                     b.HasIndex("StocktakingId", "ProductId")
                         .IsUnique()
@@ -4402,10 +4430,14 @@ namespace ModularERP.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("ModularERP.Modules.Inventory.Features.Stocktaking.Models.StocktakingHeader", "Stocktaking")
+                    b.HasOne("ModularERP.Modules.Inventory.Features.Stocktaking.Models.StocktakingHeader", null)
                         .WithMany("Snapshots")
+                        .HasForeignKey("StocktakingHeaderId");
+
+                    b.HasOne("ModularERP.Modules.Inventory.Features.Stocktaking.Models.StocktakingHeader", "Stocktaking")
+                        .WithMany()
                         .HasForeignKey("StocktakingId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Product");

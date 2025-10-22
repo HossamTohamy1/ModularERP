@@ -1764,3 +1764,144 @@ ModularERP.Common.Exceptions.BusinessLogicException: Cannot start stocktaking wi
 2025-10-22 14:03:31.643 +03:00 [INF] Executed endpoint 'ModularERP.Modules.Inventory.Features.Stocktaking.Controllers.StocktakingWorkFlowController.Post (ModularERP)'
 2025-10-22 14:03:31.644 +03:00 [INF] Request completed successfully with status code 200
 2025-10-22 14:03:31.645 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/StocktakingWorkFlow/{a0a90f3a-8c30-40fe-97eb-d6c4f3d64040}/post?CompanyId=90137c92-382d-404c-bade-e5fefb1e8dbf - 200 null application/json; charset=utf-8 89.0419ms
+2025-10-22 17:34:57.806 +03:00 [INF] Starting web host...
+2025-10-22 17:34:59.435 +03:00 [FTL] Host terminated unexpectedly
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[ModularERP.Modules.Inventory.Features.Stocktaking.Qeuries.Qeuries_StockSnapshot.CompareSnapshotQuery,ModularERP.Common.ViewModel.ResponseViewModel`1[System.Collections.Generic.List`1[ModularERP.Modules.Inventory.Features.Stocktaking.DTO.DTO_StockSnapshot.SnapshotComparisonDto]]] Lifetime: Transient ImplementationType: ModularERP.Modules.Inventory.Features.Stocktaking.Handlers.Handlers_StockSnapshot.CompareSnapshotQueryHandler': Unable to resolve service for type 'Microsoft.Extensions.Logging.ILogger' while attempting to activate 'ModularERP.Modules.Inventory.Features.Stocktaking.Handlers.Handlers_StockSnapshot.CompareSnapshotQueryHandler'.) (Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[ModularERP.Modules.Inventory.Features.Stocktaking.Qeuries.Qeuries_StockSnapshot.GetStockSnapshotQuery,ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Inventory.Features.Stocktaking.DTO.DTO_StockSnapshot.SnapshotListDto]] Lifetime: Transient ImplementationType: ModularERP.Modules.Inventory.Features.Stocktaking.Handlers.Handlers_StockSnapshot.GetStockSnapshotQueryHandler': Unable to resolve service for type 'Microsoft.Extensions.Logging.ILogger' while attempting to activate 'ModularERP.Modules.Inventory.Features.Stocktaking.Handlers.Handlers_StockSnapshot.GetStockSnapshotQueryHandler'.) (Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[ModularERP.Modules.Inventory.Features.Stocktaking.Commends.Commends_StockSnapshot.RefreshSnapshotCommand,ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Inventory.Features.Stocktaking.DTO.DTO_StockSnapshot.RefreshSnapshotDto]] Lifetime: Transient ImplementationType: ModularERP.Modules.Inventory.Features.Stocktaking.Handlers.Handlers_StockSnapshot.RefreshSnapshotCommandHandler': Unable to resolve service for type 'Microsoft.Extensions.Logging.ILogger' while attempting to activate 'ModularERP.Modules.Inventory.Features.Stocktaking.Handlers.Handlers_StockSnapshot.RefreshSnapshotCommandHandler'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[ModularERP.Modules.Inventory.Features.Stocktaking.Qeuries.Qeuries_StockSnapshot.CompareSnapshotQuery,ModularERP.Common.ViewModel.ResponseViewModel`1[System.Collections.Generic.List`1[ModularERP.Modules.Inventory.Features.Stocktaking.DTO.DTO_StockSnapshot.SnapshotComparisonDto]]] Lifetime: Transient ImplementationType: ModularERP.Modules.Inventory.Features.Stocktaking.Handlers.Handlers_StockSnapshot.CompareSnapshotQueryHandler': Unable to resolve service for type 'Microsoft.Extensions.Logging.ILogger' while attempting to activate 'ModularERP.Modules.Inventory.Features.Stocktaking.Handlers.Handlers_StockSnapshot.CompareSnapshotQueryHandler'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Logging.ILogger' while attempting to activate 'ModularERP.Modules.Inventory.Features.Stocktaking.Handlers.Handlers_StockSnapshot.CompareSnapshotQueryHandler'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at ModularERP.Program.Main(String[] args) in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 254
+ ---> (Inner Exception #1) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[ModularERP.Modules.Inventory.Features.Stocktaking.Qeuries.Qeuries_StockSnapshot.GetStockSnapshotQuery,ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Inventory.Features.Stocktaking.DTO.DTO_StockSnapshot.SnapshotListDto]] Lifetime: Transient ImplementationType: ModularERP.Modules.Inventory.Features.Stocktaking.Handlers.Handlers_StockSnapshot.GetStockSnapshotQueryHandler': Unable to resolve service for type 'Microsoft.Extensions.Logging.ILogger' while attempting to activate 'ModularERP.Modules.Inventory.Features.Stocktaking.Handlers.Handlers_StockSnapshot.GetStockSnapshotQueryHandler'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Logging.ILogger' while attempting to activate 'ModularERP.Modules.Inventory.Features.Stocktaking.Handlers.Handlers_StockSnapshot.GetStockSnapshotQueryHandler'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+ ---> (Inner Exception #2) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[ModularERP.Modules.Inventory.Features.Stocktaking.Commends.Commends_StockSnapshot.RefreshSnapshotCommand,ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Inventory.Features.Stocktaking.DTO.DTO_StockSnapshot.RefreshSnapshotDto]] Lifetime: Transient ImplementationType: ModularERP.Modules.Inventory.Features.Stocktaking.Handlers.Handlers_StockSnapshot.RefreshSnapshotCommandHandler': Unable to resolve service for type 'Microsoft.Extensions.Logging.ILogger' while attempting to activate 'ModularERP.Modules.Inventory.Features.Stocktaking.Handlers.Handlers_StockSnapshot.RefreshSnapshotCommandHandler'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Logging.ILogger' while attempting to activate 'ModularERP.Modules.Inventory.Features.Stocktaking.Handlers.Handlers_StockSnapshot.RefreshSnapshotCommandHandler'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+2025-10-22 17:37:14.702 +03:00 [INF] Starting web host...
+2025-10-22 17:37:15.219 +03:00 [FTL] Host terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at ModularERP.Program.Main(String[] args) in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 254
+2025-10-22 17:37:46.129 +03:00 [INF] Starting web host...
+2025-10-22 17:37:46.623 +03:00 [FTL] Host terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at ModularERP.Program.Main(String[] args) in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 254
+2025-10-22 17:38:43.183 +03:00 [INF] Starting web host...
+2025-10-22 17:38:43.727 +03:00 [FTL] Host terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at ModularERP.Program.Main(String[] args) in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 254
+2025-10-22 17:39:08.647 +03:00 [INF] Starting web host...
+2025-10-22 17:39:09.840 +03:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-22 17:39:09.910 +03:00 [INF] Executed DbCommand (54ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-10-22 17:39:09.982 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-22 17:39:09.988 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-10-22 17:39:10.001 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-10-22 17:39:10.060 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-10-22 17:39:10.075 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-22 17:39:10.078 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-10-22 17:39:10.085 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-10-22 17:39:10.096 +03:00 [INF] No migrations were applied. The database is already up to date.
+2025-10-22 17:39:10.100 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-10-22 17:39:10.269 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-10-22 17:39:10.276 +03:00 [INF] Master database initialized successfully
+2025-10-22 17:39:11.959 +03:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-10-22 17:39:12.122 +03:00 [INF] Now listening on: https://localhost:7168
+2025-10-22 17:39:12.124 +03:00 [INF] Now listening on: http://localhost:5004
+2025-10-22 17:39:12.230 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-22 17:39:12.231 +03:00 [INF] Hosting environment: Development
+2025-10-22 17:39:12.233 +03:00 [INF] Content root path: E:\ModelerERP\ModularERP\ModularERP
+2025-10-22 17:39:12.735 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-10-22 17:39:12.926 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 193.5929ms
+2025-10-22 17:39:12.930 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-10-22 17:39:12.930 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-22 17:39:12.945 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 14.769ms
+2025-10-22 17:39:13.008 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 78.4368ms
+2025-10-22 17:39:13.121 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-10-22 17:39:13.426 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 304.6425ms

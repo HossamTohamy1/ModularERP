@@ -25,7 +25,9 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Services
                 cfg.AddProfile<StocktakingMappingProfile>();
                 cfg.AddProfile<StocktakingLineMappingProfile>();
                 cfg.AddProfile<VarianceSummaryMappingProfile>();
-
+                cfg.AddProfile<StocktakingImportExportMappingProfile>();
+                cfg.AddProfile<StockSnapshotMappingProfile>();
+                    
 
             });
 
