@@ -14,9 +14,9 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Controllers
     public class StocktakingWorkFlowController : ControllerBase
     {
         private readonly IMediator _mediator;
-        private readonly ILogger _logger;
+        private readonly ILogger<StocktakingWorkFlowController> _logger;
 
-        public StocktakingWorkFlowController(IMediator mediator, ILogger logger)
+        public StocktakingWorkFlowController(IMediator mediator, ILogger<StocktakingWorkFlowController> logger)
         {
             _mediator = mediator;
             _logger = logger;
@@ -25,15 +25,15 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Controllers
         /// <summary>
         /// Create a new stocktaking session
         /// </summary>
-        [HttpPost("create")]
-        public async Task<ActionResult<ResponseViewModel<CreateStocktakingDto>>> Create(
-            [FromBody] CreateStocktakingCommand command,
-            CancellationToken cancellationToken = default)
-        {
-            _logger.LogInformation("POST: Create Stocktaking");
-            var result = await _mediator.Send(command, cancellationToken);
-            return Ok(result);
-        }
+        //[HttpPost("create")]
+        //public async Task<ActionResult<ResponseViewModel<CreateStocktakingDto>>> Create(
+        //    [FromBody] CreateStocktakingCommand command,
+        //    CancellationToken cancellationToken = default)
+        //{
+        //    _logger.LogInformation("POST: Create Stocktaking");
+        //    var result = await _mediator.Send(command, cancellationToken);
+        //    return Ok(result);
+        //}
 
         /// <summary>
         /// Update stocktaking details (draft only)
@@ -132,7 +132,7 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Controllers
             {
                 StocktakingId = id,
                 CompanyId = companyId,
-                UserId = userId
+                //UserId = userId
             };
             var result = await _mediator.Send(command, cancellationToken);
             return Ok(result);
@@ -153,7 +153,7 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Controllers
             {
                 StocktakingId = id,
                 CompanyId = companyId,
-                UserId = userId
+                UserId = Guid.Parse("f0602c31-0c12-4b5c-9ccf-fe17811d5c53")
             };
             var result = await _mediator.Send(command, cancellationToken);
             return Ok(result);
@@ -175,7 +175,7 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Controllers
             {
                 StocktakingId = id,
                 CompanyId = companyId,
-                UserId = userId,
+                UserId = Guid.Parse("f0602c31-0c12-4b5c-9ccf-fe17811d5c53"),
                 ForcePost = forcePost
             };
             var result = await _mediator.Send(command, cancellationToken);

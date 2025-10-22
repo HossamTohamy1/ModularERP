@@ -8,6 +8,6 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Commends.Commands_St
     {
         public Guid StocktakingId { get; set; }
         public Guid CompanyId { get; set; }
-        public Guid UserId { get; set; }
+        //public Guid UserId { get; set; }
     }
 }

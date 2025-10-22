@@ -15,9 +15,9 @@ namespace ModularERP.Modules.Inventory.Features.Stocktaking.Validators.Validator
                 .NotEmpty()
                 .WithMessage("Company ID is required");
 
-            RuleFor(x => x.UserId)
-                .NotEmpty()
-                .WithMessage("User ID is required");
+            //RuleFor(x => x.UserId)
+            //    .NotEmpty()
+            //    .WithMessage("User ID is required");
         }
     }
 

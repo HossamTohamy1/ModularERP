@@ -6203,32 +6203,6 @@
     ]
   },
   {
-    "ContainingType": "ModularERP.Modules.Inventory.Features.Stocktaking.Controllers.StocktakingWorkFlowController",
-    "Method": "Create",
-    "RelativePath": "api/StocktakingWorkFlow/create",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "command",
-        "Type": "ModularERP.Modules.Inventory.Features.Stocktaking.Commends.Commands_StockTraking_WorkFlow.CreateStocktakingCommand",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "ModularERP.Common.ViewModel.ResponseViewModel\u00601[[ModularERP.Modules.Inventory.Features.Stocktaking.DTO.DTO_StockTaking_WorkFlow.CreateStocktakingDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
     "ContainingType": "ModularERP.Modules.Inventory.Features.StockTransactions.Controllers.StockTransactionsController",
     "Method": "GetAll",
     "RelativePath": "api/StockTransactions",
