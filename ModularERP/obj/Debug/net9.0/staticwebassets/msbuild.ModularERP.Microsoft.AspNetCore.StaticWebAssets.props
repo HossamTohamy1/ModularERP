@@ -684,5 +684,23 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\ff93be28-516c-46fa-ba45-238dea1c1b14_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\stocktaking\45ef0250-4160-4789-884f-8d5c14239b1c_c98ed6e2-98ab-4d74-9f4d-1df282fbea94_43eab4f3-42f6-44b4-a089-e03e23204be3.jpeg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>ModularERP</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ModularERP</BasePath>
+      <RelativePath>uploads/stocktaking/45ef0250-4160-4789-884f-8d5c14239b1c_c98ed6e2-98ab-4d74-9f4d-1df282fbea94_43eab4f3-42f6-44b4-a089-e03e23204be3.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>51bthxwylw</Fingerprint>
+      <Integrity>580c3q+D3GKEJ4KKSlyrGozNwFK2ch0KwrTpZDL/eZY=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\stocktaking\45ef0250-4160-4789-884f-8d5c14239b1c_c98ed6e2-98ab-4d74-9f4d-1df282fbea94_43eab4f3-42f6-44b4-a089-e03e23204be3.jpeg'))</OriginalItemSpec>
+    </StaticWebAsset>
   </ItemGroup>
 </Project>
