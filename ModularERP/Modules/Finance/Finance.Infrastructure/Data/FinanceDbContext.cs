@@ -30,6 +30,11 @@ using ModularERP.Modules.Inventory.Features.StockTransactions.Models;
 using ModularERP.Modules.Inventory.Features.PriceLists.Models;
 using System.Reflection.Emit;
 using ModularERP.Modules.Inventory.Features.Warehouses.Configurations;
+using ModularERP.Modules.Purchases.Goods_Receipt.Models;
+using ModularERP.Modules.Purchases.Invoicing.Models;
+using ModularERP.Modules.Purchases.Purchase_Order_Management.Models;
+using ModularERP.Modules.Purchases.Refunds.Models;
+using ModularERP.Modules.Purchases.WorkFlow.Models;
 
 namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
 {
@@ -101,6 +106,26 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
         public DbSet<PriceCalculationLog> PriceCalculationLogs { get; set; }
         public DbSet<ActivityLog> ActivityLogs { get; set; }
         public DbSet<ProductTimeline> ProductTimelines { get; set; }
+
+        // Purchase Orders Module
+        public DbSet<PurchaseOrder> PurchaseOrders { get; set; }
+        public DbSet<POLineItem> POLineItems { get; set; }
+        public DbSet<PODeposit> PODeposits { get; set; }
+        public DbSet<POShippingCharge> POShippingCharges { get; set; }
+        public DbSet<PODiscount> PODiscounts { get; set; }
+        public DbSet<POAdjustment> POAdjustments { get; set; }
+        public DbSet<POAttachment> POAttachments { get; set; }
+        public DbSet<PONote> PONotes { get; set; }
+        public DbSet<GoodsReceiptNote> GoodsReceiptNotes { get; set; }
+        public DbSet<GRNLineItem> GRNLineItems { get; set; }
+        public DbSet<PurchaseInvoice> PurchaseInvoices { get; set; }
+        public DbSet<InvoiceLineItem> InvoiceLineItems { get; set; }
+        public DbSet<SupplierPayment> SupplierPayments { get; set; }
+        public DbSet<PurchaseRefund> PurchaseRefunds { get; set; }
+        public DbSet<RefundLineItem> RefundLineItems { get; set; }
+        public DbSet<DebitNote> DebitNotes { get; set; }
+        public DbSet<POApprovalHistory> POApprovalHistories { get; set; }
+        public DbSet<POAuditLog> POAuditLogs { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -1921,7 +1946,544 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.HasIndex(e => new { e.ProductId, e.ActionType })
                     .HasDatabaseName("IX_ProductTimeline_Product_ActionType");
             });
+            // PurchaseOrder and related entities configuration would go here
 
+            builder.Entity<PurchaseOrder>(entity =>
+            {
+                entity.ToTable("PurchaseOrders");
+
+                // Unique constraint: CompanyId + PONumber
+                entity.HasIndex(e => new { e.CompanyId, e.PONumber })
+                      .IsUnique()
+                      .HasDatabaseName("IX_PurchaseOrder_Company_PONumber");
+
+                // Convert status enums to string
+                entity.Property(e => e.ReceptionStatus)
+                      .HasConversion<string>()
+                      .HasDefaultValue("NotReceived");
+
+                entity.Property(e => e.PaymentStatus)
+                      .HasConversion<string>()
+                      .HasDefaultValue("Unpaid");
+
+                entity.Property(e => e.DocumentStatus)
+                      .HasConversion<string>()
+                      .HasDefaultValue("Draft");
+
+                // Decimal precision
+                entity.Property(e => e.Subtotal).HasPrecision(18, 4);
+                entity.Property(e => e.DiscountAmount).HasPrecision(18, 4);
+                entity.Property(e => e.AdjustmentAmount).HasPrecision(18, 4);
+                entity.Property(e => e.ShippingAmount).HasPrecision(18, 4);
+                entity.Property(e => e.TaxAmount).HasPrecision(18, 4);
+                entity.Property(e => e.TotalAmount).HasPrecision(18, 4);
+                entity.Property(e => e.DepositAmount).HasPrecision(18, 4);
+                entity.Property(e => e.AmountDue).HasPrecision(18, 4);
+
+                // Relationships
+                entity.HasOne(e => e.Company)
+                      .WithMany()
+                      .HasForeignKey(e => e.CompanyId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(e => e.Supplier)
+                      .WithMany()
+                      .HasForeignKey(e => e.SupplierId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(e => e.Currency)
+                      .WithMany()
+                      .HasForeignKey(e => e.CurrencyCode)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(e => e.ApprovedByUser)
+                      .WithMany()
+                      .HasForeignKey(e => e.ApprovedBy)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(e => e.SubmittedByUser)
+                      .WithMany()
+                      .HasForeignKey(e => e.SubmittedBy)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(e => e.ClosedByUser)
+                      .WithMany()
+                      .HasForeignKey(e => e.ClosedBy)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // Child collections
+                entity.HasMany(e => e.LineItems)
+                      .WithOne(e => e.PurchaseOrder)
+                      .HasForeignKey(e => e.PurchaseOrderId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                entity.HasMany(e => e.Deposits)
+                      .WithOne(e => e.PurchaseOrder)
+                      .HasForeignKey(e => e.PurchaseOrderId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                entity.HasMany(e => e.ShippingCharges)
+                      .WithOne(e => e.PurchaseOrder)
+                      .HasForeignKey(e => e.PurchaseOrderId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                entity.HasMany(e => e.Discounts)
+                      .WithOne(e => e.PurchaseOrder)
+                      .HasForeignKey(e => e.PurchaseOrderId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                entity.HasMany(e => e.Adjustments)
+                      .WithOne(e => e.PurchaseOrder)
+                      .HasForeignKey(e => e.PurchaseOrderId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                entity.HasMany(e => e.Attachments)
+                      .WithOne(e => e.PurchaseOrder)
+                      .HasForeignKey(e => e.PurchaseOrderId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                entity.HasMany(e => e.PONotes)
+                      .WithOne(e => e.PurchaseOrder)
+                      .HasForeignKey(e => e.PurchaseOrderId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                entity.HasMany(e => e.GoodsReceipts)
+                      .WithOne(e => e.PurchaseOrder)
+                      .HasForeignKey(e => e.PurchaseOrderId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasMany(e => e.Invoices)
+                      .WithOne(e => e.PurchaseOrder)
+                      .HasForeignKey(e => e.PurchaseOrderId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasMany(e => e.Refunds)
+                      .WithOne(e => e.PurchaseOrder)
+                      .HasForeignKey(e => e.PurchaseOrderId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasMany(e => e.ApprovalHistory)
+                      .WithOne(e => e.PurchaseOrder)
+                      .HasForeignKey(e => e.PurchaseOrderId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                entity.HasMany(e => e.AuditLogs)
+                      .WithOne(e => e.PurchaseOrder)
+                      .HasForeignKey(e => e.PurchaseOrderId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                // Indexes for performance
+                entity.HasIndex(e => e.CompanyId).HasDatabaseName("IX_PurchaseOrder_Company");
+                entity.HasIndex(e => e.SupplierId).HasDatabaseName("IX_PurchaseOrder_Supplier");
+                entity.HasIndex(e => e.PODate).HasDatabaseName("IX_PurchaseOrder_Date");
+                entity.HasIndex(e => e.ReceptionStatus).HasDatabaseName("IX_PurchaseOrder_ReceptionStatus");
+                entity.HasIndex(e => e.PaymentStatus).HasDatabaseName("IX_PurchaseOrder_PaymentStatus");
+                entity.HasIndex(e => e.DocumentStatus).HasDatabaseName("IX_PurchaseOrder_DocumentStatus");
+            });
+
+            // POLineItem Configuration
+            builder.Entity<POLineItem>(entity =>
+            {
+                entity.ToTable("POLineItems");
+
+                // Decimal precision
+                entity.Property(e => e.Quantity).HasPrecision(18, 3);
+                entity.Property(e => e.UnitPrice).HasPrecision(18, 4);
+                entity.Property(e => e.DiscountPercent).HasPrecision(10, 4);
+                entity.Property(e => e.DiscountAmount).HasPrecision(18, 4);
+                entity.Property(e => e.TaxAmount).HasPrecision(18, 4);
+                entity.Property(e => e.LineTotal).HasPrecision(18, 4);
+                entity.Property(e => e.ReceivedQuantity).HasPrecision(18, 3);
+                entity.Property(e => e.InvoicedQuantity).HasPrecision(18, 3);
+                entity.Property(e => e.ReturnedQuantity).HasPrecision(18, 3);
+                entity.Property(e => e.RemainingQuantity).HasPrecision(18, 3);
+
+                // Relationships
+                entity.HasOne(e => e.Product)
+                      .WithMany()
+                      .HasForeignKey(e => e.ProductId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(e => e.Service)
+                      .WithMany()
+                      .HasForeignKey(e => e.ServiceId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(e => e.TaxProfile)
+                      .WithMany()
+                      .HasForeignKey(e => e.TaxProfileId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasMany(e => e.GRNLineItems)
+                      .WithOne(e => e.POLineItem)
+                      .HasForeignKey(e => e.POLineItemId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasMany(e => e.InvoiceLineItems)
+                      .WithOne(e => e.POLineItem)
+                      .HasForeignKey(e => e.POLineItemId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasMany(e => e.RefundLineItems)
+                      .WithOne()
+                      .HasForeignKey("POLineItemId")
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // Check constraint: Either ProductId or ServiceId must be set, not both
+                entity.HasCheckConstraint(
+                    "CK_POLineItem_ProductOrService",
+                    "([ProductId] IS NOT NULL AND [ServiceId] IS NULL) OR ([ProductId] IS NULL AND [ServiceId] IS NOT NULL)"
+                );
+
+                // Indexes
+                entity.HasIndex(e => e.PurchaseOrderId).HasDatabaseName("IX_POLineItem_PurchaseOrder");
+                entity.HasIndex(e => e.ProductId).HasDatabaseName("IX_POLineItem_Product");
+                entity.HasIndex(e => e.ServiceId).HasDatabaseName("IX_POLineItem_Service");
+            });
+
+            // PODeposit Configuration
+            builder.Entity<PODeposit>(entity =>
+            {
+                entity.ToTable("PODeposits");
+
+                // Decimal precision
+                entity.Property(e => e.Amount).HasPrecision(18, 4);
+                entity.Property(e => e.Percentage).HasPrecision(10, 4);
+
+                // Default value
+                entity.Property(e => e.AlreadyPaid).HasDefaultValue(false);
+
+                // Indexes
+                entity.HasIndex(e => e.PurchaseOrderId).HasDatabaseName("IX_PODeposit_PurchaseOrder");
+                entity.HasIndex(e => e.PaymentDate).HasDatabaseName("IX_PODeposit_PaymentDate");
+            });
+
+            // POShippingCharge Configuration
+            builder.Entity<POShippingCharge>(entity =>
+            {
+                entity.ToTable("POShippingCharges");
+
+                // Decimal precision
+                entity.Property(e => e.ShippingFee).HasPrecision(18, 4);
+                entity.Property(e => e.TaxAmount).HasPrecision(18, 4);
+                entity.Property(e => e.Total).HasPrecision(18, 4);
+
+                // Relationships
+                entity.HasOne(e => e.TaxProfile)
+                      .WithMany()
+                      .HasForeignKey(e => e.TaxProfileId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // Indexes
+                entity.HasIndex(e => e.PurchaseOrderId).HasDatabaseName("IX_POShippingCharge_PurchaseOrder");
+            });
+
+            // PODiscount Configuration
+            builder.Entity<PODiscount>(entity =>
+            {
+                entity.ToTable("PODiscounts");
+
+                // Decimal precision
+                entity.Property(e => e.DiscountValue).HasPrecision(18, 4);
+                entity.Property(e => e.DiscountAmount).HasPrecision(18, 4);
+
+                // Convert enum to string
+                entity.Property(e => e.DiscountType).HasConversion<string>();
+
+                // Indexes
+                entity.HasIndex(e => e.PurchaseOrderId).HasDatabaseName("IX_PODiscount_PurchaseOrder");
+            });
+
+            // POAdjustment Configuration
+            builder.Entity<POAdjustment>(entity =>
+            {
+                entity.ToTable("POAdjustments");
+
+                // Decimal precision
+                entity.Property(e => e.Amount).HasPrecision(18, 4);
+
+                // Indexes
+                entity.HasIndex(e => e.PurchaseOrderId).HasDatabaseName("IX_POAdjustment_PurchaseOrder");
+            });
+
+            // POAttachment Configuration
+            builder.Entity<POAttachment>(entity =>
+            {
+                entity.ToTable("POAttachments");
+
+                // Default value
+                entity.Property(e => e.UploadedAt).HasDefaultValueSql("GETUTCDATE()");
+
+                // Relationships
+                entity.HasOne(e => e.UploadedByUser)
+                      .WithMany()
+                      .HasForeignKey(e => e.UploadedBy)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // Indexes
+                entity.HasIndex(e => e.PurchaseOrderId).HasDatabaseName("IX_POAttachment_PurchaseOrder");
+                entity.HasIndex(e => e.UploadedBy).HasDatabaseName("IX_POAttachment_UploadedBy");
+            });
+
+            // PONote Configuration
+            builder.Entity<PONote>(entity =>
+            {
+                entity.ToTable("PONotes");
+
+                // Indexes
+                entity.HasIndex(e => e.PurchaseOrderId).HasDatabaseName("IX_PONote_PurchaseOrder");
+            });
+
+            // GoodsReceiptNote Configuration
+            builder.Entity<GoodsReceiptNote>(entity =>
+            {
+                entity.ToTable("GoodsReceiptNotes");
+
+                // Unique constraint: GRNNumber
+                entity.HasIndex(e => e.GRNNumber)
+                      .IsUnique()
+                      .HasDatabaseName("IX_GoodsReceiptNote_GRNNumber");
+
+                // Relationships
+                entity.HasOne(e => e.Warehouse)
+                      .WithMany()
+                      .HasForeignKey(e => e.WarehouseId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasMany(e => e.LineItems)
+                      .WithOne(e => e.GRN)
+                      .HasForeignKey(e => e.GRNId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                // Indexes
+                entity.HasIndex(e => e.PurchaseOrderId).HasDatabaseName("IX_GoodsReceiptNote_PurchaseOrder");
+                entity.HasIndex(e => e.WarehouseId).HasDatabaseName("IX_GoodsReceiptNote_Warehouse");
+                entity.HasIndex(e => e.ReceiptDate).HasDatabaseName("IX_GoodsReceiptNote_Date");
+            });
+
+            // GRNLineItem Configuration
+            builder.Entity<GRNLineItem>(entity =>
+            {
+                entity.ToTable("GRNLineItems");
+
+                // Decimal precision
+                entity.Property(e => e.ReceivedQuantity).HasPrecision(18, 3);
+
+                // Indexes
+                entity.HasIndex(e => e.GRNId).HasDatabaseName("IX_GRNLineItem_GRN");
+                entity.HasIndex(e => e.POLineItemId).HasDatabaseName("IX_GRNLineItem_POLineItem");
+            });
+
+            // PurchaseInvoice Configuration
+            builder.Entity<PurchaseInvoice>(entity =>
+            {
+                entity.ToTable("PurchaseInvoices");
+
+                // Unique constraint: InvoiceNumber
+                entity.HasIndex(e => e.InvoiceNumber)
+                      .IsUnique()
+                      .HasDatabaseName("IX_PurchaseInvoice_InvoiceNumber");
+
+                // Decimal precision
+                entity.Property(e => e.Subtotal).HasPrecision(18, 4);
+                entity.Property(e => e.TaxAmount).HasPrecision(18, 4);
+                entity.Property(e => e.TotalAmount).HasPrecision(18, 4);
+                entity.Property(e => e.DepositApplied).HasPrecision(18, 4);
+                entity.Property(e => e.AmountDue).HasPrecision(18, 4);
+
+                // Convert enum to string
+                entity.Property(e => e.PaymentStatus)
+                      .HasConversion<string>()
+                      .HasDefaultValue("Unpaid");
+
+                // Relationships
+                entity.HasOne(e => e.Company)
+                      .WithMany()
+                      .HasForeignKey(e => e.CompanyId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(e => e.Supplier)
+                      .WithMany()
+                      .HasForeignKey(e => e.SupplierId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasMany(e => e.LineItems)
+                      .WithOne(e => e.Invoice)
+                      .HasForeignKey(e => e.InvoiceId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                entity.HasMany(e => e.Payments)
+                      .WithOne(e => e.Invoice)
+                      .HasForeignKey(e => e.InvoiceId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // Indexes
+                entity.HasIndex(e => e.PurchaseOrderId).HasDatabaseName("IX_PurchaseInvoice_PurchaseOrder");
+                entity.HasIndex(e => e.CompanyId).HasDatabaseName("IX_PurchaseInvoice_Company");
+                entity.HasIndex(e => e.SupplierId).HasDatabaseName("IX_PurchaseInvoice_Supplier");
+                entity.HasIndex(e => e.InvoiceDate).HasDatabaseName("IX_PurchaseInvoice_Date");
+                entity.HasIndex(e => e.DueDate).HasDatabaseName("IX_PurchaseInvoice_DueDate");
+                entity.HasIndex(e => e.PaymentStatus).HasDatabaseName("IX_PurchaseInvoice_PaymentStatus");
+            });
+
+            // InvoiceLineItem Configuration
+            builder.Entity<InvoiceLineItem>(entity =>
+            {
+                entity.ToTable("InvoiceLineItems");
+
+                // Decimal precision
+                entity.Property(e => e.Quantity).HasPrecision(18, 3);
+                entity.Property(e => e.UnitPrice).HasPrecision(18, 4);
+                entity.Property(e => e.TaxAmount).HasPrecision(18, 4);
+                entity.Property(e => e.LineTotal).HasPrecision(18, 4);
+
+                // Indexes
+                entity.HasIndex(e => e.InvoiceId).HasDatabaseName("IX_InvoiceLineItem_Invoice");
+                entity.HasIndex(e => e.POLineItemId).HasDatabaseName("IX_InvoiceLineItem_POLineItem");
+            });
+
+            // SupplierPayment Configuration
+            builder.Entity<SupplierPayment>(entity =>
+            {
+                entity.ToTable("SupplierPayments");
+
+                // Decimal precision
+                entity.Property(e => e.Amount).HasPrecision(18, 4);
+
+                // Relationships
+                entity.HasOne(e => e.Supplier)
+                      .WithMany()
+                      .HasForeignKey(e => e.SupplierId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // Indexes
+                entity.HasIndex(e => e.SupplierId).HasDatabaseName("IX_SupplierPayment_Supplier");
+                entity.HasIndex(e => e.InvoiceId).HasDatabaseName("IX_SupplierPayment_Invoice");
+                entity.HasIndex(e => e.PaymentDate).HasDatabaseName("IX_SupplierPayment_Date");
+                entity.HasIndex(e => e.PaymentMethod).HasDatabaseName("IX_SupplierPayment_Method");
+            });
+
+            // PurchaseRefund Configuration
+            builder.Entity<PurchaseRefund>(entity =>
+            {
+                entity.ToTable("PurchaseRefunds");
+
+                // Unique constraint: RefundNumber
+                entity.HasIndex(e => e.RefundNumber)
+                      .IsUnique()
+                      .HasDatabaseName("IX_PurchaseRefund_RefundNumber");
+
+                // Decimal precision
+                entity.Property(e => e.TotalAmount).HasPrecision(18, 4);
+
+                // Relationships
+                entity.HasOne(e => e.Supplier)
+                      .WithMany()
+                      .HasForeignKey(e => e.SupplierId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasMany(e => e.LineItems)
+                      .WithOne(e => e.Refund)
+                      .HasForeignKey(e => e.RefundId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                entity.HasOne(e => e.DebitNote)
+                      .WithOne(e => e.Refund)
+                      .HasForeignKey<DebitNote>(e => e.RefundId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // Indexes
+                entity.HasIndex(e => e.PurchaseOrderId).HasDatabaseName("IX_PurchaseRefund_PurchaseOrder");
+                entity.HasIndex(e => e.SupplierId).HasDatabaseName("IX_PurchaseRefund_Supplier");
+                entity.HasIndex(e => e.RefundDate).HasDatabaseName("IX_PurchaseRefund_Date");
+            });
+
+            // RefundLineItem Configuration
+            builder.Entity<RefundLineItem>(entity =>
+            {
+                entity.ToTable("RefundLineItems");
+
+                // Decimal precision
+                entity.Property(e => e.ReturnQuantity).HasPrecision(18, 3);
+                entity.Property(e => e.UnitPrice).HasPrecision(18, 4);
+                entity.Property(e => e.LineTotal).HasPrecision(18, 4);
+
+                // Relationships
+                entity.HasOne(e => e.GRNLineItem)
+                      .WithMany()
+                      .HasForeignKey(e => e.GRNLineItemId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // Indexes
+                entity.HasIndex(e => e.RefundId).HasDatabaseName("IX_RefundLineItem_Refund");
+                entity.HasIndex(e => e.GRNLineItemId).HasDatabaseName("IX_RefundLineItem_GRNLineItem");
+            });
+
+            // DebitNote Configuration
+            builder.Entity<DebitNote>(entity =>
+            {
+                entity.ToTable("DebitNotes");
+
+                // Unique constraint: DebitNoteNumber
+                entity.HasIndex(e => e.DebitNoteNumber)
+                      .IsUnique()
+                      .HasDatabaseName("IX_DebitNote_DebitNoteNumber");
+
+                // Decimal precision
+                entity.Property(e => e.Amount).HasPrecision(18, 4);
+
+                // Relationships
+                entity.HasOne(e => e.Supplier)
+                      .WithMany()
+                      .HasForeignKey(e => e.SupplierId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // Indexes
+                entity.HasIndex(e => e.RefundId).HasDatabaseName("IX_DebitNote_Refund");
+                entity.HasIndex(e => e.SupplierId).HasDatabaseName("IX_DebitNote_Supplier");
+                entity.HasIndex(e => e.NoteDate).HasDatabaseName("IX_DebitNote_Date");
+            });
+
+            // POApprovalHistory Configuration
+            builder.Entity<POApprovalHistory>(entity =>
+            {
+                entity.ToTable("POApprovalHistories");
+
+                // Default value
+                entity.Property(e => e.ApprovalDate).HasDefaultValueSql("GETUTCDATE()");
+
+                // Relationships
+                entity.HasOne(e => e.ApprovedByUser)
+                      .WithMany()
+                      .HasForeignKey(e => e.ApprovedBy)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // Indexes
+                entity.HasIndex(e => e.PurchaseOrderId).HasDatabaseName("IX_POApprovalHistory_PurchaseOrder");
+                entity.HasIndex(e => e.ApprovedBy).HasDatabaseName("IX_POApprovalHistory_ApprovedBy");
+                entity.HasIndex(e => e.ApprovalDate).HasDatabaseName("IX_POApprovalHistory_Date");
+            });
+
+            // POAuditLog Configuration
+            builder.Entity<POAuditLog>(entity =>
+            {
+                entity.ToTable("POAuditLogs");
+
+                // Default value
+                entity.Property(e => e.ChangedAt).HasDefaultValueSql("GETUTCDATE()");
+
+                // Relationships
+                entity.HasOne(e => e.ChangedByUser)
+                      .WithMany()
+                      .HasForeignKey(e => e.ChangedBy)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // Indexes
+                entity.HasIndex(e => e.PurchaseOrderId).HasDatabaseName("IX_POAuditLog_PurchaseOrder");
+                entity.HasIndex(e => e.ChangedBy).HasDatabaseName("IX_POAuditLog_ChangedBy");
+                entity.HasIndex(e => e.ChangedAt).HasDatabaseName("IX_POAuditLog_ChangedAt");
+                entity.HasIndex(e => e.Action).HasDatabaseName("IX_POAuditLog_Action");
+            });
 
             // Apply Global Query Filters for Multi-tenancy
             ApplyGlobalFilters(builder);

@@ -3464,6 +3464,1213 @@ namespace ModularERP.Migrations
                     b.ToTable("WarehouseStocks", "Inventory");
                 });
 
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Goods_Receipt.Models.GRNLineItem", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("CreatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("GRNId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("POLineItemId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("ReceivedQuantity")
+                        .HasPrecision(18, 3)
+                        .HasColumnType("decimal(18,3)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GRNId")
+                        .HasDatabaseName("IX_GRNLineItem_GRN");
+
+                    b.HasIndex("POLineItemId")
+                        .HasDatabaseName("IX_GRNLineItem_POLineItem");
+
+                    b.ToTable("GRNLineItems", (string)null);
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Goods_Receipt.Models.GoodsReceiptNote", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("CreatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("GRNNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("PurchaseOrderId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("ReceiptDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ReceivedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("WarehouseId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GRNNumber")
+                        .IsUnique()
+                        .HasDatabaseName("IX_GoodsReceiptNote_GRNNumber");
+
+                    b.HasIndex("PurchaseOrderId")
+                        .HasDatabaseName("IX_GoodsReceiptNote_PurchaseOrder");
+
+                    b.HasIndex("ReceiptDate")
+                        .HasDatabaseName("IX_GoodsReceiptNote_Date");
+
+                    b.HasIndex("WarehouseId")
+                        .HasDatabaseName("IX_GoodsReceiptNote_Warehouse");
+
+                    b.ToTable("GoodsReceiptNotes", (string)null);
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Invoicing.Models.InvoiceLineItem", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("CreatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("InvoiceId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<decimal>("LineTotal")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<Guid>("POLineItemId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("Quantity")
+                        .HasPrecision(18, 3)
+                        .HasColumnType("decimal(18,3)");
+
+                    b.Property<decimal>("TaxAmount")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<decimal>("UnitPrice")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("InvoiceId")
+                        .HasDatabaseName("IX_InvoiceLineItem_Invoice");
+
+                    b.HasIndex("POLineItemId")
+                        .HasDatabaseName("IX_InvoiceLineItem_POLineItem");
+
+                    b.ToTable("InvoiceLineItems", (string)null);
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Invoicing.Models.PurchaseInvoice", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("AmountDue")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<Guid>("CompanyId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("CreatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("DepositApplied")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<DateTime?>("DueDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("InvoiceDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("InvoiceNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PaymentStatus")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasDefaultValue("Unpaid");
+
+                    b.Property<Guid>("PurchaseOrderId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("Subtotal")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<Guid>("SupplierId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("TaxAmount")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<decimal>("TotalAmount")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CompanyId")
+                        .HasDatabaseName("IX_PurchaseInvoice_Company");
+
+                    b.HasIndex("DueDate")
+                        .HasDatabaseName("IX_PurchaseInvoice_DueDate");
+
+                    b.HasIndex("InvoiceDate")
+                        .HasDatabaseName("IX_PurchaseInvoice_Date");
+
+                    b.HasIndex("InvoiceNumber")
+                        .IsUnique()
+                        .HasDatabaseName("IX_PurchaseInvoice_InvoiceNumber");
+
+                    b.HasIndex("PaymentStatus")
+                        .HasDatabaseName("IX_PurchaseInvoice_PaymentStatus");
+
+                    b.HasIndex("PurchaseOrderId")
+                        .HasDatabaseName("IX_PurchaseInvoice_PurchaseOrder");
+
+                    b.HasIndex("SupplierId")
+                        .HasDatabaseName("IX_PurchaseInvoice_Supplier");
+
+                    b.ToTable("PurchaseInvoices", (string)null);
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Invoicing.Models.SupplierPayment", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("Amount")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("CreatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("InvoiceId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("PaymentDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("PaymentMethod")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ReferenceNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("SupplierId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("InvoiceId")
+                        .HasDatabaseName("IX_SupplierPayment_Invoice");
+
+                    b.HasIndex("PaymentDate")
+                        .HasDatabaseName("IX_SupplierPayment_Date");
+
+                    b.HasIndex("PaymentMethod")
+                        .HasDatabaseName("IX_SupplierPayment_Method");
+
+                    b.HasIndex("SupplierId")
+                        .HasDatabaseName("IX_SupplierPayment_Supplier");
+
+                    b.ToTable("SupplierPayments", (string)null);
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.POAdjustment", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("AdjustmentType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Amount")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("CreatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("PurchaseOrderId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PurchaseOrderId")
+                        .HasDatabaseName("IX_POAdjustment_PurchaseOrder");
+
+                    b.ToTable("POAdjustments", (string)null);
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.POAttachment", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("CreatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("FileName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FilePath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("FileSize")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("FileType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("PurchaseOrderId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("UploadedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETUTCDATE()");
+
+                    b.Property<Guid>("UploadedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PurchaseOrderId")
+                        .HasDatabaseName("IX_POAttachment_PurchaseOrder");
+
+                    b.HasIndex("UploadedBy")
+                        .HasDatabaseName("IX_POAttachment_UploadedBy");
+
+                    b.ToTable("POAttachments", (string)null);
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.PODeposit", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("AlreadyPaid")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<decimal>("Amount")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("CreatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("PaymentDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("PaymentMethod")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal?>("Percentage")
+                        .HasPrecision(10, 4)
+                        .HasColumnType("decimal(10,4)");
+
+                    b.Property<Guid>("PurchaseOrderId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ReferenceNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PaymentDate")
+                        .HasDatabaseName("IX_PODeposit_PaymentDate");
+
+                    b.HasIndex("PurchaseOrderId")
+                        .HasDatabaseName("IX_PODeposit_PurchaseOrder");
+
+                    b.ToTable("PODeposits", (string)null);
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.PODiscount", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("CreatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("DiscountAmount")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<string>("DiscountType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("DiscountValue")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("PurchaseOrderId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PurchaseOrderId")
+                        .HasDatabaseName("IX_PODiscount_PurchaseOrder");
+
+                    b.ToTable("PODiscounts", (string)null);
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.POLineItem", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("CreatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("DiscountAmount")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<decimal>("DiscountPercent")
+                        .HasPrecision(10, 4)
+                        .HasColumnType("decimal(10,4)");
+
+                    b.Property<decimal>("InvoicedQuantity")
+                        .HasPrecision(18, 3)
+                        .HasColumnType("decimal(18,3)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<decimal>("LineTotal")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<Guid?>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("PurchaseOrderId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("Quantity")
+                        .HasPrecision(18, 3)
+                        .HasColumnType("decimal(18,3)");
+
+                    b.Property<decimal>("ReceivedQuantity")
+                        .HasPrecision(18, 3)
+                        .HasColumnType("decimal(18,3)");
+
+                    b.Property<decimal>("RemainingQuantity")
+                        .HasPrecision(18, 3)
+                        .HasColumnType("decimal(18,3)");
+
+                    b.Property<decimal>("ReturnedQuantity")
+                        .HasPrecision(18, 3)
+                        .HasColumnType("decimal(18,3)");
+
+                    b.Property<Guid?>("ServiceId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("TaxAmount")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<Guid?>("TaxProfileId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("UnitPrice")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId")
+                        .HasDatabaseName("IX_POLineItem_Product");
+
+                    b.HasIndex("PurchaseOrderId")
+                        .HasDatabaseName("IX_POLineItem_PurchaseOrder");
+
+                    b.HasIndex("ServiceId")
+                        .HasDatabaseName("IX_POLineItem_Service");
+
+                    b.HasIndex("TaxProfileId");
+
+                    b.ToTable("POLineItems", null, t =>
+                        {
+                            t.HasCheckConstraint("CK_POLineItem_ProductOrService", "([ProductId] IS NOT NULL AND [ServiceId] IS NULL) OR ([ProductId] IS NULL AND [ServiceId] IS NOT NULL)");
+                        });
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.PONote", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("CreatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("NoteText")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("PurchaseOrderId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PurchaseOrderId")
+                        .HasDatabaseName("IX_PONote_PurchaseOrder");
+
+                    b.ToTable("PONotes", (string)null);
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.POShippingCharge", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("CreatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("PurchaseOrderId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("ShippingFee")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<decimal>("TaxAmount")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<Guid?>("TaxProfileId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("Total")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PurchaseOrderId")
+                        .HasDatabaseName("IX_POShippingCharge_PurchaseOrder");
+
+                    b.HasIndex("TaxProfileId");
+
+                    b.ToTable("POShippingCharges", (string)null);
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.PurchaseOrder", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("AdjustmentAmount")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<decimal>("AmountDue")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<DateTime?>("ApprovedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("ApprovedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("ClosedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("ClosedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CompanyId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("CreatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CurrencyCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(3)");
+
+                    b.Property<decimal>("DepositAmount")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<decimal>("DiscountAmount")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<string>("DocumentStatus")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasDefaultValue("Draft");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("PODate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("PONumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("PaymentStatus")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasDefaultValue("Unpaid");
+
+                    b.Property<string>("PaymentTerms")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ReceptionStatus")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)")
+                        .HasDefaultValue("NotReceived");
+
+                    b.Property<decimal>("ShippingAmount")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<DateTime?>("SubmittedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("SubmittedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("Subtotal")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<Guid>("SupplierId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("TaxAmount")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<string>("Terms")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("TotalAmount")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ApprovedBy");
+
+                    b.HasIndex("ClosedBy");
+
+                    b.HasIndex("CompanyId")
+                        .HasDatabaseName("IX_PurchaseOrder_Company");
+
+                    b.HasIndex("CurrencyCode");
+
+                    b.HasIndex("DocumentStatus")
+                        .HasDatabaseName("IX_PurchaseOrder_DocumentStatus");
+
+                    b.HasIndex("PODate")
+                        .HasDatabaseName("IX_PurchaseOrder_Date");
+
+                    b.HasIndex("PaymentStatus")
+                        .HasDatabaseName("IX_PurchaseOrder_PaymentStatus");
+
+                    b.HasIndex("ReceptionStatus")
+                        .HasDatabaseName("IX_PurchaseOrder_ReceptionStatus");
+
+                    b.HasIndex("SubmittedBy");
+
+                    b.HasIndex("SupplierId")
+                        .HasDatabaseName("IX_PurchaseOrder_Supplier");
+
+                    b.HasIndex("CompanyId", "PONumber")
+                        .IsUnique()
+                        .HasDatabaseName("IX_PurchaseOrder_Company_PONumber");
+
+                    b.ToTable("PurchaseOrders", (string)null);
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Refunds.Models.DebitNote", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("Amount")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("CreatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("DebitNoteNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("NoteDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("RefundId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("SupplierId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DebitNoteNumber")
+                        .IsUnique()
+                        .HasDatabaseName("IX_DebitNote_DebitNoteNumber");
+
+                    b.HasIndex("NoteDate")
+                        .HasDatabaseName("IX_DebitNote_Date");
+
+                    b.HasIndex("RefundId")
+                        .IsUnique()
+                        .HasDatabaseName("IX_DebitNote_Refund");
+
+                    b.HasIndex("SupplierId")
+                        .HasDatabaseName("IX_DebitNote_Supplier");
+
+                    b.ToTable("DebitNotes", (string)null);
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Refunds.Models.PurchaseRefund", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("CreatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("PurchaseOrderId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Reason")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("RefundDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("RefundNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<Guid>("SupplierId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("TotalAmount")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PurchaseOrderId")
+                        .HasDatabaseName("IX_PurchaseRefund_PurchaseOrder");
+
+                    b.HasIndex("RefundDate")
+                        .HasDatabaseName("IX_PurchaseRefund_Date");
+
+                    b.HasIndex("RefundNumber")
+                        .IsUnique()
+                        .HasDatabaseName("IX_PurchaseRefund_RefundNumber");
+
+                    b.HasIndex("SupplierId")
+                        .HasDatabaseName("IX_PurchaseRefund_Supplier");
+
+                    b.ToTable("PurchaseRefunds", (string)null);
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Refunds.Models.RefundLineItem", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("CreatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("GRNLineItemId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<decimal>("LineTotal")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<Guid?>("POLineItemId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("RefundId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("ReturnQuantity")
+                        .HasPrecision(18, 3)
+                        .HasColumnType("decimal(18,3)");
+
+                    b.Property<decimal>("UnitPrice")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GRNLineItemId")
+                        .HasDatabaseName("IX_RefundLineItem_GRNLineItem");
+
+                    b.HasIndex("POLineItemId");
+
+                    b.HasIndex("RefundId")
+                        .HasDatabaseName("IX_RefundLineItem_Refund");
+
+                    b.ToTable("RefundLineItems", (string)null);
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.WorkFlow.Models.POApprovalHistory", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Action")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ApprovalDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETUTCDATE()");
+
+                    b.Property<Guid>("ApprovedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Comments")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("CreatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("PurchaseOrderId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ApprovalDate")
+                        .HasDatabaseName("IX_POApprovalHistory_Date");
+
+                    b.HasIndex("ApprovedBy")
+                        .HasDatabaseName("IX_POApprovalHistory_ApprovedBy");
+
+                    b.HasIndex("PurchaseOrderId")
+                        .HasDatabaseName("IX_POApprovalHistory_PurchaseOrder");
+
+                    b.ToTable("POApprovalHistories", (string)null);
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.WorkFlow.Models.POAuditLog", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Action")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("ChangedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETUTCDATE()");
+
+                    b.Property<Guid>("ChangedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("CreatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("FieldName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("NewValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OldValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("PurchaseOrderId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Action")
+                        .HasDatabaseName("IX_POAuditLog_Action");
+
+                    b.HasIndex("ChangedAt")
+                        .HasDatabaseName("IX_POAuditLog_ChangedAt");
+
+                    b.HasIndex("ChangedBy")
+                        .HasDatabaseName("IX_POAuditLog_ChangedBy");
+
+                    b.HasIndex("PurchaseOrderId")
+                        .HasDatabaseName("IX_POAuditLog_PurchaseOrder");
+
+                    b.ToTable("POAuditLogs", (string)null);
+                });
+
             modelBuilder.Entity("Product", b =>
                 {
                     b.Property<Guid>("Id")
@@ -4575,6 +5782,369 @@ namespace ModularERP.Migrations
                     b.Navigation("Warehouse");
                 });
 
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Goods_Receipt.Models.GRNLineItem", b =>
+                {
+                    b.HasOne("ModularERP.Modules.Purchases.Goods_Receipt.Models.GoodsReceiptNote", "GRN")
+                        .WithMany("LineItems")
+                        .HasForeignKey("GRNId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.POLineItem", "POLineItem")
+                        .WithMany("GRNLineItems")
+                        .HasForeignKey("POLineItemId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("GRN");
+
+                    b.Navigation("POLineItem");
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Goods_Receipt.Models.GoodsReceiptNote", b =>
+                {
+                    b.HasOne("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.PurchaseOrder", "PurchaseOrder")
+                        .WithMany("GoodsReceipts")
+                        .HasForeignKey("PurchaseOrderId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("ModularERP.Modules.Inventory.Features.Warehouses.Models.Warehouse", "Warehouse")
+                        .WithMany()
+                        .HasForeignKey("WarehouseId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("PurchaseOrder");
+
+                    b.Navigation("Warehouse");
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Invoicing.Models.InvoiceLineItem", b =>
+                {
+                    b.HasOne("ModularERP.Modules.Purchases.Invoicing.Models.PurchaseInvoice", "Invoice")
+                        .WithMany("LineItems")
+                        .HasForeignKey("InvoiceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.POLineItem", "POLineItem")
+                        .WithMany("InvoiceLineItems")
+                        .HasForeignKey("POLineItemId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Invoice");
+
+                    b.Navigation("POLineItem");
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Invoicing.Models.PurchaseInvoice", b =>
+                {
+                    b.HasOne("ModularERP.Modules.Finance.Features.Companys.Models.Company", "Company")
+                        .WithMany()
+                        .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.PurchaseOrder", "PurchaseOrder")
+                        .WithMany("Invoices")
+                        .HasForeignKey("PurchaseOrderId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("ModularERP.Modules.Inventory.Features.Suppliers.Models.Supplier", "Supplier")
+                        .WithMany()
+                        .HasForeignKey("SupplierId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Company");
+
+                    b.Navigation("PurchaseOrder");
+
+                    b.Navigation("Supplier");
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Invoicing.Models.SupplierPayment", b =>
+                {
+                    b.HasOne("ModularERP.Modules.Purchases.Invoicing.Models.PurchaseInvoice", "Invoice")
+                        .WithMany("Payments")
+                        .HasForeignKey("InvoiceId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("ModularERP.Modules.Inventory.Features.Suppliers.Models.Supplier", "Supplier")
+                        .WithMany()
+                        .HasForeignKey("SupplierId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Invoice");
+
+                    b.Navigation("Supplier");
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.POAdjustment", b =>
+                {
+                    b.HasOne("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.PurchaseOrder", "PurchaseOrder")
+                        .WithMany("Adjustments")
+                        .HasForeignKey("PurchaseOrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("PurchaseOrder");
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.POAttachment", b =>
+                {
+                    b.HasOne("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.PurchaseOrder", "PurchaseOrder")
+                        .WithMany("Attachments")
+                        .HasForeignKey("PurchaseOrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ModularERP.Common.Models.ApplicationUser", "UploadedByUser")
+                        .WithMany()
+                        .HasForeignKey("UploadedBy")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("PurchaseOrder");
+
+                    b.Navigation("UploadedByUser");
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.PODeposit", b =>
+                {
+                    b.HasOne("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.PurchaseOrder", "PurchaseOrder")
+                        .WithMany("Deposits")
+                        .HasForeignKey("PurchaseOrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("PurchaseOrder");
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.PODiscount", b =>
+                {
+                    b.HasOne("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.PurchaseOrder", "PurchaseOrder")
+                        .WithMany("Discounts")
+                        .HasForeignKey("PurchaseOrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("PurchaseOrder");
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.POLineItem", b =>
+                {
+                    b.HasOne("Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.PurchaseOrder", "PurchaseOrder")
+                        .WithMany("LineItems")
+                        .HasForeignKey("PurchaseOrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ModularERP.Modules.Inventory.Features.Services.Models.Service", "Service")
+                        .WithMany()
+                        .HasForeignKey("ServiceId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("ModularERP.Modules.Inventory.Features.TaxManagement.Models.TaxProfile", "TaxProfile")
+                        .WithMany()
+                        .HasForeignKey("TaxProfileId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("Product");
+
+                    b.Navigation("PurchaseOrder");
+
+                    b.Navigation("Service");
+
+                    b.Navigation("TaxProfile");
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.PONote", b =>
+                {
+                    b.HasOne("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.PurchaseOrder", "PurchaseOrder")
+                        .WithMany("PONotes")
+                        .HasForeignKey("PurchaseOrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("PurchaseOrder");
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.POShippingCharge", b =>
+                {
+                    b.HasOne("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.PurchaseOrder", "PurchaseOrder")
+                        .WithMany("ShippingCharges")
+                        .HasForeignKey("PurchaseOrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ModularERP.Modules.Inventory.Features.TaxManagement.Models.TaxProfile", "TaxProfile")
+                        .WithMany()
+                        .HasForeignKey("TaxProfileId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("PurchaseOrder");
+
+                    b.Navigation("TaxProfile");
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.PurchaseOrder", b =>
+                {
+                    b.HasOne("ModularERP.Common.Models.ApplicationUser", "ApprovedByUser")
+                        .WithMany()
+                        .HasForeignKey("ApprovedBy")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("ModularERP.Common.Models.ApplicationUser", "ClosedByUser")
+                        .WithMany()
+                        .HasForeignKey("ClosedBy")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("ModularERP.Modules.Finance.Features.Companys.Models.Company", "Company")
+                        .WithMany()
+                        .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("ModularERP.Modules.Finance.Features.Currencies.Models.Currency", "Currency")
+                        .WithMany()
+                        .HasForeignKey("CurrencyCode")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("ModularERP.Common.Models.ApplicationUser", "SubmittedByUser")
+                        .WithMany()
+                        .HasForeignKey("SubmittedBy")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("ModularERP.Modules.Inventory.Features.Suppliers.Models.Supplier", "Supplier")
+                        .WithMany()
+                        .HasForeignKey("SupplierId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("ApprovedByUser");
+
+                    b.Navigation("ClosedByUser");
+
+                    b.Navigation("Company");
+
+                    b.Navigation("Currency");
+
+                    b.Navigation("SubmittedByUser");
+
+                    b.Navigation("Supplier");
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Refunds.Models.DebitNote", b =>
+                {
+                    b.HasOne("ModularERP.Modules.Purchases.Refunds.Models.PurchaseRefund", "Refund")
+                        .WithOne("DebitNote")
+                        .HasForeignKey("ModularERP.Modules.Purchases.Refunds.Models.DebitNote", "RefundId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("ModularERP.Modules.Inventory.Features.Suppliers.Models.Supplier", "Supplier")
+                        .WithMany()
+                        .HasForeignKey("SupplierId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Refund");
+
+                    b.Navigation("Supplier");
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Refunds.Models.PurchaseRefund", b =>
+                {
+                    b.HasOne("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.PurchaseOrder", "PurchaseOrder")
+                        .WithMany("Refunds")
+                        .HasForeignKey("PurchaseOrderId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("ModularERP.Modules.Inventory.Features.Suppliers.Models.Supplier", "Supplier")
+                        .WithMany()
+                        .HasForeignKey("SupplierId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("PurchaseOrder");
+
+                    b.Navigation("Supplier");
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Refunds.Models.RefundLineItem", b =>
+                {
+                    b.HasOne("ModularERP.Modules.Purchases.Goods_Receipt.Models.GRNLineItem", "GRNLineItem")
+                        .WithMany()
+                        .HasForeignKey("GRNLineItemId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.POLineItem", null)
+                        .WithMany("RefundLineItems")
+                        .HasForeignKey("POLineItemId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("ModularERP.Modules.Purchases.Refunds.Models.PurchaseRefund", "Refund")
+                        .WithMany("LineItems")
+                        .HasForeignKey("RefundId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("GRNLineItem");
+
+                    b.Navigation("Refund");
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.WorkFlow.Models.POApprovalHistory", b =>
+                {
+                    b.HasOne("ModularERP.Common.Models.ApplicationUser", "ApprovedByUser")
+                        .WithMany()
+                        .HasForeignKey("ApprovedBy")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.PurchaseOrder", "PurchaseOrder")
+                        .WithMany("ApprovalHistory")
+                        .HasForeignKey("PurchaseOrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ApprovedByUser");
+
+                    b.Navigation("PurchaseOrder");
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.WorkFlow.Models.POAuditLog", b =>
+                {
+                    b.HasOne("ModularERP.Common.Models.ApplicationUser", "ChangedByUser")
+                        .WithMany()
+                        .HasForeignKey("ChangedBy")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.PurchaseOrder", "PurchaseOrder")
+                        .WithMany("AuditLogs")
+                        .HasForeignKey("PurchaseOrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ChangedByUser");
+
+                    b.Navigation("PurchaseOrder");
+                });
+
             modelBuilder.Entity("Product", b =>
                 {
                     b.HasOne("ModularERP.Modules.Inventory.Features.ProductSettings.Models.Brand", "Brand")
@@ -4755,6 +6325,61 @@ namespace ModularERP.Migrations
             modelBuilder.Entity("ModularERP.Modules.Inventory.Features.TaxManagement.Models.TaxProfile", b =>
                 {
                     b.Navigation("TaxProfileComponents");
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Goods_Receipt.Models.GoodsReceiptNote", b =>
+                {
+                    b.Navigation("LineItems");
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Invoicing.Models.PurchaseInvoice", b =>
+                {
+                    b.Navigation("LineItems");
+
+                    b.Navigation("Payments");
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.POLineItem", b =>
+                {
+                    b.Navigation("GRNLineItems");
+
+                    b.Navigation("InvoiceLineItems");
+
+                    b.Navigation("RefundLineItems");
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.PurchaseOrder", b =>
+                {
+                    b.Navigation("Adjustments");
+
+                    b.Navigation("ApprovalHistory");
+
+                    b.Navigation("Attachments");
+
+                    b.Navigation("AuditLogs");
+
+                    b.Navigation("Deposits");
+
+                    b.Navigation("Discounts");
+
+                    b.Navigation("GoodsReceipts");
+
+                    b.Navigation("Invoices");
+
+                    b.Navigation("LineItems");
+
+                    b.Navigation("PONotes");
+
+                    b.Navigation("Refunds");
+
+                    b.Navigation("ShippingCharges");
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Refunds.Models.PurchaseRefund", b =>
+                {
+                    b.Navigation("DebitNote");
+
+                    b.Navigation("LineItems");
                 });
 
             modelBuilder.Entity("Product", b =>
