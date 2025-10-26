@@ -281,6 +281,39 @@
     <Folder Include="Modules\Inventory\Features\Suppliers\Qeuries\" />
     <Folder Include="Modules\Inventory\Features\Suppliers\Services\" />
     <Folder Include="Modules\Inventory\Features\Suppliers\Validators\" />
+    <Folder Include="Modules\Purchases\Goods_Receipt\Commends\" />
+    <Folder Include="Modules\Purchases\Goods_Receipt\Controllers\" />
+    <Folder Include="Modules\Purchases\Goods_Receipt\DTO\" />
+    <Folder Include="Modules\Purchases\Goods_Receipt\Handlers\" />
+    <Folder Include="Modules\Purchases\Goods_Receipt\Mapping\" />
+    <Folder Include="Modules\Purchases\Goods_Receipt\Qeuries\" />
+    <Folder Include="Modules\Purchases\Goods_Receipt\Services\" />
+    <Folder Include="Modules\Purchases\Goods_Receipt\Validators\" />
+    <Folder Include="Modules\Purchases\Invoicing\Commends\" />
+    <Folder Include="Modules\Purchases\Invoicing\Controllers\" />
+    <Folder Include="Modules\Purchases\Invoicing\DTO\" />
+    <Folder Include="Modules\Purchases\Invoicing\Handlers\" />
+    <Folder Include="Modules\Purchases\Invoicing\Mapping\" />
+    <Folder Include="Modules\Purchases\Invoicing\Qeuries\" />
+    <Folder Include="Modules\Purchases\Invoicing\Services\" />
+    <Folder Include="Modules\Purchases\Invoicing\Validators\" />
+    <Folder Include="Modules\Purchases\Purchase_Order_Management\Services\Services_PurchaseOrder\" />
+    <Folder Include="Modules\Purchases\Refunds\Commends\" />
+    <Folder Include="Modules\Purchases\Refunds\Controllers\" />
+    <Folder Include="Modules\Purchases\Refunds\DTO\" />
+    <Folder Include="Modules\Purchases\Refunds\Handlers\" />
+    <Folder Include="Modules\Purchases\Refunds\Mapping\" />
+    <Folder Include="Modules\Purchases\Refunds\Qeuries\" />
+    <Folder Include="Modules\Purchases\Refunds\Services\" />
+    <Folder Include="Modules\Purchases\Refunds\Validators\" />
+    <Folder Include="Modules\Purchases\WorkFlow\Commends\" />
+    <Folder Include="Modules\Purchases\WorkFlow\Controllers\" />
+    <Folder Include="Modules\Purchases\WorkFlow\DTO\" />
+    <Folder Include="Modules\Purchases\WorkFlow\Handlers\" />
+    <Folder Include="Modules\Purchases\WorkFlow\Mapping\" />
+    <Folder Include="Modules\Purchases\WorkFlow\Qeuries\" />
+    <Folder Include="Modules\Purchases\WorkFlow\Services\" />
+    <Folder Include="Modules\Purchases\WorkFlow\Validators\" />
   </ItemGroup>
 
 </Project>
