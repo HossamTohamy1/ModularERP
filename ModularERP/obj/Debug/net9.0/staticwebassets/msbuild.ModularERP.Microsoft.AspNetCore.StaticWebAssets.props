@@ -684,6 +684,96 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\ff93be28-516c-46fa-ba45-238dea1c1b14_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\purchase-orders\1325b776-88de-45b5-ac18-9191d44344e2\1bed1e02-fe4d-478b-b877-63b53ee1085f_O.S Lecture 1 .pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>ModularERP</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ModularERP</BasePath>
+      <RelativePath>uploads/purchase-orders/1325b776-88de-45b5-ac18-9191d44344e2/1bed1e02-fe4d-478b-b877-63b53ee1085f_O.S Lecture 1 .pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>kvrkz39uxt</Fingerprint>
+      <Integrity>IMkXuRcyTOsOVaCU2V6FoBeUitiNFlm7d2FfZzWcS2c=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\purchase-orders\1325b776-88de-45b5-ac18-9191d44344e2\1bed1e02-fe4d-478b-b877-63b53ee1085f_O.S Lecture 1 .pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\purchase-orders\155e65a5-bee6-4e35-bad4-9822b43c9705\54842c1a-f2a7-4d5d-a978-1129e02723ee_O.S Lecture 1 .pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>ModularERP</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ModularERP</BasePath>
+      <RelativePath>uploads/purchase-orders/155e65a5-bee6-4e35-bad4-9822b43c9705/54842c1a-f2a7-4d5d-a978-1129e02723ee_O.S Lecture 1 .pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>kvrkz39uxt</Fingerprint>
+      <Integrity>IMkXuRcyTOsOVaCU2V6FoBeUitiNFlm7d2FfZzWcS2c=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\purchase-orders\155e65a5-bee6-4e35-bad4-9822b43c9705\54842c1a-f2a7-4d5d-a978-1129e02723ee_O.S Lecture 1 .pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\purchase-orders\23d49ad7-c8f3-4545-9bb3-6957cdf43515\2ad2389a-1cc7-40df-8256-ef0f60d42c8e_O.S Lecture 1 .pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>ModularERP</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ModularERP</BasePath>
+      <RelativePath>uploads/purchase-orders/23d49ad7-c8f3-4545-9bb3-6957cdf43515/2ad2389a-1cc7-40df-8256-ef0f60d42c8e_O.S Lecture 1 .pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>kvrkz39uxt</Fingerprint>
+      <Integrity>IMkXuRcyTOsOVaCU2V6FoBeUitiNFlm7d2FfZzWcS2c=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\purchase-orders\23d49ad7-c8f3-4545-9bb3-6957cdf43515\2ad2389a-1cc7-40df-8256-ef0f60d42c8e_O.S Lecture 1 .pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\purchase-orders\ac851397-a046-4c04-add7-a4d6ef90bb58\a0ff7c96-7aa2-4c39-87d9-14bcbbe19645_O.S Lecture 1 .pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>ModularERP</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ModularERP</BasePath>
+      <RelativePath>uploads/purchase-orders/ac851397-a046-4c04-add7-a4d6ef90bb58/a0ff7c96-7aa2-4c39-87d9-14bcbbe19645_O.S Lecture 1 .pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>kvrkz39uxt</Fingerprint>
+      <Integrity>IMkXuRcyTOsOVaCU2V6FoBeUitiNFlm7d2FfZzWcS2c=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\purchase-orders\ac851397-a046-4c04-add7-a4d6ef90bb58\a0ff7c96-7aa2-4c39-87d9-14bcbbe19645_O.S Lecture 1 .pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\purchase-orders\c9419c66-ab1f-4857-a967-37221b235ea5\600390c1-7c6b-489c-b8cb-dc820e1f2802_O.S Lecture 1 .pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>ModularERP</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ModularERP</BasePath>
+      <RelativePath>uploads/purchase-orders/c9419c66-ab1f-4857-a967-37221b235ea5/600390c1-7c6b-489c-b8cb-dc820e1f2802_O.S Lecture 1 .pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>kvrkz39uxt</Fingerprint>
+      <Integrity>IMkXuRcyTOsOVaCU2V6FoBeUitiNFlm7d2FfZzWcS2c=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\purchase-orders\c9419c66-ab1f-4857-a967-37221b235ea5\600390c1-7c6b-489c-b8cb-dc820e1f2802_O.S Lecture 1 .pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\stocktaking\45ef0250-4160-4789-884f-8d5c14239b1c_c98ed6e2-98ab-4d74-9f4d-1df282fbea94_43eab4f3-42f6-44b4-a089-e03e23204be3.jpeg'))">
       <SourceType>Package</SourceType>
       <SourceId>ModularERP</SourceId>

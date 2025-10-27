@@ -26001,6 +26001,14 @@
             "type": "string",
             "nullable": true
           },
+          "notes": {
+            "type": "string",
+            "nullable": true
+          },
+          "terms": {
+            "type": "string",
+            "nullable": true
+          },
           "subtotal": {
             "type": "number",
             "format": "double"
@@ -26048,6 +26056,52 @@
           "createdAt": {
             "type": "string",
             "format": "date-time"
+          },
+          "lineItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_PurchaseOrder.POLineItemDto"
+            },
+            "nullable": true
+          },
+          "deposits": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_PurchaseOrder.PODepositDto"
+            },
+            "nullable": true
+          },
+          "discounts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_PurchaseOrder.PODiscountDto"
+            },
+            "nullable": true
+          },
+          "adjustments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_PurchaseOrder.POAdjustmentDto"
+            },
+            "nullable": true
+          },
+          "shippingCharges": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_PurchaseOrder.POShippingChargeDto"
+            },
+            "nullable": true
+          },
+          "poNotes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "attachmentCount": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
@@ -26236,18 +26290,6 @@
             "format": "double"
           },
           "lineTotal": {
-            "type": "number",
-            "format": "double"
-          },
-          "receivedQuantity": {
-            "type": "number",
-            "format": "double"
-          },
-          "invoicedQuantity": {
-            "type": "number",
-            "format": "double"
-          },
-          "returnedQuantity": {
             "type": "number",
             "format": "double"
           },

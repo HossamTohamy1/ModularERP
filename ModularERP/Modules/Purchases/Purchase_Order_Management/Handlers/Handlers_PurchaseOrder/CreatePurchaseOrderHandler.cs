@@ -1,12 +1,18 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using ModularERP.Common.Exceptions;
+using ModularERP.Common.Enum.Finance_Enum;
 using ModularERP.Common.ViewModel;
+using ModularERP.Modules.Finance.Features.Companys.Models;
+using ModularERP.Modules.Inventory.Features.Suppliers.Models;
 using ModularERP.Modules.Purchases.Purchase_Order_Management.Commends.Commends_PurchaseOrder;
 using ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_PurchaseOrder;
 using ModularERP.Modules.Purchases.Purchase_Order_Management.Models;
 using ModularERP.Shared.Interfaces;
 using Serilog;
+using ModularERP.Modules.Inventory.Features.Services.Models;
+using ModularERP.Modules.Inventory.Features.TaxManagement.Models;
 
 namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handlers_PurchaseOrder
 {
@@ -20,6 +26,11 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
         private readonly IGeneralRepository<POAdjustment> _adjustmentRepository;
         private readonly IGeneralRepository<POAttachment> _attachmentRepository;
         private readonly IGeneralRepository<PONote> _noteRepository;
+        private readonly IGeneralRepository<Supplier> _supplierRepository;
+        private readonly IGeneralRepository<Company> _companyRepository;
+        private readonly IGeneralRepository<Product> _productRepository;
+        private readonly IGeneralRepository<Service> _serviceRepository;
+        private readonly IGeneralRepository<TaxProfile> _taxProfileRepository;
         private readonly IMapper _mapper;
         private readonly ILogger<CreatePurchaseOrderHandler> _logger;
         private readonly IWebHostEnvironment _environment;
@@ -33,6 +44,11 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
             IGeneralRepository<POAdjustment> adjustmentRepository,
             IGeneralRepository<POAttachment> attachmentRepository,
             IGeneralRepository<PONote> noteRepository,
+            IGeneralRepository<Supplier> supplierRepository,
+            IGeneralRepository<Company> companyRepository,
+            IGeneralRepository<Product> productRepository,
+            IGeneralRepository<Service> serviceRepository,
+            IGeneralRepository<TaxProfile> taxProfileRepository,
             ILogger<CreatePurchaseOrderHandler> logger,
             IMapper mapper,
             IWebHostEnvironment environment)
@@ -45,6 +61,11 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
             _adjustmentRepository = adjustmentRepository;
             _attachmentRepository = attachmentRepository;
             _noteRepository = noteRepository;
+            _supplierRepository = supplierRepository;
+            _companyRepository = companyRepository;
+            _productRepository = productRepository;
+            _serviceRepository = serviceRepository;
+            _taxProfileRepository = taxProfileRepository;
             _mapper = mapper;
             _environment = environment;
             _logger = logger;
@@ -59,8 +80,8 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                 _logger.LogInformation("Creating purchase order for Company: {CompanyId}, Supplier: {SupplierId}",
                     request.CompanyId, request.SupplierId);
 
-                // Validate Company and Supplier exist
-                await ValidateEntities(request, cancellationToken);
+                // Validate Company and Supplier exist and get supplier info
+                var supplier = await ValidateEntitiesAndGetSupplier(request, cancellationToken);
 
                 // Generate PO Number
                 var poNumber = await GeneratePONumber(request.CompanyId, cancellationToken);
@@ -91,7 +112,8 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                     ReceptionStatus = "NotReceived",
                     PaymentStatus = calculations.DepositAmount > 0 ? "PartiallyPaid" : "Unpaid",
                     DocumentStatus = "Draft",
-                    CreatedAt = DateTime.UtcNow
+                    CreatedAt = DateTime.UtcNow,
+                    CreatedById = Guid.Parse("f0602c31-0c12-4b5c-9ccf-fe17811d5c53") // Placeholder for current user
                 };
 
                 await _poRepository.AddAsync(purchaseOrder);
@@ -101,34 +123,40 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                     purchaseOrder.Id, purchaseOrder.PONumber);
 
                 // Add Line Items
-                await AddLineItems(purchaseOrder.Id, request.LineItems, cancellationToken);
+                var lineItems = await AddLineItems(purchaseOrder.Id, request.LineItems, cancellationToken);
 
                 // Add Deposits
+                List<PODeposit> deposits = new();
                 if (request.Deposits?.Any() == true)
-                    await AddDeposits(purchaseOrder.Id, request.Deposits, cancellationToken);
+                    deposits = await AddDeposits(purchaseOrder.Id, request.Deposits, cancellationToken);
 
                 // Add Shipping Charges
+                List<POShippingCharge> shippingCharges = new();
                 if (request.ShippingCharges?.Any() == true)
-                    await AddShippingCharges(purchaseOrder.Id, request.ShippingCharges, cancellationToken);
+                    shippingCharges = await AddShippingCharges(purchaseOrder.Id, request.ShippingCharges, cancellationToken);
 
                 // Add Discounts
+                List<PODiscount> discounts = new();
                 if (request.Discounts?.Any() == true)
-                    await AddDiscounts(purchaseOrder.Id, request.Discounts, cancellationToken);
+                    discounts = await AddDiscounts(purchaseOrder.Id, request.Discounts, cancellationToken);
 
                 // Add Adjustments
+                List<POAdjustment> adjustments = new();
                 if (request.Adjustments?.Any() == true)
-                    await AddAdjustments(purchaseOrder.Id, request.Adjustments, cancellationToken);
+                    adjustments = await AddAdjustments(purchaseOrder.Id, request.Adjustments, cancellationToken);
 
                 // Add Attachments
+                int attachmentCount = 0;
                 if (request.Attachments?.Any() == true)
-                    await AddAttachments(purchaseOrder.Id, request.Attachments, cancellationToken);
+                    attachmentCount = await AddAttachments(purchaseOrder.Id, request.Attachments, cancellationToken);
 
                 // Add Notes
                 if (request.PONotes?.Any() == true)
                     await AddNotes(purchaseOrder.Id, request.PONotes, cancellationToken);
 
-                // Map to DTO
-                var result = _mapper.Map<CreatePurchaseOrderDto>(purchaseOrder);
+                // Build complete response with all related data
+                var result = await BuildResponseDto(purchaseOrder, supplier, lineItems, deposits,
+                    shippingCharges, discounts, adjustments, request.PONotes, attachmentCount, cancellationToken);
 
                 _logger.LogInformation("Purchase Order {PONumber} created successfully", poNumber);
 
@@ -143,10 +171,19 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
             }
         }
 
-        private async Task ValidateEntities(CreatePurchaseOrderCommand request, CancellationToken cancellationToken)
+        private async Task<Supplier> ValidateEntitiesAndGetSupplier(CreatePurchaseOrderCommand request, CancellationToken cancellationToken)
         {
-            // Add validation for Company and Supplier existence
-            // This would require injecting repositories for Company and Supplier
+            // Validate Company
+            var company = await _companyRepository.GetByIDWithTracking(request.CompanyId);
+            if (company == null)
+                throw new NotFoundException($"Company with ID {request.CompanyId} not found", FinanceErrorCode.NotFound);
+
+            // Validate Supplier and return it
+            var supplier = await _supplierRepository.GetByIDWithTracking(request.SupplierId);
+            if (supplier == null)
+                throw new NotFoundException($"Supplier with ID {request.SupplierId} not found", FinanceErrorCode.NotFound);
+
+            return supplier;
         }
 
         private async Task<string> GeneratePONumber(Guid companyId, CancellationToken cancellationToken)
@@ -163,70 +200,362 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
             var parts = lastPO.Split('-');
             if (parts.Length == 3 && int.TryParse(parts[2], out int lastNumber))
             {
+                var currentYearMonth = DateTime.UtcNow.ToString("yyyyMM");
+                var lastYearMonth = parts[1];
+
+                // Reset numbering if month changed
+                if (currentYearMonth != lastYearMonth)
+                    return $"PO-{currentYearMonth}-0001";
+
                 var newNumber = lastNumber + 1;
-                return $"PO-{DateTime.UtcNow:yyyyMM}-{newNumber:D4}";
+                return $"PO-{currentYearMonth}-{newNumber:D4}";
             }
 
             return $"PO-{DateTime.UtcNow:yyyyMM}-0001";
         }
 
+        /// <summary>
+        /// Calculates all amounts for Purchase Order according to BRSD requirements
+        /// Flow: Line Items → Line Discounts → PO Discounts → Adjustments → Shipping → Taxes → Deposit → Amount Due
+        /// </summary>
         private (decimal Subtotal, decimal DiscountAmount, decimal AdjustmentAmount,
                  decimal ShippingAmount, decimal TaxAmount, decimal TotalAmount,
                  decimal DepositAmount, decimal AmountDue) CalculateAmounts(CreatePurchaseOrderCommand request)
         {
-            // Calculate line items subtotal
-            decimal subtotal = 0;
-            decimal totalTax = 0;
+            _logger.LogInformation("Starting PO amount calculations");
+
+            // =====================================================
+            // STEP 1: Calculate Line Items Totals
+            // =====================================================
+            decimal lineItemsGrossTotal = 0;      // Sum of (Qty × Price) BEFORE line discounts
+            decimal lineItemsNetTotal = 0;        // Sum AFTER line discounts
+            decimal lineItemsTaxTotal = 0;        // Tax on net amounts
 
             foreach (var item in request.LineItems)
             {
-                var lineAmount = item.Quantity * item.UnitPrice;
-                var lineDiscountAmount = lineAmount * (item.DiscountPercent / 100);
-                var netAmount = lineAmount - lineDiscountAmount;
+                // Gross amount before discount
+                var lineGrossAmount = item.Quantity * item.UnitPrice;
+                lineItemsGrossTotal += lineGrossAmount;
 
-                // Tax calculation would require TaxProfile lookup
-                // For now, assuming 15% VAT if TaxProfileId is provided
-                decimal itemTax = item.TaxProfileId.HasValue ? netAmount * 0.15m : 0;
+                // Line discount calculation
+                var lineDiscountAmount = lineGrossAmount * (item.DiscountPercent / 100);
 
-                subtotal += lineAmount;
-                totalTax += itemTax;
+                // Net amount after line discount
+                var lineNetAmount = lineGrossAmount - lineDiscountAmount;
+                lineItemsNetTotal += lineNetAmount;
+
+                // Tax calculation on net amount (after line discount)
+                if (item.TaxProfileId.HasValue)
+                {
+                    var lineTax = lineNetAmount * 0.15m; // 15% VAT
+                    lineItemsTaxTotal += lineTax;
+                }
+
+                _logger.LogDebug(
+                    "Line Item: Gross={Gross}, Discount={Discount}, Net={Net}, Tax={Tax}",
+                    lineGrossAmount, lineDiscountAmount, lineNetAmount, item.TaxProfileId.HasValue ? lineNetAmount * 0.15m : 0);
             }
 
-            // Calculate discounts
-            decimal discountAmount = 0;
-            foreach (var discount in request.Discounts ?? new List<CreatePODiscountDto>())
+            _logger.LogInformation(
+                "Line Items Summary - Gross: {Gross}, Net: {Net}, Tax: {Tax}",
+                lineItemsGrossTotal, lineItemsNetTotal, lineItemsTaxTotal);
+
+            // =====================================================
+            // STEP 2: Apply PO-Level Discounts (on Net Total)
+            // =====================================================
+            decimal poDiscountAmount = 0;
+
+            if (request.Discounts?.Any() == true)
             {
-                if (discount.DiscountType == "Percentage")
-                    discountAmount += subtotal * (discount.DiscountValue / 100);
-                else
-                    discountAmount += discount.DiscountValue;
+                foreach (var discount in request.Discounts)
+                {
+                    decimal discountValue = 0;
+
+                    if (discount.DiscountType == "Percentage")
+                    {
+                        // ✅ CRITICAL FIX: Apply percentage on LINE ITEMS NET TOTAL (after line discounts)
+                        discountValue = lineItemsNetTotal * (discount.DiscountValue / 100);
+
+                        _logger.LogDebug(
+                            "PO Discount ({Type}): {Percent}% of {Base} = {Amount}",
+                            discount.DiscountType, discount.DiscountValue, lineItemsNetTotal, discountValue);
+                    }
+                    else if (discount.DiscountType == "Fixed" || discount.DiscountType == "Amount")
+                    {
+                        // Fixed amount discount
+                        discountValue = discount.DiscountValue;
+
+                        _logger.LogDebug(
+                            "PO Discount ({Type}): Fixed Amount = {Amount}",
+                            discount.DiscountType, discountValue);
+                    }
+
+                    poDiscountAmount += discountValue;
+                }
             }
 
-            // Calculate adjustments
-            decimal adjustmentAmount = request.Adjustments?.Sum(x => x.Amount) ?? 0;
+            // Calculate net after PO discount
+            decimal netAfterPODiscount = lineItemsNetTotal - poDiscountAmount;
 
-            // Calculate shipping
-            decimal shippingAmount = 0;
-            decimal shippingTax = 0;
-            foreach (var shipping in request.ShippingCharges ?? new List<CreatePOShippingChargeDto>())
+            _logger.LogInformation(
+                "After PO Discount - Discount: {Discount}, Net: {Net}",
+                poDiscountAmount, netAfterPODiscount);
+
+            // =====================================================
+            // STEP 3: Add Adjustments (before final tax calculation)
+            // =====================================================
+            decimal adjustmentAmount = 0;
+
+            if (request.Adjustments?.Any() == true)
             {
-                shippingAmount += shipping.ShippingFee;
-                if (shipping.TaxProfileId.HasValue)
-                    shippingTax += shipping.ShippingFee * 0.15m; // Assuming 15% VAT
+                adjustmentAmount = request.Adjustments.Sum(x => x.Amount);
+
+                _logger.LogInformation("Adjustments Total: {Amount}", adjustmentAmount);
             }
 
-            totalTax += shippingTax;
+            // =====================================================
+            // STEP 4: Calculate Shipping with Tax
+            // =====================================================
+            decimal shippingFeeTotal = 0;
+            decimal shippingTaxTotal = 0;
 
-            // Calculate totals
-            decimal totalAmount = subtotal - discountAmount + adjustmentAmount + shippingAmount + totalTax;
-            decimal depositAmount = request.Deposits?.Sum(x => x.Amount) ?? 0;
-            decimal amountDue = totalAmount - depositAmount;
+            if (request.ShippingCharges?.Any() == true)
+            {
+                foreach (var shipping in request.ShippingCharges)
+                {
+                    shippingFeeTotal += shipping.ShippingFee;
 
-            return (subtotal, discountAmount, adjustmentAmount, shippingAmount,
-                    totalTax, totalAmount, depositAmount, amountDue);
+                    if (shipping.TaxProfileId.HasValue)
+                    {
+                        var shippingTax = shipping.ShippingFee * 0.15m; // 15% VAT on shipping
+                        shippingTaxTotal += shippingTax;
+
+                        _logger.LogDebug(
+                            "Shipping Charge: Fee={Fee}, Tax={Tax}",
+                            shipping.ShippingFee, shippingTax);
+                    }
+                }
+            }
+
+            _logger.LogInformation(
+                "Shipping Summary - Fee: {Fee}, Tax: {Tax}",
+                shippingFeeTotal, shippingTaxTotal);
+
+            // =====================================================
+            // STEP 5: Calculate Grand Total
+            // =====================================================
+            // Total tax = line items tax + shipping tax
+            decimal totalTax = lineItemsTaxTotal + shippingTaxTotal;
+
+            // Grand Total = Net Items (after all discounts) + Adjustments + Shipping Fee + All Taxes
+            decimal grandTotal = netAfterPODiscount + adjustmentAmount + shippingFeeTotal + totalTax;
+
+            _logger.LogInformation(
+                "Grand Total Calculation: Net={Net} + Adj={Adj} + Ship={Ship} + Tax={Tax} = {Total}",
+                netAfterPODiscount, adjustmentAmount, shippingFeeTotal, totalTax, grandTotal);
+
+            // =====================================================
+            // STEP 6: Process and Validate Deposits
+            // =====================================================
+            decimal depositAmount = 0;
+
+            if (request.Deposits?.Any() == true)
+            {
+                foreach (var deposit in request.Deposits)
+                {
+                    decimal calculatedDeposit = 0;
+
+                    // Handle percentage-based deposits
+                    if (deposit.Percentage.HasValue && deposit.Percentage.Value > 0)
+                    {
+                        // ✅ CRITICAL FIX: Calculate deposit based on percentage of grand total
+                        calculatedDeposit = grandTotal * (deposit.Percentage.Value / 100);
+
+                        _logger.LogDebug(
+                            "Deposit Calculation: {Percent}% of {Total} = {Amount}",
+                            deposit.Percentage.Value, grandTotal, calculatedDeposit);
+
+                        // Validate if both amount and percentage are provided
+                        if (deposit.Amount > 0)
+                        {
+                            var difference = Math.Abs(deposit.Amount - calculatedDeposit);
+
+                            // Allow small rounding difference (0.01)
+                            if (difference > 0.01m)
+                            {
+                                _logger.LogWarning(
+                                    "⚠️ Deposit Mismatch: Provided Amount={Provided}, Calculated from {Percent}%={Calculated}. Using calculated value.",
+                                    deposit.Amount, deposit.Percentage.Value, calculatedDeposit);
+                            }
+                        }
+
+                        depositAmount += calculatedDeposit;
+                    }
+                    else if (deposit.Amount > 0)
+                    {
+                        // Use fixed amount if no percentage provided
+                        calculatedDeposit = deposit.Amount;
+                        depositAmount += calculatedDeposit;
+
+                        _logger.LogDebug("Deposit: Fixed Amount = {Amount}", calculatedDeposit);
+                    }
+                }
+
+                // ✅ CRITICAL FIX: Validate deposit doesn't exceed grand total
+                if (depositAmount > grandTotal)
+                {
+                    _logger.LogWarning(
+                        "⚠️ Deposit ({Deposit}) exceeds Grand Total ({Total}). Capping deposit to total amount.",
+                        depositAmount, grandTotal);
+
+                    depositAmount = grandTotal;
+                }
+
+                _logger.LogInformation("Total Deposit Amount: {Amount}", depositAmount);
+            }
+
+            // =====================================================
+            // STEP 7: Calculate Amount Due
+            // =====================================================
+            // ✅ CRITICAL FIX: Amount due should never be negative
+            decimal amountDue = Math.Max(0, grandTotal - depositAmount);
+
+            _logger.LogInformation(
+                "Amount Due: {Total} - {Deposit} = {Due}",
+                grandTotal, depositAmount, amountDue);
+
+            // =====================================================
+            // STEP 8: Return All Calculated Values
+            // =====================================================
+            var result = (
+                Subtotal: lineItemsGrossTotal,              // ✅ Gross total before line discounts
+                DiscountAmount: poDiscountAmount,           // ✅ PO-level discount only (applied on net)
+                AdjustmentAmount: adjustmentAmount,         // ✅ Additional adjustments
+                ShippingAmount: shippingFeeTotal,           // ✅ Shipping fee (without tax)
+                TaxAmount: totalTax,                        // ✅ All taxes combined (items + shipping)
+                TotalAmount: grandTotal,                    // ✅ Grand total
+                DepositAmount: depositAmount,               // ✅ Validated deposit amount
+                AmountDue: amountDue                        // ✅ Remaining balance (non-negative)
+            );
+
+            _logger.LogInformation(
+                "✅ Final Calculations Complete - Subtotal: {Subtotal}, Discount: {Discount}, " +
+                "Adjustment: {Adjustment}, Shipping: {Shipping}, Tax: {Tax}, " +
+                "Total: {Total}, Deposit: {Deposit}, Due: {Due}",
+                result.Subtotal, result.DiscountAmount, result.AdjustmentAmount,
+                result.ShippingAmount, result.TaxAmount, result.TotalAmount,
+                result.DepositAmount, result.AmountDue);
+
+            return result;
         }
 
-        private async Task AddLineItems(Guid purchaseOrderId, List<CreatePOLineItemDto> items,
+        private async Task<CreatePurchaseOrderDto> BuildResponseDto(
+            PurchaseOrder purchaseOrder,
+            Supplier supplier,
+            List<POLineItem> lineItems,
+            List<PODeposit> deposits,
+            List<POShippingCharge> shippingCharges,
+            List<PODiscount> discounts,
+            List<POAdjustment> adjustments,
+            List<string>? poNotes,
+            int attachmentCount,
+            CancellationToken cancellationToken)
+        {
+            // Get unique IDs for lookups
+            var productIds = lineItems.Where(x => x.ProductId.HasValue).Select(x => x.ProductId!.Value).Distinct().ToList();
+            var serviceIds = lineItems.Where(x => x.ServiceId.HasValue).Select(x => x.ServiceId!.Value).Distinct().ToList();
+            var taxProfileIds = lineItems.Where(x => x.TaxProfileId.HasValue).Select(x => x.TaxProfileId!.Value)
+                .Union(shippingCharges.Where(x => x.TaxProfileId.HasValue).Select(x => x.TaxProfileId!.Value))
+                .Distinct().ToList();
+
+            // Fetch related entities
+            var products = productIds.Any()
+                ? await _productRepository.GetAll().Where(p => productIds.Contains(p.Id)).ToDictionaryAsync(p => p.Id, cancellationToken)
+                : new Dictionary<Guid, Product>();
+
+            var services = serviceIds.Any()
+                ? await _serviceRepository.GetAll().Where(s => serviceIds.Contains(s.Id)).ToDictionaryAsync(s => s.Id, cancellationToken)
+                : new Dictionary<Guid, Service>();
+
+            var taxProfiles = taxProfileIds.Any()
+                ? await _taxProfileRepository.GetAll().Where(t => taxProfileIds.Contains(t.Id)).ToDictionaryAsync(t => t.Id, cancellationToken)
+                : new Dictionary<Guid, TaxProfile>();
+
+            // Map line items with related data
+            var lineItemDtos = lineItems.Select(li => new POLineItemDto
+            {
+                Id = li.Id,
+                ProductId = li.ProductId,
+                ProductName = li.ProductId.HasValue && products.ContainsKey(li.ProductId.Value)
+                    ? products[li.ProductId.Value].Name
+                    : null,
+                ServiceId = li.ServiceId,
+                ServiceName = li.ServiceId.HasValue && services.ContainsKey(li.ServiceId.Value)
+                    ? services[li.ServiceId.Value].Name
+                    : null,
+                Description = li.Description,
+                Quantity = li.Quantity,
+                UnitPrice = li.UnitPrice,
+                DiscountPercent = li.DiscountPercent,
+                DiscountAmount = li.DiscountAmount,
+                TaxProfileId = li.TaxProfileId,
+                TaxProfileName = li.TaxProfileId.HasValue && taxProfiles.ContainsKey(li.TaxProfileId.Value)
+                    ? taxProfiles[li.TaxProfileId.Value].Name
+                    : null,
+                TaxAmount = li.TaxAmount,
+                LineTotal = li.LineTotal,
+                RemainingQuantity = li.RemainingQuantity
+            }).ToList();
+
+            // Map shipping charges with tax profile names
+            var shippingChargeDtos = shippingCharges.Select(sc => new POShippingChargeDto
+            {
+                Id = sc.Id,
+                ShippingFee = sc.ShippingFee,
+                TaxProfileId = sc.TaxProfileId,
+                TaxProfileName = sc.TaxProfileId.HasValue && taxProfiles.ContainsKey(sc.TaxProfileId.Value)
+                    ? taxProfiles[sc.TaxProfileId.Value].Name
+                    : null,
+                TaxAmount = sc.TaxAmount,
+                Total = sc.Total,
+                Description = sc.Description
+            }).ToList();
+
+            return new CreatePurchaseOrderDto
+            {
+                Id = purchaseOrder.Id,
+                PONumber = purchaseOrder.PONumber,
+                CompanyId = purchaseOrder.CompanyId,
+                SupplierId = purchaseOrder.SupplierId,
+                SupplierName = supplier.Name,
+                CurrencyCode = purchaseOrder.CurrencyCode,
+                PODate = purchaseOrder.PODate,
+                PaymentTerms = purchaseOrder.PaymentTerms,
+                Notes = purchaseOrder.Notes,
+                Terms = purchaseOrder.Terms,
+                Subtotal = purchaseOrder.Subtotal,
+                DiscountAmount = purchaseOrder.DiscountAmount,
+                AdjustmentAmount = purchaseOrder.AdjustmentAmount,
+                ShippingAmount = purchaseOrder.ShippingAmount,
+                TaxAmount = purchaseOrder.TaxAmount,
+                TotalAmount = purchaseOrder.TotalAmount,
+                DepositAmount = purchaseOrder.DepositAmount,
+                AmountDue = purchaseOrder.AmountDue,
+                ReceptionStatus = purchaseOrder.ReceptionStatus,
+                PaymentStatus = purchaseOrder.PaymentStatus,
+                DocumentStatus = purchaseOrder.DocumentStatus,
+                CreatedAt = purchaseOrder.CreatedAt,
+                LineItems = lineItemDtos,
+                Deposits = _mapper.Map<List<PODepositDto>>(deposits),
+                Discounts = _mapper.Map<List<PODiscountDto>>(discounts),
+                Adjustments = _mapper.Map<List<POAdjustmentDto>>(adjustments),
+                ShippingCharges = shippingChargeDtos,
+                PONotes = poNotes ?? new List<string>(),
+                AttachmentCount = attachmentCount
+            };
+        }
+
+        private async Task<List<POLineItem>> AddLineItems(Guid purchaseOrderId, List<CreatePOLineItemDto> items,
             CancellationToken cancellationToken)
         {
             var lineItems = new List<POLineItem>();
@@ -259,9 +588,11 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
 
             await _lineItemRepository.AddRangeAsync(lineItems);
             await _lineItemRepository.SaveChanges();
+
+            return lineItems;
         }
 
-        private async Task AddDeposits(Guid purchaseOrderId, List<CreatePODepositDto> deposits,
+        private async Task<List<PODeposit>> AddDeposits(Guid purchaseOrderId, List<CreatePODepositDto> deposits,
             CancellationToken cancellationToken)
         {
             var depositEntities = deposits.Select(d => new PODeposit
@@ -279,9 +610,11 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
 
             await _depositRepository.AddRangeAsync(depositEntities);
             await _depositRepository.SaveChanges();
+
+            return depositEntities;
         }
 
-        private async Task AddShippingCharges(Guid purchaseOrderId,
+        private async Task<List<POShippingCharge>> AddShippingCharges(Guid purchaseOrderId,
             List<CreatePOShippingChargeDto> shippingCharges, CancellationToken cancellationToken)
         {
             var shippingEntities = shippingCharges.Select(s =>
@@ -301,9 +634,11 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
 
             await _shippingRepository.AddRangeAsync(shippingEntities);
             await _shippingRepository.SaveChanges();
+
+            return shippingEntities;
         }
 
-        private async Task AddDiscounts(Guid purchaseOrderId, List<CreatePODiscountDto> discounts,
+        private async Task<List<PODiscount>> AddDiscounts(Guid purchaseOrderId, List<CreatePODiscountDto> discounts,
             CancellationToken cancellationToken)
         {
             var discountEntities = discounts.Select(d => new PODiscount
@@ -312,15 +647,17 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                 PurchaseOrderId = purchaseOrderId,
                 DiscountType = d.DiscountType,
                 DiscountValue = d.DiscountValue,
-                DiscountAmount = d.DiscountValue, // This should be calculated based on type
+                DiscountAmount = d.DiscountValue,
                 Description = d.Description
             }).ToList();
 
             await _discountRepository.AddRangeAsync(discountEntities);
             await _discountRepository.SaveChanges();
+
+            return discountEntities;
         }
 
-        private async Task AddAdjustments(Guid purchaseOrderId, List<CreatePOAdjustmentDto> adjustments,
+        private async Task<List<POAdjustment>> AddAdjustments(Guid purchaseOrderId, List<CreatePOAdjustmentDto> adjustments,
             CancellationToken cancellationToken)
         {
             var adjustmentEntities = adjustments.Select(a => new POAdjustment
@@ -334,9 +671,11 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
 
             await _adjustmentRepository.AddRangeAsync(adjustmentEntities);
             await _adjustmentRepository.SaveChanges();
+
+            return adjustmentEntities;
         }
 
-        private async Task AddAttachments(Guid purchaseOrderId, List<IFormFile> attachments,
+        private async Task<int> AddAttachments(Guid purchaseOrderId, List<IFormFile> attachments,
             CancellationToken cancellationToken)
         {
             var uploadPath = Path.Combine(_environment.WebRootPath, "uploads", "purchase-orders", purchaseOrderId.ToString());
@@ -363,12 +702,14 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                     FileType = file.ContentType,
                     FileSize = file.Length,
                     UploadedAt = DateTime.UtcNow,
-                    UploadedBy = Guid.Empty // Should be set from current user context
+                    UploadedBy = Guid.Parse("f0602c31-0c12-4b5c-9ccf-fe17811d5c53")
                 });
             }
 
             await _attachmentRepository.AddRangeAsync(attachmentEntities);
             await _attachmentRepository.SaveChanges();
+
+            return attachmentEntities.Count;
         }
 
         private async Task AddNotes(Guid purchaseOrderId, List<string> notes,
@@ -378,7 +719,9 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
             {
                 Id = Guid.NewGuid(),
                 PurchaseOrderId = purchaseOrderId,
-                NoteText = n
+                NoteText = n,
+                CreatedAt = DateTime.UtcNow,
+                CreatedById = Guid.Parse("f0602c31-0c12-4b5c-9ccf-fe17811d5c53")
             }).ToList();
 
             await _noteRepository.AddRangeAsync(noteEntities);

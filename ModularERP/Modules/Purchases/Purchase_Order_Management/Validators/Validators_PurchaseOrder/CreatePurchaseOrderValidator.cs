@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using ModularERP.Modules.Purchases.Purchase_Order_Management.Commends.Commends_PurchaseOrder;
+using ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_PurchaseOrder;
 
 namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Validators.Validators_PurchaseOrder
 {
@@ -96,6 +97,77 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Validators.Vali
                                 .Contains(ct))
                     .WithMessage("Only PDF, Images (JPG, PNG), and Word documents are allowed");
             });
+
+            // Custom validation for total deposit amount
+            RuleFor(x => x)
+                .Custom((cmd, context) =>
+                {
+                    if (cmd.Deposits == null || !cmd.Deposits.Any())
+                        return;
+
+                    var calculations = CalculateEstimatedAmounts(cmd);
+                    var totalDeposit = cmd.Deposits.Sum(d => d.Amount);
+
+                    if (totalDeposit > calculations.TotalAmount)
+                    {
+                        context.AddFailure("Deposits",
+                            $"Total deposit amount ({totalDeposit:N2}) cannot exceed the estimated purchase order total ({calculations.TotalAmount:N2})");
+                    }
+                });
+        }
+
+        private (decimal Subtotal, decimal TotalAmount, decimal DepositAmount) CalculateEstimatedAmounts(CreatePurchaseOrderCommand cmd)
+        {
+            // Calculate line items subtotal
+            decimal subtotal = 0;
+            decimal netLineAmount = 0;
+            decimal lineTax = 0;
+
+            foreach (var item in cmd.LineItems)
+            {
+                var lineAmount = item.Quantity * item.UnitPrice;
+                var lineDiscountAmount = lineAmount * (item.DiscountPercent / 100);
+                var netAmount = lineAmount - lineDiscountAmount;
+
+                subtotal += lineAmount;
+                netLineAmount += netAmount;
+
+                // Tax calculation (assuming 15% VAT if TaxProfileId is provided)
+                if (item.TaxProfileId.HasValue)
+                    lineTax += netAmount * 0.15m;
+            }
+
+            // PO-level discount
+            decimal poDiscountAmount = 0;
+            foreach (var discount in cmd.Discounts ?? new List<CreatePODiscountDto>())
+            {
+                if (discount.DiscountType == "Percentage")
+                    poDiscountAmount += subtotal * (discount.DiscountValue / 100);
+                else
+                    poDiscountAmount += discount.DiscountValue;
+            }
+
+            // Apply PO discount to net line amount
+            netLineAmount -= poDiscountAmount;
+
+            // Adjustments
+            decimal adjustmentAmount = cmd.Adjustments?.Sum(x => x.Amount) ?? 0;
+
+            // Shipping with tax
+            decimal shippingAmount = 0;
+            decimal shippingTax = 0;
+            foreach (var shipping in cmd.ShippingCharges ?? new List<CreatePOShippingChargeDto>())
+            {
+                shippingAmount += shipping.ShippingFee;
+                if (shipping.TaxProfileId.HasValue)
+                    shippingTax += shipping.ShippingFee * 0.15m;
+            }
+
+            decimal totalTax = lineTax + shippingTax;
+            decimal totalAmount = netLineAmount + adjustmentAmount + shippingAmount + totalTax;
+            decimal depositAmount = cmd.Deposits?.Sum(x => x.Amount) ?? 0;
+
+            return (subtotal, totalAmount, depositAmount);
         }
     }
 }

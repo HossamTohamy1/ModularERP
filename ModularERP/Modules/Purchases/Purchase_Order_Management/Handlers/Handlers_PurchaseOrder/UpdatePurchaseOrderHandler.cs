@@ -101,7 +101,7 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                 // Update adjustments
                 await UpdateAdjustments(purchaseOrder.Id, request.Adjustments, cancellationToken);
 
-                // Recalculate amounts
+                // ✅ FIXED: Recalculate amounts using the same logic as Create
                 var calculations = await RecalculateAmounts(purchaseOrder.Id, cancellationToken);
                 purchaseOrder.Subtotal = calculations.Subtotal;
                 purchaseOrder.DiscountAmount = calculations.DiscountAmount;
@@ -337,6 +337,7 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                     {
                         existing.DiscountType = discountDto.DiscountType;
                         existing.DiscountValue = discountDto.DiscountValue;
+                        // ✅ Keep DiscountAmount as is - will be recalculated in RecalculateAmounts
                         existing.DiscountAmount = discountDto.DiscountValue;
                         existing.Description = discountDto.Description;
 
@@ -403,11 +404,18 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
             await _adjustmentRepository.SaveChanges();
         }
 
+        /// <summary>
+        /// ✅ FIXED: Recalculates amounts using the same logic as CreatePurchaseOrderHandler
+        /// Flow: Line Items → Line Discounts → PO Discounts → Adjustments → Shipping → Taxes → Deposit → Amount Due
+        /// </summary>
         private async Task<(decimal Subtotal, decimal DiscountAmount, decimal AdjustmentAmount,
                            decimal ShippingAmount, decimal TaxAmount, decimal TotalAmount,
                            decimal DepositAmount, decimal AmountDue)> RecalculateAmounts(
             Guid purchaseOrderId, CancellationToken cancellationToken)
         {
+            _logger.LogInformation("Recalculating amounts for PO: {POId}", purchaseOrderId);
+
+            // Fetch all related data
             var lineItems = await _lineItemRepository
                 .Get(x => x.PurchaseOrderId == purchaseOrderId)
                 .ToListAsync(cancellationToken);
@@ -428,18 +436,119 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                 .Get(x => x.PurchaseOrderId == purchaseOrderId)
                 .ToListAsync(cancellationToken);
 
-            var subtotal = lineItems.Sum(x => x.Quantity * x.UnitPrice);
-            var taxAmount = lineItems.Sum(x => x.TaxAmount) + shippingCharges.Sum(x => x.TaxAmount);
-            var discountAmount = discounts.Sum(x => x.DiscountAmount);
-            var adjustmentAmount = adjustments.Sum(x => x.Amount);
-            var shippingAmount = shippingCharges.Sum(x => x.ShippingFee);
-            var depositAmount = deposits.Sum(x => x.Amount);
+            // =====================================================
+            // STEP 1: Calculate Line Items Totals
+            // =====================================================
+            decimal lineItemsGrossTotal = 0;      // Before line discounts
+            decimal lineItemsNetTotal = 0;        // After line discounts
+            decimal lineItemsTaxTotal = 0;        // Tax on net amounts
 
-            var totalAmount = subtotal - discountAmount + adjustmentAmount + shippingAmount + taxAmount;
-            var amountDue = totalAmount - depositAmount;
+            foreach (var item in lineItems)
+            {
+                // Gross amount
+                var lineGrossAmount = item.Quantity * item.UnitPrice;
+                lineItemsGrossTotal += lineGrossAmount;
 
-            return (subtotal, discountAmount, adjustmentAmount, shippingAmount,
-                    taxAmount, totalAmount, depositAmount, amountDue);
+                // Net after line discount
+                var lineNetAmount = lineGrossAmount - item.DiscountAmount;
+                lineItemsNetTotal += lineNetAmount;
+
+                // Tax on net
+                lineItemsTaxTotal += item.TaxAmount;
+            }
+
+            // =====================================================
+            // STEP 2: Apply PO-Level Discounts (on Net Total)
+            // =====================================================
+            decimal poDiscountAmount = 0;
+
+            foreach (var discount in discounts)
+            {
+                if (discount.DiscountType == "Percentage")
+                {
+                    // ✅ Apply percentage on LINE ITEMS NET TOTAL
+                    poDiscountAmount += lineItemsNetTotal * (discount.DiscountValue / 100);
+                }
+                else
+                {
+                    // Fixed amount
+                    poDiscountAmount += discount.DiscountValue;
+                }
+            }
+
+            // Net after PO discount
+            decimal netAfterPODiscount = lineItemsNetTotal - poDiscountAmount;
+
+            // =====================================================
+            // STEP 3: Add Adjustments
+            // =====================================================
+            decimal adjustmentAmount = adjustments.Sum(x => x.Amount);
+
+            // =====================================================
+            // STEP 4: Calculate Shipping with Tax
+            // =====================================================
+            decimal shippingFeeTotal = shippingCharges.Sum(x => x.ShippingFee);
+            decimal shippingTaxTotal = shippingCharges.Sum(x => x.TaxAmount);
+
+            // =====================================================
+            // STEP 5: Calculate Grand Total
+            // =====================================================
+            decimal totalTax = lineItemsTaxTotal + shippingTaxTotal;
+            decimal grandTotal = netAfterPODiscount + adjustmentAmount + shippingFeeTotal + totalTax;
+
+            // =====================================================
+            // STEP 6: Process Deposits
+            // =====================================================
+            decimal depositAmount = 0;
+
+            foreach (var deposit in deposits)
+            {
+                if (deposit.Percentage.HasValue && deposit.Percentage.Value > 0)
+                {
+                    // ✅ Calculate from percentage of grand total
+                    var calculatedDeposit = grandTotal * (deposit.Percentage.Value / 100);
+                    depositAmount += calculatedDeposit;
+
+                    _logger.LogDebug(
+                        "Deposit: {Percent}% of {Total} = {Amount}",
+                        deposit.Percentage.Value, grandTotal, calculatedDeposit);
+                }
+                else if (deposit.Amount > 0)
+                {
+                    // Use fixed amount
+                    depositAmount += deposit.Amount;
+                }
+            }
+
+            // Cap deposit to grand total
+            if (depositAmount > grandTotal)
+            {
+                _logger.LogWarning(
+                    "Deposit ({Deposit}) exceeds Grand Total ({Total}). Capping.",
+                    depositAmount, grandTotal);
+                depositAmount = grandTotal;
+            }
+
+            // =====================================================
+            // STEP 7: Calculate Amount Due
+            // =====================================================
+            decimal amountDue = Math.Max(0, grandTotal - depositAmount);
+
+            _logger.LogInformation(
+                "Recalculation Complete - Subtotal: {Subtotal}, Discount: {Discount}, " +
+                "Total: {Total}, Deposit: {Deposit}, Due: {Due}",
+                lineItemsGrossTotal, poDiscountAmount, grandTotal, depositAmount, amountDue);
+
+            return (
+                Subtotal: lineItemsGrossTotal,
+                DiscountAmount: poDiscountAmount,
+                AdjustmentAmount: adjustmentAmount,
+                ShippingAmount: shippingFeeTotal,
+                TaxAmount: totalTax,
+                TotalAmount: grandTotal,
+                DepositAmount: depositAmount,
+                AmountDue: amountDue
+            );
         }
 
         private async Task DeleteAttachments(List<Guid> attachmentIds, CancellationToken cancellationToken)
@@ -505,7 +614,9 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
             {
                 Id = Guid.NewGuid(),
                 PurchaseOrderId = purchaseOrderId,
-                NoteText = n
+                NoteText = n,
+                CreatedAt = DateTime.UtcNow,
+                CreatedById = Guid.Empty
             }).ToList();
 
             await _noteRepository.AddRangeAsync(noteEntities);

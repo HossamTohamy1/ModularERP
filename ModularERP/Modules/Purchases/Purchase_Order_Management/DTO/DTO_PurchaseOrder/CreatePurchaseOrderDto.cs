@@ -10,6 +10,8 @@
         public string CurrencyCode { get; set; } = string.Empty;
         public DateTime PODate { get; set; }
         public string? PaymentTerms { get; set; }
+        public string? Notes { get; set; }
+        public string? Terms { get; set; }
         public decimal Subtotal { get; set; }
         public decimal DiscountAmount { get; set; }
         public decimal AdjustmentAmount { get; set; }
@@ -22,5 +24,14 @@
         public string PaymentStatus { get; set; } = string.Empty;
         public string DocumentStatus { get; set; } = string.Empty;
         public DateTime CreatedAt { get; set; }
+
+        // New fields for complete response
+        public List<POLineItemDto> LineItems { get; set; } = new();
+        public List<PODepositDto> Deposits { get; set; } = new();
+        public List<PODiscountDto> Discounts { get; set; } = new();
+        public List<POAdjustmentDto> Adjustments { get; set; } = new();
+        public List<POShippingChargeDto> ShippingCharges { get; set; } = new();
+        public List<string> PONotes { get; set; } = new();
+        public int AttachmentCount { get; set; }
     }
 }

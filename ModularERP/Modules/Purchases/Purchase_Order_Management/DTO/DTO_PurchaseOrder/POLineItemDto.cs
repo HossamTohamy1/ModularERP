@@ -16,9 +16,6 @@
         public string? TaxProfileName { get; set; }
         public decimal TaxAmount { get; set; }
         public decimal LineTotal { get; set; }
-        public decimal ReceivedQuantity { get; set; }
-        public decimal InvoicedQuantity { get; set; }
-        public decimal ReturnedQuantity { get; set; }
         public decimal RemainingQuantity { get; set; }
     }
 }
