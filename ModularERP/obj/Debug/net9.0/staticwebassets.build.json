@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "x/8r+lZEw2W7p/WvknrgWUl2EcS5m8kwkxL6z0dgLTQ=",
+  "Hash": "5A7jp+SCqmpEXpSVmjlqSlEG7bwA1dbPc6W/5iu/ehU=",
   "Source": "ModularERP",
   "BasePath": "_content/ModularERP",
   "Mode": "Default",
@@ -897,6 +897,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\purchase-orders\\23d49ad7-c8f3-4545-9bb3-6957cdf43515\\2ad2389a-1cc7-40df-8256-ef0f60d42c8e_O.S Lecture 1 .pdf"
+    },
+    {
+      "Identity": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\purchase-orders\\46187d2b-b8b5-4d3c-b3a9-f839ea5881b9\\06c2309e-2277-411d-ac03-042dcbd4b33c_O.S Lecture 1 .pdf",
+      "SourceId": "ModularERP",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\",
+      "BasePath": "_content/ModularERP",
+      "RelativePath": "uploads/purchase-orders/46187d2b-b8b5-4d3c-b3a9-f839ea5881b9/06c2309e-2277-411d-ac03-042dcbd4b33c_O.S Lecture 1 #[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "kvrkz39uxt",
+      "Integrity": "IMkXuRcyTOsOVaCU2V6FoBeUitiNFlm7d2FfZzWcS2c=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\purchase-orders\\46187d2b-b8b5-4d3c-b3a9-f839ea5881b9\\06c2309e-2277-411d-ac03-042dcbd4b33c_O.S Lecture 1 .pdf"
     },
     {
       "Identity": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\purchase-orders\\ac851397-a046-4c04-add7-a4d6ef90bb58\\a0ff7c96-7aa2-4c39-87d9-14bcbbe19645_O.S Lecture 1 .pdf",
@@ -4528,6 +4549,88 @@
         {
           "Name": "Last-Modified",
           "Value": "Mon, 27 Oct 2025 19:17:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-IMkXuRcyTOsOVaCU2V6FoBeUitiNFlm7d2FfZzWcS2c="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/purchase-orders/46187d2b-b8b5-4d3c-b3a9-f839ea5881b9/06c2309e-2277-411d-ac03-042dcbd4b33c_O.S Lecture 1 .kvrkz39uxt.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\purchase-orders\\46187d2b-b8b5-4d3c-b3a9-f839ea5881b9\\06c2309e-2277-411d-ac03-042dcbd4b33c_O.S Lecture 1 .pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3781738"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IMkXuRcyTOsOVaCU2V6FoBeUitiNFlm7d2FfZzWcS2c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 Oct 2025 19:45:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kvrkz39uxt"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/purchase-orders/46187d2b-b8b5-4d3c-b3a9-f839ea5881b9/06c2309e-2277-411d-ac03-042dcbd4b33c_O.S Lecture 1 .pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-IMkXuRcyTOsOVaCU2V6FoBeUitiNFlm7d2FfZzWcS2c="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/purchase-orders/46187d2b-b8b5-4d3c-b3a9-f839ea5881b9/06c2309e-2277-411d-ac03-042dcbd4b33c_O.S Lecture 1 .pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\purchase-orders\\46187d2b-b8b5-4d3c-b3a9-f839ea5881b9\\06c2309e-2277-411d-ac03-042dcbd4b33c_O.S Lecture 1 .pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3781738"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IMkXuRcyTOsOVaCU2V6FoBeUitiNFlm7d2FfZzWcS2c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 Oct 2025 19:45:13 GMT"
         },
         {
           "Name": "Cache-Control",

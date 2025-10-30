@@ -738,6 +738,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\purchase-orders\23d49ad7-c8f3-4545-9bb3-6957cdf43515\2ad2389a-1cc7-40df-8256-ef0f60d42c8e_O.S Lecture 1 .pdf'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\purchase-orders\46187d2b-b8b5-4d3c-b3a9-f839ea5881b9\06c2309e-2277-411d-ac03-042dcbd4b33c_O.S Lecture 1 .pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>ModularERP</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ModularERP</BasePath>
+      <RelativePath>uploads/purchase-orders/46187d2b-b8b5-4d3c-b3a9-f839ea5881b9/06c2309e-2277-411d-ac03-042dcbd4b33c_O.S Lecture 1 .pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>kvrkz39uxt</Fingerprint>
+      <Integrity>IMkXuRcyTOsOVaCU2V6FoBeUitiNFlm7d2FfZzWcS2c=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\purchase-orders\46187d2b-b8b5-4d3c-b3a9-f839ea5881b9\06c2309e-2277-411d-ac03-042dcbd4b33c_O.S Lecture 1 .pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\purchase-orders\ac851397-a046-4c04-add7-a4d6ef90bb58\a0ff7c96-7aa2-4c39-87d9-14bcbbe19645_O.S Lecture 1 .pdf'))">
       <SourceType>Package</SourceType>
       <SourceId>ModularERP</SourceId>

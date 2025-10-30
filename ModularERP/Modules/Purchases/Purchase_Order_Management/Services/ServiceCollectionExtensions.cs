@@ -21,6 +21,10 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Services
             {
 
                 cfg.AddProfile<PurchaseOrderMappingProfile>();
+                cfg.AddProfile<POLineItemMappingProfile>();
+                cfg.AddProfile<PODepositMappingProfile>();
+                cfg.AddProfile<POAttachmentMappingProfile>();
+                cfg.AddProfile<POStatusMappingProfile>();
 
 
             });

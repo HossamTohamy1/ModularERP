@@ -492,6 +492,18 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-IMkXuRcyTOsOVaCU2V6FoBeUitiNFlm7d2FfZzWcS2c="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"3781738"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022IMkXuRcyTOsOVaCU2V6FoBeUitiNFlm7d2FfZzWcS2c=\u0022"},{"Name":"Last-Modified","Value":"Mon, 27 Oct 2025 19:17:00 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/ModularERP/uploads/purchase-orders/46187d2b-b8b5-4d3c-b3a9-f839ea5881b9/06c2309e-2277-411d-ac03-042dcbd4b33c_O.S Lecture 1 .kvrkz39uxt.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\purchase-orders\46187d2b-b8b5-4d3c-b3a9-f839ea5881b9\06c2309e-2277-411d-ac03-042dcbd4b33c_O.S Lecture 1 .pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"kvrkz39uxt"},{"Name":"integrity","Value":"sha256-IMkXuRcyTOsOVaCU2V6FoBeUitiNFlm7d2FfZzWcS2c="},{"Name":"label","Value":"_content/ModularERP/uploads/purchase-orders/46187d2b-b8b5-4d3c-b3a9-f839ea5881b9/06c2309e-2277-411d-ac03-042dcbd4b33c_O.S Lecture 1 .pdf"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3781738"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022IMkXuRcyTOsOVaCU2V6FoBeUitiNFlm7d2FfZzWcS2c=\u0022"},{"Name":"Last-Modified","Value":"Mon, 27 Oct 2025 19:45:13 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/ModularERP/uploads/purchase-orders/46187d2b-b8b5-4d3c-b3a9-f839ea5881b9/06c2309e-2277-411d-ac03-042dcbd4b33c_O.S Lecture 1 .pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\purchase-orders\46187d2b-b8b5-4d3c-b3a9-f839ea5881b9\06c2309e-2277-411d-ac03-042dcbd4b33c_O.S Lecture 1 .pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-IMkXuRcyTOsOVaCU2V6FoBeUitiNFlm7d2FfZzWcS2c="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"3781738"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022IMkXuRcyTOsOVaCU2V6FoBeUitiNFlm7d2FfZzWcS2c=\u0022"},{"Name":"Last-Modified","Value":"Mon, 27 Oct 2025 19:45:13 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/ModularERP/uploads/purchase-orders/ac851397-a046-4c04-add7-a4d6ef90bb58/a0ff7c96-7aa2-4c39-87d9-14bcbbe19645_O.S Lecture 1 .kvrkz39uxt.pdf">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\purchase-orders\ac851397-a046-4c04-add7-a4d6ef90bb58\a0ff7c96-7aa2-4c39-87d9-14bcbbe19645_O.S Lecture 1 .pdf'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>

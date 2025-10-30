@@ -3581,6 +3581,88 @@
       ]
     },
     {
+      "Route": "uploads/purchase-orders/46187d2b-b8b5-4d3c-b3a9-f839ea5881b9/06c2309e-2277-411d-ac03-042dcbd4b33c_O.S Lecture 1 .kvrkz39uxt.pdf",
+      "AssetFile": "uploads/purchase-orders/46187d2b-b8b5-4d3c-b3a9-f839ea5881b9/06c2309e-2277-411d-ac03-042dcbd4b33c_O.S Lecture 1 .pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3781738"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IMkXuRcyTOsOVaCU2V6FoBeUitiNFlm7d2FfZzWcS2c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 Oct 2025 19:45:13 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kvrkz39uxt"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-IMkXuRcyTOsOVaCU2V6FoBeUitiNFlm7d2FfZzWcS2c="
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/purchase-orders/46187d2b-b8b5-4d3c-b3a9-f839ea5881b9/06c2309e-2277-411d-ac03-042dcbd4b33c_O.S Lecture 1 .pdf"
+        }
+      ]
+    },
+    {
+      "Route": "uploads/purchase-orders/46187d2b-b8b5-4d3c-b3a9-f839ea5881b9/06c2309e-2277-411d-ac03-042dcbd4b33c_O.S Lecture 1 .pdf",
+      "AssetFile": "uploads/purchase-orders/46187d2b-b8b5-4d3c-b3a9-f839ea5881b9/06c2309e-2277-411d-ac03-042dcbd4b33c_O.S Lecture 1 .pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3781738"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IMkXuRcyTOsOVaCU2V6FoBeUitiNFlm7d2FfZzWcS2c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 27 Oct 2025 19:45:13 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-IMkXuRcyTOsOVaCU2V6FoBeUitiNFlm7d2FfZzWcS2c="
+        }
+      ]
+    },
+    {
       "Route": "uploads/purchase-orders/ac851397-a046-4c04-add7-a4d6ef90bb58/a0ff7c96-7aa2-4c39-87d9-14bcbbe19645_O.S Lecture 1 .kvrkz39uxt.pdf",
       "AssetFile": "uploads/purchase-orders/ac851397-a046-4c04-add7-a4d6ef90bb58/a0ff7c96-7aa2-4c39-87d9-14bcbbe19645_O.S Lecture 1 .pdf",
       "Selectors": [],

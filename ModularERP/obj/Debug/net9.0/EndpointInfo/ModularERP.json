@@ -4168,6 +4168,1047 @@
         }
       }
     },
+    "/api/purchase-orders/{purchaseOrderId}/attachments": {
+      "post": {
+        "tags": [
+          "POAttachments"
+        ],
+        "parameters": [
+          {
+            "name": "purchaseOrderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "file": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "POAttachments"
+        ],
+        "parameters": [
+          {
+            "name": "purchaseOrderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/purchase-orders/{purchaseOrderId}/attachments/{attachmentId}": {
+      "delete": {
+        "tags": [
+          "POAttachments"
+        ],
+        "parameters": [
+          {
+            "name": "purchaseOrderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "attachmentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/purchase-orders/{purchaseOrderId}/deposits": {
+      "post": {
+        "tags": [
+          "PODeposits"
+        ],
+        "parameters": [
+          {
+            "name": "purchaseOrderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Purchase_Order_Management.Commends.Commends_PODeposite.CreatePODepositCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Purchase_Order_Management.Commends.Commends_PODeposite.CreatePODepositCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Purchase_Order_Management.Commends.Commends_PODeposite.CreatePODepositCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "PODeposits"
+        ],
+        "parameters": [
+          {
+            "name": "purchaseOrderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/purchase-orders/{purchaseOrderId}/deposits/{depositId}": {
+      "put": {
+        "tags": [
+          "PODeposits"
+        ],
+        "parameters": [
+          {
+            "name": "purchaseOrderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "depositId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Purchase_Order_Management.Commends.Commends_PODeposite.UpdatePODepositCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Purchase_Order_Management.Commends.Commends_PODeposite.UpdatePODepositCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Purchase_Order_Management.Commends.Commends_PODeposite.UpdatePODepositCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "PODeposits"
+        ],
+        "parameters": [
+          {
+            "name": "purchaseOrderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "depositId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/purchase-orders/{purchaseOrderId}/items": {
+      "get": {
+        "tags": [
+          "POLineItem"
+        ],
+        "parameters": [
+          {
+            "name": "purchaseOrderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POItme.POLineItemListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POItme.POLineItemListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POItme.POLineItemListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "POLineItem"
+        ],
+        "parameters": [
+          {
+            "name": "purchaseOrderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POItme.CreatePOLineItemDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POItme.CreatePOLineItemDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POItme.CreatePOLineItemDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POItme.POLineItemResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POItme.POLineItemResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POItme.POLineItemResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/purchase-orders/{purchaseOrderId}/items/{itemId}": {
+      "get": {
+        "tags": [
+          "POLineItem"
+        ],
+        "parameters": [
+          {
+            "name": "purchaseOrderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "itemId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POItme.POLineItemResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POItme.POLineItemResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POItme.POLineItemResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "POLineItem"
+        ],
+        "parameters": [
+          {
+            "name": "purchaseOrderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "itemId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POItme.UpdatePOLineItemDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POItme.UpdatePOLineItemDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POItme.UpdatePOLineItemDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POItme.POLineItemResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POItme.POLineItemResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POItme.POLineItemResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "POLineItem"
+        ],
+        "parameters": [
+          {
+            "name": "purchaseOrderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "itemId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/POStatus/{id}/status": {
+      "get": {
+        "tags": [
+          "POStatus"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POStatus.POStatusDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POStatus.POStatusDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POStatus.POStatusDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/POStatus/{id}/activity-log": {
+      "get": {
+        "tags": [
+          "POStatus"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POStatus.POActivityLogDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POStatus.POActivityLogDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POStatus.POActivityLogDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/POStatus/{id}/timeline": {
+      "get": {
+        "tags": [
+          "POStatus"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POStatus.POTimelineDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POStatus.POTimelineDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POStatus.POTimelineDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/POStatus/{id}/notes": {
+      "patch": {
+        "tags": [
+          "POStatus"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POStatus.UpdatePONotesDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POStatus.UpdatePONotesDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POStatus.UpdatePONotesDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/POStatus/{id}/print": {
+      "get": {
+        "tags": [
+          "POStatus"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POStatus.POPrintDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POStatus.POPrintDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POStatus.POPrintDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/POStatus/{id}/pdf": {
+      "get": {
+        "tags": [
+          "POStatus"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/price-calculation/calculate": {
       "post": {
         "tags": [
@@ -17760,6 +18801,154 @@
         },
         "additionalProperties": false
       },
+      "ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POItme.POLineItemResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POItme.POLineItemResponseDto"
+          },
+          "financeErrorCode": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
+          },
+          "traceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "validationErrors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POStatus.POPrintDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POStatus.POPrintDto"
+          },
+          "financeErrorCode": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
+          },
+          "traceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "validationErrors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POStatus.POStatusDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POStatus.POStatusDto"
+          },
+          "financeErrorCode": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
+          },
+          "traceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "validationErrors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POStatus.POTimelineDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POStatus.POTimelineDto"
+          },
+          "financeErrorCode": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
+          },
+          "traceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "validationErrors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
       "ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_PurchaseOrder.CreatePurchaseOrderDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
         "type": "object",
         "properties": {
@@ -18947,6 +20136,88 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/ModularERP.Modules.Inventory.Features.TaxManagement.DTO.TaxProfileDto"
+            },
+            "nullable": true
+          },
+          "financeErrorCode": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
+          },
+          "traceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "validationErrors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POItme.POLineItemListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POItme.POLineItemListDto"
+            },
+            "nullable": true
+          },
+          "financeErrorCode": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
+          },
+          "traceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "validationErrors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POStatus.POActivityLogDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POStatus.POActivityLogDto"
             },
             "nullable": true
           },
@@ -25781,6 +27052,88 @@
         },
         "additionalProperties": false
       },
+      "ModularERP.Modules.Purchases.Purchase_Order_Management.Commends.Commends_PODeposite.CreatePODepositCommand": {
+        "type": "object",
+        "properties": {
+          "purchaseOrderId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "percentage": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "paymentMethod": {
+            "type": "string",
+            "nullable": true
+          },
+          "referenceNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "alreadyPaid": {
+            "type": "boolean"
+          },
+          "paymentDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "notes": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Purchases.Purchase_Order_Management.Commends.Commends_PODeposite.UpdatePODepositCommand": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "purchaseOrderId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "percentage": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "paymentMethod": {
+            "type": "string",
+            "nullable": true
+          },
+          "referenceNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "alreadyPaid": {
+            "type": "boolean"
+          },
+          "paymentDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "notes": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "ModularERP.Modules.Purchases.Purchase_Order_Management.Controllers.PurchaseOrderController.ApprovePurchaseOrderRequest": {
         "type": "object",
         "properties": {
@@ -25835,6 +27188,577 @@
           "submittedBy": {
             "type": "string",
             "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POItme.CreatePOLineItemDto": {
+        "required": [
+          "description",
+          "purchaseOrderId",
+          "quantity",
+          "unitPrice"
+        ],
+        "type": "object",
+        "properties": {
+          "purchaseOrderId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "productId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "serviceId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "description": {
+            "maxLength": 500,
+            "minLength": 1,
+            "type": "string"
+          },
+          "quantity": {
+            "minimum": 0.01,
+            "type": "number",
+            "format": "double"
+          },
+          "unitPrice": {
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "discountPercent": {
+            "maximum": 100,
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "discountAmount": {
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "taxProfileId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "taxAmount": {
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "lineTotal": {
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POItme.POLineItemListDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "purchaseOrderId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "productName": {
+            "type": "string",
+            "nullable": true
+          },
+          "serviceName": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "quantity": {
+            "type": "number",
+            "format": "double"
+          },
+          "unitPrice": {
+            "type": "number",
+            "format": "double"
+          },
+          "lineTotal": {
+            "type": "number",
+            "format": "double"
+          },
+          "remainingQuantity": {
+            "type": "number",
+            "format": "double"
+          },
+          "isActive": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POItme.POLineItemResponseDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "purchaseOrderId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "productId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "productName": {
+            "type": "string",
+            "nullable": true
+          },
+          "serviceId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "serviceName": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "quantity": {
+            "type": "number",
+            "format": "double"
+          },
+          "unitPrice": {
+            "type": "number",
+            "format": "double"
+          },
+          "discountPercent": {
+            "type": "number",
+            "format": "double"
+          },
+          "discountAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "taxProfileId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "taxProfileName": {
+            "type": "string",
+            "nullable": true
+          },
+          "taxAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "lineTotal": {
+            "type": "number",
+            "format": "double"
+          },
+          "receivedQuantity": {
+            "type": "number",
+            "format": "double"
+          },
+          "invoicedQuantity": {
+            "type": "number",
+            "format": "double"
+          },
+          "returnedQuantity": {
+            "type": "number",
+            "format": "double"
+          },
+          "remainingQuantity": {
+            "type": "number",
+            "format": "double"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "isActive": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POItme.UpdatePOLineItemDto": {
+        "required": [
+          "description",
+          "id",
+          "purchaseOrderId",
+          "quantity",
+          "unitPrice"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "purchaseOrderId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "productId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "serviceId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "description": {
+            "maxLength": 500,
+            "minLength": 1,
+            "type": "string"
+          },
+          "quantity": {
+            "minimum": 0.01,
+            "type": "number",
+            "format": "double"
+          },
+          "unitPrice": {
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "discountPercent": {
+            "maximum": 100,
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "discountAmount": {
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "taxProfileId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "taxAmount": {
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "lineTotal": {
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POStatus.POActivityLogDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "purchaseOrderId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "action": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "performedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "performedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "oldValue": {
+            "type": "string",
+            "nullable": true
+          },
+          "newValue": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POStatus.POLineItemPrintDto": {
+        "type": "object",
+        "properties": {
+          "lineNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "productName": {
+            "type": "string",
+            "nullable": true
+          },
+          "quantity": {
+            "type": "number",
+            "format": "double"
+          },
+          "unitPrice": {
+            "type": "number",
+            "format": "double"
+          },
+          "discountAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "taxAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "lineTotal": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POStatus.POPrintDto": {
+        "type": "object",
+        "properties": {
+          "poNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "poDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "companyName": {
+            "type": "string",
+            "nullable": true
+          },
+          "companyAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "supplierName": {
+            "type": "string",
+            "nullable": true
+          },
+          "supplierAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "currencyCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "paymentTerms": {
+            "type": "string",
+            "nullable": true
+          },
+          "lineItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POStatus.POLineItemPrintDto"
+            },
+            "nullable": true
+          },
+          "subtotal": {
+            "type": "number",
+            "format": "double"
+          },
+          "discountAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "taxAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "shippingAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "notes": {
+            "type": "string",
+            "nullable": true
+          },
+          "terms": {
+            "type": "string",
+            "nullable": true
+          },
+          "receptionStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "paymentStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "documentStatus": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POStatus.POStatusDto": {
+        "type": "object",
+        "properties": {
+          "purchaseOrderId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "poNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "supplierName": {
+            "type": "string",
+            "nullable": true
+          },
+          "receptionStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "paymentStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "documentStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "totalAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "amountDue": {
+            "type": "number",
+            "format": "double"
+          },
+          "receivedPercentage": {
+            "type": "number",
+            "format": "double"
+          },
+          "paidPercentage": {
+            "type": "number",
+            "format": "double"
+          },
+          "poDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "approvedAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "closedAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POStatus.POTimelineDto": {
+        "type": "object",
+        "properties": {
+          "purchaseOrderId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "poNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "events": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POStatus.TimelineEventDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POStatus.TimelineEventDto": {
+        "type": "object",
+        "properties": {
+          "eventDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "eventType": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "performedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "icon": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POStatus.UpdatePONotesDto": {
+        "type": "object",
+        "properties": {
+          "notes": {
+            "type": "string",
+            "nullable": true
+          },
+          "terms": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
