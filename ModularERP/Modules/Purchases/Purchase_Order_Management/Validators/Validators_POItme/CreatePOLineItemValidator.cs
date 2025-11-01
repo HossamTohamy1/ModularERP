@@ -42,11 +42,7 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Validators.Vali
             RuleFor(x => x.DiscountAmount)
                 .GreaterThanOrEqualTo(0).WithMessage("Discount Amount cannot be negative");
 
-            RuleFor(x => x.TaxAmount)
-                .GreaterThanOrEqualTo(0).WithMessage("Tax Amount cannot be negative");
 
-            RuleFor(x => x.LineTotal)
-                .GreaterThanOrEqualTo(0).WithMessage("Line Total cannot be negative");
         }
 
         private async Task<bool> PurchaseOrderExists(Guid purchaseOrderId, CancellationToken cancellationToken)

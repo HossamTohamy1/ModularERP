@@ -23,18 +23,22 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POItme
         [Range(0, double.MaxValue, ErrorMessage = "Unit Price cannot be negative")]
         public decimal UnitPrice { get; set; }
 
+        /// <summary>
+        /// Discount as percentage (0-100). Takes priority over DiscountAmount.
+        /// If provided, DiscountAmount will be calculated automatically.
+        /// </summary>
         [Range(0, 100, ErrorMessage = "Discount Percent must be between 0 and 100")]
         public decimal DiscountPercent { get; set; }
 
+        /// <summary>
+        /// Fixed discount amount. Used only if DiscountPercent is 0.
+        /// </summary>
         [Range(0, double.MaxValue, ErrorMessage = "Discount Amount cannot be negative")]
         public decimal DiscountAmount { get; set; }
 
+        /// <summary>
+        /// Tax Profile to apply. If provided, tax will be calculated automatically.
+        /// </summary>
         public Guid? TaxProfileId { get; set; }
-
-        [Range(0, double.MaxValue, ErrorMessage = "Tax Amount cannot be negative")]
-        public decimal TaxAmount { get; set; }
-
-        [Range(0, double.MaxValue, ErrorMessage = "Line Total cannot be negative")]
-        public decimal LineTotal { get; set; }
     }
 }

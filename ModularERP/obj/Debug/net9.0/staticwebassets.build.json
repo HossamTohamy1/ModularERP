@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5A7jp+SCqmpEXpSVmjlqSlEG7bwA1dbPc6W/5iu/ehU=",
+  "Hash": "x15wsTjEcGmq4W7Y2lW6emYDVBbZqi+g74ZLolZTNcU=",
   "Source": "ModularERP",
   "BasePath": "_content/ModularERP",
   "Mode": "Default",
@@ -834,6 +834,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\ff93be28-516c-46fa-ba45-238dea1c1b14_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf"
+    },
+    {
+      "Identity": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\po-attachments\\46f8a551-205a-47c6-998d-da1707bd85e0_9.1_Deadlock.pdf",
+      "SourceId": "ModularERP",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\",
+      "BasePath": "_content/ModularERP",
+      "RelativePath": "uploads/po-attachments/46f8a551-205a-47c6-998d-da1707bd85e0_9.1_Deadlock#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "konepu3lub",
+      "Integrity": "ZNAct6HXrmp4SIdJQwErKZgM+32BnM5MBMQ84QIFjOs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\po-attachments\\46f8a551-205a-47c6-998d-da1707bd85e0_9.1_Deadlock.pdf"
+    },
+    {
+      "Identity": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\po-attachments\\5f699635-faa2-46c3-9ed3-e7b069f10f52_9.1_Deadlock.pdf",
+      "SourceId": "ModularERP",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\",
+      "BasePath": "_content/ModularERP",
+      "RelativePath": "uploads/po-attachments/5f699635-faa2-46c3-9ed3-e7b069f10f52_9.1_Deadlock#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "konepu3lub",
+      "Integrity": "ZNAct6HXrmp4SIdJQwErKZgM+32BnM5MBMQ84QIFjOs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\po-attachments\\5f699635-faa2-46c3-9ed3-e7b069f10f52_9.1_Deadlock.pdf"
     },
     {
       "Identity": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\purchase-orders\\1325b776-88de-45b5-ac18-9191d44344e2\\1bed1e02-fe4d-478b-b877-63b53ee1085f_O.S Lecture 1 .pdf",
@@ -4313,6 +4355,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-2IsJeWDxxGxLxxylPwoQGKCIlEyX2whZFc5maE+hPtM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/po-attachments/46f8a551-205a-47c6-998d-da1707bd85e0_9.1_Deadlock.konepu3lub.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\po-attachments\\46f8a551-205a-47c6-998d-da1707bd85e0_9.1_Deadlock.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2714948"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZNAct6HXrmp4SIdJQwErKZgM+32BnM5MBMQ84QIFjOs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 01 Nov 2025 15:45:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "konepu3lub"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/po-attachments/46f8a551-205a-47c6-998d-da1707bd85e0_9.1_Deadlock.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZNAct6HXrmp4SIdJQwErKZgM+32BnM5MBMQ84QIFjOs="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/po-attachments/46f8a551-205a-47c6-998d-da1707bd85e0_9.1_Deadlock.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\po-attachments\\46f8a551-205a-47c6-998d-da1707bd85e0_9.1_Deadlock.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2714948"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZNAct6HXrmp4SIdJQwErKZgM+32BnM5MBMQ84QIFjOs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 01 Nov 2025 15:45:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZNAct6HXrmp4SIdJQwErKZgM+32BnM5MBMQ84QIFjOs="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/po-attachments/5f699635-faa2-46c3-9ed3-e7b069f10f52_9.1_Deadlock.konepu3lub.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\po-attachments\\5f699635-faa2-46c3-9ed3-e7b069f10f52_9.1_Deadlock.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2714948"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZNAct6HXrmp4SIdJQwErKZgM+32BnM5MBMQ84QIFjOs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 01 Nov 2025 15:42:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "konepu3lub"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/po-attachments/5f699635-faa2-46c3-9ed3-e7b069f10f52_9.1_Deadlock.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZNAct6HXrmp4SIdJQwErKZgM+32BnM5MBMQ84QIFjOs="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/po-attachments/5f699635-faa2-46c3-9ed3-e7b069f10f52_9.1_Deadlock.pdf",
+      "AssetFile": "E:\\ModelerERP\\ModularERP\\ModularERP\\wwwroot\\uploads\\po-attachments\\5f699635-faa2-46c3-9ed3-e7b069f10f52_9.1_Deadlock.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2714948"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZNAct6HXrmp4SIdJQwErKZgM+32BnM5MBMQ84QIFjOs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 01 Nov 2025 15:42:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZNAct6HXrmp4SIdJQwErKZgM+32BnM5MBMQ84QIFjOs="
         }
       ]
     },

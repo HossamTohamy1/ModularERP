@@ -684,6 +684,42 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\ff93be28-516c-46fa-ba45-238dea1c1b14_Hossam-Reda-Tohamy-Full Stack NET Angular.pdf'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\po-attachments\46f8a551-205a-47c6-998d-da1707bd85e0_9.1_Deadlock.pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>ModularERP</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ModularERP</BasePath>
+      <RelativePath>uploads/po-attachments/46f8a551-205a-47c6-998d-da1707bd85e0_9.1_Deadlock.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>konepu3lub</Fingerprint>
+      <Integrity>ZNAct6HXrmp4SIdJQwErKZgM+32BnM5MBMQ84QIFjOs=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\po-attachments\46f8a551-205a-47c6-998d-da1707bd85e0_9.1_Deadlock.pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\po-attachments\5f699635-faa2-46c3-9ed3-e7b069f10f52_9.1_Deadlock.pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>ModularERP</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ModularERP</BasePath>
+      <RelativePath>uploads/po-attachments/5f699635-faa2-46c3-9ed3-e7b069f10f52_9.1_Deadlock.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>konepu3lub</Fingerprint>
+      <Integrity>ZNAct6HXrmp4SIdJQwErKZgM+32BnM5MBMQ84QIFjOs=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\po-attachments\5f699635-faa2-46c3-9ed3-e7b069f10f52_9.1_Deadlock.pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\purchase-orders\1325b776-88de-45b5-ac18-9191d44344e2\1bed1e02-fe4d-478b-b877-63b53ee1085f_O.S Lecture 1 .pdf'))">
       <SourceType>Package</SourceType>
       <SourceId>ModularERP</SourceId>

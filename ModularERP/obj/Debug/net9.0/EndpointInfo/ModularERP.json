@@ -27245,16 +27245,6 @@
             "type": "string",
             "format": "uuid",
             "nullable": true
-          },
-          "taxAmount": {
-            "minimum": 0,
-            "type": "number",
-            "format": "double"
-          },
-          "lineTotal": {
-            "minimum": 0,
-            "type": "number",
-            "format": "double"
           }
         },
         "additionalProperties": false
@@ -27459,16 +27449,6 @@
             "type": "string",
             "format": "uuid",
             "nullable": true
-          },
-          "taxAmount": {
-            "minimum": 0,
-            "type": "number",
-            "format": "double"
-          },
-          "lineTotal": {
-            "minimum": 0,
-            "type": "number",
-            "format": "double"
           }
         },
         "additionalProperties": false

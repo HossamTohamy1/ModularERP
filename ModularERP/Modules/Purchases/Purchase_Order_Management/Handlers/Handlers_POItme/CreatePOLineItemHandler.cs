@@ -8,6 +8,7 @@ using ModularERP.Common.ViewModel;
 using ModularERP.Modules.Purchases.Purchase_Order_Management.Commends.Commends_POItme;
 using ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POItme;
 using ModularERP.Modules.Purchases.Purchase_Order_Management.Models;
+using ModularERP.Modules.Inventory.Features.TaxManagement.Models;
 using ModularERP.Shared.Interfaces;
 using Serilog;
 
@@ -17,17 +18,20 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
     {
         private readonly IGeneralRepository<POLineItem> _lineItemRepository;
         private readonly IGeneralRepository<PurchaseOrder> _poRepository;
+        private readonly IGeneralRepository<TaxProfile> _taxProfileRepository;
         private readonly IMapper _mapper;
         private readonly ILogger<CreatePOLineItemHandler> _logger;
 
         public CreatePOLineItemHandler(
             IGeneralRepository<POLineItem> lineItemRepository,
             IGeneralRepository<PurchaseOrder> poRepository,
+            IGeneralRepository<TaxProfile> taxProfileRepository,
             IMapper mapper,
             ILogger<CreatePOLineItemHandler> logger)
         {
             _lineItemRepository = lineItemRepository;
             _poRepository = poRepository;
+            _taxProfileRepository = taxProfileRepository;
             _mapper = mapper;
             _logger = logger;
         }
@@ -65,6 +69,13 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                 lineItem.IsActive = true;
                 lineItem.IsDeleted = false;
 
+                // ===== CALCULATE LINE TOTALS =====
+                var calculationResult = await CalculateLineItemTotals(lineItem, cancellationToken);
+
+                lineItem.DiscountAmount = calculationResult.DiscountAmount;
+                lineItem.TaxAmount = calculationResult.TaxAmount;
+                lineItem.LineTotal = calculationResult.LineTotal;
+
                 // Calculate remaining quantity
                 lineItem.RemainingQuantity = lineItem.Quantity;
 
@@ -72,8 +83,12 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                 await _lineItemRepository.AddAsync(lineItem);
                 await _lineItemRepository.SaveChanges();
 
-                _logger.LogInformation("Line item {LineItemId} created successfully for PO {PurchaseOrderId}",
-                    lineItem.Id, request.PurchaseOrderId);
+                _logger.LogInformation(
+                    "Line item {LineItemId} created successfully for PO {PurchaseOrderId}. " +
+                    "Subtotal: {Subtotal}, Discount: {Discount}, Tax: {Tax}, Total: {Total}",
+                    lineItem.Id, request.PurchaseOrderId,
+                    calculationResult.Subtotal, calculationResult.DiscountAmount,
+                    calculationResult.TaxAmount, calculationResult.LineTotal);
 
                 // Retrieve with projections
                 var response = await _lineItemRepository
@@ -91,6 +106,120 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                     request.PurchaseOrderId);
                 throw;
             }
+        }
+
+        private async Task<LineItemCalculation> CalculateLineItemTotals(
+            POLineItem lineItem,
+            CancellationToken cancellationToken)
+        {
+            // Step 1: Calculate subtotal before discount
+            decimal subtotal = lineItem.Quantity * lineItem.UnitPrice;
+
+            // Step 2: Calculate discount amount
+            decimal discountAmount = 0;
+            if (lineItem.DiscountPercent > 0)
+            {
+                // Priority to percentage
+                discountAmount = subtotal * (lineItem.DiscountPercent / 100);
+            }
+            else if (lineItem.DiscountAmount > 0)
+            {
+                // Use fixed discount if provided and no percentage
+                discountAmount = lineItem.DiscountAmount;
+            }
+
+            // Step 3: Calculate amount after discount
+            decimal amountAfterDiscount = subtotal - discountAmount;
+
+            // Step 4: Calculate tax amount
+            decimal taxAmount = 0;
+            if (lineItem.TaxProfileId.HasValue)
+            {
+                taxAmount = await CalculateTaxAmount(
+                    lineItem.TaxProfileId.Value,
+                    amountAfterDiscount,
+                    cancellationToken);
+            }
+
+            // Step 5: Calculate final line total
+            decimal lineTotal = amountAfterDiscount + taxAmount;
+
+            return new LineItemCalculation
+            {
+                Subtotal = subtotal,
+                DiscountAmount = discountAmount,
+                AmountAfterDiscount = amountAfterDiscount,
+                TaxAmount = taxAmount,
+                LineTotal = lineTotal
+            };
+        }
+
+        private async Task<decimal> CalculateTaxAmount(
+            Guid taxProfileId,
+            decimal baseAmount,
+            CancellationToken cancellationToken)
+        {
+            var taxProfile = await _taxProfileRepository
+                .Get(tp => tp.Id == taxProfileId)
+                .Include(tp => tp.TaxProfileComponents)
+                    .ThenInclude(tpc => tpc.TaxComponent)
+                .FirstOrDefaultAsync(cancellationToken);
+
+            if (taxProfile == null || !taxProfile.TaxProfileComponents.Any())
+            {
+                _logger.LogWarning("Tax Profile {TaxProfileId} not found or has no components", taxProfileId);
+                return 0;
+            }
+
+            decimal totalTax = 0;
+            decimal cumulativeBase = baseAmount;
+
+            // Sort by priority and calculate taxes
+            var components = taxProfile.TaxProfileComponents
+                .Where(tpc => !tpc.IsDeleted)
+                .OrderBy(tpc => tpc.Priority)
+                .ToList();
+
+            foreach (var component in components)
+            {
+                var taxComponent = component.TaxComponent;
+                decimal componentTax = 0;
+
+                switch (taxComponent.RateType)
+                {
+                    case Common.Enum.Inventory_Enum.TaxRateType.Percentage:
+                        componentTax = cumulativeBase * (taxComponent.RateValue / 100);
+                        break;
+
+                    case Common.Enum.Inventory_Enum.TaxRateType.Fixed:
+                        componentTax = taxComponent.RateValue;
+                        break;
+                }
+
+                totalTax += componentTax;
+
+                // If tax is inclusive, it should be deducted from base
+                // If exclusive, next tax compounds on previous
+                if (taxComponent.IncludedType == Common.Enum.Inventory_Enum.TaxIncludedType.Exclusive)
+                {
+                    cumulativeBase += componentTax; // Compound for next tax
+                }
+
+                _logger.LogDebug(
+                    "Tax Component: {Name}, Rate: {Rate}, Type: {Type}, Calculated: {Amount}",
+                    taxComponent.Name, taxComponent.RateValue, taxComponent.RateType, componentTax);
+            }
+
+            return Math.Round(totalTax, 4);
+        }
+
+        private class LineItemCalculation
+        {
+            public decimal Subtotal { get; set; }
+            public decimal DiscountAmount { get; set; }
+            public decimal AmountAfterDiscount { get; set; }
+            public decimal TaxAmount { get; set; }
+            public decimal LineTotal { get; set; }
         }
     }
 }

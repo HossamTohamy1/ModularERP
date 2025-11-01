@@ -107,7 +107,7 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
             var userId = _httpContextAccessor.HttpContext?.User?.FindFirst("sub")?.Value
                          ?? _httpContextAccessor.HttpContext?.User?.FindFirst("userId")?.Value;
 
-            var uploadedBy = string.IsNullOrEmpty(userId) ? Guid.Empty : Guid.Parse(userId);
+            var uploadedBy = Guid.Parse("f0602c31-0c12-4b5c-9ccf-fe17811d5c53"); //string.IsNullOrEmpty(userId) ? Guid.Empty : Guid.Parse(userId);
 
             // Create attachment record
             var attachment = new POAttachment
