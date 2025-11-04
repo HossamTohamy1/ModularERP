@@ -3518,6 +3518,9 @@ namespace ModularERP.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid>("CompanyId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -3556,6 +3559,11 @@ namespace ModularERP.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CompanyId")
+                        .HasDatabaseName("IX_GoodsReceiptNote_Company");
+
+                    b.HasIndex("CreatedById");
 
                     b.HasIndex("GRNNumber")
                         .IsUnique()
@@ -5803,6 +5811,17 @@ namespace ModularERP.Migrations
 
             modelBuilder.Entity("ModularERP.Modules.Purchases.Goods_Receipt.Models.GoodsReceiptNote", b =>
                 {
+                    b.HasOne("ModularERP.Modules.Finance.Features.Companys.Models.Company", "Company")
+                        .WithMany()
+                        .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("ModularERP.Common.Models.ApplicationUser", "CreatedByUser")
+                        .WithMany()
+                        .HasForeignKey("CreatedById")
+                        .OnDelete(DeleteBehavior.Restrict);
+
                     b.HasOne("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.PurchaseOrder", "PurchaseOrder")
                         .WithMany("GoodsReceipts")
                         .HasForeignKey("PurchaseOrderId")
@@ -5814,6 +5833,10 @@ namespace ModularERP.Migrations
                         .HasForeignKey("WarehouseId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.Navigation("Company");
+
+                    b.Navigation("CreatedByUser");
 
                     b.Navigation("PurchaseOrder");
 

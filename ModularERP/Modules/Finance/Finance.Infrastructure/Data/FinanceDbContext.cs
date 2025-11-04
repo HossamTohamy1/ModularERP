@@ -2235,6 +2235,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
             });
 
             // GoodsReceiptNote Configuration
+            // GoodsReceiptNote Configuration
             builder.Entity<GoodsReceiptNote>(entity =>
             {
                 entity.ToTable("GoodsReceiptNotes");
@@ -2244,10 +2245,22 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .IsUnique()
                       .HasDatabaseName("IX_GoodsReceiptNote_GRNNumber");
 
+                // ✅ إضافة علاقة Company
+                entity.HasOne(e => e.Company)
+                      .WithMany()
+                      .HasForeignKey(e => e.CompanyId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
                 // Relationships
                 entity.HasOne(e => e.Warehouse)
                       .WithMany()
                       .HasForeignKey(e => e.WarehouseId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // ✅ إضافة علاقة CreatedByUser
+                entity.HasOne(e => e.CreatedByUser)
+                      .WithMany()
+                      .HasForeignKey(e => e.CreatedById)
                       .OnDelete(DeleteBehavior.Restrict);
 
                 entity.HasMany(e => e.LineItems)
@@ -2258,6 +2271,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 // Indexes
                 entity.HasIndex(e => e.PurchaseOrderId).HasDatabaseName("IX_GoodsReceiptNote_PurchaseOrder");
                 entity.HasIndex(e => e.WarehouseId).HasDatabaseName("IX_GoodsReceiptNote_Warehouse");
+                entity.HasIndex(e => e.CompanyId).HasDatabaseName("IX_GoodsReceiptNote_Company"); 
                 entity.HasIndex(e => e.ReceiptDate).HasDatabaseName("IX_GoodsReceiptNote_Date");
             });
 

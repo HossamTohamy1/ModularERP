@@ -170,7 +170,6 @@ namespace ModularERP.SharedKernel.Repository
         {
             foreach (var entity in entities)
             {
-                // Set TenantId للـ audit purposes فقط
                 if (typeof(T).GetProperty("TenantId") != null && !string.IsNullOrEmpty(_tenantId))
                 {
                     if (Guid.TryParse(_tenantId, out var tenantId))
