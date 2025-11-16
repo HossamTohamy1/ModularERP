@@ -2393,7 +2393,7 @@
   {
     "ContainingType": "ModularERP.Modules.Purchases.Goods_Receipt.Controllers.GRNPostingController",
     "Method": "PostGRN",
-    "RelativePath": "api/GRNPosting/post",
+    "RelativePath": "api/GRNPosting/post/{id}",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -2401,7 +2401,7 @@
       {
         "Name": "id",
         "Type": "System.Guid",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -2409,7 +2409,7 @@
   {
     "ContainingType": "ModularERP.Modules.Purchases.Goods_Receipt.Controllers.GRNPostingController",
     "Method": "ReverseGRN",
-    "RelativePath": "api/GRNPosting/reverse",
+    "RelativePath": "api/GRNPosting/reverse/{id}",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -2417,7 +2417,7 @@
       {
         "Name": "id",
         "Type": "System.Guid",
-        "IsRequired": false
+        "IsRequired": true
       },
       {
         "Name": "command",

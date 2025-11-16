@@ -12,9 +12,20 @@
         public string? ReceivedBy { get; set; }
         public string? Notes { get; set; }
         public Guid CompanyId { get; set; }
-        public DateTime CreatedAt { get; set; }  
-        public Guid? CreatedById { get; set; }    
-        public string? CreatedByName { get; set; } 
+        public DateTime CreatedAt { get; set; }
+        public Guid? CreatedById { get; set; }
+        public string? CreatedByName { get; set; }
+
+        // ✨ NEW: PO Status Tracking
+        public POStatusInfo PurchaseOrderStatus { get; set; } = new();
+
+        // ✨ NEW: Enhanced Line Items
         public List<GRNLineItemResponseDto> LineItems { get; set; } = new();
+
+        // ✨ NEW: Inventory Impact Summary
+        public List<InventoryImpactDto> InventoryImpact { get; set; } = new();
+
+        // ✨ NEW: Next Actions
+        public GRNNextActionsDto NextActions { get; set; } = new();
     }
 }

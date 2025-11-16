@@ -4090,7 +4090,7 @@
         }
       }
     },
-    "/api/GRNPosting/post": {
+    "/api/GRNPosting/post/{id}": {
       "post": {
         "tags": [
           "GRNPosting"
@@ -4113,7 +4113,7 @@
         }
       }
     },
-    "/api/GRNPosting/reverse": {
+    "/api/GRNPosting/reverse/{id}": {
       "post": {
         "tags": [
           "GRNPosting"
@@ -27963,6 +27963,11 @@
             "type": "string",
             "format": "uuid"
           },
+          "productId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
           "productName": {
             "type": "string",
             "nullable": true
@@ -27971,9 +27976,28 @@
             "type": "string",
             "nullable": true
           },
+          "orderedQuantity": {
+            "type": "number",
+            "format": "double"
+          },
+          "previouslyReceivedQuantity": {
+            "type": "number",
+            "format": "double"
+          },
           "receivedQuantity": {
             "type": "number",
             "format": "double"
+          },
+          "remainingQuantity": {
+            "type": "number",
+            "format": "double"
+          },
+          "isFullyReceived": {
+            "type": "boolean"
+          },
+          "unitOfMeasure": {
+            "type": "string",
+            "nullable": true
           },
           "notes": {
             "type": "string",
@@ -28016,6 +28040,35 @@
           "createdDate": {
             "type": "string",
             "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Purchases.Goods_Receipt.DTO.DTO_GRN.GRNNextActionsDto": {
+        "type": "object",
+        "properties": {
+          "canReceiveMore": {
+            "type": "boolean"
+          },
+          "canCreateReturn": {
+            "type": "boolean"
+          },
+          "canCreateInvoice": {
+            "type": "boolean"
+          },
+          "canClose": {
+            "type": "boolean"
+          },
+          "totalRemainingToReceive": {
+            "type": "number",
+            "format": "double"
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -28076,11 +28129,84 @@
             "type": "string",
             "nullable": true
           },
+          "purchaseOrderStatus": {
+            "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Goods_Receipt.DTO.DTO_GRN.POStatusInfo"
+          },
           "lineItems": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Goods_Receipt.DTO.DTO_GRN.GRNLineItemResponseDto"
             },
+            "nullable": true
+          },
+          "inventoryImpact": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Goods_Receipt.DTO.DTO_GRN.InventoryImpactDto"
+            },
+            "nullable": true
+          },
+          "nextActions": {
+            "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Goods_Receipt.DTO.DTO_GRN.GRNNextActionsDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Purchases.Goods_Receipt.DTO.DTO_GRN.InventoryImpactDto": {
+        "type": "object",
+        "properties": {
+          "productId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "productName": {
+            "type": "string",
+            "nullable": true
+          },
+          "productSKU": {
+            "type": "string",
+            "nullable": true
+          },
+          "warehouseId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "warehouseName": {
+            "type": "string",
+            "nullable": true
+          },
+          "quantityAdded": {
+            "type": "number",
+            "format": "double"
+          },
+          "previousStock": {
+            "type": "number",
+            "format": "double"
+          },
+          "newStock": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Purchases.Goods_Receipt.DTO.DTO_GRN.POStatusInfo": {
+        "type": "object",
+        "properties": {
+          "receptionStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "paymentStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "documentStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "previousReceptionStatus": {
+            "type": "string",
             "nullable": true
           }
         },

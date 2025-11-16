@@ -22,12 +22,12 @@ namespace ModularERP.Modules.Purchases.Goods_Receipt.Controllers
         /// <summary>
         /// Post GRN to inventory
         /// </summary>
-        [HttpPost("post")]
+        [HttpPost("post/{id}")]
         public async Task<IActionResult> PostGRN([FromRoute] Guid id)
         {
             _logger.LogInformation("Posting GRN {GRNId} to inventory", id);
 
-            var userId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
+            var userId = Guid.Parse("f0602c31-0c12-4b5c-9ccf-fe17811d5c53"); //Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
 
             var command = new PostGRNCommand
             {
@@ -48,14 +48,14 @@ namespace ModularERP.Modules.Purchases.Goods_Receipt.Controllers
         /// <summary>
         /// Reverse posted GRN
         /// </summary>
-        [HttpPost("reverse")]
+        [HttpPost("reverse/{id}")]
         public async Task<IActionResult> ReverseGRN(
             [FromRoute] Guid id,
             [FromBody] ReverseGRNCommand command)
         {
             _logger.LogInformation("Reversing GRN {GRNId}", id);
 
-            var userId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
+            var userId = Guid.Parse("f0602c31-0c12-4b5c-9ccf-fe17811d5c53"); //Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
 
             command.GRNId = id;
             command.UserId = userId;
