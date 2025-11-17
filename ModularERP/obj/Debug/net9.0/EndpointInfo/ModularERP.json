@@ -27959,6 +27959,10 @@
             "type": "string",
             "format": "uuid"
           },
+          "grnId": {
+            "type": "string",
+            "format": "uuid"
+          },
           "poLineItemId": {
             "type": "string",
             "format": "uuid"

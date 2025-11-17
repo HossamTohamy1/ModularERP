@@ -29,16 +29,16 @@ namespace ModularERP.Modules.Purchases.Goods_Receipt.Controllers
         {
             _logger.LogInformation("Adding item to GRN {GRNId}", id);
 
-            var userId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
+            var userId = Guid.Parse("f0602c31-0c12-4b5c-9ccf-fe17811d5c53");
 
             command.GRNId = id;
-            command.UserId = userId;
+            command.UserId = Guid.Parse("f0602c31-0c12-4b5c-9ccf-fe17811d5c53");
 
             var result = await _mediator.Send(command);
 
             return CreatedAtAction(
                 nameof(AddGRNItem),
-                new { id = result.Id },
+                new { id = result.Data.Id },
                 new
                 {
                     success = true,
@@ -58,11 +58,11 @@ namespace ModularERP.Modules.Purchases.Goods_Receipt.Controllers
         {
             _logger.LogInformation("Updating item {ItemId} in GRN {GRNId}", itemId, id);
 
-            var userId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
+            //var userId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
 
             command.GRNId = id;
             command.ItemId = itemId;
-            command.UserId = userId;
+            command.UserId = Guid.Parse("f0602c31-0c12-4b5c-9ccf-fe17811d5c53");
 
             var result = await _mediator.Send(command);
 

@@ -4,12 +4,13 @@ using Microsoft.EntityFrameworkCore;
 using ModularERP.Common.Enum.Finance_Enum;
 using ModularERP.Common.Exceptions;
 using ModularERP.Common.ViewModel;
+using ModularERP.Modules.Finance.Finance.Infrastructure.Data;
+using ModularERP.Modules.Inventory.Features.Warehouses.Models;
 using ModularERP.Modules.Purchases.Goods_Receipt.Commends.Commends_GRN;
 using ModularERP.Modules.Purchases.Goods_Receipt.DTO.DTO_GRN;
 using ModularERP.Modules.Purchases.Goods_Receipt.Models;
 using ModularERP.Modules.Purchases.Purchase_Order_Management.Models;
 using ModularERP.Shared.Interfaces;
-using Microsoft.AspNetCore.Http;
 
 namespace ModularERP.Modules.Purchases.Goods_Receipt.Handlers.Handlers_GRN
 {
@@ -19,6 +20,8 @@ namespace ModularERP.Modules.Purchases.Goods_Receipt.Handlers.Handlers_GRN
         private readonly IGeneralRepository<GoodsReceiptNote> _grnRepository;
         private readonly IGeneralRepository<GRNLineItem> _lineItemRepository;
         private readonly IGeneralRepository<POLineItem> _poLineItemRepository;
+        private readonly IGeneralRepository<WarehouseStock> _warehouseStockRepository; 
+        private readonly FinanceDbContext _dbContext; 
         private readonly IMapper _mapper;
         private readonly ILogger<CreateGRNHandler> _logger;
 
@@ -27,6 +30,8 @@ namespace ModularERP.Modules.Purchases.Goods_Receipt.Handlers.Handlers_GRN
             IGeneralRepository<GoodsReceiptNote> grnRepository,
             IGeneralRepository<GRNLineItem> lineItemRepository,
             IGeneralRepository<POLineItem> poLineItemRepository,
+            IGeneralRepository<WarehouseStock> warehouseStockRepository, 
+            FinanceDbContext dbContext, 
             IMapper mapper,
             ILogger<CreateGRNHandler> logger)
         {
@@ -34,17 +39,22 @@ namespace ModularERP.Modules.Purchases.Goods_Receipt.Handlers.Handlers_GRN
             _grnRepository = grnRepository;
             _lineItemRepository = lineItemRepository;
             _poLineItemRepository = poLineItemRepository;
+            _warehouseStockRepository = warehouseStockRepository; 
+            _dbContext = dbContext; 
             _mapper = mapper;
             _logger = logger;
         }
 
         public async Task<ResponseViewModel<GRNResponseDto>> Handle(CreateGRNCommand request, CancellationToken cancellationToken)
         {
+            // ✅  Transaction  
+            using var transaction = await _dbContext.Database.BeginTransactionAsync(cancellationToken);
+
             try
             {
                 _logger.LogInformation("Creating new GRN for PO: {PurchaseOrderId}", request.Data.PurchaseOrderId);
 
-                // ✅ 1. Validate Purchase Order exists and get current status
+                // ✅ 1. Validate Purchase Order
                 var po = await _poRepository.GetAll()
                     .Where(x => x.Id == request.Data.PurchaseOrderId)
                     .Select(x => new
@@ -58,39 +68,33 @@ namespace ModularERP.Modules.Purchases.Goods_Receipt.Handlers.Handlers_GRN
                     .FirstOrDefaultAsync(cancellationToken);
 
                 if (po == null)
-                {
                     throw new NotFoundException(
                         $"Purchase Order with ID {request.Data.PurchaseOrderId} not found",
                         FinanceErrorCode.NotFound);
-                }
 
                 _logger.LogInformation(
-                    "PO found: {PONumber} | DocumentStatus: {DocumentStatus} | ReceptionStatus: {ReceptionStatus} | PaymentStatus: {PaymentStatus}",
-                    po.PONumber, po.DocumentStatus, po.ReceptionStatus, po.PaymentStatus);
+                    "PO found: {PONumber} | DocumentStatus: {DocumentStatus} | ReceptionStatus: {ReceptionStatus}",
+                    po.PONumber, po.DocumentStatus, po.ReceptionStatus);
 
-                // ✅ Validate PO is not in Draft or Cancelled
+                // ✅ Validate PO Status
                 if (po.DocumentStatus == "Draft")
-                {
                     throw new BusinessLogicException(
-                        "Cannot create GRN for a Purchase Order in Draft status. Please approve the PO first.",
+                        "Cannot create GRN for a Purchase Order in Draft status.",
                         module: "Purchases",
-                        financeErrorCode: FinanceErrorCode.ValidationError
-                    );
-                }
+                        financeErrorCode: FinanceErrorCode.ValidationError);
 
                 if (po.DocumentStatus == "Cancelled" || po.DocumentStatus == "Closed")
-                {
                     throw new BusinessLogicException(
                         $"Cannot create GRN for a Purchase Order in {po.DocumentStatus} status.",
                         module: "Purchases",
-                        financeErrorCode: FinanceErrorCode.ValidationError
-                    );
-                }
+                        financeErrorCode: FinanceErrorCode.ValidationError);
 
                 string previousReceptionStatus = po.ReceptionStatus;
 
-                // ✅ 2. Validate received quantities against PO line items
+                // ✅ 2. Load PO Line Items with Product Info
                 var poLineItemsData = await _poLineItemRepository.GetAll()
+                    .Include(x => x.Product)
+                    .Include(x => x.Service)
                     .Where(x => request.Data.LineItems.Select(li => li.POLineItemId).Contains(x.Id))
                     .Select(x => new
                     {
@@ -101,6 +105,7 @@ namespace ModularERP.Modules.Purchases.Goods_Receipt.Handlers.Handlers_GRN
                         x.ProductId,
                         x.ServiceId,
                         x.Description,
+                        x.UnitPrice,
                         ProductName = x.Product != null ? x.Product.Name : null,
                         ProductSKU = x.Product != null ? x.Product.SKU : null,
                         ServiceName = x.Service != null ? x.Service.Name : null
@@ -121,7 +126,7 @@ namespace ModularERP.Modules.Purchases.Goods_Receipt.Handlers.Handlers_GRN
                         FinanceErrorCode.NotFound);
                 }
 
-                // Validate all line items belong to the same PO
+                // Validate all belong to same PO
                 var invalidLineItems = poLineItemsData
                     .Where(x => x.PurchaseOrderId != request.Data.PurchaseOrderId)
                     .ToList();
@@ -129,112 +134,63 @@ namespace ModularERP.Modules.Purchases.Goods_Receipt.Handlers.Handlers_GRN
                 if (invalidLineItems.Any())
                 {
                     var invalidIds = string.Join(", ", invalidLineItems.Select(x => x.Id));
-                    _logger.LogError(
-                        "Line items {InvalidIds} do not belong to PO {PurchaseOrderId}",
-                        invalidIds, request.Data.PurchaseOrderId);
-
                     throw new BusinessLogicException(
                         $"Line items {invalidIds} do not belong to Purchase Order {request.Data.PurchaseOrderId}",
                         module: "Purchases",
-                        financeErrorCode: FinanceErrorCode.ValidationError
-                    );
+                        financeErrorCode: FinanceErrorCode.ValidationError);
                 }
 
-                // Validate quantities for each line item
+                // ✅ 3. Validate Quantities
                 foreach (var lineItem in request.Data.LineItems)
                 {
                     var poLineItem = poLineItemsData.FirstOrDefault(x => x.Id == lineItem.POLineItemId);
-
                     if (poLineItem == null)
-                    {
                         throw new NotFoundException(
                             $"PO Line Item {lineItem.POLineItemId} not found",
                             FinanceErrorCode.NotFound);
-                    }
 
                     decimal pendingQty = poLineItem.Quantity - poLineItem.ReceivedQuantity;
-
-                    // Get display name (Product > Service > Description)
                     string itemName = poLineItem.ProductName ?? poLineItem.ServiceName ?? poLineItem.Description ?? "Unknown Item";
-                    string itemSKU = poLineItem.ProductSKU ?? "";
 
-                    // ⚠️ Log detailed info for debugging
                     _logger.LogInformation(
-                        "Validating line item | POLineItemId: {POLineItemId} | Item: '{ItemName}' ({ItemSKU}) | " +
-                        "Ordered: {Ordered} | Previously Received: {Received} | Pending: {Pending} | Attempting to Receive: {Attempting}",
-                        lineItem.POLineItemId,
-                        itemName,
-                        itemSKU,
-                        poLineItem.Quantity,
-                        poLineItem.ReceivedQuantity,
-                        pendingQty,
-                        lineItem.ReceivedQuantity
-                    );
+                        "Validating | POLineItemId: {POLineItemId} | Item: '{ItemName}' | " +
+                        "Ordered: {Ordered} | Received: {Received} | Pending: {Pending} | Attempting: {Attempting}",
+                        lineItem.POLineItemId, itemName, poLineItem.Quantity,
+                        poLineItem.ReceivedQuantity, pendingQty, lineItem.ReceivedQuantity);
 
-                    // Validate positive quantity
                     if (lineItem.ReceivedQuantity <= 0)
-                    {
                         throw new BusinessLogicException(
-                            $"Received quantity for '{itemName}' must be greater than zero. Provided: {lineItem.ReceivedQuantity}",
+                            $"Received quantity for '{itemName}' must be greater than zero.",
                             module: "Purchases",
-                            financeErrorCode: FinanceErrorCode.ValidationError
-                        );
-                    }
+                            financeErrorCode: FinanceErrorCode.ValidationError);
 
-                    // Check if already fully received
                     if (pendingQty <= 0)
-                    {
-                        _logger.LogError(
-                            "Line item already fully received | POLineItemId: {POLineItemId} | Item: '{ItemName}' | " +
-                            "Ordered: {Ordered} | Already Received: {Received}",
-                            lineItem.POLineItemId, itemName, poLineItem.Quantity, poLineItem.ReceivedQuantity);
-
                         throw new BusinessLogicException(
-                            $"Cannot receive '{itemName}'. This item has already been fully received. " +
-                            $"Ordered: {poLineItem.Quantity}, Already Received: {poLineItem.ReceivedQuantity}, Pending: 0. " +
-                            $"Please check if a previous GRN was created for this item.",
+                            $"Cannot receive '{itemName}'. Already fully received.",
                             module: "Purchases",
-                            financeErrorCode: FinanceErrorCode.ValidationError
-                        );
-                    }
+                            financeErrorCode: FinanceErrorCode.ValidationError);
 
-                    // Check if attempting to over-receive
                     if (lineItem.ReceivedQuantity > pendingQty)
-                    {
-                        _logger.LogError(
-                            "Attempting to over-receive | POLineItemId: {POLineItemId} | Item: '{ItemName}' | " +
-                            "Ordered: {Ordered} | Already Received: {Received} | Pending: {Pending} | Attempting: {Attempting}",
-                            lineItem.POLineItemId, itemName, poLineItem.Quantity, poLineItem.ReceivedQuantity,
-                            pendingQty, lineItem.ReceivedQuantity);
-
                         throw new BusinessLogicException(
                             $"Cannot receive {lineItem.ReceivedQuantity} units of '{itemName}'. " +
-                            $"Ordered: {poLineItem.Quantity}, Already Received: {poLineItem.ReceivedQuantity}, " +
                             $"Only {pendingQty} units pending.",
                             module: "Purchases",
-                            financeErrorCode: FinanceErrorCode.ValidationError
-                        );
-                    }
-
-                    _logger.LogInformation(
-                        "✅ Validation passed for line item | POLineItemId: {POLineItemId} | Item: '{ItemName}' | Receiving: {ReceivingQty}",
-                        lineItem.POLineItemId, itemName, lineItem.ReceivedQuantity);
+                            financeErrorCode: FinanceErrorCode.ValidationError);
                 }
 
-                // ✅ 3. Generate GRN Number
+                // ✅ 4. Generate GRN Number
                 var grnNumber = await GenerateGRNNumber(request.Data.CompanyId, cancellationToken);
                 _logger.LogInformation("Generated GRN Number: {GRNNumber}", grnNumber);
 
-                // ✅ 4. Create GRN
+                // ✅ 5. Create GRN
                 var grn = _mapper.Map<GoodsReceiptNote>(request.Data);
                 grn.GRNNumber = grnNumber;
-
                 await _grnRepository.AddAsync(grn);
                 await _grnRepository.SaveChanges();
 
-                _logger.LogInformation("GRN entity created with Id: {GRNId}", grn.Id);
+                _logger.LogInformation("✅ GRN entity created with Id: {GRNId}", grn.Id);
 
-                // ✅ 5. Update PO Line Items ReceivedQuantity
+                // ✅ 6. Update PO Line Items ReceivedQuantity
                 foreach (var lineItem in request.Data.LineItems)
                 {
                     var poLineItem = await _poLineItemRepository.GetByIDWithTracking(lineItem.POLineItemId);
@@ -242,16 +198,95 @@ namespace ModularERP.Modules.Purchases.Goods_Receipt.Handlers.Handlers_GRN
                     {
                         decimal previousReceived = poLineItem.ReceivedQuantity;
                         poLineItem.ReceivedQuantity += lineItem.ReceivedQuantity;
+                        poLineItem.RemainingQuantity = poLineItem.Quantity - poLineItem.ReceivedQuantity;
                         await _poLineItemRepository.SaveChanges();
 
                         _logger.LogInformation(
-                            "Updated PO Line Item | POLineItemId: {POLineItemId} | Previous Received: {PreviousReceived} | " +
-                            "New Received: {NewReceived} | Increment: {Increment}",
-                            lineItem.POLineItemId, previousReceived, poLineItem.ReceivedQuantity, lineItem.ReceivedQuantity);
+                            "✅ Updated PO Line Item | POLineItemId: {POLineItemId} | " +
+                            "Previous: {Previous} | New: {New} | Increment: {Increment}",
+                            lineItem.POLineItemId, previousReceived,
+                            poLineItem.ReceivedQuantity, lineItem.ReceivedQuantity);
                     }
                 }
 
-                // ✅ 6. Update PO Reception Status
+                // ✅ 7. **الجزء الجديد: Update Warehouse Stock**
+                _logger.LogInformation("🔄 Starting Warehouse Stock update...");
+
+                foreach (var lineItem in request.Data.LineItems)
+                {
+                    var poLineItem = poLineItemsData.FirstOrDefault(x => x.Id == lineItem.POLineItemId);
+
+                    // Skip services (only update stock for products)
+                    if (poLineItem?.ProductId == null)
+                    {
+                        _logger.LogInformation(
+                            "⏭️ Skipping stock update for ServiceId: {ServiceId} (not a product)",
+                            poLineItem?.ServiceId);
+                        continue;
+                    }
+
+                    var productId = poLineItem.ProductId.Value;
+                    var warehouseId = request.Data.WarehouseId;
+
+                    // Find existing stock record
+                    var existingStock = await _warehouseStockRepository.GetAll()
+                        .Where(x => x.WarehouseId == warehouseId && x.ProductId == productId)
+                        .FirstOrDefaultAsync(cancellationToken);
+
+                    if (existingStock != null)
+                    {
+                        // Update existing stock
+                        decimal previousQty = existingStock.Quantity;
+                        decimal previousAvailable = existingStock.AvailableQuantity;
+
+                        existingStock.Quantity += lineItem.ReceivedQuantity;
+                        existingStock.AvailableQuantity += lineItem.ReceivedQuantity;
+                        existingStock.LastStockInDate = DateTime.UtcNow;
+                        existingStock.UpdatedAt = DateTime.UtcNow;
+
+                        // Optional: Update TotalValue if tracking cost
+                        existingStock.TotalValue = existingStock.Quantity * (existingStock.AverageUnitCost ?? poLineItem.UnitPrice);
+
+                        await _warehouseStockRepository.SaveChanges();
+
+                        _logger.LogInformation(
+                            "✅ Stock Updated | ProductId: {ProductId} | Product: '{ProductName}' | " +
+                            "Warehouse: {WarehouseId} | Previous Qty: {PreviousQty} | " +
+                            "Added: {AddedQty} | New Qty: {NewQty}",
+                            productId, poLineItem.ProductName, warehouseId,
+                            previousQty, lineItem.ReceivedQuantity, existingStock.Quantity);
+                    }
+                    else
+                    {
+                        // Create new stock record
+                        var newStock = new WarehouseStock
+                        {
+                            WarehouseId = warehouseId,
+                            ProductId = productId,
+                            Quantity = lineItem.ReceivedQuantity,
+                            AvailableQuantity = lineItem.ReceivedQuantity,
+                            ReservedQuantity = 0,
+                            AverageUnitCost = poLineItem.UnitPrice,
+                            TotalValue = poLineItem.UnitPrice * lineItem.ReceivedQuantity,
+                            LastStockInDate = DateTime.UtcNow,
+                            CreatedAt = DateTime.UtcNow,
+                            IsActive = true,
+                            IsDeleted = false
+                        };
+
+                        await _warehouseStockRepository.AddAsync(newStock);
+                        await _warehouseStockRepository.SaveChanges();
+
+                        _logger.LogInformation(
+                            "✅ New Stock Created | ProductId: {ProductId} | Product: '{ProductName}' | " +
+                            "Warehouse: {WarehouseId} | Initial Qty: {Qty}",
+                            productId, poLineItem.ProductName, warehouseId, lineItem.ReceivedQuantity);
+                    }
+                }
+
+                _logger.LogInformation("✅ Warehouse Stock update completed successfully");
+
+                // ✅ 8. Update PO Reception Status
                 var allPoLineItems = await _poLineItemRepository.GetAll()
                     .Where(x => x.PurchaseOrderId == request.Data.PurchaseOrderId)
                     .ToListAsync(cancellationToken);
@@ -259,7 +294,7 @@ namespace ModularERP.Modules.Purchases.Goods_Receipt.Handlers.Handlers_GRN
                 string newReceptionStatus = CalculateReceptionStatus(allPoLineItems);
 
                 _logger.LogInformation(
-                    "Updating PO Reception Status | PO: {PONumber} | Previous: {PreviousStatus} | New: {NewStatus}",
+                    "📊 PO Status Update | PO: {PONumber} | Previous: {Previous} | New: {New}",
                     po.PONumber, previousReceptionStatus, newReceptionStatus);
 
                 var purchaseOrder = await _poRepository.GetByIDWithTracking(request.Data.PurchaseOrderId);
@@ -269,10 +304,14 @@ namespace ModularERP.Modules.Purchases.Goods_Receipt.Handlers.Handlers_GRN
                     await _poRepository.SaveChanges();
                 }
 
-                _logger.LogInformation("✅ GRN created successfully | GRN Number: {GRNNumber} | PO: {PONumber}",
+                // ✅ Commit Transaction
+                await transaction.CommitAsync(cancellationToken);
+
+                _logger.LogInformation(
+                    "✅✅✅ GRN created successfully | GRN: {GRNNumber} | PO: {PONumber}",
                     grnNumber, po.PONumber);
 
-                // ✅ 7. Build Enhanced Response
+                // ✅ 9. Build Response
                 var createdGrn = await BuildGRNResponse(
                     grn.Id,
                     previousReceptionStatus,
@@ -283,11 +322,13 @@ namespace ModularERP.Modules.Purchases.Goods_Receipt.Handlers.Handlers_GRN
 
                 return ResponseViewModel<GRNResponseDto>.Success(
                     createdGrn,
-                    "GRN created successfully");
+                    "GRN created successfully and inventory updated");
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "❌ Error creating GRN for PO: {PurchaseOrderId}", request.Data.PurchaseOrderId);
+                await transaction.RollbackAsync(cancellationToken);
+                _logger.LogError(ex, "❌ Error creating GRN. Transaction rolled back. PO: {PurchaseOrderId}",
+                    request.Data.PurchaseOrderId);
                 throw;
             }
         }
@@ -338,9 +379,7 @@ namespace ModularERP.Modules.Purchases.Goods_Receipt.Handlers.Handlers_GRN
                 .FirstOrDefaultAsync(cancellationToken);
 
             if (grn == null)
-            {
                 throw new NotFoundException("GRN not found after creation", FinanceErrorCode.NotFound);
-            }
 
             decimal totalRemaining = 0;
             var lineItemsResponse = new List<GRNLineItemResponseDto>();
@@ -352,13 +391,11 @@ namespace ModularERP.Modules.Purchases.Goods_Receipt.Handlers.Handlers_GRN
                 decimal remaining = li.OrderedQty - li.ReceivedQty;
                 totalRemaining += remaining;
 
-                // Get display name (Product > Service > Description)
-                string displayName = (li.ProductName ?? li.ServiceName ?? li.Description ?? "Unknown Item")?.Trim();
+                string displayName = (li.ProductName ?? li.ServiceName ?? li.Description ?? "Unknown Item").Trim();
                 string displaySKU = (li.ProductSKU ?? "").Trim();
 
                 if (string.IsNullOrWhiteSpace(displayName))
                     displayName = "Unknown Item";
-
 
                 lineItemsResponse.Add(new GRNLineItemResponseDto
                 {
@@ -372,11 +409,10 @@ namespace ModularERP.Modules.Purchases.Goods_Receipt.Handlers.Handlers_GRN
                     ReceivedQuantity = li.CurrentReceived,
                     RemainingQuantity = remaining,
                     IsFullyReceived = remaining == 0,
-                    UnitOfMeasure = null, // TODO: Add UnitOfMeasure field to Product/Service or POLineItem
+                    UnitOfMeasure = null,
                     Notes = li.Notes
                 });
 
-                // Only add inventory impact for Products (not Services)
                 if (li.ProductId.HasValue)
                 {
                     inventoryImpact.Add(new InventoryImpactDto
@@ -387,23 +423,18 @@ namespace ModularERP.Modules.Purchases.Goods_Receipt.Handlers.Handlers_GRN
                         WarehouseId = grn.WarehouseId,
                         WarehouseName = grn.WarehouseName,
                         QuantityAdded = li.CurrentReceived,
-                        PreviousStock = 0, // TODO: Fetch from Inventory module
-                        NewStock = li.CurrentReceived // TODO: Fetch from Inventory module
+                        PreviousStock = 0,
+                        NewStock = li.CurrentReceived
                     });
                 }
             }
 
             var warnings = new List<string>();
             if (totalRemaining > 0)
-            {
-                warnings.Add($"{totalRemaining} units still pending receipt for this PO");
-            }
+                warnings.Add($"{totalRemaining} units still pending receipt");
 
-            // Add payment warning if not fully paid
             if (paymentStatus != "Paid in Full" && paymentStatus != "Refunded")
-            {
-                warnings.Add($"Payment status is '{paymentStatus}'. Full payment required before closing PO.");
-            }
+                warnings.Add($"Payment status: '{paymentStatus}'. Full payment required before closing PO.");
 
             return new GRNResponseDto
             {
@@ -466,9 +497,7 @@ namespace ModularERP.Modules.Purchases.Goods_Receipt.Handlers.Handlers_GRN
             {
                 var parts = lastGrn.Split('-');
                 if (parts.Length == 3 && int.TryParse(parts[2], out int lastNumber))
-                {
                     nextNumber = lastNumber + 1;
-                }
             }
 
             return $"GRN-{year}-{nextNumber:D5}";

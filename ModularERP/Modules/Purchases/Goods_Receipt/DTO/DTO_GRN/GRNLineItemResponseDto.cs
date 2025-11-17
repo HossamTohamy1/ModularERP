@@ -3,6 +3,7 @@
     public class GRNLineItemResponseDto
     {
         public Guid Id { get; set; }
+        public Guid GRNId { get; set; }
         public Guid POLineItemId { get; set; }
         public Guid? ProductId { get; set; }
         public string ProductName { get; set; } = string.Empty;

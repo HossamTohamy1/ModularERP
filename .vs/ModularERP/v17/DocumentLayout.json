@@ -3,6 +3,90 @@
   "WorkspaceRootPath": "E:\\ModelerERP\\ModularERP\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grnpo\\receivefrompohandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grnpo\\receivefrompohandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\controllers\\grnbypocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\controllers\\grnbypocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grnpo\\getgrnsbypohandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grnpo\\getgrnsbypohandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\controllers\\grnitemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\controllers\\grnitemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\controllers\\goodsreceiptscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\controllers\\goodsreceiptscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\controllers\\grnpostingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\controllers\\grnpostingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grnpo\\getpendingpoitemshandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grnpo\\getpendingpoitemshandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grnitem\\addgrnitemhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grnitem\\addgrnitemhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grnitem\\updategrnitemhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grnitem\\updategrnitemhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\commends\\commends_grn\\postgrncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\commends\\commends_grn\\postgrncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\commends\\commends_grn\\reversegrncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\commends\\commends_grn\\reversegrncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\commends\\commends_grn\\deletegrncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\commends\\commends_grn\\deletegrncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\commends\\commends_grnitem\\addgrnitemcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\commends\\commends_grnitem\\addgrnitemcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\commends\\commends_grnitem\\updategrnitemcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\commends\\commends_grnitem\\updategrnitemcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\commends\\commends_grn\\creategrncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\commends\\commends_grn\\creategrncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\commends\\commends_grn\\updategrncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\commends\\commends_grn\\updategrncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\dto\\dto_grn\\grnlineitemresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\dto\\dto_grn\\grnlineitemresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grn\\creategrnhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grn\\creategrnhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\shared\\repository\\generalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\shared\\repository\\generalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grn\\updategrnhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grn\\updategrnhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grn\\deletegrnhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grn\\deletegrnhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grn\\reversegrnhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grn\\reversegrnhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,40 +95,12 @@
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grn\\postgrnhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\controllers\\grnpostingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\controllers\\grnpostingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\controllers\\grnitemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\controllers\\grnitemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\controllers\\grnbypocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\controllers\\grnbypocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\controllers\\goodsreceiptscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\controllers\\goodsreceiptscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grn\\updategrnhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grn\\updategrnhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grnpo\\receivefrompohandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grnpo\\receivefrompohandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grn\\getgrnbyidhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grn\\getgrnbyidhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grn\\getallgrnshandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grn\\getallgrnshandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grn\\creategrnhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grn\\creategrnhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\purchase_order_management\\handlers\\handlers_purchaseorder\\approvepurchaseorderhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -77,10 +133,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\common\\extensions\\baseapplicationexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\common\\extensions\\baseapplicationexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\dto\\dto_grn\\grnlineitemresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\dto\\dto_grn\\grnlineitemresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\dto\\dto_grn\\grnnextactionsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -135,14 +187,6 @@
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\dto\\dto_grn\\updategrnlineitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\commends\\commends_grn\\creategrncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\commends\\commends_grn\\creategrncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grnpo\\getpendingpoitemshandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grnpo\\getpendingpoitemshandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\dto\\dto_grn\\pendingpoitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\dto\\dto_grn\\pendingpoitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -167,36 +211,12 @@
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\validators\\validators_grn\\receivefrompovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\commends\\commends_grn\\reversegrncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\commends\\commends_grn\\reversegrncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\commends\\commends_grn\\postgrncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\commends\\commends_grn\\postgrncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grnitem\\deletegrnitemhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grnitem\\deletegrnitemhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\commends\\commends_grnitem\\deletegrnitemcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\commends\\commends_grnitem\\deletegrnitemcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grnitem\\updategrnitemhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grnitem\\updategrnitemhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\commends\\commends_grnitem\\updategrnitemcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\commends\\commends_grnitem\\updategrnitemcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grnitem\\addgrnitemhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grnitem\\addgrnitemhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\commends\\commends_grnitem\\addgrnitemcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\commends\\commends_grnitem\\addgrnitemcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\commends\\commends_grnpo\\receivefrompocommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -207,16 +227,8 @@
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\qeuries\\qeuires_grnpo\\getpendingpoitemsquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grnpo\\getgrnsbypohandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grnpo\\getgrnsbypohandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\qeuries\\qeuires_grnpo\\getgrnsbypoquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\qeuries\\qeuires_grnpo\\getgrnsbypoquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\shared\\repository\\generalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\shared\\repository\\generalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -273,18 +285,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\purchase_order_management\\services\\servicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\purchase_order_management\\services\\servicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grn\\deletegrnhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\handlers\\handlers_grn\\deletegrnhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\commends\\commends_grn\\deletegrncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\commends\\commends_grn\\deletegrncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\commends\\commends_grn\\updategrncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\goods_receipt\\commends\\commends_grn\\updategrncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\goods_receipt\\validators\\validators_grnitem\\updategrnlineitemvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -4777,7 +4777,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -4797,85 +4797,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "UpdateGRNHandler.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\UpdateGRNHandler.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\UpdateGRNHandler.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\UpdateGRNHandler.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\UpdateGRNHandler.cs",
-              "ViewState": "AgIAALcBAAAAAAAAAAAIwMUBAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T11:00:01.714Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PostGRNHandler.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\PostGRNHandler.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\PostGRNHandler.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\PostGRNHandler.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\PostGRNHandler.cs",
-              "ViewState": "AgIAAM4AAAAAAAAAAAAIwOYAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-04T21:22:48.046Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ReceiveFromPOHandler.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRNPO\\ReceiveFromPOHandler.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRNPO\\ReceiveFromPOHandler.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRNPO\\ReceiveFromPOHandler.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRNPO\\ReceiveFromPOHandler.cs",
-              "ViewState": "AgIAAHEAAAAAAAAAAADwv4gAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-04T21:17:55.466Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "GoodsReceiptsController.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Controllers\\GoodsReceiptsController.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Controllers\\GoodsReceiptsController.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Controllers\\GoodsReceiptsController.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Controllers\\GoodsReceiptsController.cs",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAowG0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T11:09:07.633Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GRNByPOController.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Controllers\\GRNByPOController.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Controllers\\GRNByPOController.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Controllers\\GRNByPOController.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Controllers\\GRNByPOController.cs",
-              "ViewState": "AgIAAGEAAAAAAAAAAAAkwBoAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-04T21:24:34.47Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GRNItemsController.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Controllers\\GRNItemsController.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Controllers\\GRNItemsController.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Controllers\\GRNItemsController.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Controllers\\GRNItemsController.cs",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAgwGUAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-04T21:25:09.534Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "GRNPostingController.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Controllers\\GRNPostingController.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Controllers\\GRNPostingController.cs",
@@ -4888,358 +4810,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ReverseGRNHandler.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\ReverseGRNHandler.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\ReverseGRNHandler.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\ReverseGRNHandler.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\ReverseGRNHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA9AAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "GetGRNsByPOHandler.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRNPO\\GetGRNsByPOHandler.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRNPO\\GetGRNsByPOHandler.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRNPO\\GetGRNsByPOHandler.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRNPO\\GetGRNsByPOHandler.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAmwDgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-04T21:23:30.768Z",
+              "WhenOpened": "2025-11-04T21:14:28.749Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "GetGRNByIdHandler.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\GetGRNByIdHandler.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\GetGRNByIdHandler.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\GetGRNByIdHandler.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\GetGRNByIdHandler.cs",
-              "ViewState": "AgIAALgAAAAAAAAAAAAIwMcAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T11:04:56.379Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "GetAllGRNsHandler.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\GetAllGRNsHandler.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\GetAllGRNsHandler.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\GetAllGRNsHandler.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\GetAllGRNsHandler.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAYwBEAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T11:03:50.957Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "CreateGRNHandler.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\CreateGRNHandler.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\CreateGRNHandler.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\CreateGRNHandler.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\CreateGRNHandler.cs",
-              "ViewState": "AgIAAFcBAAAAAAAAAAD4v2kBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T10:58:06.248Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ApprovePurchaseOrderHandler.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Handlers\\Handlers_PurchaseOrder\\ApprovePurchaseOrderHandler.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Handlers\\Handlers_PurchaseOrder\\ApprovePurchaseOrderHandler.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Handlers\\Handlers_PurchaseOrder\\ApprovePurchaseOrderHandler.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Handlers\\Handlers_PurchaseOrder\\ApprovePurchaseOrderHandler.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAswD8AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-26T21:15:36.387Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "SubmitPurchaseOrderHandler.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Handlers\\Handlers_PurchaseOrder\\SubmitPurchaseOrderHandler.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Handlers\\Handlers_PurchaseOrder\\SubmitPurchaseOrderHandler.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Handlers\\Handlers_PurchaseOrder\\SubmitPurchaseOrderHandler.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Handlers\\Handlers_PurchaseOrder\\SubmitPurchaseOrderHandler.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAYwCAAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-26T21:13:05.655Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "CreateBankAccountHandler.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\CreateBankAccountHandler.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\CreateBankAccountHandler.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\CreateBankAccountHandler.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\CreateBankAccountHandler.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB0AAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T10:07:28.603Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "ValidationException.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Common\\Extensions\\ValidationException.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Common\\Extensions\\ValidationException.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Common\\Extensions\\ValidationException.cs",
-              "RelativeToolTip": "ModularERP\\Common\\Extensions\\ValidationException.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAgwAUAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T16:29:51.406Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ServiceCollectionExtensions.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Common\\Extensions\\ServiceCollectionExtensions.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Common\\Extensions\\ServiceCollectionExtensions.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Common\\Extensions\\ServiceCollectionExtensions.cs",
-              "RelativeToolTip": "ModularERP\\Common\\Extensions\\ServiceCollectionExtensions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T16:10:57.761Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "NotFoundException.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Common\\Extensions\\NotFoundException.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Common\\Extensions\\NotFoundException.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Common\\Extensions\\NotFoundException.cs",
-              "RelativeToolTip": "ModularERP\\Common\\Extensions\\NotFoundException.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAkwBQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T16:32:02.098Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "BusinessLogicException.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Common\\Extensions\\BusinessLogicException.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Common\\Extensions\\BusinessLogicException.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Common\\Extensions\\BusinessLogicException.cs",
-              "RelativeToolTip": "ModularERP\\Common\\Extensions\\BusinessLogicException.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T16:31:38.724Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "BaseApplicationException.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Common\\Extensions\\BaseApplicationException.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Common\\Extensions\\BaseApplicationException.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Common\\Extensions\\BaseApplicationException.cs",
-              "RelativeToolTip": "ModularERP\\Common\\Extensions\\BaseApplicationException.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAkwBoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T16:31:14.46Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "GRNLineItemResponseDto.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\GRNLineItemResponseDto.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\GRNLineItemResponseDto.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\GRNLineItemResponseDto.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\GRNLineItemResponseDto.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAgwAIAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T10:53:57.365Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "GRNNextActionsDto.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\GRNNextActionsDto.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\GRNNextActionsDto.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\GRNNextActionsDto.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\GRNNextActionsDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-16T16:50:20.126Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Product.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Inventory\\Features\\Products\\Models\\Product.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Inventory\\Features\\Products\\Models\\Product.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Inventory\\Features\\Products\\Models\\Product.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Inventory\\Features\\Products\\Models\\Product.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAtwA0AAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-29T19:13:56.577Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "POLineItem.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Models\\POLineItem.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Models\\POLineItem.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Models\\POLineItem.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Models\\POLineItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-25T14:36:08.151Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "FinanceErrorCode.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Common\\Enum\\Finance_Enum\\FinanceErrorCode.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Common\\Enum\\Finance_Enum\\FinanceErrorCode.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Common\\Enum\\Finance_Enum\\FinanceErrorCode.cs",
-              "RelativeToolTip": "ModularERP\\Common\\Enum\\Finance_Enum\\FinanceErrorCode.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T15:48:26.941Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "GRNResponseDto.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\GRNResponseDto.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\GRNResponseDto.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\GRNResponseDto.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\GRNResponseDto.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T10:53:41.212Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "InventoryImpactDto.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\InventoryImpactDto.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\InventoryImpactDto.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\InventoryImpactDto.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\InventoryImpactDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-16T16:50:08.444Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "POStatusInfo.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\POStatusInfo.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\POStatusInfo.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\POStatusInfo.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\POStatusInfo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-16T16:49:47.882Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "PurchaseOrder.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Models\\PurchaseOrder.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Models\\PurchaseOrder.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Models\\PurchaseOrder.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Models\\PurchaseOrder.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAcwCcAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-25T14:35:34.183Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "CreateGRNLineItemDto.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\CreateGRNLineItemDto.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\CreateGRNLineItemDto.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\CreateGRNLineItemDto.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\CreateGRNLineItemDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T10:53:01.365Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "CreateGRNDto.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\CreateGRNDto.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\CreateGRNDto.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\CreateGRNDto.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\CreateGRNDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T10:52:38.525Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "CreateGRNLineItemValidator.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Validators\\Validators_GRN\\CreateGRNLineItemValidator.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Validators\\Validators_GRN\\CreateGRNLineItemValidator.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Validators\\Validators_GRN\\CreateGRNLineItemValidator.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Validators\\Validators_GRN\\CreateGRNLineItemValidator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T10:54:49.126Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "GRNMappingProfile.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Mapping\\GRNMappingProfile.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Mapping\\GRNMappingProfile.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Mapping\\GRNMappingProfile.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Mapping\\GRNMappingProfile.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAmwDUAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T10:55:40.379Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "UpdateGRNLineItemDto.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\UpdateGRNLineItemDto.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\UpdateGRNLineItemDto.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\UpdateGRNLineItemDto.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\UpdateGRNLineItemDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T10:53:29.557Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "CreateGRNCommand.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\CreateGRNCommand.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\CreateGRNCommand.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\CreateGRNCommand.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\CreateGRNCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T10:56:23.944Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 6,
               "Title": "GetPendingPOItemsHandler.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRNPO\\GetPendingPOItemsHandler.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRNPO\\GetPendingPOItemsHandler.cs",
@@ -5252,7 +4836,542 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ReceiveFromPOHandler.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRNPO\\ReceiveFromPOHandler.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRNPO\\ReceiveFromPOHandler.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRNPO\\ReceiveFromPOHandler.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRNPO\\ReceiveFromPOHandler.cs",
+              "ViewState": "AgIAAA0CAAAAAAAAAAAUwBoCAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T21:17:55.466Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GRNByPOController.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Controllers\\GRNByPOController.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Controllers\\GRNByPOController.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Controllers\\GRNByPOController.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Controllers\\GRNByPOController.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAUwEEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T21:24:34.47Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GoodsReceiptsController.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Controllers\\GoodsReceiptsController.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Controllers\\GoodsReceiptsController.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Controllers\\GoodsReceiptsController.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Controllers\\GoodsReceiptsController.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAowG0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T11:09:07.633Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GRNItemsController.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Controllers\\GRNItemsController.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Controllers\\GRNItemsController.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Controllers\\GRNItemsController.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Controllers\\GRNItemsController.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAiwDwAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T21:25:09.534Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AddGRNItemHandler.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRNItem\\AddGRNItemHandler.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRNItem\\AddGRNItemHandler.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRNItem\\AddGRNItemHandler.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRNItem\\AddGRNItemHandler.cs",
+              "ViewState": "AgIAANAAAAAAAAAAAAAAANAAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T21:20:28.921Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UpdateGRNItemHandler.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRNItem\\UpdateGRNItemHandler.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRNItem\\UpdateGRNItemHandler.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRNItem\\UpdateGRNItemHandler.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRNItem\\UpdateGRNItemHandler.cs",
+              "ViewState": "AgIAAMUAAAAAAAAAAAAiwMwAAABfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T21:21:16.435Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "PostGRNCommand.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\PostGRNCommand.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\PostGRNCommand.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\PostGRNCommand.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\PostGRNCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T21:22:29.77Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ReverseGRNCommand.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\ReverseGRNCommand.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\ReverseGRNCommand.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\ReverseGRNCommand.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\ReverseGRNCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T21:23:15.584Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DeleteGRNCommand.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\DeleteGRNCommand.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\DeleteGRNCommand.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\DeleteGRNCommand.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\DeleteGRNCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T10:56:54.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AddGRNItemCommand.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRNItem\\AddGRNItemCommand.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRNItem\\AddGRNItemCommand.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRNItem\\AddGRNItemCommand.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRNItem\\AddGRNItemCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T21:20:04.954Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "UpdateGRNItemCommand.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRNItem\\UpdateGRNItemCommand.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRNItem\\UpdateGRNItemCommand.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRNItem\\UpdateGRNItemCommand.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRNItem\\UpdateGRNItemCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T21:20:56.9Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CreateGRNCommand.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\CreateGRNCommand.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\CreateGRNCommand.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\CreateGRNCommand.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\CreateGRNCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T10:56:23.944Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "UpdateGRNCommand.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\UpdateGRNCommand.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\UpdateGRNCommand.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\UpdateGRNCommand.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\UpdateGRNCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T10:56:36.574Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "GRNLineItemResponseDto.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\GRNLineItemResponseDto.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\GRNLineItemResponseDto.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\GRNLineItemResponseDto.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\GRNLineItemResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T10:53:57.365Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CreateGRNHandler.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\CreateGRNHandler.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\CreateGRNHandler.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\CreateGRNHandler.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\CreateGRNHandler.cs",
+              "ViewState": "AgIAAOYBAAAAAAAAAAAUwPcBAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T10:58:06.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "GeneralRepository.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Shared\\Repository\\GeneralRepository.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Shared\\Repository\\GeneralRepository.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Shared\\Repository\\GeneralRepository.cs",
+              "RelativeToolTip": "ModularERP\\Shared\\Repository\\GeneralRepository.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAswEcAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T17:16:09.537Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "UpdateGRNHandler.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\UpdateGRNHandler.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\UpdateGRNHandler.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\UpdateGRNHandler.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\UpdateGRNHandler.cs",
+              "ViewState": "AgIAAEYCAAAAAAAAAAAUwFkCAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T11:00:01.714Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "DeleteGRNHandler.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\DeleteGRNHandler.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\DeleteGRNHandler.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\DeleteGRNHandler.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\DeleteGRNHandler.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAYwBQAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T11:01:08.089Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ReverseGRNHandler.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\ReverseGRNHandler.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\ReverseGRNHandler.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\ReverseGRNHandler.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\ReverseGRNHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T21:23:30.768Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "PostGRNHandler.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\PostGRNHandler.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\PostGRNHandler.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\PostGRNHandler.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\PostGRNHandler.cs",
+              "ViewState": "AgIAAM4AAAAAAAAAAAAIwOYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T21:22:48.046Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "GetGRNByIdHandler.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\GetGRNByIdHandler.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\GetGRNByIdHandler.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\GetGRNByIdHandler.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\GetGRNByIdHandler.cs",
+              "ViewState": "AgIAALgAAAAAAAAAAAAIwMcAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T11:04:56.379Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "GetAllGRNsHandler.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\GetAllGRNsHandler.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\GetAllGRNsHandler.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\GetAllGRNsHandler.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\GetAllGRNsHandler.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAYwBEAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T11:03:50.957Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "ApprovePurchaseOrderHandler.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Handlers\\Handlers_PurchaseOrder\\ApprovePurchaseOrderHandler.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Handlers\\Handlers_PurchaseOrder\\ApprovePurchaseOrderHandler.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Handlers\\Handlers_PurchaseOrder\\ApprovePurchaseOrderHandler.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Handlers\\Handlers_PurchaseOrder\\ApprovePurchaseOrderHandler.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAswD8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T21:15:36.387Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "SubmitPurchaseOrderHandler.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Handlers\\Handlers_PurchaseOrder\\SubmitPurchaseOrderHandler.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Handlers\\Handlers_PurchaseOrder\\SubmitPurchaseOrderHandler.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Handlers\\Handlers_PurchaseOrder\\SubmitPurchaseOrderHandler.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Handlers\\Handlers_PurchaseOrder\\SubmitPurchaseOrderHandler.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwCAAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T21:13:05.655Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "CreateBankAccountHandler.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\CreateBankAccountHandler.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\CreateBankAccountHandler.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\CreateBankAccountHandler.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Finance\\Features\\BankAccounts\\Handlers\\CreateBankAccountHandler.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB0AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T10:07:28.603Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "ValidationException.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Common\\Extensions\\ValidationException.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Common\\Extensions\\ValidationException.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Common\\Extensions\\ValidationException.cs",
+              "RelativeToolTip": "ModularERP\\Common\\Extensions\\ValidationException.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAgwAUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T16:29:51.406Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "ServiceCollectionExtensions.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Common\\Extensions\\ServiceCollectionExtensions.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Common\\Extensions\\ServiceCollectionExtensions.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Common\\Extensions\\ServiceCollectionExtensions.cs",
+              "RelativeToolTip": "ModularERP\\Common\\Extensions\\ServiceCollectionExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T16:10:57.761Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "NotFoundException.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Common\\Extensions\\NotFoundException.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Common\\Extensions\\NotFoundException.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Common\\Extensions\\NotFoundException.cs",
+              "RelativeToolTip": "ModularERP\\Common\\Extensions\\NotFoundException.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAkwBQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T16:32:02.098Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "BusinessLogicException.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Common\\Extensions\\BusinessLogicException.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Common\\Extensions\\BusinessLogicException.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Common\\Extensions\\BusinessLogicException.cs",
+              "RelativeToolTip": "ModularERP\\Common\\Extensions\\BusinessLogicException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T16:31:38.724Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "BaseApplicationException.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Common\\Extensions\\BaseApplicationException.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Common\\Extensions\\BaseApplicationException.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Common\\Extensions\\BaseApplicationException.cs",
+              "RelativeToolTip": "ModularERP\\Common\\Extensions\\BaseApplicationException.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAkwBoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T16:31:14.46Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "GRNNextActionsDto.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\GRNNextActionsDto.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\GRNNextActionsDto.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\GRNNextActionsDto.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\GRNNextActionsDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-16T16:50:20.126Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Product.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Inventory\\Features\\Products\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Inventory\\Features\\Products\\Models\\Product.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Inventory\\Features\\Products\\Models\\Product.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Inventory\\Features\\Products\\Models\\Product.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAtwA0AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-29T19:13:56.577Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "POLineItem.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Models\\POLineItem.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Models\\POLineItem.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Models\\POLineItem.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Models\\POLineItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-25T14:36:08.151Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "FinanceErrorCode.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Common\\Enum\\Finance_Enum\\FinanceErrorCode.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Common\\Enum\\Finance_Enum\\FinanceErrorCode.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Common\\Enum\\Finance_Enum\\FinanceErrorCode.cs",
+              "RelativeToolTip": "ModularERP\\Common\\Enum\\Finance_Enum\\FinanceErrorCode.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T15:48:26.941Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 37,
+              "Title": "GRNResponseDto.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\GRNResponseDto.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\GRNResponseDto.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\GRNResponseDto.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\GRNResponseDto.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T10:53:41.212Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "InventoryImpactDto.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\InventoryImpactDto.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\InventoryImpactDto.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\InventoryImpactDto.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\InventoryImpactDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-16T16:50:08.444Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "POStatusInfo.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\POStatusInfo.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\POStatusInfo.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\POStatusInfo.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\POStatusInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-16T16:49:47.882Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "PurchaseOrder.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Models\\PurchaseOrder.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Models\\PurchaseOrder.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Models\\PurchaseOrder.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Models\\PurchaseOrder.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAcwCcAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-25T14:35:34.183Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "CreateGRNLineItemDto.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\CreateGRNLineItemDto.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\CreateGRNLineItemDto.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\CreateGRNLineItemDto.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\CreateGRNLineItemDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T10:53:01.365Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "CreateGRNDto.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\CreateGRNDto.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\CreateGRNDto.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\CreateGRNDto.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\CreateGRNDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T10:52:38.525Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "CreateGRNLineItemValidator.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Validators\\Validators_GRN\\CreateGRNLineItemValidator.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Validators\\Validators_GRN\\CreateGRNLineItemValidator.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Validators\\Validators_GRN\\CreateGRNLineItemValidator.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Validators\\Validators_GRN\\CreateGRNLineItemValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T10:54:49.126Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "GRNMappingProfile.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Mapping\\GRNMappingProfile.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Mapping\\GRNMappingProfile.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Mapping\\GRNMappingProfile.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Mapping\\GRNMappingProfile.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAmwDUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T10:55:40.379Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "UpdateGRNLineItemDto.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\UpdateGRNLineItemDto.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\UpdateGRNLineItemDto.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\UpdateGRNLineItemDto.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\UpdateGRNLineItemDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T10:53:29.557Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
               "Title": "StockTransactionsController.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Inventory\\Features\\StockTransactions\\Controllers\\StockTransactionsController.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Inventory\\Features\\StockTransactions\\Controllers\\StockTransactionsController.cs",
@@ -5264,7 +5383,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 46,
               "Title": "PendingPOItemDto.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\PendingPOItemDto.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\PendingPOItemDto.cs",
@@ -5276,7 +5395,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 47,
               "Title": "UpdateGRNValidator.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Validators\\Validators_GRN\\UpdateGRNValidator.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Validators\\Validators_GRN\\UpdateGRNValidator.cs",
@@ -5288,7 +5407,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 49,
               "Title": "UpdateGRNItemValidator.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Validators\\Validators_GRN\\UpdateGRNItemValidator.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Validators\\Validators_GRN\\UpdateGRNItemValidator.cs",
@@ -5300,7 +5419,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 50,
               "Title": "AddGRNItemValidator.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Validators\\Validators_GRN\\AddGRNItemValidator.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Validators\\Validators_GRN\\AddGRNItemValidator.cs",
@@ -5312,7 +5431,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 51,
               "Title": "ReceiveFromPOValidator.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Validators\\Validators_GRN\\ReceiveFromPOValidator.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Validators\\Validators_GRN\\ReceiveFromPOValidator.cs",
@@ -5324,31 +5443,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "ReverseGRNCommand.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\ReverseGRNCommand.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\ReverseGRNCommand.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\ReverseGRNCommand.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\ReverseGRNCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-04T21:23:15.584Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
-              "Title": "PostGRNCommand.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\PostGRNCommand.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\PostGRNCommand.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\PostGRNCommand.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\PostGRNCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-04T21:22:29.77Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 52,
               "Title": "DeleteGRNItemHandler.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRNItem\\DeleteGRNItemHandler.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRNItem\\DeleteGRNItemHandler.cs",
@@ -5360,7 +5455,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 53,
               "Title": "DeleteGRNItemCommand.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRNItem\\DeleteGRNItemCommand.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRNItem\\DeleteGRNItemCommand.cs",
@@ -5372,55 +5467,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "UpdateGRNItemHandler.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRNItem\\UpdateGRNItemHandler.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRNItem\\UpdateGRNItemHandler.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRNItem\\UpdateGRNItemHandler.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRNItem\\UpdateGRNItemHandler.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAmwEcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-04T21:21:16.435Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 46,
-              "Title": "UpdateGRNItemCommand.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRNItem\\UpdateGRNItemCommand.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRNItem\\UpdateGRNItemCommand.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRNItem\\UpdateGRNItemCommand.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRNItem\\UpdateGRNItemCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-04T21:20:56.9Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 47,
-              "Title": "AddGRNItemHandler.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRNItem\\AddGRNItemHandler.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRNItem\\AddGRNItemHandler.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRNItem\\AddGRNItemHandler.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRNItem\\AddGRNItemHandler.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAmwFAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-04T21:20:28.921Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 48,
-              "Title": "AddGRNItemCommand.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRNItem\\AddGRNItemCommand.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRNItem\\AddGRNItemCommand.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRNItem\\AddGRNItemCommand.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRNItem\\AddGRNItemCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-04T21:20:04.954Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 54,
               "Title": "ReceiveFromPOCommand.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRNPO\\ReceiveFromPOCommand.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRNPO\\ReceiveFromPOCommand.cs",
@@ -5432,7 +5479,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 55,
               "Title": "GetPendingPOItemsQuery.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Qeuries\\Qeuires_GRNPO\\GetPendingPOItemsQuery.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Qeuries\\Qeuires_GRNPO\\GetPendingPOItemsQuery.cs",
@@ -5444,19 +5491,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
-              "Title": "GetGRNsByPOHandler.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRNPO\\GetGRNsByPOHandler.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRNPO\\GetGRNsByPOHandler.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRNPO\\GetGRNsByPOHandler.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRNPO\\GetGRNsByPOHandler.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAmwDgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-04T21:14:28.749Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 56,
               "Title": "GetGRNsByPOQuery.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Qeuries\\Qeuires_GRNPO\\GetGRNsByPOQuery.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Qeuries\\Qeuires_GRNPO\\GetGRNsByPOQuery.cs",
@@ -5468,7 +5503,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 60,
               "Title": "GRNLineItem.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Models\\GRNLineItem.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Models\\GRNLineItem.cs",
@@ -5480,7 +5515,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 58,
               "Title": "FinanceDbContext.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Finance\\Finance.Infrastructure\\Data\\FinanceDbContext.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Finance.Infrastructure\\Data\\FinanceDbContext.cs",
@@ -5492,7 +5527,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 57,
               "Title": "appsettings.json",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\appsettings.json",
               "RelativeDocumentMoniker": "ModularERP\\appsettings.json",
@@ -5504,19 +5539,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
-              "Title": "GeneralRepository.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Shared\\Repository\\GeneralRepository.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Shared\\Repository\\GeneralRepository.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Shared\\Repository\\GeneralRepository.cs",
-              "RelativeToolTip": "ModularERP\\Shared\\Repository\\GeneralRepository.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAswEcAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T17:16:09.537Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 59,
               "Title": "GoodsReceiptNote.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Models\\GoodsReceiptNote.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Models\\GoodsReceiptNote.cs",
@@ -5540,7 +5563,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 61,
               "Title": "GetAllGRNsQuery.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Qeuries\\Qeuries_GRN\\GetAllGRNsQuery.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Qeuries\\Qeuries_GRN\\GetAllGRNsQuery.cs",
@@ -5552,7 +5575,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 62,
               "Title": "GetGRNByIdQuery.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Qeuries\\Qeuries_GRN\\GetGRNByIdQuery.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Qeuries\\Qeuries_GRN\\GetGRNByIdQuery.cs",
@@ -5564,7 +5587,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 63,
               "Title": "RecurringSchedule.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Finance\\Features\\RecurringSchedules\\Models\\RecurringSchedule.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Features\\RecurringSchedules\\Models\\RecurringSchedule.cs",
@@ -5576,7 +5599,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 64,
               "Title": "ApplicationUser.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Common\\Models\\ApplicationUser.cs",
               "RelativeDocumentMoniker": "ModularERP\\Common\\Models\\ApplicationUser.cs",
@@ -5588,7 +5611,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 65,
               "Title": "BaseEntity.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Common\\Models\\BaseEntity.cs",
               "RelativeDocumentMoniker": "ModularERP\\Common\\Models\\BaseEntity.cs",
@@ -5600,7 +5623,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 66,
               "Title": "GRNListItemDto.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\GRNListItemDto.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\GRNListItemDto.cs",
@@ -5612,7 +5635,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 67,
               "Title": "UpdateGRNDto.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\UpdateGRNDto.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\DTO\\DTO_GRN\\UpdateGRNDto.cs",
@@ -5624,7 +5647,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 68,
               "Title": "PriceListType.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Common\\Enum\\Inventory_Enum\\PriceListType.cs",
               "RelativeDocumentMoniker": "ModularERP\\Common\\Enum\\Inventory_Enum\\PriceListType.cs",
@@ -5636,7 +5659,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 69,
               "Title": "GoodsReceiptServiceExtensions.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Services\\GoodsReceiptServiceExtensions.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Services\\GoodsReceiptServiceExtensions.cs",
@@ -5648,7 +5671,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 70,
               "Title": "ServiceCollectionExtensions.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Services\\ServiceCollectionExtensions.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Services\\ServiceCollectionExtensions.cs",
@@ -5657,42 +5680,6 @@
               "ViewState": "AgIAAAoAAAAAAAAAAAAIwBEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-26T21:26:44.131Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 68,
-              "Title": "DeleteGRNHandler.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\DeleteGRNHandler.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\DeleteGRNHandler.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\DeleteGRNHandler.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Handlers\\Handlers_GRN\\DeleteGRNHandler.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAYwBQAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T11:01:08.089Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 69,
-              "Title": "DeleteGRNCommand.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\DeleteGRNCommand.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\DeleteGRNCommand.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\DeleteGRNCommand.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\DeleteGRNCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T10:56:54.067Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 70,
-              "Title": "UpdateGRNCommand.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\UpdateGRNCommand.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\UpdateGRNCommand.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\UpdateGRNCommand.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Goods_Receipt\\Commends\\Commends_GRN\\UpdateGRNCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T10:56:36.574Z"
             },
             {
               "$type": "Document",
