@@ -25,7 +25,7 @@
         TaxCalculationError = 2012,
         CurrencyNotSupported = 2013,
         FxRateInvalid = 2014,
-
+        DatabaseError=2015,
         // Treasury Errors
         TreasuryNotFound = 2101,
         TreasuryInactive = 2102,

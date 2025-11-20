@@ -1,0 +1,343 @@
+2025-11-19 12:11:25.745 +02:00 [INF] Starting web host...
+2025-11-19 12:11:29.470 +02:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-19 12:11:29.511 +02:00 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-11-19 12:11:29.612 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-19 12:11:29.618 +02:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-11-19 12:11:29.623 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-11-19 12:11:29.679 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-11-19 12:11:29.695 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-19 12:11:29.699 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-11-19 12:11:29.706 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-11-19 12:11:29.717 +02:00 [INF] No migrations were applied. The database is already up to date.
+2025-11-19 12:11:29.722 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-11-19 12:11:29.898 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-11-19 12:11:29.905 +02:00 [INF] Master database initialized successfully
+2025-11-19 12:11:32.159 +02:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-19 12:11:32.412 +02:00 [INF] Now listening on: https://localhost:7168
+2025-11-19 12:11:32.414 +02:00 [INF] Now listening on: http://localhost:5004
+2025-11-19 12:11:32.518 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-19 12:11:32.520 +02:00 [INF] Hosting environment: Development
+2025-11-19 12:11:32.521 +02:00 [INF] Content root path: E:\ModelerERP\ModularERP\ModularERP
+2025-11-19 12:11:33.087 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-11-19 12:11:33.730 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 643.9259ms
+2025-11-19 12:11:33.755 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 12:11:33.755 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-11-19 12:11:33.790 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 33.8316ms
+2025-11-19 12:11:33.845 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 89.6618ms
+2025-11-19 12:11:33.890 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-11-19 12:11:34.312 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 422.0912ms
+2025-11-19 12:36:47.236 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/PurchaseInvoice - application/json 590
+2025-11-19 12:36:47.264 +02:00 [INF] Request started
+2025-11-19 12:36:47.267 +02:00 [INF] === Incoming Request ===
+2025-11-19 12:36:47.270 +02:00 [INF] Path: /api/PurchaseInvoice
+2025-11-19 12:36:47.271 +02:00 [INF] Method: POST
+2025-11-19 12:36:47.272 +02:00 [INF] === Headers ===
+2025-11-19 12:36:47.275 +02:00 [INF] Accept: ["*/*"]
+2025-11-19 12:36:47.279 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-19 12:36:47.281 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-19 12:36:47.283 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-19 12:36:47.285 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-19 12:36:47.286 +02:00 [INF] Content-Type: ["application/json"]
+2025-11-19 12:36:47.287 +02:00 [INF] Content-Length: ["590"]
+2025-11-19 12:36:47.289 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-19 12:36:47.290 +02:00 [INF] Postman-Token: ["5f03537e-36a4-45ac-87a6-1f876e7bdd27"]
+2025-11-19 12:36:47.295 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-19 12:36:47.297 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-19 12:36:47.299 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.Invoicing.Controllers.PurchaseInvoiceController.CreateInvoice (ModularERP)'
+2025-11-19 12:36:47.328 +02:00 [INF] Route matched with {action = "CreateInvoice", controller = "PurchaseInvoice"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Purchases.Invoicing.DTO.DTO_Invoice.PurchaseInvoiceDto]]] CreateInvoice(ModularERP.Modules.Purchases.Invoicing.Commends.Commands_Invoice.CreatePurchaseInvoiceCommand, System.Threading.CancellationToken) on controller ModularERP.Modules.Purchases.Invoicing.Controllers.PurchaseInvoiceController (ModularERP).
+2025-11-19 12:36:47.336 +02:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-11-19 12:36:47.383 +02:00 [INF] Creating purchase invoice for PO: "c9419c66-ab1f-4857-a967-37221b235ea5"
+2025-11-19 12:36:47.579 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-11-19 12:36:48.327 +02:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-11-19 12:36:48.336 +02:00 [INF] Starting creation of purchase invoice for PO: "c9419c66-ab1f-4857-a967-37221b235ea5"
+2025-11-19 12:36:48.449 +02:00 [WRN] Purchase order "c9419c66-ab1f-4857-a967-37221b235ea5" is not approved. Status: Draft
+2025-11-19 12:36:48.452 +02:00 [WRN] Business logic error creating invoice for PO: "c9419c66-ab1f-4857-a967-37221b235ea5"
+ModularERP.Common.Exceptions.BusinessLogicException: Purchase order must be approved before creating an invoice
+   at ModularERP.Modules.Purchases.Invoicing.Services.PurchaseInvoiceService.ValidatePurchaseOrderAsync(Guid purchaseOrderId, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Modules\Purchases\Invoicing\Services\PurchaseInvoiceService.cs:line 80
+   at ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_Invoice.CreatePurchaseInvoiceHandler.Handle(CreatePurchaseInvoiceCommand request, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Modules\Purchases\Invoicing\Handlers\Handlers_Invoice\CreatePurchaseInvoiceHandler.cs:line 47
+2025-11-19 12:36:48.514 +02:00 [INF] Executed action ModularERP.Modules.Purchases.Invoicing.Controllers.PurchaseInvoiceController.CreateInvoice (ModularERP) in 1177.8827ms
+2025-11-19 12:36:48.518 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.Invoicing.Controllers.PurchaseInvoiceController.CreateInvoice (ModularERP)'
+2025-11-19 12:36:48.521 +02:00 [WRN] Business logic exception occurred: Purchase order must be approved before creating an invoice
+ModularERP.Common.Exceptions.BusinessLogicException: Purchase order must be approved before creating an invoice
+   at ModularERP.Modules.Purchases.Invoicing.Services.PurchaseInvoiceService.ValidatePurchaseOrderAsync(Guid purchaseOrderId, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Modules\Purchases\Invoicing\Services\PurchaseInvoiceService.cs:line 80
+   at ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_Invoice.CreatePurchaseInvoiceHandler.Handle(CreatePurchaseInvoiceCommand request, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Modules\Purchases\Invoicing\Handlers\Handlers_Invoice\CreatePurchaseInvoiceHandler.cs:line 47
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Modules.Purchases.Invoicing.Controllers.PurchaseInvoiceController.CreateInvoice(CreatePurchaseInvoiceCommand command, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Modules\Purchases\Invoicing\Controllers\PurchaseInvoiceController.cs:line 33
+   at lambda_method118(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at ModularERP.Program.<>c.<<Main>b__0_7>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 356
+--- End of stack trace from previous location ---
+   at ModularERP.Program.<>c.<<Main>b__0_6>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 309
+--- End of stack trace from previous location ---
+   at ModularERP.Common.Middleware.GlobalErrorHandlerMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\ModelerERP\ModularERP\ModularERP\Common\Middleware\GlobalErrorHandlerMiddleware.cs:line 40
+2025-11-19 12:36:48.556 +02:00 [INF] Error response sent with status code 400
+2025-11-19 12:36:48.562 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/PurchaseInvoice - 400 null application/json; charset=utf-8 1325.6773ms
+2025-11-19 12:38:02.037 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/PurchaseInvoice - application/json 590
+2025-11-19 12:38:02.051 +02:00 [INF] Request started
+2025-11-19 12:38:02.052 +02:00 [INF] === Incoming Request ===
+2025-11-19 12:38:02.053 +02:00 [INF] Path: /api/PurchaseInvoice
+2025-11-19 12:38:02.054 +02:00 [INF] Method: POST
+2025-11-19 12:38:02.056 +02:00 [INF] === Headers ===
+2025-11-19 12:38:02.057 +02:00 [INF] Accept: ["*/*"]
+2025-11-19 12:38:02.059 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-19 12:38:02.060 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-19 12:38:02.061 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-19 12:38:02.063 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-19 12:38:02.064 +02:00 [INF] Content-Type: ["application/json"]
+2025-11-19 12:38:02.065 +02:00 [INF] Content-Length: ["590"]
+2025-11-19 12:38:02.067 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-19 12:38:02.068 +02:00 [INF] Postman-Token: ["363913e8-bd6c-4bfd-9195-d47d957b1227"]
+2025-11-19 12:38:02.071 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-19 12:38:02.072 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-19 12:38:02.073 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.Invoicing.Controllers.PurchaseInvoiceController.CreateInvoice (ModularERP)'
+2025-11-19 12:38:02.075 +02:00 [INF] Route matched with {action = "CreateInvoice", controller = "PurchaseInvoice"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Purchases.Invoicing.DTO.DTO_Invoice.PurchaseInvoiceDto]]] CreateInvoice(ModularERP.Modules.Purchases.Invoicing.Commends.Commands_Invoice.CreatePurchaseInvoiceCommand, System.Threading.CancellationToken) on controller ModularERP.Modules.Purchases.Invoicing.Controllers.PurchaseInvoiceController (ModularERP).
+2025-11-19 12:38:02.079 +02:00 [INF] Creating purchase invoice for PO: "c9419c66-ab1f-4857-a967-37221b235ea5"
+2025-11-19 12:38:02.082 +02:00 [INF] Starting creation of purchase invoice for PO: "c9419c66-ab1f-4857-a967-37221b235ea5"
+2025-11-19 12:38:02.311 +02:00 [INF] Purchase invoice created: "6814cb5b-07e5-45c1-8de9-70a1e29676ae", Number: INV-202511-0001
+2025-11-19 12:38:02.345 +02:00 [INF] Created 1 line items for invoice: "6814cb5b-07e5-45c1-8de9-70a1e29676ae"
+2025-11-19 12:38:02.407 +02:00 [INF] Updated PO "c9419c66-ab1f-4857-a967-37221b235ea5" payment status to: PartiallyPaid
+2025-11-19 12:38:02.535 +02:00 [INF] Successfully created purchase invoice: "6814cb5b-07e5-45c1-8de9-70a1e29676ae"
+2025-11-19 12:38:02.538 +02:00 [INF] Purchase invoice created successfully: "6814cb5b-07e5-45c1-8de9-70a1e29676ae"
+2025-11-19 12:38:02.551 +02:00 [INF] Executing CreatedAtActionResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Invoicing.DTO.DTO_Invoice.PurchaseInvoiceDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-19 12:38:02.583 +02:00 [INF] Executed action ModularERP.Modules.Purchases.Invoicing.Controllers.PurchaseInvoiceController.CreateInvoice (ModularERP) in 505.255ms
+2025-11-19 12:38:02.586 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.Invoicing.Controllers.PurchaseInvoiceController.CreateInvoice (ModularERP)'
+2025-11-19 12:38:02.587 +02:00 [INF] Request completed successfully with status code 201
+2025-11-19 12:38:02.589 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/PurchaseInvoice - 201 null application/json; charset=utf-8 552.0054ms
+2025-11-19 12:51:17.958 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/PurchaseInvoice - null null
+2025-11-19 12:51:17.964 +02:00 [INF] Request started
+2025-11-19 12:51:17.965 +02:00 [INF] === Incoming Request ===
+2025-11-19 12:51:17.965 +02:00 [INF] Path: /api/PurchaseInvoice
+2025-11-19 12:51:17.966 +02:00 [INF] Method: GET
+2025-11-19 12:51:17.967 +02:00 [INF] === Headers ===
+2025-11-19 12:51:17.968 +02:00 [INF] Accept: ["*/*"]
+2025-11-19 12:51:17.969 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-19 12:51:17.971 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-19 12:51:17.972 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-19 12:51:17.974 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-19 12:51:17.975 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-19 12:51:17.977 +02:00 [INF] Postman-Token: ["583551e8-9d0e-4e5b-8228-cfc986355564"]
+2025-11-19 12:51:17.979 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-19 12:51:17.980 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-19 12:51:17.980 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.Invoicing.Controllers.PurchaseInvoiceController.GetAllInvoices (ModularERP)'
+2025-11-19 12:51:17.987 +02:00 [INF] Route matched with {action = "GetAllInvoices", controller = "PurchaseInvoice"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Collections.Generic.List`1[ModularERP.Modules.Purchases.Invoicing.DTO.DTO_Invoice.PurchaseInvoiceDto]]]] GetAllInvoices(ModularERP.Modules.Purchases.Invoicing.Qeuries.Qeuires_Invoice.GetAllPurchaseInvoicesQuery, System.Threading.CancellationToken) on controller ModularERP.Modules.Purchases.Invoicing.Controllers.PurchaseInvoiceController (ModularERP).
+2025-11-19 12:51:17.994 +02:00 [INF] Retrieving all purchase invoices for company: "00000000-0000-0000-0000-000000000000"
+2025-11-19 12:51:18.004 +02:00 [INF] Retrieving purchase invoices for company: "00000000-0000-0000-0000-000000000000"
+2025-11-19 12:51:18.072 +02:00 [INF] Retrieved 0 purchase invoices for company: "00000000-0000-0000-0000-000000000000"
+2025-11-19 12:51:18.075 +02:00 [INF] Retrieved 0 purchase invoices
+2025-11-19 12:51:18.078 +02:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Purchases.Invoicing.DTO.DTO_Invoice.PurchaseInvoiceDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-19 12:51:18.081 +02:00 [INF] Executed action ModularERP.Modules.Purchases.Invoicing.Controllers.PurchaseInvoiceController.GetAllInvoices (ModularERP) in 90.6473ms
+2025-11-19 12:51:18.082 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.Invoicing.Controllers.PurchaseInvoiceController.GetAllInvoices (ModularERP)'
+2025-11-19 12:51:18.084 +02:00 [INF] Request completed successfully with status code 200
+2025-11-19 12:51:18.085 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/PurchaseInvoice - 200 null application/json; charset=utf-8 126.8718ms
+2025-11-19 12:51:50.504 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/PurchaseInvoice?CompanyId=90137c92-382d-404c-bade-e5fefb1e8dbf - null null
+2025-11-19 12:51:50.507 +02:00 [INF] Request started
+2025-11-19 12:51:50.508 +02:00 [INF] === Incoming Request ===
+2025-11-19 12:51:50.508 +02:00 [INF] Path: /api/PurchaseInvoice
+2025-11-19 12:51:50.509 +02:00 [INF] Method: GET
+2025-11-19 12:51:50.510 +02:00 [INF] === Headers ===
+2025-11-19 12:51:50.511 +02:00 [INF] Accept: ["*/*"]
+2025-11-19 12:51:50.512 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-19 12:51:50.514 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-19 12:51:50.515 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-19 12:51:50.517 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-19 12:51:50.518 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-19 12:51:50.520 +02:00 [INF] Postman-Token: ["2e9773ce-0540-4b72-968f-303f9f25d41b"]
+2025-11-19 12:51:50.521 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-19 12:51:50.522 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-19 12:51:50.523 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.Invoicing.Controllers.PurchaseInvoiceController.GetAllInvoices (ModularERP)'
+2025-11-19 12:51:50.524 +02:00 [INF] Route matched with {action = "GetAllInvoices", controller = "PurchaseInvoice"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Collections.Generic.List`1[ModularERP.Modules.Purchases.Invoicing.DTO.DTO_Invoice.PurchaseInvoiceDto]]]] GetAllInvoices(ModularERP.Modules.Purchases.Invoicing.Qeuries.Qeuires_Invoice.GetAllPurchaseInvoicesQuery, System.Threading.CancellationToken) on controller ModularERP.Modules.Purchases.Invoicing.Controllers.PurchaseInvoiceController (ModularERP).
+2025-11-19 12:51:50.536 +02:00 [INF] Retrieving all purchase invoices for company: "90137c92-382d-404c-bade-e5fefb1e8dbf"
+2025-11-19 12:51:50.539 +02:00 [INF] Retrieving purchase invoices for company: "90137c92-382d-404c-bade-e5fefb1e8dbf"
+2025-11-19 12:51:50.578 +02:00 [INF] Retrieved 1 purchase invoices for company: "90137c92-382d-404c-bade-e5fefb1e8dbf"
+2025-11-19 12:51:50.581 +02:00 [INF] Retrieved 1 purchase invoices
+2025-11-19 12:51:50.582 +02:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Purchases.Invoicing.DTO.DTO_Invoice.PurchaseInvoiceDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-19 12:51:50.584 +02:00 [INF] Executed action ModularERP.Modules.Purchases.Invoicing.Controllers.PurchaseInvoiceController.GetAllInvoices (ModularERP) in 57.6994ms
+2025-11-19 12:51:50.586 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.Invoicing.Controllers.PurchaseInvoiceController.GetAllInvoices (ModularERP)'
+2025-11-19 12:51:50.587 +02:00 [INF] Request completed successfully with status code 200
+2025-11-19 12:51:50.588 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/PurchaseInvoice?CompanyId=90137c92-382d-404c-bade-e5fefb1e8dbf - 200 null application/json; charset=utf-8 84.2ms
+2025-11-19 12:55:58.742 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/PurchaseInvoiceItem/purchase-orders/{c9419c66-ab1f-4857-a967-37221b235ea5}/create-invoice - application/json 176
+2025-11-19 12:55:58.746 +02:00 [INF] Request started
+2025-11-19 12:55:58.747 +02:00 [INF] === Incoming Request ===
+2025-11-19 12:55:58.748 +02:00 [INF] Path: /api/PurchaseInvoiceItem/purchase-orders/%7Bc9419c66-ab1f-4857-a967-37221b235ea5%7D/create-invoice
+2025-11-19 12:55:58.750 +02:00 [INF] Method: POST
+2025-11-19 12:55:58.751 +02:00 [INF] === Headers ===
+2025-11-19 12:55:58.752 +02:00 [INF] Accept: ["*/*"]
+2025-11-19 12:55:58.755 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-19 12:55:58.756 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-19 12:55:58.757 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-19 12:55:58.759 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-19 12:55:58.760 +02:00 [INF] Content-Type: ["application/json"]
+2025-11-19 12:55:58.762 +02:00 [INF] Content-Length: ["176"]
+2025-11-19 12:55:58.764 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-19 12:55:58.767 +02:00 [INF] Postman-Token: ["bc1c8eaa-e74d-48a5-955c-44b22c063557"]
+2025-11-19 12:55:58.769 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-19 12:55:58.770 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-19 12:55:58.771 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.Invoicing.Controllers.PurchaseInvoiceItemController.CreateInvoiceFromPO (ModularERP)'
+2025-11-19 12:55:58.775 +02:00 [INF] Route matched with {action = "CreateInvoiceFromPO", controller = "PurchaseInvoiceItem"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateInvoiceFromPO(System.Guid, ModularERP.Modules.Purchases.Invoicing.DTO.DTO_InvocieItem.CreateInvoiceFromPORequest) on controller ModularERP.Modules.Purchases.Invoicing.Controllers.PurchaseInvoiceItemController (ModularERP).
+2025-11-19 12:55:58.784 +02:00 [INF] Received request to create invoice from PO: "c9419c66-ab1f-4857-a967-37221b235ea5"
+2025-11-19 12:55:58.798 +02:00 [INF] Creating invoice from Purchase Order ID: "c9419c66-ab1f-4857-a967-37221b235ea5"
+2025-11-19 12:55:58.866 +02:00 [INF] Successfully created invoice INV-202511-0002 from Purchase Order PO-202510-0001
+2025-11-19 12:55:58.887 +02:00 [INF] Executing CreatedAtActionResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Invoicing.DTO.DTO_InvocieItem.InvoiceResponse, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-19 12:55:58.895 +02:00 [INF] Executed action ModularERP.Modules.Purchases.Invoicing.Controllers.PurchaseInvoiceItemController.CreateInvoiceFromPO (ModularERP) in 115.5151ms
+2025-11-19 12:55:58.900 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.Invoicing.Controllers.PurchaseInvoiceItemController.CreateInvoiceFromPO (ModularERP)'
+2025-11-19 12:55:58.901 +02:00 [INF] Request completed successfully with status code 201
+2025-11-19 12:55:58.903 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/PurchaseInvoiceItem/purchase-orders/{c9419c66-ab1f-4857-a967-37221b235ea5}/create-invoice - 201 null application/json; charset=utf-8 161.0582ms
+2025-11-19 13:05:49.825 +02:00 [INF] Starting web host...
+2025-11-19 13:05:53.804 +02:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-19 13:05:53.895 +02:00 [INF] Executed DbCommand (74ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-11-19 13:05:53.987 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-19 13:05:53.992 +02:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-11-19 13:05:54.010 +02:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-11-19 13:05:54.066 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-11-19 13:05:54.081 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-19 13:05:54.085 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-11-19 13:05:54.092 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-11-19 13:05:54.104 +02:00 [INF] No migrations were applied. The database is already up to date.
+2025-11-19 13:05:54.112 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-11-19 13:05:54.272 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-11-19 13:05:54.279 +02:00 [INF] Master database initialized successfully
+2025-11-19 13:05:56.681 +02:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-19 13:05:56.848 +02:00 [INF] Now listening on: https://localhost:7168
+2025-11-19 13:05:56.849 +02:00 [INF] Now listening on: http://localhost:5004
+2025-11-19 13:05:56.950 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-19 13:05:56.952 +02:00 [INF] Hosting environment: Development
+2025-11-19 13:05:56.954 +02:00 [INF] Content root path: E:\ModelerERP\ModularERP\ModularERP
+2025-11-19 13:05:57.204 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/PurchaseInvoiceItem/purchase-orders/{c9419c66-ab1f-4857-a967-37221b235ea5}/create-invoice - application/json 176
+2025-11-19 13:05:57.292 +02:00 [INF] Request started
+2025-11-19 13:05:57.294 +02:00 [INF] === Incoming Request ===
+2025-11-19 13:05:57.296 +02:00 [INF] Path: /api/PurchaseInvoiceItem/purchase-orders/%7Bc9419c66-ab1f-4857-a967-37221b235ea5%7D/create-invoice
+2025-11-19 13:05:57.297 +02:00 [INF] Method: POST
+2025-11-19 13:05:57.299 +02:00 [INF] === Headers ===
+2025-11-19 13:05:57.303 +02:00 [INF] Accept: ["*/*"]
+2025-11-19 13:05:57.307 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-19 13:05:57.309 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-19 13:05:57.312 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-19 13:05:57.317 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-19 13:05:57.319 +02:00 [INF] Content-Type: ["application/json"]
+2025-11-19 13:05:57.322 +02:00 [INF] Content-Length: ["176"]
+2025-11-19 13:05:57.325 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-19 13:05:57.327 +02:00 [INF] Postman-Token: ["bd41aab6-2721-43eb-b6d4-a0cb3b34fcb2"]
+2025-11-19 13:05:57.336 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-19 13:05:57.338 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-19 13:05:57.340 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.Invoicing.Controllers.PurchaseInvoiceItemController.CreateInvoiceFromPO (ModularERP)'
+2025-11-19 13:05:57.357 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-11-19 13:05:57.394 +02:00 [INF] Route matched with {action = "CreateInvoiceFromPO", controller = "PurchaseInvoiceItem"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateInvoiceFromPO(System.Guid, ModularERP.Modules.Purchases.Invoicing.DTO.DTO_InvocieItem.CreateInvoiceFromPORequest) on controller ModularERP.Modules.Purchases.Invoicing.Controllers.PurchaseInvoiceItemController (ModularERP).
+2025-11-19 13:05:57.402 +02:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-11-19 13:05:57.446 +02:00 [INF] Received request to create invoice from PO: "c9419c66-ab1f-4857-a967-37221b235ea5"
+2025-11-19 13:05:57.520 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 162.1253ms
+2025-11-19 13:05:57.535 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 13:05:57.536 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-11-19 13:05:57.548 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 12.0983ms
+2025-11-19 13:05:57.557 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-11-19 13:05:57.575 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 39.6408ms
+2025-11-19 13:05:57.744 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-11-19 13:05:58.057 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 312.5985ms
+2025-11-19 13:05:58.399 +02:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-11-19 13:05:58.411 +02:00 [INF] Creating invoice from Purchase Order ID: "c9419c66-ab1f-4857-a967-37221b235ea5"
+2025-11-19 13:05:58.662 +02:00 [INF] Successfully created invoice INV-202511-0003 from Purchase Order PO-202510-0001
+2025-11-19 13:05:58.730 +02:00 [INF] Executing CreatedAtActionResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Invoicing.DTO.DTO_InvocieItem.InvoiceResponse, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-19 13:05:58.775 +02:00 [INF] Executed action ModularERP.Modules.Purchases.Invoicing.Controllers.PurchaseInvoiceItemController.CreateInvoiceFromPO (ModularERP) in 1374.3539ms
+2025-11-19 13:05:58.779 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.Invoicing.Controllers.PurchaseInvoiceItemController.CreateInvoiceFromPO (ModularERP)'
+2025-11-19 13:05:58.782 +02:00 [INF] Request completed successfully with status code 201
+2025-11-19 13:05:58.788 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/PurchaseInvoiceItem/purchase-orders/{c9419c66-ab1f-4857-a967-37221b235ea5}/create-invoice - 201 null application/json; charset=utf-8 1585.3626ms

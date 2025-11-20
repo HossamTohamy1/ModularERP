@@ -48,6 +48,7 @@ using ModularERP.Modules.Inventory.Features.Requisitions.Services;
 using Microsoft.Extensions.DependencyInjection;
 using ModularERP.Modules.Inventory.Features.Stocktaking.Services;
 using ModularERP.Modules.Purchases.Purchase_Order_Management.Services;
+using ModularERP.Modules.Purchases.Invoicing.Services;
 
 namespace ModularERP
 {
@@ -237,6 +238,7 @@ namespace ModularERP
                 builder.Services.AddRequisitionWorkflowServices();
                 builder.Services.AddStocktakingServices();
                 builder.Services.AddPurchaseOrderModule();
+                builder.Services.AddPurchaseInvoicingServices();
 
                 // ---------------------------
                 // 🟢 Domain Services
