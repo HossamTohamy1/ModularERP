@@ -35,9 +35,23 @@ namespace ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_RefundItem
             {
                 _logger.LogInformation("Getting refund item: {ItemId} for Refund: {RefundId}", request.ItemId, request.RefundId);
 
-                var item = await _repository
-                    .Get(r => r.Id == request.ItemId && r.RefundId == request.RefundId)
-                    .ProjectTo<RefundItemDto>(_mapper.ConfigurationProvider)
+                var item = await _repository.GetAll()
+                    .Where(r => r.Id == request.ItemId && r.RefundId == request.RefundId)
+                    .Include(r => r.GRNLineItem)
+                        .ThenInclude(g => g.POLineItem)
+                        .ThenInclude(pol => pol.Product)
+                    .Select(rl => new RefundItemDto
+                    {
+                        Id = rl.Id,
+                        RefundId = rl.RefundId,
+                        GRNLineItemId = rl.GRNLineItemId,
+                        ProductId = rl.GRNLineItem.POLineItem.ProductId ?? Guid.Empty,
+                        ProductName = rl.GRNLineItem.POLineItem.Product != null ? rl.GRNLineItem.POLineItem.Product.Name : "",
+                        ProductSKU = rl.GRNLineItem.POLineItem.Product != null ? rl.GRNLineItem.POLineItem.Product.SKU : "",
+                        ReturnQuantity = rl.ReturnQuantity,
+                        UnitPrice = rl.UnitPrice,
+                        LineTotal = rl.LineTotal
+                    })
                     .FirstOrDefaultAsync(cancellationToken);
 
                 if (item == null)

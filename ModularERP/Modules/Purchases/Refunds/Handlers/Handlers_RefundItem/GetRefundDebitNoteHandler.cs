@@ -34,9 +34,20 @@ namespace ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_RefundItem
             {
                 _logger.LogInformation("Getting Debit Note for Refund: {RefundId}", request.RefundId);
 
-                var debitNote = await _repository
-                    .Get(dn => dn.RefundId == request.RefundId)
-                    .ProjectTo<DebitNoteDto>(_mapper.ConfigurationProvider)
+                var debitNote = await _repository.GetAll()
+                    .Where(dn => dn.RefundId == request.RefundId)
+                    .Include(dn => dn.Supplier)
+                    .Select(dn => new DebitNoteDto
+                    {
+                        Id = dn.Id,
+                        DebitNoteNumber = dn.DebitNoteNumber,
+                        RefundId = dn.RefundId,
+                        SupplierId = dn.SupplierId,
+                        SupplierName = dn.Supplier != null ? dn.Supplier.Name : "",
+                        NoteDate = dn.NoteDate,
+                        Amount = dn.Amount,
+                        Notes = dn.Notes
+                    })
                     .FirstOrDefaultAsync(cancellationToken);
 
                 if (debitNote == null)

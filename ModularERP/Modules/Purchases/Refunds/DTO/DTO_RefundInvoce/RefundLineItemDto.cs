@@ -4,6 +4,8 @@
     {
         public Guid Id { get; set; }
         public Guid RefundId { get; set; }
+        public Guid ProductId { get; set; }
+
         public Guid GRNLineItemId { get; set; }
         public string ProductName { get; set; } = string.Empty;
         public string ProductSKU { get; set; } = string.Empty;

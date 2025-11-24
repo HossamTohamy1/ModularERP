@@ -35,6 +35,7 @@ using ModularERP.Modules.Purchases.Invoicing.Models;
 using ModularERP.Modules.Purchases.Purchase_Order_Management.Models;
 using ModularERP.Modules.Purchases.Refunds.Models;
 using ModularERP.Modules.Purchases.WorkFlow.Models;
+using ModularERP.Modules.Purchases.Invoicing.Configurations;
 
 namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
 {
@@ -121,11 +122,14 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
         public DbSet<PurchaseInvoice> PurchaseInvoices { get; set; }
         public DbSet<InvoiceLineItem> InvoiceLineItems { get; set; }
         public DbSet<SupplierPayment> SupplierPayments { get; set; }
+        public DbSet<PaymentAllocation> PaymentAllocations { get; set; }
+
         public DbSet<PurchaseRefund> PurchaseRefunds { get; set; }
         public DbSet<RefundLineItem> RefundLineItems { get; set; }
         public DbSet<DebitNote> DebitNotes { get; set; }
         public DbSet<POApprovalHistory> POApprovalHistories { get; set; }
         public DbSet<POAuditLog> POAuditLogs { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -694,20 +698,22 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
             builder.Entity<Supplier>(entity =>
             {
                 entity.ToTable("Suppliers");
-                // Unique constraint: CompanyId + Name
+
                 entity.HasIndex(e => new { e.CompanyId, e.Name })
                       .IsUnique()
                       .HasDatabaseName("IX_Supplier_Company_Name");
 
-                // Company relationship
+                // ⭐ NEW: Decimal precision for balance fields
+                entity.Property(e => e.OpeningBalance).HasPrecision(18, 4);
+                entity.Property(e => e.CurrentBalance).HasPrecision(18, 4);
+                entity.Property(e => e.TotalPurchases).HasPrecision(18, 4);
+                entity.Property(e => e.TotalPaid).HasPrecision(18, 4);
+
                 entity.HasOne(e => e.Company)
                       .WithMany()
                       .HasForeignKey(e => e.CompanyId)
                       .OnDelete(DeleteBehavior.Restrict);
 
-
-
-                // Convert enum to string
                 entity.Property(e => e.Status)
                       .HasConversion<string>()
                       .HasDefaultValue(SupplierStatus.Active);
@@ -723,13 +729,18 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .HasForeignKey(e => e.SupplierId)
                       .OnDelete(DeleteBehavior.Restrict);
 
- 
+                entity.HasMany(e => e.Payments) // ⭐ NEW
+                      .WithOne(e => e.Supplier)
+                      .HasForeignKey(e => e.SupplierId)
+                      .OnDelete(DeleteBehavior.Restrict);
 
+                // Indexes
                 entity.HasIndex(e => e.Status)
                       .HasDatabaseName("IX_Supplier_Status");
-
                 entity.HasIndex(e => e.Email)
                       .HasDatabaseName("IX_Supplier_Email");
+                entity.HasIndex(e => e.CurrentBalance) // ⭐ NEW
+                      .HasDatabaseName("IX_Supplier_CurrentBalance");
             });
 
             // ============================================
@@ -1948,16 +1959,17 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
             });
             // PurchaseOrder and related entities configuration would go here
 
+            builder.ApplyConfiguration(new PaymentAllocationConfiguration());
+
+
             builder.Entity<PurchaseOrder>(entity =>
             {
                 entity.ToTable("PurchaseOrders");
 
-                // Unique constraint: CompanyId + PONumber
                 entity.HasIndex(e => new { e.CompanyId, e.PONumber })
                       .IsUnique()
                       .HasDatabaseName("IX_PurchaseOrder_Company_PONumber");
 
-                // Convert status enums to string
                 entity.Property(e => e.ReceptionStatus)
                       .HasConversion<string>()
                       .HasDefaultValue("NotReceived");
@@ -1978,9 +1990,10 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.Property(e => e.TaxAmount).HasPrecision(18, 4);
                 entity.Property(e => e.TotalAmount).HasPrecision(18, 4);
                 entity.Property(e => e.DepositAmount).HasPrecision(18, 4);
+                entity.Property(e => e.TotalPaid).HasPrecision(18, 4); // ⭐ NEW
                 entity.Property(e => e.AmountDue).HasPrecision(18, 4);
 
-                // Relationships
+                // Relationships (same as before)
                 entity.HasOne(e => e.Company)
                       .WithMany()
                       .HasForeignKey(e => e.CompanyId)
@@ -2062,6 +2075,11 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .HasForeignKey(e => e.PurchaseOrderId)
                       .OnDelete(DeleteBehavior.Restrict);
 
+                entity.HasMany(e => e.Payments) // ⭐ NEW
+                      .WithOne(e => e.PurchaseOrder)
+                      .HasForeignKey(e => e.PurchaseOrderId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
                 entity.HasMany(e => e.ApprovalHistory)
                       .WithOne(e => e.PurchaseOrder)
                       .HasForeignKey(e => e.PurchaseOrderId)
@@ -2072,7 +2090,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .HasForeignKey(e => e.PurchaseOrderId)
                       .OnDelete(DeleteBehavior.Cascade);
 
-                // Indexes for performance
+                // Indexes
                 entity.HasIndex(e => e.CompanyId).HasDatabaseName("IX_PurchaseOrder_Company");
                 entity.HasIndex(e => e.SupplierId).HasDatabaseName("IX_PurchaseOrder_Supplier");
                 entity.HasIndex(e => e.PODate).HasDatabaseName("IX_PurchaseOrder_Date");
@@ -2310,6 +2328,11 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .HasConversion<string>()
                       .HasDefaultValue("Unpaid");
 
+                entity.HasMany(pi => pi.PaymentAllocations)
+                    .WithOne(pa => pa.Invoice)
+                    .HasForeignKey(pa => pa.InvoiceId)
+                    .OnDelete(DeleteBehavior.Restrict);
+
                 // Relationships
                 entity.HasOne(e => e.Company)
                       .WithMany()
@@ -2363,21 +2386,60 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
 
                 // Decimal precision
                 entity.Property(e => e.Amount).HasPrecision(18, 4);
+                entity.Property(e => e.AllocatedAmount).HasPrecision(18, 4);
+                entity.Property(e => e.UnallocatedAmount).HasPrecision(18, 4);
 
+                entity.Property(e => e.PaymentType)
+                      .HasConversion<string>()
+                      .HasDefaultValue("AgainstInvoice");
+
+                entity.Property(e => e.Status)
+                      .HasConversion<string>()
+                      .HasDefaultValue("Draft");
+
+                entity.Property(e => e.CreatedBy)
+                       .HasMaxLength(256); 
+
+                entity.Property(e => e.UpdatedBy)
+                      .HasMaxLength(256); 
                 // Relationships
                 entity.HasOne(e => e.Supplier)
-                      .WithMany()
+                      .WithMany(s => s.Payments)
                       .HasForeignKey(e => e.SupplierId)
                       .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(e => e.Invoice)
+                      .WithMany(i => i.Payments)
+                      .HasForeignKey(e => e.InvoiceId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(e => e.PurchaseOrder)
+                      .WithMany(po => po.Payments)
+                      .HasForeignKey(e => e.PurchaseOrderId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(e => e.VoidedByUser)
+                      .WithMany()
+                      .HasForeignKey(e => e.VoidedBy)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasMany(sp => sp.Allocations)
+                    .WithOne(pa => pa.Payment)
+                    .HasForeignKey(pa => pa.PaymentId)
+                    .OnDelete(DeleteBehavior.Restrict);
 
                 // Indexes
                 entity.HasIndex(e => e.SupplierId).HasDatabaseName("IX_SupplierPayment_Supplier");
                 entity.HasIndex(e => e.InvoiceId).HasDatabaseName("IX_SupplierPayment_Invoice");
+                entity.HasIndex(e => e.PurchaseOrderId).HasDatabaseName("IX_SupplierPayment_PurchaseOrder");
                 entity.HasIndex(e => e.PaymentDate).HasDatabaseName("IX_SupplierPayment_Date");
                 entity.HasIndex(e => e.PaymentMethod).HasDatabaseName("IX_SupplierPayment_Method");
+                entity.HasIndex(e => e.PaymentType).HasDatabaseName("IX_SupplierPayment_Type");
+                entity.HasIndex(e => e.Status).HasDatabaseName("IX_SupplierPayment_Status");
+                entity.HasIndex(e => e.PaymentNumber).HasDatabaseName("IX_SupplierPayment_Number");
             });
 
-            // PurchaseRefund Configuration
+            // PurchaseRefund Configurationو
             builder.Entity<PurchaseRefund>(entity =>
             {
                 entity.ToTable("PurchaseRefunds");
@@ -2406,10 +2468,17 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .HasForeignKey<DebitNote>(e => e.RefundId)
                       .OnDelete(DeleteBehavior.Restrict);
 
+                entity.HasOne(e => e.PurchaseInvoice)
+                       .WithMany(pi => pi.Refunds)
+                       .HasForeignKey(e => e.PurchaseInvoiceId)
+                       .OnDelete(DeleteBehavior.Restrict);
+
                 // Indexes
                 entity.HasIndex(e => e.PurchaseOrderId).HasDatabaseName("IX_PurchaseRefund_PurchaseOrder");
                 entity.HasIndex(e => e.SupplierId).HasDatabaseName("IX_PurchaseRefund_Supplier");
                 entity.HasIndex(e => e.RefundDate).HasDatabaseName("IX_PurchaseRefund_Date");
+                entity.HasIndex(e => e.PurchaseInvoiceId).HasDatabaseName("IX_PurchaseRefund_PurchaseInvoice"); 
+
             });
 
             // RefundLineItem Configuration

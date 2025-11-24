@@ -1,0 +1,1820 @@
+2025-11-23 11:42:39.712 +02:00 [INF] Starting web host...
+2025-11-23 11:42:41.459 +02:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-23 11:42:41.547 +02:00 [INF] Executed DbCommand (71ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-11-23 11:42:41.666 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-23 11:42:41.673 +02:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-11-23 11:42:41.689 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-11-23 11:42:41.752 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-11-23 11:42:41.767 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-23 11:42:41.770 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-11-23 11:42:41.777 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-11-23 11:42:41.788 +02:00 [INF] No migrations were applied. The database is already up to date.
+2025-11-23 11:42:41.796 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-11-23 11:42:41.958 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-11-23 11:42:41.966 +02:00 [INF] Master database initialized successfully
+2025-11-23 11:42:43.915 +02:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-23 11:42:44.084 +02:00 [INF] Now listening on: https://localhost:7168
+2025-11-23 11:42:44.087 +02:00 [INF] Now listening on: http://localhost:5004
+2025-11-23 11:42:44.180 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-23 11:42:44.183 +02:00 [INF] Hosting environment: Development
+2025-11-23 11:42:44.184 +02:00 [INF] Content root path: E:\ModelerERP\ModularERP\ModularERP
+2025-11-23 11:42:44.917 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-11-23 11:42:45.067 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 152.3026ms
+2025-11-23 11:42:45.080 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-23 11:42:45.080 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-11-23 11:42:45.090 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 10.1255ms
+2025-11-23 11:42:45.115 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 34.3924ms
+2025-11-23 11:42:45.256 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-11-23 11:42:45.585 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 328.1564ms
+2025-11-23 11:43:33.169 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-11-23 11:43:33.551 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 381.9704ms
+2025-11-23 11:43:33.940 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/favicon.ico - null null
+2025-11-23 11:43:33.953 +02:00 [INF] Request started
+2025-11-23 11:43:33.956 +02:00 [INF] === Incoming Request ===
+2025-11-23 11:43:33.959 +02:00 [INF] Path: /favicon.ico
+2025-11-23 11:43:33.960 +02:00 [INF] Method: GET
+2025-11-23 11:43:33.961 +02:00 [INF] === Headers ===
+2025-11-23 11:43:33.964 +02:00 [INF] Accept: ["image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"]
+2025-11-23 11:43:33.967 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-23 11:43:33.969 +02:00 [INF] User-Agent: ["Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"]
+2025-11-23 11:43:33.972 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br, zstd"]
+2025-11-23 11:43:33.973 +02:00 [INF] Accept-Language: ["en-US,en;q=0.9"]
+2025-11-23 11:43:33.975 +02:00 [INF] Referer: ["https://localhost:7168/swagger/v1/swagger.json"]
+2025-11-23 11:43:33.976 +02:00 [INF] sec-ch-ua-platform: ["\"Windows\""]
+2025-11-23 11:43:33.979 +02:00 [INF] sec-ch-ua: ["\"Chromium\";v=\"142\", \"Microsoft Edge\";v=\"142\", \"Not_A Brand\";v=\"99\""]
+2025-11-23 11:43:33.982 +02:00 [INF] sec-ch-ua-mobile: ["?0"]
+2025-11-23 11:43:33.983 +02:00 [INF] sec-fetch-site: ["same-origin"]
+2025-11-23 11:43:33.985 +02:00 [INF] sec-fetch-mode: ["no-cors"]
+2025-11-23 11:43:33.986 +02:00 [INF] sec-fetch-dest: ["image"]
+2025-11-23 11:43:33.989 +02:00 [INF] priority: ["u=1, i"]
+2025-11-23 11:43:33.995 +02:00 [INF] 🔍 TenantService returned: 'NULL'
+2025-11-23 11:43:34.006 +02:00 [INF] Request completed successfully with status code 400
+2025-11-23 11:43:34.010 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/favicon.ico - 400 null application/json 69.3148ms
+2025-11-23 11:45:40.205 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-11-23 11:45:40.367 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 161.8142ms
+2025-11-23 11:45:40.713 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/favicon.ico - null null
+2025-11-23 11:45:40.717 +02:00 [INF] Request started
+2025-11-23 11:45:40.718 +02:00 [INF] === Incoming Request ===
+2025-11-23 11:45:40.719 +02:00 [INF] Path: /favicon.ico
+2025-11-23 11:45:40.720 +02:00 [INF] Method: GET
+2025-11-23 11:45:40.721 +02:00 [INF] === Headers ===
+2025-11-23 11:45:40.723 +02:00 [INF] Accept: ["image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"]
+2025-11-23 11:45:40.724 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-23 11:45:40.726 +02:00 [INF] User-Agent: ["Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0"]
+2025-11-23 11:45:40.727 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br, zstd"]
+2025-11-23 11:45:40.729 +02:00 [INF] Accept-Language: ["en-US,en;q=0.9"]
+2025-11-23 11:45:40.731 +02:00 [INF] Referer: ["https://localhost:7168/swagger/v1/swagger.json"]
+2025-11-23 11:45:40.733 +02:00 [INF] sec-ch-ua-platform: ["\"Windows\""]
+2025-11-23 11:45:40.735 +02:00 [INF] sec-ch-ua: ["\"Chromium\";v=\"142\", \"Microsoft Edge\";v=\"142\", \"Not_A Brand\";v=\"99\""]
+2025-11-23 11:45:40.737 +02:00 [INF] sec-ch-ua-mobile: ["?0"]
+2025-11-23 11:45:40.739 +02:00 [INF] sec-fetch-site: ["same-origin"]
+2025-11-23 11:45:40.740 +02:00 [INF] sec-fetch-mode: ["no-cors"]
+2025-11-23 11:45:40.744 +02:00 [INF] sec-fetch-dest: ["image"]
+2025-11-23 11:45:40.745 +02:00 [INF] priority: ["u=1, i"]
+2025-11-23 11:45:40.749 +02:00 [INF] 🔍 TenantService returned: 'NULL'
+2025-11-23 11:45:40.750 +02:00 [INF] Request completed successfully with status code 400
+2025-11-23 11:45:40.753 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/favicon.ico - 400 null application/json 40.0947ms
+2025-11-23 12:01:16.739 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/PurchaseInvoiceRefunds/return?InvoiceId=af1aab03-bfc2-4e9d-b992-0105a7527a37 - application/json 288
+2025-11-23 12:01:16.749 +02:00 [INF] Request started
+2025-11-23 12:01:16.751 +02:00 [INF] === Incoming Request ===
+2025-11-23 12:01:16.753 +02:00 [INF] Path: /api/PurchaseInvoiceRefunds/return
+2025-11-23 12:01:16.755 +02:00 [INF] Method: POST
+2025-11-23 12:01:16.756 +02:00 [INF] === Headers ===
+2025-11-23 12:01:16.759 +02:00 [INF] Accept: ["*/*"]
+2025-11-23 12:01:16.760 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-23 12:01:16.762 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-23 12:01:16.763 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-23 12:01:16.764 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-23 12:01:16.766 +02:00 [INF] Content-Type: ["application/json"]
+2025-11-23 12:01:16.768 +02:00 [INF] Content-Length: ["288"]
+2025-11-23 12:01:16.769 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-23 12:01:16.771 +02:00 [INF] Postman-Token: ["b4db678e-278f-424f-a037-5f6ee324ec6b"]
+2025-11-23 12:01:16.773 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-23 12:01:16.775 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-23 12:01:16.776 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice (ModularERP)'
+2025-11-23 12:01:16.792 +02:00 [INF] Route matched with {action = "CreateRefundFromInvoice", controller = "PurchaseInvoiceRefunds"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Purchases.Refunds.DTO.DTO_RefundInvoce.RefundDto]]] CreateRefundFromInvoice(System.Guid, ModularERP.Modules.Purchases.Refunds.Commends.Commends_RefundInvoce.CreateRefundFromInvoiceCommand) on controller ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController (ModularERP).
+2025-11-23 12:01:16.798 +02:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-11-23 12:01:16.823 +02:00 [INF] Creating refund from Purchase Invoice: "af1aab03-bfc2-4e9d-b992-0105a7527a37"
+2025-11-23 12:01:16.931 +02:00 [INF] Executed DbCommand (15ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-11-23 12:01:17.471 +02:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-11-23 12:01:17.476 +02:00 [INF] Creating refund from Purchase Invoice: "af1aab03-bfc2-4e9d-b992-0105a7527a37"
+2025-11-23 12:01:17.666 +02:00 [INF] Created Debit Note: DN-20251123-00001 for Refund: REF-20251123-00001
+2025-11-23 12:01:17.766 +02:00 [INF] Successfully created refund: REF-20251123-00001 from Invoice: "af1aab03-bfc2-4e9d-b992-0105a7527a37"
+2025-11-23 12:01:17.797 +02:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Refunds.DTO.DTO_RefundInvoce.RefundDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-23 12:01:17.816 +02:00 [INF] Executed action ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice (ModularERP) in 1018.0701ms
+2025-11-23 12:01:17.819 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice (ModularERP)'
+2025-11-23 12:01:17.821 +02:00 [INF] Request completed successfully with status code 200
+2025-11-23 12:01:17.826 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/PurchaseInvoiceRefunds/return?InvoiceId=af1aab03-bfc2-4e9d-b992-0105a7527a37 - 200 null application/json; charset=utf-8 1086.339ms
+2025-11-23 12:12:58.634 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/PurchaseInvoiceRefunds/return?InvoiceId=af1aab03-bfc2-4e9d-b992-0105a7527a37 - application/json 288
+2025-11-23 12:12:58.652 +02:00 [INF] Request started
+2025-11-23 12:12:58.654 +02:00 [INF] === Incoming Request ===
+2025-11-23 12:12:58.655 +02:00 [INF] Path: /api/PurchaseInvoiceRefunds/return
+2025-11-23 12:12:58.656 +02:00 [INF] Method: POST
+2025-11-23 12:12:58.657 +02:00 [INF] === Headers ===
+2025-11-23 12:12:58.658 +02:00 [INF] Accept: ["*/*"]
+2025-11-23 12:12:58.660 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-23 12:12:58.661 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-23 12:12:58.663 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-23 12:12:58.664 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-23 12:12:58.665 +02:00 [INF] Content-Type: ["application/json"]
+2025-11-23 12:12:58.667 +02:00 [INF] Content-Length: ["288"]
+2025-11-23 12:12:58.668 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-23 12:12:58.670 +02:00 [INF] Postman-Token: ["7230e856-14bd-4acc-a94c-863ecfbc9544"]
+2025-11-23 12:12:58.672 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-23 12:12:58.673 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-23 12:12:58.674 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice (ModularERP)'
+2025-11-23 12:12:58.676 +02:00 [INF] Route matched with {action = "CreateRefundFromInvoice", controller = "PurchaseInvoiceRefunds"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Purchases.Refunds.DTO.DTO_RefundInvoce.RefundDto]]] CreateRefundFromInvoice(System.Guid, ModularERP.Modules.Purchases.Refunds.Commends.Commends_RefundInvoce.CreateRefundFromInvoiceCommand) on controller ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController (ModularERP).
+2025-11-23 12:12:58.679 +02:00 [INF] Creating refund from Purchase Invoice: "af1aab03-bfc2-4e9d-b992-0105a7527a37"
+2025-11-23 12:12:58.683 +02:00 [INF] Creating refund from Purchase Invoice: "af1aab03-bfc2-4e9d-b992-0105a7527a37"
+2025-11-23 12:12:58.719 +02:00 [INF] Created Debit Note: DN-20251123-00001 for Refund: REF-20251123-00002
+2025-11-23 12:12:58.736 +02:00 [INF] Successfully created refund: REF-20251123-00002 from Invoice: "af1aab03-bfc2-4e9d-b992-0105a7527a37"
+2025-11-23 12:12:58.744 +02:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Refunds.DTO.DTO_RefundInvoce.RefundDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-23 12:12:58.747 +02:00 [INF] Executed action ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice (ModularERP) in 68.9229ms
+2025-11-23 12:12:58.749 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice (ModularERP)'
+2025-11-23 12:12:58.750 +02:00 [INF] Request completed successfully with status code 200
+2025-11-23 12:12:58.751 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/PurchaseInvoiceRefunds/return?InvoiceId=af1aab03-bfc2-4e9d-b992-0105a7527a37 - 200 null application/json; charset=utf-8 117.196ms
+2025-11-23 12:17:15.728 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/PurchaseInvoiceRefunds/return?InvoiceId=af1aab03-bfc2-4e9d-b992-0105a7527a37 - application/json 288
+2025-11-23 12:17:15.732 +02:00 [INF] Request started
+2025-11-23 12:17:15.733 +02:00 [INF] === Incoming Request ===
+2025-11-23 12:17:15.733 +02:00 [INF] Path: /api/PurchaseInvoiceRefunds/return
+2025-11-23 12:17:15.734 +02:00 [INF] Method: POST
+2025-11-23 12:17:15.736 +02:00 [INF] === Headers ===
+2025-11-23 12:17:15.737 +02:00 [INF] Accept: ["*/*"]
+2025-11-23 12:17:15.738 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-23 12:17:15.740 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-23 12:17:15.742 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-23 12:17:15.744 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-23 12:17:15.746 +02:00 [INF] Content-Type: ["application/json"]
+2025-11-23 12:17:15.747 +02:00 [INF] Content-Length: ["288"]
+2025-11-23 12:17:15.748 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-23 12:17:15.749 +02:00 [INF] Postman-Token: ["98d0372d-67b4-4bff-9045-731cac8e77e2"]
+2025-11-23 12:17:15.751 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-23 12:17:15.752 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-23 12:17:15.753 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice (ModularERP)'
+2025-11-23 12:17:15.755 +02:00 [INF] Route matched with {action = "CreateRefundFromInvoice", controller = "PurchaseInvoiceRefunds"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Purchases.Refunds.DTO.DTO_RefundInvoce.RefundDto]]] CreateRefundFromInvoice(System.Guid, ModularERP.Modules.Purchases.Refunds.Commends.Commends_RefundInvoce.CreateRefundFromInvoiceCommand) on controller ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController (ModularERP).
+2025-11-23 12:17:15.759 +02:00 [INF] Creating refund from Purchase Invoice: "af1aab03-bfc2-4e9d-b992-0105a7527a37"
+2025-11-23 12:17:15.763 +02:00 [INF] Creating refund from Purchase Invoice: "af1aab03-bfc2-4e9d-b992-0105a7527a37"
+2025-11-23 12:17:15.779 +02:00 [INF] Created Debit Note: DN-20251123-00001 for Refund: REF-20251123-00003
+2025-11-23 12:17:15.793 +02:00 [INF] Successfully created refund: REF-20251123-00003 from Invoice: "af1aab03-bfc2-4e9d-b992-0105a7527a37"
+2025-11-23 12:17:15.797 +02:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Refunds.DTO.DTO_RefundInvoce.RefundDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-23 12:17:15.799 +02:00 [INF] Executed action ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice (ModularERP) in 41.0447ms
+2025-11-23 12:17:15.801 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice (ModularERP)'
+2025-11-23 12:17:15.803 +02:00 [INF] Request completed successfully with status code 200
+2025-11-23 12:17:15.805 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/PurchaseInvoiceRefunds/return?InvoiceId=af1aab03-bfc2-4e9d-b992-0105a7527a37 - 200 null application/json; charset=utf-8 76.6196ms
+2025-11-23 13:20:40.286 +02:00 [INF] Starting web host...
+2025-11-23 13:20:43.585 +02:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-23 13:20:43.675 +02:00 [INF] Executed DbCommand (73ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-11-23 13:20:43.764 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-23 13:20:43.770 +02:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-11-23 13:20:43.791 +02:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-11-23 13:20:43.845 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-11-23 13:20:43.861 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-23 13:20:43.866 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-11-23 13:20:43.875 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-11-23 13:20:43.887 +02:00 [INF] No migrations were applied. The database is already up to date.
+2025-11-23 13:20:43.894 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-11-23 13:20:44.061 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-11-23 13:20:44.068 +02:00 [INF] Master database initialized successfully
+2025-11-23 13:20:46.393 +02:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-23 13:20:46.521 +02:00 [INF] Now listening on: https://localhost:7168
+2025-11-23 13:20:46.524 +02:00 [INF] Now listening on: http://localhost:5004
+2025-11-23 13:20:46.629 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-23 13:20:46.631 +02:00 [INF] Hosting environment: Development
+2025-11-23 13:20:46.633 +02:00 [INF] Content root path: E:\ModelerERP\ModularERP\ModularERP
+2025-11-23 13:20:46.944 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-11-23 13:20:47.113 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 170.7314ms
+2025-11-23 13:20:47.126 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-11-23 13:20:47.126 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-23 13:20:47.137 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 11.1468ms
+2025-11-23 13:20:47.165 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 39.1475ms
+2025-11-23 13:20:47.363 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-11-23 13:20:47.376 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/favicon-32x32.png - null null
+2025-11-23 13:20:47.389 +02:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-11-23 13:20:47.391 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/favicon-32x32.png - 200 628 image/png 14.4353ms
+2025-11-23 13:20:47.788 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 424.7579ms
+2025-11-23 13:21:24.264 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/PurchaseInvoiceRefunds/return?InvoiceId=af1aab03-bfc2-4e9d-b992-0105a7527a37 - application/json 288
+2025-11-23 13:21:24.284 +02:00 [INF] Request started
+2025-11-23 13:21:24.287 +02:00 [INF] === Incoming Request ===
+2025-11-23 13:21:24.291 +02:00 [INF] Path: /api/PurchaseInvoiceRefunds/return
+2025-11-23 13:21:24.293 +02:00 [INF] Method: POST
+2025-11-23 13:21:24.294 +02:00 [INF] === Headers ===
+2025-11-23 13:21:24.297 +02:00 [INF] Accept: ["*/*"]
+2025-11-23 13:21:24.300 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-23 13:21:24.302 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-23 13:21:24.303 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-23 13:21:24.304 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-23 13:21:24.305 +02:00 [INF] Content-Type: ["application/json"]
+2025-11-23 13:21:24.307 +02:00 [INF] Content-Length: ["288"]
+2025-11-23 13:21:24.309 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-23 13:21:24.312 +02:00 [INF] Postman-Token: ["3b51b76b-0577-4fa2-a73c-626e8d07a390"]
+2025-11-23 13:21:24.316 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-23 13:21:24.319 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-23 13:21:24.320 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice (ModularERP)'
+2025-11-23 13:21:24.339 +02:00 [INF] Route matched with {action = "CreateRefundFromInvoice", controller = "PurchaseInvoiceRefunds"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Purchases.Refunds.DTO.DTO_RefundInvoce.RefundDto]]] CreateRefundFromInvoice(System.Guid, ModularERP.Modules.Purchases.Refunds.Commends.Commends_RefundInvoce.CreateRefundFromInvoiceCommand) on controller ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController (ModularERP).
+2025-11-23 13:21:24.347 +02:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-11-23 13:21:24.380 +02:00 [INF] Creating refund from Purchase Invoice: "af1aab03-bfc2-4e9d-b992-0105a7527a37"
+2025-11-23 13:21:24.502 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-11-23 13:21:25.239 +02:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-11-23 13:21:25.253 +02:00 [INF] Creating refund from Purchase Invoice: "af1aab03-bfc2-4e9d-b992-0105a7527a37"
+2025-11-23 13:21:25.437 +02:00 [INF] Created Debit Note: DN-20251123-00001 for Refund: REF-20251123-00003
+2025-11-23 13:21:25.568 +02:00 [ERR] Error creating refund from Invoice: "af1aab03-bfc2-4e9d-b992-0105a7527a37"
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'dbo.PurchaseRefunds' with unique index 'IX_PurchaseRefund_RefundNumber'. The duplicate key value is (REF-20251123-00003).
+The INSERT statement conflicted with the FOREIGN KEY constraint "FK_RefundLineItems_PurchaseRefunds_RefundId". The conflict occurred in database "ModularERP_Tenant_ac68e928aa8044b69ff2ed99d02196e4", table "dbo.PurchaseRefunds", column 'Id'.
+The statement has been terminated.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:407977cc-fd45-460a-b71a-b8d44802de6d
+Error Number:2601,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at ModularERP.Modules.Finance.Finance.Infrastructure.Data.FinanceDbContext.SaveChangesAsync(CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Modules\Finance\Finance.Infrastructure\Data\FinanceDbContext.cs:line 2530
+   at ModularERP.SharedKernel.Repository.GeneralRepository`1.SaveChanges() in E:\ModelerERP\ModularERP\ModularERP\Shared\Repository\GeneralRepository.cs:line 157
+   at ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_RefundInvoce.CreateRefundFromInvoiceHandler.Handle(CreateRefundFromInvoiceCommand request, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Modules\Purchases\Refunds\Handlers\Handlers_RefundInvoce\CreateRefundFromInvoiceHandler.cs:line 122
+2025-11-23 13:21:25.626 +02:00 [INF] Executed action ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice (ModularERP) in 1280.0151ms
+2025-11-23 13:21:25.630 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice (ModularERP)'
+2025-11-23 13:21:25.632 +02:00 [ERR] Unexpected error occurred
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'dbo.PurchaseRefunds' with unique index 'IX_PurchaseRefund_RefundNumber'. The duplicate key value is (REF-20251123-00003).
+The INSERT statement conflicted with the FOREIGN KEY constraint "FK_RefundLineItems_PurchaseRefunds_RefundId". The conflict occurred in database "ModularERP_Tenant_ac68e928aa8044b69ff2ed99d02196e4", table "dbo.PurchaseRefunds", column 'Id'.
+The statement has been terminated.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:407977cc-fd45-460a-b71a-b8d44802de6d
+Error Number:2601,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at ModularERP.Modules.Finance.Finance.Infrastructure.Data.FinanceDbContext.SaveChangesAsync(CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Modules\Finance\Finance.Infrastructure\Data\FinanceDbContext.cs:line 2530
+   at ModularERP.SharedKernel.Repository.GeneralRepository`1.SaveChanges() in E:\ModelerERP\ModularERP\ModularERP\Shared\Repository\GeneralRepository.cs:line 157
+   at ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_RefundInvoce.CreateRefundFromInvoiceHandler.Handle(CreateRefundFromInvoiceCommand request, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Modules\Purchases\Refunds\Handlers\Handlers_RefundInvoce\CreateRefundFromInvoiceHandler.cs:line 122
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice(Guid invoiceId, CreateRefundFromInvoiceCommand command) in E:\ModelerERP\ModularERP\ModularERP\Modules\Purchases\Refunds\Controllers\PurchaseInvoiceRefundsController.cs:line 43
+   at lambda_method118(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at ModularERP.Program.<>c.<<Main>b__0_7>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 356
+--- End of stack trace from previous location ---
+   at ModularERP.Program.<>c.<<Main>b__0_6>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 309
+--- End of stack trace from previous location ---
+   at ModularERP.Common.Middleware.GlobalErrorHandlerMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\ModelerERP\ModularERP\ModularERP\Common\Middleware\GlobalErrorHandlerMiddleware.cs:line 40
+2025-11-23 13:21:25.672 +02:00 [INF] Error response sent with status code 500
+2025-11-23 13:21:25.678 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/PurchaseInvoiceRefunds/return?InvoiceId=af1aab03-bfc2-4e9d-b992-0105a7527a37 - 500 null application/json; charset=utf-8 1413.8646ms
+2025-11-23 13:21:58.690 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/PurchaseInvoiceRefunds/return?InvoiceId=af1aab03-bfc2-4e9d-b992-0105a7527a37 - application/json 288
+2025-11-23 13:21:58.708 +02:00 [INF] Request started
+2025-11-23 13:21:58.710 +02:00 [INF] === Incoming Request ===
+2025-11-23 13:21:58.711 +02:00 [INF] Path: /api/PurchaseInvoiceRefunds/return
+2025-11-23 13:21:58.712 +02:00 [INF] Method: POST
+2025-11-23 13:21:58.713 +02:00 [INF] === Headers ===
+2025-11-23 13:21:58.714 +02:00 [INF] Accept: ["*/*"]
+2025-11-23 13:21:58.716 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-23 13:21:58.717 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-23 13:21:58.719 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-23 13:21:58.721 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-23 13:21:58.722 +02:00 [INF] Content-Type: ["application/json"]
+2025-11-23 13:21:58.723 +02:00 [INF] Content-Length: ["288"]
+2025-11-23 13:21:58.724 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-23 13:21:58.727 +02:00 [INF] Postman-Token: ["6fc4af28-5f43-41d9-9425-df9940b97806"]
+2025-11-23 13:21:58.730 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-23 13:21:58.731 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-23 13:21:58.734 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice (ModularERP)'
+2025-11-23 13:21:58.735 +02:00 [INF] Route matched with {action = "CreateRefundFromInvoice", controller = "PurchaseInvoiceRefunds"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Purchases.Refunds.DTO.DTO_RefundInvoce.RefundDto]]] CreateRefundFromInvoice(System.Guid, ModularERP.Modules.Purchases.Refunds.Commends.Commends_RefundInvoce.CreateRefundFromInvoiceCommand) on controller ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController (ModularERP).
+2025-11-23 13:21:58.739 +02:00 [INF] Creating refund from Purchase Invoice: "af1aab03-bfc2-4e9d-b992-0105a7527a37"
+2025-11-23 13:21:58.742 +02:00 [INF] Creating refund from Purchase Invoice: "af1aab03-bfc2-4e9d-b992-0105a7527a37"
+2025-11-23 13:21:58.750 +02:00 [INF] Created Debit Note: DN-20251123-00001 for Refund: REF-20251123-00001
+2025-11-23 13:21:58.768 +02:00 [INF] Successfully created refund: REF-20251123-00001 from Invoice: "af1aab03-bfc2-4e9d-b992-0105a7527a37"
+2025-11-23 13:21:58.793 +02:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Refunds.DTO.DTO_RefundInvoce.RefundDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-23 13:21:58.808 +02:00 [INF] Executed action ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice (ModularERP) in 70.54ms
+2025-11-23 13:21:58.810 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice (ModularERP)'
+2025-11-23 13:21:58.812 +02:00 [INF] Request completed successfully with status code 200
+2025-11-23 13:21:58.813 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/PurchaseInvoiceRefunds/return?InvoiceId=af1aab03-bfc2-4e9d-b992-0105a7527a37 - 200 null application/json; charset=utf-8 123.1125ms
+2025-11-23 13:28:44.924 +02:00 [INF] Starting web host...
+2025-11-23 13:28:46.468 +02:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-23 13:28:46.543 +02:00 [INF] Executed DbCommand (57ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-11-23 13:28:46.621 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-23 13:28:46.627 +02:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-11-23 13:28:46.644 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-11-23 13:28:46.699 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-11-23 13:28:46.715 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-23 13:28:46.719 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-11-23 13:28:46.732 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-11-23 13:28:46.743 +02:00 [INF] No migrations were applied. The database is already up to date.
+2025-11-23 13:28:46.750 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-11-23 13:28:46.910 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-11-23 13:28:46.917 +02:00 [INF] Master database initialized successfully
+2025-11-23 13:28:49.179 +02:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-23 13:28:49.289 +02:00 [INF] Now listening on: https://localhost:7168
+2025-11-23 13:28:49.292 +02:00 [INF] Now listening on: http://localhost:5004
+2025-11-23 13:28:49.386 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-23 13:28:49.388 +02:00 [INF] Hosting environment: Development
+2025-11-23 13:28:49.390 +02:00 [INF] Content root path: E:\ModelerERP\ModularERP\ModularERP
+2025-11-23 13:28:49.846 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-11-23 13:28:49.974 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 130.666ms
+2025-11-23 13:28:50.042 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-23 13:28:50.042 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-11-23 13:28:50.052 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 10.5985ms
+2025-11-23 13:28:50.071 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 29.0673ms
+2025-11-23 13:28:50.109 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-11-23 13:28:50.391 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 281.8736ms
+2025-11-23 13:28:52.755 +02:00 [INF] Starting web host...
+2025-11-23 13:28:54.310 +02:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-23 13:28:54.343 +02:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-11-23 13:28:54.416 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-23 13:28:54.422 +02:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-11-23 13:28:54.426 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-11-23 13:28:54.482 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-11-23 13:28:54.498 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-23 13:28:54.502 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-11-23 13:28:54.508 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-11-23 13:28:54.519 +02:00 [INF] No migrations were applied. The database is already up to date.
+2025-11-23 13:28:54.523 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-11-23 13:28:54.709 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-11-23 13:28:54.718 +02:00 [INF] Master database initialized successfully
+2025-11-23 13:28:56.585 +02:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-23 13:28:56.692 +02:00 [INF] Now listening on: https://localhost:7168
+2025-11-23 13:28:56.695 +02:00 [INF] Now listening on: http://localhost:5004
+2025-11-23 13:28:56.783 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-23 13:28:56.785 +02:00 [INF] Hosting environment: Development
+2025-11-23 13:28:56.787 +02:00 [INF] Content root path: E:\ModelerERP\ModularERP\ModularERP
+2025-11-23 13:28:56.814 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-11-23 13:28:57.004 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 190.3487ms
+2025-11-23 13:28:57.008 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-23 13:28:57.008 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-11-23 13:28:57.016 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 7.935ms
+2025-11-23 13:28:57.037 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 29.5901ms
+2025-11-23 13:28:57.079 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-11-23 13:28:57.483 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 403.9408ms
+2025-11-23 13:29:04.556 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/PurchaseInvoiceRefunds/return?InvoiceId=af1aab03-bfc2-4e9d-b992-0105a7527a37 - application/json 288
+2025-11-23 13:29:04.579 +02:00 [INF] Request started
+2025-11-23 13:29:04.582 +02:00 [INF] === Incoming Request ===
+2025-11-23 13:29:04.584 +02:00 [INF] Path: /api/PurchaseInvoiceRefunds/return
+2025-11-23 13:29:04.585 +02:00 [INF] Method: POST
+2025-11-23 13:29:04.586 +02:00 [INF] === Headers ===
+2025-11-23 13:29:04.590 +02:00 [INF] Accept: ["*/*"]
+2025-11-23 13:29:04.593 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-23 13:29:04.594 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-23 13:29:04.596 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-23 13:29:04.597 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-23 13:29:04.598 +02:00 [INF] Content-Type: ["application/json"]
+2025-11-23 13:29:04.600 +02:00 [INF] Content-Length: ["288"]
+2025-11-23 13:29:04.601 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-23 13:29:04.605 +02:00 [INF] Postman-Token: ["445d71d1-b375-48ad-9f8e-ae6f632bf8ec"]
+2025-11-23 13:29:04.611 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-23 13:29:04.613 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-23 13:29:04.614 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice (ModularERP)'
+2025-11-23 13:29:04.637 +02:00 [INF] Route matched with {action = "CreateRefundFromInvoice", controller = "PurchaseInvoiceRefunds"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Purchases.Refunds.DTO.DTO_RefundInvoce.RefundDto]]] CreateRefundFromInvoice(System.Guid, ModularERP.Modules.Purchases.Refunds.Commends.Commends_RefundInvoce.CreateRefundFromInvoiceCommand) on controller ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController (ModularERP).
+2025-11-23 13:29:04.644 +02:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-11-23 13:29:04.683 +02:00 [INF] Creating refund from Purchase Invoice: "af1aab03-bfc2-4e9d-b992-0105a7527a37"
+2025-11-23 13:29:04.810 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-11-23 13:29:05.686 +02:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-11-23 13:29:05.696 +02:00 [INF] Creating refund from Purchase Invoice: "af1aab03-bfc2-4e9d-b992-0105a7527a37"
+2025-11-23 13:29:05.919 +02:00 [INF] Created Debit Note: DN-20251123-00001 for Refund: REF-20251123-00002
+2025-11-23 13:29:06.036 +02:00 [INF] Successfully created refund: REF-20251123-00002 from Invoice: "af1aab03-bfc2-4e9d-b992-0105a7527a37"
+2025-11-23 13:29:06.084 +02:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Refunds.DTO.DTO_RefundInvoce.RefundDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-23 13:29:06.115 +02:00 [INF] Executed action ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice (ModularERP) in 1470.1387ms
+2025-11-23 13:29:06.118 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice (ModularERP)'
+2025-11-23 13:29:06.120 +02:00 [INF] Request completed successfully with status code 200
+2025-11-23 13:29:06.126 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/PurchaseInvoiceRefunds/return?InvoiceId=af1aab03-bfc2-4e9d-b992-0105a7527a37 - 200 null application/json; charset=utf-8 1570.0078ms
+2025-11-23 13:33:20.224 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/PurchaseInvoiceRefunds/return?purchaseOrderId=c9419c66-ab1f-4857-a967-37221b235ea5 - application/json 294
+2025-11-23 13:33:20.243 +02:00 [INF] Request started
+2025-11-23 13:33:20.244 +02:00 [INF] === Incoming Request ===
+2025-11-23 13:33:20.246 +02:00 [INF] Path: /api/PurchaseInvoiceRefunds/return
+2025-11-23 13:33:20.247 +02:00 [INF] Method: POST
+2025-11-23 13:33:20.248 +02:00 [INF] === Headers ===
+2025-11-23 13:33:20.249 +02:00 [INF] Accept: ["*/*"]
+2025-11-23 13:33:20.251 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-23 13:33:20.252 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-23 13:33:20.254 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-23 13:33:20.255 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-23 13:33:20.256 +02:00 [INF] Content-Type: ["application/json"]
+2025-11-23 13:33:20.258 +02:00 [INF] Content-Length: ["294"]
+2025-11-23 13:33:20.259 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-23 13:33:20.261 +02:00 [INF] Postman-Token: ["809eddde-b7da-4b8e-8541-7d74fa7b0ad8"]
+2025-11-23 13:33:20.264 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-23 13:33:20.265 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-23 13:33:20.266 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice (ModularERP)'
+2025-11-23 13:33:20.268 +02:00 [INF] Route matched with {action = "CreateRefundFromInvoice", controller = "PurchaseInvoiceRefunds"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Purchases.Refunds.DTO.DTO_RefundInvoce.RefundDto]]] CreateRefundFromInvoice(System.Guid, ModularERP.Modules.Purchases.Refunds.Commends.Commends_RefundInvoce.CreateRefundFromInvoiceCommand) on controller ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController (ModularERP).
+2025-11-23 13:33:20.274 +02:00 [INF] Creating refund from Purchase Invoice: "00000000-0000-0000-0000-000000000000"
+2025-11-23 13:33:20.281 +02:00 [WRN] Validation failed for CreateRefundFromInvoiceCommand. Errors: [{"PropertyName":"InvoiceId","ErrorMessage":"Invoice ID is required"}]
+2025-11-23 13:33:20.301 +02:00 [INF] Executed action ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice (ModularERP) in 29.6687ms
+2025-11-23 13:33:20.303 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice (ModularERP)'
+2025-11-23 13:33:20.305 +02:00 [WRN] Validation exception occurred: Validation failed. Validation errors: {"InvoiceId":["Invoice ID is required"]}
+ModularERP.Common.Exceptions.ValidationException: Validation failed
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 44
+   at ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice(Guid invoiceId, CreateRefundFromInvoiceCommand command) in E:\ModelerERP\ModularERP\ModularERP\Modules\Purchases\Refunds\Controllers\PurchaseInvoiceRefundsController.cs:line 43
+   at lambda_method118(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at ModularERP.Program.<>c.<<Main>b__0_7>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 356
+--- End of stack trace from previous location ---
+   at ModularERP.Program.<>c.<<Main>b__0_6>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 309
+--- End of stack trace from previous location ---
+   at ModularERP.Common.Middleware.GlobalErrorHandlerMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\ModelerERP\ModularERP\ModularERP\Common\Middleware\GlobalErrorHandlerMiddleware.cs:line 40
+2025-11-23 13:33:20.358 +02:00 [INF] Error response sent with status code 400
+2025-11-23 13:33:20.360 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/PurchaseInvoiceRefunds/return?purchaseOrderId=c9419c66-ab1f-4857-a967-37221b235ea5 - 400 null application/json; charset=utf-8 136.0868ms
+2025-11-23 13:33:56.375 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/PurchaseInvoiceRefunds/return?poId=c9419c66-ab1f-4857-a967-37221b235ea5 - application/json 294
+2025-11-23 13:33:56.381 +02:00 [INF] Request started
+2025-11-23 13:33:56.382 +02:00 [INF] === Incoming Request ===
+2025-11-23 13:33:56.383 +02:00 [INF] Path: /api/PurchaseInvoiceRefunds/return
+2025-11-23 13:33:56.384 +02:00 [INF] Method: POST
+2025-11-23 13:33:56.385 +02:00 [INF] === Headers ===
+2025-11-23 13:33:56.386 +02:00 [INF] Accept: ["*/*"]
+2025-11-23 13:33:56.388 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-23 13:33:56.389 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-23 13:33:56.391 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-23 13:33:56.392 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-23 13:33:56.394 +02:00 [INF] Content-Type: ["application/json"]
+2025-11-23 13:33:56.396 +02:00 [INF] Content-Length: ["294"]
+2025-11-23 13:33:56.397 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-23 13:33:56.398 +02:00 [INF] Postman-Token: ["bdf5dcf6-b940-4beb-b44f-f01f4a9c8acd"]
+2025-11-23 13:33:56.400 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-23 13:33:56.401 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-23 13:33:56.401 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice (ModularERP)'
+2025-11-23 13:33:56.403 +02:00 [INF] Route matched with {action = "CreateRefundFromInvoice", controller = "PurchaseInvoiceRefunds"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Purchases.Refunds.DTO.DTO_RefundInvoce.RefundDto]]] CreateRefundFromInvoice(System.Guid, ModularERP.Modules.Purchases.Refunds.Commends.Commends_RefundInvoce.CreateRefundFromInvoiceCommand) on controller ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController (ModularERP).
+2025-11-23 13:33:56.405 +02:00 [INF] Creating refund from Purchase Invoice: "00000000-0000-0000-0000-000000000000"
+2025-11-23 13:33:56.408 +02:00 [WRN] Validation failed for CreateRefundFromInvoiceCommand. Errors: [{"PropertyName":"InvoiceId","ErrorMessage":"Invoice ID is required"}]
+2025-11-23 13:33:56.411 +02:00 [INF] Executed action ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice (ModularERP) in 6.6212ms
+2025-11-23 13:33:56.413 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice (ModularERP)'
+2025-11-23 13:33:56.414 +02:00 [WRN] Validation exception occurred: Validation failed. Validation errors: {"InvoiceId":["Invoice ID is required"]}
+ModularERP.Common.Exceptions.ValidationException: Validation failed
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 44
+   at ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice(Guid invoiceId, CreateRefundFromInvoiceCommand command) in E:\ModelerERP\ModularERP\ModularERP\Modules\Purchases\Refunds\Controllers\PurchaseInvoiceRefundsController.cs:line 43
+   at lambda_method118(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at ModularERP.Program.<>c.<<Main>b__0_7>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 356
+--- End of stack trace from previous location ---
+   at ModularERP.Program.<>c.<<Main>b__0_6>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 309
+--- End of stack trace from previous location ---
+   at ModularERP.Common.Middleware.GlobalErrorHandlerMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\ModelerERP\ModularERP\ModularERP\Common\Middleware\GlobalErrorHandlerMiddleware.cs:line 40
+2025-11-23 13:33:56.425 +02:00 [INF] Error response sent with status code 400
+2025-11-23 13:33:56.426 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/PurchaseInvoiceRefunds/return?poId=c9419c66-ab1f-4857-a967-37221b235ea5 - 400 null application/json; charset=utf-8 50.9697ms
+2025-11-23 13:35:38.336 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/PurchaseOrderRefunds/return?poId=c9419c66-ab1f-4857-a967-37221b235ea5 - application/json 294
+2025-11-23 13:35:38.340 +02:00 [INF] Request started
+2025-11-23 13:35:38.341 +02:00 [INF] === Incoming Request ===
+2025-11-23 13:35:38.342 +02:00 [INF] Path: /api/PurchaseOrderRefunds/return
+2025-11-23 13:35:38.343 +02:00 [INF] Method: POST
+2025-11-23 13:35:38.344 +02:00 [INF] === Headers ===
+2025-11-23 13:35:38.345 +02:00 [INF] Accept: ["*/*"]
+2025-11-23 13:35:38.348 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-23 13:35:38.349 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-23 13:35:38.350 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-23 13:35:38.352 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-23 13:35:38.353 +02:00 [INF] Content-Type: ["application/json"]
+2025-11-23 13:35:38.355 +02:00 [INF] Content-Length: ["294"]
+2025-11-23 13:35:38.356 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-23 13:35:38.358 +02:00 [INF] Postman-Token: ["1980123d-a99e-4f56-b9f9-f0a14945da83"]
+2025-11-23 13:35:38.359 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-23 13:35:38.360 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-23 13:35:38.362 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController.CreateRefundFromPO (ModularERP)'
+2025-11-23 13:35:38.369 +02:00 [INF] Route matched with {action = "CreateRefundFromPO", controller = "PurchaseOrderRefunds"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Purchases.Refunds.DTO.DTO_RefundInvoce.RefundDto]]] CreateRefundFromPO(System.Guid, ModularERP.Modules.Purchases.Refunds.Commends.Commends_RefundInvoce.CreateRefundFromPOCommand) on controller ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController (ModularERP).
+2025-11-23 13:35:38.376 +02:00 [INF] Creating refund from Purchase Order: "c9419c66-ab1f-4857-a967-37221b235ea5"
+2025-11-23 13:35:38.397 +02:00 [INF] Creating refund from Purchase Order: "c9419c66-ab1f-4857-a967-37221b235ea5"
+2025-11-23 13:35:38.792 +02:00 [ERR] Error creating refund from PO: "c9419c66-ab1f-4857-a967-37221b235ea5"
+ModularERP.Common.Exceptions.ValidationException: Validation failed for refund line items
+   at ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_RefundInvoce.CreateRefundFromPOHandler.Handle(CreateRefundFromPOCommand request, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Modules\Purchases\Refunds\Handlers\Handlers_RefundInvoce\CreateRefundFromPOHandler.cs:line 173
+2025-11-23 13:35:38.802 +02:00 [INF] Executed action ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController.CreateRefundFromPO (ModularERP) in 429.2185ms
+2025-11-23 13:35:38.804 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController.CreateRefundFromPO (ModularERP)'
+2025-11-23 13:35:38.805 +02:00 [WRN] Validation exception occurred: Validation failed for refund line items. Validation errors: {"LineItem_72d4280b-2366-45df-4a44-08de25d1f369":["GRN line item is not linked to this Purchase Order"]}
+ModularERP.Common.Exceptions.ValidationException: Validation failed for refund line items
+   at ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_RefundInvoce.CreateRefundFromPOHandler.Handle(CreateRefundFromPOCommand request, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Modules\Purchases\Refunds\Handlers\Handlers_RefundInvoce\CreateRefundFromPOHandler.cs:line 173
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController.CreateRefundFromPO(Guid poId, CreateRefundFromPOCommand command) in E:\ModelerERP\ModularERP\ModularERP\Modules\Purchases\Refunds\Controllers\PurchaseOrderRefundsController.cs:line 42
+   at lambda_method711(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at ModularERP.Program.<>c.<<Main>b__0_7>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 356
+--- End of stack trace from previous location ---
+   at ModularERP.Program.<>c.<<Main>b__0_6>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 309
+--- End of stack trace from previous location ---
+   at ModularERP.Common.Middleware.GlobalErrorHandlerMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\ModelerERP\ModularERP\ModularERP\Common\Middleware\GlobalErrorHandlerMiddleware.cs:line 40
+2025-11-23 13:35:38.817 +02:00 [INF] Error response sent with status code 400
+2025-11-23 13:35:38.818 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/PurchaseOrderRefunds/return?poId=c9419c66-ab1f-4857-a967-37221b235ea5 - 400 null application/json; charset=utf-8 482.7209ms
+2025-11-23 13:36:48.561 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/PurchaseOrderRefunds/return?poId=23d49ad7-c8f3-4545-9bb3-6957cdf43515 - application/json 294
+2025-11-23 13:36:48.564 +02:00 [INF] Request started
+2025-11-23 13:36:48.565 +02:00 [INF] === Incoming Request ===
+2025-11-23 13:36:48.566 +02:00 [INF] Path: /api/PurchaseOrderRefunds/return
+2025-11-23 13:36:48.567 +02:00 [INF] Method: POST
+2025-11-23 13:36:48.568 +02:00 [INF] === Headers ===
+2025-11-23 13:36:48.569 +02:00 [INF] Accept: ["*/*"]
+2025-11-23 13:36:48.571 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-23 13:36:48.572 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-23 13:36:48.573 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-23 13:36:48.575 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-23 13:36:48.576 +02:00 [INF] Content-Type: ["application/json"]
+2025-11-23 13:36:48.577 +02:00 [INF] Content-Length: ["294"]
+2025-11-23 13:36:48.579 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-23 13:36:48.580 +02:00 [INF] Postman-Token: ["5a90d8a7-3906-4f26-8270-b79fbaf44cb4"]
+2025-11-23 13:36:48.581 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-23 13:36:48.582 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-23 13:36:48.584 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController.CreateRefundFromPO (ModularERP)'
+2025-11-23 13:36:48.587 +02:00 [INF] Route matched with {action = "CreateRefundFromPO", controller = "PurchaseOrderRefunds"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Purchases.Refunds.DTO.DTO_RefundInvoce.RefundDto]]] CreateRefundFromPO(System.Guid, ModularERP.Modules.Purchases.Refunds.Commends.Commends_RefundInvoce.CreateRefundFromPOCommand) on controller ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController (ModularERP).
+2025-11-23 13:36:48.590 +02:00 [INF] Creating refund from Purchase Order: "23d49ad7-c8f3-4545-9bb3-6957cdf43515"
+2025-11-23 13:36:48.596 +02:00 [INF] Creating refund from Purchase Order: "23d49ad7-c8f3-4545-9bb3-6957cdf43515"
+2025-11-23 13:36:48.647 +02:00 [ERR] Error creating refund from PO: "23d49ad7-c8f3-4545-9bb3-6957cdf43515"
+ModularERP.Common.Exceptions.ValidationException: Validation failed for refund line items
+   at ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_RefundInvoce.CreateRefundFromPOHandler.Handle(CreateRefundFromPOCommand request, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Modules\Purchases\Refunds\Handlers\Handlers_RefundInvoce\CreateRefundFromPOHandler.cs:line 173
+2025-11-23 13:36:48.652 +02:00 [INF] Executed action ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController.CreateRefundFromPO (ModularERP) in 62.2005ms
+2025-11-23 13:36:48.655 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController.CreateRefundFromPO (ModularERP)'
+2025-11-23 13:36:48.656 +02:00 [WRN] Validation exception occurred: Validation failed for refund line items. Validation errors: {"LineItem_72d4280b-2366-45df-4a44-08de25d1f369":["Unit price mismatch. Expected: 15000.0000, Provided: 10"]}
+ModularERP.Common.Exceptions.ValidationException: Validation failed for refund line items
+   at ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_RefundInvoce.CreateRefundFromPOHandler.Handle(CreateRefundFromPOCommand request, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Modules\Purchases\Refunds\Handlers\Handlers_RefundInvoce\CreateRefundFromPOHandler.cs:line 173
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController.CreateRefundFromPO(Guid poId, CreateRefundFromPOCommand command) in E:\ModelerERP\ModularERP\ModularERP\Modules\Purchases\Refunds\Controllers\PurchaseOrderRefundsController.cs:line 42
+   at lambda_method711(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at ModularERP.Program.<>c.<<Main>b__0_7>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 356
+--- End of stack trace from previous location ---
+   at ModularERP.Program.<>c.<<Main>b__0_6>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 309
+--- End of stack trace from previous location ---
+   at ModularERP.Common.Middleware.GlobalErrorHandlerMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\ModelerERP\ModularERP\ModularERP\Common\Middleware\GlobalErrorHandlerMiddleware.cs:line 40
+2025-11-23 13:36:48.669 +02:00 [INF] Error response sent with status code 400
+2025-11-23 13:36:48.671 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/PurchaseOrderRefunds/return?poId=23d49ad7-c8f3-4545-9bb3-6957cdf43515 - 400 null application/json; charset=utf-8 110.0299ms
+2025-11-23 13:37:34.016 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/PurchaseOrderRefunds/return?poId=23d49ad7-c8f3-4545-9bb3-6957cdf43515 - application/json 297
+2025-11-23 13:37:34.020 +02:00 [INF] Request started
+2025-11-23 13:37:34.021 +02:00 [INF] === Incoming Request ===
+2025-11-23 13:37:34.023 +02:00 [INF] Path: /api/PurchaseOrderRefunds/return
+2025-11-23 13:37:34.024 +02:00 [INF] Method: POST
+2025-11-23 13:37:34.025 +02:00 [INF] === Headers ===
+2025-11-23 13:37:34.026 +02:00 [INF] Accept: ["*/*"]
+2025-11-23 13:37:34.027 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-23 13:37:34.028 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-23 13:37:34.029 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-23 13:37:34.031 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-23 13:37:34.032 +02:00 [INF] Content-Type: ["application/json"]
+2025-11-23 13:37:34.033 +02:00 [INF] Content-Length: ["297"]
+2025-11-23 13:37:34.035 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-23 13:37:34.037 +02:00 [INF] Postman-Token: ["729c4326-90d2-4a32-9475-e12aca13d4b8"]
+2025-11-23 13:37:34.039 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-23 13:37:34.040 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-23 13:37:34.041 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController.CreateRefundFromPO (ModularERP)'
+2025-11-23 13:37:34.042 +02:00 [INF] Route matched with {action = "CreateRefundFromPO", controller = "PurchaseOrderRefunds"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Purchases.Refunds.DTO.DTO_RefundInvoce.RefundDto]]] CreateRefundFromPO(System.Guid, ModularERP.Modules.Purchases.Refunds.Commends.Commends_RefundInvoce.CreateRefundFromPOCommand) on controller ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController (ModularERP).
+2025-11-23 13:37:34.045 +02:00 [INF] Creating refund from Purchase Order: "23d49ad7-c8f3-4545-9bb3-6957cdf43515"
+2025-11-23 13:37:34.055 +02:00 [INF] Creating refund from Purchase Order: "23d49ad7-c8f3-4545-9bb3-6957cdf43515"
+2025-11-23 13:37:34.190 +02:00 [INF] Warehouse Stock updated: Product "1455fbe8-d0b2-4615-b998-5b00ed509ab7", Warehouse "e5d0bbaa-9099-43e1-bb16-f9744078a9ea", Old Qty: 110.000, Returned: 1, New Qty: 109.000
+2025-11-23 13:37:34.231 +02:00 [WRN] Supplier model does not have Balance property. Skipping balance update.
+2025-11-23 13:37:34.232 +02:00 [INF] Created Debit Note: DN-20251123-00001 for Refund: REF-20251123-00003
+2025-11-23 13:37:34.341 +02:00 [INF] PO Status Updated: PO-202510-0005 - Reception: FullyReceived, Payment: PaidInFull
+2025-11-23 13:37:34.353 +02:00 [INF] Successfully created refund: REF-20251123-00003 from PO: PO-202510-0005
+2025-11-23 13:37:34.407 +02:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Refunds.DTO.DTO_RefundInvoce.RefundDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-23 13:37:34.411 +02:00 [INF] Executed action ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController.CreateRefundFromPO (ModularERP) in 366.8214ms
+2025-11-23 13:37:34.413 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController.CreateRefundFromPO (ModularERP)'
+2025-11-23 13:37:34.414 +02:00 [INF] Request completed successfully with status code 200
+2025-11-23 13:37:34.415 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/PurchaseOrderRefunds/return?poId=23d49ad7-c8f3-4545-9bb3-6957cdf43515 - 200 null application/json; charset=utf-8 399.1155ms
+2025-11-23 13:45:31.545 +02:00 [INF] Starting web host...
+2025-11-23 13:45:33.362 +02:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-23 13:45:33.426 +02:00 [INF] Executed DbCommand (48ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-11-23 13:45:33.513 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-23 13:45:33.519 +02:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-11-23 13:45:33.535 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-11-23 13:45:33.592 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-11-23 13:45:33.619 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-23 13:45:33.623 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-11-23 13:45:33.633 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-11-23 13:45:33.648 +02:00 [INF] No migrations were applied. The database is already up to date.
+2025-11-23 13:45:33.654 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-11-23 13:45:33.833 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-11-23 13:45:33.840 +02:00 [INF] Master database initialized successfully
+2025-11-23 13:45:36.060 +02:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-23 13:45:36.174 +02:00 [INF] Now listening on: https://localhost:7168
+2025-11-23 13:45:36.177 +02:00 [INF] Now listening on: http://localhost:5004
+2025-11-23 13:45:36.266 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-23 13:45:36.268 +02:00 [INF] Hosting environment: Development
+2025-11-23 13:45:36.269 +02:00 [INF] Content root path: E:\ModelerERP\ModularERP\ModularERP
+2025-11-23 13:45:36.446 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-11-23 13:45:36.571 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 125.6631ms
+2025-11-23 13:45:36.716 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-23 13:45:36.716 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-11-23 13:45:36.722 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 6.4049ms
+2025-11-23 13:45:36.748 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 31.8955ms
+2025-11-23 13:45:36.820 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-11-23 13:45:37.112 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 291.6073ms
+2025-11-23 13:45:41.773 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/PurchaseOrderRefunds/return?poId=23d49ad7-c8f3-4545-9bb3-6957cdf43515 - application/json 297
+2025-11-23 13:45:41.800 +02:00 [INF] Request started
+2025-11-23 13:45:41.802 +02:00 [INF] === Incoming Request ===
+2025-11-23 13:45:41.804 +02:00 [INF] Path: /api/PurchaseOrderRefunds/return
+2025-11-23 13:45:41.806 +02:00 [INF] Method: POST
+2025-11-23 13:45:41.807 +02:00 [INF] === Headers ===
+2025-11-23 13:45:41.811 +02:00 [INF] Accept: ["*/*"]
+2025-11-23 13:45:41.816 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-23 13:45:41.818 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-23 13:45:41.821 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-23 13:45:41.823 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-23 13:45:41.825 +02:00 [INF] Content-Type: ["application/json"]
+2025-11-23 13:45:41.827 +02:00 [INF] Content-Length: ["297"]
+2025-11-23 13:45:41.831 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-23 13:45:41.833 +02:00 [INF] Postman-Token: ["6f4ba8ca-88e8-44ba-a607-19864427c1f8"]
+2025-11-23 13:45:41.839 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-23 13:45:41.842 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-23 13:45:41.845 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController.CreateRefundFromPO (ModularERP)'
+2025-11-23 13:45:41.872 +02:00 [INF] Route matched with {action = "CreateRefundFromPO", controller = "PurchaseOrderRefunds"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Purchases.Refunds.DTO.DTO_RefundInvoce.RefundDto]]] CreateRefundFromPO(System.Guid, ModularERP.Modules.Purchases.Refunds.Commends.Commends_RefundInvoce.CreateRefundFromPOCommand) on controller ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController (ModularERP).
+2025-11-23 13:45:41.879 +02:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-11-23 13:45:41.917 +02:00 [INF] Creating refund from Purchase Order: "23d49ad7-c8f3-4545-9bb3-6957cdf43515"
+2025-11-23 13:45:42.053 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-11-23 13:45:42.991 +02:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-11-23 13:45:43.012 +02:00 [INF] Creating refund from Purchase Order: "23d49ad7-c8f3-4545-9bb3-6957cdf43515"
+2025-11-23 13:45:43.909 +02:00 [INF] Warehouse Stock updated: Product "1455fbe8-d0b2-4615-b998-5b00ed509ab7", Warehouse "e5d0bbaa-9099-43e1-bb16-f9744078a9ea", Old Qty: 109.000, Returned: 1, New Qty: 108.000
+2025-11-23 13:45:43.976 +02:00 [WRN] Supplier model does not have Balance property. Skipping balance update.
+2025-11-23 13:45:43.977 +02:00 [INF] Created Debit Note: DN-20251123-00001 for Refund: REF-20251123-00004
+2025-11-23 13:45:44.016 +02:00 [INF] Successfully created refund: REF-20251123-00004 from PO: PO-202510-0005
+2025-11-23 13:45:44.253 +02:00 [INF] PO Status Updated: PO-202510-0005 - Reception: FullyReceived, Payment: Refunded
+2025-11-23 13:45:44.343 +02:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Refunds.DTO.DTO_RefundInvoce.RefundDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-23 13:45:44.367 +02:00 [INF] Executed action ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController.CreateRefundFromPO (ModularERP) in 2489.5764ms
+2025-11-23 13:45:44.371 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController.CreateRefundFromPO (ModularERP)'
+2025-11-23 13:45:44.373 +02:00 [INF] Request completed successfully with status code 200
+2025-11-23 13:45:44.379 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/PurchaseOrderRefunds/return?poId=23d49ad7-c8f3-4545-9bb3-6957cdf43515 - 200 null application/json; charset=utf-8 2605.7646ms
+2025-11-23 13:57:36.736 +02:00 [INF] Starting web host...
+2025-11-23 13:57:38.204 +02:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-23 13:57:38.281 +02:00 [INF] Executed DbCommand (59ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-11-23 13:57:38.366 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-23 13:57:38.373 +02:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-11-23 13:57:38.389 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-11-23 13:57:38.467 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-11-23 13:57:38.483 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-23 13:57:38.487 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-11-23 13:57:38.493 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-11-23 13:57:38.504 +02:00 [INF] No migrations were applied. The database is already up to date.
+2025-11-23 13:57:38.511 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-11-23 13:57:38.668 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-11-23 13:57:38.675 +02:00 [INF] Master database initialized successfully
+2025-11-23 13:57:40.751 +02:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-23 13:57:40.910 +02:00 [INF] Now listening on: https://localhost:7168
+2025-11-23 13:57:40.912 +02:00 [INF] Now listening on: http://localhost:5004
+2025-11-23 13:57:40.996 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-23 13:57:40.998 +02:00 [INF] Hosting environment: Development
+2025-11-23 13:57:40.999 +02:00 [INF] Content root path: E:\ModelerERP\ModularERP\ModularERP
+2025-11-23 13:57:41.341 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-11-23 13:57:41.489 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 149.2764ms
+2025-11-23 13:57:41.491 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-11-23 13:57:41.491 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-23 13:57:41.505 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 13.7713ms
+2025-11-23 13:57:41.524 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 32.98ms
+2025-11-23 13:57:41.721 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-11-23 13:57:41.965 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 243.1877ms
+2025-11-23 14:03:15.406 +02:00 [INF] Starting web host...
+2025-11-23 14:03:17.308 +02:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-23 14:03:17.369 +02:00 [INF] Executed DbCommand (46ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-11-23 14:03:17.464 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-23 14:03:17.471 +02:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-11-23 14:03:17.482 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-11-23 14:03:17.550 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-11-23 14:03:17.566 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-23 14:03:17.570 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-11-23 14:03:17.577 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-11-23 14:03:17.588 +02:00 [INF] No migrations were applied. The database is already up to date.
+2025-11-23 14:03:17.600 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-11-23 14:03:17.785 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-11-23 14:03:17.792 +02:00 [INF] Master database initialized successfully
+2025-11-23 14:03:19.901 +02:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-23 14:03:20.066 +02:00 [INF] Now listening on: https://localhost:7168
+2025-11-23 14:03:20.068 +02:00 [INF] Now listening on: http://localhost:5004
+2025-11-23 14:03:20.155 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-23 14:03:20.158 +02:00 [INF] Hosting environment: Development
+2025-11-23 14:03:20.159 +02:00 [INF] Content root path: E:\ModelerERP\ModularERP\ModularERP
+2025-11-23 14:03:20.245 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-11-23 14:03:20.371 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 126.3759ms
+2025-11-23 14:03:20.375 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-23 14:03:20.375 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-11-23 14:03:20.384 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 8.5452ms
+2025-11-23 14:03:20.406 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 30.7438ms
+2025-11-23 14:03:20.564 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-11-23 14:03:20.864 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 299.545ms
+2025-11-23 14:03:37.912 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/PurchaseOrderRefunds/return?poId=23d49ad7-c8f3-4545-9bb3-6957cdf43515 - application/json 297
+2025-11-23 14:03:37.937 +02:00 [INF] Request started
+2025-11-23 14:03:37.940 +02:00 [INF] === Incoming Request ===
+2025-11-23 14:03:37.944 +02:00 [INF] Path: /api/PurchaseOrderRefunds/return
+2025-11-23 14:03:37.946 +02:00 [INF] Method: POST
+2025-11-23 14:03:37.949 +02:00 [INF] === Headers ===
+2025-11-23 14:03:37.952 +02:00 [INF] Accept: ["*/*"]
+2025-11-23 14:03:37.958 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-23 14:03:37.960 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-23 14:03:37.961 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-23 14:03:37.963 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-23 14:03:37.966 +02:00 [INF] Content-Type: ["application/json"]
+2025-11-23 14:03:37.973 +02:00 [INF] Content-Length: ["297"]
+2025-11-23 14:03:37.976 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-23 14:03:37.977 +02:00 [INF] Postman-Token: ["fe2ec1bf-19cf-49d9-b8a6-5cf2e9854aa3"]
+2025-11-23 14:03:37.982 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-23 14:03:37.985 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-23 14:03:37.988 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController.CreateRefundFromPO (ModularERP)'
+2025-11-23 14:03:38.010 +02:00 [INF] Route matched with {action = "CreateRefundFromPO", controller = "PurchaseOrderRefunds"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Purchases.Refunds.DTO.DTO_RefundInvoce.RefundDto]]] CreateRefundFromPO(System.Guid, ModularERP.Modules.Purchases.Refunds.Commends.Commends_RefundInvoce.CreateRefundFromPOCommand) on controller ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController (ModularERP).
+2025-11-23 14:03:38.019 +02:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-11-23 14:03:38.057 +02:00 [INF] Creating refund from Purchase Order: "23d49ad7-c8f3-4545-9bb3-6957cdf43515"
+2025-11-23 14:03:38.171 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-11-23 14:03:38.946 +02:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-11-23 14:03:38.962 +02:00 [INF] Creating refund from Purchase Order: "23d49ad7-c8f3-4545-9bb3-6957cdf43515"
+2025-11-23 14:03:39.717 +02:00 [INF] Warehouse Stock updated: Product "1455fbe8-d0b2-4615-b998-5b00ed509ab7", Warehouse "e5d0bbaa-9099-43e1-bb16-f9744078a9ea", Old Qty: 108.000, Returned: 1, New Qty: 107.000
+2025-11-23 14:03:39.810 +02:00 [ERR] Error creating refund from PO: "23d49ad7-c8f3-4545-9bb3-6957cdf43515"
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_DebitNotes_PurchaseRefunds_RefundId". The conflict occurred in database "ModularERP_Tenant_ac68e928aa8044b69ff2ed99d02196e4", table "dbo.PurchaseRefunds", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:8d94d456-49d3-4423-a16d-6c8d8be901ea
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at ModularERP.Modules.Finance.Finance.Infrastructure.Data.FinanceDbContext.SaveChangesAsync(CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Modules\Finance\Finance.Infrastructure\Data\FinanceDbContext.cs:line 2530
+   at ModularERP.SharedKernel.Repository.GeneralRepository`1.SaveChanges() in E:\ModelerERP\ModularERP\ModularERP\Shared\Repository\GeneralRepository.cs:line 157
+   at ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_RefundInvoce.CreateRefundFromPOHandler.Handle(CreateRefundFromPOCommand request, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Modules\Purchases\Refunds\Handlers\Handlers_RefundInvoce\CreateRefundFromPOHandler.cs:line 313
+2025-11-23 14:03:39.888 +02:00 [INF] Executed action ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController.CreateRefundFromPO (ModularERP) in 1868.4989ms
+2025-11-23 14:03:39.891 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController.CreateRefundFromPO (ModularERP)'
+2025-11-23 14:03:39.894 +02:00 [ERR] Unexpected error occurred
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_DebitNotes_PurchaseRefunds_RefundId". The conflict occurred in database "ModularERP_Tenant_ac68e928aa8044b69ff2ed99d02196e4", table "dbo.PurchaseRefunds", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:8d94d456-49d3-4423-a16d-6c8d8be901ea
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at ModularERP.Modules.Finance.Finance.Infrastructure.Data.FinanceDbContext.SaveChangesAsync(CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Modules\Finance\Finance.Infrastructure\Data\FinanceDbContext.cs:line 2530
+   at ModularERP.SharedKernel.Repository.GeneralRepository`1.SaveChanges() in E:\ModelerERP\ModularERP\ModularERP\Shared\Repository\GeneralRepository.cs:line 157
+   at ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_RefundInvoce.CreateRefundFromPOHandler.Handle(CreateRefundFromPOCommand request, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Modules\Purchases\Refunds\Handlers\Handlers_RefundInvoce\CreateRefundFromPOHandler.cs:line 313
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController.CreateRefundFromPO(Guid poId, CreateRefundFromPOCommand command) in E:\ModelerERP\ModularERP\ModularERP\Modules\Purchases\Refunds\Controllers\PurchaseOrderRefundsController.cs:line 42
+   at lambda_method118(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at ModularERP.Program.<>c.<<Main>b__0_7>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 356
+--- End of stack trace from previous location ---
+   at ModularERP.Program.<>c.<<Main>b__0_6>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 309
+--- End of stack trace from previous location ---
+   at ModularERP.Common.Middleware.GlobalErrorHandlerMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\ModelerERP\ModularERP\ModularERP\Common\Middleware\GlobalErrorHandlerMiddleware.cs:line 40
+2025-11-23 14:03:39.967 +02:00 [INF] Error response sent with status code 500
+2025-11-23 14:03:39.974 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/PurchaseOrderRefunds/return?poId=23d49ad7-c8f3-4545-9bb3-6957cdf43515 - 500 null application/json; charset=utf-8 2061.7741ms
+2025-11-23 14:08:13.220 +02:00 [INF] Starting web host...
+2025-11-23 14:08:14.790 +02:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-23 14:08:14.847 +02:00 [INF] Executed DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-11-23 14:08:14.935 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-23 14:08:14.945 +02:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-11-23 14:08:14.960 +02:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-11-23 14:08:15.051 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-11-23 14:08:15.071 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-23 14:08:15.076 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-11-23 14:08:15.084 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-11-23 14:08:15.097 +02:00 [INF] No migrations were applied. The database is already up to date.
+2025-11-23 14:08:15.105 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-11-23 14:08:15.305 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-11-23 14:08:15.314 +02:00 [INF] Master database initialized successfully
+2025-11-23 14:08:17.655 +02:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-23 14:08:17.801 +02:00 [INF] Now listening on: https://localhost:7168
+2025-11-23 14:08:17.804 +02:00 [INF] Now listening on: http://localhost:5004
+2025-11-23 14:08:17.893 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-23 14:08:17.895 +02:00 [INF] Hosting environment: Development
+2025-11-23 14:08:17.896 +02:00 [INF] Content root path: E:\ModelerERP\ModularERP\ModularERP
+2025-11-23 14:08:18.148 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-11-23 14:08:18.287 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 140.0419ms
+2025-11-23 14:08:18.434 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-11-23 14:08:18.434 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-23 14:08:18.444 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 9.3977ms
+2025-11-23 14:08:18.460 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 25.9905ms
+2025-11-23 14:08:18.515 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-11-23 14:08:18.790 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 275.2035ms
+2025-11-23 14:08:20.567 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/PurchaseOrderRefunds/return?poId=23d49ad7-c8f3-4545-9bb3-6957cdf43515 - application/json 297
+2025-11-23 14:08:20.590 +02:00 [INF] Request started
+2025-11-23 14:08:20.594 +02:00 [INF] === Incoming Request ===
+2025-11-23 14:08:20.596 +02:00 [INF] Path: /api/PurchaseOrderRefunds/return
+2025-11-23 14:08:20.597 +02:00 [INF] Method: POST
+2025-11-23 14:08:20.598 +02:00 [INF] === Headers ===
+2025-11-23 14:08:20.601 +02:00 [INF] Accept: ["*/*"]
+2025-11-23 14:08:20.604 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-23 14:08:20.608 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-23 14:08:20.612 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-23 14:08:20.615 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-23 14:08:20.617 +02:00 [INF] Content-Type: ["application/json"]
+2025-11-23 14:08:20.619 +02:00 [INF] Content-Length: ["297"]
+2025-11-23 14:08:20.621 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-23 14:08:20.624 +02:00 [INF] Postman-Token: ["526bc923-a96e-470e-9970-e61d6811c9ee"]
+2025-11-23 14:08:20.630 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-23 14:08:20.632 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-23 14:08:20.634 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController.CreateRefundFromPO (ModularERP)'
+2025-11-23 14:08:20.653 +02:00 [INF] Route matched with {action = "CreateRefundFromPO", controller = "PurchaseOrderRefunds"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Purchases.Refunds.DTO.DTO_RefundInvoce.RefundDto]]] CreateRefundFromPO(System.Guid, ModularERP.Modules.Purchases.Refunds.Commends.Commends_RefundInvoce.CreateRefundFromPOCommand) on controller ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController (ModularERP).
+2025-11-23 14:08:20.662 +02:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-11-23 14:08:20.699 +02:00 [INF] Creating refund from Purchase Order: "23d49ad7-c8f3-4545-9bb3-6957cdf43515"
+2025-11-23 14:08:20.822 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-11-23 14:08:21.636 +02:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-11-23 14:08:21.655 +02:00 [INF] Creating refund from Purchase Order: "23d49ad7-c8f3-4545-9bb3-6957cdf43515"
+2025-11-23 14:08:22.592 +02:00 [INF] Warehouse Stock updated: Product "1455fbe8-d0b2-4615-b998-5b00ed509ab7", Warehouse "e5d0bbaa-9099-43e1-bb16-f9744078a9ea", Old Qty: 107.000, Returned: 1, New Qty: 106.000
+2025-11-23 14:08:22.737 +02:00 [WRN] Supplier model does not have Balance property. Skipping balance update.
+2025-11-23 14:08:22.739 +02:00 [INF] Created Debit Note: DN-20251123-00001 for Refund: REF-20251123-00005
+2025-11-23 14:08:22.743 +02:00 [INF] Successfully created refund: REF-20251123-00005 from PO: PO-202510-0005
+2025-11-23 14:08:22.917 +02:00 [INF] PO Status Updated: PO-202510-0005 - Reception: FullyReceived, Payment: Refunded
+2025-11-23 14:08:23.023 +02:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Refunds.DTO.DTO_RefundInvoce.RefundDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-23 14:08:23.054 +02:00 [INF] Executed action ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController.CreateRefundFromPO (ModularERP) in 2391.5445ms
+2025-11-23 14:08:23.058 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController.CreateRefundFromPO (ModularERP)'
+2025-11-23 14:08:23.061 +02:00 [INF] Request completed successfully with status code 200
+2025-11-23 14:08:23.069 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/PurchaseOrderRefunds/return?poId=23d49ad7-c8f3-4545-9bb3-6957cdf43515 - 200 null application/json; charset=utf-8 2501.5747ms
+2025-11-23 14:09:12.678 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/PurchaseOrderRefunds/return?poId=23d49ad7-c8f3-4545-9bb3-6957cdf43515 - application/json 297
+2025-11-23 14:09:12.696 +02:00 [INF] Request started
+2025-11-23 14:09:12.699 +02:00 [INF] === Incoming Request ===
+2025-11-23 14:09:12.702 +02:00 [INF] Path: /api/PurchaseOrderRefunds/return
+2025-11-23 14:09:12.703 +02:00 [INF] Method: POST
+2025-11-23 14:09:12.704 +02:00 [INF] === Headers ===
+2025-11-23 14:09:12.705 +02:00 [INF] Accept: ["*/*"]
+2025-11-23 14:09:12.707 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-23 14:09:12.710 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-23 14:09:12.714 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-23 14:09:12.715 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-23 14:09:12.717 +02:00 [INF] Content-Type: ["application/json"]
+2025-11-23 14:09:12.718 +02:00 [INF] Content-Length: ["297"]
+2025-11-23 14:09:12.720 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-23 14:09:12.721 +02:00 [INF] Postman-Token: ["9dbfa493-0923-41cf-9359-63d5a81784ac"]
+2025-11-23 14:09:12.726 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-23 14:09:12.728 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-23 14:09:12.729 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController.CreateRefundFromPO (ModularERP)'
+2025-11-23 14:09:12.730 +02:00 [INF] Route matched with {action = "CreateRefundFromPO", controller = "PurchaseOrderRefunds"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Purchases.Refunds.DTO.DTO_RefundInvoce.RefundDto]]] CreateRefundFromPO(System.Guid, ModularERP.Modules.Purchases.Refunds.Commends.Commends_RefundInvoce.CreateRefundFromPOCommand) on controller ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController (ModularERP).
+2025-11-23 14:09:12.734 +02:00 [INF] Creating refund from Purchase Order: "23d49ad7-c8f3-4545-9bb3-6957cdf43515"
+2025-11-23 14:09:12.740 +02:00 [INF] Creating refund from Purchase Order: "23d49ad7-c8f3-4545-9bb3-6957cdf43515"
+2025-11-23 14:09:12.760 +02:00 [INF] Warehouse Stock updated: Product "1455fbe8-d0b2-4615-b998-5b00ed509ab7", Warehouse "e5d0bbaa-9099-43e1-bb16-f9744078a9ea", Old Qty: 106.000, Returned: 1, New Qty: 105.000
+2025-11-23 14:09:12.768 +02:00 [WRN] Supplier model does not have Balance property. Skipping balance update.
+2025-11-23 14:09:12.769 +02:00 [INF] Created Debit Note: DN-20251123-00002 for Refund: REF-20251123-00006
+2025-11-23 14:09:12.770 +02:00 [INF] Successfully created refund: REF-20251123-00006 from PO: PO-202510-0005
+2025-11-23 14:09:12.778 +02:00 [INF] PO Status Updated: PO-202510-0005 - Reception: FullyReceived, Payment: Refunded
+2025-11-23 14:09:12.784 +02:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Refunds.DTO.DTO_RefundInvoce.RefundDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-23 14:09:12.786 +02:00 [INF] Executed action ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController.CreateRefundFromPO (ModularERP) in 53.5947ms
+2025-11-23 14:09:12.790 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController.CreateRefundFromPO (ModularERP)'
+2025-11-23 14:09:12.791 +02:00 [INF] Request completed successfully with status code 200
+2025-11-23 14:09:12.792 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/PurchaseOrderRefunds/return?poId=23d49ad7-c8f3-4545-9bb3-6957cdf43515 - 200 null application/json; charset=utf-8 113.7683ms
+2025-11-23 14:11:32.269 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/PurchaseOrderRefunds?poId=23d49ad7-c8f3-4545-9bb3-6957cdf43515 - null null
+2025-11-23 14:11:32.274 +02:00 [INF] Request started
+2025-11-23 14:11:32.275 +02:00 [INF] === Incoming Request ===
+2025-11-23 14:11:32.276 +02:00 [INF] Path: /api/PurchaseOrderRefunds
+2025-11-23 14:11:32.278 +02:00 [INF] Method: GET
+2025-11-23 14:11:32.280 +02:00 [INF] === Headers ===
+2025-11-23 14:11:32.280 +02:00 [INF] Accept: ["*/*"]
+2025-11-23 14:11:32.282 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-23 14:11:32.284 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-23 14:11:32.285 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-23 14:11:32.287 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-23 14:11:32.288 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-23 14:11:32.289 +02:00 [INF] Postman-Token: ["abefa632-1601-4651-921b-ed3319937ff9"]
+2025-11-23 14:11:32.291 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-23 14:11:32.294 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-23 14:11:32.295 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController.GetRefundsByPO (ModularERP)'
+2025-11-23 14:11:32.299 +02:00 [INF] Route matched with {action = "GetRefundsByPO", controller = "PurchaseOrderRefunds"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Collections.Generic.List`1[ModularERP.Modules.Purchases.Refunds.DTO.DTO_RefundInvoce.RefundDto]]]] GetRefundsByPO(System.Guid) on controller ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController (ModularERP).
+2025-11-23 14:11:32.304 +02:00 [INF] Retrieving refunds for Purchase Order: "23d49ad7-c8f3-4545-9bb3-6957cdf43515"
+2025-11-23 14:11:32.312 +02:00 [INF] Retrieving refunds for PO: "23d49ad7-c8f3-4545-9bb3-6957cdf43515"
+2025-11-23 14:11:32.335 +02:00 [INF] Retrieved 4 refunds for PO: "23d49ad7-c8f3-4545-9bb3-6957cdf43515"
+2025-11-23 14:11:32.338 +02:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Purchases.Refunds.DTO.DTO_RefundInvoce.RefundDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-23 14:11:32.341 +02:00 [INF] Executed action ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController.GetRefundsByPO (ModularERP) in 37.8935ms
+2025-11-23 14:11:32.343 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController.GetRefundsByPO (ModularERP)'
+2025-11-23 14:11:32.345 +02:00 [INF] Request completed successfully with status code 200
+2025-11-23 14:11:32.347 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/PurchaseOrderRefunds?poId=23d49ad7-c8f3-4545-9bb3-6957cdf43515 - 200 null application/json; charset=utf-8 77.6067ms
+2025-11-23 14:15:26.077 +02:00 [INF] Starting web host...
+2025-11-23 14:15:27.557 +02:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-23 14:15:27.647 +02:00 [INF] Executed DbCommand (74ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-11-23 14:15:27.718 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-23 14:15:27.724 +02:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-11-23 14:15:27.742 +02:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-11-23 14:15:27.798 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-11-23 14:15:27.817 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-23 14:15:27.821 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-11-23 14:15:27.829 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-11-23 14:15:27.841 +02:00 [INF] No migrations were applied. The database is already up to date.
+2025-11-23 14:15:27.848 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-11-23 14:15:28.024 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-11-23 14:15:28.033 +02:00 [INF] Master database initialized successfully
+2025-11-23 14:15:30.010 +02:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-23 14:15:30.118 +02:00 [INF] Now listening on: https://localhost:7168
+2025-11-23 14:15:30.121 +02:00 [INF] Now listening on: http://localhost:5004
+2025-11-23 14:15:30.208 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-23 14:15:30.211 +02:00 [INF] Hosting environment: Development
+2025-11-23 14:15:30.212 +02:00 [INF] Content root path: E:\ModelerERP\ModularERP\ModularERP
+2025-11-23 14:15:30.534 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-11-23 14:15:30.695 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 161.3785ms
+2025-11-23 14:15:30.824 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-23 14:15:30.824 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-11-23 14:15:30.832 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 7.4125ms
+2025-11-23 14:15:30.852 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 27.1203ms
+2025-11-23 14:15:30.885 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-11-23 14:15:31.153 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 268.4563ms
+2025-11-23 14:15:32.667 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/PurchaseOrderRefunds?poId=23d49ad7-c8f3-4545-9bb3-6957cdf43515 - null null
+2025-11-23 14:15:32.683 +02:00 [INF] Request started
+2025-11-23 14:15:32.685 +02:00 [INF] === Incoming Request ===
+2025-11-23 14:15:32.687 +02:00 [INF] Path: /api/PurchaseOrderRefunds
+2025-11-23 14:15:32.688 +02:00 [INF] Method: GET
+2025-11-23 14:15:32.689 +02:00 [INF] === Headers ===
+2025-11-23 14:15:32.692 +02:00 [INF] Accept: ["*/*"]
+2025-11-23 14:15:32.695 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-23 14:15:32.698 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-23 14:15:32.700 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-23 14:15:32.701 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-23 14:15:32.703 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-23 14:15:32.705 +02:00 [INF] Postman-Token: ["2b6d7c6e-5e90-4b24-8b7f-0c11256bffba"]
+2025-11-23 14:15:32.710 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-23 14:15:32.712 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-23 14:15:32.714 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController.GetRefundsByPO (ModularERP)'
+2025-11-23 14:15:32.730 +02:00 [INF] Route matched with {action = "GetRefundsByPO", controller = "PurchaseOrderRefunds"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[System.Collections.Generic.List`1[ModularERP.Modules.Purchases.Refunds.DTO.DTO_RefundInvoce.RefundDto]]]] GetRefundsByPO(System.Guid) on controller ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController (ModularERP).
+2025-11-23 14:15:32.738 +02:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-11-23 14:15:32.748 +02:00 [INF] Retrieving refunds for Purchase Order: "23d49ad7-c8f3-4545-9bb3-6957cdf43515"
+2025-11-23 14:15:32.809 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-11-23 14:15:33.394 +02:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-11-23 14:15:33.400 +02:00 [INF] Retrieving refunds for PO: "23d49ad7-c8f3-4545-9bb3-6957cdf43515"
+2025-11-23 14:15:33.582 +02:00 [INF] Retrieved 4 refunds for PO: "23d49ad7-c8f3-4545-9bb3-6957cdf43515"
+2025-11-23 14:15:33.590 +02:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Purchases.Refunds.DTO.DTO_RefundInvoce.RefundDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-23 14:15:33.625 +02:00 [INF] Executed action ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController.GetRefundsByPO (ModularERP) in 886.0893ms
+2025-11-23 14:15:33.628 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseOrderRefundsController.GetRefundsByPO (ModularERP)'
+2025-11-23 14:15:33.633 +02:00 [INF] Request completed successfully with status code 200
+2025-11-23 14:15:33.641 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/PurchaseOrderRefunds?poId=23d49ad7-c8f3-4545-9bb3-6957cdf43515 - 200 null application/json; charset=utf-8 973.5132ms
+2025-11-23 14:38:47.523 +02:00 [INF] Starting web host...
+2025-11-23 14:38:49.423 +02:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-23 14:38:49.500 +02:00 [INF] Executed DbCommand (60ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-11-23 14:38:49.582 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-23 14:38:49.589 +02:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-11-23 14:38:49.606 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-11-23 14:38:49.669 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-11-23 14:38:49.688 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-23 14:38:49.693 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-11-23 14:38:49.703 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-11-23 14:38:49.717 +02:00 [INF] No migrations were applied. The database is already up to date.
+2025-11-23 14:38:49.724 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-11-23 14:38:49.920 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-11-23 14:38:49.929 +02:00 [INF] Master database initialized successfully
+2025-11-23 14:38:52.033 +02:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-23 14:38:52.189 +02:00 [INF] Now listening on: https://localhost:7168
+2025-11-23 14:38:52.192 +02:00 [INF] Now listening on: http://localhost:5004
+2025-11-23 14:38:52.279 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-11-23 14:38:52.323 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-23 14:38:52.326 +02:00 [INF] Hosting environment: Development
+2025-11-23 14:38:52.334 +02:00 [INF] Content root path: E:\ModelerERP\ModularERP\ModularERP
+2025-11-23 14:38:52.456 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 178.0868ms
+2025-11-23 14:38:52.603 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-11-23 14:38:52.603 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-23 14:38:52.611 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 8.5804ms
+2025-11-23 14:38:52.630 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 27.6655ms
+2025-11-23 14:38:52.693 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-11-23 14:38:53.079 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 386.0416ms
+2025-11-23 14:38:55.786 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/PurchaseInvoiceRefunds/return?InvoiceId=af1aab03-bfc2-4e9d-b992-0105a7527a37 - application/json 288
+2025-11-23 14:38:55.816 +02:00 [INF] Request started
+2025-11-23 14:38:55.818 +02:00 [INF] === Incoming Request ===
+2025-11-23 14:38:55.820 +02:00 [INF] Path: /api/PurchaseInvoiceRefunds/return
+2025-11-23 14:38:55.821 +02:00 [INF] Method: POST
+2025-11-23 14:38:55.824 +02:00 [INF] === Headers ===
+2025-11-23 14:38:55.828 +02:00 [INF] Accept: ["*/*"]
+2025-11-23 14:38:55.835 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-23 14:38:55.837 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-23 14:38:55.839 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-23 14:38:55.841 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-23 14:38:55.843 +02:00 [INF] Content-Type: ["application/json"]
+2025-11-23 14:38:55.848 +02:00 [INF] Content-Length: ["288"]
+2025-11-23 14:38:55.851 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-23 14:38:55.853 +02:00 [INF] Postman-Token: ["4fee1b77-9b2f-482d-9494-a16fd95c27ff"]
+2025-11-23 14:38:55.858 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-23 14:38:55.859 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-23 14:38:55.861 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice (ModularERP)'
+2025-11-23 14:38:55.893 +02:00 [INF] Route matched with {action = "CreateRefundFromInvoice", controller = "PurchaseInvoiceRefunds"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Purchases.Refunds.DTO.DTO_RefundInvoce.RefundDto]]] CreateRefundFromInvoice(System.Guid, ModularERP.Modules.Purchases.Refunds.Commends.Commends_RefundInvoce.CreateRefundFromInvoiceCommand) on controller ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController (ModularERP).
+2025-11-23 14:38:55.903 +02:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-11-23 14:38:55.953 +02:00 [INF] Creating refund from Purchase Invoice: "af1aab03-bfc2-4e9d-b992-0105a7527a37"
+2025-11-23 14:38:56.100 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-11-23 14:38:56.988 +02:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-11-23 14:38:57.005 +02:00 [INF] Creating refund from Purchase Invoice: "af1aab03-bfc2-4e9d-b992-0105a7527a37"
+2025-11-23 14:38:57.625 +02:00 [ERR] Error creating refund from Invoice: "af1aab03-bfc2-4e9d-b992-0105a7527a37"
+ModularERP.Common.Exceptions.ValidationException: Validation failed for refund line items
+   at ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_RefundInvoce.CreateRefundFromInvoiceHandler.Handle(CreateRefundFromInvoiceCommand request, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Modules\Purchases\Refunds\Handlers\Handlers_RefundInvoce\CreateRefundFromInvoiceHandler.cs:line 183
+2025-11-23 14:38:57.688 +02:00 [INF] Executed action ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice (ModularERP) in 1787.029ms
+2025-11-23 14:38:57.692 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice (ModularERP)'
+2025-11-23 14:38:57.696 +02:00 [WRN] Validation exception occurred: Validation failed for refund line items. Validation errors: {"LineItem_72d4280b-2366-45df-4a44-08de25d1f369":["GRN line item is not linked to this Purchase Order"]}
+ModularERP.Common.Exceptions.ValidationException: Validation failed for refund line items
+   at ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_RefundInvoce.CreateRefundFromInvoiceHandler.Handle(CreateRefundFromInvoiceCommand request, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Modules\Purchases\Refunds\Handlers\Handlers_RefundInvoce\CreateRefundFromInvoiceHandler.cs:line 183
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice(Guid invoiceId, CreateRefundFromInvoiceCommand command) in E:\ModelerERP\ModularERP\ModularERP\Modules\Purchases\Refunds\Controllers\PurchaseInvoiceRefundsController.cs:line 43
+   at lambda_method118(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at ModularERP.Program.<>c.<<Main>b__0_7>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 356
+--- End of stack trace from previous location ---
+   at ModularERP.Program.<>c.<<Main>b__0_6>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 309
+--- End of stack trace from previous location ---
+   at ModularERP.Common.Middleware.GlobalErrorHandlerMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\ModelerERP\ModularERP\ModularERP\Common\Middleware\GlobalErrorHandlerMiddleware.cs:line 40
+2025-11-23 14:38:57.755 +02:00 [INF] Error response sent with status code 400
+2025-11-23 14:38:57.761 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/PurchaseInvoiceRefunds/return?InvoiceId=af1aab03-bfc2-4e9d-b992-0105a7527a37 - 400 null application/json; charset=utf-8 1975.2189ms
+2025-11-23 14:44:39.700 +02:00 [INF] Starting web host...
+2025-11-23 14:44:41.358 +02:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-23 14:44:41.432 +02:00 [INF] Executed DbCommand (56ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-11-23 14:44:41.512 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-23 14:44:41.518 +02:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-11-23 14:44:41.536 +02:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-11-23 14:44:41.595 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-11-23 14:44:41.610 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-23 14:44:41.615 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-11-23 14:44:41.622 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-11-23 14:44:41.634 +02:00 [INF] No migrations were applied. The database is already up to date.
+2025-11-23 14:44:41.641 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-11-23 14:44:41.835 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-11-23 14:44:41.842 +02:00 [INF] Master database initialized successfully
+2025-11-23 14:44:43.973 +02:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-23 14:44:44.081 +02:00 [INF] Now listening on: https://localhost:7168
+2025-11-23 14:44:44.084 +02:00 [INF] Now listening on: http://localhost:5004
+2025-11-23 14:44:44.174 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-23 14:44:44.176 +02:00 [INF] Hosting environment: Development
+2025-11-23 14:44:44.177 +02:00 [INF] Content root path: E:\ModelerERP\ModularERP\ModularERP
+2025-11-23 14:44:44.529 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-11-23 14:44:44.696 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 167.6956ms
+2025-11-23 14:44:44.699 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-11-23 14:44:44.699 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-23 14:44:44.710 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 11.0255ms
+2025-11-23 14:44:44.725 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 25.8906ms
+2025-11-23 14:44:44.884 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-11-23 14:44:45.232 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 347.2911ms
+2025-11-23 14:45:03.323 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/PurchaseInvoiceRefunds/return?InvoiceId=af1aab03-bfc2-4e9d-b992-0105a7527a37 - application/json 288
+2025-11-23 14:45:03.340 +02:00 [INF] Request started
+2025-11-23 14:45:03.343 +02:00 [INF] === Incoming Request ===
+2025-11-23 14:45:03.345 +02:00 [INF] Path: /api/PurchaseInvoiceRefunds/return
+2025-11-23 14:45:03.346 +02:00 [INF] Method: POST
+2025-11-23 14:45:03.347 +02:00 [INF] === Headers ===
+2025-11-23 14:45:03.350 +02:00 [INF] Accept: ["*/*"]
+2025-11-23 14:45:03.352 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-23 14:45:03.354 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-23 14:45:03.355 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-23 14:45:03.357 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-23 14:45:03.361 +02:00 [INF] Content-Type: ["application/json"]
+2025-11-23 14:45:03.362 +02:00 [INF] Content-Length: ["288"]
+2025-11-23 14:45:03.364 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-23 14:45:03.365 +02:00 [INF] Postman-Token: ["7044b322-4922-444a-b85b-1ea33807bb37"]
+2025-11-23 14:45:03.370 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-23 14:45:03.371 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-23 14:45:03.373 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice (ModularERP)'
+2025-11-23 14:45:03.388 +02:00 [INF] Route matched with {action = "CreateRefundFromInvoice", controller = "PurchaseInvoiceRefunds"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Purchases.Refunds.DTO.DTO_RefundInvoce.RefundDto]]] CreateRefundFromInvoice(System.Guid, ModularERP.Modules.Purchases.Refunds.Commends.Commends_RefundInvoce.CreateRefundFromInvoiceCommand) on controller ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController (ModularERP).
+2025-11-23 14:45:03.395 +02:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-11-23 14:45:03.424 +02:00 [INF] Creating refund from Purchase Invoice: "af1aab03-bfc2-4e9d-b992-0105a7527a37"
+2025-11-23 14:45:03.520 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-11-23 14:45:04.142 +02:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-11-23 14:45:04.153 +02:00 [INF] Creating refund from Purchase Invoice: "af1aab03-bfc2-4e9d-b992-0105a7527a37"
+2025-11-23 14:45:04.703 +02:00 [ERR] ❌ Error creating refund from Invoice: "af1aab03-bfc2-4e9d-b992-0105a7527a37"
+ModularERP.Common.Exceptions.ValidationException: Validation failed for refund line items
+   at ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_RefundInvoce.CreateRefundFromInvoiceHandler.Handle(CreateRefundFromInvoiceCommand request, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Modules\Purchases\Refunds\Handlers\Handlers_InvoceRefund\CreateRefundFromInvoiceHandler.cs:line 215
+2025-11-23 14:45:04.726 +02:00 [INF] Executed action ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice (ModularERP) in 1330.9322ms
+2025-11-23 14:45:04.730 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice (ModularERP)'
+2025-11-23 14:45:04.732 +02:00 [WRN] Validation exception occurred: Validation failed for refund line items. Validation errors: {"LineItem_72d4280b-2366-45df-4a44-08de25d1f369":["GRN line item is not linked to this Purchase Order"]}
+ModularERP.Common.Exceptions.ValidationException: Validation failed for refund line items
+   at ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_RefundInvoce.CreateRefundFromInvoiceHandler.Handle(CreateRefundFromInvoiceCommand request, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Modules\Purchases\Refunds\Handlers\Handlers_InvoceRefund\CreateRefundFromInvoiceHandler.cs:line 215
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice(Guid invoiceId, CreateRefundFromInvoiceCommand command) in E:\ModelerERP\ModularERP\ModularERP\Modules\Purchases\Refunds\Controllers\PurchaseInvoiceRefundsController.cs:line 43
+   at lambda_method118(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at ModularERP.Program.<>c.<<Main>b__0_7>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 356
+--- End of stack trace from previous location ---
+   at ModularERP.Program.<>c.<<Main>b__0_6>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 309
+--- End of stack trace from previous location ---
+   at ModularERP.Common.Middleware.GlobalErrorHandlerMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\ModelerERP\ModularERP\ModularERP\Common\Middleware\GlobalErrorHandlerMiddleware.cs:line 40
+2025-11-23 14:45:04.764 +02:00 [INF] Error response sent with status code 400
+2025-11-23 14:45:04.771 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/PurchaseInvoiceRefunds/return?InvoiceId=af1aab03-bfc2-4e9d-b992-0105a7527a37 - 400 null application/json; charset=utf-8 1448.1028ms
+2025-11-23 14:46:07.400 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/PurchaseInvoiceRefunds/return?InvoiceId=af1aab03-bfc2-4e9d-b992-0105a7527a37 - application/json 288
+2025-11-23 14:46:07.418 +02:00 [INF] Request started
+2025-11-23 14:46:07.421 +02:00 [INF] === Incoming Request ===
+2025-11-23 14:46:07.422 +02:00 [INF] Path: /api/PurchaseInvoiceRefunds/return
+2025-11-23 14:46:07.423 +02:00 [INF] Method: POST
+2025-11-23 14:46:07.424 +02:00 [INF] === Headers ===
+2025-11-23 14:46:07.425 +02:00 [INF] Accept: ["*/*"]
+2025-11-23 14:46:07.426 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-23 14:46:07.428 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-23 14:46:07.429 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-23 14:46:07.430 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-23 14:46:07.432 +02:00 [INF] Content-Type: ["application/json"]
+2025-11-23 14:46:07.433 +02:00 [INF] Content-Length: ["288"]
+2025-11-23 14:46:07.435 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-23 14:46:07.437 +02:00 [INF] Postman-Token: ["b1998374-0000-4830-83f4-6f3340eb5b72"]
+2025-11-23 14:46:07.441 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-23 14:46:07.444 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-23 14:46:07.445 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice (ModularERP)'
+2025-11-23 14:46:07.447 +02:00 [INF] Route matched with {action = "CreateRefundFromInvoice", controller = "PurchaseInvoiceRefunds"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Purchases.Refunds.DTO.DTO_RefundInvoce.RefundDto]]] CreateRefundFromInvoice(System.Guid, ModularERP.Modules.Purchases.Refunds.Commends.Commends_RefundInvoce.CreateRefundFromInvoiceCommand) on controller ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController (ModularERP).
+2025-11-23 14:46:07.451 +02:00 [INF] Creating refund from Purchase Invoice: "af1aab03-bfc2-4e9d-b992-0105a7527a37"
+2025-11-23 14:46:07.461 +02:00 [INF] Creating refund from Purchase Invoice: "af1aab03-bfc2-4e9d-b992-0105a7527a37"
+2025-11-23 14:46:07.500 +02:00 [ERR] ❌ Error creating refund from Invoice: "af1aab03-bfc2-4e9d-b992-0105a7527a37"
+ModularERP.Common.Exceptions.ValidationException: Validation failed for refund line items
+   at ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_RefundInvoce.CreateRefundFromInvoiceHandler.Handle(CreateRefundFromInvoiceCommand request, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Modules\Purchases\Refunds\Handlers\Handlers_InvoceRefund\CreateRefundFromInvoiceHandler.cs:line 215
+2025-11-23 14:46:07.504 +02:00 [INF] Executed action ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice (ModularERP) in 54.7789ms
+2025-11-23 14:46:07.506 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice (ModularERP)'
+2025-11-23 14:46:07.508 +02:00 [WRN] Validation exception occurred: Validation failed for refund line items. Validation errors: {"LineItem_72d4280b-2366-45df-4a44-08de25d1f369":["GRN line item is not linked to this Purchase Order"]}
+ModularERP.Common.Exceptions.ValidationException: Validation failed for refund line items
+   at ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_RefundInvoce.CreateRefundFromInvoiceHandler.Handle(CreateRefundFromInvoiceCommand request, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Modules\Purchases\Refunds\Handlers\Handlers_InvoceRefund\CreateRefundFromInvoiceHandler.cs:line 215
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 48
+   at ModularERP.Modules.Purchases.Refunds.Controllers.PurchaseInvoiceRefundsController.CreateRefundFromInvoice(Guid invoiceId, CreateRefundFromInvoiceCommand command) in E:\ModelerERP\ModularERP\ModularERP\Modules\Purchases\Refunds\Controllers\PurchaseInvoiceRefundsController.cs:line 43
+   at lambda_method118(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at ModularERP.Program.<>c.<<Main>b__0_7>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 356
+--- End of stack trace from previous location ---
+   at ModularERP.Program.<>c.<<Main>b__0_6>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 309
+--- End of stack trace from previous location ---
+   at ModularERP.Common.Middleware.GlobalErrorHandlerMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\ModelerERP\ModularERP\ModularERP\Common\Middleware\GlobalErrorHandlerMiddleware.cs:line 40
+2025-11-23 14:46:07.521 +02:00 [INF] Error response sent with status code 400
+2025-11-23 14:46:07.524 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/PurchaseInvoiceRefunds/return?InvoiceId=af1aab03-bfc2-4e9d-b992-0105a7527a37 - 400 null application/json; charset=utf-8 124.5339ms
+2025-11-23 15:25:48.232 +02:00 [INF] Starting web host...
+2025-11-23 15:25:50.197 +02:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-23 15:25:50.297 +02:00 [INF] Executed DbCommand (64ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-11-23 15:25:50.375 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-23 15:25:50.382 +02:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-11-23 15:25:50.392 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-11-23 15:25:50.475 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-11-23 15:25:50.493 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-23 15:25:50.496 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-11-23 15:25:50.505 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-11-23 15:25:50.519 +02:00 [INF] No migrations were applied. The database is already up to date.
+2025-11-23 15:25:50.525 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-11-23 15:25:50.728 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-11-23 15:25:50.734 +02:00 [INF] Master database initialized successfully
+2025-11-23 15:25:53.850 +02:00 [FTL] Host terminated unexpectedly
+System.InvalidOperationException: An error was generated for warning 'Microsoft.EntityFrameworkCore.Migrations.PendingModelChangesWarning': The model for context 'FinanceDbContext' has pending changes. Add a new migration before updating the database. See https://aka.ms/efcore-docs-pending-changes. This exception can be suppressed or logged by passing event ID 'RelationalEventId.PendingModelChangesWarning' to the 'ConfigureWarnings' method in 'DbContext.OnConfiguring' or 'AddDbContext'.
+   at Microsoft.EntityFrameworkCore.Diagnostics.EventDefinition`1.Log[TLoggerCategory](IDiagnosticsLogger`1 logger, TParam arg)
+   at Microsoft.EntityFrameworkCore.Diagnostics.RelationalLoggerExtensions.PendingModelChangesWarning(IDiagnosticsLogger`1 diagnostics, Type contextType)
+   at Microsoft.EntityFrameworkCore.Migrations.Internal.Migrator.ValidateMigrations(Boolean useTransaction, String targetMigration)
+   at Microsoft.EntityFrameworkCore.Migrations.Internal.Migrator.Migrate(String targetMigration)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.Migrate(DatabaseFacade databaseFacade)
+   at ModularERP.Program.Main(String[] args) in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 269

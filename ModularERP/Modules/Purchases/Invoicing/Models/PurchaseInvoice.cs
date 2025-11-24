@@ -2,6 +2,7 @@
 using ModularERP.Modules.Finance.Features.Companys.Models;
 using ModularERP.Modules.Inventory.Features.Suppliers.Models;
 using ModularERP.Modules.Purchases.Purchase_Order_Management.Models;
+using ModularERP.Modules.Purchases.Refunds.Models;
 
 namespace ModularERP.Modules.Purchases.Invoicing.Models
 {
@@ -25,6 +26,8 @@ namespace ModularERP.Modules.Purchases.Invoicing.Models
         public virtual PurchaseOrder PurchaseOrder { get; set; } = null!;
         public virtual Company Company { get; set; } = null!;
         public virtual Supplier Supplier { get; set; } = null!;
+        public virtual ICollection<PurchaseRefund> Refunds { get; set; } = new List<PurchaseRefund>();
+        public virtual ICollection<PaymentAllocation> PaymentAllocations { get; set; } = new List<PaymentAllocation>();
 
         public virtual ICollection<InvoiceLineItem> LineItems { get; set; } = new List<InvoiceLineItem>();
         public virtual ICollection<SupplierPayment> Payments { get; set; } = new List<SupplierPayment>();

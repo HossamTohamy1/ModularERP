@@ -53,6 +53,8 @@
         // User & Permission Errors
         UserNotFound = 2501,
         UserInactive = 2502,
-        AccessDenied = 2503
+        AccessDenied = 2503,
+        InvalidOperation=2504,
+        ValidationFailed=2505,
     }
 }

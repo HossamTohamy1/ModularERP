@@ -38,7 +38,6 @@ namespace ModularERP.Modules.Purchases.Refunds.Controllers
 
         /// <summary>
         /// Get Debit Note linked to a specific refund
-        /// الـ Debit Note بيتعمل تلقائياً لما نرحل المرتجع
         /// </summary>
         [HttpGet("{id}/debit-note")]
         public async Task<IActionResult> GetRefundDebitNote(Guid id)

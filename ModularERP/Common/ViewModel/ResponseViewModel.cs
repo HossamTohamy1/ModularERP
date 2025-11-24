@@ -26,7 +26,16 @@ namespace ModularERP.Common.ViewModel
                 Data = data
             };
         }
-
+        public static ResponseViewModel<T> Fail(string message, FinanceErrorCode? errorCode = null)
+        {
+            return new ResponseViewModel<T>
+            {
+                IsSuccess = false,
+                Message = message,
+                FinanceErrorCode = errorCode,
+                Data = default
+            };
+        }
         public static ResponseViewModel<T> Error(string message, Enum.Finance_Enum.FinanceErrorCode errorCode, string traceId = null)
         {
             return new ResponseViewModel<T>

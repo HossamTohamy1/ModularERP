@@ -1,5 +1,6 @@
 ﻿using ModularERP.Common.Models;
 using ModularERP.Modules.Inventory.Features.Suppliers.Models;
+using ModularERP.Modules.Purchases.Invoicing.Models;
 using ModularERP.Modules.Purchases.Purchase_Order_Management.Models;
 
 namespace ModularERP.Modules.Purchases.Refunds.Models
@@ -8,6 +9,7 @@ namespace ModularERP.Modules.Purchases.Refunds.Models
     {
         public string RefundNumber { get; set; } = string.Empty;
         public Guid PurchaseOrderId { get; set; }
+        public Guid? PurchaseInvoiceId { get; set; }
         public Guid SupplierId { get; set; }
         public DateTime RefundDate { get; set; } = DateTime.UtcNow;
         public decimal TotalAmount { get; set; }
@@ -16,6 +18,8 @@ namespace ModularERP.Modules.Purchases.Refunds.Models
 
         // Navigation Properties
         public virtual PurchaseOrder PurchaseOrder { get; set; } = null!;
+        public virtual PurchaseInvoice? PurchaseInvoice { get; set; }
+
         public virtual Supplier Supplier { get; set; } = null!;
         public virtual DebitNote? DebitNote { get; set; }
 

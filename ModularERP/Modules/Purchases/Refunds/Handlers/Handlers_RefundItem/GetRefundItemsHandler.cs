@@ -2,6 +2,7 @@
 using AutoMapper.QueryableExtensions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using ModularERP.Common.Enum.Finance_Enum;
 using ModularERP.Common.Exceptions;
 using ModularERP.Common.ViewModel;
@@ -34,9 +35,23 @@ namespace ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_RefundItem
             {
                 _logger.LogInformation("Getting refund items for Refund: {RefundId}", request.RefundId);
 
-                var items = await _repository
-                    .Get(r => r.RefundId == request.RefundId)
-                    .ProjectTo<RefundItemListDto>(_mapper.ConfigurationProvider)
+                var items = await _repository.GetAll()
+                    .Where(r => r.RefundId == request.RefundId)
+                    .Include(r => r.GRNLineItem)
+                        .ThenInclude(g => g.POLineItem)
+                        .ThenInclude(pol => pol.Product)
+                    .Select(rl => new RefundItemListDto
+                    {
+                        Id = rl.Id,
+                        RefundId = rl.RefundId,
+                        GRNLineItemId = rl.GRNLineItemId,
+                        ProductId = rl.GRNLineItem.POLineItem.ProductId ?? Guid.Empty,
+                        ProductName = rl.GRNLineItem.POLineItem.Product != null ? rl.GRNLineItem.POLineItem.Product.Name : "",
+                        ProductSKU = rl.GRNLineItem.POLineItem.Product != null ? rl.GRNLineItem.POLineItem.Product.SKU : "",
+                        ReturnQuantity = rl.ReturnQuantity,
+                        UnitPrice = rl.UnitPrice,
+                        LineTotal = rl.LineTotal
+                    })
                     .ToListAsync(cancellationToken);
 
                 _logger.LogInformation("Retrieved {Count} refund items for Refund: {RefundId}", items.Count, request.RefundId);
@@ -50,6 +65,4 @@ namespace ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_RefundItem
             }
         }
     }
-
-   
 }

@@ -3,6 +3,7 @@ using ModularERP.Common.Models;
 using ModularERP.Modules.Finance.Features.Companys.Models;
 using ModularERP.Modules.Inventory.Features.Products.Models;
 using ModularERP.Modules.Inventory.Features.Services.Models;
+using ModularERP.Modules.Purchases.Invoicing.Models;
 using System.ComponentModel.DataAnnotations;
 
 namespace ModularERP.Modules.Inventory.Features.Suppliers.Models
@@ -27,13 +28,19 @@ namespace ModularERP.Modules.Inventory.Features.Suppliers.Models
 
         public SupplierStatus Status { get; set; } = SupplierStatus.Active;
 
-        public Guid CompanyId { get; set; } 
+        public Guid CompanyId { get; set; }
 
+        // ⭐ NEW: Balance Tracking
+        public decimal OpeningBalance { get; set; } = 0;
+        public DateTime? OpeningBalanceDate { get; set; }
+        public decimal CurrentBalance { get; set; } = 0; // Real-time calculated
+        public decimal TotalPurchases { get; set; } = 0;
+        public decimal TotalPaid { get; set; } = 0;
 
         // Navigation Properties
         public virtual ICollection<Product> Products { get; set; } = new List<Product>();
         public virtual ICollection<Service> Services { get; set; } = new List<Service>();
-        public virtual Company? Company { get; set; } 
-
+        public virtual ICollection<SupplierPayment> Payments { get; set; } = new List<SupplierPayment>(); // ⭐ NEW
+        public virtual Company? Company { get; set; }
     }
 }

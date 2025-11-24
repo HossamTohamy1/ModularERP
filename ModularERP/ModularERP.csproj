@@ -283,8 +283,6 @@
     <Folder Include="Modules\Purchases\Goods_Receipt\DTO\DTO_GRNPO\" />
     <Folder Include="Modules\Purchases\Goods_Receipt\Qeuries\Qeuires_GRNItem\" />
     <Folder Include="Modules\Purchases\Goods_Receipt\Validators\Validators_GRNPO\" />
-    <Folder Include="Modules\Purchases\Invoicing\Commends\Commands_InvoiceByPO\" />
-    <Folder Include="Modules\Purchases\Invoicing\DTO\DTO_InvoiceByPO\" />
     <Folder Include="Modules\Purchases\Invoicing\Qeuries\Qeuries_InvoiceByPO\" />
     <Folder Include="Modules\Purchases\WorkFlow\Commends\" />
     <Folder Include="Modules\Purchases\WorkFlow\Controllers\" />
