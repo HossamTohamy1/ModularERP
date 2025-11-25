@@ -2,6 +2,7 @@
 using MediatR;
 using ModularERP.Common.Behaviors;
 using ModularERP.Modules.Inventory.Features.ProductSettings.Mapping;
+using ModularERP.Modules.Purchases.KPIs.Mapping;
 using ModularERP.Modules.Purchases.Purchase_Order_Management.Mapping;
 using System.Reflection;
 
@@ -25,6 +26,7 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Services
                 cfg.AddProfile<PODepositMappingProfile>();
                 cfg.AddProfile<POAttachmentMappingProfile>();
                 cfg.AddProfile<POStatusMappingProfile>();
+                cfg.AddProfile<KPIMappingProfile>();
 
 
             });

@@ -284,6 +284,8 @@
     <Folder Include="Modules\Purchases\Goods_Receipt\Qeuries\Qeuires_GRNItem\" />
     <Folder Include="Modules\Purchases\Goods_Receipt\Validators\Validators_GRNPO\" />
     <Folder Include="Modules\Purchases\Invoicing\Qeuries\Qeuries_InvoiceByPO\" />
+    <Folder Include="Modules\Purchases\KPIs\Commends\" />
+    <Folder Include="Modules\Purchases\Refunds\Commends\Commands_DebitNote\" />
     <Folder Include="Modules\Purchases\WorkFlow\Commends\" />
     <Folder Include="Modules\Purchases\WorkFlow\Controllers\" />
     <Folder Include="Modules\Purchases\WorkFlow\DTO\" />

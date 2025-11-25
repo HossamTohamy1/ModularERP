@@ -3,6 +3,202 @@
   "WorkspaceRootPath": "E:\\ModelerERP\\ModularERP\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\kpis\\mapping\\kpimappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\kpis\\mapping\\kpimappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\kpis\\handlers\\getsupplierperformancehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\kpis\\handlers\\getsupplierperformancehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\kpis\\validators\\getpaymenttrendsvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\kpis\\validators\\getpaymenttrendsvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\kpis\\validators\\getpurchasevolumevalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\kpis\\validators\\getpurchasevolumevalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\kpis\\validators\\getsupplierperformancevalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\kpis\\validators\\getsupplierperformancevalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\shared\\repository\\generalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\shared\\repository\\generalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\purchase_order_management\\services\\servicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\purchase_order_management\\services\\servicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\kpis\\controllers\\kpiscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\kpis\\controllers\\kpiscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\kpis\\handlers\\getpaymenttrendshandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\kpis\\handlers\\getpaymenttrendshandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\kpis\\handlers\\getpurchasevolumehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\kpis\\handlers\\getpurchasevolumehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\kpis\\qeuries\\getsupplierperformancequery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\kpis\\qeuries\\getsupplierperformancequery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\kpis\\qeuries\\getpaymenttrendsquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\kpis\\qeuries\\getpaymenttrendsquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\kpis\\qeuries\\getpurchasevolumequery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\kpis\\qeuries\\getpurchasevolumequery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\kpis\\dto\\topsupplierdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\kpis\\dto\\topsupplierdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\kpis\\dto\\supplierperformancedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\kpis\\dto\\supplierperformancedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\kpis\\dto\\paymenttrendsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\kpis\\dto\\paymenttrendsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\kpis\\dto\\purchasevolumedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\kpis\\dto\\purchasevolumedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\invoicing\\models\\purchaseinvoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\invoicing\\models\\purchaseinvoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\invoicing\\models\\supplierpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\invoicing\\models\\supplierpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\inventory\\features\\suppliers\\models\\supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\inventory\\features\\suppliers\\models\\supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\invoicing\\models\\paymentallocation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\invoicing\\models\\paymentallocation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\purchase_order_management\\models\\purchaseorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\purchase_order_management\\models\\purchaseorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\refunds\\controllers\\supplierdebitnotescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\refunds\\controllers\\supplierdebitnotescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\refunds\\controllers\\debitnotescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\refunds\\controllers\\debitnotescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\refunds\\handlers\\handlers_debitnote\\getalldebitnotesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\refunds\\handlers\\handlers_debitnote\\getalldebitnotesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\refunds\\handlers\\handlers_debitnote\\getdebitnotesbysupplierqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\refunds\\handlers\\handlers_debitnote\\getdebitnotesbysupplierqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\refunds\\handlers\\handlers_debitnote\\getdebitnoterefundqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\refunds\\handlers\\handlers_debitnote\\getdebitnoterefundqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\refunds\\handlers\\handlers_debitnote\\getdebitnotebyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\refunds\\handlers\\handlers_debitnote\\getdebitnotebyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\refunds\\mapping\\debitnotemappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\refunds\\mapping\\debitnotemappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\refunds\\validators\\validators_debitnote\\getdebitnotesbysupplierqueryvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\refunds\\validators\\validators_debitnote\\getdebitnotesbysupplierqueryvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\refunds\\validators\\validators_debitnote\\getdebitnoterefundqueryvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\refunds\\validators\\validators_debitnote\\getdebitnoterefundqueryvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\refunds\\validators\\validators_debitnote\\getdebitnotebyidqueryvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\refunds\\validators\\validators_debitnote\\getdebitnotebyidqueryvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\refunds\\validators\\validators_debitnote\\getalldebitnotesqueryvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\refunds\\validators\\validators_debitnote\\getalldebitnotesqueryvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\refunds\\qeuries\\queries_debitnote\\getdebitnotesbysupplierquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\refunds\\qeuries\\queries_debitnote\\getdebitnotesbysupplierquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\refunds\\qeuries\\queries_debitnote\\getdebitnoterefundquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\refunds\\qeuries\\queries_debitnote\\getdebitnoterefundquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\refunds\\qeuries\\queries_debitnote\\getdebitnotebyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\refunds\\qeuries\\queries_debitnote\\getdebitnotebyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\refunds\\qeuries\\queries_debitnote\\getalldebitnotesquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\refunds\\qeuries\\queries_debitnote\\getalldebitnotesquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\refunds\\dto\\dto_debitnote\\supplierdebitnotedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\refunds\\dto\\dto_debitnote\\supplierdebitnotedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\refunds\\dto\\dto_debitnote\\createdebitnotedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\refunds\\dto\\dto_debitnote\\createdebitnotedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\refunds\\dto\\dto_debitnote\\refundsummarydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\refunds\\dto\\dto_debitnote\\refundsummarydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\refunds\\dto\\dto_debitnote\\debitnotedetailsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\refunds\\dto\\dto_debitnote\\debitnotedetailsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\refunds\\dto\\dto_debitnote\\debitnotelistdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\refunds\\dto\\dto_debitnote\\debitnotelistdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\purchase_order_management\\models\\polineitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\purchase_order_management\\models\\polineitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\invoicing\\models\\invoicelineitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\invoicing\\models\\invoicelineitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\refunds\\models\\refundlineitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\refunds\\models\\refundlineitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\refunds\\models\\debitnote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\refunds\\models\\debitnote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\refunds\\models\\purchaserefund.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\refunds\\models\\purchaserefund.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\finance\\finance.infrastructure\\data\\financedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\finance.infrastructure\\data\\financedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\invoicing\\handlers\\handlers_paymentapplication\\quickpaysupplierhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\invoicing\\handlers\\handlers_paymentapplication\\quickpaysupplierhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -29,14 +225,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\invoicing\\controllers\\paymentapplicationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\invoicing\\controllers\\paymentapplicationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\finance\\finance.infrastructure\\data\\financedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\finance\\finance.infrastructure\\data\\financedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\invoicing\\models\\paymentallocation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\invoicing\\models\\paymentallocation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\invoicing\\handlers\\handlers_paymentapplication\\allocatepaymenthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -103,28 +291,8 @@
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\invoicing\\dto\\dto_paymentapplication\\applypaymentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\purchase_order_management\\models\\purchaseorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\purchase_order_management\\models\\purchaseorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\inventory\\features\\suppliers\\models\\supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\inventory\\features\\suppliers\\models\\supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ModelerERP\\ModularERP\\ModularERP\\Migrations\\Finance\\20251124173916_AddPaymentAllocationModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ModularERP\\Migrations\\Finance\\20251124173916_AddPaymentAllocationModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\invoicing\\configurations\\paymentallocationconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\invoicing\\configurations\\paymentallocationconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\invoicing\\models\\purchaseinvoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\invoicing\\models\\purchaseinvoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\invoicing\\models\\supplierpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\invoicing\\models\\supplierpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\invoicing\\handlers\\handlers_supplierpayments\\createsupplierpaymenthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -195,10 +363,6 @@
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\invoicing\\commends\\commands_supplierpayments\\createsupplierpaymentcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ModelerERP\\ModularERP\\ModularERP\\Migrations\\Finance\\20251124125958_AddSupplierPaymentEnhancementsCreatedAndUpdatedAT.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ModularERP\\Migrations\\Finance\\20251124125958_AddSupplierPaymentEnhancementsCreatedAndUpdatedAT.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\modules\\purchases\\invoicing\\commends\\commands_supplierpayments\\voidsupplierpaymentcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\invoicing\\commends\\commands_supplierpayments\\voidsupplierpaymentcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -211,10 +375,6 @@
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\modules\\purchases\\invoicing\\commends\\commands_supplierpayments\\updatesupplierpaymentcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ModelerERP\\ModularERP\\ModularERP\\Migrations\\Finance\\20251124122050_AddSupplierPaymentEnhancements.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ModularERP\\Migrations\\Finance\\20251124122050_AddSupplierPaymentEnhancements.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\common\\infrastructuremaster\\data\\masterdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\common\\infrastructuremaster\\data\\masterdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -225,6 +385,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\common\\extensions\\servicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\common\\extensions\\servicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\migrations\\finance\\20251124173916_addpaymentallocationmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\migrations\\finance\\20251124173916_addpaymentallocationmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\migrations\\finance\\20251124125958_addsupplierpaymentenhancementscreatedandupdatedat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\migrations\\finance\\20251124125958_addsupplierpaymentenhancementscreatedandupdatedat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|e:\\modelererp\\modularerp\\modularerp\\migrations\\finance\\20251124122050_addsupplierpaymentenhancements.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B213B25E-A24C-48E0-A8BD-6AEEA4C71C72}|ModularERP\\ModularERP.csproj|solutionrelative:modularerp\\migrations\\finance\\20251124122050_addsupplierpaymentenhancements.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -234,19 +406,604 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ResponseViewModel.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Common\\ViewModel\\ResponseViewModel.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Common\\ViewModel\\ResponseViewModel.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Common\\ViewModel\\ResponseViewModel.cs",
-              "RelativeToolTip": "ModularERP\\Common\\ViewModel\\ResponseViewModel.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACIAAAAQAAAAAAAAAA==",
+              "Title": "GetSupplierPerformanceValidator.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\KPIs\\Validators\\GetSupplierPerformanceValidator.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\KPIs\\Validators\\GetSupplierPerformanceValidator.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\KPIs\\Validators\\GetSupplierPerformanceValidator.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\KPIs\\Validators\\GetSupplierPerformanceValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T19:34:38.807Z",
+              "WhenOpened": "2025-11-25T14:57:42.127Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GetPurchaseVolumeValidator.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\KPIs\\Validators\\GetPurchaseVolumeValidator.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\KPIs\\Validators\\GetPurchaseVolumeValidator.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\KPIs\\Validators\\GetPurchaseVolumeValidator.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\KPIs\\Validators\\GetPurchaseVolumeValidator.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAcwBkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T14:57:12.362Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GetPaymentTrendsValidator.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\KPIs\\Validators\\GetPaymentTrendsValidator.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\KPIs\\Validators\\GetPaymentTrendsValidator.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\KPIs\\Validators\\GetPaymentTrendsValidator.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\KPIs\\Validators\\GetPaymentTrendsValidator.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwBkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T14:57:26.662Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GetSupplierPerformanceHandler.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\KPIs\\Handlers\\GetSupplierPerformanceHandler.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\KPIs\\Handlers\\GetSupplierPerformanceHandler.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\KPIs\\Handlers\\GetSupplierPerformanceHandler.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\KPIs\\Handlers\\GetSupplierPerformanceHandler.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAmwHsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T14:56:34.083Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "KPIMappingProfile.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\KPIs\\Mapping\\KPIMappingProfile.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\KPIs\\Mapping\\KPIMappingProfile.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\KPIs\\Mapping\\KPIMappingProfile.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\KPIs\\Mapping\\KPIMappingProfile.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAmwCcAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T14:59:11.818Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GeneralRepository.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Shared\\Repository\\GeneralRepository.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Shared\\Repository\\GeneralRepository.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Shared\\Repository\\GeneralRepository.cs",
+              "RelativeToolTip": "ModularERP\\Shared\\Repository\\GeneralRepository.cs",
+              "ViewState": "AgIAAKEAAAAAAAAAAAAmwDcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T15:00:19.697Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ServiceCollectionExtensions.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Services\\ServiceCollectionExtensions.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Services\\ServiceCollectionExtensions.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Services\\ServiceCollectionExtensions.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Services\\ServiceCollectionExtensions.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwBcAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T14:59:42.985Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "KPIsController.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\KPIs\\Controllers\\KPIsController.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\KPIs\\Controllers\\KPIsController.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\KPIs\\Controllers\\KPIsController.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\KPIs\\Controllers\\KPIsController.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAAAFwAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T14:58:36.67Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GetPaymentTrendsHandler.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\KPIs\\Handlers\\GetPaymentTrendsHandler.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\KPIs\\Handlers\\GetPaymentTrendsHandler.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\KPIs\\Handlers\\GetPaymentTrendsHandler.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\KPIs\\Handlers\\GetPaymentTrendsHandler.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAwwCUAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T14:55:21.075Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GetPurchaseVolumeHandler.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\KPIs\\Handlers\\GetPurchaseVolumeHandler.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\KPIs\\Handlers\\GetPurchaseVolumeHandler.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\KPIs\\Handlers\\GetPurchaseVolumeHandler.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\KPIs\\Handlers\\GetPurchaseVolumeHandler.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAAwGYAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T14:54:22.564Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "GetSupplierPerformanceQuery.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\KPIs\\Qeuries\\GetSupplierPerformanceQuery.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\KPIs\\Qeuries\\GetSupplierPerformanceQuery.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\KPIs\\Qeuries\\GetSupplierPerformanceQuery.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\KPIs\\Qeuries\\GetSupplierPerformanceQuery.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T14:54:02.054Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "GetPaymentTrendsQuery.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\KPIs\\Qeuries\\GetPaymentTrendsQuery.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\KPIs\\Qeuries\\GetPaymentTrendsQuery.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\KPIs\\Qeuries\\GetPaymentTrendsQuery.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\KPIs\\Qeuries\\GetPaymentTrendsQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T14:53:51.438Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "GetPurchaseVolumeQuery.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\KPIs\\Qeuries\\GetPurchaseVolumeQuery.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\KPIs\\Qeuries\\GetPurchaseVolumeQuery.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\KPIs\\Qeuries\\GetPurchaseVolumeQuery.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\KPIs\\Qeuries\\GetPurchaseVolumeQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T14:53:38.58Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "TopSupplierDto.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\KPIs\\DTO\\TopSupplierDto.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\KPIs\\DTO\\TopSupplierDto.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\KPIs\\DTO\\TopSupplierDto.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\KPIs\\DTO\\TopSupplierDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T14:53:22.267Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "SupplierPerformanceDto.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\KPIs\\DTO\\SupplierPerformanceDto.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\KPIs\\DTO\\SupplierPerformanceDto.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\KPIs\\DTO\\SupplierPerformanceDto.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\KPIs\\DTO\\SupplierPerformanceDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T14:53:10.178Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "PaymentTrendsDto.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\KPIs\\DTO\\PaymentTrendsDto.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\KPIs\\DTO\\PaymentTrendsDto.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\KPIs\\DTO\\PaymentTrendsDto.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\KPIs\\DTO\\PaymentTrendsDto.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAywBsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T14:52:54.487Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "PurchaseVolumeDto.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\KPIs\\DTO\\PurchaseVolumeDto.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\KPIs\\DTO\\PurchaseVolumeDto.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\KPIs\\DTO\\PurchaseVolumeDto.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\KPIs\\DTO\\PurchaseVolumeDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T14:52:33.153Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "SupplierDebitNotesController.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\Controllers\\SupplierDebitNotesController.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Refunds\\Controllers\\SupplierDebitNotesController.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\Controllers\\SupplierDebitNotesController.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Refunds\\Controllers\\SupplierDebitNotesController.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAA1wDgAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T12:26:01.596Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "PurchaseOrder.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Models\\PurchaseOrder.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Models\\PurchaseOrder.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Models\\PurchaseOrder.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Models\\PurchaseOrder.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAgwD0AAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T12:05:43.993Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "PaymentAllocation.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Models\\PaymentAllocation.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Models\\PaymentAllocation.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Models\\PaymentAllocation.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Models\\PaymentAllocation.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAmwEkAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T17:34:01.276Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Supplier.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Inventory\\Features\\Suppliers\\Models\\Supplier.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Inventory\\Features\\Suppliers\\Models\\Supplier.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Inventory\\Features\\Suppliers\\Models\\Supplier.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Inventory\\Features\\Suppliers\\Models\\Supplier.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAA9wCgAAABZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T12:06:19.508Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "SupplierPayment.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Models\\SupplierPayment.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Models\\SupplierPayment.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Models\\SupplierPayment.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Models\\SupplierPayment.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAowCEAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T12:03:15.954Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "PurchaseInvoice.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Models\\PurchaseInvoice.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Models\\PurchaseInvoice.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Models\\PurchaseInvoice.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Models\\PurchaseInvoice.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAA7wBkAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T12:05:57.627Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "DebitNotesController.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\Controllers\\DebitNotesController.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Refunds\\Controllers\\DebitNotesController.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\Controllers\\DebitNotesController.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Refunds\\Controllers\\DebitNotesController.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAA+wGoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T12:03:21.647Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "GetAllDebitNotesQueryHandler.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\Handlers\\Handlers_DebitNote\\GetAllDebitNotesQueryHandler.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Refunds\\Handlers\\Handlers_DebitNote\\GetAllDebitNotesQueryHandler.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\Handlers\\Handlers_DebitNote\\GetAllDebitNotesQueryHandler.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Refunds\\Handlers\\Handlers_DebitNote\\GetAllDebitNotesQueryHandler.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAWwFwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T12:00:34.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "GetDebitNotesBySupplierQueryHandler.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\Handlers\\Handlers_DebitNote\\GetDebitNotesBySupplierQueryHandler.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Refunds\\Handlers\\Handlers_DebitNote\\GetDebitNotesBySupplierQueryHandler.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\Handlers\\Handlers_DebitNote\\GetDebitNotesBySupplierQueryHandler.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Refunds\\Handlers\\Handlers_DebitNote\\GetDebitNotesBySupplierQueryHandler.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAgwFMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T12:02:12.358Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "GetDebitNoteRefundQueryHandler.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\Handlers\\Handlers_DebitNote\\GetDebitNoteRefundQueryHandler.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Refunds\\Handlers\\Handlers_DebitNote\\GetDebitNoteRefundQueryHandler.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\Handlers\\Handlers_DebitNote\\GetDebitNoteRefundQueryHandler.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Refunds\\Handlers\\Handlers_DebitNote\\GetDebitNoteRefundQueryHandler.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAgwEwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T12:01:37.767Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "GetDebitNoteByIdQueryHandler.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\Handlers\\Handlers_DebitNote\\GetDebitNoteByIdQueryHandler.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Refunds\\Handlers\\Handlers_DebitNote\\GetDebitNoteByIdQueryHandler.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\Handlers\\Handlers_DebitNote\\GetDebitNoteByIdQueryHandler.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Refunds\\Handlers\\Handlers_DebitNote\\GetDebitNoteByIdQueryHandler.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAgwEgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T12:01:07.882Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "DebitNoteMappingProfile.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\Mapping\\DebitNoteMappingProfile.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Refunds\\Mapping\\DebitNoteMappingProfile.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\Mapping\\DebitNoteMappingProfile.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Refunds\\Mapping\\DebitNoteMappingProfile.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAwwCoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T12:00:04.138Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "GetDebitNotesBySupplierQueryValidator.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\Validators\\Validators_DebitNote\\GetDebitNotesBySupplierQueryValidator.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Refunds\\Validators\\Validators_DebitNote\\GetDebitNotesBySupplierQueryValidator.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\Validators\\Validators_DebitNote\\GetDebitNotesBySupplierQueryValidator.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Refunds\\Validators\\Validators_DebitNote\\GetDebitNotesBySupplierQueryValidator.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAADwvx0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T11:59:41.116Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "GetDebitNoteRefundQueryValidator.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\Validators\\Validators_DebitNote\\GetDebitNoteRefundQueryValidator.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Refunds\\Validators\\Validators_DebitNote\\GetDebitNoteRefundQueryValidator.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\Validators\\Validators_DebitNote\\GetDebitNoteRefundQueryValidator.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Refunds\\Validators\\Validators_DebitNote\\GetDebitNoteRefundQueryValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T11:59:26.386Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "GetDebitNoteByIdQueryValidator.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\Validators\\Validators_DebitNote\\GetDebitNoteByIdQueryValidator.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Refunds\\Validators\\Validators_DebitNote\\GetDebitNoteByIdQueryValidator.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\Validators\\Validators_DebitNote\\GetDebitNoteByIdQueryValidator.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Refunds\\Validators\\Validators_DebitNote\\GetDebitNoteByIdQueryValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T11:59:12.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "GetAllDebitNotesQueryValidator.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\Validators\\Validators_DebitNote\\GetAllDebitNotesQueryValidator.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Refunds\\Validators\\Validators_DebitNote\\GetAllDebitNotesQueryValidator.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\Validators\\Validators_DebitNote\\GetAllDebitNotesQueryValidator.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Refunds\\Validators\\Validators_DebitNote\\GetAllDebitNotesQueryValidator.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T11:58:58.63Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "GetDebitNotesBySupplierQuery.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\Qeuries\\Queries_DebitNote\\GetDebitNotesBySupplierQuery.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Refunds\\Qeuries\\Queries_DebitNote\\GetDebitNotesBySupplierQuery.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\Qeuries\\Queries_DebitNote\\GetDebitNotesBySupplierQuery.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Refunds\\Qeuries\\Queries_DebitNote\\GetDebitNotesBySupplierQuery.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T11:58:37.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "GetDebitNoteRefundQuery.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\Qeuries\\Queries_DebitNote\\GetDebitNoteRefundQuery.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Refunds\\Qeuries\\Queries_DebitNote\\GetDebitNoteRefundQuery.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\Qeuries\\Queries_DebitNote\\GetDebitNoteRefundQuery.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Refunds\\Qeuries\\Queries_DebitNote\\GetDebitNoteRefundQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T11:58:24.246Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "GetDebitNoteByIdQuery.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\Qeuries\\Queries_DebitNote\\GetDebitNoteByIdQuery.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Refunds\\Qeuries\\Queries_DebitNote\\GetDebitNoteByIdQuery.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\Qeuries\\Queries_DebitNote\\GetDebitNoteByIdQuery.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Refunds\\Qeuries\\Queries_DebitNote\\GetDebitNoteByIdQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T11:58:09.853Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "GetAllDebitNotesQuery.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\Qeuries\\Queries_DebitNote\\GetAllDebitNotesQuery.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Refunds\\Qeuries\\Queries_DebitNote\\GetAllDebitNotesQuery.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\Qeuries\\Queries_DebitNote\\GetAllDebitNotesQuery.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Refunds\\Qeuries\\Queries_DebitNote\\GetAllDebitNotesQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T11:57:48.085Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "SupplierDebitNoteDto.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\DTO\\DTO_DebitNote\\SupplierDebitNoteDto.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Refunds\\DTO\\DTO_DebitNote\\SupplierDebitNoteDto.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\DTO\\DTO_DebitNote\\SupplierDebitNoteDto.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Refunds\\DTO\\DTO_DebitNote\\SupplierDebitNoteDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T11:57:16.326Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "CreateDebitNoteDto.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\DTO\\DTO_DebitNote\\CreateDebitNoteDto.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Refunds\\DTO\\DTO_DebitNote\\CreateDebitNoteDto.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\DTO\\DTO_DebitNote\\CreateDebitNoteDto.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Refunds\\DTO\\DTO_DebitNote\\CreateDebitNoteDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T11:57:00.761Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "RefundSummaryDto.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\DTO\\DTO_DebitNote\\RefundSummaryDto.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Refunds\\DTO\\DTO_DebitNote\\RefundSummaryDto.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\DTO\\DTO_DebitNote\\RefundSummaryDto.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Refunds\\DTO\\DTO_DebitNote\\RefundSummaryDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T11:56:45.898Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "DebitNoteDetailsDto.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\DTO\\DTO_DebitNote\\DebitNoteDetailsDto.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Refunds\\DTO\\DTO_DebitNote\\DebitNoteDetailsDto.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\DTO\\DTO_DebitNote\\DebitNoteDetailsDto.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Refunds\\DTO\\DTO_DebitNote\\DebitNoteDetailsDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T11:56:32.337Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "DebitNoteListDto.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\DTO\\DTO_DebitNote\\DebitNoteListDto.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Refunds\\DTO\\DTO_DebitNote\\DebitNoteListDto.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\DTO\\DTO_DebitNote\\DebitNoteListDto.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Refunds\\DTO\\DTO_DebitNote\\DebitNoteListDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T11:56:20.185Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "POLineItem.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Models\\POLineItem.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Models\\POLineItem.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Models\\POLineItem.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Models\\POLineItem.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAmwCgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T11:43:40.615Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "InvoiceLineItem.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Models\\InvoiceLineItem.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Models\\InvoiceLineItem.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Models\\InvoiceLineItem.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Models\\InvoiceLineItem.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAqwA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T11:43:31.252Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "RefundLineItem.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\Models\\RefundLineItem.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Refunds\\Models\\RefundLineItem.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\Models\\RefundLineItem.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Refunds\\Models\\RefundLineItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T11:39:17.005Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "DebitNote.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\Models\\DebitNote.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Refunds\\Models\\DebitNote.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\Models\\DebitNote.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Refunds\\Models\\DebitNote.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T11:39:15.079Z",
               "EditorCaption": ""
             },
             {
@@ -267,33 +1024,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ApplyPaymentHandler.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_PaymentApplication\\ApplyPaymentHandler.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_PaymentApplication\\ApplyPaymentHandler.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_PaymentApplication\\ApplyPaymentHandler.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_PaymentApplication\\ApplyPaymentHandler.cs",
-              "ViewState": "AgIAAFwAAAAAAAAAAAAQwGoAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 46,
+              "Title": "PurchaseRefund.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\Models\\PurchaseRefund.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Refunds\\Models\\PurchaseRefund.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Refunds\\Models\\PurchaseRefund.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Refunds\\Models\\PurchaseRefund.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T18:17:30.168Z",
+              "WhenOpened": "2025-11-25T11:39:16.86Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PayInvoiceHandler.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_PaymentApplication\\PayInvoiceHandler.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_PaymentApplication\\PayInvoiceHandler.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_PaymentApplication\\PayInvoiceHandler.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_PaymentApplication\\PayInvoiceHandler.cs",
-              "ViewState": "AgIAAKcAAAAAAAAAAAAAwK8AAABLAAAAAAAAAA==",
+              "DocumentIndex": 48,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Program.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Program.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Program.cs",
+              "RelativeToolTip": "ModularERP\\Program.cs",
+              "ViewState": "AgIAACQBAAAAAAAAAAAQwDYBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T18:18:25.996Z",
+              "WhenOpened": "2025-11-25T11:02:58.562Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 51,
               "Title": "QuickPaySupplierCommand.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Commends\\Commands_PaymentApplication\\QuickPaySupplierCommand.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Commends\\Commands_PaymentApplication\\QuickPaySupplierCommand.cs",
@@ -301,12 +1058,23 @@
               "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Commends\\Commands_PaymentApplication\\QuickPaySupplierCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T18:15:41.744Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T18:15:41.744Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 52,
+              "Title": "PayInvoiceHandler.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_PaymentApplication\\PayInvoiceHandler.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_PaymentApplication\\PayInvoiceHandler.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_PaymentApplication\\PayInvoiceHandler.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_PaymentApplication\\PayInvoiceHandler.cs",
+              "ViewState": "AgIAAKcAAAAAAAAAAAAAwK8AAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T18:18:25.996Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
               "Title": "QuickPaySupplierHandler.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_PaymentApplication\\QuickPaySupplierHandler.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_PaymentApplication\\QuickPaySupplierHandler.cs",
@@ -319,85 +1087,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "PaymentApplicationSummaryDto.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_PaymentApplication\\PaymentApplicationSummaryDto.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_PaymentApplication\\PaymentApplicationSummaryDto.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_PaymentApplication\\PaymentApplicationSummaryDto.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_PaymentApplication\\PaymentApplicationSummaryDto.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAUwA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T18:11:30.163Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PaymentApplicationController.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Controllers\\PaymentApplicationController.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Controllers\\PaymentApplicationController.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Controllers\\PaymentApplicationController.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Controllers\\PaymentApplicationController.cs",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAuwGwAAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T18:22:02.378Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "AllocatePaymentHandler.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_PaymentApplication\\AllocatePaymentHandler.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_PaymentApplication\\AllocatePaymentHandler.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_PaymentApplication\\AllocatePaymentHandler.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_PaymentApplication\\AllocatePaymentHandler.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAkwB4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T18:21:29.449Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "PaymentAllocation.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Models\\PaymentAllocation.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Models\\PaymentAllocation.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Models\\PaymentAllocation.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Models\\PaymentAllocation.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T17:34:01.276Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "PaymentAllocationResponseDto.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_PaymentApplication\\PaymentAllocationResponseDto.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_PaymentApplication\\PaymentAllocationResponseDto.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_PaymentApplication\\PaymentAllocationResponseDto.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_PaymentApplication\\PaymentAllocationResponseDto.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAswBAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T18:10:40.264Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "PaymentApplicationProfile.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Mapping\\PaymentApplicationProfile.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Mapping\\PaymentApplicationProfile.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Mapping\\PaymentApplicationProfile.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Mapping\\PaymentApplicationProfile.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAlwEIAAABMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T18:14:12.823Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 47,
               "Title": "FinanceDbContext.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Finance\\Finance.Infrastructure\\Data\\FinanceDbContext.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Finance\\Finance.Infrastructure\\Data\\FinanceDbContext.cs",
@@ -410,7 +1100,91 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 50,
+              "Title": "ApplyPaymentHandler.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_PaymentApplication\\ApplyPaymentHandler.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_PaymentApplication\\ApplyPaymentHandler.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_PaymentApplication\\ApplyPaymentHandler.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_PaymentApplication\\ApplyPaymentHandler.cs",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAQwGoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T18:17:30.168Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "ResponseViewModel.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Common\\ViewModel\\ResponseViewModel.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Common\\ViewModel\\ResponseViewModel.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Common\\ViewModel\\ResponseViewModel.cs",
+              "RelativeToolTip": "ModularERP\\Common\\ViewModel\\ResponseViewModel.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACIAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T19:34:38.807Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "PaymentApplicationSummaryDto.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_PaymentApplication\\PaymentApplicationSummaryDto.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_PaymentApplication\\PaymentApplicationSummaryDto.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_PaymentApplication\\PaymentApplicationSummaryDto.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_PaymentApplication\\PaymentApplicationSummaryDto.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAUwA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T18:11:30.163Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "PaymentApplicationController.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Controllers\\PaymentApplicationController.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Controllers\\PaymentApplicationController.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Controllers\\PaymentApplicationController.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Controllers\\PaymentApplicationController.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAuwGwAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T18:22:02.378Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "AllocatePaymentHandler.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_PaymentApplication\\AllocatePaymentHandler.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_PaymentApplication\\AllocatePaymentHandler.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_PaymentApplication\\AllocatePaymentHandler.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_PaymentApplication\\AllocatePaymentHandler.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAkwB4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T18:21:29.449Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "PaymentAllocationResponseDto.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_PaymentApplication\\PaymentAllocationResponseDto.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_PaymentApplication\\PaymentAllocationResponseDto.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_PaymentApplication\\PaymentAllocationResponseDto.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_PaymentApplication\\PaymentAllocationResponseDto.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAswBAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T18:10:40.264Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "PaymentApplicationProfile.cs",
+              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Mapping\\PaymentApplicationProfile.cs",
+              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Mapping\\PaymentApplicationProfile.cs",
+              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Mapping\\PaymentApplicationProfile.cs",
+              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Mapping\\PaymentApplicationProfile.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAlwEIAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T18:14:12.823Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
               "Title": "VoidAllocationHandler.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_PaymentApplication\\VoidAllocationHandler.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_PaymentApplication\\VoidAllocationHandler.cs",
@@ -418,12 +1192,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_PaymentApplication\\VoidAllocationHandler.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAwwBUAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T18:20:04.469Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T18:20:04.469Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 60,
               "Title": "AllocatePaymentCommand.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Commends\\Commands_PaymentApplication\\AllocatePaymentCommand.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Commends\\Commands_PaymentApplication\\AllocatePaymentCommand.cs",
@@ -431,12 +1204,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Commends\\Commands_PaymentApplication\\AllocatePaymentCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T18:16:16.47Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T18:16:16.47Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 61,
               "Title": "VoidAllocationCommand.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Commends\\Commands_PaymentApplication\\VoidAllocationCommand.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Commends\\Commands_PaymentApplication\\VoidAllocationCommand.cs",
@@ -444,12 +1216,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Commends\\Commands_PaymentApplication\\VoidAllocationCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T18:15:59.334Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T18:15:59.334Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 62,
               "Title": "PayInvoiceCommand.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Commends\\Commands_PaymentApplication\\PayInvoiceCommand.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Commends\\Commands_PaymentApplication\\PayInvoiceCommand.cs",
@@ -457,12 +1228,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Commends\\Commands_PaymentApplication\\PayInvoiceCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T18:15:27.499Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T18:15:27.499Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 63,
               "Title": "ApplyPaymentCommand.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Commends\\Commands_PaymentApplication\\ApplyPaymentCommand.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Commends\\Commands_PaymentApplication\\ApplyPaymentCommand.cs",
@@ -470,12 +1240,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Commends\\Commands_PaymentApplication\\ApplyPaymentCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T18:15:13.347Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T18:15:13.347Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 64,
               "Title": "VoidAllocationValidator.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Validators\\Validators_PaymentApplication\\VoidAllocationValidator.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Validators\\Validators_PaymentApplication\\VoidAllocationValidator.cs",
@@ -483,12 +1252,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Validators\\Validators_PaymentApplication\\VoidAllocationValidator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T18:13:47.792Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T18:13:47.792Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 65,
               "Title": "QuickPaySupplierValidator.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Validators\\Validators_PaymentApplication\\QuickPaySupplierValidator.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Validators\\Validators_PaymentApplication\\QuickPaySupplierValidator.cs",
@@ -496,12 +1264,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Validators\\Validators_PaymentApplication\\QuickPaySupplierValidator.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAUwC0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T18:13:32.523Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T18:13:32.523Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 66,
               "Title": "PayInvoiceValidator.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Validators\\Validators_PaymentApplication\\PayInvoiceValidator.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Validators\\Validators_PaymentApplication\\PayInvoiceValidator.cs",
@@ -509,12 +1276,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Validators\\Validators_PaymentApplication\\PayInvoiceValidator.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAxwB0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T18:13:18.713Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T18:13:18.713Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 67,
               "Title": "ApplyPaymentValidator.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Validators\\Validators_PaymentApplication\\ApplyPaymentValidator.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Validators\\Validators_PaymentApplication\\ApplyPaymentValidator.cs",
@@ -522,12 +1288,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Validators\\Validators_PaymentApplication\\ApplyPaymentValidator.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAcwCIAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T18:13:00.275Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T18:13:00.275Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 68,
               "Title": "VoidAllocationDto.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_PaymentApplication\\VoidAllocationDto.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_PaymentApplication\\VoidAllocationDto.cs",
@@ -535,12 +1300,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_PaymentApplication\\VoidAllocationDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T18:11:42.378Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T18:11:42.378Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 69,
               "Title": "QuickPaySupplierDto.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_PaymentApplication\\QuickPaySupplierDto.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_PaymentApplication\\QuickPaySupplierDto.cs",
@@ -548,12 +1312,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_PaymentApplication\\QuickPaySupplierDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T18:11:18.636Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T18:11:18.636Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 70,
               "Title": "PayInvoiceDto.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_PaymentApplication\\PayInvoiceDto.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_PaymentApplication\\PayInvoiceDto.cs",
@@ -561,12 +1324,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_PaymentApplication\\PayInvoiceDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T18:11:05.93Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T18:11:05.93Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 71,
               "Title": "ApplyPaymentDto.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_PaymentApplication\\ApplyPaymentDto.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_PaymentApplication\\ApplyPaymentDto.cs",
@@ -574,12 +1336,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_PaymentApplication\\ApplyPaymentDto.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAAuwA0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T18:10:19.013Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T18:10:19.013Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 96,
               "Title": "20251124173916_AddPaymentAllocationModel.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Migrations\\Finance\\20251124173916_AddPaymentAllocationModel.cs",
               "RelativeDocumentMoniker": "ModularERP\\Migrations\\Finance\\20251124173916_AddPaymentAllocationModel.cs",
@@ -587,12 +1348,11 @@
               "RelativeToolTip": "ModularERP\\Migrations\\Finance\\20251124173916_AddPaymentAllocationModel.cs",
               "ViewState": "AgIAACsAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T17:39:16.89Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T17:39:16.89Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 72,
               "Title": "PaymentAllocationConfiguration.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Configurations\\PaymentAllocationConfiguration.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Configurations\\PaymentAllocationConfiguration.cs",
@@ -600,12 +1360,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Configurations\\PaymentAllocationConfiguration.cs",
               "ViewState": "AgIAAGoAAAAAAAAAAAAQwHsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T17:35:27.49Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T17:35:27.49Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 73,
               "Title": "CreateSupplierPaymentHandler.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_SupplierPayments\\CreateSupplierPaymentHandler.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_SupplierPayments\\CreateSupplierPaymentHandler.cs",
@@ -613,12 +1372,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_SupplierPayments\\CreateSupplierPaymentHandler.cs",
               "ViewState": "AgIAAJoBAAAAAAAAAAAxwKABAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T12:31:40.238Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T12:31:40.238Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 74,
               "Title": "CreateSupplierPaymentDto.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_SupplierPayments\\CreateSupplierPaymentDto.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_SupplierPayments\\CreateSupplierPaymentDto.cs",
@@ -626,51 +1384,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_SupplierPayments\\CreateSupplierPaymentDto.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAAAswA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T12:32:56.862Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T12:32:56.862Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "PurchaseOrder.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Models\\PurchaseOrder.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Models\\PurchaseOrder.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Models\\PurchaseOrder.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Purchase_Order_Management\\Models\\PurchaseOrder.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAwwDsAAABmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T12:05:43.993Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "SupplierPayment.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Models\\SupplierPayment.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Models\\SupplierPayment.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Models\\SupplierPayment.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Models\\SupplierPayment.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAA+wCsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T12:03:15.954Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "Supplier.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Inventory\\Features\\Suppliers\\Models\\Supplier.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Inventory\\Features\\Suppliers\\Models\\Supplier.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Inventory\\Features\\Suppliers\\Models\\Supplier.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Inventory\\Features\\Suppliers\\Models\\Supplier.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAADwvykAAABZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T12:06:19.508Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 75,
               "Title": "SupplierPaymentsController.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Controllers\\SupplierPaymentsController.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Controllers\\SupplierPaymentsController.cs",
@@ -678,25 +1396,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Controllers\\SupplierPaymentsController.cs",
               "ViewState": "AgIAAPQAAAAAAAAAAAAwwA4BAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T13:03:47.626Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T13:03:47.626Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "PurchaseInvoice.cs",
-              "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Models\\PurchaseInvoice.cs",
-              "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Models\\PurchaseInvoice.cs",
-              "ToolTip": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Models\\PurchaseInvoice.cs",
-              "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Models\\PurchaseInvoice.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAADwvxgAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T12:05:57.627Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 76,
               "Title": "UpdateSupplierPaymentHandler.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_SupplierPayments\\UpdateSupplierPaymentHandler.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_SupplierPayments\\UpdateSupplierPaymentHandler.cs",
@@ -704,12 +1408,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_SupplierPayments\\UpdateSupplierPaymentHandler.cs",
               "ViewState": "AgIAAAkBAAAAAAAAAAAcwBQBAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T12:38:47.65Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T12:38:47.65Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 77,
               "Title": "UpdateSupplierPaymentDto.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_SupplierPayments\\UpdateSupplierPaymentDto.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_SupplierPayments\\UpdateSupplierPaymentDto.cs",
@@ -717,12 +1420,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_SupplierPayments\\UpdateSupplierPaymentDto.cs",
               "ViewState": "AgIAAB8AAAAAAAAAAAA2wCcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T12:33:09.595Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T12:33:09.595Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 78,
               "Title": "SupplierPaymentDto.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_SupplierPayments\\SupplierPaymentDto.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_SupplierPayments\\SupplierPaymentDto.cs",
@@ -730,12 +1432,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_SupplierPayments\\SupplierPaymentDto.cs",
               "ViewState": "AgIAABgAAAAAAAAAAAAxwB8AAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T12:32:39.453Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T12:32:39.453Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 79,
               "Title": "DeleteSupplierPaymentHandler.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_SupplierPayments\\DeleteSupplierPaymentHandler.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_SupplierPayments\\DeleteSupplierPaymentHandler.cs",
@@ -743,12 +1444,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_SupplierPayments\\DeleteSupplierPaymentHandler.cs",
               "ViewState": "AgIAAC4AAAAAAAAAAAAswEQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T12:40:45.677Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T12:40:45.677Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 80,
               "Title": "GetSupplierPaymentByIdHandler.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_SupplierPayments\\GetSupplierPaymentByIdHandler.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_SupplierPayments\\GetSupplierPaymentByIdHandler.cs",
@@ -756,12 +1456,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_SupplierPayments\\GetSupplierPaymentByIdHandler.cs",
               "ViewState": "AgIAADkAAAAAAAAAAAAAwEMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T12:43:53.173Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T12:43:53.173Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 81,
               "Title": "GetSupplierPaymentsListHandler.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_SupplierPayments\\GetSupplierPaymentsListHandler.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_SupplierPayments\\GetSupplierPaymentsListHandler.cs",
@@ -769,12 +1468,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_SupplierPayments\\GetSupplierPaymentsListHandler.cs",
               "ViewState": "AgIAABgAAAAAAAAAAAAowCYAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T13:01:07.674Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T13:01:07.674Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 82,
               "Title": "VoidSupplierPaymentHandler.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_SupplierPayments\\VoidSupplierPaymentHandler.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_SupplierPayments\\VoidSupplierPaymentHandler.cs",
@@ -782,12 +1480,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Handlers\\Handlers_SupplierPayments\\VoidSupplierPaymentHandler.cs",
               "ViewState": "AgIAAC4AAAAAAAAAAAAUwDwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T12:42:43.084Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T12:42:43.084Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 83,
               "Title": "CreateSupplierPaymentValidator.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Validators\\Validators_SupplierPayments\\CreateSupplierPaymentValidator.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Validators\\Validators_SupplierPayments\\CreateSupplierPaymentValidator.cs",
@@ -795,12 +1492,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Validators\\Validators_SupplierPayments\\CreateSupplierPaymentValidator.cs",
               "ViewState": "AgIAADoAAAAAAAAAAAAswFAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T12:33:55.869Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T12:33:55.869Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 84,
               "Title": "UpdateSupplierPaymentValidator.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Validators\\Validators_SupplierPayments\\UpdateSupplierPaymentValidator.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Validators\\Validators_SupplierPayments\\UpdateSupplierPaymentValidator.cs",
@@ -808,12 +1504,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Validators\\Validators_SupplierPayments\\UpdateSupplierPaymentValidator.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAQwB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T12:34:09.859Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T12:34:09.859Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 85,
               "Title": "GetSupplierPaymentsListQuery.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Qeuries\\Qeuries_SupplierPayments\\GetSupplierPaymentsListQuery.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Qeuries\\Qeuries_SupplierPayments\\GetSupplierPaymentsListQuery.cs",
@@ -821,12 +1516,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Qeuries\\Qeuries_SupplierPayments\\GetSupplierPaymentsListQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T12:44:40.868Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T12:44:40.868Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 86,
               "Title": "SupplierPaymentMappingProfile.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Mapping\\SupplierPaymentMappingProfile.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Mapping\\SupplierPaymentMappingProfile.cs",
@@ -834,12 +1528,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Mapping\\SupplierPaymentMappingProfile.cs",
               "ViewState": "AgIAABkAAAAAAAAAAAAQwAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T12:33:28.847Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T12:33:28.847Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 87,
               "Title": "PagedResult.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_SupplierPayments\\PagedResult.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\DTO\\DTO_SupplierPayments\\PagedResult.cs",
@@ -852,7 +1545,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 88,
               "Title": "GetSupplierPaymentByIdQuery.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Qeuries\\Qeuries_SupplierPayments\\GetSupplierPaymentByIdQuery.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Qeuries\\Qeuries_SupplierPayments\\GetSupplierPaymentByIdQuery.cs",
@@ -860,12 +1553,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Qeuries\\Qeuries_SupplierPayments\\GetSupplierPaymentByIdQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T12:43:25.587Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T12:43:25.587Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 89,
               "Title": "CreateSupplierPaymentCommand.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Commends\\Commands_SupplierPayments\\CreateSupplierPaymentCommand.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Commends\\Commands_SupplierPayments\\CreateSupplierPaymentCommand.cs",
@@ -873,12 +1565,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Commends\\Commands_SupplierPayments\\CreateSupplierPaymentCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T12:31:21.335Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T12:31:21.335Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 97,
               "Title": "20251124125958_AddSupplierPaymentEnhancementsCreatedAndUpdatedAT.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Migrations\\Finance\\20251124125958_AddSupplierPaymentEnhancementsCreatedAndUpdatedAT.cs",
               "RelativeDocumentMoniker": "ModularERP\\Migrations\\Finance\\20251124125958_AddSupplierPaymentEnhancementsCreatedAndUpdatedAT.cs",
@@ -886,12 +1577,11 @@
               "RelativeToolTip": "ModularERP\\Migrations\\Finance\\20251124125958_AddSupplierPaymentEnhancementsCreatedAndUpdatedAT.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T12:59:58.321Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T12:59:58.321Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 90,
               "Title": "VoidSupplierPaymentCommand.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Commends\\Commands_SupplierPayments\\VoidSupplierPaymentCommand.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Commends\\Commands_SupplierPayments\\VoidSupplierPaymentCommand.cs",
@@ -899,12 +1589,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Commends\\Commands_SupplierPayments\\VoidSupplierPaymentCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T12:42:27.825Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T12:42:27.825Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 91,
               "Title": "DeleteSupplierPaymentCommand.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Commends\\Commands_SupplierPayments\\DeleteSupplierPaymentCommand.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Commends\\Commands_SupplierPayments\\DeleteSupplierPaymentCommand.cs",
@@ -912,12 +1601,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Commends\\Commands_SupplierPayments\\DeleteSupplierPaymentCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T12:40:26.691Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T12:40:26.691Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 92,
               "Title": "UpdateSupplierPaymentCommand.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Modules\\Purchases\\Invoicing\\Commends\\Commands_SupplierPayments\\UpdateSupplierPaymentCommand.cs",
               "RelativeDocumentMoniker": "ModularERP\\Modules\\Purchases\\Invoicing\\Commends\\Commands_SupplierPayments\\UpdateSupplierPaymentCommand.cs",
@@ -925,12 +1613,11 @@
               "RelativeToolTip": "ModularERP\\Modules\\Purchases\\Invoicing\\Commends\\Commands_SupplierPayments\\UpdateSupplierPaymentCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T12:38:26.557Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T12:38:26.557Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 98,
               "Title": "20251124122050_AddSupplierPaymentEnhancements.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Migrations\\Finance\\20251124122050_AddSupplierPaymentEnhancements.cs",
               "RelativeDocumentMoniker": "ModularERP\\Migrations\\Finance\\20251124122050_AddSupplierPaymentEnhancements.cs",
@@ -938,12 +1625,11 @@
               "RelativeToolTip": "ModularERP\\Migrations\\Finance\\20251124122050_AddSupplierPaymentEnhancements.cs",
               "ViewState": "AgIAAEkAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T12:20:50.689Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T12:20:50.689Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 93,
               "Title": "MasterDbContext.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Common\\InfrastructureMaster\\Data\\MasterDbContext.cs",
               "RelativeDocumentMoniker": "ModularERP\\Common\\InfrastructureMaster\\Data\\MasterDbContext.cs",
@@ -951,12 +1637,11 @@
               "RelativeToolTip": "ModularERP\\Common\\InfrastructureMaster\\Data\\MasterDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T12:14:50.991Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T12:14:50.991Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 94,
               "Title": "log-20251123.txt",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Logs\\log-20251123.txt",
               "RelativeDocumentMoniker": "ModularERP\\Logs\\log-20251123.txt",
@@ -969,7 +1654,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 95,
               "Title": "ServiceCollectionExtensions.cs",
               "DocumentMoniker": "E:\\ModelerERP\\ModularERP\\ModularERP\\Common\\Extensions\\ServiceCollectionExtensions.cs",
               "RelativeDocumentMoniker": "ModularERP\\Common\\Extensions\\ServiceCollectionExtensions.cs",

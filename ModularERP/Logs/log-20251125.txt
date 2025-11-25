@@ -1,0 +1,795 @@
+2025-11-25 13:11:12.037 +02:00 [INF] Starting web host...
+2025-11-25 13:11:16.653 +02:00 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-25 13:11:16.708 +02:00 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-11-25 13:11:16.803 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-25 13:11:16.809 +02:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-11-25 13:11:16.814 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-11-25 13:11:16.897 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-11-25 13:11:16.911 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-25 13:11:16.915 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-11-25 13:11:16.921 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-11-25 13:11:16.932 +02:00 [INF] No migrations were applied. The database is already up to date.
+2025-11-25 13:11:16.936 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-11-25 13:11:17.159 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-11-25 13:11:17.170 +02:00 [INF] Master database initialized successfully
+2025-11-25 13:11:19.455 +02:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-25 13:11:19.752 +02:00 [INF] Now listening on: https://localhost:7168
+2025-11-25 13:11:19.754 +02:00 [INF] Now listening on: http://localhost:5004
+2025-11-25 13:11:19.882 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-25 13:11:19.884 +02:00 [INF] Hosting environment: Development
+2025-11-25 13:11:19.885 +02:00 [INF] Content root path: E:\ModelerERP\ModularERP\ModularERP
+2025-11-25 13:11:20.549 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-11-25 13:11:20.737 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 189.6728ms
+2025-11-25 13:11:20.740 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-11-25 13:11:20.740 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-25 13:11:20.764 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 23.7119ms
+2025-11-25 13:11:20.801 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 61.1864ms
+2025-11-25 13:11:20.840 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-11-25 13:11:21.161 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 320.9342ms
+2025-11-25 14:17:02.950 +02:00 [INF] Starting web host...
+2025-11-25 14:17:06.944 +02:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-25 14:17:07.025 +02:00 [INF] Executed DbCommand (61ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-11-25 14:17:07.095 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-25 14:17:07.101 +02:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-11-25 14:17:07.117 +02:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-11-25 14:17:07.172 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-11-25 14:17:07.188 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-25 14:17:07.191 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-11-25 14:17:07.198 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-11-25 14:17:07.209 +02:00 [INF] No migrations were applied. The database is already up to date.
+2025-11-25 14:17:07.216 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-11-25 14:17:07.393 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-11-25 14:17:07.401 +02:00 [INF] Master database initialized successfully
+2025-11-25 14:17:10.536 +02:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-25 14:17:10.754 +02:00 [INF] Now listening on: https://localhost:7168
+2025-11-25 14:17:10.756 +02:00 [INF] Now listening on: http://localhost:5004
+2025-11-25 14:17:10.895 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-11-25 14:17:10.919 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-25 14:17:10.921 +02:00 [INF] Hosting environment: Development
+2025-11-25 14:17:10.923 +02:00 [INF] Content root path: E:\ModelerERP\ModularERP\ModularERP
+2025-11-25 14:17:11.151 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 256.9505ms
+2025-11-25 14:17:11.184 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-11-25 14:17:11.185 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-25 14:17:11.205 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 19.4263ms
+2025-11-25 14:17:11.229 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 45.4552ms
+2025-11-25 14:17:11.433 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-11-25 14:17:11.987 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 554.0078ms
+2025-11-25 14:26:52.225 +02:00 [INF] Starting web host...
+2025-11-25 14:26:54.116 +02:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-25 14:26:54.176 +02:00 [INF] Executed DbCommand (44ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-11-25 14:26:54.255 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-25 14:26:54.260 +02:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-11-25 14:26:54.277 +02:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-11-25 14:26:54.346 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-11-25 14:26:54.363 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-25 14:26:54.369 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-11-25 14:26:54.378 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-11-25 14:26:54.391 +02:00 [INF] No migrations were applied. The database is already up to date.
+2025-11-25 14:26:54.397 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-11-25 14:26:54.561 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-11-25 14:26:54.568 +02:00 [INF] Master database initialized successfully
+2025-11-25 14:26:56.753 +02:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-25 14:26:56.867 +02:00 [INF] Now listening on: https://localhost:7168
+2025-11-25 14:26:56.869 +02:00 [INF] Now listening on: http://localhost:5004
+2025-11-25 14:26:56.968 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-25 14:26:56.970 +02:00 [INF] Hosting environment: Development
+2025-11-25 14:26:56.972 +02:00 [INF] Content root path: E:\ModelerERP\ModularERP\ModularERP
+2025-11-25 14:26:57.093 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-11-25 14:26:57.229 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 137.362ms
+2025-11-25 14:26:57.231 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-25 14:26:57.233 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-11-25 14:26:57.245 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 13.8089ms
+2025-11-25 14:26:57.265 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 31.5259ms
+2025-11-25 14:26:57.428 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-11-25 14:26:57.762 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 333.909ms
+2025-11-25 14:29:06.809 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/DebitNotes - null null
+2025-11-25 14:29:06.833 +02:00 [INF] Request started
+2025-11-25 14:29:06.836 +02:00 [INF] === Incoming Request ===
+2025-11-25 14:29:06.838 +02:00 [INF] Path: /api/DebitNotes
+2025-11-25 14:29:06.839 +02:00 [INF] Method: GET
+2025-11-25 14:29:06.840 +02:00 [INF] === Headers ===
+2025-11-25 14:29:06.843 +02:00 [INF] Accept: ["*/*"]
+2025-11-25 14:29:06.846 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-25 14:29:06.847 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-25 14:29:06.849 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-25 14:29:06.851 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-25 14:29:06.853 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-25 14:29:06.855 +02:00 [INF] Postman-Token: ["d9b65e4f-8cbf-43c6-9830-e0811b27b017"]
+2025-11-25 14:29:06.859 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-25 14:29:06.860 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-25 14:29:06.862 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.DebitNotesController.GetAllDebitNotes (ModularERP)'
+2025-11-25 14:29:06.887 +02:00 [INF] Route matched with {action = "GetAllDebitNotes", controller = "DebitNotes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllDebitNotes(Int32, Int32, System.String, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime], System.Nullable`1[System.Guid]) on controller ModularERP.Modules.Purchases.Refunds.Controllers.DebitNotesController (ModularERP).
+2025-11-25 14:29:06.894 +02:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-11-25 14:29:06.914 +02:00 [INF] GET /api/debit-notes called - Page: 1, Size: 10
+2025-11-25 14:29:07.020 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-11-25 14:29:07.776 +02:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-11-25 14:29:07.785 +02:00 [INF] Fetching Debit Notes - Page: 1, Size: 10
+2025-11-25 14:29:07.899 +02:00 [INF] Successfully retrieved 10 Debit Notes
+2025-11-25 14:29:07.908 +02:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Purchases.Refunds.DTO.DTO_DebitNote.DebitNoteListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-25 14:29:07.932 +02:00 [INF] Executed action ModularERP.Modules.Purchases.Refunds.Controllers.DebitNotesController.GetAllDebitNotes (ModularERP) in 1039.4461ms
+2025-11-25 14:29:07.936 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.DebitNotesController.GetAllDebitNotes (ModularERP)'
+2025-11-25 14:29:07.939 +02:00 [INF] Request completed successfully with status code 200
+2025-11-25 14:29:07.945 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/DebitNotes - 200 null application/json; charset=utf-8 1135.3991ms
+2025-11-25 14:29:40.426 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/DebitNotes/{d652479e-328b-4418-95bd-e02325a3a0da} - null null
+2025-11-25 14:29:40.448 +02:00 [INF] Request started
+2025-11-25 14:29:40.450 +02:00 [INF] === Incoming Request ===
+2025-11-25 14:29:40.451 +02:00 [INF] Path: /api/DebitNotes/%7Bd652479e-328b-4418-95bd-e02325a3a0da%7D
+2025-11-25 14:29:40.452 +02:00 [INF] Method: GET
+2025-11-25 14:29:40.453 +02:00 [INF] === Headers ===
+2025-11-25 14:29:40.454 +02:00 [INF] Accept: ["*/*"]
+2025-11-25 14:29:40.455 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-25 14:29:40.458 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-25 14:29:40.460 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-25 14:29:40.462 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-25 14:29:40.464 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-25 14:29:40.466 +02:00 [INF] Postman-Token: ["a6ad77d5-1711-41c1-a4e2-91a56bc6409f"]
+2025-11-25 14:29:40.469 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-25 14:29:40.470 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-25 14:29:40.471 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.DebitNotesController.GetDebitNoteById (ModularERP)'
+2025-11-25 14:29:40.477 +02:00 [INF] Route matched with {action = "GetDebitNoteById", controller = "DebitNotes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetDebitNoteById(System.Guid) on controller ModularERP.Modules.Purchases.Refunds.Controllers.DebitNotesController (ModularERP).
+2025-11-25 14:29:40.482 +02:00 [INF] GET /api/debit-notes/"d652479e-328b-4418-95bd-e02325a3a0da" called
+2025-11-25 14:29:40.531 +02:00 [INF] Fetching Debit Note with ID: "d652479e-328b-4418-95bd-e02325a3a0da"
+2025-11-25 14:29:40.587 +02:00 [INF] Successfully retrieved Debit Note: DN-20251123-00011
+2025-11-25 14:29:40.590 +02:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Refunds.DTO.DTO_DebitNote.DebitNoteDetailsDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-25 14:29:40.598 +02:00 [INF] Executed action ModularERP.Modules.Purchases.Refunds.Controllers.DebitNotesController.GetDebitNoteById (ModularERP) in 118.1081ms
+2025-11-25 14:29:40.601 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.DebitNotesController.GetDebitNoteById (ModularERP)'
+2025-11-25 14:29:40.603 +02:00 [INF] Request completed successfully with status code 200
+2025-11-25 14:29:40.604 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/DebitNotes/{d652479e-328b-4418-95bd-e02325a3a0da} - 200 null application/json; charset=utf-8 178.1339ms
+2025-11-25 14:30:19.044 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/DebitNotes/{d652479e-328b-4418-95bd-e02325a3a0da}/refund - null null
+2025-11-25 14:30:19.050 +02:00 [INF] Request started
+2025-11-25 14:30:19.051 +02:00 [INF] === Incoming Request ===
+2025-11-25 14:30:19.053 +02:00 [INF] Path: /api/DebitNotes/%7Bd652479e-328b-4418-95bd-e02325a3a0da%7D/refund
+2025-11-25 14:30:19.054 +02:00 [INF] Method: GET
+2025-11-25 14:30:19.055 +02:00 [INF] === Headers ===
+2025-11-25 14:30:19.056 +02:00 [INF] Accept: ["*/*"]
+2025-11-25 14:30:19.058 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-25 14:30:19.059 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-25 14:30:19.061 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-25 14:30:19.063 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-25 14:30:19.065 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-25 14:30:19.067 +02:00 [INF] Postman-Token: ["1a2345a2-7614-416d-827a-1d79f53811a7"]
+2025-11-25 14:30:19.069 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-25 14:30:19.070 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-25 14:30:19.071 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.DebitNotesController.GetDebitNoteRefund (ModularERP)'
+2025-11-25 14:30:19.074 +02:00 [INF] Route matched with {action = "GetDebitNoteRefund", controller = "DebitNotes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetDebitNoteRefund(System.Guid) on controller ModularERP.Modules.Purchases.Refunds.Controllers.DebitNotesController (ModularERP).
+2025-11-25 14:30:19.078 +02:00 [INF] GET /api/debit-notes/"d652479e-328b-4418-95bd-e02325a3a0da"/refund called
+2025-11-25 14:30:19.084 +02:00 [INF] Fetching Refund for Debit Note: "d652479e-328b-4418-95bd-e02325a3a0da"
+2025-11-25 14:30:19.110 +02:00 [INF] Successfully retrieved Refund: REF-20251123-00019
+2025-11-25 14:30:19.112 +02:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Refunds.DTO.DTO_DebitNote.RefundSummaryDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-25 14:30:19.116 +02:00 [INF] Executed action ModularERP.Modules.Purchases.Refunds.Controllers.DebitNotesController.GetDebitNoteRefund (ModularERP) in 38.7744ms
+2025-11-25 14:30:19.118 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.DebitNotesController.GetDebitNoteRefund (ModularERP)'
+2025-11-25 14:30:19.119 +02:00 [INF] Request completed successfully with status code 200
+2025-11-25 14:30:19.120 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/DebitNotes/{d652479e-328b-4418-95bd-e02325a3a0da}/refund - 200 null application/json; charset=utf-8 76.2818ms
+2025-11-25 14:31:04.501 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/SupplierDebitNotes/{supplierId}/debit-notes - null null
+2025-11-25 14:31:04.505 +02:00 [INF] Request started
+2025-11-25 14:31:04.506 +02:00 [INF] === Incoming Request ===
+2025-11-25 14:31:04.507 +02:00 [INF] Path: /api/SupplierDebitNotes/%7BsupplierId%7D/debit-notes
+2025-11-25 14:31:04.508 +02:00 [INF] Method: GET
+2025-11-25 14:31:04.509 +02:00 [INF] === Headers ===
+2025-11-25 14:31:04.510 +02:00 [INF] Accept: ["*/*"]
+2025-11-25 14:31:04.511 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-25 14:31:04.513 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-25 14:31:04.515 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-25 14:31:04.517 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-25 14:31:04.519 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-25 14:31:04.521 +02:00 [INF] Postman-Token: ["7f3c0efe-0855-4719-a76c-ade8a969e376"]
+2025-11-25 14:31:04.524 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-25 14:31:04.525 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-25 14:31:04.526 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.SupplierDebitNotesController.GetSupplierDebitNotes (ModularERP)'
+2025-11-25 14:31:04.530 +02:00 [INF] Route matched with {action = "GetSupplierDebitNotes", controller = "SupplierDebitNotes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSupplierDebitNotes(System.Guid, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ModularERP.Modules.Purchases.Refunds.Controllers.SupplierDebitNotesController (ModularERP).
+2025-11-25 14:31:04.543 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-11-25 14:31:04.560 +02:00 [INF] Executed action ModularERP.Modules.Purchases.Refunds.Controllers.SupplierDebitNotesController.GetSupplierDebitNotes (ModularERP) in 25.7542ms
+2025-11-25 14:31:04.563 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.SupplierDebitNotesController.GetSupplierDebitNotes (ModularERP)'
+2025-11-25 14:31:04.565 +02:00 [INF] Request completed successfully with status code 400
+2025-11-25 14:31:04.566 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/SupplierDebitNotes/{supplierId}/debit-notes - 400 null application/problem+json; charset=utf-8 64.5225ms
+2025-11-25 14:31:28.516 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/SupplierDebitNotes/{b4c57f6f-47c9-43d1-8021-0ff57a3b4e79}/debit-notes - null null
+2025-11-25 14:31:28.520 +02:00 [INF] Request started
+2025-11-25 14:31:28.521 +02:00 [INF] === Incoming Request ===
+2025-11-25 14:31:28.522 +02:00 [INF] Path: /api/SupplierDebitNotes/%7Bb4c57f6f-47c9-43d1-8021-0ff57a3b4e79%7D/debit-notes
+2025-11-25 14:31:28.524 +02:00 [INF] Method: GET
+2025-11-25 14:31:28.525 +02:00 [INF] === Headers ===
+2025-11-25 14:31:28.526 +02:00 [INF] Accept: ["*/*"]
+2025-11-25 14:31:28.527 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-25 14:31:28.529 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-25 14:31:28.531 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-25 14:31:28.533 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-25 14:31:28.534 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-25 14:31:28.536 +02:00 [INF] Postman-Token: ["3a9118b6-24aa-4f85-8398-5f77108f582f"]
+2025-11-25 14:31:28.539 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-25 14:31:28.540 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-25 14:31:28.541 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.SupplierDebitNotesController.GetSupplierDebitNotes (ModularERP)'
+2025-11-25 14:31:28.543 +02:00 [INF] Route matched with {action = "GetSupplierDebitNotes", controller = "SupplierDebitNotes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSupplierDebitNotes(System.Guid, Int32, Int32, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ModularERP.Modules.Purchases.Refunds.Controllers.SupplierDebitNotesController (ModularERP).
+2025-11-25 14:31:28.547 +02:00 [INF] GET /api/suppliers/"b4c57f6f-47c9-43d1-8021-0ff57a3b4e79"/debit-notes called
+2025-11-25 14:31:28.554 +02:00 [INF] Fetching Debit Notes for Supplier: "b4c57f6f-47c9-43d1-8021-0ff57a3b4e79"
+2025-11-25 14:31:28.568 +02:00 [INF] Successfully retrieved 10 Debit Notes for Supplier
+2025-11-25 14:31:28.571 +02:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Purchases.Refunds.DTO.DTO_DebitNote.SupplierDebitNoteDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-25 14:31:28.575 +02:00 [INF] Executed action ModularERP.Modules.Purchases.Refunds.Controllers.SupplierDebitNotesController.GetSupplierDebitNotes (ModularERP) in 29.5109ms
+2025-11-25 14:31:28.578 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.Refunds.Controllers.SupplierDebitNotesController.GetSupplierDebitNotes (ModularERP)'
+2025-11-25 14:31:28.580 +02:00 [INF] Request completed successfully with status code 200
+2025-11-25 14:31:28.581 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/SupplierDebitNotes/{b4c57f6f-47c9-43d1-8021-0ff57a3b4e79}/debit-notes - 200 null application/json; charset=utf-8 64.6446ms
+2025-11-25 16:22:17.299 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-11-25 16:22:17.350 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 51.8022ms
+2025-11-25 16:22:17.469 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-25 16:22:17.485 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-11-25 16:22:17.489 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 20.6929ms
+2025-11-25 16:22:17.505 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 19.7332ms
+2025-11-25 16:22:17.663 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-11-25 16:22:17.918 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 255.8017ms
+2025-11-25 17:05:18.656 +02:00 [INF] Starting web host...
+2025-11-25 17:05:22.204 +02:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-25 17:05:22.289 +02:00 [INF] Executed DbCommand (68ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-11-25 17:05:22.393 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-25 17:05:22.399 +02:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-11-25 17:05:22.414 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-11-25 17:05:22.497 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-11-25 17:05:22.512 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-25 17:05:22.517 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-11-25 17:05:22.523 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-11-25 17:05:22.535 +02:00 [INF] No migrations were applied. The database is already up to date.
+2025-11-25 17:05:22.541 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-11-25 17:05:22.748 +02:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-11-25 17:05:22.755 +02:00 [INF] Master database initialized successfully
+2025-11-25 17:05:25.250 +02:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-25 17:05:25.434 +02:00 [INF] Now listening on: https://localhost:7168
+2025-11-25 17:05:25.436 +02:00 [INF] Now listening on: http://localhost:5004
+2025-11-25 17:05:25.547 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-25 17:05:25.549 +02:00 [INF] Hosting environment: Development
+2025-11-25 17:05:25.550 +02:00 [INF] Content root path: E:\ModelerERP\ModularERP\ModularERP
+2025-11-25 17:05:25.695 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-11-25 17:05:25.911 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 217.0524ms
+2025-11-25 17:05:26.115 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-25 17:05:26.115 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-11-25 17:05:26.122 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 6.7919ms
+2025-11-25 17:05:26.148 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 33.126ms
+2025-11-25 17:05:26.209 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-11-25 17:05:26.572 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 363.2125ms
+2025-11-25 17:05:50.091 +02:00 [INF] Starting web host...
+2025-11-25 17:05:51.857 +02:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-25 17:05:51.897 +02:00 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-11-25 17:05:51.965 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-25 17:05:51.971 +02:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-11-25 17:05:51.976 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-11-25 17:05:52.027 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-11-25 17:05:52.043 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-25 17:05:52.048 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-11-25 17:05:52.054 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-11-25 17:05:52.064 +02:00 [INF] No migrations were applied. The database is already up to date.
+2025-11-25 17:05:52.069 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-11-25 17:05:52.227 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-11-25 17:05:52.234 +02:00 [INF] Master database initialized successfully
+2025-11-25 17:05:54.284 +02:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-25 17:05:54.399 +02:00 [INF] Now listening on: https://localhost:7168
+2025-11-25 17:05:54.401 +02:00 [INF] Now listening on: http://localhost:5004
+2025-11-25 17:05:54.480 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-11-25 17:05:54.500 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-25 17:05:54.501 +02:00 [INF] Hosting environment: Development
+2025-11-25 17:05:54.502 +02:00 [INF] Content root path: E:\ModelerERP\ModularERP\ModularERP
+2025-11-25 17:05:54.624 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 144.6705ms
+2025-11-25 17:05:54.750 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-11-25 17:05:54.750 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-25 17:05:54.760 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 9.717ms
+2025-11-25 17:05:54.775 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 25.1222ms
+2025-11-25 17:05:54.802 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-11-25 17:05:55.140 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 337.5174ms
+2025-11-25 17:06:09.578 +02:00 [INF] Starting web host...
+2025-11-25 17:06:11.316 +02:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-25 17:06:11.348 +02:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-11-25 17:06:11.420 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-25 17:06:11.428 +02:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-11-25 17:06:11.431 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-11-25 17:06:11.488 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-11-25 17:06:11.503 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-25 17:06:11.507 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-11-25 17:06:11.514 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-11-25 17:06:11.525 +02:00 [INF] No migrations were applied. The database is already up to date.
+2025-11-25 17:06:11.529 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-11-25 17:06:11.690 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-11-25 17:06:11.700 +02:00 [INF] Master database initialized successfully
+2025-11-25 17:06:13.709 +02:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-25 17:06:13.814 +02:00 [INF] Now listening on: https://localhost:7168
+2025-11-25 17:06:13.817 +02:00 [INF] Now listening on: http://localhost:5004
+2025-11-25 17:06:13.909 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-25 17:06:13.912 +02:00 [INF] Hosting environment: Development
+2025-11-25 17:06:13.913 +02:00 [INF] Content root path: E:\ModelerERP\ModularERP\ModularERP
+2025-11-25 17:06:14.194 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-11-25 17:06:14.335 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 201.9952ms
+2025-11-25 17:06:14.336 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-25 17:06:14.336 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-11-25 17:06:14.349 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 12.6443ms
+2025-11-25 17:06:14.371 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 33.9775ms
+2025-11-25 17:06:14.408 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-11-25 17:06:14.745 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 337.2064ms
+2025-11-25 17:06:25.050 +02:00 [INF] Starting web host...
+2025-11-25 17:06:26.811 +02:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-25 17:06:26.858 +02:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-11-25 17:06:26.949 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-25 17:06:26.954 +02:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-11-25 17:06:26.959 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-11-25 17:06:27.033 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-11-25 17:06:27.048 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-25 17:06:27.052 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-11-25 17:06:27.059 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-11-25 17:06:27.076 +02:00 [INF] No migrations were applied. The database is already up to date.
+2025-11-25 17:06:27.080 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-11-25 17:06:27.240 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-11-25 17:06:27.248 +02:00 [INF] Master database initialized successfully
+2025-11-25 17:06:29.457 +02:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-25 17:06:29.560 +02:00 [INF] Now listening on: https://localhost:7168
+2025-11-25 17:06:29.563 +02:00 [INF] Now listening on: http://localhost:5004
+2025-11-25 17:06:29.649 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-25 17:06:29.651 +02:00 [INF] Hosting environment: Development
+2025-11-25 17:06:29.652 +02:00 [INF] Content root path: E:\ModelerERP\ModularERP\ModularERP
+2025-11-25 17:06:30.121 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-11-25 17:06:30.265 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 146.0194ms
+2025-11-25 17:06:30.268 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-25 17:06:30.274 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-11-25 17:06:30.280 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 11.8503ms
+2025-11-25 17:06:30.305 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 31.387ms
+2025-11-25 17:06:30.368 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-11-25 17:06:30.651 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 283.1731ms
+2025-11-25 17:09:43.118 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/KPIs/purchase-volume - null null
+2025-11-25 17:09:43.136 +02:00 [INF] Request started
+2025-11-25 17:09:43.139 +02:00 [INF] === Incoming Request ===
+2025-11-25 17:09:43.142 +02:00 [INF] Path: /api/KPIs/purchase-volume
+2025-11-25 17:09:43.143 +02:00 [INF] Method: GET
+2025-11-25 17:09:43.143 +02:00 [INF] === Headers ===
+2025-11-25 17:09:43.146 +02:00 [INF] Accept: ["*/*"]
+2025-11-25 17:09:43.149 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-25 17:09:43.150 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-25 17:09:43.151 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-25 17:09:43.153 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-25 17:09:43.155 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-25 17:09:43.158 +02:00 [INF] Postman-Token: ["f0c03e21-0a45-4c48-9818-dcf3fcf152c6"]
+2025-11-25 17:09:43.164 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-25 17:09:43.166 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-25 17:09:43.168 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.KPIs.Controllers.KPIsController.GetPurchaseVolume (ModularERP)'
+2025-11-25 17:09:43.184 +02:00 [INF] Route matched with {action = "GetPurchaseVolume", controller = "KPIs"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Purchases.KPIs.DTO.PurchaseVolumeDto]]] GetPurchaseVolume(System.Guid, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ModularERP.Modules.Purchases.KPIs.Controllers.KPIsController (ModularERP).
+2025-11-25 17:09:43.190 +02:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-11-25 17:09:43.206 +02:00 [INF] GetPurchaseVolume endpoint called for CompanyId: "00000000-0000-0000-0000-000000000000"
+2025-11-25 17:09:43.237 +02:00 [WRN] Validation failed for GetPurchaseVolumeQuery. Errors: [{"PropertyName":"CompanyId","ErrorMessage":"Company ID is required"}]
+2025-11-25 17:09:43.251 +02:00 [INF] Executed action ModularERP.Modules.Purchases.KPIs.Controllers.KPIsController.GetPurchaseVolume (ModularERP) in 61.0242ms
+2025-11-25 17:09:43.256 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.KPIs.Controllers.KPIsController.GetPurchaseVolume (ModularERP)'
+2025-11-25 17:09:43.259 +02:00 [WRN] Validation exception occurred: Validation failed. Validation errors: {"CompanyId":["Company ID is required"]}
+ModularERP.Common.Exceptions.ValidationException: Validation failed
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 44
+   at ModularERP.Modules.Purchases.KPIs.Controllers.KPIsController.GetPurchaseVolume(Guid companyId, Nullable`1 startDate, Nullable`1 endDate) in E:\ModelerERP\ModularERP\ModularERP\Modules\Purchases\KPIs\Controllers\KPIsController.cs:line 46
+   at lambda_method119(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at ModularERP.Program.<>c.<<Main>b__0_7>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 354
+--- End of stack trace from previous location ---
+   at ModularERP.Program.<>c.<<Main>b__0_6>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 308
+--- End of stack trace from previous location ---
+   at ModularERP.Common.Middleware.GlobalErrorHandlerMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\ModelerERP\ModularERP\ModularERP\Common\Middleware\GlobalErrorHandlerMiddleware.cs:line 40
+2025-11-25 17:09:43.327 +02:00 [INF] Error response sent with status code 400
+2025-11-25 17:09:43.330 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/KPIs/purchase-volume - 400 null application/json; charset=utf-8 212.2268ms
+2025-11-25 17:11:50.014 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/KPIs/purchase-volume?CompanyId=90137c92-382d-404c-bade-e5fefb1e8dbf - null null
+2025-11-25 17:11:50.036 +02:00 [INF] Request started
+2025-11-25 17:11:50.038 +02:00 [INF] === Incoming Request ===
+2025-11-25 17:11:50.039 +02:00 [INF] Path: /api/KPIs/purchase-volume
+2025-11-25 17:11:50.041 +02:00 [INF] Method: GET
+2025-11-25 17:11:50.042 +02:00 [INF] === Headers ===
+2025-11-25 17:11:50.043 +02:00 [INF] Accept: ["*/*"]
+2025-11-25 17:11:50.044 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-25 17:11:50.046 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-25 17:11:50.047 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-25 17:11:50.048 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-25 17:11:50.050 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-25 17:11:50.052 +02:00 [INF] Postman-Token: ["b73d82b3-d3c3-443a-8a4b-a80cb3c1fb24"]
+2025-11-25 17:11:50.055 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-25 17:11:50.056 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-25 17:11:50.058 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.KPIs.Controllers.KPIsController.GetPurchaseVolume (ModularERP)'
+2025-11-25 17:11:50.060 +02:00 [INF] Route matched with {action = "GetPurchaseVolume", controller = "KPIs"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Purchases.KPIs.DTO.PurchaseVolumeDto]]] GetPurchaseVolume(System.Guid, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ModularERP.Modules.Purchases.KPIs.Controllers.KPIsController (ModularERP).
+2025-11-25 17:11:50.074 +02:00 [INF] GetPurchaseVolume endpoint called for CompanyId: "90137c92-382d-404c-bade-e5fefb1e8dbf"
+2025-11-25 17:11:50.129 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-11-25 17:11:50.651 +02:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-11-25 17:11:50.656 +02:00 [INF] Fetching purchase volume KPI for CompanyId: "90137c92-382d-404c-bade-e5fefb1e8dbf"
+2025-11-25 17:11:50.702 +02:00 [INF] Purchase volume KPI retrieved successfully. Total: 616.6000, Count: 7
+2025-11-25 17:11:50.709 +02:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.KPIs.DTO.PurchaseVolumeDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-25 17:11:50.720 +02:00 [INF] Executed action ModularERP.Modules.Purchases.KPIs.Controllers.KPIsController.GetPurchaseVolume (ModularERP) in 656.7609ms
+2025-11-25 17:11:50.723 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.KPIs.Controllers.KPIsController.GetPurchaseVolume (ModularERP)'
+2025-11-25 17:11:50.724 +02:00 [INF] Request completed successfully with status code 200
+2025-11-25 17:11:50.728 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/KPIs/purchase-volume?CompanyId=90137c92-382d-404c-bade-e5fefb1e8dbf - 200 null application/json; charset=utf-8 714.0204ms
+2025-11-25 17:14:59.705 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/KPIs/payment-trends?CompanyId=90137c92-382d-404c-bade-e5fefb1e8dbf - null null
+2025-11-25 17:14:59.711 +02:00 [INF] Request started
+2025-11-25 17:14:59.712 +02:00 [INF] === Incoming Request ===
+2025-11-25 17:14:59.713 +02:00 [INF] Path: /api/KPIs/payment-trends
+2025-11-25 17:14:59.714 +02:00 [INF] Method: GET
+2025-11-25 17:14:59.715 +02:00 [INF] === Headers ===
+2025-11-25 17:14:59.717 +02:00 [INF] Accept: ["*/*"]
+2025-11-25 17:14:59.718 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-25 17:14:59.720 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-25 17:14:59.721 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-25 17:14:59.724 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-25 17:14:59.725 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-25 17:14:59.727 +02:00 [INF] Postman-Token: ["efc68f57-b2e3-4702-8fcd-1beccae767c7"]
+2025-11-25 17:14:59.728 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-25 17:14:59.729 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-25 17:14:59.730 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.KPIs.Controllers.KPIsController.GetPaymentTrends (ModularERP)'
+2025-11-25 17:14:59.737 +02:00 [INF] Route matched with {action = "GetPaymentTrends", controller = "KPIs"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Purchases.KPIs.DTO.PaymentTrendsDto]]] GetPaymentTrends(System.Guid, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime]) on controller ModularERP.Modules.Purchases.KPIs.Controllers.KPIsController (ModularERP).
+2025-11-25 17:14:59.742 +02:00 [INF] GetPaymentTrends endpoint called for CompanyId: "90137c92-382d-404c-bade-e5fefb1e8dbf"
+2025-11-25 17:14:59.792 +02:00 [INF] Fetching payment trends KPI for CompanyId: "90137c92-382d-404c-bade-e5fefb1e8dbf"
+2025-11-25 17:14:59.841 +02:00 [INF] Payment trends retrieved. Paid: 450.0000, Outstanding: 340700.0000
+2025-11-25 17:14:59.844 +02:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.KPIs.DTO.PaymentTrendsDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-25 17:14:59.849 +02:00 [INF] Executed action ModularERP.Modules.Purchases.KPIs.Controllers.KPIsController.GetPaymentTrends (ModularERP) in 108.0989ms
+2025-11-25 17:14:59.852 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.KPIs.Controllers.KPIsController.GetPaymentTrends (ModularERP)'
+2025-11-25 17:14:59.854 +02:00 [INF] Request completed successfully with status code 200
+2025-11-25 17:14:59.855 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/KPIs/payment-trends?CompanyId=90137c92-382d-404c-bade-e5fefb1e8dbf - 200 null application/json; charset=utf-8 149.5686ms
+2025-11-25 17:16:13.599 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/KPIs/supplier-performance - null null
+2025-11-25 17:16:13.603 +02:00 [INF] Request started
+2025-11-25 17:16:13.603 +02:00 [INF] === Incoming Request ===
+2025-11-25 17:16:13.604 +02:00 [INF] Path: /api/KPIs/supplier-performance
+2025-11-25 17:16:13.605 +02:00 [INF] Method: GET
+2025-11-25 17:16:13.606 +02:00 [INF] === Headers ===
+2025-11-25 17:16:13.607 +02:00 [INF] Accept: ["*/*"]
+2025-11-25 17:16:13.609 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-25 17:16:13.611 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-25 17:16:13.613 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-25 17:16:13.614 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-25 17:16:13.615 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-25 17:16:13.617 +02:00 [INF] Postman-Token: ["adb1f320-2a9f-433f-872d-c09652ec2443"]
+2025-11-25 17:16:13.618 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-25 17:16:13.619 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-25 17:16:13.620 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.KPIs.Controllers.KPIsController.GetSupplierPerformance (ModularERP)'
+2025-11-25 17:16:13.625 +02:00 [INF] Route matched with {action = "GetSupplierPerformance", controller = "KPIs"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Purchases.KPIs.DTO.SupplierPerformanceDto]]] GetSupplierPerformance(System.Guid, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime], Int32) on controller ModularERP.Modules.Purchases.KPIs.Controllers.KPIsController (ModularERP).
+2025-11-25 17:16:13.635 +02:00 [INF] GetSupplierPerformance endpoint called for CompanyId: "00000000-0000-0000-0000-000000000000"
+2025-11-25 17:16:13.648 +02:00 [WRN] Validation failed for GetSupplierPerformanceQuery. Errors: [{"PropertyName":"CompanyId","ErrorMessage":"Company ID is required"}]
+2025-11-25 17:16:13.653 +02:00 [INF] Executed action ModularERP.Modules.Purchases.KPIs.Controllers.KPIsController.GetSupplierPerformance (ModularERP) in 23.5629ms
+2025-11-25 17:16:13.654 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.KPIs.Controllers.KPIsController.GetSupplierPerformance (ModularERP)'
+2025-11-25 17:16:13.656 +02:00 [WRN] Validation exception occurred: Validation failed. Validation errors: {"CompanyId":["Company ID is required"]}
+ModularERP.Common.Exceptions.ValidationException: Validation failed
+   at ModularERP.Common.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in E:\ModelerERP\ModularERP\ModularERP\Common\Behaviors\ValidationBehavior.cs:line 44
+   at ModularERP.Modules.Purchases.KPIs.Controllers.KPIsController.GetSupplierPerformance(Guid companyId, Nullable`1 startDate, Nullable`1 endDate, Int32 topCount) in E:\ModelerERP\ModularERP\ModularERP\Modules\Purchases\KPIs\Controllers\KPIsController.cs:line 103
+   at lambda_method204(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at ModularERP.Program.<>c.<<Main>b__0_7>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 354
+--- End of stack trace from previous location ---
+   at ModularERP.Program.<>c.<<Main>b__0_6>d.MoveNext() in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 308
+--- End of stack trace from previous location ---
+   at ModularERP.Common.Middleware.GlobalErrorHandlerMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in E:\ModelerERP\ModularERP\ModularERP\Common\Middleware\GlobalErrorHandlerMiddleware.cs:line 40
+2025-11-25 17:16:13.668 +02:00 [INF] Error response sent with status code 400
+2025-11-25 17:16:13.669 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/KPIs/supplier-performance - 400 null application/json; charset=utf-8 70.2882ms
+2025-11-25 17:16:23.051 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/KPIs/supplier-performance?CompanyId=90137c92-382d-404c-bade-e5fefb1e8dbf - null null
+2025-11-25 17:16:23.056 +02:00 [INF] Request started
+2025-11-25 17:16:23.057 +02:00 [INF] === Incoming Request ===
+2025-11-25 17:16:23.058 +02:00 [INF] Path: /api/KPIs/supplier-performance
+2025-11-25 17:16:23.060 +02:00 [INF] Method: GET
+2025-11-25 17:16:23.061 +02:00 [INF] === Headers ===
+2025-11-25 17:16:23.062 +02:00 [INF] Accept: ["*/*"]
+2025-11-25 17:16:23.064 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-25 17:16:23.065 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-25 17:16:23.067 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-25 17:16:23.068 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-25 17:16:23.070 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-25 17:16:23.072 +02:00 [INF] Postman-Token: ["bd778c1a-53ea-4c37-846b-4652f3aa7af4"]
+2025-11-25 17:16:23.074 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-25 17:16:23.077 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-25 17:16:23.078 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.KPIs.Controllers.KPIsController.GetSupplierPerformance (ModularERP)'
+2025-11-25 17:16:23.080 +02:00 [INF] Route matched with {action = "GetSupplierPerformance", controller = "KPIs"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ModularERP.Common.ViewModel.ResponseViewModel`1[ModularERP.Modules.Purchases.KPIs.DTO.SupplierPerformanceDto]]] GetSupplierPerformance(System.Guid, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime], Int32) on controller ModularERP.Modules.Purchases.KPIs.Controllers.KPIsController (ModularERP).
+2025-11-25 17:16:23.084 +02:00 [INF] GetSupplierPerformance endpoint called for CompanyId: "90137c92-382d-404c-bade-e5fefb1e8dbf"
+2025-11-25 17:16:23.089 +02:00 [INF] Fetching supplier performance KPI for CompanyId: "90137c92-382d-404c-bade-e5fefb1e8dbf"
+2025-11-25 17:16:23.153 +02:00 [INF] Supplier performance retrieved. Active suppliers: 0
+2025-11-25 17:16:23.154 +02:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.KPIs.DTO.SupplierPerformanceDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-25 17:16:23.163 +02:00 [INF] Executed action ModularERP.Modules.Purchases.KPIs.Controllers.KPIsController.GetSupplierPerformance (ModularERP) in 79.0595ms
+2025-11-25 17:16:23.165 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.KPIs.Controllers.KPIsController.GetSupplierPerformance (ModularERP)'
+2025-11-25 17:16:23.166 +02:00 [INF] Request completed successfully with status code 200
+2025-11-25 17:16:23.167 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/KPIs/supplier-performance?CompanyId=90137c92-382d-404c-bade-e5fefb1e8dbf - 200 null application/json; charset=utf-8 116.3341ms

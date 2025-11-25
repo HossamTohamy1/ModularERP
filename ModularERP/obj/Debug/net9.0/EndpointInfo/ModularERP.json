@@ -2860,6 +2860,226 @@
         }
       }
     },
+    "/api/DebitNotes": {
+      "get": {
+        "tags": [
+          "DebitNotes"
+        ],
+        "parameters": [
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          },
+          {
+            "name": "searchTerm",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fromDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "toDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "supplierId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Purchases.Refunds.DTO.DTO_DebitNote.DebitNoteListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Purchases.Refunds.DTO.DTO_DebitNote.DebitNoteListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Purchases.Refunds.DTO.DTO_DebitNote.DebitNoteListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/DebitNotes/{id}": {
+      "get": {
+        "tags": [
+          "DebitNotes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Refunds.DTO.DTO_DebitNote.DebitNoteDetailsDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Refunds.DTO.DTO_DebitNote.DebitNoteDetailsDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Refunds.DTO.DTO_DebitNote.DebitNoteDetailsDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/DebitNotes/{id}/refund": {
+      "get": {
+        "tags": [
+          "DebitNotes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Refunds.DTO.DTO_DebitNote.RefundSummaryDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Refunds.DTO.DTO_DebitNote.RefundSummaryDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Refunds.DTO.DTO_DebitNote.RefundSummaryDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/ExpenseVouchers": {
       "post": {
         "tags": [
@@ -4959,6 +5179,240 @@
         "responses": {
           "200": {
             "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/KPIs/purchase-volume": {
+      "get": {
+        "tags": [
+          "KPIs"
+        ],
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.KPIs.DTO.PurchaseVolumeDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.KPIs.DTO.PurchaseVolumeDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.KPIs.DTO.PurchaseVolumeDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/KPIs/payment-trends": {
+      "get": {
+        "tags": [
+          "KPIs"
+        ],
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.KPIs.DTO.PaymentTrendsDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.KPIs.DTO.PaymentTrendsDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.KPIs.DTO.PaymentTrendsDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/KPIs/supplier-performance": {
+      "get": {
+        "tags": [
+          "KPIs"
+        ],
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "topCount",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.KPIs.DTO.SupplierPerformanceDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.KPIs.DTO.SupplierPerformanceDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.KPIs.DTO.SupplierPerformanceDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
             "content": {
               "text/plain": {
                 "schema": {
@@ -16364,6 +16818,100 @@
         }
       }
     },
+    "/api/SupplierDebitNotes/{supplierId}/debit-notes": {
+      "get": {
+        "tags": [
+          "SupplierDebitNotes"
+        ],
+        "parameters": [
+          {
+            "name": "supplierId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          },
+          {
+            "name": "fromDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "toDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Purchases.Refunds.DTO.DTO_DebitNote.SupplierDebitNoteDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Purchases.Refunds.DTO.DTO_DebitNote.SupplierDebitNoteDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Purchases.Refunds.DTO.DTO_DebitNote.SupplierDebitNoteDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/purchases/SupplierPayments": {
       "get": {
         "tags": [
@@ -22432,6 +22980,117 @@
         },
         "additionalProperties": false
       },
+      "ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.KPIs.DTO.PaymentTrendsDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/ModularERP.Modules.Purchases.KPIs.DTO.PaymentTrendsDto"
+          },
+          "financeErrorCode": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
+          },
+          "traceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "validationErrors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.KPIs.DTO.PurchaseVolumeDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/ModularERP.Modules.Purchases.KPIs.DTO.PurchaseVolumeDto"
+          },
+          "financeErrorCode": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
+          },
+          "traceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "validationErrors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.KPIs.DTO.SupplierPerformanceDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/ModularERP.Modules.Purchases.KPIs.DTO.SupplierPerformanceDto"
+          },
+          "financeErrorCode": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
+          },
+          "traceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "validationErrors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
       "ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POItme.POLineItemResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
         "type": "object",
         "properties": {
@@ -22666,6 +23325,80 @@
           },
           "data": {
             "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_PurchaseOrder.PurchaseOrderDetailDto"
+          },
+          "financeErrorCode": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
+          },
+          "traceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "validationErrors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Refunds.DTO.DTO_DebitNote.DebitNoteDetailsDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Refunds.DTO.DTO_DebitNote.DebitNoteDetailsDto"
+          },
+          "financeErrorCode": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
+          },
+          "traceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "validationErrors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Refunds.DTO.DTO_DebitNote.RefundSummaryDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Refunds.DTO.DTO_DebitNote.RefundSummaryDto"
           },
           "financeErrorCode": {
             "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
@@ -24009,6 +24742,88 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POStatus.POActivityLogDto"
+            },
+            "nullable": true
+          },
+          "financeErrorCode": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
+          },
+          "traceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "validationErrors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Purchases.Refunds.DTO.DTO_DebitNote.DebitNoteListDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Refunds.DTO.DTO_DebitNote.DebitNoteListDto"
+            },
+            "nullable": true
+          },
+          "financeErrorCode": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
+          },
+          "traceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "validationErrors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Purchases.Refunds.DTO.DTO_DebitNote.SupplierDebitNoteDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Refunds.DTO.DTO_DebitNote.SupplierDebitNoteDto"
             },
             "nullable": true
           },
@@ -32530,6 +33345,200 @@
         },
         "additionalProperties": false
       },
+      "ModularERP.Modules.Purchases.KPIs.DTO.MonthlyPaymentDto": {
+        "type": "object",
+        "properties": {
+          "year": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "month": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "monthName": {
+            "type": "string",
+            "nullable": true
+          },
+          "totalPaid": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalDue": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Purchases.KPIs.DTO.MonthlyVolumeDto": {
+        "type": "object",
+        "properties": {
+          "year": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "month": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "monthName": {
+            "type": "string",
+            "nullable": true
+          },
+          "totalAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "orderCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Purchases.KPIs.DTO.PaymentStatusBreakdownDto": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "percentage": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Purchases.KPIs.DTO.PaymentTrendsDto": {
+        "type": "object",
+        "properties": {
+          "totalPaid": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalOutstanding": {
+            "type": "number",
+            "format": "double"
+          },
+          "paymentCompletionRate": {
+            "type": "number",
+            "format": "double"
+          },
+          "averagePaymentDelay": {
+            "type": "number",
+            "format": "double"
+          },
+          "statusBreakdown": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModularERP.Modules.Purchases.KPIs.DTO.PaymentStatusBreakdownDto"
+            },
+            "nullable": true
+          },
+          "monthlyTrends": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModularERP.Modules.Purchases.KPIs.DTO.MonthlyPaymentDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Purchases.KPIs.DTO.PurchaseVolumeDto": {
+        "type": "object",
+        "properties": {
+          "totalPurchaseAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalPurchaseOrders": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "averagePurchaseValue": {
+            "type": "number",
+            "format": "double"
+          },
+          "monthlyGrowthPercentage": {
+            "type": "number",
+            "format": "double"
+          },
+          "monthlyBreakdown": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModularERP.Modules.Purchases.KPIs.DTO.MonthlyVolumeDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Purchases.KPIs.DTO.SupplierPerformanceDto": {
+        "type": "object",
+        "properties": {
+          "topSuppliers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModularERP.Modules.Purchases.KPIs.DTO.TopSupplierDto"
+            },
+            "nullable": true
+          },
+          "averageSupplierRating": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalActiveSuppliers": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "suppliersWithOutstandingBalance": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Purchases.KPIs.DTO.TopSupplierDto": {
+        "type": "object",
+        "properties": {
+          "supplierId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "supplierName": {
+            "type": "string",
+            "nullable": true
+          },
+          "totalPurchaseAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "orderCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "currentBalance": {
+            "type": "number",
+            "format": "double"
+          },
+          "onTimeDeliveryRate": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
       "ModularERP.Modules.Purchases.Purchase_Order_Management.Commends.Commends_PODeposite.CreatePODepositCommand": {
         "type": "object",
         "properties": {
@@ -34299,6 +35308,182 @@
           "unitPrice": {
             "type": "number",
             "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Purchases.Refunds.DTO.DTO_DebitNote.DebitNoteDetailsDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "debitNoteNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "refundId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "refundNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "supplierId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "supplierName": {
+            "type": "string",
+            "nullable": true
+          },
+          "supplierEmail": {
+            "type": "string",
+            "nullable": true
+          },
+          "supplierPhone": {
+            "type": "string",
+            "nullable": true
+          },
+          "noteDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "notes": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "refund": {
+            "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Refunds.DTO.DTO_DebitNote.RefundSummaryDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Purchases.Refunds.DTO.DTO_DebitNote.DebitNoteListDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "debitNoteNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "refundId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "refundNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "supplierId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "supplierName": {
+            "type": "string",
+            "nullable": true
+          },
+          "noteDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Purchases.Refunds.DTO.DTO_DebitNote.RefundSummaryDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "refundNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "refundDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "totalAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "reason": {
+            "type": "string",
+            "nullable": true
+          },
+          "purchaseOrderId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "poNumber": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Purchases.Refunds.DTO.DTO_DebitNote.SupplierDebitNoteDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "debitNoteNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "refundId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "refundNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "noteDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "notes": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
           }
         },
         "additionalProperties": false

@@ -53,7 +53,6 @@ namespace ModularERP.SharedKernel.Repository
 
         public async Task AddAsync(T entity)
         {
-            // Set TenantId للـ audit purposes فقط
             if (typeof(T).GetProperty("TenantId") != null && !string.IsNullOrEmpty(_tenantId))
             {
                 if (Guid.TryParse(_tenantId, out var tenantId))

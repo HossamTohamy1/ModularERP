@@ -291,7 +291,6 @@ namespace ModularERP
 
                 app.UseMiddleware<GlobalErrorHandlerMiddleware>();
 
-                // 🔍 Debug Headers Middleware (للتجربة فقط)
                 app.Use(async (context, next) =>
                 {
                     var logger = context.RequestServices.GetRequiredService<ILogger<Program>>();
@@ -309,7 +308,6 @@ namespace ModularERP
                     await next();
                 });
 
-                // ✅ Tenant Validation Middleware
                 app.Use(async (context, next) =>
                 {
                     var tenantService = context.RequestServices.GetRequiredService<ITenantService>();
