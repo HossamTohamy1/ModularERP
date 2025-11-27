@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using ModularERP.Common.Enum.Finance_Enum;
+using ModularERP.Common.Enum.Purchases_Enum;
 using ModularERP.Common.Exceptions;
 using ModularERP.Common.ViewModel;
 using ModularERP.Modules.Purchases.Invoicing.Commends.Commands_Invoice;
@@ -45,7 +46,7 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_Invoice
                 }
 
                 // Validate invoice can be deleted
-                if (invoice.PaymentStatus == "PaidInFull")
+                if (invoice.PaymentStatus == PaymentStatus.PaidInFull)
                 {
                     _logger.LogWarning(
                         "Cannot delete invoice {InvoiceId} - already paid in full",

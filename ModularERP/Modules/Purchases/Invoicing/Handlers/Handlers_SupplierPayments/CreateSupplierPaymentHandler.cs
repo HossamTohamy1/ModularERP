@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using ModularERP.Common.Enum.Purchases_Enum;
 using ModularERP.Common.Exceptions;
 using ModularERP.Common.ViewModel;
 using ModularERP.Modules.Inventory.Features.Suppliers.Models;
@@ -169,7 +170,7 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_SupplierPayme
                 payment.UnallocatedAmount = payment.Amount - payment.AllocatedAmount;
             }
 
-            payment.Status = "Draft";
+            payment.Status = SupplierPaymentStatus.Draft;
             payment.CreatedBy = Guid.Parse("f0602c31-0c12-4b5c-9ccf-fe17811d5c53").ToString();
             payment.CreatedAt = DateTime.UtcNow;
 
@@ -204,15 +205,15 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_SupplierPayme
                     PurchaseOrderId = p.PurchaseOrderId,
                     PONumber = p.PurchaseOrder != null ? p.PurchaseOrder.PONumber : null,
                     PaymentNumber = p.PaymentNumber,
-                    PaymentType = p.PaymentType,
-                    PaymentMethod = p.PaymentMethod,
+                    PaymentType = p.PaymentType.ToString(),
+                    PaymentMethodId = p.PaymentMethodId,
                     PaymentDate = p.PaymentDate,
                     Amount = p.Amount,
                     AllocatedAmount = p.AllocatedAmount,
                     UnallocatedAmount = p.UnallocatedAmount,
                     ReferenceNumber = p.ReferenceNumber,
                     Notes = p.Notes,
-                    Status = p.Status,
+                    Status = p.Status.ToString(),
                     IsVoid = p.IsVoid,
                     VoidedAt = p.VoidedAt,
                     VoidedByName = p.VoidedByUser != null ? p.VoidedByUser.UserName : null,
@@ -251,14 +252,14 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_SupplierPayme
             // Update Invoice Payment Status
             if (invoice.AmountDue <= 0)
             {
-                invoice.PaymentStatus = "Paid in Full";
+                invoice.PaymentStatus = PaymentStatus.PaidInFull;
                 _logger.LogInformation("Invoice {InvoiceId} marked as Paid in Full", invoice.Id);
             }
             else
             {
                 // Check if there are any payments (not just this one)
                 var totalPaid = invoice.TotalAmount - invoice.AmountDue;
-                invoice.PaymentStatus = totalPaid > 0 ? "Partially Paid" : "Unpaid";
+                invoice.PaymentStatus = totalPaid > 0 ? PaymentStatus.PartiallyPaid : PaymentStatus.Unpaid;
                 _logger.LogInformation(
                     "Invoice {InvoiceId} status: {Status}, Amount Due: {AmountDue}",
                     invoice.Id, invoice.PaymentStatus, invoice.AmountDue);
@@ -298,7 +299,7 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_SupplierPayme
             var directPayments = await _paymentRepository
                 .Get(p => p.PurchaseOrderId == po.Id &&
                          !p.IsVoid &&
-                         (p.PaymentType == "Deposit" || p.PaymentType == "Advance"))
+                         (p.PaymentType == PaymentType.Deposit || p.PaymentType == PaymentType.Advance))
                 .ToListAsync(cancellationToken);
 
             // Calculate total amounts
@@ -309,25 +310,25 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_SupplierPayme
             // Determine Payment Status
             if (totalAmountDue <= 0 && totalInvoiceAmount > 0)
             {
-                po.PaymentStatus = "Paid in Full";
+                po.PaymentStatus = PaymentStatus.PaidInFull;
                 _logger.LogInformation("PO {POId} marked as Paid in Full", po.Id);
             }
             else if (totalAmountDue < totalInvoiceAmount || totalDirectPayments > 0)
             {
-                po.PaymentStatus = "Partially Paid";
+                po.PaymentStatus = PaymentStatus.PartiallyPaid;
                 _logger.LogInformation("PO {POId} marked as Partially Paid", po.Id);
             }
             else
             {
-                po.PaymentStatus = "Unpaid";
+                po.PaymentStatus = PaymentStatus.Unpaid;
                 _logger.LogInformation("PO {POId} remains Unpaid", po.Id);
             }
 
             // Check if PO should be closed
             // PO can be closed if: Reception = Fully Received AND Payment = Paid in Full
-            if (po.ReceptionStatus == "Fully Received" && po.PaymentStatus == "Paid in Full")
+            if (po.ReceptionStatus == ReceptionStatus.FullyReceived && po.PaymentStatus == PaymentStatus.PaidInFull)
             {
-                po.DocumentStatus = "Closed";
+                po.DocumentStatus = DocumentStatus.Closed;
                 _logger.LogInformation(
                     "PO {POId} auto-closed (Reception: {Reception}, Payment: {Payment})",
                     po.Id, po.ReceptionStatus, po.PaymentStatus);
@@ -350,7 +351,7 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_SupplierPayme
             // Get unallocated deposits for this PO
             var existingDeposits = await _paymentRepository
                 .Get(p => p.PurchaseOrderId == invoice.PurchaseOrderId &&
-                         (p.PaymentType == "Deposit" || p.PaymentType == "Advance") &&
+                         (p.PaymentType == PaymentType.Deposit || p.PaymentType == PaymentType.Advance) &&
                          p.UnallocatedAmount > 0 &&
                          !p.IsVoid)
                 .OrderBy(p => p.PaymentDate) // Apply oldest deposits first
@@ -388,13 +389,13 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_SupplierPayme
             // Update payment status after applying deposits
             if (invoice.AmountDue <= 0)
             {
-                invoice.PaymentStatus = "Paid in Full";
+                invoice.PaymentStatus = PaymentStatus.PaidInFull;
             }
             else
             {
                 invoice.PaymentStatus = invoice.AmountDue < invoice.TotalAmount
-                    ? "Partially Paid"
-                    : "Unpaid";
+                    ? PaymentStatus.PartiallyPaid
+                    : PaymentStatus.Unpaid;
             }
 
             await _paymentRepository.SaveChanges();
@@ -421,7 +422,6 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_SupplierPayme
                 return "PAY-00001";
             }
 
-            // Handle parsing errors gracefully
             try
             {
                 var lastNumber = int.Parse(lastPayment.Split('-')[1]);

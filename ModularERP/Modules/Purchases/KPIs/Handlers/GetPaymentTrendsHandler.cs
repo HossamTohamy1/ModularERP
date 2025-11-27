@@ -44,7 +44,7 @@ namespace ModularERP.Modules.Purchases.KPIs.Handlers
                 var payments = await _paymentRepository.GetAll()
                     .Where(p => p.PaymentDate >= startDate &&
                                 p.PaymentDate <= endDate &&
-                                p.Status == "Posted" &&
+                                p.Status == Common.Enum.Purchases_Enum.SupplierPaymentStatus.Posted &&
                                 !p.IsVoid)
                     .Select(p => new
                     {
@@ -69,7 +69,7 @@ namespace ModularERP.Modules.Purchases.KPIs.Handlers
                     .ToListAsync(cancellationToken);
 
                 var totalOutstanding = invoices
-                    .Where(i => i.PaymentStatus != "PaidInFull")
+                    .Where(i => i.PaymentStatus != Common.Enum.Purchases_Enum.PaymentStatus.PaidInFull)
                     .Sum(i => i.AmountDue);
 
                 var totalInvoices = invoices.Sum(i => i.TotalAmount);
@@ -79,7 +79,7 @@ namespace ModularERP.Modules.Purchases.KPIs.Handlers
                 var overdueInvoices = invoices
                     .Where(i => i.DueDate.HasValue &&
                                 i.DueDate.Value < DateTime.UtcNow &&
-                                i.PaymentStatus != "PaidInFull")
+                                i.PaymentStatus != Common.Enum.Purchases_Enum.PaymentStatus.PaidInFull)
                     .ToList();
 
                 var avgDelay = overdueInvoices.Any()
@@ -91,7 +91,7 @@ namespace ModularERP.Modules.Purchases.KPIs.Handlers
                     .GroupBy(i => i.PaymentStatus)
                     .Select(g => new PaymentStatusBreakdownDto
                     {
-                        Status = g.Key,
+                        Status = g.Key.ToString(),
                         Count = g.Count(),
                         TotalAmount = g.Sum(i => i.TotalAmount),
                         Percentage = totalInvoices > 0 ? (g.Sum(i => i.TotalAmount) / totalInvoices) * 100 : 0

@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using ModularERP.Common.Enum.Finance_Enum;
+using ModularERP.Common.Enum.Purchases_Enum;
 using ModularERP.Common.Exceptions;
 using ModularERP.Common.ViewModel;
 using ModularERP.Modules.Purchases.Purchase_Order_Management.Commends.Commends_PurchaseOrder;
@@ -37,14 +38,14 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                         FinanceErrorCode.NotFound);
                 }
 
-                if (purchaseOrder.DocumentStatus != "Submitted")
+                if (purchaseOrder.DocumentStatus != DocumentStatus.Submitted)
                 {
                     throw new BusinessLogicException(
                         "Only purchase orders in Submitted status can be approved",
                         "PurchaseOrder");
                 }
 
-                purchaseOrder.DocumentStatus = "Approved";
+                purchaseOrder.DocumentStatus = DocumentStatus.Approved;
                 purchaseOrder.ApprovedBy = request.ApprovedBy;
                 purchaseOrder.ApprovedAt = DateTime.UtcNow;
                 purchaseOrder.UpdatedAt = DateTime.UtcNow;

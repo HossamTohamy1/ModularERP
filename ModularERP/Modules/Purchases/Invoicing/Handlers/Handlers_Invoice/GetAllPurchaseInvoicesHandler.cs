@@ -2,6 +2,7 @@
 using AutoMapper.QueryableExtensions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using ModularERP.Common.Enum.Purchases_Enum;
 using ModularERP.Common.ViewModel;
 using ModularERP.Modules.Purchases.Invoicing.DTO.DTO_Invoice;
 using ModularERP.Modules.Purchases.Invoicing.Models;
@@ -47,8 +48,12 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_Invoice
 
                 if (!string.IsNullOrWhiteSpace(request.PaymentStatus))
                 {
-                    query = query.Where(i => i.PaymentStatus == request.PaymentStatus);
+                    if (Enum.TryParse<PaymentStatus>(request.PaymentStatus, true, out var statusEnum))
+                    {
+                        query = query.Where(i => i.PaymentStatus == statusEnum);
+                    }
                 }
+
 
                 if (request.FromDate.HasValue)
                 {

@@ -1,11 +1,15 @@
-﻿using ModularERP.Common.Models;
+﻿using ModularERP.Common.Enum.Inventory_Enum;
+using ModularERP.Common.Enum.Purchases_Enum;
+using ModularERP.Common.Models;
 
 namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Models
 {
     public class PODiscount : BaseEntity
     {
         public Guid PurchaseOrderId { get; set; }
-        public string DiscountType { get; set; } = "Percentage"; // Percentage, Fixed
+
+        public DiscountType DiscountType { get; set; } = DiscountType.Percentage;
+
         public decimal DiscountValue { get; set; }
         public decimal DiscountAmount { get; set; }
         public string? Description { get; set; }

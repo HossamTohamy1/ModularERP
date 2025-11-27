@@ -11,6 +11,7 @@ using ModularERP.Modules.Purchases.Purchase_Order_Management.Models;
 using ModularERP.Modules.Inventory.Features.TaxManagement.Models;
 using ModularERP.Shared.Interfaces;
 using Serilog;
+using ModularERP.Common.Enum.Purchases_Enum;
 
 namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handlers_POItme
 {
@@ -54,7 +55,7 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                 }
 
                 // Check if PO is in Draft or Submitted status (can add items)
-                if (po.DocumentStatus != "Draft" && po.DocumentStatus != "Submitted")
+                if (po.DocumentStatus != DocumentStatus.Draft && po.DocumentStatus != DocumentStatus.Submitted)
                 {
                     throw new BusinessLogicException(
                         $"Cannot add items to Purchase Order in {po.DocumentStatus} status",

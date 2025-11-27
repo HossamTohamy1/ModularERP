@@ -2,6 +2,7 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using ModularERP.Common.Enum.Finance_Enum;
+using ModularERP.Common.Enum.Purchases_Enum;
 using ModularERP.Common.Exceptions;
 using ModularERP.Common.ViewModel;
 using ModularERP.Modules.Purchases.Invoicing.DTO.DTO_InvocieItem;
@@ -31,8 +32,8 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_InvoicePaymen
         }
 
         public async Task<ResponseViewModel<GetInvoicePaymentsResponse>> Handle(
-            GetInvoicePaymentsQuery request,
-            CancellationToken cancellationToken)
+           GetInvoicePaymentsQuery request,
+           CancellationToken cancellationToken)
         {
             try
             {
@@ -51,7 +52,6 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_InvoicePaymen
 
                 if (invoice == null)
                 {
-                    _logger.LogWarning("Invoice not found with ID {InvoiceId}", request.InvoiceId);
                     throw new NotFoundException(
                         $"Invoice with ID {request.InvoiceId} not found",
                         FinanceErrorCode.NotFound);
@@ -59,10 +59,13 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_InvoicePaymen
 
                 var payments = await _paymentRepository
                     .Get(p => p.InvoiceId == request.InvoiceId)
+                    .Include(p => p.PaymentMethod) 
                     .Select(p => new PaymentDto
                     {
                         Id = p.Id,
-                        PaymentMethod = p.PaymentMethod,
+                        PaymentMethodId = p.PaymentMethodId,
+                        PaymentMethodName = p.PaymentMethod.Name,     
+                        PaymentMethodCode = p.PaymentMethod.Code,      
                         PaymentDate = p.PaymentDate,
                         Amount = p.Amount,
                         ReferenceNumber = p.ReferenceNumber,
@@ -74,6 +77,14 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_InvoicePaymen
 
                 var totalPaid = payments.Sum(p => p.Amount);
 
+                // ✅ Build payment method breakdown
+                var paymentMethodBreakdown = payments
+                    .GroupBy(p => p.PaymentMethodName)
+                    .ToDictionary(
+                        g => g.Key,
+                        g => g.Sum(p => p.Amount)
+                    );
+
                 var response = new GetInvoicePaymentsResponse
                 {
                     InvoiceId = invoice.Id,
@@ -81,13 +92,11 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_InvoicePaymen
                     TotalAmount = invoice.TotalAmount,
                     TotalPaid = totalPaid,
                     AmountDue = invoice.AmountDue,
-                    Payments = payments
+                    Payments = payments,
+                    LastPaymentDate = payments.Any() ? payments.Max(p => p.PaymentDate) : null,
+                    PaymentStatus = DeterminePaymentStatus(invoice.AmountDue, totalPaid),
+                    PaymentMethodBreakdown = paymentMethodBreakdown
                 };
-
-                _logger.LogInformation(
-                    "Successfully retrieved {PaymentCount} payments for invoice {InvoiceId}",
-                    payments.Count,
-                    request.InvoiceId);
 
                 return ResponseViewModel<GetInvoicePaymentsResponse>.Success(
                     response,
@@ -105,6 +114,20 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_InvoicePaymen
                     "Purchases",
                     FinanceErrorCode.BusinessLogicError);
             }
+        }
+
+        private PaymentStatus DeterminePaymentStatus(decimal amountDue, decimal totalPaid)
+        {
+            if (amountDue <= 0 && totalPaid > 0)
+                return PaymentStatus.PaidInFull;
+
+            if (totalPaid > 0 && amountDue > 0)
+                return PaymentStatus.PartiallyPaid;
+
+            if (totalPaid < 0) 
+                return PaymentStatus.Refunded;
+
+            return PaymentStatus.Unpaid;
         }
     }
 }

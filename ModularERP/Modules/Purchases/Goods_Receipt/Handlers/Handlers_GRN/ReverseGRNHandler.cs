@@ -2,6 +2,7 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using ModularERP.Common.Enum.Finance_Enum;
+using ModularERP.Common.Enum.Purchases_Enum;
 using ModularERP.Common.Exceptions;
 using ModularERP.Modules.Purchases.Goods_Receipt.Commends.Commends_GRN;
 using ModularERP.Modules.Purchases.Goods_Receipt.DTO.DTO_GRN;
@@ -117,15 +118,15 @@ namespace ModularERP.Modules.Purchases.Goods_Receipt.Handlers.Handlers_GRN
                     // Update Reception Status based on quantities
                     if (totalReceived == 0)
                     {
-                        purchaseOrder.ReceptionStatus = "Not Received";
+                        purchaseOrder.ReceptionStatus = ReceptionStatus.NotReceived;
                     }
                     else if (totalReceived < totalOrdered)
                     {
-                        purchaseOrder.ReceptionStatus = "Partially Received";
+                        purchaseOrder.ReceptionStatus = ReceptionStatus.PartiallyReceived;
                     }
                     else
                     {
-                        purchaseOrder.ReceptionStatus = "Fully Received";
+                        purchaseOrder.ReceptionStatus = ReceptionStatus.FullyReceived;
                     }
                 }
 
@@ -289,15 +290,15 @@ namespace ModularERP.Modules.Purchases.Goods_Receipt.Handlers.Handlers_GRN
 
             // Check if PO can be closed per BRSD rules:
             // "A PO cannot move to Closed unless: Reception Status = Fully Received, Payment Status = Paid in Full"
-            bool canClose = grn.POReceptionStatus == "Fully Received" &&
-                           grn.POPaymentStatus == "Paid in Full";
+            bool canClose = grn.POReceptionStatus == ReceptionStatus.FullyReceived &&
+                           grn.POPaymentStatus == PaymentStatus.PaidInFull;
 
             // Per BRSD: "Partially Received → Allow more receipts/returns/payments"
             // Invoice can be created as long as SOMETHING has been received (not "Not Received")
-            bool canCreateInvoice = grn.POReceptionStatus != "Not Received";
+            bool canCreateInvoice = grn.POReceptionStatus != ReceptionStatus.NotReceived;
 
             // Add warning if trying to invoice before full receipt
-            if (canCreateInvoice && grn.POReceptionStatus == "Partially Received")
+            if (canCreateInvoice && grn.POReceptionStatus == ReceptionStatus.PartiallyReceived)
             {
                 warnings.Add("💡 You can create an invoice for partially received items, but some quantities are still pending.");
             }
@@ -319,9 +320,9 @@ namespace ModularERP.Modules.Purchases.Goods_Receipt.Handlers.Handlers_GRN
                 CreatedByName = grn.CreatedByName,
                 PurchaseOrderStatus = new POStatusInfo
                 {
-                    ReceptionStatus = grn.POReceptionStatus ?? "Unknown",
-                    PaymentStatus = grn.POPaymentStatus ?? "Unknown",
-                    DocumentStatus = grn.PODocumentStatus ?? "Unknown",
+                    ReceptionStatus = grn.POReceptionStatus.ToString() ?? "Unknown",
+                    PaymentStatus = grn.POPaymentStatus.ToString() ?? "Unknown",
+                    DocumentStatus = grn.PODocumentStatus.ToString() ?? "Unknown",
                     PreviousReceptionStatus = null // Can track this if needed
                 },
                 LineItems = lineItemsResponse, // Show reversed items

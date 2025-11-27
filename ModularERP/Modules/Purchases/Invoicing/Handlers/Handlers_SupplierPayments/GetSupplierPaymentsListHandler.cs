@@ -6,6 +6,8 @@ using ModularERP.Common.Enum.Finance_Enum;
 using ModularERP.Modules.Purchases.Invoicing.DTO.DTO_SupplierPayments;
 using ModularERP.Modules.Purchases.Invoicing.Qeuries.Qeuries_SupplierPayments;
 using ModularERP.Modules.Finance.Finance.Infrastructure.Data;
+using ModularERP.Common.Enum.Purchases_Enum;
+using ModularERP.Common.Exceptions;
 
 namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_SupplierPayments
 {
@@ -52,7 +54,19 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_SupplierPayme
                     query = query.Where(sp => sp.PurchaseOrderId == request.PurchaseOrderId.Value);
 
                 if (!string.IsNullOrWhiteSpace(request.Status))
-                    query = query.Where(sp => sp.Status == request.Status);
+                {
+                    if (Enum.TryParse<SupplierPaymentStatus>(request.Status, true, out var parsedStatus))
+                    {
+                        query = query.Where(sp => sp.Status == parsedStatus);
+                    }
+                    else
+                    {
+                        throw new BusinessLogicException(
+                            $"Invalid SupplierPaymentStatus value: {request.Status}",
+                            "Purchases");
+                    }
+                }
+
 
                 if (request.FromDate.HasValue)
                     query = query.Where(sp => sp.PaymentDate >= request.FromDate.Value);

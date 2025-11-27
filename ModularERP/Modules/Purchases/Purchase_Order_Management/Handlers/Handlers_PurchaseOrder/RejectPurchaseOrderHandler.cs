@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using ModularERP.Common.Enum.Finance_Enum;
+using ModularERP.Common.Enum.Purchases_Enum;
 using ModularERP.Common.Exceptions;
 using ModularERP.Common.ViewModel;
 using ModularERP.Modules.Purchases.Purchase_Order_Management.Commends.Commends_PurchaseOrder;
@@ -37,7 +38,7 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                         FinanceErrorCode.NotFound);
                 }
 
-                if (purchaseOrder.DocumentStatus != "Submitted")
+                if (purchaseOrder.DocumentStatus != DocumentStatus.Submitted)
                 {
                     throw new BusinessLogicException(
                         "Only purchase orders in Submitted status can be rejected",
@@ -45,7 +46,7 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                 }
 
                 // Return to Draft status
-                purchaseOrder.DocumentStatus = "Draft";
+                purchaseOrder.DocumentStatus = DocumentStatus.Draft;
                 purchaseOrder.UpdatedAt = DateTime.UtcNow;
                 purchaseOrder.Notes = string.IsNullOrEmpty(purchaseOrder.Notes)
                     ? $"Rejected: {request.RejectionReason}"

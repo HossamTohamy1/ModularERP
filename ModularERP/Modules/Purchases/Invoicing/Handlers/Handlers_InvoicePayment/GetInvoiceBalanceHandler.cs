@@ -104,7 +104,7 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_InvoicePaymen
                     DepositApplied = invoice.DepositApplied,
                     TotalPaid = totalPaid,
                     AmountDue = invoice.AmountDue,
-                    PaymentStatus = invoice.PaymentStatus,
+                    PaymentStatus = invoice.PaymentStatus.ToString(),
                     DaysOverdue = isOverdue ? daysOverdue : 0,
                     IsOverdue = isOverdue,
                     Supplier = supplier ?? new SupplierInfoDto()

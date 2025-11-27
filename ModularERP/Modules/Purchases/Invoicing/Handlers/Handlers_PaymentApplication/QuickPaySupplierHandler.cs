@@ -2,6 +2,7 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using ModularERP.Common.Enum.Finance_Enum;
+using ModularERP.Common.Enum.Purchases_Enum;
 using ModularERP.Common.Exceptions;
 using ModularERP.Common.ViewModel;
 using ModularERP.Modules.Purchases.Invoicing.Commends.Commands_PaymentApplication;
@@ -78,7 +79,7 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_PaymentApplic
 
                         // Update invoice
                         invoice.AmountDue -= allocationDto.AllocatedAmount;
-                        invoice.PaymentStatus = invoice.AmountDue == 0 ? "PaidInFull" : "PartiallyPaid";
+                        invoice.PaymentStatus = invoice.AmountDue == 0 ? PaymentStatus.PaidInFull : PaymentStatus.PartiallyPaid;
 
                         allocations.Add(new PaymentAllocationResponseDto
                         {

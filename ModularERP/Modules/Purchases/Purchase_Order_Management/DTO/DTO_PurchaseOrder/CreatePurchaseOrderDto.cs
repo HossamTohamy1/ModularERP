@@ -9,7 +9,9 @@
         public string SupplierName { get; set; } = string.Empty;
         public string CurrencyCode { get; set; } = string.Empty;
         public DateTime PODate { get; set; }
-        public string? PaymentTerms { get; set; }
+        public Guid? PaymentTermId { get; set; }
+        public string? PaymentTermName { get; set; }
+
         public string? Notes { get; set; }
         public string? Terms { get; set; }
         public decimal Subtotal { get; set; }

@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
 using ModularERP.Common.Enum.Finance_Enum;
+using ModularERP.Common.Enum.Purchases_Enum;
 using ModularERP.Common.Exceptions;
 using ModularERP.Common.ViewModel;
 using ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POStatus;
@@ -185,8 +186,8 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
 
                     var paymentStatusTitle = po.PaymentStatus switch
                     {
-                        "Paid in Full" => "Payment Completed",
-                        "Partially Paid" => "Partial Payment Received",
+                        PaymentStatus.PaidInFull => "Payment Completed",
+                        PaymentStatus.PartiallyPaid => "Partial Payment Received",
                         _ => "Payment Status Updated"
                     };
 
@@ -205,29 +206,29 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                         Title = paymentStatusTitle,
                         Description = paymentStatusDescription,
                         PerformedBy = "System",
-                        Icon = po.PaymentStatus == "Paid in Full" ? "check-circle" : "dollar-sign",
-                        Status = po.PaymentStatus == "Paid in Full" ? "completed" : "in-progress"
+                        Icon = po.PaymentStatus == PaymentStatus.PaidInFull ? "check-circle" : "dollar-sign",
+                        Status = po.PaymentStatus == PaymentStatus.PaidInFull ? "completed" : "in-progress"
                     });
                 }
 
                 // ✅ 6. Reception Status Events
-                if (po.ReceptionStatus != "Not Received" && po.ReceptionStatus != "NotReceived")
+                if (po.ReceptionStatus != ReceptionStatus.NotReceived && po.ReceptionStatus != ReceptionStatus.NotReceived)
                 {
                     var receptionTitle = po.ReceptionStatus switch
                     {
-                        "Fully Received" or "FullyReceived" => "Goods Fully Received",
-                        "Partially Received" or "PartiallyReceived" => "Goods Partially Received",
-                        "Returned" => "Goods Returned",
+                        ReceptionStatus.FullyReceived or ReceptionStatus.FullyReceived => "Goods Fully Received",
+                        ReceptionStatus.PartiallyReceived or ReceptionStatus.PartiallyReceived => "Goods Partially Received",
+                        ReceptionStatus.Returned => "Goods Returned",
                         _ => "Reception Status Updated"
                     };
 
                     var receptionDescription = po.ReceptionStatus switch
                     {
-                        "Fully Received" or "FullyReceived" =>
+                        ReceptionStatus.FullyReceived or ReceptionStatus.FullyReceived =>
                             "All items have been received and inspected",
-                        "Partially Received" or "PartiallyReceived" =>
+                        ReceptionStatus.PartiallyReceived or ReceptionStatus.PartiallyReceived =>
                             "Some items received - awaiting remaining delivery",
-                        "Returned" =>
+                        ReceptionStatus.Returned =>
                             "Items have been returned to supplier",
                         _ => $"Reception status: {po.ReceptionStatus}"
                     };
@@ -240,7 +241,7 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                         Description = receptionDescription,
                         PerformedBy = "System",
                         Icon = "package",
-                        Status = po.ReceptionStatus == "Fully Received" || po.ReceptionStatus == "FullyReceived"
+                        Status = po.ReceptionStatus == ReceptionStatus.FullyReceived || po.ReceptionStatus == ReceptionStatus.FullyReceived
                             ? "completed"
                             : "in-progress"
                     });
@@ -263,7 +264,7 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                 }
 
                 // ✅ 8. Cancelled Event (if PO is cancelled)
-                if (po.DocumentStatus == "Cancelled")
+                if (po.DocumentStatus == DocumentStatus.Cancelled)
                 {
                     events.Add(new TimelineEventDto
                     {

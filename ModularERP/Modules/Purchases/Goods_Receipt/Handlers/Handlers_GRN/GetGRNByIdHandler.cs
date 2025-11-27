@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
 using ModularERP.Common.Enum.Finance_Enum;
+using ModularERP.Common.Enum.Purchases_Enum;
 using ModularERP.Common.Exceptions;
 using ModularERP.Common.ViewModel;
 using ModularERP.Modules.Purchases.Goods_Receipt.DTO.DTO_GRN;
@@ -143,7 +144,7 @@ namespace ModularERP.Modules.Purchases.Goods_Receipt.Handlers.Handlers_GRN
                 }
 
                 // Add payment warning if not fully paid
-                if (grn.POPaymentStatus != "Paid in Full" && grn.POPaymentStatus != "Refunded")
+                if (grn.POPaymentStatus != PaymentStatus.PaidInFull && grn.POPaymentStatus != PaymentStatus.Refunded)
                 {
                     warnings.Add($"Payment status is '{grn.POPaymentStatus}'. Full payment required before closing PO.");
                 }
@@ -165,28 +166,24 @@ namespace ModularERP.Modules.Purchases.Goods_Receipt.Handlers.Handlers_GRN
                     CreatedById = grn.CreatedById,
                     CreatedByName = grn.CreatedByName,
 
-                    // ✅ PO Status Info (من الـ Purchase Order الحالي)
                     PurchaseOrderStatus = new POStatusInfo
                     {
-                        ReceptionStatus = grn.POReceptionStatus ?? "Unknown",
-                        PaymentStatus = grn.POPaymentStatus ?? "Unknown",
-                        DocumentStatus = grn.PODocumentStatus ?? "Unknown",
+                        ReceptionStatus = grn.POReceptionStatus.ToString() ?? "Unknown",
+                        PaymentStatus = grn.POPaymentStatus.ToString() ?? "Unknown",
+                        DocumentStatus = grn.PODocumentStatus.ToString() ?? "Unknown",
                         PreviousReceptionStatus = null // Can't determine previous status from GET
                     },
 
-                    // ✅ Enhanced line items
                     LineItems = lineItemsResponse,
 
-                    // ✅ Inventory impact
                     InventoryImpact = inventoryImpact,
 
-                    // ✅ Next actions based on current PO state
                     NextActions = new GRNNextActionsDto
                     {
                         CanReceiveMore = totalRemaining > 0,
                         CanCreateReturn = true,
                         CanCreateInvoice = true,
-                        CanClose = grn.POReceptionStatus == "Fully Received" && grn.POPaymentStatus == "Paid in Full",
+                        CanClose = grn.POReceptionStatus == ReceptionStatus.FullyReceived && grn.POPaymentStatus == PaymentStatus.PaidInFull,
                         TotalRemainingToReceive = totalRemaining,
                         Warnings = warnings
                     }

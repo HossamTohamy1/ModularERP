@@ -3,6 +3,7 @@ using AutoMapper.QueryableExtensions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using ModularERP.Common.Enum.Finance_Enum;
+using ModularERP.Common.Enum.Purchases_Enum;
 using ModularERP.Common.Exceptions;
 using ModularERP.Common.ViewModel;
 using ModularERP.Modules.Purchases.Invoicing.Commends.Commands_PaymentApplication;
@@ -49,7 +50,7 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_PaymentApplic
             }
 
             // Validate payment status
-            if (payment.Status == "Void")
+            if (payment.Status == SupplierPaymentStatus.Void)
             {
                 throw new BusinessLogicException(
                     "Cannot apply allocations to a voided payment",
@@ -112,11 +113,11 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_PaymentApplic
                 // Update payment status
                 if (invoice.AmountDue == 0)
                 {
-                    invoice.PaymentStatus = "PaidInFull";
+                    invoice.PaymentStatus = PaymentStatus.PaidInFull;
                 }
                 else if (invoice.AmountDue < invoice.TotalAmount)
                 {
-                    invoice.PaymentStatus = "PartiallyPaid";
+                    invoice.PaymentStatus = PaymentStatus.PartiallyPaid;
                 }
 
                 _logger.LogInformation(

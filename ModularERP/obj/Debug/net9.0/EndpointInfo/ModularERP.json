@@ -5938,6 +5938,813 @@
         }
       }
     },
+    "/api/PaymentMethods": {
+      "get": {
+        "tags": [
+          "PaymentMethods"
+        ],
+        "parameters": [
+          {
+            "name": "isActive",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentMethod.PaymentMethodDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentMethod.PaymentMethodDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentMethod.PaymentMethodDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "PaymentMethods"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Payment.Commends.Commends_PaymentMethod.CreatePaymentMethodCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Payment.Commends.Commends_PaymentMethod.CreatePaymentMethodCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Payment.Commends.Commends_PaymentMethod.CreatePaymentMethodCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentMethod.PaymentMethodDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentMethod.PaymentMethodDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentMethod.PaymentMethodDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/PaymentMethods/active": {
+      "get": {
+        "tags": [
+          "PaymentMethods"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentMethod.PaymentMethodDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentMethod.PaymentMethodDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentMethod.PaymentMethodDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/PaymentMethods/{id}": {
+      "get": {
+        "tags": [
+          "PaymentMethods"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentMethod.PaymentMethodDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentMethod.PaymentMethodDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentMethod.PaymentMethodDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "PaymentMethods"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Payment.Commends.Commends_PaymentMethod.UpdatePaymentMethodCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Payment.Commends.Commends_PaymentMethod.UpdatePaymentMethodCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Payment.Commends.Commends_PaymentMethod.UpdatePaymentMethodCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentMethod.PaymentMethodDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentMethod.PaymentMethodDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentMethod.PaymentMethodDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "PaymentMethods"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/PaymentTerms": {
+      "get": {
+        "tags": [
+          "PaymentTerms"
+        ],
+        "parameters": [
+          {
+            "name": "isActive",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentTerm.PaymentTermResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentTerm.PaymentTermResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentTerm.PaymentTermResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "PaymentTerms"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentTerm.CreatePaymentTermDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentTerm.CreatePaymentTermDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentTerm.CreatePaymentTermDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentTerm.PaymentTermResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentTerm.PaymentTermResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentTerm.PaymentTermResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/PaymentTerms/{id}": {
+      "get": {
+        "tags": [
+          "PaymentTerms"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentTerm.PaymentTermResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentTerm.PaymentTermResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentTerm.PaymentTermResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "PaymentTerms"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentTerm.UpdatePaymentTermDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentTerm.UpdatePaymentTermDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentTerm.UpdatePaymentTermDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentTerm.PaymentTermResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentTerm.PaymentTermResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentTerm.PaymentTermResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "PaymentTerms"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/purchase-orders/{purchaseOrderId}/attachments": {
       "post": {
         "tags": [
@@ -10692,8 +11499,9 @@
                     "type": "string",
                     "format": "date-time"
                   },
-                  "PaymentTerms": {
-                    "type": "string"
+                  "PaymentTermId": {
+                    "type": "string",
+                    "format": "uuid"
                   },
                   "Notes": {
                     "type": "string"
@@ -10759,7 +11567,7 @@
                 "PODate": {
                   "style": "form"
                 },
-                "PaymentTerms": {
+                "PaymentTermId": {
                   "style": "form"
                 },
                 "Notes": {
@@ -11051,8 +11859,9 @@
                     "type": "string",
                     "format": "date-time"
                   },
-                  "PaymentTerms": {
-                    "type": "string"
+                  "PaymentTermId": {
+                    "type": "string",
+                    "format": "uuid"
                   },
                   "Notes": {
                     "type": "string"
@@ -11125,7 +11934,7 @@
                 "PODate": {
                   "style": "form"
                 },
-                "PaymentTerms": {
+                "PaymentTermId": {
                   "style": "form"
                 },
                 "Notes": {
@@ -20353,6 +21162,16 @@
         "type": "integer",
         "format": "int32"
       },
+      "ModularERP.Common.Enum.Purchases_Enum.PaymentStatus": {
+        "enum": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
       "ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Finance.Features.BankAccounts.DTO.BankAccountCreatedDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
         "type": "object",
         "properties": {
@@ -23091,6 +23910,80 @@
         },
         "additionalProperties": false
       },
+      "ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentMethod.PaymentMethodDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentMethod.PaymentMethodDto"
+          },
+          "financeErrorCode": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
+          },
+          "traceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "validationErrors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentTerm.PaymentTermResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentTerm.PaymentTermResponseDto"
+          },
+          "financeErrorCode": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
+          },
+          "traceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "validationErrors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
       "ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_POItme.POLineItemResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
         "type": "object",
         "properties": {
@@ -24660,6 +25553,88 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Invoicing.DTO.DTO_Invoice.PurchaseInvoiceDto"
+            },
+            "nullable": true
+          },
+          "financeErrorCode": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
+          },
+          "traceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "validationErrors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentMethod.PaymentMethodDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentMethod.PaymentMethodDto"
+            },
+            "nullable": true
+          },
+          "financeErrorCode": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Finance_Enum.FinanceErrorCode"
+          },
+          "traceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "validationErrors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentTerm.PaymentTermResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentTerm.PaymentTermResponseDto"
             },
             "nullable": true
           },
@@ -32422,6 +33397,27 @@
               "$ref": "#/components/schemas/ModularERP.Modules.Purchases.Invoicing.DTO.DTO_InvocieItem.PaymentDto"
             },
             "nullable": true
+          },
+          "paymentCount": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "lastPaymentDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "paymentStatus": {
+            "$ref": "#/components/schemas/ModularERP.Common.Enum.Purchases_Enum.PaymentStatus"
+          },
+          "paymentMethodBreakdown": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "number",
+              "format": "double"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -32557,7 +33553,15 @@
             "type": "string",
             "format": "uuid"
           },
-          "paymentMethod": {
+          "paymentMethodId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "paymentMethodName": {
+            "type": "string",
+            "nullable": true
+          },
+          "paymentMethodCode": {
             "type": "string",
             "nullable": true
           },
@@ -33210,9 +34214,20 @@
             "type": "string",
             "nullable": true
           },
-          "paymentMethod": {
+          "paymentMethodId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "paymentMethodName": {
             "type": "string",
             "nullable": true
+          },
+          "paymentMethodCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "paymentMethodRequiresReference": {
+            "type": "boolean"
           },
           "paymentDate": {
             "type": "string",
@@ -33264,7 +34279,8 @@
           },
           "updatedAt": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "nullable": true
           },
           "createdBy": {
             "type": "string",
@@ -33282,7 +34298,7 @@
           "amount",
           "id",
           "paymentDate",
-          "paymentMethod",
+          "paymentMethodId",
           "paymentType",
           "supplierId"
         ],
@@ -33311,10 +34327,9 @@
             "minLength": 0,
             "type": "string"
           },
-          "paymentMethod": {
-            "maxLength": 50,
-            "minLength": 0,
-            "type": "string"
+          "paymentMethodId": {
+            "type": "string",
+            "format": "uuid"
           },
           "paymentDate": {
             "type": "string",
@@ -33539,7 +34554,191 @@
         },
         "additionalProperties": false
       },
+      "ModularERP.Modules.Purchases.Payment.Commends.Commends_PaymentMethod.CreatePaymentMethodCommand": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "code": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "requiresReference": {
+            "type": "boolean"
+          },
+          "isActive": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Purchases.Payment.Commends.Commends_PaymentMethod.UpdatePaymentMethodCommand": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "code": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "requiresReference": {
+            "type": "boolean"
+          },
+          "isActive": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentMethod.PaymentMethodDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "code": {
+            "type": "string",
+            "nullable": true
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "requiresReference": {
+            "type": "boolean"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentTerm.CreatePaymentTermDto": {
+        "required": [
+          "days",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
+          },
+          "days": {
+            "maximum": 365,
+            "minimum": 0,
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "isActive": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentTerm.PaymentTermResponseDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "days": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentTerm.UpdatePaymentTermDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "days": {
+            "maximum": 365,
+            "minimum": 0,
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "description": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "isActive": {
+            "type": "boolean",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "ModularERP.Modules.Purchases.Purchase_Order_Management.Commends.Commends_PODeposite.CreatePODepositCommand": {
+        "required": [
+          "paymentMethodId"
+        ],
         "type": "object",
         "properties": {
           "purchaseOrderId": {
@@ -33555,9 +34754,9 @@
             "format": "double",
             "nullable": true
           },
-          "paymentMethod": {
+          "paymentMethodId": {
             "type": "string",
-            "nullable": true
+            "format": "uuid"
           },
           "referenceNumber": {
             "type": "string",
@@ -33579,6 +34778,9 @@
         "additionalProperties": false
       },
       "ModularERP.Modules.Purchases.Purchase_Order_Management.Commends.Commends_PODeposite.UpdatePODepositCommand": {
+        "required": [
+          "paymentMethodId"
+        ],
         "type": "object",
         "properties": {
           "id": {
@@ -33598,9 +34800,9 @@
             "format": "double",
             "nullable": true
           },
-          "paymentMethod": {
+          "paymentMethodId": {
             "type": "string",
-            "nullable": true
+            "format": "uuid"
           },
           "referenceNumber": {
             "type": "string",
@@ -34249,6 +35451,9 @@
         "additionalProperties": false
       },
       "ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_PurchaseOrder.CreatePODepositDto": {
+        "required": [
+          "paymentMethodId"
+        ],
         "type": "object",
         "properties": {
           "amount": {
@@ -34260,9 +35465,9 @@
             "format": "double",
             "nullable": true
           },
-          "paymentMethod": {
+          "paymentMethodId": {
             "type": "string",
-            "nullable": true
+            "format": "uuid"
           },
           "referenceNumber": {
             "type": "string",
@@ -34388,7 +35593,12 @@
             "type": "string",
             "format": "date-time"
           },
-          "paymentTerms": {
+          "paymentTermId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "paymentTermName": {
             "type": "string",
             "nullable": true
           },
@@ -34573,9 +35783,20 @@
             "format": "double",
             "nullable": true
           },
-          "paymentMethod": {
+          "paymentMethodId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "paymentMethodName": {
             "type": "string",
             "nullable": true
+          },
+          "paymentMethodCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "paymentMethodRequiresReference": {
+            "type": "boolean"
           },
           "referenceNumber": {
             "type": "string",
@@ -35021,6 +36242,9 @@
         "additionalProperties": false
       },
       "ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_PurchaseOrder.UpdatePODepositDto": {
+        "required": [
+          "paymentMethodId"
+        ],
         "type": "object",
         "properties": {
           "id": {
@@ -35037,9 +36261,9 @@
             "format": "double",
             "nullable": true
           },
-          "paymentMethod": {
+          "paymentMethodId": {
             "type": "string",
-            "nullable": true
+            "format": "uuid"
           },
           "referenceNumber": {
             "type": "string",

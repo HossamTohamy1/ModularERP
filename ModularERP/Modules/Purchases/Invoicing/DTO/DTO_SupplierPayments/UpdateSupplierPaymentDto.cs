@@ -18,10 +18,9 @@ namespace ModularERP.Modules.Purchases.Invoicing.DTO.DTO_SupplierPayments
         [StringLength(50)]
         public string PaymentType { get; set; } = string.Empty; // AgainstInvoice, Deposit, Advance
 
-        [Required]
-        [StringLength(50)]
-        public string PaymentMethod { get; set; } = string.Empty;
 
+        [Required]
+        public Guid PaymentMethodId { get; set; }
         [Required]
         public DateTime PaymentDate { get; set; }
 

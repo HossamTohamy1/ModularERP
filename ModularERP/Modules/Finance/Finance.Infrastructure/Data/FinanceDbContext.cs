@@ -36,6 +36,8 @@ using ModularERP.Modules.Purchases.Purchase_Order_Management.Models;
 using ModularERP.Modules.Purchases.Refunds.Models;
 using ModularERP.Modules.Purchases.WorkFlow.Models;
 using ModularERP.Modules.Purchases.Invoicing.Configurations;
+using ModularERP.Modules.Purchases.Payment.Models;
+using ModularERP.Common.Enum.Purchases_Enum;
 
 namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
 {
@@ -109,6 +111,8 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
         public DbSet<ProductTimeline> ProductTimelines { get; set; }
 
         // Purchase Orders Module
+        public DbSet<PaymentMethod> PaymentMethods { get; set; }
+
         public DbSet<PurchaseOrder> PurchaseOrders { get; set; }
         public DbSet<POLineItem> POLineItems { get; set; }
         public DbSet<PODeposit> PODeposits { get; set; }
@@ -123,6 +127,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
         public DbSet<InvoiceLineItem> InvoiceLineItems { get; set; }
         public DbSet<SupplierPayment> SupplierPayments { get; set; }
         public DbSet<PaymentAllocation> PaymentAllocations { get; set; }
+        public DbSet<PaymentTerm> PaymentTerms { get; set; }
 
         public DbSet<PurchaseRefund> PurchaseRefunds { get; set; }
         public DbSet<RefundLineItem> RefundLineItems { get; set; }
@@ -1962,6 +1967,42 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
             builder.ApplyConfiguration(new PaymentAllocationConfiguration());
 
 
+            builder.Entity<PaymentTerm>(entity =>
+            {
+                entity.ToTable("PaymentTerms");
+                entity.HasIndex(e => e.Name).IsUnique();
+            });
+
+            builder.Entity<PaymentMethod>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .HasMaxLength(100);
+
+                entity.Property(e => e.Code)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Description)
+                    .HasMaxLength(500);
+
+                // Unique index على الـ Code
+                entity.HasIndex(e => e.Code)
+                    .IsUnique();
+
+                // Relationships
+                entity.HasMany(e => e.SupplierPayments)
+                    .WithOne(sp => sp.PaymentMethod)
+                    .HasForeignKey(sp => sp.PaymentMethodId)
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasMany(e => e.PODeposits)
+                    .WithOne(d => d.PaymentMethod)
+                    .HasForeignKey(d => d.PaymentMethodId)
+                    .OnDelete(DeleteBehavior.Restrict);
+            });
             builder.Entity<PurchaseOrder>(entity =>
             {
                 entity.ToTable("PurchaseOrders");
@@ -1970,17 +2011,24 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .IsUnique()
                       .HasDatabaseName("IX_PurchaseOrder_Company_PONumber");
 
+                entity.HasOne(po => po.PaymentTerm)
+                        .WithMany()
+                        .HasForeignKey(po => po.PaymentTermId)
+                        .OnDelete(DeleteBehavior.SetNull)
+                        .IsRequired(false);
+
+                // ✅ Fixed: استخدام Enum values بدلاً من strings
                 entity.Property(e => e.ReceptionStatus)
                       .HasConversion<string>()
-                      .HasDefaultValue("NotReceived");
+                      .HasDefaultValue(ReceptionStatus.NotReceived);
 
                 entity.Property(e => e.PaymentStatus)
                       .HasConversion<string>()
-                      .HasDefaultValue("Unpaid");
+                      .HasDefaultValue(PaymentStatus.Unpaid);
 
                 entity.Property(e => e.DocumentStatus)
                       .HasConversion<string>()
-                      .HasDefaultValue("Draft");
+                      .HasDefaultValue(DocumentStatus.Draft);
 
                 // Decimal precision
                 entity.Property(e => e.Subtotal).HasPrecision(18, 4);
@@ -1990,10 +2038,10 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.Property(e => e.TaxAmount).HasPrecision(18, 4);
                 entity.Property(e => e.TotalAmount).HasPrecision(18, 4);
                 entity.Property(e => e.DepositAmount).HasPrecision(18, 4);
-                entity.Property(e => e.TotalPaid).HasPrecision(18, 4); // ⭐ NEW
+                entity.Property(e => e.TotalPaid).HasPrecision(18, 4);
                 entity.Property(e => e.AmountDue).HasPrecision(18, 4);
 
-                // Relationships (same as before)
+                // Relationships
                 entity.HasOne(e => e.Company)
                       .WithMany()
                       .HasForeignKey(e => e.CompanyId)
@@ -2075,7 +2123,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                       .HasForeignKey(e => e.PurchaseOrderId)
                       .OnDelete(DeleteBehavior.Restrict);
 
-                entity.HasMany(e => e.Payments) // ⭐ NEW
+                entity.HasMany(e => e.Payments)
                       .WithOne(e => e.PurchaseOrder)
                       .HasForeignKey(e => e.PurchaseOrderId)
                       .OnDelete(DeleteBehavior.Restrict);
@@ -2098,7 +2146,6 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.HasIndex(e => e.PaymentStatus).HasDatabaseName("IX_PurchaseOrder_PaymentStatus");
                 entity.HasIndex(e => e.DocumentStatus).HasDatabaseName("IX_PurchaseOrder_DocumentStatus");
             });
-
             // POLineItem Configuration
             builder.Entity<POLineItem>(entity =>
             {
@@ -2168,6 +2215,11 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.Property(e => e.Amount).HasPrecision(18, 4);
                 entity.Property(e => e.Percentage).HasPrecision(10, 4);
 
+                entity.HasOne(e => e.PaymentMethod)
+                    .WithMany(pm => pm.PODeposits)
+                    .HasForeignKey(e => e.PaymentMethodId)
+                    .OnDelete(DeleteBehavior.Restrict);
+
                 // Default value
                 entity.Property(e => e.AlreadyPaid).HasDefaultValue(false);
 
@@ -2205,7 +2257,7 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.Property(e => e.DiscountValue).HasPrecision(18, 4);
                 entity.Property(e => e.DiscountAmount).HasPrecision(18, 4);
 
-                // Convert enum to string
+                // Convert enum to string (no default value needed here)
                 entity.Property(e => e.DiscountType).HasConversion<string>();
 
                 // Indexes
@@ -2311,7 +2363,6 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
             {
                 entity.ToTable("PurchaseInvoices");
 
-                // Unique constraint: InvoiceNumber
                 entity.HasIndex(e => e.InvoiceNumber)
                       .IsUnique()
                       .HasDatabaseName("IX_PurchaseInvoice_InvoiceNumber");
@@ -2323,10 +2374,10 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.Property(e => e.DepositApplied).HasPrecision(18, 4);
                 entity.Property(e => e.AmountDue).HasPrecision(18, 4);
 
-                // Convert enum to string
+                // ✅ Fixed: استخدام Enum value
                 entity.Property(e => e.PaymentStatus)
                       .HasConversion<string>()
-                      .HasDefaultValue("Unpaid");
+                      .HasDefaultValue(PaymentStatus.Unpaid);
 
                 entity.HasMany(pi => pi.PaymentAllocations)
                     .WithOne(pa => pa.Invoice)
@@ -2389,19 +2440,26 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.Property(e => e.AllocatedAmount).HasPrecision(18, 4);
                 entity.Property(e => e.UnallocatedAmount).HasPrecision(18, 4);
 
+                // ✅ Fixed: استخدام Enum values
                 entity.Property(e => e.PaymentType)
                       .HasConversion<string>()
-                      .HasDefaultValue("AgainstInvoice");
+                      .HasDefaultValue(PaymentType.AgainstInvoice);
+
+                entity.HasOne(e => e.PaymentMethod)
+                    .WithMany(pm => pm.SupplierPayments)
+                    .HasForeignKey(e => e.PaymentMethodId)
+                    .OnDelete(DeleteBehavior.Restrict);
 
                 entity.Property(e => e.Status)
                       .HasConversion<string>()
-                      .HasDefaultValue("Draft");
+                      .HasDefaultValue(SupplierPaymentStatus.Draft);
 
                 entity.Property(e => e.CreatedBy)
-                       .HasMaxLength(256); 
+                       .HasMaxLength(256);
 
                 entity.Property(e => e.UpdatedBy)
-                      .HasMaxLength(256); 
+                      .HasMaxLength(256);
+
                 // Relationships
                 entity.HasOne(e => e.Supplier)
                       .WithMany(s => s.Payments)
@@ -2433,12 +2491,11 @@ namespace ModularERP.Modules.Finance.Finance.Infrastructure.Data
                 entity.HasIndex(e => e.InvoiceId).HasDatabaseName("IX_SupplierPayment_Invoice");
                 entity.HasIndex(e => e.PurchaseOrderId).HasDatabaseName("IX_SupplierPayment_PurchaseOrder");
                 entity.HasIndex(e => e.PaymentDate).HasDatabaseName("IX_SupplierPayment_Date");
-                entity.HasIndex(e => e.PaymentMethod).HasDatabaseName("IX_SupplierPayment_Method");
+                entity.HasIndex(e => e.PaymentMethodId).HasDatabaseName("IX_SupplierPayment_Method");
                 entity.HasIndex(e => e.PaymentType).HasDatabaseName("IX_SupplierPayment_Type");
                 entity.HasIndex(e => e.Status).HasDatabaseName("IX_SupplierPayment_Status");
                 entity.HasIndex(e => e.PaymentNumber).HasDatabaseName("IX_SupplierPayment_Number");
             });
-
             // PurchaseRefund Configurationو
             builder.Entity<PurchaseRefund>(entity =>
             {

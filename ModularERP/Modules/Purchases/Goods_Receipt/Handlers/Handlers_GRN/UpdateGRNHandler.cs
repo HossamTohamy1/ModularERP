@@ -2,6 +2,7 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using ModularERP.Common.Enum.Finance_Enum;
+using ModularERP.Common.Enum.Purchases_Enum;
 using ModularERP.Common.Exceptions;
 using ModularERP.Common.ViewModel;
 using ModularERP.Modules.Finance.Finance.Infrastructure.Data;
@@ -82,7 +83,7 @@ namespace ModularERP.Modules.Purchases.Goods_Receipt.Handlers.Handlers_GRN
                         $"Purchase Order with ID {existingGrn.PurchaseOrderId} not found",
                         FinanceErrorCode.NotFound);
 
-                string previousReceptionStatus = po.ReceptionStatus;
+                string previousReceptionStatus = po.ReceptionStatus.ToString();
 
                 // ✅ 3. Get existing line items with FULL details including ProductId
                 var existingLineItems = await _lineItemRepository.GetAll()
@@ -372,7 +373,7 @@ namespace ModularERP.Modules.Purchases.Goods_Receipt.Handlers.Handlers_GRN
                     var purchaseOrder = await _poRepository.GetByIDWithTracking(existingGrn.PurchaseOrderId);
                     if (purchaseOrder != null)
                     {
-                        purchaseOrder.ReceptionStatus = newReceptionStatus;
+                        purchaseOrder.ReceptionStatus = Enum.Parse<ReceptionStatus>(newReceptionStatus);
                         await _poRepository.SaveChanges();
 
                         _logger.LogInformation(
@@ -549,7 +550,7 @@ namespace ModularERP.Modules.Purchases.Goods_Receipt.Handlers.Handlers_GRN
             if (totalRemaining > 0)
                 warnings.Add($"{totalRemaining} units still pending receipt");
 
-            if (grn.POPaymentStatus != "Paid in Full" && grn.POPaymentStatus != "Refunded")
+            if (grn.POPaymentStatus != PaymentStatus.PaidInFull && grn.POPaymentStatus != PaymentStatus.Refunded)
                 warnings.Add($"Payment status: '{grn.POPaymentStatus}'. Full payment required before closing PO.");
 
             return new GRNResponseDto
@@ -570,8 +571,8 @@ namespace ModularERP.Modules.Purchases.Goods_Receipt.Handlers.Handlers_GRN
                 PurchaseOrderStatus = new POStatusInfo
                 {
                     ReceptionStatus = currentReceptionStatus,
-                    PaymentStatus = grn.POPaymentStatus ?? "Unknown",
-                    DocumentStatus = grn.PODocumentStatus ?? "Unknown",
+                    PaymentStatus = grn.POPaymentStatus.ToString() ?? "Unknown",
+                    DocumentStatus = grn.PODocumentStatus.ToString() ?? "Unknown",
                     PreviousReceptionStatus = previousReceptionStatus
                 },
                 LineItems = lineItemsResponse,
@@ -581,7 +582,7 @@ namespace ModularERP.Modules.Purchases.Goods_Receipt.Handlers.Handlers_GRN
                     CanReceiveMore = totalRemaining > 0,
                     CanCreateReturn = true,
                     CanCreateInvoice = true,
-                    CanClose = currentReceptionStatus == "Fully Received" && grn.POPaymentStatus == "Paid in Full",
+                    CanClose = currentReceptionStatus == "Fully Received" && grn.POPaymentStatus == PaymentStatus.PaidInFull,
                     TotalRemainingToReceive = totalRemaining,
                     Warnings = warnings
                 }

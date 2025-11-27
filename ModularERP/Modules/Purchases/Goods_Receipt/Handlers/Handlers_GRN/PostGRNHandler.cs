@@ -2,6 +2,7 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using ModularERP.Common.Enum.Finance_Enum;
+using ModularERP.Common.Enum.Purchases_Enum;
 using ModularERP.Common.Exceptions;
 using ModularERP.Modules.Purchases.Goods_Receipt.Commends.Commends_GRN;
 using ModularERP.Modules.Purchases.Goods_Receipt.DTO.DTO_GRN;
@@ -187,7 +188,7 @@ namespace ModularERP.Modules.Purchases.Goods_Receipt.Handlers.Handlers_GRN
                 warnings.Add($"{totalRemaining} units still pending receipt for this PO");
             }
 
-            if (grn.POPaymentStatus != "Paid in Full" && grn.POPaymentStatus != "Refunded")
+            if (grn.POPaymentStatus != PaymentStatus.PaidInFull && grn.POPaymentStatus != PaymentStatus.Refunded)
             {
                 warnings.Add($"Payment status is '{grn.POPaymentStatus}'. Full payment required before closing PO.");
             }
@@ -209,9 +210,9 @@ namespace ModularERP.Modules.Purchases.Goods_Receipt.Handlers.Handlers_GRN
                 CreatedByName = grn.CreatedByName,
                 PurchaseOrderStatus = new POStatusInfo
                 {
-                    ReceptionStatus = grn.POReceptionStatus ?? "Unknown",
-                    PaymentStatus = grn.POPaymentStatus ?? "Unknown",
-                    DocumentStatus = grn.PODocumentStatus ?? "Unknown",
+                    ReceptionStatus = grn.POReceptionStatus.ToString() ?? "Unknown",
+                    PaymentStatus = grn.POPaymentStatus.ToString() ?? "Unknown",
+                    DocumentStatus = grn.PODocumentStatus.ToString() ?? "Unknown",
                     PreviousReceptionStatus = null // Can't determine previous in Post
                 },
                 LineItems = lineItemsResponse,
@@ -221,7 +222,7 @@ namespace ModularERP.Modules.Purchases.Goods_Receipt.Handlers.Handlers_GRN
                     CanReceiveMore = totalRemaining > 0,
                     CanCreateReturn = true,
                     CanCreateInvoice = true,
-                    CanClose = grn.POReceptionStatus == "Fully Received" && grn.POPaymentStatus == "Paid in Full",
+                    CanClose = grn.POReceptionStatus == ReceptionStatus.FullyReceived && grn.POPaymentStatus == PaymentStatus.PaidInFull,
                     TotalRemainingToReceive = totalRemaining,
                     Warnings = warnings
                 }

@@ -12,6 +12,7 @@ using ModularERP.Modules.Inventory.Features.StockTransactions.Models;
 using ModularERP.Modules.Inventory.Features.Warehouses.Models;
 using ModularERP.Common.Enum.Inventory_Enum;
 using ModularERP.Shared.Interfaces;
+using ModularERP.Common.Enum.Purchases_Enum;
 
 namespace ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_Refund
 {
@@ -324,9 +325,9 @@ namespace ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_Refund
                     {
                         PurchaseOrder = new POStatusDto
                         {
-                            ReceptionStatus = purchaseOrder.ReceptionStatus,
-                            PaymentStatus = purchaseOrder.PaymentStatus,
-                            DocumentStatus = purchaseOrder.DocumentStatus,
+                            ReceptionStatus = purchaseOrder.ReceptionStatus.ToString(),
+                            PaymentStatus = purchaseOrder.PaymentStatus.ToString(),
+                            DocumentStatus = purchaseOrder.DocumentStatus.ToString(),
                             TotalOrdered = purchaseOrder.LineItems.Sum(l => l.Quantity),
                             TotalReceived = purchaseOrder.LineItems.Sum(l => l.ReceivedQuantity),
                             TotalReturned = purchaseOrder.LineItems.Sum(l => l.ReturnedQuantity),
@@ -372,22 +373,22 @@ namespace ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_Refund
             if (netReceived <= 0 && totalReceived > 0)
             {
                 // All received items were returned back
-                purchaseOrder.ReceptionStatus = "Returned";
+                purchaseOrder.ReceptionStatus = ReceptionStatus.Returned;
             }
             else if (totalReceived >= totalOrdered && netReceived > 0)
             {
                 // Fully received (even if some were returned, net is still complete)
-                purchaseOrder.ReceptionStatus = "FullyReceived";
+                purchaseOrder.ReceptionStatus = ReceptionStatus.FullyReceived;
             }
             else if (netReceived > 0 && netReceived < totalOrdered)
             {
                 // Some items received but not all
-                purchaseOrder.ReceptionStatus = "PartiallyReceived";
+                purchaseOrder.ReceptionStatus = ReceptionStatus.PartiallyReceived;
             }
             else if (totalReceived == 0)
             {
                 // Nothing received yet
-                purchaseOrder.ReceptionStatus = "NotReceived";
+                purchaseOrder.ReceptionStatus = ReceptionStatus.NotReceived;
             }
 
             // === UPDATE PAYMENT STATUS ===
@@ -409,31 +410,31 @@ namespace ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_Refund
             if (totalRefunded > 0 && netPaymentBalance <= 0 && totalPaid > 0)
             {
                 // Supplier has refunded all or more than what was paid
-                purchaseOrder.PaymentStatus = "Refunded";
+                purchaseOrder.PaymentStatus = PaymentStatus.Refunded;
             }
             else if (netPaymentBalance > 0 && netPaymentBalance >= totalAmountDue)
             {
                 // Fully paid (even after refunds)
-                purchaseOrder.PaymentStatus = "PaidInFull";
+                purchaseOrder.PaymentStatus = PaymentStatus.PaidInFull;
             }
             else if (netPaymentBalance > 0 && netPaymentBalance < totalAmountDue)
             {
                 // Partially paid
-                purchaseOrder.PaymentStatus = "PartiallyPaid";
+                purchaseOrder.PaymentStatus = PaymentStatus.PartiallyPaid;
             }
             else if (totalPaid == 0)
             {
                 // Nothing paid yet
-                purchaseOrder.PaymentStatus = "Unpaid";
+                purchaseOrder.PaymentStatus = PaymentStatus.Unpaid;
             }
 
             // === CHECK IF PO CAN BE CLOSED ===
             // BRSD Rule: PO can only be closed if:
             // 1. Reception = FullyReceived or Returned
             // 2. Payment = PaidInFull or Refunded
-            if ((purchaseOrder.ReceptionStatus == "FullyReceived" || purchaseOrder.ReceptionStatus == "Returned") &&
-                (purchaseOrder.PaymentStatus == "PaidInFull" || purchaseOrder.PaymentStatus == "Refunded") &&
-                purchaseOrder.DocumentStatus == "Approved")
+            if ((purchaseOrder.ReceptionStatus == ReceptionStatus.FullyReceived || purchaseOrder.ReceptionStatus == ReceptionStatus.Returned) &&
+                (purchaseOrder.PaymentStatus == PaymentStatus.PaidInFull || purchaseOrder.PaymentStatus == PaymentStatus.Refunded) &&
+                purchaseOrder.DocumentStatus == DocumentStatus.Approved)
             {
                 // Auto-close criteria met (can be done via background job)
                 _logger.LogInformation("PO {PONumber} is eligible for auto-closure", purchaseOrder.PONumber);

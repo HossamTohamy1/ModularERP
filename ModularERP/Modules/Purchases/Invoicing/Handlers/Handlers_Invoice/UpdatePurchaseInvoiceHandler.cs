@@ -54,7 +54,7 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_Invoice
                 }
 
                 // Validate invoice can be updated (not paid in full)
-                if (invoice.PaymentStatus == "PaidInFull")
+                if (invoice.PaymentStatus == Common.Enum.Purchases_Enum.PaymentStatus.PaidInFull)
                 {
                     _logger.LogWarning(
                         "Cannot update invoice {InvoiceId} - already paid in full",
@@ -146,15 +146,15 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_Invoice
                 // Update payment status
                 if (invoice.AmountDue <= 0)
                 {
-                    invoice.PaymentStatus = "PaidInFull";
+                    invoice.PaymentStatus = Common.Enum.Purchases_Enum.PaymentStatus.PaidInFull;
                 }
                 else if (totalPaid > 0 || invoice.DepositApplied > 0)
                 {
-                    invoice.PaymentStatus = "PartiallyPaid";
+                    invoice.PaymentStatus = Common.Enum.Purchases_Enum.PaymentStatus.PartiallyPaid;
                 }
                 else
                 {
-                    invoice.PaymentStatus = "Unpaid";
+                    invoice.PaymentStatus = Common.Enum.Purchases_Enum.PaymentStatus.Unpaid;
                 }
 
                 await _invoiceRepository.Update(invoice);

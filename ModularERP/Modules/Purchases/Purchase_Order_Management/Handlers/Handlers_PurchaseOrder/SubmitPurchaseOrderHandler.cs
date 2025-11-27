@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using ModularERP.Common.Enum.Finance_Enum;
+using ModularERP.Common.Enum.Purchases_Enum;
 using ModularERP.Common.Exceptions;
 using ModularERP.Common.ViewModel;
 using ModularERP.Modules.Purchases.Purchase_Order_Management.Commends.Commends_PurchaseOrder;
@@ -37,14 +38,14 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                         FinanceErrorCode.NotFound);
                 }
 
-                if (purchaseOrder.DocumentStatus != "Draft")
+                if (purchaseOrder.DocumentStatus != DocumentStatus.Draft)
                 {
                     throw new BusinessLogicException(
                         "Only purchase orders in Draft status can be submitted",
                         "PurchaseOrder");
                 }
 
-                purchaseOrder.DocumentStatus = "Submitted";
+                purchaseOrder.DocumentStatus = DocumentStatus.Submitted;
                 purchaseOrder.SubmittedBy = request.SubmittedBy;
                 purchaseOrder.SubmittedAt = DateTime.UtcNow;
                 purchaseOrder.UpdatedAt = DateTime.UtcNow;

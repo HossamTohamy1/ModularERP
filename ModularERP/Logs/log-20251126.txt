@@ -1,0 +1,210 @@
+2025-11-26 00:48:27.063 +02:00 [INF] Starting web host...
+2025-11-26 00:48:28.979 +02:00 [FTL] Host terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at ModularERP.Program.Main(String[] args) in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 258
+2025-11-26 00:48:59.548 +02:00 [INF] Starting web host...
+2025-11-26 00:49:00.356 +02:00 [FTL] Host terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at ModularERP.Program.Main(String[] args) in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 258
+2025-11-26 00:50:55.091 +02:00 [INF] Starting web host...
+2025-11-26 00:50:55.968 +02:00 [FTL] Host terminated unexpectedly
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at ModularERP.Program.Main(String[] args) in E:\ModelerERP\ModularERP\ModularERP\Program.cs:line 258
+2025-11-26 01:18:17.855 +02:00 [INF] Starting web host...
+2025-11-26 01:18:21.759 +02:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-26 01:18:21.868 +02:00 [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-11-26 01:18:21.956 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-26 01:18:21.961 +02:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-11-26 01:18:21.973 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-11-26 01:18:22.028 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-11-26 01:18:22.043 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-26 01:18:22.047 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-11-26 01:18:22.059 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-11-26 01:18:22.069 +02:00 [INF] No migrations were applied. The database is already up to date.
+2025-11-26 01:18:22.076 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-11-26 01:18:22.246 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MasterCompanies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-11-26 01:18:22.253 +02:00 [INF] Master database initialized successfully
+2025-11-26 01:18:24.521 +02:00 [INF] User profile is available. Using 'C:\Users\hossny D. monkey\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-26 01:18:24.868 +02:00 [INF] Now listening on: https://localhost:7168
+2025-11-26 01:18:24.870 +02:00 [INF] Now listening on: http://localhost:5004
+2025-11-26 01:18:24.968 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-26 01:18:24.970 +02:00 [INF] Hosting environment: Development
+2025-11-26 01:18:24.971 +02:00 [INF] Content root path: E:\ModelerERP\ModularERP\ModularERP
+2025-11-26 01:18:25.799 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/index.html - null null
+2025-11-26 01:18:26.058 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/index.html - 200 null text/html;charset=utf-8 260.864ms
+2025-11-26 01:18:26.068 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-26 01:18:26.082 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 12.8366ms
+2025-11-26 01:18:26.098 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_vs/browserLink - null null
+2025-11-26 01:18:26.171 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_vs/browserLink - 200 null text/javascript; charset=UTF-8 73.9385ms
+2025-11-26 01:18:26.208 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-11-26 01:18:26.659 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 450.3913ms
+2025-11-26 01:22:34.424 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:7168/api/PaymentTerms - application/json 124
+2025-11-26 01:22:34.449 +02:00 [INF] Request started
+2025-11-26 01:22:34.452 +02:00 [INF] === Incoming Request ===
+2025-11-26 01:22:34.453 +02:00 [INF] Path: /api/PaymentTerms
+2025-11-26 01:22:34.455 +02:00 [INF] Method: POST
+2025-11-26 01:22:34.456 +02:00 [INF] === Headers ===
+2025-11-26 01:22:34.459 +02:00 [INF] Accept: ["*/*"]
+2025-11-26 01:22:34.463 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-26 01:22:34.464 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-26 01:22:34.466 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-26 01:22:34.470 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-26 01:22:34.472 +02:00 [INF] Content-Type: ["application/json"]
+2025-11-26 01:22:34.473 +02:00 [INF] Content-Length: ["124"]
+2025-11-26 01:22:34.476 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-26 01:22:34.477 +02:00 [INF] Postman-Token: ["eb86d037-6fed-4212-88c2-5fae6bde6a9e"]
+2025-11-26 01:22:34.482 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-26 01:22:34.483 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-26 01:22:34.486 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.Payment.Controllers.PaymentTermsController.Create (ModularERP)'
+2025-11-26 01:22:34.507 +02:00 [INF] Route matched with {action = "Create", controller = "PaymentTerms"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentTerm.CreatePaymentTermDto) on controller ModularERP.Modules.Purchases.Payment.Controllers.PaymentTermsController (ModularERP).
+2025-11-26 01:22:34.514 +02:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-11-26 01:22:34.617 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[CreatedAt], [m].[CurrencyCode], [m].[DatabaseName], [m].[Name], [m].[Status]
+FROM [MasterCompanies] AS [m]
+WHERE [m].[Id] = @__companyId_0 AND [m].[Status] = N'Active'
+2025-11-26 01:22:35.476 +02:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-11-26 01:22:35.484 +02:00 [INF] Creating Payment Term: Net 30
+2025-11-26 01:22:35.697 +02:00 [INF] Payment Term created successfully with ID: "45079a91-30dd-4a30-88bc-2bd504ada5e3"
+2025-11-26 01:22:35.707 +02:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentTerm.PaymentTermResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-26 01:22:35.730 +02:00 [INF] Executed action ModularERP.Modules.Purchases.Payment.Controllers.PaymentTermsController.Create (ModularERP) in 1216.4823ms
+2025-11-26 01:22:35.733 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.Payment.Controllers.PaymentTermsController.Create (ModularERP)'
+2025-11-26 01:22:35.735 +02:00 [INF] Request completed successfully with status code 200
+2025-11-26 01:22:35.741 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:7168/api/PaymentTerms - 200 null application/json; charset=utf-8 1316.1676ms
+2025-11-26 01:24:11.869 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/PaymentTerms - null null
+2025-11-26 01:24:11.893 +02:00 [INF] Request started
+2025-11-26 01:24:11.895 +02:00 [INF] === Incoming Request ===
+2025-11-26 01:24:11.896 +02:00 [INF] Path: /api/PaymentTerms
+2025-11-26 01:24:11.897 +02:00 [INF] Method: GET
+2025-11-26 01:24:11.898 +02:00 [INF] === Headers ===
+2025-11-26 01:24:11.899 +02:00 [INF] Accept: ["*/*"]
+2025-11-26 01:24:11.900 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-26 01:24:11.902 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-26 01:24:11.904 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-26 01:24:11.906 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-26 01:24:11.907 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-26 01:24:11.909 +02:00 [INF] Postman-Token: ["6b4c09de-ddd6-4e0b-be30-309c3f2a4930"]
+2025-11-26 01:24:11.912 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-26 01:24:11.913 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-26 01:24:11.914 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.Payment.Controllers.PaymentTermsController.GetAll (ModularERP)'
+2025-11-26 01:24:11.919 +02:00 [INF] Route matched with {action = "GetAll", controller = "PaymentTerms"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.Nullable`1[System.Boolean]) on controller ModularERP.Modules.Purchases.Payment.Controllers.PaymentTermsController (ModularERP).
+2025-11-26 01:24:11.966 +02:00 [INF] Fetching all Payment Terms
+2025-11-26 01:24:12.007 +02:00 [INF] Retrieved 1 Payment Terms
+2025-11-26 01:24:12.010 +02:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[System.Collections.Generic.List`1[[ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentTerm.PaymentTermResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-26 01:24:12.013 +02:00 [INF] Executed action ModularERP.Modules.Purchases.Payment.Controllers.PaymentTermsController.GetAll (ModularERP) in 90.4225ms
+2025-11-26 01:24:12.015 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.Payment.Controllers.PaymentTermsController.GetAll (ModularERP)'
+2025-11-26 01:24:12.017 +02:00 [INF] Request completed successfully with status code 200
+2025-11-26 01:24:12.018 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/PaymentTerms - 200 null application/json; charset=utf-8 148.8939ms
+2025-11-26 01:24:41.412 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7168/api/PaymentTerms/{45079a91-30dd-4a30-88bc-2bd504ada5e3} - null null
+2025-11-26 01:24:41.418 +02:00 [INF] Request started
+2025-11-26 01:24:41.420 +02:00 [INF] === Incoming Request ===
+2025-11-26 01:24:41.421 +02:00 [INF] Path: /api/PaymentTerms/%7B45079a91-30dd-4a30-88bc-2bd504ada5e3%7D
+2025-11-26 01:24:41.423 +02:00 [INF] Method: GET
+2025-11-26 01:24:41.424 +02:00 [INF] === Headers ===
+2025-11-26 01:24:41.425 +02:00 [INF] Accept: ["*/*"]
+2025-11-26 01:24:41.426 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-26 01:24:41.428 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-26 01:24:41.430 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-26 01:24:41.433 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-26 01:24:41.434 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-26 01:24:41.435 +02:00 [INF] Postman-Token: ["4e4126be-d629-490a-b9c9-876e91d29995"]
+2025-11-26 01:24:41.437 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-26 01:24:41.439 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-26 01:24:41.440 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.Payment.Controllers.PaymentTermsController.GetById (ModularERP)'
+2025-11-26 01:24:41.443 +02:00 [INF] Route matched with {action = "GetById", controller = "PaymentTerms"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(System.Guid) on controller ModularERP.Modules.Purchases.Payment.Controllers.PaymentTermsController (ModularERP).
+2025-11-26 01:24:41.452 +02:00 [INF] Fetching Payment Term with ID: "45079a91-30dd-4a30-88bc-2bd504ada5e3"
+2025-11-26 01:24:41.474 +02:00 [INF] Payment Term retrieved successfully: "45079a91-30dd-4a30-88bc-2bd504ada5e3"
+2025-11-26 01:24:41.480 +02:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentTerm.PaymentTermResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-26 01:24:41.482 +02:00 [INF] Executed action ModularERP.Modules.Purchases.Payment.Controllers.PaymentTermsController.GetById (ModularERP) in 34.2316ms
+2025-11-26 01:24:41.484 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.Payment.Controllers.PaymentTermsController.GetById (ModularERP)'
+2025-11-26 01:24:41.486 +02:00 [INF] Request completed successfully with status code 200
+2025-11-26 01:24:41.487 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7168/api/PaymentTerms/{45079a91-30dd-4a30-88bc-2bd504ada5e3} - 200 null application/json; charset=utf-8 75.4214ms
+2025-11-26 01:26:46.787 +02:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7168/api/PaymentTerms/{45079a91-30dd-4a30-88bc-2bd504ada5e3} - application/json 124
+2025-11-26 01:26:46.791 +02:00 [INF] Request started
+2025-11-26 01:26:46.792 +02:00 [INF] === Incoming Request ===
+2025-11-26 01:26:46.793 +02:00 [INF] Path: /api/PaymentTerms/%7B45079a91-30dd-4a30-88bc-2bd504ada5e3%7D
+2025-11-26 01:26:46.794 +02:00 [INF] Method: PUT
+2025-11-26 01:26:46.795 +02:00 [INF] === Headers ===
+2025-11-26 01:26:46.796 +02:00 [INF] Accept: ["*/*"]
+2025-11-26 01:26:46.798 +02:00 [INF] Connection: ["keep-alive"]
+2025-11-26 01:26:46.799 +02:00 [INF] Host: ["localhost:7168"]
+2025-11-26 01:26:46.800 +02:00 [INF] User-Agent: ["PostmanRuntime/7.49.1"]
+2025-11-26 01:26:46.802 +02:00 [INF] Accept-Encoding: ["gzip, deflate, br"]
+2025-11-26 01:26:46.803 +02:00 [INF] Content-Type: ["application/json"]
+2025-11-26 01:26:46.805 +02:00 [INF] Content-Length: ["124"]
+2025-11-26 01:26:46.807 +02:00 [INF] X-Tenant-ID: ["6f81c000-285c-4e6a-8125-bc36d14ac4ad"]
+2025-11-26 01:26:46.808 +02:00 [INF] Postman-Token: ["2fc7039e-edb2-4d7e-b330-a82cc458d20c"]
+2025-11-26 01:26:46.811 +02:00 [INF] 🔍 TenantService returned: '6f81c000-285c-4e6a-8125-bc36d14ac4ad'
+2025-11-26 01:26:46.812 +02:00 [INF] ✅ Processing request for tenant: 6f81c000-285c-4e6a-8125-bc36d14ac4ad
+2025-11-26 01:26:46.813 +02:00 [INF] Executing endpoint 'ModularERP.Modules.Purchases.Payment.Controllers.PaymentTermsController.Update (ModularERP)'
+2025-11-26 01:26:46.818 +02:00 [INF] Route matched with {action = "Update", controller = "PaymentTerms"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(System.Guid, ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentTerm.UpdatePaymentTermDto) on controller ModularERP.Modules.Purchases.Payment.Controllers.PaymentTermsController (ModularERP).
+2025-11-26 01:26:46.833 +02:00 [INF] Updating Payment Term with ID: "45079a91-30dd-4a30-88bc-2bd504ada5e3"
+2025-11-26 01:26:46.888 +02:00 [INF] Payment Term updated successfully: "45079a91-30dd-4a30-88bc-2bd504ada5e3"
+2025-11-26 01:26:46.889 +02:00 [INF] Executing OkObjectResult, writing value of type 'ModularERP.Common.ViewModel.ResponseViewModel`1[[ModularERP.Modules.Purchases.Payment.DTO.DTO_PaymentTerm.PaymentTermResponseDto, ModularERP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-26 01:26:46.893 +02:00 [INF] Executed action ModularERP.Modules.Purchases.Payment.Controllers.PaymentTermsController.Update (ModularERP) in 70.0222ms
+2025-11-26 01:26:46.896 +02:00 [INF] Executed endpoint 'ModularERP.Modules.Purchases.Payment.Controllers.PaymentTermsController.Update (ModularERP)'
+2025-11-26 01:26:46.897 +02:00 [INF] Request completed successfully with status code 200
+2025-11-26 01:26:46.898 +02:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7168/api/PaymentTerms/{45079a91-30dd-4a30-88bc-2bd504ada5e3} - 200 null application/json; charset=utf-8 111.4079ms
+2025-11-26 01:33:27.761 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-26 01:33:27.770 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 8.749ms
+2025-11-26 01:33:27.859 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - null null
+2025-11-26 01:33:28.118 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7168/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 258.9848ms

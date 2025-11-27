@@ -10,7 +10,7 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Commends.Commen
         public Guid SupplierId { get; set; }
         public string CurrencyCode { get; set; } = "SAR";
         public DateTime PODate { get; set; } = DateTime.UtcNow;
-        public string? PaymentTerms { get; set; }
+        public Guid? PaymentTermId { get; set; }
         public string? Notes { get; set; }
         public string? Terms { get; set; }
 

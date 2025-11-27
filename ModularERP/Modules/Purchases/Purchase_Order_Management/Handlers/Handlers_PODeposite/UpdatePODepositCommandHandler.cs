@@ -2,8 +2,10 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using ModularERP.Common.Enum.Finance_Enum;
+using ModularERP.Common.Enum.Purchases_Enum;
 using ModularERP.Common.Exceptions;
 using ModularERP.Common.ViewModel;
+using ModularERP.Modules.Purchases.Payment.Models;
 using ModularERP.Modules.Purchases.Purchase_Order_Management.Commends.Commends_PODeposite;
 using ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_PODeposite;
 using ModularERP.Modules.Purchases.Purchase_Order_Management.Models;
@@ -15,17 +17,20 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
     {
         private readonly IGeneralRepository<PODeposit> _depositRepository;
         private readonly IGeneralRepository<PurchaseOrder> _poRepository;
+        private readonly IGeneralRepository<PaymentMethod> _paymentMethodRepository;
         private readonly IMapper _mapper;
         private readonly ILogger<UpdatePODepositCommandHandler> _logger;
 
         public UpdatePODepositCommandHandler(
             IGeneralRepository<PODeposit> depositRepository,
             IGeneralRepository<PurchaseOrder> poRepository,
+            IGeneralRepository<PaymentMethod> paymentMethodRepository,
             IMapper mapper,
             ILogger<UpdatePODepositCommandHandler> logger)
         {
             _depositRepository = depositRepository;
             _poRepository = poRepository;
+            _paymentMethodRepository = paymentMethodRepository;
             _mapper = mapper;
             _logger = logger;
         }
@@ -38,7 +43,36 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                 "Updating deposit {DepositId} for Purchase Order {PurchaseOrderId}",
                 request.Id, request.PurchaseOrderId);
 
-            // 1. Get existing deposit
+            // ✅ 1. Validate PaymentMethod exists and is active
+            var paymentMethod = await _paymentMethodRepository
+                .Get(pm => pm.Id == request.PaymentMethodId && !pm.IsDeleted)
+                .FirstOrDefaultAsync(cancellationToken);
+
+            if (paymentMethod == null)
+            {
+                throw new NotFoundException(
+                    $"Payment method with ID {request.PaymentMethodId} not found",
+                    FinanceErrorCode.NotFound);
+            }
+
+            if (!paymentMethod.IsActive)
+            {
+                throw new BusinessLogicException(
+                    $"Payment method '{paymentMethod.Name}' is currently inactive",
+                    "Purchases",
+                    FinanceErrorCode.BusinessLogicError);
+            }
+
+            // ✅ 2. Validate ReferenceNumber if required
+            if (paymentMethod.RequiresReference && string.IsNullOrWhiteSpace(request.ReferenceNumber))
+            {
+                throw new BusinessLogicException(
+                    $"Reference number is required for payment method '{paymentMethod.Name}'",
+                    "Purchases",
+                    FinanceErrorCode.BusinessLogicError);
+            }
+
+            // 3. Get existing deposit
             var deposit = await _depositRepository
                 .Get(d => d.Id == request.Id && d.PurchaseOrderId == request.PurchaseOrderId && !d.IsDeleted)
                 .FirstOrDefaultAsync(cancellationToken);
@@ -50,7 +84,7 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                     FinanceErrorCode.NotFound);
             }
 
-            // 2. Get PO data with Select
+            // 4. Get PO data with Select
             var poData = await _poRepository
                 .Get(p => p.Id == request.PurchaseOrderId && !p.IsDeleted)
                 .Select(p => new
@@ -62,7 +96,7 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                         .Where(li => !li.IsDeleted)
                         .Sum(li => li.LineTotal),
                     ExistingDeposits = p.Deposits
-                        .Where(d => !d.IsDeleted && d.Id != request.Id) 
+                        .Where(d => !d.IsDeleted && d.Id != request.Id)
                         .Sum(d => d.Amount)
                 })
                 .FirstOrDefaultAsync(cancellationToken);
@@ -70,8 +104,8 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
             if (poData == null)
                 throw new NotFoundException("Purchase Order not found", FinanceErrorCode.NotFound);
 
-            // 3. Check PO status
-            if (poData.DocumentStatus == "Closed" || poData.DocumentStatus == "Cancelled")
+            // 5. Check PO status
+            if (poData.DocumentStatus == DocumentStatus.Closed || poData.DocumentStatus == DocumentStatus.Cancelled)
             {
                 throw new BusinessLogicException(
                     $"Cannot update deposit for {poData.DocumentStatus} PO",
@@ -79,7 +113,7 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                     FinanceErrorCode.BusinessLogicError);
             }
 
-            // 4. Validate PO Total
+            // 6. Validate PO Total
             if (poData.POTotal <= 0)
             {
                 throw new BusinessLogicException(
@@ -88,13 +122,12 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                     FinanceErrorCode.BusinessLogicError);
             }
 
-            // 5. Calculate new deposit amount
+            // 7. Calculate new deposit amount
             decimal newDepositAmount;
             decimal? newDepositPercentage = null;
 
             if (request.Percentage.HasValue && request.Percentage > 0)
             {
-                // Validate percentage
                 if (request.Percentage > 100)
                 {
                     throw new BusinessLogicException(
@@ -119,7 +152,7 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                     FinanceErrorCode.BusinessLogicError);
             }
 
-            // 6. Validate total deposits don't exceed PO total
+            // 8. Validate total deposits don't exceed PO total
             var newTotalDeposits = poData.ExistingDeposits + newDepositAmount;
 
             if (newTotalDeposits > poData.POTotal)
@@ -132,7 +165,7 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                     FinanceErrorCode.BusinessLogicError);
             }
 
-            // 7. Validate payment date if already paid
+            // 9. Validate payment date if already paid
             if (request.AlreadyPaid && !request.PaymentDate.HasValue)
             {
                 throw new BusinessLogicException(
@@ -141,14 +174,15 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                     FinanceErrorCode.BusinessLogicError);
             }
 
-            // 8. Store old values for logging
+            // 10. Store old values for logging
             var oldAmount = deposit.Amount;
             var oldAlreadyPaid = deposit.AlreadyPaid;
+            var oldPaymentMethodId = deposit.PaymentMethodId;
 
-            // 9. Update deposit
+            // 11. Update deposit
             deposit.Amount = Math.Round(newDepositAmount, 4);
             deposit.Percentage = newDepositPercentage;
-            deposit.PaymentMethod = request.PaymentMethod;
+            deposit.PaymentMethodId = request.PaymentMethodId; // ✅ تحديث PaymentMethodId
             deposit.ReferenceNumber = request.ReferenceNumber;
             deposit.AlreadyPaid = request.AlreadyPaid;
             deposit.PaymentDate = request.PaymentDate;
@@ -157,10 +191,9 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
 
             await _depositRepository.Update(deposit);
 
-            // 10. Update PO Payment Status
-            string newPaymentStatus = poData.PaymentStatus;
+            // 12. Update PO Payment Status
+            string newPaymentStatus = poData.PaymentStatus.ToString();
 
-            // Calculate total paid deposits (including this updated one if already paid)
             var totalPaidDeposits = await _depositRepository
                 .Get(d => d.PurchaseOrderId == request.PurchaseOrderId
                     && !d.IsDeleted
@@ -169,11 +202,11 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
 
             if (totalPaidDeposits >= poData.POTotal)
             {
-                newPaymentStatus = "Paid in Full";
+                newPaymentStatus = "PaidInFull";
             }
             else if (totalPaidDeposits > 0)
             {
-                newPaymentStatus = "Partially Paid";
+                newPaymentStatus = "PartiallyPaid";
             }
             else
             {
@@ -181,7 +214,7 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
             }
 
             // Update PO if payment status changed
-            if (newPaymentStatus != poData.PaymentStatus)
+            if (newPaymentStatus != poData.PaymentStatus.ToString())
             {
                 var po = await _poRepository
                     .Get(p => p.Id == request.PurchaseOrderId)
@@ -189,7 +222,7 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
 
                 if (po != null)
                 {
-                    po.PaymentStatus = newPaymentStatus;
+                    po.PaymentStatus = Enum.Parse<PaymentStatus>(newPaymentStatus);
                     po.UpdatedAt = DateTime.UtcNow;
                 }
             }
@@ -199,20 +232,38 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
             _logger.LogInformation(
                 "Deposit {DepositId} updated: Old Amount={OldAmount}, New Amount={NewAmount}, " +
                 "Old AlreadyPaid={OldPaid}, New AlreadyPaid={NewPaid}, " +
+                "Old PaymentMethod={OldPM}, New PaymentMethod={NewPM}, " +
                 "PO Total={Total}, New Payment Status={Status}",
                 deposit.Id, oldAmount, deposit.Amount,
                 oldAlreadyPaid, deposit.AlreadyPaid,
+                oldPaymentMethodId, paymentMethod.Name,
                 poData.POTotal, newPaymentStatus);
 
-            var response = _mapper.Map<PODepositResponseDto>(deposit);
-            response.POTotal = poData.POTotal;
-            response.TotalDeposits = newTotalDeposits;
-            response.RemainingBalance = poData.POTotal - newTotalDeposits;
-            response.PaymentStatus = newPaymentStatus;
+            // ✅ 13. Build response with PaymentMethod details
+            var response = new PODepositResponseDto
+            {
+                Id = deposit.Id,
+                PurchaseOrderId = deposit.PurchaseOrderId,
+                Amount = deposit.Amount,
+                Percentage = deposit.Percentage,
+                PaymentMethodId = deposit.PaymentMethodId,
+                PaymentMethodName = paymentMethod.Name,
+                PaymentMethodCode = paymentMethod.Code,
+                ReferenceNumber = deposit.ReferenceNumber,
+                AlreadyPaid = deposit.AlreadyPaid,
+                PaymentDate = deposit.PaymentDate,
+                Notes = deposit.Notes,
+                POTotal = poData.POTotal,
+                TotalDeposits = newTotalDeposits,
+                RemainingBalance = poData.POTotal - newTotalDeposits,
+                PaymentStatus = newPaymentStatus,
+                CreatedAt = deposit.CreatedAt,
+                UpdatedAt = deposit.UpdatedAt
+            };
 
             return ResponseViewModel<PODepositResponseDto>.Success(
                 response,
-                "Deposit updated successfully");
+                $"Deposit updated successfully using {paymentMethod.Name}");
         }
     }
 }

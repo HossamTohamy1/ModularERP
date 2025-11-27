@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using ModularERP.Common.Enum.Purchases_Enum;
 using ModularERP.Common.Exceptions;
 using ModularERP.Common.ViewModel;
 using ModularERP.Modules.Purchases.Invoicing.Commends.Commands_SupplierPayments;
@@ -51,7 +52,7 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_SupplierPayme
             payment.VoidedBy = Guid.Parse("f0602c31-0c12-4b5c-9ccf-fe17811d5c53");//request.VoidedBy;
             payment.VoidedAt = DateTime.UtcNow;
             payment.VoidReason = request.VoidReason;
-            payment.Status = "Void";
+            payment.Status = SupplierPaymentStatus.Void;
             payment.UpdatedAt = DateTime.UtcNow;
 
             // 4. Save changes

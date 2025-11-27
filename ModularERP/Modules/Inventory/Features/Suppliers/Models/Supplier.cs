@@ -1,6 +1,7 @@
 ﻿using ModularERP.Common.Enum.Inventory_Enum;
 using ModularERP.Common.Models;
 using ModularERP.Modules.Finance.Features.Companys.Models;
+using ModularERP.Modules.Finance.Features.Currencies.Models;
 using ModularERP.Modules.Inventory.Features.Products.Models;
 using ModularERP.Modules.Inventory.Features.Services.Models;
 using ModularERP.Modules.Purchases.Invoicing.Models;
@@ -28,19 +29,56 @@ namespace ModularERP.Modules.Inventory.Features.Suppliers.Models
 
         public SupplierStatus Status { get; set; } = SupplierStatus.Active;
 
+        [Required]
+        [MaxLength(50)]
+        public string SupplierNumber { get; set; } = string.Empty;
+
+        [Required]
         public Guid CompanyId { get; set; }
 
-        // ⭐ NEW: Balance Tracking
+        [Required]
+        public Guid CurrencyId { get; set; }
+
+        [MaxLength(20)]
+        public string? Mobile { get; set; }
+
+        [MaxLength(255)]
+        public string? StreetAddress1 { get; set; }
+
+        [MaxLength(255)]
+        public string? StreetAddress2 { get; set; }
+
+        [MaxLength(100)]
+        public string? City { get; set; }
+
+        [MaxLength(100)]
+        public string? State { get; set; }
+
+        [MaxLength(20)]
+        public string? PostalCode { get; set; }
+
+        [MaxLength(100)]
+        public string? Country { get; set; }
+
+        [MaxLength(100)]
+        public string? CommercialRegistration { get; set; }
+
+        [MaxLength(50)]
+        public string? TaxId { get; set; }
+
+        // Balance Tracking
         public decimal OpeningBalance { get; set; } = 0;
         public DateTime? OpeningBalanceDate { get; set; }
-        public decimal CurrentBalance { get; set; } = 0; // Real-time calculated
+        public decimal CurrentBalance { get; set; } = 0;
         public decimal TotalPurchases { get; set; } = 0;
         public decimal TotalPaid { get; set; } = 0;
 
         // Navigation Properties
+        public virtual Currency Currency { get; set; } = null!;
+        public virtual Company? Company { get; set; }
+        public virtual ICollection<SupplierContactPerson> ContactPersons { get; set; } = new List<SupplierContactPerson>();
         public virtual ICollection<Product> Products { get; set; } = new List<Product>();
         public virtual ICollection<Service> Services { get; set; } = new List<Service>();
-        public virtual ICollection<SupplierPayment> Payments { get; set; } = new List<SupplierPayment>(); // ⭐ NEW
-        public virtual Company? Company { get; set; }
+        public virtual ICollection<SupplierPayment> Payments { get; set; } = new List<SupplierPayment>();
     }
 }

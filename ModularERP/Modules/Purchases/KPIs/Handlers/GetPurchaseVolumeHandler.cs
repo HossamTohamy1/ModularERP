@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using ModularERP.Common.Enum.Purchases_Enum;
 using ModularERP.Common.Exceptions;
 using ModularERP.Common.ViewModel;
 using ModularERP.Modules.Purchases.KPIs.DTO;
@@ -39,7 +40,7 @@ namespace ModularERP.Modules.Purchases.KPIs.Handlers
 
                 var query = _repository.GetByCompanyId(request.CompanyId)
                     .Where(po => po.PODate >= startDate && po.PODate <= endDate &&
-                                 po.DocumentStatus != "Cancelled");
+                                 po.DocumentStatus != DocumentStatus.Cancelled);
 
                 var purchaseOrders = await query
                     .Select(po => new
@@ -72,7 +73,6 @@ namespace ModularERP.Modules.Purchases.KPIs.Handlers
                     .OrderBy(m => m.Year).ThenBy(m => m.Month)
                     .ToList();
 
-                // حساب نسبة النمو الشهري
                 var growthPercentage = 0m;
                 if (monthlyData.Count >= 2)
                 {

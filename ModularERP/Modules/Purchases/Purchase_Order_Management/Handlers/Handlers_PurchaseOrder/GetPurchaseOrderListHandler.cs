@@ -2,6 +2,8 @@
 using AutoMapper.QueryableExtensions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using ModularERP.Common.Enum.Purchases_Enum;
+using ModularERP.Common.Exceptions;
 using ModularERP.Common.ViewModel;
 using ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_PurchaseOrder;
 using ModularERP.Modules.Purchases.Purchase_Order_Management.Models;
@@ -45,13 +47,48 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                     query = query.Where(x => x.SupplierId == request.SupplierId.Value);
 
                 if (!string.IsNullOrEmpty(request.DocumentStatus))
-                    query = query.Where(x => x.DocumentStatus == request.DocumentStatus);
+                {
+                    if (Enum.TryParse<DocumentStatus>(request.DocumentStatus, true, out var parsedStatus))
+                    {
+                        query = query.Where(x => x.DocumentStatus == parsedStatus);
+                    }
+                    else
+                    {
+                        throw new BusinessLogicException(
+                            $"Invalid DocumentStatus value: {request.DocumentStatus}",
+                            "Purchases");
+                    }
+                }
 
                 if (!string.IsNullOrEmpty(request.ReceptionStatus))
-                    query = query.Where(x => x.ReceptionStatus == request.ReceptionStatus);
+                {
+                    if (Enum.TryParse<ReceptionStatus>(request.ReceptionStatus, true, out var parsedReception))
+                    {
+                        query = query.Where(x => x.ReceptionStatus == parsedReception);
+                    }
+                    else
+                    {
+                        throw new BusinessLogicException(
+                            $"Invalid ReceptionStatus value: {request.ReceptionStatus}",
+                            "Purchases");
+                    }
+                }
+
 
                 if (!string.IsNullOrEmpty(request.PaymentStatus))
-                    query = query.Where(x => x.PaymentStatus == request.PaymentStatus);
+                {
+                    if (Enum.TryParse<PaymentStatus>(request.PaymentStatus, true, out var parsedPayment))
+                    {
+                        query = query.Where(x => x.PaymentStatus == parsedPayment);
+                    }
+                    else
+                    {
+                        throw new BusinessLogicException(
+                            $"Invalid PaymentStatus value: {request.PaymentStatus}",
+                            "Purchases");
+                    }
+                }
+
 
                 if (request.FromDate.HasValue)
                     query = query.Where(x => x.PODate >= request.FromDate.Value);

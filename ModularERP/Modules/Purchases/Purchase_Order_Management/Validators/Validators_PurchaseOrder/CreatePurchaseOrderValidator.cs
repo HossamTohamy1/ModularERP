@@ -1,11 +1,16 @@
 ﻿using FluentValidation;
+using ModularERP.Common.Enum.Purchases_Enum;
 using ModularERP.Modules.Purchases.Purchase_Order_Management.Commends.Commends_PurchaseOrder;
 using ModularERP.Modules.Purchases.Purchase_Order_Management.DTO.DTO_PurchaseOrder;
+using System.Linq;
+
 
 namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Validators.Validators_PurchaseOrder
 {
     public class CreatePurchaseOrderValidator : AbstractValidator<CreatePurchaseOrderCommand>
     {
+
+
         public CreatePurchaseOrderValidator()
         {
             RuleFor(x => x.CompanyId)
@@ -53,10 +58,8 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Validators.Vali
                 deposit.RuleFor(x => x.Amount)
                     .GreaterThan(0).WithMessage("Deposit amount must be greater than 0");
 
-                deposit.RuleFor(x => x.PaymentMethod)
-                    .NotEmpty().WithMessage("Payment method is required")
-                    .Must(x => new[] { "Cash", "Bank", "Cheque", "CreditCard" }.Contains(x))
-                    .WithMessage("Invalid payment method");
+
+
 
                 deposit.RuleFor(x => x.Percentage)
                     .InclusiveBetween(0, 100).When(x => x.Percentage.HasValue)
@@ -92,13 +95,18 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Validators.Vali
                     .WithMessage("File size cannot exceed 5MB");
 
                 file.RuleFor(x => x.ContentType)
-                    .Must(ct => new[] { "application/pdf", "image/jpeg", "image/png", "image/jpg",
-                                       "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document" }
-                                .Contains(ct))
+                    .Must(ct => new[]
+                    {
+                        "application/pdf",
+                        "image/jpeg",
+                        "image/png",
+                        "image/jpg",
+                        "application/msword",
+                        "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                    }.Contains(ct))
                     .WithMessage("Only PDF, Images (JPG, PNG), and Word documents are allowed");
             });
 
-            // Custom validation for total deposit amount
             RuleFor(x => x)
                 .Custom((cmd, context) =>
                 {
@@ -116,9 +124,9 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Validators.Vali
                 });
         }
 
-        private (decimal Subtotal, decimal TotalAmount, decimal DepositAmount) CalculateEstimatedAmounts(CreatePurchaseOrderCommand cmd)
+        private (decimal Subtotal, decimal TotalAmount, decimal DepositAmount)
+            CalculateEstimatedAmounts(CreatePurchaseOrderCommand cmd)
         {
-            // Calculate line items subtotal
             decimal subtotal = 0;
             decimal netLineAmount = 0;
             decimal lineTax = 0;
@@ -132,13 +140,12 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Validators.Vali
                 subtotal += lineAmount;
                 netLineAmount += netAmount;
 
-                // Tax calculation (assuming 15% VAT if TaxProfileId is provided)
                 if (item.TaxProfileId.HasValue)
                     lineTax += netAmount * 0.15m;
             }
 
-            // PO-level discount
             decimal poDiscountAmount = 0;
+
             foreach (var discount in cmd.Discounts ?? new List<CreatePODiscountDto>())
             {
                 if (discount.DiscountType == "Percentage")
@@ -147,15 +154,13 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Validators.Vali
                     poDiscountAmount += discount.DiscountValue;
             }
 
-            // Apply PO discount to net line amount
             netLineAmount -= poDiscountAmount;
 
-            // Adjustments
             decimal adjustmentAmount = cmd.Adjustments?.Sum(x => x.Amount) ?? 0;
 
-            // Shipping with tax
             decimal shippingAmount = 0;
             decimal shippingTax = 0;
+
             foreach (var shipping in cmd.ShippingCharges ?? new List<CreatePOShippingChargeDto>())
             {
                 shippingAmount += shipping.ShippingFee;

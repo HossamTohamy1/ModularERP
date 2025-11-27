@@ -2,6 +2,7 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using ModularERP.Common.Enum.Finance_Enum;
+using ModularERP.Common.Enum.Purchases_Enum;
 using ModularERP.Common.Exceptions;
 using ModularERP.Common.ViewModel;
 using ModularERP.Modules.Purchases.Invoicing.Commends.Commend_InvocieItem;
@@ -63,7 +64,7 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_InvocieItem
                     );
                 }
 
-                if (purchaseOrder.DocumentStatus != "Approved")
+                if (purchaseOrder.DocumentStatus != DocumentStatus.Approved)
                 {
                     throw new BusinessLogicException(
                         "Can only create invoice from approved purchase orders",
@@ -125,10 +126,10 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_InvocieItem
                     DepositApplied = request.Request.DepositApplied,
                     AmountDue = amountDue,
                     PaymentStatus = amountDue == 0
-                    ? "PaidInFull"
+                    ? PaymentStatus.PaidInFull
                     : (request.Request.DepositApplied > 0
-                        ? "PartiallyPaid"
-                        : "Unpaid"),
+                        ? PaymentStatus.PartiallyPaid
+                        : PaymentStatus.Unpaid),
                     Notes = request.Request.Notes,
                     CreatedAt = DateTime.UtcNow
                 };
@@ -181,7 +182,7 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_InvocieItem
                         TotalAmount = i.TotalAmount,
                         DepositApplied = i.DepositApplied,
                         AmountDue = i.AmountDue,
-                        PaymentStatus = i.PaymentStatus,
+                        PaymentStatus = i.PaymentStatus.ToString(),
                         Notes = i.Notes,
                         CreatedAt = i.CreatedAt,
                         LineItems = invoiceLineItems.Select(li => new InvoiceLineItemResponse

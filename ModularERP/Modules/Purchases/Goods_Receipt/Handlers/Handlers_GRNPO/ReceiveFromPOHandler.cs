@@ -2,6 +2,7 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using ModularERP.Common.Enum.Finance_Enum;
+using ModularERP.Common.Enum.Purchases_Enum;
 using ModularERP.Common.Exceptions;
 using ModularERP.Modules.Finance.Finance.Infrastructure.Data;
 using ModularERP.Modules.Inventory.Features.Warehouses.Models;
@@ -73,19 +74,19 @@ namespace ModularERP.Modules.Purchases.Goods_Receipt.Handlers.Handlers_GRNPO
                     po.PONumber, po.DocumentStatus, po.ReceptionStatus);
 
                 // ✅ Validate PO Status
-                if (po.DocumentStatus == "Draft")
+                if (po.DocumentStatus  == Common.Enum.Purchases_Enum.DocumentStatus.Draft)
                     throw new BusinessLogicException(
                         "Cannot create GRN for a Purchase Order in Draft status.",
                         "Purchases",
                         FinanceErrorCode.ValidationError);
 
-                if (po.DocumentStatus == "Cancelled" || po.DocumentStatus == "Closed")
+                if (po.DocumentStatus == Common.Enum.Purchases_Enum.DocumentStatus.Cancelled || po.DocumentStatus == Common.Enum.Purchases_Enum.DocumentStatus.Closed)
                     throw new BusinessLogicException(
                         $"Cannot create GRN for a Purchase Order in {po.DocumentStatus} status.",
                         "Purchases",
                         FinanceErrorCode.ValidationError);
 
-                string previousReceptionStatus = po.ReceptionStatus;
+                string previousReceptionStatus = po.ReceptionStatus.ToString();
 
                 // ✅ 2. Load PO Line Items with Product Info
                 var poLineItemIds = request.LineItems.Select(l => l.POLineItemId).ToList();
@@ -324,7 +325,8 @@ namespace ModularERP.Modules.Purchases.Goods_Receipt.Handlers.Handlers_GRNPO
                 var purchaseOrder = await _poRepository.GetByIDWithTracking(request.PurchaseOrderId);
                 if (purchaseOrder != null)
                 {
-                    purchaseOrder.ReceptionStatus = newReceptionStatus;
+                    purchaseOrder.ReceptionStatus =
+                        Enum.Parse<ReceptionStatus>(newReceptionStatus);
                     purchaseOrder.UpdatedAt = DateTime.UtcNow;
                     purchaseOrder.UpdatedById = request.UserId;
                     await _poRepository.SaveChanges();
@@ -342,8 +344,8 @@ namespace ModularERP.Modules.Purchases.Goods_Receipt.Handlers.Handlers_GRNPO
                     grn.Id,
                     previousReceptionStatus,
                     newReceptionStatus,
-                    po.PaymentStatus,
-                    po.DocumentStatus,
+                    po.PaymentStatus.ToString(),
+                    po.DocumentStatus.ToString(),
                     cancellationToken);
 
                 return response;

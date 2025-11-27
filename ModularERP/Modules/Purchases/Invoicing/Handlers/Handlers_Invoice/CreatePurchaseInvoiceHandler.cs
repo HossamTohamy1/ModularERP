@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using ModularERP.Common.Enum.Finance_Enum;
+using ModularERP.Common.Enum.Purchases_Enum;
 using ModularERP.Common.Exceptions;
 using ModularERP.Common.ViewModel;
 using ModularERP.Modules.Purchases.Invoicing.Commends.Commands_Invoice;
@@ -74,8 +75,8 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_Invoice
                     TotalAmount = totalAmount,
                     DepositApplied = request.DepositApplied,
                     AmountDue = amountDue,
-                    PaymentStatus = amountDue == 0 ? "PaidInFull" :
-                                   request.DepositApplied > 0 ? "PartiallyPaid" : "Unpaid",
+                    PaymentStatus = amountDue == 0 ? PaymentStatus.PaidInFull :
+                                   request.DepositApplied > 0 ? PaymentStatus.PartiallyPaid : PaymentStatus.Unpaid,
                     Notes = request.Notes,
                     CreatedAt = DateTime.UtcNow
                 };

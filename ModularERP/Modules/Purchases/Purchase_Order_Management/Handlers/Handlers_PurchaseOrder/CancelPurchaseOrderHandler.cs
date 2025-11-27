@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
 using ModularERP.Common.Enum.Finance_Enum;
+using ModularERP.Common.Enum.Purchases_Enum;
 using ModularERP.Common.Exceptions;
 using ModularERP.Common.ViewModel;
 using ModularERP.Modules.Purchases.Purchase_Order_Management.Commends.Commends_PurchaseOrder;
@@ -38,14 +39,14 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                         FinanceErrorCode.NotFound);
                 }
 
-                if (purchaseOrder.DocumentStatus == "Cancelled")
+                if (purchaseOrder.DocumentStatus == DocumentStatus.Cancelled)
                 {
                     throw new BusinessLogicException(
                         "Purchase order is already cancelled",
                         "PurchaseOrder");
                 }
 
-                if (purchaseOrder.DocumentStatus == "Closed")
+                if (purchaseOrder.DocumentStatus == DocumentStatus.Closed)
                 {
                     throw new BusinessLogicException(
                         "Cannot cancel a closed purchase order",
@@ -87,7 +88,7 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                         "PurchaseOrder");
                 }
 
-                purchaseOrder.DocumentStatus = "Cancelled";
+                purchaseOrder.DocumentStatus = DocumentStatus.Cancelled;
                 purchaseOrder.UpdatedAt = DateTime.UtcNow;
                 purchaseOrder.Notes = string.IsNullOrEmpty(purchaseOrder.Notes)
                     ? $"Cancelled: {request.CancellationReason}"

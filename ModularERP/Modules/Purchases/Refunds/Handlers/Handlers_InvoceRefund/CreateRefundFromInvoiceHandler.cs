@@ -15,6 +15,7 @@ using ModularERP.Modules.Inventory.Features.StockTransactions.Models;
 using ModularERP.Common.Enum.Inventory_Enum;
 using ModularERP.Shared.Interfaces;
 using Azure.Core;
+using ModularERP.Common.Enum.Purchases_Enum;
 
 namespace ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_InvoceRefund
 {
@@ -76,7 +77,7 @@ namespace ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_InvoceRefund
                 }
 
                 // ✅ 2. Validate PO Status
-                if (invoice.PurchaseOrder.DocumentStatus == "Cancelled")
+                if (invoice.PurchaseOrder.DocumentStatus == DocumentStatus.Cancelled)
                 {
                     throw new BusinessLogicException(
                         "Cannot create refund for a cancelled Purchase Order",
@@ -84,7 +85,7 @@ namespace ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_InvoceRefund
                         FinanceErrorCode.BusinessLogicError);
                 }
 
-                if (invoice.PurchaseOrder.DocumentStatus == "Closed")
+                if (invoice.PurchaseOrder.DocumentStatus == DocumentStatus.Closed)
                 {
                     throw new BusinessLogicException(
                         "Cannot create refund for a closed Purchase Order. Please reopen it first.",
@@ -312,10 +313,10 @@ namespace ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_InvoceRefund
                 var statusUpdates = await UpdatePurchaseOrderStatuses(invoice.PurchaseOrder.Id, request, cancellationToken);
 
                 // ✅ 11. Update Invoice Payment Status if needed
-                if (invoice.PaymentStatus == "PaidInFull" && totalAmount > 0)
+                if (invoice.PaymentStatus == PaymentStatus.PaidInFull && totalAmount > 0)
                 {
                     invoice.AmountDue += totalAmount;
-                    invoice.PaymentStatus = "PartiallyPaid";
+                    invoice.PaymentStatus = PaymentStatus.PartiallyPaid;
                     await _invoiceRepo.SaveChanges();
                 }
 
@@ -463,23 +464,23 @@ namespace ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_InvoceRefund
             }
 
             // Update Reception Status (BRSD Rules)
-            string previousReceptionStatus = purchaseOrder.ReceptionStatus;
+            string previousReceptionStatus = purchaseOrder.ReceptionStatus.ToString();
 
             if (totalReturned > 0 && netReceived == 0)
             {
-                purchaseOrder.ReceptionStatus = "Returned";
+                purchaseOrder.ReceptionStatus = ReceptionStatus.Returned;
             }
             else if (netReceived == 0)
             {
-                purchaseOrder.ReceptionStatus = "NotReceived";
+                purchaseOrder.ReceptionStatus = ReceptionStatus.NotReceived;
             }
             else if (netReceived < totalOrdered)
             {
-                purchaseOrder.ReceptionStatus = "PartiallyReceived";
+                purchaseOrder.ReceptionStatus = ReceptionStatus.PartiallyReceived;
             }
             else
             {
-                purchaseOrder.ReceptionStatus = "FullyReceived";
+                purchaseOrder.ReceptionStatus = ReceptionStatus.FullyReceived;
             }
 
             // ============================================
@@ -499,19 +500,19 @@ namespace ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_InvoceRefund
 
             if (totalRefunded > 0 && totalRefunded >= totalPaid && totalPaid > 0)
             {
-                purchaseOrder.PaymentStatus = "Refunded";
+                purchaseOrder.PaymentStatus = PaymentStatus.Refunded;
             }
             else if (netPaid == 0)
             {
-                purchaseOrder.PaymentStatus = "Unpaid";
+                purchaseOrder.PaymentStatus = PaymentStatus.Unpaid;
             }
             else if (netPaid < netPayable)
             {
-                purchaseOrder.PaymentStatus = "PartiallyPaid";
+                purchaseOrder.PaymentStatus = PaymentStatus.PartiallyPaid;
             }
             else
             {
-                purchaseOrder.PaymentStatus = "PaidInFull";
+                purchaseOrder.PaymentStatus = PaymentStatus.PaidInFull;
             }
 
             purchaseOrder.UpdatedAt = DateTime.UtcNow;
@@ -526,9 +527,9 @@ namespace ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_InvoceRefund
 
             return new POStatusDto
             {
-                ReceptionStatus = purchaseOrder.ReceptionStatus,
-                PaymentStatus = purchaseOrder.PaymentStatus,
-                DocumentStatus = purchaseOrder.DocumentStatus,
+                ReceptionStatus = purchaseOrder.ReceptionStatus.ToString(),
+                PaymentStatus = purchaseOrder.PaymentStatus.ToString(),
+                DocumentStatus = purchaseOrder.DocumentStatus.ToString(),
                 TotalOrdered = totalOrdered,
                 TotalReceived = totalReceived,
                 TotalReturned = totalReturned,

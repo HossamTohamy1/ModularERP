@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using ModularERP.Common.Enum.Finance_Enum;
+using ModularERP.Common.Enum.Purchases_Enum;
 using ModularERP.Common.Exceptions;
 using ModularERP.Common.ViewModel;
 using ModularERP.Modules.Purchases.Invoicing.Commends.Commands_PaymentApplication;
@@ -71,11 +72,11 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_PaymentApplic
 
             if (invoice.AmountDue == invoice.TotalAmount)
             {
-                invoice.PaymentStatus = "Unpaid";
+                invoice.PaymentStatus = PaymentStatus.Unpaid;
             }
             else if (invoice.AmountDue > 0 && invoice.AmountDue < invoice.TotalAmount)
             {
-                invoice.PaymentStatus = "PartiallyPaid";
+                invoice.PaymentStatus = PaymentStatus.PartiallyPaid;
             }
 
             await _allocationRepository.SaveChanges();

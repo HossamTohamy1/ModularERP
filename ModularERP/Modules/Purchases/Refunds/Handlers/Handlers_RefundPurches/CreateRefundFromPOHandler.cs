@@ -14,6 +14,7 @@ using ModularERP.Modules.Inventory.Features.StockTransactions.Models;
 using ModularERP.Modules.Inventory.Features.Suppliers.Models;
 using ModularERP.Shared.Interfaces;
 using ModularERP.Common.Enum.Inventory_Enum;
+using ModularERP.Common.Enum.Purchases_Enum;
 
 namespace ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_RefundInvoce
 {
@@ -78,7 +79,7 @@ namespace ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_RefundInvoce
                 }
 
                 // Check if PO is cancelled
-                if (purchaseOrder.DocumentStatus == "Cancelled")
+                if (purchaseOrder.DocumentStatus == DocumentStatus.Cancelled)
                 {
                     throw new ValidationException(
                         "Cannot create refund for cancelled Purchase Order",
@@ -524,8 +525,8 @@ namespace ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_RefundInvoce
             // ============================================
             // UPDATE PO
             // ============================================
-            purchaseOrder.ReceptionStatus = receptionStatus;
-            purchaseOrder.PaymentStatus = paymentStatus;
+            purchaseOrder.ReceptionStatus = Enum.Parse<ReceptionStatus>(receptionStatus);
+            purchaseOrder.PaymentStatus = Enum.Parse<PaymentStatus>(paymentStatus);
             purchaseOrder.UpdatedAt = DateTime.UtcNow;
             await _poRepo.Update(purchaseOrder);
             await _poRepo.SaveChanges(); // ⭐ Save PO updates
@@ -546,7 +547,7 @@ namespace ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_RefundInvoce
                 {
                     ReceptionStatus = receptionStatus,
                     PaymentStatus = paymentStatus,
-                    DocumentStatus = purchaseOrder.DocumentStatus,
+                    DocumentStatus = purchaseOrder.DocumentStatus.ToString(),
                     TotalOrdered = totalOrdered,
                     TotalReceived = totalReceived,
                     TotalReturned = totalReturned, // ⭐ Now correct

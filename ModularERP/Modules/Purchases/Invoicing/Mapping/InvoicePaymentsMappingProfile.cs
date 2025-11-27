@@ -13,7 +13,7 @@ namespace ModularERP.Modules.Purchases.Invoicing.Mapping
             // SupplierPayment -> PaymentDto
             CreateMap<SupplierPayment, PaymentDto>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
-                .ForMember(dest => dest.PaymentMethod, opt => opt.MapFrom(src => src.PaymentMethod))
+                .ForMember(dest => dest.PaymentMethodId, opt => opt.MapFrom(src => src.PaymentMethodId))
                 .ForMember(dest => dest.PaymentDate, opt => opt.MapFrom(src => src.PaymentDate))
                 .ForMember(dest => dest.Amount, opt => opt.MapFrom(src => src.Amount))
                 .ForMember(dest => dest.ReferenceNumber, opt => opt.MapFrom(src => src.ReferenceNumber))

@@ -13,6 +13,7 @@ using ModularERP.Modules.Purchases.Goods_Receipt.Models;
 using ModularERP.Modules.Inventory.Features.StockTransactions.Models;
 using ModularERP.Modules.Inventory.Features.Warehouses.Models;
 using ModularERP.Shared.Interfaces;
+using ModularERP.Common.Enum.Purchases_Enum;
 
 namespace ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_Refund
 {
@@ -371,9 +372,9 @@ namespace ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_Refund
                     {
                         PurchaseOrder = new POStatusDto
                         {
-                            ReceptionStatus = purchaseOrder.ReceptionStatus,
-                            PaymentStatus = purchaseOrder.PaymentStatus,
-                            DocumentStatus = purchaseOrder.DocumentStatus,
+                            ReceptionStatus = purchaseOrder.ReceptionStatus.ToString(),
+                            PaymentStatus = purchaseOrder.PaymentStatus.ToString(),
+                            DocumentStatus = purchaseOrder.DocumentStatus.ToString(),
                             TotalOrdered = purchaseOrder.LineItems.Sum(l => l.Quantity),
                             TotalReceived = purchaseOrder.LineItems.Sum(l => l.ReceivedQuantity),
                             TotalReturned = purchaseOrder.LineItems.Sum(l => l.ReturnedQuantity),
@@ -416,19 +417,19 @@ namespace ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_Refund
             // Update Reception Status
             if (netReceived <= 0 && totalReceived > 0)
             {
-                purchaseOrder.ReceptionStatus = "Returned";
+                purchaseOrder.ReceptionStatus = ReceptionStatus.Returned;
             }
             else if (totalReceived >= totalOrdered && netReceived > 0)
             {
-                purchaseOrder.ReceptionStatus = "FullyReceived";
+                purchaseOrder.ReceptionStatus = ReceptionStatus.FullyReceived;
             }
             else if (netReceived > 0 && netReceived < totalOrdered)
             {
-                purchaseOrder.ReceptionStatus = "PartiallyReceived";
+                purchaseOrder.ReceptionStatus = ReceptionStatus.PartiallyReceived;
             }
             else if (totalReceived == 0)
             {
-                purchaseOrder.ReceptionStatus = "NotReceived";
+                purchaseOrder.ReceptionStatus = ReceptionStatus.NotReceived;
             }
 
             // Update Payment Status
@@ -443,19 +444,19 @@ namespace ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_Refund
 
             if (totalRefunded > 0 && netPaymentBalance <= 0 && totalPaid > 0)
             {
-                purchaseOrder.PaymentStatus = "Refunded";
+                purchaseOrder.PaymentStatus = PaymentStatus.Refunded;
             }
             else if (netPaymentBalance > 0 && netPaymentBalance >= totalAmountDue)
             {
-                purchaseOrder.PaymentStatus = "PaidInFull";
+                purchaseOrder.PaymentStatus = PaymentStatus.PaidInFull;
             }
             else if (netPaymentBalance > 0 && netPaymentBalance < totalAmountDue)
             {
-                purchaseOrder.PaymentStatus = "PartiallyPaid";
+                purchaseOrder.PaymentStatus = PaymentStatus.PartiallyPaid;
             }
             else if (totalPaid == 0)
             {
-                purchaseOrder.PaymentStatus = "Unpaid";
+                purchaseOrder.PaymentStatus = PaymentStatus.Unpaid;
             }
 
             await _poRepo.Update(purchaseOrder);

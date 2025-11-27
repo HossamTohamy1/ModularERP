@@ -2,6 +2,7 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using ModularERP.Common.Enum.Finance_Enum;
+using ModularERP.Common.Enum.Purchases_Enum;
 using ModularERP.Common.Exceptions;
 using ModularERP.Common.ViewModel;
 using ModularERP.Modules.Purchases.Invoicing.Commends.Commend_InvocieItem;
@@ -47,7 +48,7 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_InvocieItem
                     );
                 }
 
-                if (invoice.PaymentStatus == "PaidInFull")
+                if (invoice.PaymentStatus == PaymentStatus.PaidInFull)
                 {
                     throw new BusinessLogicException(
                         "Cannot add items to fully paid invoices",

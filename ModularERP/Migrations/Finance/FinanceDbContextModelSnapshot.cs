@@ -3128,6 +3128,14 @@ namespace ModularERP.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("City")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("CommercialRegistration")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
                     b.Property<Guid>("CompanyId")
                         .HasColumnType("uniqueidentifier");
 
@@ -3135,10 +3143,21 @@ namespace ModularERP.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<string>("Country")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<Guid?>("CreatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CurrencyCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(3)");
+
+                    b.Property<Guid>("CurrencyId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("CurrentBalance")
@@ -3154,6 +3173,10 @@ namespace ModularERP.Migrations
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
+
+                    b.Property<string>("Mobile")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -3171,11 +3194,36 @@ namespace ModularERP.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
+                    b.Property<string>("PostalCode")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("State")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
                     b.Property<string>("Status")
                         .IsRequired()
                         .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)")
                         .HasDefaultValue("Active");
+
+                    b.Property<string>("StreetAddress1")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("StreetAddress2")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("SupplierNumber")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("TaxId")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<decimal>("TotalPaid")
                         .HasPrecision(18, 4)
@@ -3193,6 +3241,8 @@ namespace ModularERP.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CurrencyCode");
+
                     b.HasIndex("CurrentBalance")
                         .HasDatabaseName("IX_Supplier_CurrentBalance");
 
@@ -3207,6 +3257,60 @@ namespace ModularERP.Migrations
                         .HasDatabaseName("IX_Supplier_Company_Name");
 
                     b.ToTable("Suppliers", (string)null);
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Inventory.Features.Suppliers.Models.SupplierContactPerson", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("CreatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsPrimary")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("Phone")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("Position")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<Guid>("SupplierId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SupplierId");
+
+                    b.ToTable("SupplierContactPerson");
                 });
 
             modelBuilder.Entity("ModularERP.Modules.Inventory.Features.TaxManagement.Models.TaxComponent", b =>
@@ -3780,7 +3884,8 @@ namespace ModularERP.Migrations
 
                     b.Property<string>("InvoiceNumber")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
@@ -3890,13 +3995,13 @@ namespace ModularERP.Migrations
                     b.Property<DateTime>("PaymentDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("PaymentMethod")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<Guid>("PaymentMethodId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("PaymentNumber")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("PaymentType")
                         .IsRequired()
@@ -3908,7 +4013,8 @@ namespace ModularERP.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ReferenceNumber")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Status")
                         .IsRequired()
@@ -3950,7 +4056,7 @@ namespace ModularERP.Migrations
                     b.HasIndex("PaymentDate")
                         .HasDatabaseName("IX_SupplierPayment_Date");
 
-                    b.HasIndex("PaymentMethod")
+                    b.HasIndex("PaymentMethodId")
                         .HasDatabaseName("IX_SupplierPayment_Method");
 
                     b.HasIndex("PaymentNumber")
@@ -3971,6 +4077,99 @@ namespace ModularERP.Migrations
                     b.HasIndex("VoidedBy");
 
                     b.ToTable("SupplierPayments", (string)null);
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Payment.Models.PaymentMethod", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("CreatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<bool>("RequiresReference")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Code")
+                        .IsUnique();
+
+                    b.ToTable("PaymentMethods");
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Payment.Models.PaymentTerm", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("CreatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Days")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.ToTable("PaymentTerms", (string)null);
                 });
 
             modelBuilder.Entity("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.POAdjustment", b =>
@@ -4113,9 +4312,8 @@ namespace ModularERP.Migrations
                     b.Property<DateTime?>("PaymentDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("PaymentMethod")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid>("PaymentMethodId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal?>("Percentage")
                         .HasPrecision(10, 4)
@@ -4125,7 +4323,8 @@ namespace ModularERP.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ReferenceNumber")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -4137,6 +4336,8 @@ namespace ModularERP.Migrations
 
                     b.HasIndex("PaymentDate")
                         .HasDatabaseName("IX_PODeposit_PaymentDate");
+
+                    b.HasIndex("PaymentMethodId");
 
                     b.HasIndex("PurchaseOrderId")
                         .HasDatabaseName("IX_PODeposit_PurchaseOrder");
@@ -4424,6 +4625,7 @@ namespace ModularERP.Migrations
 
                     b.Property<string>("CurrencyCode")
                         .IsRequired()
+                        .HasMaxLength(3)
                         .HasColumnType("nvarchar(3)");
 
                     b.Property<decimal>("DepositAmount")
@@ -4433,6 +4635,12 @@ namespace ModularERP.Migrations
                     b.Property<decimal>("DiscountAmount")
                         .HasPrecision(18, 4)
                         .HasColumnType("decimal(18,4)");
+
+                    b.Property<int?>("DiscountType")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("DiscountValue")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("DocumentStatus")
                         .IsRequired()
@@ -4454,7 +4662,8 @@ namespace ModularERP.Migrations
 
                     b.Property<string>("PONumber")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("PaymentStatus")
                         .IsRequired()
@@ -4462,8 +4671,8 @@ namespace ModularERP.Migrations
                         .HasColumnType("nvarchar(450)")
                         .HasDefaultValue("Unpaid");
 
-                    b.Property<string>("PaymentTerms")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid?>("PaymentTermId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ReceptionStatus")
                         .IsRequired()
@@ -4474,6 +4683,9 @@ namespace ModularERP.Migrations
                     b.Property<decimal>("ShippingAmount")
                         .HasPrecision(18, 4)
                         .HasColumnType("decimal(18,4)");
+
+                    b.Property<Guid?>("ShippingTaxProfileId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("SubmittedAt")
                         .HasColumnType("datetime2");
@@ -4529,8 +4741,12 @@ namespace ModularERP.Migrations
                     b.HasIndex("PaymentStatus")
                         .HasDatabaseName("IX_PurchaseOrder_PaymentStatus");
 
+                    b.HasIndex("PaymentTermId");
+
                     b.HasIndex("ReceptionStatus")
                         .HasDatabaseName("IX_PurchaseOrder_ReceptionStatus");
+
+                    b.HasIndex("ShippingTaxProfileId");
 
                     b.HasIndex("SubmittedBy");
 
@@ -4742,9 +4958,8 @@ namespace ModularERP.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Action")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Action")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("ApprovalDate")
                         .ValueGeneratedOnAdd()
@@ -5916,7 +6131,26 @@ namespace ModularERP.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("ModularERP.Modules.Finance.Features.Currencies.Models.Currency", "Currency")
+                        .WithMany()
+                        .HasForeignKey("CurrencyCode")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Company");
+
+                    b.Navigation("Currency");
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Inventory.Features.Suppliers.Models.SupplierContactPerson", b =>
+                {
+                    b.HasOne("ModularERP.Modules.Inventory.Features.Suppliers.Models.Supplier", "Supplier")
+                        .WithMany("ContactPersons")
+                        .HasForeignKey("SupplierId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Supplier");
                 });
 
             modelBuilder.Entity("ModularERP.Modules.Inventory.Features.TaxManagement.Models.TaxProfileComponent", b =>
@@ -6100,6 +6334,12 @@ namespace ModularERP.Migrations
                         .HasForeignKey("InvoiceId")
                         .OnDelete(DeleteBehavior.Restrict);
 
+                    b.HasOne("ModularERP.Modules.Purchases.Payment.Models.PaymentMethod", "PaymentMethod")
+                        .WithMany("SupplierPayments")
+                        .HasForeignKey("PaymentMethodId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.PurchaseOrder", "PurchaseOrder")
                         .WithMany("Payments")
                         .HasForeignKey("PurchaseOrderId")
@@ -6117,6 +6357,8 @@ namespace ModularERP.Migrations
                         .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("Invoice");
+
+                    b.Navigation("PaymentMethod");
 
                     b.Navigation("PurchaseOrder");
 
@@ -6157,11 +6399,19 @@ namespace ModularERP.Migrations
 
             modelBuilder.Entity("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.PODeposit", b =>
                 {
+                    b.HasOne("ModularERP.Modules.Purchases.Payment.Models.PaymentMethod", "PaymentMethod")
+                        .WithMany("PODeposits")
+                        .HasForeignKey("PaymentMethodId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.PurchaseOrder", "PurchaseOrder")
                         .WithMany("Deposits")
                         .HasForeignKey("PurchaseOrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("PaymentMethod");
 
                     b.Navigation("PurchaseOrder");
                 });
@@ -6262,6 +6512,15 @@ namespace ModularERP.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("ModularERP.Modules.Purchases.Payment.Models.PaymentTerm", "PaymentTerm")
+                        .WithMany()
+                        .HasForeignKey("PaymentTermId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.HasOne("ModularERP.Modules.Inventory.Features.TaxManagement.Models.TaxProfile", "ShippingTaxProfile")
+                        .WithMany()
+                        .HasForeignKey("ShippingTaxProfileId");
+
                     b.HasOne("ModularERP.Common.Models.ApplicationUser", "SubmittedByUser")
                         .WithMany()
                         .HasForeignKey("SubmittedBy")
@@ -6280,6 +6539,10 @@ namespace ModularERP.Migrations
                     b.Navigation("Company");
 
                     b.Navigation("Currency");
+
+                    b.Navigation("PaymentTerm");
+
+                    b.Navigation("ShippingTaxProfile");
 
                     b.Navigation("SubmittedByUser");
 
@@ -6560,6 +6823,8 @@ namespace ModularERP.Migrations
 
             modelBuilder.Entity("ModularERP.Modules.Inventory.Features.Suppliers.Models.Supplier", b =>
                 {
+                    b.Navigation("ContactPersons");
+
                     b.Navigation("Payments");
 
                     b.Navigation("Products");
@@ -6596,6 +6861,13 @@ namespace ModularERP.Migrations
             modelBuilder.Entity("ModularERP.Modules.Purchases.Invoicing.Models.SupplierPayment", b =>
                 {
                     b.Navigation("Allocations");
+                });
+
+            modelBuilder.Entity("ModularERP.Modules.Purchases.Payment.Models.PaymentMethod", b =>
+                {
+                    b.Navigation("PODeposits");
+
+                    b.Navigation("SupplierPayments");
                 });
 
             modelBuilder.Entity("ModularERP.Modules.Purchases.Purchase_Order_Management.Models.POLineItem", b =>

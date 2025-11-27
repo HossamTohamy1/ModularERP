@@ -260,9 +260,9 @@ namespace ModularERP.Modules.Purchases.Refunds.Handlers.Handlers_Refund
                     {
                         PurchaseOrder = new POStatusDto
                         {
-                            ReceptionStatus = refund.PurchaseOrder?.ReceptionStatus ?? "Unknown",
-                            PaymentStatus = refund.PurchaseOrder?.PaymentStatus ?? "Unknown",
-                            DocumentStatus = refund.PurchaseOrder?.DocumentStatus ?? "Unknown",
+                            ReceptionStatus = refund.PurchaseOrder?.ReceptionStatus.ToString() ?? "Unknown",
+                            PaymentStatus = refund.PurchaseOrder?.PaymentStatus.ToString() ?? "Unknown",
+                            DocumentStatus = refund.PurchaseOrder?.DocumentStatus.ToString() ?? "Unknown",
                             TotalOrdered = refund.PurchaseOrder?.LineItems.Sum(l => l.Quantity) ?? 0,
                             TotalReceived = refund.PurchaseOrder?.LineItems.Sum(l => l.ReceivedQuantity) ?? 0,
                             TotalReturned = refund.PurchaseOrder?.LineItems.Sum(l => l.ReturnedQuantity) ?? 0,

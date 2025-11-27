@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
 using ModularERP.Common.Enum.Finance_Enum;
+using ModularERP.Common.Enum.Purchases_Enum;
 using ModularERP.Common.Exceptions;
 using ModularERP.Common.ViewModel;
 using ModularERP.Modules.Purchases.Purchase_Order_Management.Commends.Commends_PurchaseOrder;
@@ -47,7 +48,7 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                 }
 
                 // Validate status - only Draft can be deleted
-                if (purchaseOrder.DocumentStatus != "Draft")
+                if (purchaseOrder.DocumentStatus != DocumentStatus.Draft)
                 {
                     throw new BusinessLogicException(
                         "Only purchase orders in Draft status can be deleted",

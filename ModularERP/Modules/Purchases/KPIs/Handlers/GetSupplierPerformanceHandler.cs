@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using ModularERP.Common.Enum.Purchases_Enum;
 using ModularERP.Common.Exceptions;
 using ModularERP.Common.ViewModel;
 using ModularERP.Modules.Inventory.Features.Suppliers.Models;
@@ -60,7 +61,7 @@ namespace ModularERP.Modules.Purchases.KPIs.Handlers
                 var purchaseOrders = await _poRepository.GetByCompanyId(request.CompanyId)
                     .Where(po => po.PODate >= startDate &&
                                  po.PODate <= endDate &&
-                                 po.DocumentStatus != "Cancelled")
+                                 po.DocumentStatus != Common.Enum.Purchases_Enum.DocumentStatus.Cancelled)
                     .Select(po => new
                     {
                         po.SupplierId,
@@ -78,7 +79,7 @@ namespace ModularERP.Modules.Purchases.KPIs.Handlers
                         var supplier = suppliers.FirstOrDefault(s => s.Id == g.Key);
                         var totalOrders = g.Count();
                         var onTimeDeliveries = g.Count(po =>
-                            po.ReceptionStatus == "FullyReceived" &&
+                            po.ReceptionStatus == ReceptionStatus.FullyReceived &&
                             po.ClosedAt.HasValue &&
                             po.ApprovedAt.HasValue &&
                             (po.ClosedAt.Value - po.ApprovedAt.Value).TotalDays <= 7);

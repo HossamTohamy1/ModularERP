@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using ModularERP.Common.Enum.Purchases_Enum;
 using ModularERP.Modules.Purchases.Purchase_Order_Management.Commends.Commends_PurchaseOrder;
 
 namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Validators.Validators_PurchaseOrder
@@ -52,10 +53,8 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Validators.Vali
                 deposit.RuleFor(x => x.Amount)
                     .GreaterThan(0).WithMessage("Deposit amount must be greater than 0");
 
-                deposit.RuleFor(x => x.PaymentMethod)
-                    .NotEmpty().WithMessage("Payment method is required")
-                    .Must(x => new[] { "Cash", "Bank", "Cheque", "CreditCard" }.Contains(x))
-                    .WithMessage("Invalid payment method");
+
+
 
                 deposit.RuleFor(x => x.Percentage)
                     .InclusiveBetween(0, 100).When(x => x.Percentage.HasValue)
@@ -96,6 +95,10 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Validators.Vali
                                 .Contains(ct))
                     .WithMessage("Only PDF, Images (JPG, PNG), and Word documents are allowed");
             });
+
         }
+
+
+
     }
 }

@@ -20,9 +20,6 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Validators.Vali
                 .InclusiveBetween(0, 100).WithMessage("Percentage must be between 0 and 100")
                 .When(x => x.Percentage.HasValue);
 
-            RuleFor(x => x.PaymentMethod)
-                .NotEmpty().WithMessage("Payment method is required")
-                .MaximumLength(50).WithMessage("Payment method must not exceed 50 characters");
 
             RuleFor(x => x.ReferenceNumber)
                 .MaximumLength(100).WithMessage("Reference number must not exceed 100 characters")

@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using ModularERP.Common.Enum.Finance_Enum;
+using ModularERP.Common.Enum.Purchases_Enum;
 using ModularERP.Common.Exceptions;
 using ModularERP.Common.ViewModel;
 using ModularERP.Modules.Purchases.Purchase_Order_Management.Commends.Commends_PurchaseOrder;
@@ -37,14 +38,14 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                         FinanceErrorCode.NotFound);
                 }
 
-                if (purchaseOrder.DocumentStatus == "Closed")
+                if (purchaseOrder.DocumentStatus == DocumentStatus.Closed)
                 {
                     throw new BusinessLogicException(
                         "Purchase order is already closed",
                         "PurchaseOrder");
                 }
 
-                if (purchaseOrder.DocumentStatus != "Approved")
+                if (purchaseOrder.DocumentStatus != DocumentStatus.Approved)
                 {
                     throw new BusinessLogicException(
                         "Only approved purchase orders can be closed",
@@ -52,14 +53,14 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                 }
 
                 // Validate closure conditions
-                if (purchaseOrder.ReceptionStatus != "FullyReceived" && purchaseOrder.ReceptionStatus != "Returned")
+                if (purchaseOrder.ReceptionStatus != ReceptionStatus.FullyReceived && purchaseOrder.ReceptionStatus != ReceptionStatus.Returned)
                 {
                     throw new BusinessLogicException(
                         "Cannot close purchase order. Reception status must be Fully Received or Returned.",
                         "PurchaseOrder");
                 }
 
-                if (purchaseOrder.PaymentStatus != "PaidInFull" && purchaseOrder.PaymentStatus != "Refunded")
+                if (purchaseOrder.PaymentStatus != PaymentStatus.PaidInFull && purchaseOrder.PaymentStatus != PaymentStatus.Refunded)
                 {
                     throw new BusinessLogicException(
                         "Cannot close purchase order. Payment status must be Paid in Full or Refunded.",
@@ -73,7 +74,7 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                         "PurchaseOrder");
                 }
 
-                purchaseOrder.DocumentStatus = "Closed";
+                purchaseOrder.DocumentStatus = DocumentStatus.Closed;
                 purchaseOrder.ClosedBy = request.ClosedBy;
                 purchaseOrder.ClosedAt = DateTime.UtcNow;
                 purchaseOrder.UpdatedAt = DateTime.UtcNow;

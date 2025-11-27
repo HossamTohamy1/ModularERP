@@ -18,13 +18,13 @@ namespace ModularERP.Modules.Purchases.Invoicing.Features.SupplierPayments.Mappi
 
             // Create DTO to Entity
             CreateMap<CreateSupplierPaymentDto, SupplierPayment>()
-                .ForMember(dest => dest.Id, opt => opt.Ignore())
-                .ForMember(dest => dest.PaymentNumber, opt => opt.Ignore()) // Auto-generated
-                .ForMember(dest => dest.Status, opt => opt.MapFrom(src => "Draft"))
-                .ForMember(dest => dest.UnallocatedAmount, opt => opt.MapFrom(src =>
-                    src.AllocatedAmount.HasValue ? src.Amount - src.AllocatedAmount.Value : 0))
-                .ForMember(dest => dest.AllocatedAmount, opt => opt.MapFrom(src =>
-                    src.AllocatedAmount ?? src.Amount));
+                      .ForMember(dest => dest.Id, opt => opt.Ignore())
+                      .ForMember(dest => dest.PaymentNumber, opt => opt.Ignore())
+                      .ForMember(dest => dest.Status, opt => opt.Ignore())
+                      .ForMember(dest => dest.AllocatedAmount, opt => opt.Ignore())
+                      .ForMember(dest => dest.UnallocatedAmount, opt => opt.Ignore())
+                      .ForMember(dest => dest.CreatedAt, opt => opt.Ignore())
+                      .ForMember(dest => dest.CreatedBy, opt => opt.Ignore());
 
             // Update DTO to Entity
             CreateMap<UpdateSupplierPaymentDto, SupplierPayment>()

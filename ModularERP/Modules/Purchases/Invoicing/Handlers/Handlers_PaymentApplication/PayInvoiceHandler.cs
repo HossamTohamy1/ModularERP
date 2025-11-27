@@ -2,6 +2,7 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using ModularERP.Common.Enum.Finance_Enum;
+using ModularERP.Common.Enum.Purchases_Enum;
 using ModularERP.Common.Exceptions;
 using ModularERP.Common.ViewModel;
 using ModularERP.Modules.Purchases.Invoicing.Commends.Commands_PaymentApplication;
@@ -73,7 +74,7 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_PaymentApplic
                 }
 
                 // Validate invoice status
-                if (invoice.PaymentStatus == "PaidInFull")
+                if (invoice.PaymentStatus == PaymentStatus.PaidInFull)
                 {
                     _logger.LogWarning("Invoice {InvoiceNumber} is already paid in full", invoice.InvoiceNumber);
                     return ResponseViewModel<PaymentApplicationSummaryDto>.Fail(
@@ -106,11 +107,11 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_PaymentApplic
 
                 if (invoice.AmountDue == 0)
                 {
-                    invoice.PaymentStatus = "PaidInFull";
+                    invoice.PaymentStatus = PaymentStatus.PaidInFull;
                 }
                 else if (invoice.AmountDue < invoice.TotalAmount)
                 {
-                    invoice.PaymentStatus = "PartiallyPaid";
+                    invoice.PaymentStatus = PaymentStatus.PartiallyPaid;
                 }
 
                 await _paymentRepository.SaveChanges();

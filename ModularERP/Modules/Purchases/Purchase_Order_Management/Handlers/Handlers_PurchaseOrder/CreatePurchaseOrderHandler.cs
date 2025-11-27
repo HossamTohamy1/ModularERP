@@ -13,11 +13,17 @@ using ModularERP.Shared.Interfaces;
 using Serilog;
 using ModularERP.Modules.Inventory.Features.Services.Models;
 using ModularERP.Modules.Inventory.Features.TaxManagement.Models;
+using ModularERP.Common.Enum.Purchases_Enum;
+using ModularERP.Common.Enum.Inventory_Enum;
+using ModularERP.Modules.Purchases.Payment.Models;
+using Microsoft.Extensions.Logging;
 
 namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handlers_PurchaseOrder
 {
     public class CreatePurchaseOrderHandler : IRequestHandler<CreatePurchaseOrderCommand, ResponseViewModel<CreatePurchaseOrderDto>>
     {
+        private readonly IGeneralRepository<PaymentTerm> _paymentTermRepository;
+        private readonly IGeneralRepository<PaymentMethod> _paymentMethodRepository;
         private readonly IGeneralRepository<PurchaseOrder> _poRepository;
         private readonly IGeneralRepository<POLineItem> _lineItemRepository;
         private readonly IGeneralRepository<PODeposit> _depositRepository;
@@ -36,6 +42,8 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
         private readonly IWebHostEnvironment _environment;
 
         public CreatePurchaseOrderHandler(
+            IGeneralRepository<PaymentTerm> paymentTermRepository,
+            IGeneralRepository<PaymentMethod> paymentMethodRepository, 
             IGeneralRepository<PurchaseOrder> poRepository,
             IGeneralRepository<POLineItem> lineItemRepository,
             IGeneralRepository<PODeposit> depositRepository,
@@ -54,6 +62,7 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
             IWebHostEnvironment environment)
         {
             _poRepository = poRepository;
+            _paymentMethodRepository = paymentMethodRepository;
             _lineItemRepository = lineItemRepository;
             _depositRepository = depositRepository;
             _shippingRepository = shippingRepository;
@@ -98,7 +107,7 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                     SupplierId = request.SupplierId,
                     CurrencyCode = request.CurrencyCode,
                     PODate = request.PODate,
-                    PaymentTerms = request.PaymentTerms,
+                    PaymentTermId = request.PaymentTermId,
                     Notes = request.Notes,
                     Terms = request.Terms,
                     Subtotal = calculations.Subtotal,
@@ -109,9 +118,9 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                     TotalAmount = calculations.TotalAmount,
                     DepositAmount = calculations.DepositAmount,
                     AmountDue = calculations.AmountDue,
-                    ReceptionStatus = "NotReceived",
-                    PaymentStatus = calculations.DepositAmount > 0 ? "PartiallyPaid" : "Unpaid",
-                    DocumentStatus = "Draft",
+                    ReceptionStatus = ReceptionStatus.NotReceived,
+                    PaymentStatus = calculations.DepositAmount > 0 ? PaymentStatus.PartiallyPaid : PaymentStatus.Unpaid,
+                    DocumentStatus = DocumentStatus.Draft,
                     CreatedAt = DateTime.UtcNow,
                     CreatedById = Guid.Parse("f0602c31-0c12-4b5c-9ccf-fe17811d5c53") // Placeholder for current user
                 };
@@ -461,100 +470,308 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
             int attachmentCount,
             CancellationToken cancellationToken)
         {
-            // Get unique IDs for lookups
-            var productIds = lineItems.Where(x => x.ProductId.HasValue).Select(x => x.ProductId!.Value).Distinct().ToList();
-            var serviceIds = lineItems.Where(x => x.ServiceId.HasValue).Select(x => x.ServiceId!.Value).Distinct().ToList();
-            var taxProfileIds = lineItems.Where(x => x.TaxProfileId.HasValue).Select(x => x.TaxProfileId!.Value)
-                .Union(shippingCharges.Where(x => x.TaxProfileId.HasValue).Select(x => x.TaxProfileId!.Value))
-                .Distinct().ToList();
-
-            // Fetch related entities
-            var products = productIds.Any()
-                ? await _productRepository.GetAll().Where(p => productIds.Contains(p.Id)).ToDictionaryAsync(p => p.Id, cancellationToken)
-                : new Dictionary<Guid, Product>();
-
-            var services = serviceIds.Any()
-                ? await _serviceRepository.GetAll().Where(s => serviceIds.Contains(s.Id)).ToDictionaryAsync(s => s.Id, cancellationToken)
-                : new Dictionary<Guid, Service>();
-
-            var taxProfiles = taxProfileIds.Any()
-                ? await _taxProfileRepository.GetAll().Where(t => taxProfileIds.Contains(t.Id)).ToDictionaryAsync(t => t.Id, cancellationToken)
-                : new Dictionary<Guid, TaxProfile>();
-
-            // Map line items with related data
-            var lineItemDtos = lineItems.Select(li => new POLineItemDto
+            try
             {
-                Id = li.Id,
-                ProductId = li.ProductId,
-                ProductName = li.ProductId.HasValue && products.ContainsKey(li.ProductId.Value)
-                    ? products[li.ProductId.Value].Name
-                    : null,
-                ServiceId = li.ServiceId,
-                ServiceName = li.ServiceId.HasValue && services.ContainsKey(li.ServiceId.Value)
-                    ? services[li.ServiceId.Value].Name
-                    : null,
-                Description = li.Description,
-                Quantity = li.Quantity,
-                UnitPrice = li.UnitPrice,
-                DiscountPercent = li.DiscountPercent,
-                DiscountAmount = li.DiscountAmount,
-                TaxProfileId = li.TaxProfileId,
-                TaxProfileName = li.TaxProfileId.HasValue && taxProfiles.ContainsKey(li.TaxProfileId.Value)
-                    ? taxProfiles[li.TaxProfileId.Value].Name
-                    : null,
-                TaxAmount = li.TaxAmount,
-                LineTotal = li.LineTotal,
-                RemainingQuantity = li.RemainingQuantity
-            }).ToList();
+                _logger.LogInformation("Building response DTO for PO: {PONumber}", purchaseOrder.PONumber);
 
-            // Map shipping charges with tax profile names
-            var shippingChargeDtos = shippingCharges.Select(sc => new POShippingChargeDto
-            {
-                Id = sc.Id,
-                ShippingFee = sc.ShippingFee,
-                TaxProfileId = sc.TaxProfileId,
-                TaxProfileName = sc.TaxProfileId.HasValue && taxProfiles.ContainsKey(sc.TaxProfileId.Value)
-                    ? taxProfiles[sc.TaxProfileId.Value].Name
-                    : null,
-                TaxAmount = sc.TaxAmount,
-                Total = sc.Total,
-                Description = sc.Description
-            }).ToList();
+                // =====================================================
+                // STEP 1: Collect All IDs for Batch Fetching
+                // =====================================================
+                _logger.LogDebug("Step 1: Collecting IDs");
 
-            return new CreatePurchaseOrderDto
+                var productIds = lineItems
+                    .Where(x => x.ProductId.HasValue)
+                    .Select(x => x.ProductId!.Value)
+                    .Distinct()
+                    .ToList();
+
+                var serviceIds = lineItems
+                    .Where(x => x.ServiceId.HasValue)
+                    .Select(x => x.ServiceId!.Value)
+                    .Distinct()
+                    .ToList();
+
+                var taxProfileIds = lineItems
+                    .Where(x => x.TaxProfileId.HasValue)
+                    .Select(x => x.TaxProfileId!.Value)
+                    .Union(shippingCharges.Where(x => x.TaxProfileId.HasValue).Select(x => x.TaxProfileId!.Value))
+                    .Distinct()
+                    .ToList();
+
+                // ✅ FIX: Safely collect Payment Method IDs
+                var paymentMethodIds = new List<Guid>();
+                if (deposits != null && deposits.Any())
+                {
+                    paymentMethodIds = deposits
+                        .Select(x => x.PaymentMethodId)
+                        .Distinct()
+                        .ToList();
+
+                    _logger.LogInformation("Found {Count} unique payment method IDs: {Ids}",
+                        paymentMethodIds.Count, string.Join(", ", paymentMethodIds));
+                }
+
+                // =====================================================
+                // STEP 2: Fetch All Related Entities in Parallel
+                // =====================================================
+                _logger.LogDebug("Step 2: Fetching related entities");
+
+                Dictionary<Guid, Product> products;
+                Dictionary<Guid, Service> services;
+                Dictionary<Guid, TaxProfile> taxProfiles;
+                Dictionary<Guid, PaymentMethod> paymentMethods;
+                PaymentTerm? paymentTerm = null;
+
+                try
+                {
+                    var productsTask = productIds.Any()
+                        ? _productRepository.GetAll()
+                            .Where(p => productIds.Contains(p.Id))
+                            .ToDictionaryAsync(p => p.Id, cancellationToken)
+                        : Task.FromResult(new Dictionary<Guid, Product>());
+
+                    var servicesTask = serviceIds.Any()
+                        ? _serviceRepository.GetAll()
+                            .Where(s => serviceIds.Contains(s.Id))
+                            .ToDictionaryAsync(s => s.Id, cancellationToken)
+                        : Task.FromResult(new Dictionary<Guid, Service>());
+
+                    var taxProfilesTask = taxProfileIds.Any()
+                        ? _taxProfileRepository.GetAll()
+                            .Where(t => taxProfileIds.Contains(t.Id))
+                            .ToDictionaryAsync(t => t.Id, cancellationToken)
+                        : Task.FromResult(new Dictionary<Guid, TaxProfile>());
+
+                    // ✅ FIX: Fetch Payment Methods with detailed logging
+                    Task<Dictionary<Guid, PaymentMethod>> paymentMethodsTask;
+                    if (paymentMethodIds.Any())
+                    {
+                        _logger.LogInformation("Fetching payment methods for IDs: {Ids}", string.Join(", ", paymentMethodIds));
+
+                        if (_paymentMethodRepository == null)
+                        {
+                            _logger.LogError("PaymentMethodRepository is NULL!");
+                            paymentMethodsTask = Task.FromResult(new Dictionary<Guid, PaymentMethod>());
+                        }
+                        else
+                        {
+                            paymentMethodsTask = _paymentMethodRepository.GetAll()
+                                .Where(pm => paymentMethodIds.Contains(pm.Id))
+                                .ToDictionaryAsync(pm => pm.Id, cancellationToken);
+                        }
+                    }
+                    else
+                    {
+                        paymentMethodsTask = Task.FromResult(new Dictionary<Guid, PaymentMethod>());
+                    }
+
+                    // ✅ Fetch PaymentTerm separately
+                    Task<PaymentTerm?> paymentTermTask;
+                    if (purchaseOrder.PaymentTermId.HasValue)
+                    {
+                        _logger.LogDebug("Fetching payment term: {PaymentTermId}", purchaseOrder.PaymentTermId.Value);
+                        paymentTermTask = _paymentTermRepository?.GetByID(purchaseOrder.PaymentTermId.Value)
+                            ?? Task.FromResult<PaymentTerm?>(null);
+                    }
+                    else
+                    {
+                        paymentTermTask = Task.FromResult<PaymentTerm?>(null);
+                    }
+
+                    // Wait for all tasks
+                    _logger.LogDebug("Waiting for all fetch tasks to complete");
+                    await Task.WhenAll(productsTask, servicesTask, taxProfilesTask, paymentMethodsTask, paymentTermTask);
+
+                    products = await productsTask ?? new Dictionary<Guid, Product>();
+                    services = await servicesTask ?? new Dictionary<Guid, Service>();
+                    taxProfiles = await taxProfilesTask ?? new Dictionary<Guid, TaxProfile>();
+                    paymentMethods = await paymentMethodsTask ?? new Dictionary<Guid, PaymentMethod>();
+                    paymentTerm = await paymentTermTask;
+
+                    _logger.LogInformation("Fetched {ProductCount} products, {ServiceCount} services, {TaxCount} tax profiles, {PaymentMethodCount} payment methods",
+                        products.Count, services.Count, taxProfiles.Count, paymentMethods.Count);
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "Error fetching related entities");
+                    // Initialize empty dictionaries to prevent null reference
+                    products = new Dictionary<Guid, Product>();
+                    services = new Dictionary<Guid, Service>();
+                    taxProfiles = new Dictionary<Guid, TaxProfile>();
+                    paymentMethods = new Dictionary<Guid, PaymentMethod>();
+                }
+
+                // =====================================================
+                // STEP 3: Get Payment Term Name
+                // =====================================================
+                _logger.LogDebug("Step 3: Getting payment term name");
+
+                string? paymentTermName = null;
+                if (purchaseOrder.PaymentTermId.HasValue)
+                {
+                    if (paymentTerm != null)
+                    {
+                        paymentTermName = paymentTerm.Name;
+                        _logger.LogInformation("Payment term found: {PaymentTermName}", paymentTermName);
+                    }
+                    else
+                    {
+                        _logger.LogWarning("Payment term with ID {PaymentTermId} not found", purchaseOrder.PaymentTermId.Value);
+                    }
+                }
+
+                // =====================================================
+                // STEP 4: Map Line Items
+                // =====================================================
+                _logger.LogDebug("Step 4: Mapping {Count} line items", lineItems?.Count ?? 0);
+
+                var lineItemDtos = (lineItems ?? new List<POLineItem>()).Select(li => new POLineItemDto
+                {
+                    Id = li.Id,
+                    ProductId = li.ProductId,
+                    ProductName = li.ProductId.HasValue && products.TryGetValue(li.ProductId.Value, out var product)
+                        ? product.Name
+                        : null,
+                    ServiceId = li.ServiceId,
+                    ServiceName = li.ServiceId.HasValue && services.TryGetValue(li.ServiceId.Value, out var service)
+                        ? service.Name
+                        : null,
+                    Description = li.Description,
+                    Quantity = li.Quantity,
+                    UnitPrice = li.UnitPrice,
+                    DiscountPercent = li.DiscountPercent,
+                    DiscountAmount = li.DiscountAmount,
+                    TaxProfileId = li.TaxProfileId,
+                    TaxProfileName = li.TaxProfileId.HasValue && taxProfiles.TryGetValue(li.TaxProfileId.Value, out var taxProfile)
+                        ? taxProfile.Name
+                        : null,
+                    TaxAmount = li.TaxAmount,
+                    LineTotal = li.LineTotal,
+                    RemainingQuantity = li.RemainingQuantity
+                }).ToList();
+
+                // =====================================================
+                // STEP 5: Map Deposits with Payment Method Details
+                // =====================================================
+                _logger.LogDebug("Step 5: Mapping {Count} deposits", deposits?.Count ?? 0);
+
+                var depositDtos = new List<PODepositDto>();
+
+                if (deposits != null && deposits.Any())
+                {
+                    foreach (var d in deposits)
+                    {
+                        try
+                        {
+                            _logger.LogDebug("Mapping deposit {DepositId} with PaymentMethodId {PaymentMethodId}",
+                                d.Id, d.PaymentMethodId);
+
+                            PaymentMethod? paymentMethod = null;
+
+                            // ✅ Safe lookup
+                            if (paymentMethods != null && paymentMethods.ContainsKey(d.PaymentMethodId))
+                            {
+                                paymentMethod = paymentMethods[d.PaymentMethodId];
+                                _logger.LogDebug("Found payment method: {Name}", paymentMethod?.Name);
+                            }
+                            else
+                            {
+                                _logger.LogWarning("Payment method {PaymentMethodId} not found in dictionary", d.PaymentMethodId);
+                            }
+
+                            depositDtos.Add(new PODepositDto
+                            {
+                                Id = d.Id,
+                                Amount = d.Amount,
+                                Percentage = d.Percentage,
+                                PaymentMethodId = d.PaymentMethodId,
+                                PaymentMethodName = paymentMethod?.Name ?? "Unknown",
+                                PaymentMethodCode = paymentMethod?.Code ?? string.Empty,
+                                PaymentMethodRequiresReference = paymentMethod?.RequiresReference ?? false,
+                                ReferenceNumber = d.ReferenceNumber,
+                                AlreadyPaid = d.AlreadyPaid,
+                                PaymentDate = d.PaymentDate,
+                                Notes = d.Notes
+                            });
+                        }
+                        catch (Exception ex)
+                        {
+                            _logger.LogError(ex, "Error mapping deposit {DepositId}", d.Id);
+                            throw;
+                        }
+                    }
+                }
+
+                _logger.LogInformation("Successfully mapped {Count} deposits", depositDtos.Count);
+
+                // =====================================================
+                // STEP 6: Map Shipping Charges
+                // =====================================================
+                _logger.LogDebug("Step 6: Mapping {Count} shipping charges", shippingCharges?.Count ?? 0);
+
+                var shippingChargeDtos = (shippingCharges ?? new List<POShippingCharge>()).Select(sc => new POShippingChargeDto
+                {
+                    Id = sc.Id,
+                    ShippingFee = sc.ShippingFee,
+                    TaxProfileId = sc.TaxProfileId,
+                    TaxProfileName = sc.TaxProfileId.HasValue && taxProfiles.TryGetValue(sc.TaxProfileId.Value, out var taxProfile)
+                        ? taxProfile.Name
+                        : null,
+                    TaxAmount = sc.TaxAmount,
+                    Total = sc.Total,
+                    Description = sc.Description
+                }).ToList();
+
+                // =====================================================
+                // STEP 7: Build Final Response DTO
+                // =====================================================
+                _logger.LogDebug("Step 7: Building final response DTO");
+
+                var result = new CreatePurchaseOrderDto
+                {
+                    Id = purchaseOrder.Id,
+                    PONumber = purchaseOrder.PONumber,
+                    CompanyId = purchaseOrder.CompanyId,
+                    SupplierId = purchaseOrder.SupplierId,
+                    SupplierName = supplier?.Name ?? "Unknown Supplier",
+                    CurrencyCode = purchaseOrder.CurrencyCode,
+                    PODate = purchaseOrder.PODate,
+                    PaymentTermId = purchaseOrder.PaymentTermId,
+                    PaymentTermName = paymentTermName,
+                    Notes = purchaseOrder.Notes,
+                    Terms = purchaseOrder.Terms,
+                    Subtotal = purchaseOrder.Subtotal,
+                    DiscountAmount = purchaseOrder.DiscountAmount,
+                    AdjustmentAmount = purchaseOrder.AdjustmentAmount,
+                    ShippingAmount = purchaseOrder.ShippingAmount,
+                    TaxAmount = purchaseOrder.TaxAmount,
+                    TotalAmount = purchaseOrder.TotalAmount,
+                    DepositAmount = purchaseOrder.DepositAmount,
+                    AmountDue = purchaseOrder.AmountDue,
+                    ReceptionStatus = purchaseOrder.ReceptionStatus.ToString(),
+                    PaymentStatus = purchaseOrder.PaymentStatus.ToString(),
+                    DocumentStatus = purchaseOrder.DocumentStatus.ToString(),
+                    CreatedAt = purchaseOrder.CreatedAt,
+                    LineItems = lineItemDtos,
+                    Deposits = depositDtos,
+                    Discounts = _mapper?.Map<List<PODiscountDto>>(discounts) ?? new List<PODiscountDto>(),
+                    Adjustments = _mapper?.Map<List<POAdjustmentDto>>(adjustments) ?? new List<POAdjustmentDto>(),
+                    ShippingCharges = shippingChargeDtos,
+                    PONotes = poNotes ?? new List<string>(),
+                    AttachmentCount = attachmentCount
+                };
+
+                _logger.LogInformation("Successfully built response DTO for PO: {PONumber}", purchaseOrder.PONumber);
+
+                return result;
+            }
+            catch (Exception ex)
             {
-                Id = purchaseOrder.Id,
-                PONumber = purchaseOrder.PONumber,
-                CompanyId = purchaseOrder.CompanyId,
-                SupplierId = purchaseOrder.SupplierId,
-                SupplierName = supplier.Name,
-                CurrencyCode = purchaseOrder.CurrencyCode,
-                PODate = purchaseOrder.PODate,
-                PaymentTerms = purchaseOrder.PaymentTerms,
-                Notes = purchaseOrder.Notes,
-                Terms = purchaseOrder.Terms,
-                Subtotal = purchaseOrder.Subtotal,
-                DiscountAmount = purchaseOrder.DiscountAmount,
-                AdjustmentAmount = purchaseOrder.AdjustmentAmount,
-                ShippingAmount = purchaseOrder.ShippingAmount,
-                TaxAmount = purchaseOrder.TaxAmount,
-                TotalAmount = purchaseOrder.TotalAmount,
-                DepositAmount = purchaseOrder.DepositAmount,
-                AmountDue = purchaseOrder.AmountDue,
-                ReceptionStatus = purchaseOrder.ReceptionStatus,
-                PaymentStatus = purchaseOrder.PaymentStatus,
-                DocumentStatus = purchaseOrder.DocumentStatus,
-                CreatedAt = purchaseOrder.CreatedAt,
-                LineItems = lineItemDtos,
-                Deposits = _mapper.Map<List<PODepositDto>>(deposits),
-                Discounts = _mapper.Map<List<PODiscountDto>>(discounts),
-                Adjustments = _mapper.Map<List<POAdjustmentDto>>(adjustments),
-                ShippingCharges = shippingChargeDtos,
-                PONotes = poNotes ?? new List<string>(),
-                AttachmentCount = attachmentCount
-            };
+                _logger.LogError(ex, "Error building response DTO for PO: {PONumber}. Exception at: {StackTrace}",
+                    purchaseOrder?.PONumber ?? "Unknown", ex.StackTrace);
+                throw;
+            }
         }
-
         private async Task<List<POLineItem>> AddLineItems(Guid purchaseOrderId, List<CreatePOLineItemDto> items,
             CancellationToken cancellationToken)
         {
@@ -601,7 +818,7 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                 PurchaseOrderId = purchaseOrderId,
                 Amount = d.Amount,
                 Percentage = d.Percentage,
-                PaymentMethod = d.PaymentMethod,
+                PaymentMethodId = d.PaymentMethodId, // ✅ Changed from PaymentMethod (enum) to PaymentMethodId (Guid)
                 ReferenceNumber = d.ReferenceNumber,
                 AlreadyPaid = d.AlreadyPaid,
                 PaymentDate = d.PaymentDate,
@@ -645,7 +862,7 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
             {
                 Id = Guid.NewGuid(),
                 PurchaseOrderId = purchaseOrderId,
-                DiscountType = d.DiscountType,
+                DiscountType = Enum.Parse<DiscountType>(d.DiscountType),
                 DiscountValue = d.DiscountValue,
                 DiscountAmount = d.DiscountValue,
                 Description = d.Description

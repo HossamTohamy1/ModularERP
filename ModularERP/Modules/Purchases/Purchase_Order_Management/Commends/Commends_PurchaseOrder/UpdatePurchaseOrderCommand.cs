@@ -10,7 +10,7 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Commends.Commen
         public Guid SupplierId { get; set; }
         public string CurrencyCode { get; set; } = "SAR";
         public DateTime PODate { get; set; }
-        public string? PaymentTerms { get; set; }
+        public Guid? PaymentTermId { get; set; }
         public string? Notes { get; set; }
         public string? Terms { get; set; }
 
@@ -22,5 +22,6 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Commends.Commen
         public List<IFormFile> NewAttachments { get; set; } = new();
         public List<Guid> AttachmentsToDelete { get; set; } = new();
         public List<string> NewNotes { get; set; } = new();
+
     }
 }

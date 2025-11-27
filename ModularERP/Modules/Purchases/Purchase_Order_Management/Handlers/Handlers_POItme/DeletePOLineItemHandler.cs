@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using ModularERP.Common.Enum.Finance_Enum;
+using ModularERP.Common.Enum.Purchases_Enum;
 using ModularERP.Common.Exceptions;
 using ModularERP.Common.ViewModel;
 using ModularERP.Modules.Purchases.Purchase_Order_Management.Commends.Commends_POItme;
@@ -44,7 +45,7 @@ namespace ModularERP.Modules.Purchases.Purchase_Order_Management.Handlers.Handle
                 }
 
                 // Check if PO is in Draft or Submitted status (can delete items)
-                if (po.DocumentStatus != "Draft" && po.DocumentStatus != "Submitted")
+                if (po.DocumentStatus != DocumentStatus.Draft && po.DocumentStatus != DocumentStatus.Submitted)
                 {
                     throw new BusinessLogicException(
                         $"Cannot delete items from Purchase Order in {po.DocumentStatus} status",

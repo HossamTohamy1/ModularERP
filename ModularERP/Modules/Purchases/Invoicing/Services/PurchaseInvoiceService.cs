@@ -2,6 +2,7 @@
 using AutoMapper.QueryableExtensions;
 using Microsoft.EntityFrameworkCore;
 using ModularERP.Common.Enum.Finance_Enum;
+using ModularERP.Common.Enum.Purchases_Enum;
 using ModularERP.Common.Exceptions;
 using ModularERP.Modules.Purchases.Invoicing.DTO.DTO_Invoice;
 using ModularERP.Modules.Purchases.Invoicing.Models;
@@ -72,7 +73,7 @@ namespace ModularERP.Modules.Purchases.Invoicing.Services
                     FinanceErrorCode.NotFound);
             }
 
-            if (purchaseOrder.DocumentStatus != "Approved")
+            if (purchaseOrder.DocumentStatus != DocumentStatus.Approved)
             {
                 _logger.LogWarning(
                     "Purchase order {POId} is not approved. Status: {Status}",
@@ -103,7 +104,7 @@ namespace ModularERP.Modules.Purchases.Invoicing.Services
 
             if (!invoices.Any())
             {
-                purchaseOrder.PaymentStatus = "Unpaid";
+                purchaseOrder.PaymentStatus = PaymentStatus.Unpaid;
             }
             else
             {
@@ -112,15 +113,15 @@ namespace ModularERP.Modules.Purchases.Invoicing.Services
 
                 if (totalPaid >= totalInvoiced)
                 {
-                    purchaseOrder.PaymentStatus = "PaidInFull";
+                    purchaseOrder.PaymentStatus = PaymentStatus.PaidInFull;
                 }
                 else if (totalPaid > 0)
                 {
-                    purchaseOrder.PaymentStatus = "PartiallyPaid";
+                    purchaseOrder.PaymentStatus = PaymentStatus.PartiallyPaid;
                 }
                 else
                 {
-                    purchaseOrder.PaymentStatus = "Unpaid";
+                    purchaseOrder.PaymentStatus = PaymentStatus.Unpaid;
                 }
             }
 

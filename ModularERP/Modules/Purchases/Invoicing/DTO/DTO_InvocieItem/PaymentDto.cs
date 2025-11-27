@@ -1,9 +1,14 @@
-﻿namespace ModularERP.Modules.Purchases.Invoicing.DTO.DTO_InvocieItem
+﻿using ModularERP.Common.Enum.Purchases_Enum;
+
+namespace ModularERP.Modules.Purchases.Invoicing.DTO.DTO_InvocieItem
 {
     public class PaymentDto
     {
         public Guid Id { get; set; }
-        public string PaymentMethod { get; set; } = string.Empty;
+        public Guid PaymentMethodId { get; set; }
+
+        public string PaymentMethodName { get; set; } = string.Empty;
+        public string PaymentMethodCode { get; set; } = string.Empty;
         public DateTime PaymentDate { get; set; }
         public decimal Amount { get; set; }
         public string? ReferenceNumber { get; set; }

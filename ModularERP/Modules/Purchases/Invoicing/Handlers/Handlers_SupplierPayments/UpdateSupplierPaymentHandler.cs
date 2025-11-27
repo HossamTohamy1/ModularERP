@@ -1,12 +1,14 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using ModularERP.Common.Enum.Purchases_Enum;
 using ModularERP.Common.Exceptions;
 using ModularERP.Common.ViewModel;
 using ModularERP.Modules.Inventory.Features.Suppliers.Models;
 using ModularERP.Modules.Purchases.Invoicing.Commends.Commands_SupplierPayments;
 using ModularERP.Modules.Purchases.Invoicing.DTO.DTO_SupplierPayments;
 using ModularERP.Modules.Purchases.Invoicing.Models;
+using ModularERP.Modules.Purchases.Payment.Models;
 using ModularERP.Modules.Purchases.Purchase_Order_Management.Models;
 using ModularERP.Shared.Interfaces;
 
@@ -18,6 +20,7 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_SupplierPayme
         private readonly IGeneralRepository<Supplier> _supplierRepository;
         private readonly IGeneralRepository<PurchaseInvoice> _invoiceRepository;
         private readonly IGeneralRepository<PurchaseOrder> _poRepository;
+        private readonly IGeneralRepository<PaymentMethod> _paymentMethodRepository;
         private readonly IMapper _mapper;
         private readonly ILogger<UpdateSupplierPaymentHandler> _logger;
 
@@ -26,6 +29,7 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_SupplierPayme
             IGeneralRepository<Supplier> supplierRepository,
             IGeneralRepository<PurchaseInvoice> invoiceRepository,
             IGeneralRepository<PurchaseOrder> poRepository,
+            IGeneralRepository<PaymentMethod> paymentMethodRepository,
             IMapper mapper,
             ILogger<UpdateSupplierPaymentHandler> logger)
         {
@@ -33,6 +37,7 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_SupplierPayme
             _supplierRepository = supplierRepository;
             _invoiceRepository = invoiceRepository;
             _poRepository = poRepository;
+            _paymentMethodRepository = paymentMethodRepository;
             _mapper = mapper;
             _logger = logger;
         }
@@ -49,6 +54,7 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_SupplierPayme
                 .Include(p => p.Invoice)
                     .ThenInclude(i => i.PurchaseOrder)
                 .Include(p => p.PurchaseOrder)
+                .Include(p => p.PaymentMethod) // ✅ Include current PaymentMethod
                 .FirstOrDefaultAsync(cancellationToken);
 
             if (payment == null)
@@ -69,7 +75,7 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_SupplierPayme
             }
 
             // 3. Check if payment is already posted (only Draft can be updated)
-            if (payment.Status != "Draft")
+            if (payment.Status != SupplierPaymentStatus.Draft)
             {
                 _logger.LogWarning("Cannot update posted payment: {PaymentId}", request.Dto.Id);
                 throw new BusinessLogicException(
@@ -82,10 +88,43 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_SupplierPayme
             decimal oldAllocatedAmount = payment.AllocatedAmount;
             Guid? oldInvoiceId = payment.InvoiceId;
             Guid? oldPurchaseOrderId = payment.PurchaseOrderId;
-            string oldPaymentType = payment.PaymentType;
+            string oldPaymentType = payment.PaymentType.ToString();
             Guid oldSupplierId = payment.SupplierId;
+            Guid oldPaymentMethodId = payment.PaymentMethodId;
 
-            // 4. Validate PaymentType
+            // ✅ 4. Validate new PaymentMethod exists and is active
+            var newPaymentMethod = await _paymentMethodRepository
+                .Get(pm => pm.Id == request.Dto.PaymentMethodId && !pm.IsDeleted)
+                .FirstOrDefaultAsync(cancellationToken);
+
+            if (newPaymentMethod == null)
+            {
+                _logger.LogWarning("PaymentMethod not found: {PaymentMethodId}", request.Dto.PaymentMethodId);
+                throw new NotFoundException(
+                    $"Payment method with ID {request.Dto.PaymentMethodId} not found",
+                    Common.Enum.Finance_Enum.FinanceErrorCode.NotFound);
+            }
+
+            if (!newPaymentMethod.IsActive)
+            {
+                _logger.LogWarning("PaymentMethod is inactive: {PaymentMethodId}", request.Dto.PaymentMethodId);
+                throw new BusinessLogicException(
+                    $"Payment method '{newPaymentMethod.Name}' is currently inactive",
+                    "Purchases");
+            }
+
+            // ✅ 5. Validate ReferenceNumber if required by new PaymentMethod
+            if (newPaymentMethod.RequiresReference && string.IsNullOrWhiteSpace(request.Dto.ReferenceNumber))
+            {
+                _logger.LogWarning(
+                    "ReferenceNumber is required for PaymentMethod: {PaymentMethodName}",
+                    newPaymentMethod.Name);
+                throw new BusinessLogicException(
+                    $"Reference number is required for payment method '{newPaymentMethod.Name}'",
+                    "Purchases");
+            }
+
+            // 6. Validate PaymentType
             var validPaymentTypes = new[] { "AgainstInvoice", "Deposit", "Advance" };
             if (!validPaymentTypes.Contains(request.Dto.PaymentType))
             {
@@ -95,7 +134,7 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_SupplierPayme
                     "Purchases");
             }
 
-            // 5. Validate Supplier exists
+            // 7. Validate Supplier exists
             var supplierExists = await _supplierRepository.AnyAsync(
                 s => s.Id == request.Dto.SupplierId && !s.IsDeleted,
                 cancellationToken);
@@ -111,7 +150,7 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_SupplierPayme
             PurchaseInvoice? newInvoice = null;
             PurchaseOrder? newPurchaseOrder = null;
 
-            // 6. Validate Invoice if PaymentType = AgainstInvoice
+            // 8. Validate Invoice if PaymentType = AgainstInvoice
             if (request.Dto.PaymentType == "AgainstInvoice")
             {
                 if (!request.Dto.InvoiceId.HasValue)
@@ -172,12 +211,12 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_SupplierPayme
                         "Payment amount {Amount} exceeds invoice available amount {Available}",
                         amountToAllocate, availableAmount);
                     throw new BusinessLogicException(
-                        $"Payment amount ({amountToAllocate}) exceeds invoice available amount ({availableAmount})",
+                        $"Payment amount ({amountToAllocate:N2}) exceeds invoice available amount ({availableAmount:N2})",
                         "Purchases");
                 }
             }
 
-            // 7. Validate PurchaseOrder if provided
+            // 9. Validate PurchaseOrder if provided
             if (request.Dto.PurchaseOrderId.HasValue)
             {
                 newPurchaseOrder = await _poRepository
@@ -193,7 +232,7 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_SupplierPayme
                 }
             }
 
-            // 8. Reverse old allocations if invoice/PO/supplier changed
+            // 10. Reverse old allocations if invoice/PO/supplier changed
             bool needToReverseOldInvoice = oldInvoiceId.HasValue &&
                                            (oldInvoiceId != request.Dto.InvoiceId ||
                                             oldSupplierId != request.Dto.SupplierId);
@@ -215,11 +254,11 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_SupplierPayme
                     // Update old invoice payment status
                     if (oldInvoice.AmountDue >= oldInvoice.TotalAmount)
                     {
-                        oldInvoice.PaymentStatus = "Unpaid";
+                        oldInvoice.PaymentStatus = PaymentStatus.Unpaid;
                     }
                     else if (oldInvoice.AmountDue > 0)
                     {
-                        oldInvoice.PaymentStatus = "Partially Paid";
+                        oldInvoice.PaymentStatus = PaymentStatus.PartiallyPaid;
                     }
 
                     await _invoiceRepository.SaveChanges();
@@ -239,18 +278,18 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_SupplierPayme
                 }
             }
 
-            // 9. Update payment fields
+            // ✅ 11. Update payment fields
             payment.SupplierId = request.Dto.SupplierId;
             payment.InvoiceId = request.Dto.InvoiceId;
             payment.PurchaseOrderId = request.Dto.PurchaseOrderId;
-            payment.PaymentType = request.Dto.PaymentType;
-            payment.PaymentMethod = request.Dto.PaymentMethod;
+            payment.PaymentType = Enum.Parse<PaymentType>(request.Dto.PaymentType, ignoreCase: true);
+            payment.PaymentMethodId = request.Dto.PaymentMethodId; // ✅ استخدم PaymentMethodId
             payment.PaymentDate = request.Dto.PaymentDate;
             payment.Amount = request.Dto.Amount;
             payment.ReferenceNumber = request.Dto.ReferenceNumber;
             payment.Notes = request.Dto.Notes;
 
-            // 10. Calculate Allocated/Unallocated amounts
+            // 12. Calculate Allocated/Unallocated amounts
             if (request.Dto.AllocatedAmount.HasValue)
             {
                 // Validate allocated amount
@@ -276,18 +315,24 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_SupplierPayme
             payment.UpdatedAt = DateTime.UtcNow;
             payment.UpdatedBy = Guid.Parse("f0602c31-0c12-4b5c-9ccf-fe17811d5c53").ToString();
 
-            // 11. Save payment changes
+            // 13. Save payment changes
             await _paymentRepository.SaveChanges();
 
-            _logger.LogInformation("Payment updated successfully: {PaymentId}", payment.Id);
+            _logger.LogInformation(
+                "Payment updated successfully: {PaymentId}. " +
+                "Old PaymentMethod: {OldPM}, New PaymentMethod: {NewPM}, " +
+                "Old Amount: {OldAmount}, New Amount: {NewAmount}",
+                payment.Id,
+                oldPaymentMethodId, newPaymentMethod.Name,
+                oldAmount, payment.Amount);
 
-            // 12. Update new Invoice and PO Status (if payment is against invoice)
+            // 14. Update new Invoice and PO Status (if payment is against invoice)
             if (request.Dto.PaymentType == "AgainstInvoice" && newInvoice != null)
             {
                 await UpdateInvoiceAndPOStatusAsync(newInvoice, payment, cancellationToken);
             }
 
-            // 13. Auto-apply existing deposits if applicable
+            // 15. Auto-apply existing deposits if applicable
             if (request.Dto.PaymentType == "AgainstInvoice" &&
                 newInvoice?.PurchaseOrderId != null &&
                 oldInvoiceId != request.Dto.InvoiceId) // Only if invoice changed
@@ -295,9 +340,14 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_SupplierPayme
                 await ApplyExistingDepositsAsync(newInvoice, cancellationToken);
             }
 
-            // 14. Return DTO with projection
+            // ✅ 16. Return DTO with PaymentMethod details
             var result = await _paymentRepository
                 .Get(p => p.Id == payment.Id)
+                .Include(p => p.Supplier)
+                .Include(p => p.Invoice)
+                .Include(p => p.PurchaseOrder)
+                .Include(p => p.PaymentMethod) // ⭐ Include PaymentMethod
+                .Include(p => p.VoidedByUser)
                 .Select(p => new SupplierPaymentDto
                 {
                     Id = p.Id,
@@ -308,32 +358,38 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_SupplierPayme
                     PurchaseOrderId = p.PurchaseOrderId,
                     PONumber = p.PurchaseOrder != null ? p.PurchaseOrder.PONumber : null,
                     PaymentNumber = p.PaymentNumber,
-                    PaymentType = p.PaymentType,
-                    PaymentMethod = p.PaymentMethod,
+                    PaymentType = p.PaymentType.ToString(),
+
+                    // ✅ PaymentMethod details from Entity
+                    PaymentMethodId = p.PaymentMethodId,
+                    PaymentMethodName = p.PaymentMethod.Name,
+                    PaymentMethodCode = p.PaymentMethod.Code,
+                    PaymentMethodRequiresReference = p.PaymentMethod.RequiresReference,
+
                     PaymentDate = p.PaymentDate,
                     Amount = p.Amount,
                     AllocatedAmount = p.AllocatedAmount,
                     UnallocatedAmount = p.UnallocatedAmount,
                     ReferenceNumber = p.ReferenceNumber,
                     Notes = p.Notes,
-                    Status = p.Status,
+                    Status = p.Status.ToString(),
                     IsVoid = p.IsVoid,
                     VoidedAt = p.VoidedAt,
                     VoidedByName = p.VoidedByUser != null ? p.VoidedByUser.UserName : null,
                     VoidReason = p.VoidReason,
                     CreatedAt = p.CreatedAt,
-                    CreatedBy = p.CreatedBy ?? ""
+                    UpdatedAt = p.UpdatedAt,
+                    CreatedBy = p.CreatedBy ?? "",
+                    UpdatedBy = p.UpdatedBy ?? ""
                 })
                 .FirstOrDefaultAsync(cancellationToken);
 
             return ResponseViewModel<SupplierPaymentDto>.Success(
                 result!,
-                "Payment updated successfully");
+                $"Payment updated successfully using {newPaymentMethod.Name}");
         }
 
-        /// <summary>
-        /// Updates Invoice AmountDue and Payment Status, and cascades to PO if applicable
-        /// </summary>
+
         private async Task UpdateInvoiceAndPOStatusAsync(
             PurchaseInvoice invoice,
             SupplierPayment payment,
@@ -343,25 +399,22 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_SupplierPayme
                 "Updating Invoice {InvoiceId} status after payment {PaymentId}",
                 invoice.Id, payment.Id);
 
-            // Update Invoice AmountDue
             invoice.AmountDue -= payment.AllocatedAmount;
 
-            // Ensure AmountDue doesn't go negative
             if (invoice.AmountDue < 0)
             {
                 invoice.AmountDue = 0;
             }
 
-            // Update Invoice Payment Status
             if (invoice.AmountDue <= 0)
             {
-                invoice.PaymentStatus = "Paid in Full";
+                invoice.PaymentStatus = PaymentStatus.PaidInFull;
                 _logger.LogInformation("Invoice {InvoiceId} marked as Paid in Full", invoice.Id);
             }
             else
             {
                 var totalPaid = invoice.TotalAmount - invoice.AmountDue;
-                invoice.PaymentStatus = totalPaid > 0 ? "Partially Paid" : "Unpaid";
+                invoice.PaymentStatus = totalPaid > 0 ? PaymentStatus.PartiallyPaid : PaymentStatus.Unpaid;
                 _logger.LogInformation(
                     "Invoice {InvoiceId} status: {Status}, Amount Due: {AmountDue}",
                     invoice.Id, invoice.PaymentStatus, invoice.AmountDue);
@@ -369,7 +422,6 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_SupplierPayme
 
             await _invoiceRepository.SaveChanges();
 
-            // Update PO Payment Status if invoice is linked to PO
             if (invoice.PurchaseOrderId != Guid.Empty)
             {
                 var po = await _poRepository
@@ -383,53 +435,46 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_SupplierPayme
             }
         }
 
-        /// <summary>
-        /// Updates PO Payment Status based on all invoices and payments
-        /// </summary>
         private async Task UpdatePOPaymentStatusAsync(
             PurchaseOrder po,
             CancellationToken cancellationToken)
         {
             _logger.LogInformation("Updating PO {POId} payment status", po.Id);
 
-            // Get all invoices linked to this PO
             var invoices = await _invoiceRepository
                 .Get(i => i.PurchaseOrderId == po.Id && !i.IsDeleted)
                 .ToListAsync(cancellationToken);
 
-            // Get all direct payments to PO (deposits/advances)
             var directPayments = await _paymentRepository
                 .Get(p => p.PurchaseOrderId == po.Id &&
                          !p.IsVoid &&
-                         (p.PaymentType == "Deposit" || p.PaymentType == "Advance"))
+                         (p.PaymentType == PaymentType.Deposit || p.PaymentType == PaymentType.Advance))
                 .ToListAsync(cancellationToken);
 
-            // Calculate total amounts
             decimal totalInvoiceAmount = invoices.Sum(i => i.TotalAmount);
             decimal totalAmountDue = invoices.Sum(i => i.AmountDue);
             decimal totalDirectPayments = directPayments.Sum(p => p.Amount);
 
-            // Determine Payment Status
             if (totalAmountDue <= 0 && totalInvoiceAmount > 0)
             {
-                po.PaymentStatus = "Paid in Full";
+                po.PaymentStatus = PaymentStatus.PaidInFull;
                 _logger.LogInformation("PO {POId} marked as Paid in Full", po.Id);
             }
             else if (totalAmountDue < totalInvoiceAmount || totalDirectPayments > 0)
             {
-                po.PaymentStatus = "Partially Paid";
+                po.PaymentStatus = PaymentStatus.PartiallyPaid;
                 _logger.LogInformation("PO {POId} marked as Partially Paid", po.Id);
             }
             else
             {
-                po.PaymentStatus = "Unpaid";
+                po.PaymentStatus = PaymentStatus.Unpaid;
                 _logger.LogInformation("PO {POId} remains Unpaid", po.Id);
             }
 
-            // Check if PO should be closed
-            if (po.ReceptionStatus == "Fully Received" && po.PaymentStatus == "Paid in Full")
+            if (po.ReceptionStatus == ReceptionStatus.FullyReceived &&
+                po.PaymentStatus == PaymentStatus.PaidInFull)
             {
-                po.DocumentStatus = "Closed";
+                po.DocumentStatus = DocumentStatus.Closed;
                 _logger.LogInformation(
                     "PO {POId} auto-closed (Reception: {Reception}, Payment: {Payment})",
                     po.Id, po.ReceptionStatus, po.PaymentStatus);
@@ -438,9 +483,6 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_SupplierPayme
             await _poRepository.SaveChanges();
         }
 
-        /// <summary>
-        /// Auto-apply existing unallocated deposits to the invoice
-        /// </summary>
         private async Task ApplyExistingDepositsAsync(
             PurchaseInvoice invoice,
             CancellationToken cancellationToken)
@@ -449,10 +491,9 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_SupplierPayme
                 "Checking for existing deposits for PO {POId}",
                 invoice.PurchaseOrderId);
 
-            // Get unallocated deposits for this PO
             var existingDeposits = await _paymentRepository
                 .Get(p => p.PurchaseOrderId == invoice.PurchaseOrderId &&
-                         (p.PaymentType == "Deposit" || p.PaymentType == "Advance") &&
+                         (p.PaymentType == PaymentType.Deposit || p.PaymentType == PaymentType.Advance) &&
                          p.UnallocatedAmount > 0 &&
                          !p.IsVoid)
                 .OrderBy(p => p.PaymentDate)
@@ -471,14 +512,11 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_SupplierPayme
                 if (remainingDue <= 0)
                     break;
 
-                // Calculate amount to apply from this deposit
                 decimal amountToApply = Math.Min(deposit.UnallocatedAmount, remainingDue);
 
-                // Update deposit allocation
                 deposit.AllocatedAmount += amountToApply;
                 deposit.UnallocatedAmount -= amountToApply;
 
-                // Update invoice
                 invoice.AmountDue -= amountToApply;
                 remainingDue -= amountToApply;
 
@@ -487,16 +525,15 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_SupplierPayme
                     amountToApply, deposit.Id, invoice.Id);
             }
 
-            // Update payment status after applying deposits
             if (invoice.AmountDue <= 0)
             {
-                invoice.PaymentStatus = "Paid in Full";
+                invoice.PaymentStatus = PaymentStatus.PaidInFull;
             }
             else
             {
                 invoice.PaymentStatus = invoice.AmountDue < invoice.TotalAmount
-                    ? "Partially Paid"
-                    : "Unpaid";
+                    ? PaymentStatus.PartiallyPaid
+                    : PaymentStatus.Unpaid;
             }
 
             await _paymentRepository.SaveChanges();

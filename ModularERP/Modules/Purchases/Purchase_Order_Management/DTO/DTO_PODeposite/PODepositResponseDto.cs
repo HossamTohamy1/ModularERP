@@ -6,12 +6,16 @@
         public Guid PurchaseOrderId { get; set; }
         public decimal Amount { get; set; }
         public decimal? Percentage { get; set; }
-        public string PaymentMethod { get; set; }
-        public string? ReferenceNumber { get; set; }
+
+        // ✅ PaymentMethod details
+        public Guid PaymentMethodId { get; set; }
+        public string PaymentMethodName { get; set; } = string.Empty;
+        public string PaymentMethodCode { get; set; } = string.Empty; public string? ReferenceNumber { get; set; }
         public bool AlreadyPaid { get; set; }
         public DateTime? PaymentDate { get; set; }
         public string? Notes { get; set; }
         public DateTime CreatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
 
         // ✅ Add these important fields:
         public decimal POTotal { get; set; }           // Total PO amount

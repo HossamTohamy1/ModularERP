@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using ModularERP.Common.Enum.Purchases_Enum;
 using ModularERP.Common.Exceptions;
 using ModularERP.Common.ViewModel;
 using ModularERP.Modules.Purchases.Invoicing.Commends.Commands_SupplierPayments;
@@ -47,7 +48,7 @@ namespace ModularERP.Modules.Purchases.Invoicing.Handlers.Handlers_SupplierPayme
             }
 
             // 3. Check if payment is posted
-            if (payment.Status == "Posted")
+            if (payment.Status == SupplierPaymentStatus.Posted)
             {
                 _logger.LogWarning("Cannot delete posted payment: {PaymentId}", request.Id);
                 throw new BusinessLogicException(
